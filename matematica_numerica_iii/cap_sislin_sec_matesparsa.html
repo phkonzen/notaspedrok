@@ -1,0 +1,1166 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III</title>
+<!--Generated on Tue Nov 25 11:08:42 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_sislin.html" title="Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="up up" href="./" title="Matemática Numérica III">
+<link rel="start" href="./" title="Matemática Numérica III">
+<link rel="prev" href="cap_sislin_sec_matrizes_bandas.html" title="1.1 Matrizes bandas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="next" href="cap_sislin_sec_metiterbas.html" title="1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_matrizes_bandas.html" title="1.1 Matrizes bandas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_metiterbas.html" title="1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_mgc.html" title="1.4 Método do gradiente conjugado ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_metproj.html" title="1.5 Métodos de projeção ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_gmres.html" title="1.6 Método GMRES ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_precond.html" title="1.7 Precondicionamento ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Matemática Numérica III">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_sislin.html" title="Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_sisnlin.html" title="Capítulo 2 Sistemas Não Lineares ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_otimizacao.html" title="Capítulo 3 Otimização ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_autoval.html" title="Capítulo 4 Autovalores e Autovetores ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_integracao.html" title="Capítulo 5 Integração ‣ Matemática Numérica III">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Matemática Numérica III">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Matemática Numérica III</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_sislin.html" title="In Matemática Numérica III" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Sistemas Lineares</span></a><a href="cap_sislin_sec_matrizes_bandas.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Matrizes bandas</span></a><a href="cap_sislin_sec_metiterbas.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Métodos iterativos básicos</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.2 </span>Matrizes esparsas</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Uma matriz é dita ser <span class="ltx_text ltx_font_bold">esparsa</span> quando ela tem apenas poucos elementos não nulos</span>. A ideia é que os elementos não nulos não precisam ser guardados na memória do computador, gerando um grande benefício na redução da demanda de armazenamento de dados. O desafio está no desenvolvimento de estruturas de dados para a alocação eficiente de tais matrizes, i.e. que sejam suficientemente adequadas para os métodos numéricos conhecidos.</p>
+</div>
+<figure id="fig:ex_matriz_esparsa_estrutura" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="cap_sislin/dados/matriz_esparsa_estruturada/main.png" id="Ch1.F3.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="269" height="273" alt="Refer to caption"></div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="cap_sislin/dados/matriz_esparsa_nao_estruturada/main.png" id="Ch1.F3.g2" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="269" height="273" alt="Refer to caption"></div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 1.3</span>: </span><span class="ltx_text" style="font-size:90%;">Em cima: exemplo de uma matriz esparsa estruturada. Em baixo: exemplo de uma matriz esparsa não-estruturada.</span></figcaption>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Matrizes esparsas podem ser classificadas como <span class="ltx_text ltx_font_bold">estruturadas</span> ou <span class="ltx_text ltx_font_bold">não-estruturadas</span></span>. Uma matriz estruturada é aquela em que as entradas não-nulas formam um padrão regular. Por exemplo, estão dispostas em poucas diagonais ou formam blocos (submatrizes densas) ao longo de sua diagonal principal. No caso de não haver um padrão regular das entradas não-nulas, a matriz esparsa é dita ser não-estruturada. Consulte a Figura <a href="#fig:ex_matriz_esparsa_estrutura" title="Figura 1.3 ‣ 1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.3</span></a> para exemplos.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">esparsidade</span> de uma matriz é a porcentagem de elementos nulos que ela tem</span>, i.e. para uma matriz quadrada <math id="p3.m1" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> tem-se que a esparsidade é</p>
+<table id="Ch1.E66" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E66.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}e:=\frac{n_{%
+\text{nulos}}}{n^{2}}\times 100\%." display="block"><mrow><mrow><mi mathcolor="#0000FF">e</mi><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mfrac mathcolor="#0000FF"><msub><mi mathcolor="#0000FF">n</mi><mtext mathcolor="#0000FF">nulos</mtext></msub><msup><mi mathcolor="#0000FF">n</mi><mn mathcolor="#0000FF">2</mn></msup></mfrac><mo lspace="0.222em" mathcolor="#0000FF" rspace="0.222em">×</mo><mrow><mn mathcolor="#0000FF">100</mn><mo mathcolor="#0000FF">%</mo></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.66)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Por exemplo, a matriz identidade de tamanho <math id="p3.m2" class="ltx_Math" alttext="n=100" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow></math> tem esparsidade</p>
+<table id="Ch1.E67" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E67.m1" class="ltx_Math" alttext="e=\frac{100^{2}-100}{100^{2}}\times 100\%=99\%." display="block"><mrow><mrow><mi>e</mi><mo>=</mo><mrow><mfrac><mrow><msup><mn>100</mn><mn>2</mn></msup><mo>−</mo><mn>100</mn></mrow><msup><mn>100</mn><mn>2</mn></msup></mfrac><mo lspace="0.222em" rspace="0.222em">×</mo><mrow><mn>100</mn><mo>%</mo></mrow></mrow><mo>=</mo><mrow><mn>99</mn><mo>%</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.67)</span></td>
+</tr></tbody>
+</table>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.2.1 </span>Esquemas de armazenamento</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">A ideia é armazenar apenas os elementos não-nulos de uma matriz esparsa, de forma a economizar a demanda de armazenamento computacional. Cuidados devem ser tomados para que a estrutura de armazenamento utilizada seja adequada para a computação das operações matriciais mais comuns.</p>
+</div>
+<section id="SS1.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Formato COO</h3>
+
+<div id="SS1.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">O <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">formato COO</span> (do inglês, <span class="ltx_text ltx_font_italic">COOrdinate format</span>) é o esquema de armazenamento simples de matrizes esparsas. As estrutura de dados consiste em três arranjos:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">um arranjo contendo as entradas não-nulas da matriz;</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">um arranjo contendo seus índices de linha;</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">um arranjo contendo seus índices de coluna.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">O método <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.coo_array.html" title="" class="ltx_ref ltx_href ltx_font_typewriter">scipy.sparse.coo_array</a> permite a alocação de matrizes no formato COO.</p>
+</div>
+<div id="ex:coo" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 1.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">O seguinte código armazena a matriz</p>
+<table id="Ch1.E68" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E68.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
+0.&amp;3.&amp;2.&amp;-1.\\
+0&amp;-1&amp;-2.&amp;0.\\
+0&amp;0&amp;0&amp;1.\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.68)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">no formato COO.</p>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzY2lweS5zcGFyc2UgaW1wb3J0IGNvb19hcnJheQoKZGF0YSA9IFsyLiwxLiwzLiwyLiwtMS4sLTEuLC0yLiwxLl0Kcm93ID0gWzAsMCwxLDEsMSwyLDIsM10KY29sID0gWzAsMiwxLDIsMywxLDIsM10KQWNvbyA9IGNvb19hcnJheSgoZGF0YSwgKHJvdywgY29sKSksIHNoYXBlPSg0LDQpKQpwcmludCgiQWNvbyA9IFxuIiwgQWNvbykKcHJpbnQoIkEgPSBcbiIsIEFjb28udG9hcnJheSgpKQ==" download="">⬇</a></div>
+<div id="lstnumberx89" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sparse</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">coo_array</span>
+</div>
+<div id="lstnumberx90" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span>
+</div>
+<div id="lstnumberx91" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[2.,1.,3.,2.,-1.,-1.,-2.,1.]</span>
+</div>
+<div id="lstnumberx92" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">row</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0,0,1,1,1,2,2,3]</span>
+</div>
+<div id="lstnumberx93" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">col</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0,2,1,2,3,1,2,3]</span>
+</div>
+<div id="lstnumberx94" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">coo_array</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">row</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">col</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">shape</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=(4,4))</span>
+</div>
+<div id="lstnumberx95" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Acoo<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>\n"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx96" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"A<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>\n"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">toarray</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">())</span>
+</div>
+</div>
+</div>
+</div>
+<div id="SS1.SSSx1.p2" class="ltx_para">
+<p class="ltx_p ltx_align_left"><span class="ltx_text" style="background-color:#FFFF00;">Vantagens do formato COO</span></p>
+</div>
+<div id="SS1.SSSx1.p3" class="ltx_para">
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Permite a entrada de dados duplicados (simplicidade).</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Conversão rápida para os formatos CSR e CSC.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS1.SSSx1.p4" class="ltx_para">
+<p class="ltx_p ltx_align_left"><span class="ltx_text" style="background-color:#FFFF00;">Desavantagens do formato COO</span> - <span class="ltx_text ltx_font_bold">não suporta diretamente</span>:</p>
+</div>
+<div id="SS1.SSSx1.p5" class="ltx_para">
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">operações aritméticas.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">fatiamento.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 1.2.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Entradas duplicadas)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">O formato COO permite a entrada duplicada de elementos. Nestes casos, na alocação da <span class="ltx_text ltx_font_typewriter">coo_array</span>, os elementos duplicados são somados. Por exemplo, considere o seguinte código.</p>
+</div>
+<div id="Thmobs1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzY2lweS5zcGFyc2UgaW1wb3J0IGNvb19hcnJheQoKZGF0YSA9IFsyLiwzLiwyLiwxLl0Kcm93ID0gWzAsMSwxLDBdCmNvbCA9IFswLDAsMSwwXQpBY29vID0gY29vX2FycmF5KChkYXRhLCAocm93LCBjb2wpKSwgc2hhcGU9KDIsMikpCnByaW50KCJBY29vID0gXG4iLCBBY29vKQpwcmludCgiQSA9IFxuIiwgQWNvby50b2FycmF5KCkp" download="">⬇</a></div>
+<div id="lstnumberx97" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sparse</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">coo_array</span>
+</div>
+<div id="lstnumberx98" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span>
+</div>
+<div id="lstnumberx99" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[2.,3.,2.,1.]</span>
+</div>
+<div id="lstnumberx100" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">row</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0,1,1,0]</span>
+</div>
+<div id="lstnumberx101" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">col</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0,0,1,0]</span>
+</div>
+<div id="lstnumberx102" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">coo_array</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">row</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">col</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">shape</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=(2,2))</span>
+</div>
+<div id="lstnumberx103" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Acoo<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>\n"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx104" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"A<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>\n"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">toarray</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">())</span>
+</div>
+</div>
+</div>
+</div>
+<div id="ex:poisson2d_coo" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 1.2.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Equação de Poisson 2D)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Consideremos a aproximação pelo método de diferenças finitas do problema de Poisson<span id="Ch1.footnote9" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">9</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">9</sup><span class="ltx_tag ltx_tag_note">9</span>Siméon Denis Poisson, 1781 - 1840, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" title="" class="ltx_ref ltx_href">Wikipédia:Siméon Denis Poisson</a>.</span></span></span> 2D trabalhado no Exemplo <a href="cap_sislin_sec_matrizes_bandas.html#ex:poisson2d" title="Exemplo 1.1.3.(Equação de Poisson 2D) ‣ 1.1 Matrizes bandas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.1.3</span></a>. O seguinte código, faz a alocação da matriz do problema discreto no formato COO. Ao final, o sistema é resolvido usando a função <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html" title="" class="ltx_ref ltx_href ltx_font_typewriter">scipy.sparse.linalg.spsolve</a>.</p>
+</div>
+<figure id="cod:poisson2d_coo" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 3: </span>poisson2d_coo.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IG51bXB5IGFzIG5wCmZyb20gc2NpcHkuc3BhcnNlIGltcG9ydCBjb29fYXJyYXkKZnJvbSBzY2lweS5zcGFyc2UubGluYWxnIGltcG9ydCBzcHNvbHZlCgojIG1hbGhhCm4gPSAxMQpoID0gMS8obi0xKQoKeHggPSBucC5saW5zcGFjZSgwLCAxLCBuKQp5eSA9IG5wLmxpbnNwYWNlKDAsIDEsIG4pCgojIGZvbnRlCmRlZiBmKHgseSk6CiAgICByZXR1cm4gMiAqIG5wLnBpKioyICogbnAuc2luKG5wLnBpKngpICogbnAuc2luKG5wLnBpKnkpCgojIHNpc3RlbWEgZGlzY3JldG8KZGF0YSA9IFtdCnJvdyA9IFtdCmNvbCA9IFtdCmRlZiBhZGQoaSxqLHYpOgogICAgZGF0YS5hcHBlbmQodikKICAgIHJvdy5hcHBlbmQoaSkKICAgIGNvbC5hcHBlbmQoaikKCiMjIHZldG9yIGIKYiA9IG5wLmVtcHR5KChuLTIpKioyKQoKIyMgbW9udGFnZW0KZm9yIGogaW4gbnAuYXJhbmdlKDIsbik6CiAgICBmb3IgaSBpbiBucC5hcmFuZ2UoMixuKToKCiAgICAgICAgIyBlbnVtZXJhw6fDo28gZG9zIG5vZG9zIGNvbXB1dGFjaW9uYWlzCiAgICAgICAgayA9IGktMiArIChqLTIpKihuLTIpCgogICAgICAgICMgdmV0b3IgYgogICAgICAgIGJba10gPSBoKioyICogZih4eFtpLTFdLCB5eVtqLTFdKQoKICAgICAgICAjIG1hdHJpeiBhYgogICAgICAgIGFkZChrLGssNC4pCgogICAgICAgIGlmIChqID09IDIpOgogICAgICAgICAgICBpZiAoaSA9PSAyKToKICAgICAgICAgICAgICAgIGFkZChrLGsrMSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrK24tMiwtMS4pCiAgICAgICAgICAgIGVsaWYgKGkgPD0gbi0yKToKICAgICAgICAgICAgICAgIGFkZChrLGstMSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrKzEsLTEuKQogICAgICAgICAgICAgICAgYWRkKGssaytuLTIsLTEuKQogICAgICAgICAgICBlbHNlOiAjIGkgPT0gbi0xCiAgICAgICAgICAgICAgICBhZGQoayxrLTEsLTEuKQogICAgICAgICAgICAgICAgYWRkKGssaytuLTIsLTEuKQogICAgICAgIGVsaWYgKGogPD0gbi0yKToKICAgICAgICAgICAgaWYgKGkgPT0gMik6CiAgICAgICAgICAgICAgICBhZGQoayxrLShuLTIpLC0xLikKICAgICAgICAgICAgICAgIGFkZChrLGsrMSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrK24tMiwtMS4pCiAgICAgICAgICAgIGVsaWYgKGkgPD0gbi0yKToKICAgICAgICAgICAgICAgIGFkZChrLGstMSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrLShuLTIpLC0xLikKICAgICAgICAgICAgICAgIGFkZChrLGsrMSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrK24tMiwtMS4pCiAgICAgICAgICAgIGVsc2U6ICMgaSA9PSBuLTEKICAgICAgICAgICAgICAgIGFkZChrLGstMSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrLShuLTIpLC0xLikKICAgICAgICAgICAgICAgIGFkZChrLGsrbi0yLC0xLikKICAgICAgICBlbHNlOiAjIGogPT0gbi0xCiAgICAgICAgICAgIGlmIChpID09IDIpOgogICAgICAgICAgICAgICAgYWRkKGssay0obi0yKSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrKzEsLTEuKQogICAgICAgICAgICBlbGlmIChpIDw9IG4tMik6CiAgICAgICAgICAgICAgICBhZGQoayxrLTEsLTEuKQogICAgICAgICAgICAgICAgYWRkKGssay0obi0yKSwtMS4pCiAgICAgICAgICAgICAgICBhZGQoayxrKzEsLTEuKQogICAgICAgICAgICBlbHNlOiAjIGkgPT0gbi0xCiAgICAgICAgICAgICAgICBhZGQoayxrLTEsLTEuKQogICAgICAgICAgICAgICAgYWRkKGssay0obi0yKSwtMS4pCgphY29vID0gY29vX2FycmF5KChkYXRhLCAocm93LCBjb2wpKSwgc2hhcGU9KChuLTIpKioyLChuLTIpKioyKSkKCiMgcmVzb2x2ZQp1ID0gc3Bzb2x2ZShhY29vLCBiKQ==" download="">⬇</a></div>
+<div id="lstnumberx105" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">numpy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">as</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span>
+</div>
+<div id="lstnumberx106" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sparse</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">coo_array</span>
+</div>
+<div id="lstnumberx107" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sparse</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linalg</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">spsolve</span>
+</div>
+<div id="lstnumberx108" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx109" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>malha</span></span>
+</div>
+<div id="lstnumberx110" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">11</span>
+</div>
+<div id="lstnumberx111" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1)</span>
+</div>
+<div id="lstnumberx112" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span>
+</div>
+<div id="lstnumberx113" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xx</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linspace</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx114" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">yy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linspace</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx115" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span>
+</div>
+<div id="lstnumberx116" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>fonte</span></span>
+</div>
+<div id="lstnumberx117" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx118" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx119" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span>
+</div>
+<div id="lstnumberx120" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>sistema<span class="ltx_text ltx_lst_space"> </span>discreto</span></span>
+</div>
+<div id="lstnumberx121" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[]</span>
+</div>
+<div id="lstnumberx122" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">row</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[]</span>
+</div>
+<div id="lstnumberx123" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">col</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[]</span>
+</div>
+<div id="lstnumberx124" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx125" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">append</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx126" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">22</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">row</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">append</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx127" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">23</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">col</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">append</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx128" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">24</span>
+</div>
+<div id="lstnumberx129" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">25</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">##<span class="ltx_text ltx_lst_space"> </span>vetor<span class="ltx_text ltx_lst_space"> </span>b</span></span>
+</div>
+<div id="lstnumberx130" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">26</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">empty</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2)**2)</span>
+</div>
+<div id="lstnumberx131" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">27</span>
+</div>
+<div id="lstnumberx132" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">28</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">##<span class="ltx_text ltx_lst_space"> </span>montagem</span></span>
+</div>
+<div id="lstnumberx133" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">29</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">arange</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx134" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">30</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">arange</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx135" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">31</span>
+</div>
+<div id="lstnumberx136" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">32</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>enumera<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>dos<span class="ltx_text ltx_lst_space"> </span>nodos<span class="ltx_text ltx_lst_space"> </span>computacionais</span></span>
+</div>
+<div id="lstnumberx137" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">33</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2)*(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2)</span>
+</div>
+<div id="lstnumberx138" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">34</span>
+</div>
+<div id="lstnumberx139" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">35</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>vetor<span class="ltx_text ltx_lst_space"> </span>b</span></span>
+</div>
+<div id="lstnumberx140" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">36</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xx</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1],</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">yy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1])</span>
+</div>
+<div id="lstnumberx141" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">37</span>
+</div>
+<div id="lstnumberx142" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">38</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>matriz<span class="ltx_text ltx_lst_space"> </span>ab</span></span>
+</div>
+<div id="lstnumberx143" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">39</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,4.)</span>
+</div>
+<div id="lstnumberx144" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">40</span>
+</div>
+<div id="lstnumberx145" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">41</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2):</span>
+</div>
+<div id="lstnumberx146" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">42</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2):</span>
+</div>
+<div id="lstnumberx147" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">43</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,-1.)</span>
+</div>
+<div id="lstnumberx148" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">44</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2,-1.)</span>
+</div>
+<div id="lstnumberx149" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">45</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">elif</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2):</span>
+</div>
+<div id="lstnumberx150" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">46</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,-1.)</span>
+</div>
+<div id="lstnumberx151" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">47</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,-1.)</span>
+</div>
+<div id="lstnumberx152" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">48</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2,-1.)</span>
+</div>
+<div id="lstnumberx153" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">49</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">else</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span>n-1</span></span>
+</div>
+<div id="lstnumberx154" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">50</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,-1.)</span>
+</div>
+<div id="lstnumberx155" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">51</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2,-1.)</span>
+</div>
+<div id="lstnumberx156" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">52</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">elif</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2):</span>
+</div>
+<div id="lstnumberx157" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">53</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2):</span>
+</div>
+<div id="lstnumberx158" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">54</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2),-1.)</span>
+</div>
+<div id="lstnumberx159" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">55</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,-1.)</span>
+</div>
+<div id="lstnumberx160" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">56</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2,-1.)</span>
+</div>
+<div id="lstnumberx161" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">57</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">elif</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2):</span>
+</div>
+<div id="lstnumberx162" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">58</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,-1.)</span>
+</div>
+<div id="lstnumberx163" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">59</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2),-1.)</span>
+</div>
+<div id="lstnumberx164" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">60</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,-1.)</span>
+</div>
+<div id="lstnumberx165" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">61</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2,-1.)</span>
+</div>
+<div id="lstnumberx166" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">62</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">else</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span>n-1</span></span>
+</div>
+<div id="lstnumberx167" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">63</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,-1.)</span>
+</div>
+<div id="lstnumberx168" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">64</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2),-1.)</span>
+</div>
+<div id="lstnumberx169" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">65</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2,-1.)</span>
+</div>
+<div id="lstnumberx170" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">66</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">else</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>j<span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span>n-1</span></span>
+</div>
+<div id="lstnumberx171" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">67</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2):</span>
+</div>
+<div id="lstnumberx172" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">68</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2),-1.)</span>
+</div>
+<div id="lstnumberx173" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">69</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,-1.)</span>
+</div>
+<div id="lstnumberx174" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">70</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">elif</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2):</span>
+</div>
+<div id="lstnumberx175" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">71</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,-1.)</span>
+</div>
+<div id="lstnumberx176" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">72</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2),-1.)</span>
+</div>
+<div id="lstnumberx177" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">73</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,-1.)</span>
+</div>
+<div id="lstnumberx178" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">74</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">else</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>i<span class="ltx_text ltx_lst_space"> </span>==<span class="ltx_text ltx_lst_space"> </span>n-1</span></span>
+</div>
+<div id="lstnumberx179" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">75</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,-1.)</span>
+</div>
+<div id="lstnumberx180" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">76</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">k</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2),-1.)</span>
+</div>
+<div id="lstnumberx181" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">77</span>
+</div>
+<div id="lstnumberx182" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">78</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">acoo</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">coo_array</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">row</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">col</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">shape</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=((</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2)**2,(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2)**2))</span>
+</div>
+<div id="lstnumberx183" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">79</span>
+</div>
+<div id="lstnumberx184" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">80</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>resolve</span></span>
+</div>
+<div id="lstnumberx185" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">81</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">spsolve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="SS1.SSSx2" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Formato CSR</h3>
+
+<div id="SS1.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">O <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">formato CSR</span> (do inglês, <span class="ltx_text ltx_font_italic">Compressed Sparse Row</span>) é uma variação do COO que busca diminuir a alocação de dados repetidos. Assim como o COO, o formato conta com três arranjos <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math>, <math id="SS1.SSSx2.p1.m2" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math>, <math id="SS1.SSSx2.p1.m3" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>:</p>
+<ul id="I4" class="ltx_itemize">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i1.p1.m1" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math> é o arranjo contendo os elementos não-nulos da matriz, ordenados por linhas (i.e., da esquerda para direita, de cima para baixo);</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i2.p1.m1" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> é o arranjo contendo o índice das colunas das entradas não-nulas da matriz (como no formato COO);</p>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i3.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> é um arranjo cujos elementos são a posição no arranjo <math id="I4.i3.p1.m2" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> em que cada linha da matriz começa a ser representada. O número de elementos de <math id="I4.i3.p1.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>-ésima linha da matriz dado por <math id="I4.i3.p1.m4" class="ltx_Math" alttext="p_{j+1}-p_{j}" display="inline"><mrow><msub><mi>p</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>p</mi><mi>j</mi></msub></mrow></math>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">O método <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csr_array.html" title="" class="ltx_ref ltx_href ltx_font_typewriter">scipy.sparse.csr_array</a> permite a alocação de matrizes no formato CSR.</p>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 1.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">No Exemplo <a href="#ex:coo" title="Exemplo 1.2.1. ‣ Formato COO ‣ 1.2.1 Esquemas de armazenamento ‣ 1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.1</span></a>, alocamos a matriz</p>
+<table id="Ch1.E69" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E69.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
+0.&amp;3.&amp;2.&amp;-1.\\
+0&amp;-1&amp;-2.&amp;0.\\
+0&amp;0&amp;0&amp;1.\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.69)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">no formato COO. Aqui, vamos converter a alocação para o formato CSR e, então, verificar seus atributos.</p>
+</div>
+<div id="Thmex3.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzY2lweS5zcGFyc2UgaW1wb3J0IGNzcl9hcnJheQpBY3NyID0gQWNvby50b2NzcigpCnByaW50KGYnZCA9IHtBY3NyLmRhdGF9JykKcHJpbnQoZidjID0ge0Fjc3IuaW5kaWNlc30nKQpwcmludChmJ3AgPSB7QWNzci5pbmRwdHJ9Jyk=" download="">⬇</a></div>
+<div id="lstnumberx186" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sparse</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">csr_array</span>
+</div>
+<div id="lstnumberx187" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acsr</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tocsr</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx188" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'d<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{Acsr.data}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx189" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'c<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{Acsr.indices}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx190" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'p<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{Acsr.indptr}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+<div id="Thmex3.p3" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+d = [ 2.  1.  3.  2. -1. -1. -2.  1.]
+c = [0 2 1 2 3 1 2 3]
+p = [0 2 5 7 8]
+</pre>
+</div>
+<div id="Thmex3.p4" class="ltx_para">
+<p class="ltx_p">Por exemplo, o elemento <span class="ltx_text ltx_font_typewriter">p[i=2] = 5</span> aponta para o <span class="ltx_text ltx_font_typewriter">c[k=5] = j = 1</span>, o que fornece <span class="ltx_text ltx_font_typewriter">A[i=2,j=1] = d[k] = -1.</span>. Verifique!</p>
+</div>
+</div>
+<div id="SS1.SSSx2.p2" class="ltx_para">
+<p class="ltx_p ltx_align_left"><span class="ltx_text" style="background-color:#FFFF00;">Vantagens do formato CSR</span></p>
+</div>
+<div id="SS1.SSSx2.p3" class="ltx_para">
+<ul id="I5" class="ltx_itemize">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p">operações aritméticas eficientes;</p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p">fatiamento por linhas eficiente;</p>
+</div>
+</li>
+<li id="I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i3.p1" class="ltx_para">
+<p class="ltx_p">multiplicação matriz vetor eficiente.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS1.SSSx2.p4" class="ltx_para">
+<p class="ltx_p ltx_align_left"><span class="ltx_text" style="background-color:#FFFF00;">Desvantagens do formato CSR</span></p>
+</div>
+<div id="SS1.SSSx2.p5" class="ltx_para">
+<ul id="I6" class="ltx_itemize">
+<li id="I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I6.i1.p1" class="ltx_para">
+<p class="ltx_p">fatiamento por colunas não eficiente;</p>
+</div>
+</li>
+<li id="I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I6.i2.p1" class="ltx_para">
+<p class="ltx_p">custo elevado de realocação com alteração da esparsidade da matriz.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS1.SSSx3" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Formato CSC</h3>
+
+<div id="SS1.SSSx3.p1" class="ltx_para">
+<p class="ltx_p">O formato CSC (do inglês, <span class="ltx_text ltx_font_italic">Compressed Sparse Column</span>) é uma variação análoga do CSR, mas para armazenamento por colunas. O formato conta com três arranjos <math id="SS1.SSSx3.p1.m1" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math>, <math id="SS1.SSSx3.p1.m2" class="ltx_Math" alttext="l" display="inline"><mi>l</mi></math>, <math id="SS1.SSSx3.p1.m3" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>:</p>
+<ul id="I7" class="ltx_itemize">
+<li id="I7.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I7.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I7.i1.p1.m1" class="ltx_Math" alttext="d" display="inline"><mi>d</mi></math> é o arranjo contendo os elementos não-nulos da matriz, ordenados por colunas (i.e., de cima para baixo, da esquerda para direita);</p>
+</div>
+</li>
+<li id="I7.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I7.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I7.i2.p1.m1" class="ltx_Math" alttext="l" display="inline"><mi>l</mi></math> é o arranjo contendo o índice das linhas das entradas não-nulas da matriz;</p>
+</div>
+</li>
+<li id="I7.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I7.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I7.i3.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> é um arranjo cujos elementos são a posição no arranjo <math id="I7.i3.p1.m2" class="ltx_Math" alttext="l" display="inline"><mi>l</mi></math> em que cada coluna da matriz começa a ser representada. O número de elementos de <math id="I7.i3.p1.m3" class="ltx_Math" alttext="j" display="inline"><mi>j</mi></math>-ésima coluna da matriz dado por <math id="I7.i3.p1.m4" class="ltx_Math" alttext="p_{j+1}-p_{j}" display="inline"><mrow><msub><mi>p</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>−</mo><msub><mi>p</mi><mi>j</mi></msub></mrow></math>.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">O método <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.csc_array.html" title="" class="ltx_ref ltx_href ltx_font_typewriter">scipy.sparse.csc_array</a> permite a alocação de matrizes no formato CSC.</p>
+</div>
+<div id="Thmex4" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 1.2.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">No Exemplo <a href="#ex:coo" title="Exemplo 1.2.1. ‣ Formato COO ‣ 1.2.1 Esquemas de armazenamento ‣ 1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.1</span></a>, alocamos a matriz</p>
+<table id="Ch1.E70" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E70.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
+0.&amp;3.&amp;2.&amp;-1.\\
+0&amp;-1&amp;-2.&amp;0.\\
+0&amp;0&amp;0&amp;1.\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.70)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">no formato COO. Aqui, vamos converter a alocação para o formato CSC e, então, verificar seus atributos.</p>
+</div>
+<div id="Thmex4.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICBmcm9tIHNjaXB5LnNwYXJzZSBpbXBvcnQgY3NjX2FycmF5CiAgQWNzYyA9IEFjb28udG9jc2MoKQogIGwgPSBBY3NjLmluZGljZXMKICBwID0gQWNzYy5pbmRwdHIKICBwcmludChmJ2QgPSB7QWNzYy5kYXRlfScpCiAgcHJpbnQoZidsID0ge0Fjc2MuaW5kaWNlc30nKQogIHByaW50KGYncCA9IHtBY3NjLmluZHB0cn0nKQ==" download="">⬇</a></div>
+<div id="lstnumberx191" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sparse</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">csc_array</span>
+</div>
+<div id="lstnumberx192" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acsc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tocsc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx193" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">l</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acsc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">indices</span>
+</div>
+<div id="lstnumberx194" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">p</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Acsc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">indptr</span>
+</div>
+<div id="lstnumberx195" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'d<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{Acsc.date}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx196" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'l<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{Acsc.indices}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx197" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'p<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{Acsc.indptr}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+<div id="Thmex4.p3" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+  d = [2.  3. -1.  1.  2. -2. -1.  1.]
+  l = [0 1 2 0 1 2 1 3]
+  p = [0 1 3 6 8]
+</pre>
+</div>
+<div id="Thmex4.p4" class="ltx_para">
+<p class="ltx_p">Assim sendo, o elemento <span class="ltx_text ltx_font_typewriter">p[j=2] = 3</span> aponta para o <span class="ltx_text ltx_font_typewriter">l[k=3] = 0</span>, o que informa que <span class="ltx_text ltx_font_typewriter">A[i=0,j=2]=d[k]=1.</span>. Verifique!</p>
+</div>
+</div>
+<div class="ltx_logical-block">
+<div id="SS1.SSSx3.p2" class="ltx_para">
+<p class="ltx_p ltx_align_left">Vantagens do formato CSC</p>
+</div>
+</div>
+<div id="SS1.SSSx3.p3" class="ltx_para">
+<ul id="I8" class="ltx_itemize">
+<li id="I8.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I8.i1.p1" class="ltx_para">
+<p class="ltx_p">fatiamento por colunas eficiente;</p>
+</div>
+</li>
+<li id="I8.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I8.i2.p1" class="ltx_para">
+<p class="ltx_p">operações aritméticas eficientes;</p>
+</div>
+</li>
+<li id="I8.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I8.i3.p1" class="ltx_para">
+<p class="ltx_p">multiplicação matriz vetor eficiente<span id="Ch1.footnote10" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">10</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">10</sup><span class="ltx_tag ltx_tag_note">10</span>CSR é mais eficiente em muitos casos.</span></span></span>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS1.SSSx3.p4" class="ltx_para">
+<p class="ltx_p ltx_align_left">Desvantagens do formato CSC</p>
+</div>
+<div id="SS1.SSSx3.p5" class="ltx_para">
+<ul id="I9" class="ltx_itemize">
+<li id="I9.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I9.i1.p1" class="ltx_para">
+<p class="ltx_p">fatiamento por linhas não eficiente;</p>
+</div>
+</li>
+<li id="I9.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I9.i2.p1" class="ltx_para">
+<p class="ltx_p">custo elevado de realocação com alteração da esparsidade da matriz.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="Thmobs2" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 1.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmobs2.p1" class="ltx_para">
+<p class="ltx_p">Além dos formatos COO, CSR e CSC, exitem ainda vários outros que podem empregados e que são mais eficientes em determinadas aplicações. Recomendamos a leitura de <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib9" title="Iterative methods for sparse linear systems" class="ltx_ref">9</a>, Seção 3.4]</cite> e da documentação do <a href="https://docs.scipy.org/doc/scipy/reference/sparse.html" title="" class="ltx_ref ltx_href">scipy.sparse</a>.</p>
+</div>
+</div>
+</section>
+<section id="SS1.SSSx4" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Exercícios</h3>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 1.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Considere o seguinte problema de valor de contorno</p>
+<table id="Ch5.S2.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E71"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E71.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}(x)+u^{\prime}(x)=f(x)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.71)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E72"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E72.m1" class="ltx_Math" alttext="\displaystyle u(0)=0," display="inline"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.72)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E73"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E73.m1" class="ltx_Math" alttext="\displaystyle u(1)=0." display="inline"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.73)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="x\in(0,1)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></math>. Assumindo a fonte <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="f(x)=\pi^{2}\operatorname{sen}(\pi x)+\pi\cos(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>π</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math>. Aplique o método de diferenças finitas para computar uma aproximação para a solução do problema. Use diferenças finitas centrais para as derivadas e uma malha uniforme. Use o formato COO para armazenar a matriz do problema discreto <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="A\boldsymbol{u}=\boldsymbol{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒖</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math>. Então, compute sua solução com o método <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.spsolve.html" title="" class="ltx_ref ltx_href ltx_font_typewriter">scipy.sparse.linalg.spsolve</a> para matrizes em formato</p>
+<ol id="I10" class="ltx_enumerate">
+<li id="I10.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I10.i1.p1" class="ltx_para">
+<p class="ltx_p">CSR</p>
+</div>
+</li>
+<li id="I10.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I10.i2.p1" class="ltx_para">
+<p class="ltx_p">CSC</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx7">Resposta</button></div><div class="collapse" id="Thmrespx7" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx7.p1" class="ltx_para">
+<p class="ltx_p">Dica: <math id="Thmrespx7.p1.m1" class="ltx_Math" alttext="u(x)=\sin(\pi x)" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 1.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Armazene a matriz</p>
+<table id="Ch1.E74" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E74.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2&amp;0&amp;-1&amp;0\\
+0&amp;3&amp;0&amp;-2\\
+0&amp;-1&amp;-2&amp;0\\
+1&amp;0&amp;0&amp;1\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.74)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">em cada um dos seguintes formatos</p>
+<ol id="I11" class="ltx_enumerate">
+<li id="I11.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I11.i1.p1" class="ltx_para">
+<p class="ltx_p">COO</p>
+</div>
+</li>
+<li id="I11.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I11.i2.p1" class="ltx_para">
+<p class="ltx_p">CSR</p>
+</div>
+</li>
+<li id="I11.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I11.i3.p1" class="ltx_para">
+<p class="ltx_p">CSC</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">e, então, adicione o valor <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="7" display="inline"><mn>7</mn></math> ao elemento da segunda linha e terceira coluna.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx8">Resposta</button></div><div class="collapse" id="Thmrespx8" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx8.p1" class="ltx_para">
+<p class="ltx_p">a)</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzY2lweS5zcGFyc2UgaW1wb3J0IGNvb19hcnJheQoKIyBtYXRyaXogb3JpZ2luYWwKZGF0YSA9IFsyLC0xLDMsLTIsLTEsLTIsMSwxXQpyb3cgPSBbMCwwLDEsMSwyLDIsMywzXQpjb2wgPSBbMCwyLDEsMywxLDIsMCwzXQpBY29vID0gY29vX2FycmF5KChkYXRhLCAocm93LCBjb2wpKSwgc2hhcGU9KDQsNCkpCgojIGFkZCBlbGVtbnRvIG7Do28tbnVsbwpkYXRhLmFwcGVuZCg3KQogICAgcm93LmFwcGVuZCgxKQpjb2wuYXBwZW5kKDIpCkFjb28gPSBjb29fYXJyYXkoKGRhdGEsIChyb3csIGNvbCkpLCBzaGFwZT0oNCw0KSkKcHJpbnQoIkFjb28gPSBcbiIsIEFjb28udG9hcnJheSgpKQ==" download="">⬇</a></div>
+<div id="lstnumberx198" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:80%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">sparse</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:80%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">coo_array</span>
+</div>
+<div id="lstnumberx199" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span>
+</div>
+<div id="lstnumberx200" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:80%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>matriz<span class="ltx_text ltx_lst_space"> </span>original</span></span>
+</div>
+<div id="lstnumberx201" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">data</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">[2,-1,3,-2,-1,-2,1,1]</span>
+</div>
+<div id="lstnumberx202" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">row</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">[0,0,1,1,2,2,3,3]</span>
+</div>
+<div id="lstnumberx203" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">col</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">[0,2,1,3,1,2,0,3]</span>
+</div>
+<div id="lstnumberx204" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">Acoo</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">coo_array</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">((</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">row</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">col</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">)),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">shape</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=(4,4))</span>
+</div>
+<div id="lstnumberx205" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span>
+</div>
+<div id="lstnumberx206" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:80%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>add<span class="ltx_text ltx_lst_space"> </span>elemnto<span class="ltx_text ltx_lst_space"> </span>n<span class="ltx_text ltx_lst_literate">ã</span>o-nulo</span></span>
+</div>
+<div id="lstnumberx207" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">append</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(7)</span>
+</div>
+<div id="lstnumberx208" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">row</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">append</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(1)</span>
+</div>
+<div id="lstnumberx209" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">col</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">append</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(2)</span>
+</div>
+<div id="lstnumberx210" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">Acoo</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">coo_array</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">((</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">data</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">row</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">col</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">)),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">shape</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=(4,4))</span>
+</div>
+<div id="lstnumberx211" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:80%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">"Acoo<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>\n"</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">Acoo</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">toarray</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">())</span>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 1.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Considere o seguinte sistema linear</p>
+<table id="Ch5.S2.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E75"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E75.m1" class="ltx_Math" alttext="\displaystyle 2x_{1}+x_{2}=1" display="inline"><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.75)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E76"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E76.m1" class="ltx_Math" alttext="\displaystyle 3x_{2}+2x_{3}-x_{4}=-1" display="inline"><mrow><mrow><mrow><mrow><mn>3</mn><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>3</mn></msub></mrow></mrow><mo>−</mo><msub><mi>x</mi><mn>4</mn></msub></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.76)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E77"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E77.m1" class="ltx_Math" alttext="\displaystyle-x_{2}-2x_{3}=1" display="inline"><mrow><mrow><mrow><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mi>x</mi><mn>3</mn></msub></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.77)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E78"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E78.m1" class="ltx_Math" alttext="\displaystyle x_{4}=-2" display="inline"><mrow><msub><mi>x</mi><mn>4</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>2</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.78)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Armazene sua matriz de coeficientes <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> em formato CSC e compute sua fatoração LU. Então, resolva o sistema usando a fatoração obtida.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx9">Resposta</button></div><div class="collapse" id="Thmrespx9" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx9.p1" class="ltx_para">
+<p class="ltx_p">Dica: verifique seu resultados com o método <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.splu.html" title="" class="ltx_ref ltx_href ltx_font_typewriter">scipy.sparse.linalg.splu</a>.</p>
+<table id="Ch5.S2.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.Ex5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex5.m1" class="ltx_Math" alttext="\displaystyle A=LU" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mi>U</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch1.Ex6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex6.m1" class="ltx_Math" alttext="\displaystyle L=\begin{bmatrix}1&amp;0&amp;0&amp;0\\
+0&amp;1&amp;0&amp;0\\
+0&amp;-\frac{1}{3}&amp;1&amp;0\\
+0&amp;0&amp;0&amp;1\end{bmatrix}" display="inline"><mrow><mi>L</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch1.Ex7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex7.m1" class="ltx_Math" alttext="\displaystyle U=\begin{bmatrix}2&amp;0&amp;1&amp;0\\
+0&amp;3&amp;2&amp;0\\
+0&amp;0&amp;-\frac{4}{3}&amp;0\\
+0&amp;0&amp;0&amp;1\end{bmatrix}" display="inline"><mrow><mi>U</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mfrac><mn>4</mn><mn>3</mn></mfrac></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch1.Ex8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.Ex8.m1" class="ltx_Math" alttext="\displaystyle x=(1,-1,0,-2)" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1,0</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 1.2.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Considere a seguinte equação diferencial parcial de difusão-advecção com condições de contorno de Dirichlet homogêneas</p>
+<table id="Ch1.E79" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E79.m1" class="ltx_Math" alttext="-\Delta u+\boldsymbol{a}\cdot\nabla u=8(x-x^{2})(y-y^{2}),\leavevmode\nobreak%
+\ (x,y)\in(0,1)^{2}." display="block"><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>+</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>8</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.79)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Aplique o método de diferenças finitas para obter um problema discreto <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="A\boldsymbol{u}=\boldsymbol{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒖</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math> que aproxime a solução. Use os formatos de armazenamento de matrizes esparsas adequados e compute a solução aproximada. Estude cada um dos seguintes casos:</p>
+<ol id="I12" class="ltx_enumerate">
+<li id="I12.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I12.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I12.i1.p1.m1" class="ltx_Math" alttext="\boldsymbol{a}=(1,0)" display="inline"><mrow><mi>𝒂</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I12.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I12.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I12.i2.p1.m1" class="ltx_Math" alttext="\boldsymbol{a}=(0,-1)" display="inline"><mrow><mi>𝒂</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I12.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I12.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I12.i3.p1.m1" class="ltx_Math" alttext="\boldsymbol{a}=(1,-1)" display="inline"><mrow><mi>𝒂</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx10">Resposta</button></div><div class="collapse" id="Thmrespx10" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx10.p1" class="ltx_para">
+<p class="ltx_p">Dica: use fórmulas de diferenças finitas progressiva ou regressiva para aproximar <math id="Thmrespx10.p1.m1" class="ltx_Math" alttext="\nabla u=(u_{x},u_{y})" display="inline"><mrow><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>x</mi></msub><mo>,</mo><msub><mi>u</mi><mi>y</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math> de acordo com o vetor <math id="Thmrespx10.p1.m2" class="ltx_Math" alttext="\boldsymbol{a}" display="inline"><mi>𝒂</mi></math>.</p>
+</div>
+</div>
+</section>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_sislin_sec_matrizes_bandas.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Matrizes bandas</span></a><a href="bib.html" title="In Matemática Numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_sislin_sec_metiterbas.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Métodos iterativos básicos</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:08:42 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

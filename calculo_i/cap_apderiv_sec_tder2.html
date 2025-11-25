@@ -1,0 +1,1079 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I</title>
+<!--Generated on Tue Nov 25 11:10:09 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_apderiv.html" title="Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="up up" href="./" title="Cálculo I">
+<link rel="start" href="./" title="Cálculo I">
+<link rel="prev" href="cap_apderiv_sec_tder1.html" title="4.4 Teste da primeira derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="next" href="cap_apderiv_sec_taxasrel.html" title="4.6 Taxas relacionadas ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_lhospital.html" title="4.1 Regra de L’Hôpital ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_extfun.html" title="4.2 Extremos de funções ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_valormedio.html" title="4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_tder1.html" title="4.4 Teste da primeira derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_taxasrel.html" title="4.6 Taxas relacionadas ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo I">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo I">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Cálculo I">
+<link rel="chapter" href="cap_lim.html" title="Capítulo 2 Limites ‣ Cálculo I">
+<link rel="chapter" href="cap_deriv.html" title="Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="chapter" href="cap_apderiv.html" title="Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="chapter" href="cap_int.html" title="Capítulo 5 Integração ‣ Cálculo I">
+<link rel="chapter" href="cap_apint.html" title="Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="appendix" href="appendix_lista_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo I">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo I">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_apderiv.html" title="In Cálculo I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Aplicações da derivada</span></a><a href="cap_apderiv_sec_tder1.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Teste da primeira derivada</span></a><a href="cap_apderiv_sec_taxasrel.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.6 </span>Taxas relacionadas</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.5 </span>Concavidade e o teste da segunda derivada</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">O gráfico de uma função diferenciável <math id="p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">côncavo para cima</span> em um intervalo aberto <math id="I1.i1.p1.m1" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>, se <math id="I1.i1.p1.m2" class="ltx_Math" alttext="f^{\prime}" display="inline"><msup><mi>f</mi><mo>′</mo></msup></math> é crescente em <math id="I1.i1.p1.m3" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>;</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">côncavo para baixo</span> em um intervalo aberto <math id="I1.i2.p1.m1" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>, se <math id="I1.i2.p1.m2" class="ltx_Math" alttext="f^{\prime}" display="inline"><msup><mi>f</mi><mo>′</mo></msup></math> é decrescente em <math id="I1.i2.p1.m3" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Assumindo que <math id="p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é duas vezes diferenciável, temos que a monotonicidade de <math id="p2.m2" class="ltx_Math" alttext="f^{\prime}" display="inline"><msup><mi>f</mi><mo>′</mo></msup></math> está relacionada ao sinal de <math id="p2.m3" class="ltx_Math" alttext="f^{\prime\prime}" display="inline"><msup><mi>f</mi><mo>′′</mo></msup></math> (a segunda derivada de <math id="p2.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>). Logo, o gráfico de <math id="p2.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">côncavo para cima</span> em um intervalo aberto <math id="I2.i1.p1.m1" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>, se <math id="I2.i1.p1.m2" class="ltx_Math" alttext="f^{\prime\prime}&gt;0" display="inline"><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>&gt;</mo><mn>0</mn></mrow></math> em <math id="I2.i1.p1.m3" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>;</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">côncavo para baixo</span> em um intervalo aberto <math id="I2.i2.p1.m1" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>, se <math id="I2.i2.p1.m2" class="ltx_Math" alttext="f^{\prime\prime}&lt;0" display="inline"><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>&lt;</mo><mn>0</mn></mrow></math> em <math id="I2.i2.p1.m3" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Estudemos os seguintes casos:</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">o gráfico de <math id="I3.i1.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> é uma parábola côncava para cima em toda parte (Figura <a href="#fig:concavidade_x2" title="Figura 4.16 ‣ item a ‣ Exemplo 4.5.1. ‣ 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.16</span></a>).</p>
+</div>
+<figure id="fig:concavidade_x2" class="ltx_figure"><img src="cap_apderiv/dados/fig_concavidade_x2/fig.png" id="Ch4.F16.g1" class="ltx_graphics ltx_centering ltx_img_square" width="185" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.16</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico de <math id="Ch4.F16.m2" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> e suas derivadas de ordem 1 e 2.</span></figcaption>
+</figure>
+<div id="I3.i1.p2" class="ltx_para">
+<p class="ltx_p">De fato, temos</p>
+<table id="Ch4.E132" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E132.m1" class="ltx_Math" alttext="f^{\prime}(x)=2x," display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.132)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">uma função crescente em toda parte. Também, temos</p>
+<table id="Ch4.E133" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E133.m1" class="ltx_Math" alttext="f^{\prime\prime}(x)=2&gt;0," display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.133)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">em toda parte.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">o gráfico de <math id="I3.i2.p1.m1" class="ltx_Math" alttext="g(x)=-x^{2}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math> é uma parábola côncava para baixo em toda parte. De fato, temos</p>
+</div>
+<div id="I3.i2.p2" class="ltx_para">
+<table id="Ch4.E134" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E134.m1" class="ltx_Math" alttext="g^{\prime}(x)=-2x," display="block"><mrow><mrow><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.134)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">uma função decrescente em toda parte. Também, temos</p>
+<table id="Ch4.E135" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E135.m1" class="ltx_Math" alttext="g^{\prime\prime}(x)=-2&lt;0," display="block"><mrow><mrow><mrow><msup><mi>g</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>&lt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.135)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">em toda parte. Faça os gráficos de <math id="I3.i2.p2.m1" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math>, <math id="I3.i2.p2.m2" class="ltx_Math" alttext="g^{\prime}" display="inline"><msup><mi>g</mi><mo>′</mo></msup></math> e <math id="I3.i2.p2.m3" class="ltx_Math" alttext="g^{\prime\prime}" display="inline"><msup><mi>g</mi><mo>′′</mo></msup></math> para melhor entender as relações entre a função e suas derivadas neste caso.</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p">o gráfico da função <math id="I3.i3.p1.m1" class="ltx_Math" alttext="h(x)=x^{3}" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math> é côncavo para baixo em <math id="I3.i3.p1.m2" class="ltx_Math" alttext="(-\infty,0)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math> e côncavo para cima em <math id="I3.i3.p1.m3" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Consultemos a Figura <a href="#fig:concavidade_x3" title="Figura 4.17 ‣ item c ‣ Exemplo 4.5.1. ‣ 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.17</span></a>.</p>
+</div>
+<figure id="fig:concavidade_x3" class="ltx_figure"><img src="cap_apderiv/dados/fig_concavidade_x3/fig.png" id="Ch4.F17.g1" class="ltx_graphics ltx_centering ltx_img_square" width="196" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.17</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico de <math id="Ch4.F17.m2" class="ltx_Math" alttext="h(x)=x^{3}" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math> e suas derivadas de ordem 1 e 2.</span></figcaption>
+</figure>
+<div id="I3.i3.p2" class="ltx_para">
+<p class="ltx_p">De fato, temos</p>
+<table id="Ch4.E136" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E136.m1" class="ltx_Math" alttext="h^{\prime}(x)=x^{2}," display="block"><mrow><mrow><mrow><msup><mi>h</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.136)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">que é uma função decrescente em <math id="I3.i3.p2.m1" class="ltx_Math" alttext="(-\infty,0]" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">]</mo></mrow></math> e crescente em <math id="I3.i3.p2.m2" class="ltx_Math" alttext="[0,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Também, temos</p>
+<table id="Ch4.E137" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E137.m1" class="ltx_Math" alttext="h^{\prime\prime}(x)=2x" display="block"><mrow><mrow><msup><mi>h</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.137)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">que assume valores negativos em <math id="I3.i3.p2.m3" class="ltx_Math" alttext="(-\infty,0)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math> e valores positivos em <math id="I3.i3.p2.m4" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Um ponto em que o gráfico de uma função <math id="p3.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> muda de concavidade é chamado de <span class="ltx_text ltx_font_bold">ponto de inflexão</span>. Em tais pontos temos</p>
+<table id="Ch4.E138" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E138.m1" class="ltx_Math" alttext="f^{\prime\prime}=0\quad\text{ou}\quad\nexists f^{\prime\prime}." display="block"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>=</mo><mrow><mn>0</mn><mspace width="1em"></mspace><mtext>ou</mtext><mspace width="1em"></mspace><mrow><mi mathvariant="normal">∄</mi><mo>⁢</mo><msup><mi>f</mi><mo>′′</mo></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.138)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Vejamos os seguintes casos:</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p">O gráfico da função <math id="I4.i1.p1.m1" class="ltx_Math" alttext="f(x)=x^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math> tem <math id="I4.i1.p1.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> como único ponto de inflexão (consultemos a Figura <a href="#fig:concavidade_x3" title="Figura 4.17 ‣ item c ‣ Exemplo 4.5.1. ‣ 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.17</span></a>). De fato, temos</p>
+</div>
+<div id="I4.i1.p2" class="ltx_para">
+<table id="Ch4.E139" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E139.m1" class="ltx_Math" alttext="f^{\prime}(x)=3x^{2}" display="block"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.139)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">que é diferenciável em toda parte com</p>
+<table id="Ch4.E140" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E140.m1" class="ltx_Math" alttext="f^{\prime\prime}(x)=6x." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.140)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Logo, os pontos de inflexão ocorrem quando</p>
+<table id="A2.S0.EGx233" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E141"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E141.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.141)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E142"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E142.m1" class="ltx_Math" alttext="\displaystyle 6x=0" display="inline"><mrow><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.142)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E143"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E143.m1" class="ltx_Math" alttext="\displaystyle x=0." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.143)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p">O gráfico da função <math id="I4.i2.p1.m1" class="ltx_Math" alttext="g(x)=\sqrt[3]{x}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></math> tem <math id="I4.i2.p1.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> como único ponto de inflexão (consultemos a Figura <a href="#fig:concavidade_sqrt3x" title="Figura 4.18 ‣ item b ‣ Exemplo 4.5.2. ‣ 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.18</span></a>).</p>
+</div>
+<figure id="fig:concavidade_sqrt3x" class="ltx_figure"><img src="cap_apderiv/dados/fig_concavidade_sqrt3x/fig.png" id="Ch4.F18.g1" class="ltx_graphics ltx_centering ltx_img_square" width="183" height="181" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.18</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico de <math id="Ch4.F18.m2" class="ltx_Math" alttext="g(x)=\sqrt[3]{x}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></math> e sua segunda derivada.</span></figcaption>
+</figure>
+<div id="I4.i2.p2" class="ltx_para">
+<p class="ltx_p">De fato, temos</p>
+<table id="Ch4.E144" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E144.m1" class="ltx_Math" alttext="g^{\prime}(x)=\frac{1}{3}x^{-\frac{2}{3}}," display="block"><mrow><mrow><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mn>3</mn></mfrac><mo>⁢</mo><msup><mi>x</mi><mrow><mo>−</mo><mfrac><mn>2</mn><mn>3</mn></mfrac></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.144)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para <math id="I4.i2.p2.m1" class="ltx_Math" alttext="x\neq 0" display="inline"><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow></math>. Segue que</p>
+<table id="Ch4.E145" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E145.m1" class="ltx_Math" alttext="g^{\prime\prime}(x)=-\frac{2}{9}x^{-\frac{5}{3}}," display="block"><mrow><mrow><mrow><msup><mi>g</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mfrac><mn>2</mn><mn>9</mn></mfrac><mo>⁢</mo><msup><mi>x</mi><mrow><mo>−</mo><mfrac><mn>5</mn><mn>3</mn></mfrac></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.145)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para <math id="I4.i2.p2.m2" class="ltx_Math" alttext="x\neq 0" display="inline"><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow></math>, donde <math id="I4.i2.p2.m3" class="ltx_Math" alttext="g^{\prime\prime}&gt;0" display="inline"><mrow><msup><mi>g</mi><mo>′′</mo></msup><mo>&gt;</mo><mn>0</mn></mrow></math> em <math id="I4.i2.p2.m4" class="ltx_Math" alttext="(-\infty,0)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math>e <math id="I4.i2.p2.m5" class="ltx_Math" alttext="g^{\prime\prime}&lt;0" display="inline"><mrow><msup><mi>g</mi><mo>′′</mo></msup><mo>&lt;</mo><mn>0</mn></mrow></math> em <math id="I4.i2.p2.m6" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Isto é, o gráfico de <math id="I4.i2.p2.m7" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> muda de concavidade em <math id="I4.i2.p2.m8" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math>, <math id="I4.i2.p2.m9" class="ltx_Math" alttext="\nexists g^{\prime\prime}(0)" display="inline"><mrow><mi mathvariant="normal">∄</mi><mo>⁢</mo><msup><mi>g</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></math>, sendo <math id="I4.i2.p2.m10" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> côncava para cima em <math id="I4.i2.p2.m11" class="ltx_Math" alttext="(-\infty,0)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math> e côncava para baixo em <math id="I4.i2.p2.m12" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.5.1 </span>Teste da segunda derivada</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="SS1.p1.m1" class="ltx_Math" alttext="x=x_{0}" display="inline"><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></math> um ponto crítico de uma dada função <math id="SS1.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> duas vezes diferenciável e <math id="SS1.p1.m3" class="ltx_Math" alttext="f^{\prime\prime}" display="inline"><msup><mi>f</mi><mo>′′</mo></msup></math> contínua em um intervalo aberto contendo <math id="SS1.p1.m4" class="ltx_Math" alttext="x=x_{0}" display="inline"><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></math>. Temos</p>
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p">se <math id="I5.i1.p1.m1" class="ltx_Math" alttext="f^{\prime}(x_{0})=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="I5.i1.p1.m2" class="ltx_Math" alttext="f^{\prime\prime}(x_{0})&gt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>, então <math id="I5.i1.p1.m3" class="ltx_Math" alttext="x=x_{0}" display="inline"><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></math> é um ponto de mínimo local de <math id="I5.i1.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> (Figura <a href="#fig:t2der" title="Figura 4.19 ‣ 4.5.1 Teste da segunda derivada ‣ 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.19</span></a> a));</p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p">se <math id="I5.i2.p1.m1" class="ltx_Math" alttext="f^{\prime}(x_{0})=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="I5.i2.p1.m2" class="ltx_Math" alttext="f^{\prime\prime}(x_{0})&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math>, então <math id="I5.i2.p1.m3" class="ltx_Math" alttext="x=x_{0}" display="inline"><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></math> é um ponto de máximo local de <math id="I5.i2.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> (Figura <a href="#fig:t2der" title="Figura 4.19 ‣ 4.5.1 Teste da segunda derivada ‣ 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.19</span></a> b)).</p>
+</div>
+</li>
+</ol>
+</div>
+<figure id="fig:t2der" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2"><img src="cap_apderiv/dados/fig_t2der_min/fig.png" id="Ch4.F19.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="178" height="189" alt="Refer to caption"></div>
+<div class="ltx_flex_cell ltx_flex_size_2"><img src="cap_apderiv/dados/fig_t2der_max/fig.png" id="Ch4.F19.g2" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="178" height="192" alt="Refer to caption"></div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.19</span>: </span><span class="ltx_text" style="font-size:90%;">Teste da segunda derivada: a) ponto de mínimo local; b) ponto de máximo local.</span></figcaption>
+</figure>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">A função <math id="Thmex3.p1.m1" class="ltx_Math" alttext="f(x)=2x^{3}-9x^{2}+12x-2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>9</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>12</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>−</mo><mn>2</mn></mrow></mrow></math> tem pontos críticos</p>
+<table id="A2.S0.EGx234" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E146"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E146.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=6x^{2}-18x+12=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>6</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>18</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>12</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.146)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E147"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E147.m1" class="ltx_Math" alttext="\displaystyle x^{2}-3x+2=0" display="inline"><mrow><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>2</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.147)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E148"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E148.m1" class="ltx_Math" alttext="\displaystyle x=\frac{3\pm\sqrt{1}}{2}" display="inline"><mrow><mi>x</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>3</mn><mo>±</mo><msqrt><mn>1</mn></msqrt></mrow><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.148)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E149"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E149.m1" class="ltx_Math" alttext="\displaystyle x_{1}=1\text{ ou }x_{2}=2." display="inline"><mrow><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mrow><mn>1</mn><mo>⁢</mo><mtext> ou </mtext><mo>⁢</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>=</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.149)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A segunda derivada de <math id="Thmex3.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é</p>
+<table id="Ch4.E150" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E150.m1" class="ltx_Math" alttext="f^{\prime\prime}(x)=12x-18." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>12</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>18</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.150)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Logo, como <math id="Thmex3.p1.m3" class="ltx_Math" alttext="f^{\prime\prime}(x_{1})=f^{\prime\prime}(1)=-6&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>6</mn></mrow><mo>&lt;</mo><mn>0</mn></mrow></math>, temos que <math id="Thmex3.p1.m4" class="ltx_Math" alttext="x_{1}=1" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></math> é ponto de máximo local de <math id="Thmex3.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. E, como <math id="Thmex3.p1.m6" class="ltx_Math" alttext="f^{\prime\prime}(x_{2})=f^{\prime\prime}(2)=6&gt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>6</mn><mo>&gt;</mo><mn>0</mn></mrow></math>, temos que <math id="Thmex3.p1.m7" class="ltx_Math" alttext="x_{2}=2" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow></math> é ponto de mínimo local de <math id="Thmex3.p1.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Verifiquemos no gráfico de <math id="Thmex3.p1.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> (Figura <a href="#fig:teste2der_ex" title="Figura 4.20 ‣ Exemplo 4.5.3. ‣ 4.5.1 Teste da segunda derivada ‣ 4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.20</span></a>).</p>
+</div>
+<figure id="fig:teste2der_ex" class="ltx_figure"><img src="cap_apderiv/dados/fig_teste2der_ex/fig.png" id="Ch4.F20.g1" class="ltx_graphics ltx_centering ltx_img_square" width="203" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.20</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico de <math id="Ch4.F20.m2" class="ltx_Math" alttext="f(x)=2x^{3}-9x^{2}+12x-2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>9</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>12</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>−</mo><mn>2</mn></mrow></mrow></math>.</span></figcaption>
+</figure>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 4.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="f^{\prime}(x_{0})=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmobs1.p1.m2" class="ltx_Math" alttext="f^{\prime\prime}(x_{0})=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, então <math id="Thmobs1.p1.m3" class="ltx_Math" alttext="x=x_{0}" display="inline"><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></math> pode ser ponto extremo local de <math id="Thmobs1.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> ou não. Ou seja, o teste é inconclusivo.</p>
+</div>
+</div>
+<div id="Thmex4" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">Vejamos os seguintes casos:</p>
+<ol id="I6" class="ltx_enumerate">
+<li id="I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I6.i1.p1" class="ltx_para">
+<p class="ltx_p">A função <math id="I6.i1.p1.m1" class="ltx_Math" alttext="f(x)=x^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math> tem ponto crítico</p>
+</div>
+<div id="I6.i1.p2" class="ltx_para">
+<table id="A2.S0.EGx235" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E151"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E151.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.151)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E152"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E152.m1" class="ltx_Math" alttext="\displaystyle 3x^{2}=0" display="inline"><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.152)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E153"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E153.m1" class="ltx_Math" alttext="\displaystyle x=0." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.153)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Neste ponto, temos</p>
+<table id="A2.S0.EGx236" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E154"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E154.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(x)=6x" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.154)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E155"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E155.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(0)=0." display="inline"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.155)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Neste caso, <math id="I6.i1.p2.m1" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> não é ponto de extremo local e temos <math id="I6.i1.p2.m2" class="ltx_Math" alttext="f^{\prime}(0)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="I6.i1.p2.m3" class="ltx_Math" alttext="f^{\prime\prime}(0)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. Faça o gráfico de <math id="I6.i1.p2.m4" class="ltx_Math" alttext="f(x)=x^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math> e verifique!</p>
+</div>
+</li>
+<li id="I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I6.i2.p1" class="ltx_para">
+<p class="ltx_p">A função <math id="I6.i2.p1.m1" class="ltx_Math" alttext="f(x)=x^{4}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></math> tem um ponto crítico</p>
+</div>
+<div id="I6.i2.p2" class="ltx_para">
+<table id="A2.S0.EGx237" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E156"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E156.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.156)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E157"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E157.m1" class="ltx_Math" alttext="\displaystyle 4x^{3}=0" display="inline"><mrow><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.157)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E158"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E158.m1" class="ltx_Math" alttext="\displaystyle x=0." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.158)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Neste ponto, temos</p>
+<table id="A2.S0.EGx238" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E159"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E159.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(x)=12x^{2}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>12</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.159)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E160"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E160.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(0)=0." display="inline"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.160)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Neste caso, <math id="I6.i2.p2.m1" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> é ponto de mínimo local e temos <math id="I6.i2.p2.m2" class="ltx_Math" alttext="f^{\prime}(0)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="I6.i2.p2.m3" class="ltx_Math" alttext="f^{\prime\prime}(0)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. Faça o gráfico de <math id="I6.i2.p2.m4" class="ltx_Math" alttext="f(x)=x^{4}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></math> e verifique!</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.5.2 </span>Exercícios resolvidos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 4.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Encontre o valor máximo global de <math id="Thmexeresol1.p1.m1" class="ltx_Math" alttext="f(x)=(x-1)e^{-x}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx56" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx56.p1" class="ltx_para">
+<p class="ltx_p">Como <math id="Thmresolx56.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é diferenciável em toda parte, temos que seu valor máximo (se existir) ocorre em ponto crítico tal que</p>
+<table id="A2.S0.EGx239" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E161"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E161.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.161)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E162"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E162.m1" class="ltx_Math" alttext="\displaystyle(2-x)e^{-x}=0" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.162)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E163"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E163.m1" class="ltx_Math" alttext="\displaystyle 2-x=0" display="inline"><mrow><mrow><mn>2</mn><mo>−</mo><mi>x</mi></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.163)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E164"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E164.m1" class="ltx_Math" alttext="\displaystyle x=2." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.164)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Agora, usando o teste da segunda derivada, temos</p>
+<table id="A2.S0.EGx240" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E165"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E165.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(x)=(x-3)e^{-x}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.165)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E166"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E166.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(2)=-e^{-2}&lt;0." display="inline"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow><mo>&lt;</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.166)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Logo, <math id="Thmresolx56.p1.m2" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math> é ponto de máximo local. O favor da função neste ponto é <math id="Thmresolx56.p1.m3" class="ltx_Math" alttext="f(2)=e^{-2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow></math>. Ainda, temos</p>
+<table id="A2.S0.EGx241" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E167"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E167.m1" class="ltx_Math" alttext="\displaystyle\lim_{x\to-\infty}(x-1)e^{-x}=-\infty," display="inline"><mrow><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>x</mi><mo stretchy="false">→</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></mrow></munder><mrow><mrow><mo lspace="0em" stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.167)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E168"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E168.m1" class="ltx_Math" alttext="\displaystyle\lim_{x\to\infty}(x-1)e^{-x}=0." display="inline"><mrow><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>x</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></munder><mrow><mrow><mo lspace="0em" stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.168)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Por tudo isso, concluímos que o valor máximo global de <math id="Thmresolx56.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é <math id="Thmresolx56.p1.m5" class="ltx_Math" alttext="f(2)=e^{-2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup></mrow></math>.</p>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST74" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 74: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgU3ltYm9sLCBsYW1iZGlmeSwgZXhwLCBkaWZmLCBzb2x2ZQp4ID0gU3ltYm9sKCd4JykKZiA9ICh4LTEpKmV4cCgteCkKZmwgPSBkaWZmKGYsIHgpCnhjID0gc29sdmUoZmwsIHgpCnByaW50KCJ4YyA9IiwgeGNbMF0p" download="">⬇</a></div>
+<div id="lstnumberx432" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">lambdify</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diff</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">solve</span>
+</div>
+<div id="lstnumberx433" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx434" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1)*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx435" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fl</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diff</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx436" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">solve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fl</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx437" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"xc<span class="ltx_text ltx_lst_space"> </span>="</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0])</span>
+</div>
+</div>
+</figure>
+<div id="Thmresolx56.p2" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,eGMgPSAy" download="">⬇</a></div>
+<div id="lstnumberx438" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZmxsID0gZGlmZihmbCwgeCkKcHJpbnQoImYnJyh4YykgPSIsIGZsbC5zdWJzKHgsIHhjWzBdKSk=" download="">⬇</a></div>
+<div id="lstnumberx439" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fll</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diff</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fl</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx440" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"f''(xc)<span class="ltx_text ltx_lst_space"> </span>="</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fll</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">subs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0]))</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,ZicnKHhjKSA9IC1leHAoLTIp" download="">⬇</a></div>
+<div id="lstnumberx441" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">''(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-2)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgbGltaXQsIG9vCnByaW50KCJsaW1feC0+b28gZih4KSA9IiwgbGltaXQoZiwgeCwgb28pKQpwcmludCgibGltX3gtPi1vbyBmKHgpID0iLCBsaW1pdChmLCB4LCAtb28pKQ==" download="">⬇</a></div>
+<div id="lstnumberx442" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">limit</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">oo</span>
+</div>
+<div id="lstnumberx443" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"lim_x-&gt;oo<span class="ltx_text ltx_lst_space"> </span>f(x)<span class="ltx_text ltx_lst_space"> </span>="</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">limit</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">oo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx444" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"lim_x-&gt;-oo<span class="ltx_text ltx_lst_space"> </span>f(x)<span class="ltx_text ltx_lst_space"> </span>="</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">limit</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">oo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,bGltX3gtPm9vIGYoeCkgPSAwCmxpbV94LT4tb28gZih4KSA9IC1vbw==" download="">⬇</a></div>
+<div id="lstnumberx445" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">lim_x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-&gt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">oo</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0</span>
+</div>
+<div id="lstnumberx446" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">lim_x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-&gt;-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">oo</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">oo</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexeresol2" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 4.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Determine e classifique os extremos da função</p>
+<table id="Ch4.E169" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E169.m1" class="ltx_Math" alttext="f(x)=x^{4}-4x^{3}+4x^{2}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.169)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">restrita ao intervalo de <math id="Thmexeresol2.p1.m1" class="ltx_Math" alttext="[-1,3]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,3</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx57" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx57.p1" class="ltx_para">
+<p class="ltx_p">Como <math id="Thmresolx57.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é diferenciável em <math id="Thmresolx57.p1.m2" class="ltx_Math" alttext="(-1,3)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,3</mn></mrow><mo stretchy="false">)</mo></mrow></math>, temos que seus extremos locais ocorrem nos seguintes pontos críticos</p>
+<table id="A2.S0.EGx242" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E170"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E170.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.170)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E171"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E171.m1" class="ltx_Math" alttext="\displaystyle 4x^{3}-12x^{2}+8x=0" display="inline"><mrow><mrow><mrow><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>12</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>8</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.171)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E172"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E172.m1" class="ltx_Math" alttext="\displaystyle 4x(x^{2}-3x+2)=0" display="inline"><mrow><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.172)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">logo os pontos críticos são <math id="Thmresolx57.p1.m3" class="ltx_Math" alttext="x_{1}=0" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math>, <math id="Thmresolx57.p1.m4" class="ltx_Math" alttext="x_{2}=1" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow></math> e <math id="Thmresolx57.p1.m5" class="ltx_Math" alttext="x_{3}=2" display="inline"><mrow><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>2</mn></mrow></math>. Calculando a segunda derivada de <math id="Thmresolx57.p1.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>, temos</p>
+<table id="Ch4.E173" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E173.m1" class="ltx_Math" alttext="f^{\prime\prime}(x)=12x^{2}-24x+8." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>12</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>24</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>8</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.173)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Do teste da segunda derivada, temos</p>
+<table id="Ch4.E174" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E174.m1" class="ltx_Math" alttext="f^{\prime\prime}(x_{1})=f^{\prime\prime}(0)=8&gt;0" display="block"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>8</mn><mo>&gt;</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.174)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">donde temos que <math id="Thmresolx57.p1.m7" class="ltx_Math" alttext="x_{1}=0" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math> é ponto de mínimo local. Similarmente, temos</p>
+<table id="A2.S0.EGx243" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E175"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E175.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(x_{2})=f^{\prime\prime}(1)=-4&lt;0," display="inline"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>4</mn></mrow><mo>&lt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.175)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E176"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E176.m1" class="ltx_Math" alttext="\displaystyle f^{\prime\prime}(x_{3})=f^{\prime\prime}(2)=8&gt;0," display="inline"><mrow><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>3</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>8</mn><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.176)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">done <math id="Thmresolx57.p1.m8" class="ltx_Math" alttext="x_{2}=1" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow></math> é ponto de máximo local e <math id="Thmresolx57.p1.m9" class="ltx_Math" alttext="x_{3}=2" display="inline"><mrow><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>2</mn></mrow></math> é ponto de mínimo local. Agora, vejamos os valores de <math id="Thmresolx57.p1.m10" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> em cada ponto de interesse.</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_tt"><math id="Thmresolx57.p1.m11" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math></th>
+<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Thmresolx57.p1.m12" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Thmresolx57.p1.m13" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Thmresolx57.p1.m14" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Thmresolx57.p1.m15" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Thmresolx57.p1.m16" class="ltx_Math" alttext="3" display="inline"><mn>3</mn></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r ltx_border_t"><math id="Thmresolx57.p1.m17" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></th>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><math id="Thmresolx57.p1.m18" class="ltx_Math" alttext="9" display="inline"><mn>9</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><math id="Thmresolx57.p1.m19" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><math id="Thmresolx57.p1.m20" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><math id="Thmresolx57.p1.m21" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t"><math id="Thmresolx57.p1.m22" class="ltx_Math" alttext="9" display="inline"><mn>9</mn></math></td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p">Então, podemos concluir que <math id="Thmresolx57.p1.m23" class="ltx_Math" alttext="x=-1" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmresolx57.p1.m24" class="ltx_Math" alttext="x=3" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>3</mn></mrow></math> são pontos de máximo global (o valor máximo global é <math id="Thmresolx57.p1.m25" class="ltx_Math" alttext="f(-1)=f(3)=9" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>9</mn></mrow></math>), <math id="Thmresolx57.p1.m26" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math> é ponto de máximo local, <math id="Thmresolx57.p1.m27" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmresolx57.p1.m28" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math> são pontos de mínimo global (o valor mínimo global é <math id="Thmresolx57.p1.m29" class="ltx_Math" alttext="f(0)=f(2)=0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>).</p>
+</div>
+</div>
+<div id="Thmexeresol3" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 4.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol3.p1" class="ltx_para">
+<p class="ltx_p">Uma cerca de <math id="Thmexeresol3.p1.m1" class="ltx_Math" alttext="300" display="inline"><mn>300</mn></math> m será usada para cercar as laterais e a parte traseira de um terreno retangular, deixando a frente aberta (conforme figura abaixo). Quais devem ser as dimensões do terreno para que a área seja máxima?</p>
+</div>
+<div id="Thmexeresol3.p2" class="ltx_para">
+<img src="cap_apderiv/dados/fig_exer_teste2der_rect_aberto/fig.png" id="Thmexeresol3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="168" height="89" alt="[Uncaptioned image]">
+</div>
+</div>
+<div id="Thmresolx58" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx58.p1" class="ltx_para">
+<p class="ltx_p">Conforme indicado na figura acima, consideremos um terreno retangular de comprimento <math id="Thmresolx58.p1.m1" class="ltx_Math" alttext="l" display="inline"><mi>l</mi></math> e largura <math id="Thmresolx58.p1.m2" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math>. A área do terreno é dada por</p>
+<table id="Ch4.E177" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E177.m1" class="ltx_Math" alttext="A=l\cdot w." display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mi>l</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>w</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.177)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como a cerca será usada para cercar as laterais e a parte traseira do terreno, temos a restrição</p>
+<table id="Ch4.E178" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E178.m1" class="ltx_Math" alttext="2w+l=300." display="block"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>w</mi></mrow><mo>+</mo><mi>l</mi></mrow><mo>=</mo><mn>300</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.178)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Logo, podemos escrever <math id="Thmresolx58.p1.m3" class="ltx_Math" alttext="l" display="inline"><mi>l</mi></math> em função de <math id="Thmresolx58.p1.m4" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> como</p>
+<table id="Ch4.E179" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E179.m1" class="ltx_Math" alttext="l=300-2w." display="block"><mrow><mrow><mi>l</mi><mo>=</mo><mrow><mn>300</mn><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>w</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.179)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, a área do terreno pode ser escrita como função de <math id="Thmresolx58.p1.m5" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math></p>
+<table id="Ch4.E180" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E180.m1" class="ltx_Math" alttext="A(w)=w(300-2w)=300w-2w^{2}." display="block"><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>w</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>w</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>300</mn><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>w</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>300</mn><mo>⁢</mo><mi>w</mi></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>w</mi><mn>2</mn></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.180)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para encontrarmos o valor máximo da área, calculamos a derivada de <math id="Thmresolx58.p1.m6" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> em relação a <math id="Thmresolx58.p1.m7" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math></p>
+<table id="Ch4.E181" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E181.m1" class="ltx_Math" alttext="\frac{\mathrm{d}A}{\mathrm{d}w}=300-4w." display="block"><mrow><mrow><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>A</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>w</mi></mrow></mfrac><mo>=</mo><mrow><mn>300</mn><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>w</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.181)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">O ponto crítico ocorre quando</p>
+<table id="A2.S0.EGx244" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E182"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E182.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}A}{\mathrm{d}w}=0" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>A</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>w</mi></mrow></mfrac></mstyle><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.182)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E183"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E183.m1" class="ltx_Math" alttext="\displaystyle 300-4w=0" display="inline"><mrow><mrow><mn>300</mn><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>w</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.183)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E184"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E184.m1" class="ltx_Math" alttext="\displaystyle w=75." display="inline"><mrow><mrow><mi>w</mi><mo>=</mo><mn>75</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.184)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Usando o teste da segunda derivada, temos</p>
+<table id="Ch4.E185" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E185.m1" class="ltx_Math" alttext="\frac{\mathrm{d}^{2}A}{\mathrm{d}w^{2}}=-4&lt;0," display="block"><mrow><mrow><mfrac><mrow><msup><mi mathvariant="normal">d</mi><mn>2</mn></msup><mo>⁢</mo><mi>A</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><msup><mi>w</mi><mn>2</mn></msup></mrow></mfrac><mo>=</mo><mrow><mo>−</mo><mn>4</mn></mrow><mo>&lt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.185)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">logo <math id="Thmresolx58.p1.m8" class="ltx_Math" alttext="w=75" display="inline"><mrow><mi>w</mi><mo>=</mo><mn>75</mn></mrow></math> é ponto de máximo local. Os casos extremos quando <math id="Thmresolx58.p1.m9" class="ltx_Math" alttext="l=300" display="inline"><mrow><mi>l</mi><mo>=</mo><mn>300</mn></mrow></math> ou <math id="Thmresolx58.p1.m10" class="ltx_Math" alttext="w=150" display="inline"><mrow><mi>w</mi><mo>=</mo><mn>150</mn></mrow></math> podem ser descartados, pois implicam em <math id="Thmresolx58.p1.m11" class="ltx_Math" alttext="A=0" display="inline"><mrow><mi>A</mi><mo>=</mo><mn>0</mn></mrow></math>. Finalmente, calculamos o comprimento <math id="Thmresolx58.p1.m12" class="ltx_Math" alttext="l" display="inline"><mi>l</mi></math></p>
+<table id="A2.S0.EGx245" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E186"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E186.m1" class="ltx_Math" alttext="\displaystyle l=300-2(75)" display="inline"><mrow><mi>l</mi><mo>=</mo><mrow><mn>300</mn><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>75</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.186)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E187"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E187.m1" class="ltx_Math" alttext="\displaystyle l=150." display="inline"><mrow><mrow><mi>l</mi><mo>=</mo><mn>150</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.187)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, as dimensões do terreno para que a área seja máxima são: largura <math id="Thmresolx58.p1.m13" class="ltx_Math" alttext="w=75" display="inline"><mrow><mi>w</mi><mo>=</mo><mn>75</mn></mrow></math> m e comprimento <math id="Thmresolx58.p1.m14" class="ltx_Math" alttext="l=150" display="inline"><mrow><mi>l</mi><mo>=</mo><mn>150</mn></mrow></math> m.</p>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.5.3 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Use o teste da segunda derivada para encontrar e classificar o(s) ponto(s) extremo(s) de <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}-2x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx130">Resposta</button></div><div class="collapse" id="Thmrespx130" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx130.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx130.p1.m1" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math> ponto de mínimo global</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Use o teste da segunda derivada para encontrar e classificar o(s) ponto(s) extremo(s) de <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=\frac{x^{3}}{3}-x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mfrac></mstyle><mo>−</mo><mi>x</mi></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx131">Resposta</button></div><div class="collapse" id="Thmrespx131" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx131.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx131.p1.m1" class="ltx_Math" alttext="x_{1}=-1" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> ponto de máximo local; <math id="Thmrespx131.p1.m2" class="ltx_Math" alttext="x_{2}=1" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow></math> ponto de mínimo local;</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Use o teste da segunda derivada para encontrar e classificar o(s) ponto(s) extremo(s) de <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=x^{2/3}(x-1)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mrow><mn>2</mn><mo>/</mo><mn>3</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx132">Resposta</button></div><div class="collapse" id="Thmrespx132" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx132.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx132.p1.m1" class="ltx_Math" alttext="x_{1}=0" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math> ponto de máximo local; <math id="Thmrespx132.p1.m2" class="ltx_Math" alttext="x_{2}=2/5" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mrow><mn>2</mn><mo>/</mo><mn>5</mn></mrow></mrow></math> ponto de mínimo local;</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="f(x)=-x^{4}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></mrow></math>. Mostre que <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> é ponto de máximo local de <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e que <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="f^{\prime}(0)=f^{\prime\prime}(0)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx133">Resposta</button></div><div class="collapse" id="Thmrespx133" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx133.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx133.p1.m1" class="ltx_Math" alttext="f^{\prime}(x)=-4x^{3}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></mrow></mrow></math>, <math id="Thmrespx133.p1.m2" class="ltx_Math" alttext="f^{\prime}(0)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. Pelo teste da 1. derivada, temos que <math id="Thmrespx133.p1.m3" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> é ponto de máximo local. <math id="Thmrespx133.p1.m4" class="ltx_Math" alttext="f^{\prime\prime}(x)=-12x^{2}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>12</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></mrow></math>, <math id="Thmrespx133.p1.m5" class="ltx_Math" alttext="f^{\prime\prime}(0)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Quais são as dimensões (largura <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="w" display="inline"><mi>w</mi></math> e altura <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>) do retângulo de maior área que pode ser construindo tendo perímetro <math id="Thmexer5.p1.m3" class="ltx_Math" alttext="300" display="inline"><mn>300</mn></math>m?</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx134">Resposta</button></div><div class="collapse" id="Thmrespx134" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx134.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx134.p1.m1" class="ltx_Math" alttext="w=75\text{m}" display="inline"><mrow><mi>w</mi><mo>=</mo><mrow><mn>75</mn><mo>⁢</mo><mtext>m</mtext></mrow></mrow></math>, <math id="Thmrespx134.p1.m2" class="ltx_Math" alttext="h=75\text{m}" display="inline"><mrow><mi>h</mi><mo>=</mo><mrow><mn>75</mn><mo>⁢</mo><mtext>m</mtext></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer6" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">Uma caixa aberta é feita a partir de uma folha retangular de papelão de comprimento <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="l=45" display="inline"><mrow><mi>l</mi><mo>=</mo><mn>45</mn></mrow></math> cm e largura <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="w=30" display="inline"><mrow><mi>w</mi><mo>=</mo><mn>30</mn></mrow></math> cm, cortando-se quadrados iguais de lado <math id="Thmexer6.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> cm em cada canto e dobrando-se as abas formadas (consulte a figura abaixo). Encontre o valor de <math id="Thmexer6.p1.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> que resulte a caixa de maior volume possível.</p>
+</div>
+<div id="Thmexer6.p2" class="ltx_para">
+<img src="cap_apderiv/dados/fig_exer_teste1der_caixa/fig.png" id="Thmexer6.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="183" height="127" alt="[Uncaptioned image]">
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx135">Resposta</button></div><div class="collapse" id="Thmrespx135" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx135.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx135.p1.m1" class="ltx_Math" alttext="\displaystyle x=\frac{25-5\sqrt{7}}{2}\approx 5.89" display="inline"><mrow><mi>x</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>25</mn><mo>−</mo><mrow><mn>5</mn><mo>⁢</mo><msqrt><mn>7</mn></msqrt></mrow></mrow><mn>2</mn></mfrac></mstyle><mo>≈</mo><mn>5.89</mn></mrow></math> cm</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_apderiv_sec_tder1.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Teste da primeira derivada</span></a><a href="bib.html" title="In Cálculo I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_apderiv_sec_taxasrel.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.6 </span>Taxas relacionadas</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:10:09 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

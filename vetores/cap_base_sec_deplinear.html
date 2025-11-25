@@ -1,0 +1,729 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.2 Dependência linear ‣ Capítulo 2 Bases e coordenadas ‣ Vetores</title>
+<!--Generated on Tue Nov 25 11:09:47 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_base.html" title="Capítulo 2 Bases e coordenadas ‣ Vetores">
+<link rel="up up" href="./" title="Vetores">
+<link rel="start" href="./" title="Vetores">
+<link rel="prev" href="cap_base_sec_comblin.html" title="2.1 Combinação linear ‣ Capítulo 2 Bases e coordenadas ‣ Vetores">
+<link rel="next" href="cap_base_sec_base.html" title="2.3 Bases e coordenadas ‣ Capítulo 2 Bases e coordenadas ‣ Vetores">
+<link rel="section" href="cap_base_sec_comblin.html" title="2.1 Combinação linear ‣ Capítulo 2 Bases e coordenadas ‣ Vetores">
+<link rel="section" href="cap_base_sec_base.html" title="2.3 Bases e coordenadas ‣ Capítulo 2 Bases e coordenadas ‣ Vetores">
+<link rel="section" href="cap_base_sec_mudbas.html" title="2.4 Mudança de base ‣ Capítulo 2 Bases e coordenadas ‣ Vetores">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Vetores">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Vetores">
+<link rel="chapter" href="cap_vetor.html" title="Capítulo 1 Fundamentos ‣ Vetores">
+<link rel="chapter" href="cap_base.html" title="Capítulo 2 Bases e coordenadas ‣ Vetores">
+<link rel="chapter" href="cap_produtos.html" title="Capítulo 3 Produtos ‣ Vetores">
+<link rel="bibliography" href="lastpage.html" title="Referências ‣ Vetores">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Vetores</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_base.html" title="In Vetores" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Bases e coordenadas</span></a><a href="cap_base_sec_comblin.html" title="In Capítulo 2 Bases e coordenadas ‣ Vetores" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Combinação linear</span></a><a href="cap_base_sec_base.html" title="In Capítulo 2 Bases e coordenadas ‣ Vetores" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Bases e coordenadas</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.2 </span>Dependência linear</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Dois ou mais vetores dados são <span class="ltx_text ltx_font_bold">linearmente dependentes</span> (l.d.) quando um deles for combinação linear dos demais</span>. Mais precisamente, <math id="p1.m1" class="ltx_Math" alttext="\{\vec{u}_{1},\vec{u}_{2},\ldots,\vec{u}_{n}\}" display="inline"><mrow><mo stretchy="false">{</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub><mo>,</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mi>n</mi></msub><mo stretchy="false">}</mo></mrow></math> é um <span class="ltx_text ltx_font_bold">conjunto de vetores l.d.</span> quando</p>
+<table id="Ch2.E23" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E23.m1" class="ltx_Math" alttext="c_{1}\vec{u}_{1}+c_{2}\vec{u}_{2}+\cdots+c_{n}\vec{u}_{n}=\vec{0}," display="block"><mrow><mrow><mrow><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub></mrow><mo>+</mo><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>2</mn></msub></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mrow><msub><mi>c</mi><mi>n</mi></msub><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mi>n</mi></msub></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.23)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para escalares <math id="p1.m2" class="ltx_Math" alttext="c_{1},c_{2},\ldots,c_{n}" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>,</mo><msub><mi>c</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>c</mi><mi>n</mi></msub></mrow></math> <span class="ltx_text ltx_font_bold">não todos nulos</span>. <span class="ltx_text" style="background-color:#FFFF00;">Caso contrário,</span> dizemos <span class="ltx_text" style="background-color:#FFFF00;">tratar-se de um conjunto de vetores <span class="ltx_text ltx_font_bold">linearmente independente</span>s (l.i.)</span>.</p>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Estudamos cada caso:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Sejam <math id="I1.i1.p1.m1" class="ltx_Math" alttext="\vec{u}_{1}" display="inline"><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub></math> e <math id="I1.i1.p1.m2" class="ltx_Math" alttext="\vec{u}_{2}=-2\vec{u}_{1}" display="inline"><mrow><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>2</mn></msub><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub></mrow></mrow></mrow></math>. Temos que <math id="I1.i1.p1.m3" class="ltx_Math" alttext="\vec{u}_{1}" display="inline"><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub></math> e <math id="I1.i1.p1.m4" class="ltx_Math" alttext="\vec{u}_{2}" display="inline"><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>2</mn></msub></math> são linearmente dependentes, pois</p>
+<table id="Ch2.E24" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E24.m1" class="ltx_Math" alttext="2\vec{u}_{1}+1\vec{u_{2}}=\vec{0}." display="block"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>1</mn><mo>⁢</mo><mover accent="true"><msub><mi>u</mi><mn>2</mn></msub><mo stretchy="false">→</mo></mover></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.24)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Sejam <math id="I1.i2.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="I1.i2.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="I1.i2.p1.m3" class="ltx_Math" alttext="\vec{w}=\vec{u}-\vec{v}" display="inline"><mrow><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>−</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow></math>. Temos que <math id="I1.i2.p1.m4" class="ltx_Math" alttext="\{\vec{u},\vec{v},\vec{w}\}" display="inline"><mrow><mo stretchy="false">{</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>,</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>,</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover><mo stretchy="false">}</mo></mrow></math> é um conjunto l.d., pois</p>
+<table id="Ch2.E25" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E25.m1" class="ltx_Math" alttext="\vec{u}-\vec{v}-\vec{w}=\vec{0}." display="block"><mrow><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>−</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>−</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.25)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 2.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">(<span class="ltx_text" style="background-color:#FFFF00;">Vetor Nulo</span>.)
+Todo conjunto de vetores que contenha o vetor nulo é um conjunto l.d.. De fato, para quaisquer <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="\vec{u}_{1}" display="inline"><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub></math>, <math id="Thmobs1.p1.m2" class="ltx_Math" alttext="\vec{u}_{2}" display="inline"><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>2</mn></msub></math>, …, <math id="Thmobs1.p1.m3" class="ltx_Math" alttext="\vec{u}_{n}" display="inline"><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mi>n</mi></msub></math>, tem-se que</p>
+<table id="Ch2.E26" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E26.m1" class="ltx_Math" alttext="\vec{0}+0\vec{u}_{1}+0\vec{u}_{2}+\cdots+0\vec{u}_{n}=\vec{0}." display="block"><mrow><mrow><mrow><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover><mo>+</mo><mrow><mn>0</mn><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>1</mn></msub></mrow><mo>+</mo><mrow><mn>0</mn><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mn>2</mn></msub></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mrow><mn>0</mn><mo>⁢</mo><msub><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mi>n</mi></msub></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.26)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<section id="cap_base_sec_deplinear_ssec_2vec" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.1 </span>Dois vetores no espaço</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Dois vetores de mesma direção são linearmente dependentes (l.d.)</span>.</p>
+</div>
+<div id="cap_base_sec_deplinear:prop:dl2vec" class="ltx_theorem ltx_theorem_prop">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Proposição 2.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmprop1.p1" class="ltx_para">
+<p class="ltx_p">Dois vetores não nulos <math id="Thmprop1.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmprop1.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> são l.d. se, e somente se, qualquer uma das seguinte condições é satisfeita:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">um deles é combinação linear do outro, i.e.</p>
+<table id="Ch2.E27" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E27.m1" class="ltx_Math" alttext="\vec{u}=\alpha\vec{v}" display="block"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.27)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou</p>
+<table id="Ch2.E28" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E28.m1" class="ltx_Math" alttext="\vec{v}=\beta\vec{u}." display="block"><mrow><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.28)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">eles têm a mesma direção;</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p">eles são paralelos.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">De fato, a afirmação a) é a definição de dependência linear. A afirmação b) é consequência imediata da a), bem como a c) é equivalente a b). Por fim, se <math id="SS1.p2.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS1.p2.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> são vetores paralelos, então um é múltiplo por escalar do outro. Ou seja, c) implica a).
+∎</p>
+</div>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">Esta proposição também mostra que <span class="ltx_text" style="background-color:#FFFF00;">dois vetores não nulos são linearmente independentes (l.i.) se, e somente se, eles têm direções diferentes</span>.</p>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Considere dois vetores não nulos <math id="Thmex2.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmex2.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> de mesma direção. Então, no caso de terem sentidos opostos, segue que</p>
+<table id="Ch2.E29" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E29.m1" class="ltx_Math" alttext="\frac{1}{\|\vec{u}\|}\vec{u}+\frac{1}{\|\vec{v}\|}\vec{v}=\vec{0}." display="block"><mrow><mrow><mrow><mrow><mfrac><mn>1</mn><mrow><mo stretchy="false">‖</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo stretchy="false">‖</mo></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mfrac><mn>1</mn><mrow><mo stretchy="false">‖</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo stretchy="false">‖</mo></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.29)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">noutro caso, temos que</p>
+<table id="Ch2.E30" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E30.m1" class="ltx_Math" alttext="\frac{1}{\|\vec{u}\|}\vec{u}+\frac{-1}{\|\vec{v}\|}\vec{v}=\vec{0}." display="block"><mrow><mrow><mrow><mrow><mfrac><mn>1</mn><mrow><mo stretchy="false">‖</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo stretchy="false">‖</mo></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mfrac><mrow><mo>−</mo><mn>1</mn></mrow><mrow><mo stretchy="false">‖</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo stretchy="false">‖</mo></mrow></mfrac><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.30)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Consultemos a Figura <span class="ltx_ref ltx_ref_self"><span class="ltx_text ltx_ref_tag">2.2</span></span>.</p>
+</div>
+<figure id="Ch2.F4" class="ltx_figure"><img src="cap_base/dados/fig_dois_vetores_dependentes/fig.jpg" id="Ch2.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="274" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.4</span>: </span><span class="ltx_text" style="font-size:90%;">Dois vetores linearmente dependentes.</span></figcaption>
+</figure>
+</div>
+</section>
+<section id="cap_base_sec_deplinear_ssec_3vec" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.2 </span>Três vetores no espaço</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Três vetores quaisquer <math id="SS2.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p1.m3" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d., quando um deles pode ser escrito como combinação linear dos outros dois. Sem perda de generalidade, isto significa que existem constantes <math id="SS2.p1.m4" class="ltx_Math" alttext="\alpha" display="inline"><mi>α</mi></math> e <math id="SS2.p1.m5" class="ltx_Math" alttext="\beta" display="inline"><mi>β</mi></math> tais que</p>
+<table id="Ch2.E31" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E31.m1" class="ltx_Math" alttext="\vec{u}=\alpha\vec{v}+\beta\vec{w}." display="block"><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.31)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou, equivalentemente,</p>
+<table id="Ch2.E32" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E32.m1" class="ltx_Math" alttext="\vec{u}+(-\alpha)\vec{v}+(-\beta)\vec{w}=\vec{0}." display="block"><mrow><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>α</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>β</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.32)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">Afirmamos que <span class="ltx_text" style="background-color:#FFFF00;">se <math id="SS2.p2.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">u</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math>, <math id="SS2.p2.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">v</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m3" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">w</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> são l.d., então <math id="SS2.p2.m4" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">u</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math>, <math id="SS2.p2.m5" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">v</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m6" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">w</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> são coplanares</span>. Do fato de que dois vetores quaisquer são sempre coplanares, temos que <math id="SS2.p2.m7" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p2.m8" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m9" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são coplanares caso qualquer um deles seja o vetor nulo. Suponhamos, agora, que <math id="SS2.p2.m10" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p2.m11" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m12" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são não nulos e seja <math id="SS2.p2.m13" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math> o plano determinado pelos vetores <math id="SS2.p2.m14" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m15" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math>. Se <math id="SS2.p2.m16" class="ltx_Math" alttext="\alpha=0" display="inline"><mrow><mi>α</mi><mo>=</mo><mn>0</mn></mrow></math>, então <math id="SS2.p2.m17" class="ltx_Math" alttext="\vec{u}=\beta\vec{w}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></math> e teríamos uma representação de <math id="SS2.p2.m18" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> no plano <math id="SS2.p2.m19" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>. Analogamente, se <math id="SS2.p2.m20" class="ltx_Math" alttext="\beta=0" display="inline"><mrow><mi>β</mi><mo>=</mo><mn>0</mn></mrow></math>, então <math id="SS2.p2.m21" class="ltx_Math" alttext="\vec{u}=\alpha\vec{v}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow></math> e teríamos uma representação de <math id="SS2.p2.m22" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> no plano <math id="SS2.p2.m23" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>. Por fim, observamos que se <math id="SS2.p2.m24" class="ltx_Math" alttext="\alpha,\beta\neq 0" display="inline"><mrow><mrow><mi>α</mi><mo>,</mo><mi>β</mi></mrow><mo>≠</mo><mn>0</mn></mrow></math>, então <math id="SS2.p2.m25" class="ltx_Math" alttext="\alpha\vec{v}" display="inline"><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></math> tem a mesma direção de <math id="SS2.p2.m26" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m27" class="ltx_Math" alttext="\beta\vec{w}" display="inline"><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></math> tem a mesma direção de <math id="SS2.p2.m28" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math>. Isto é, <math id="SS2.p2.m29" class="ltx_Math" alttext="\alpha\vec{v}" display="inline"><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></math> e <math id="SS2.p2.m30" class="ltx_Math" alttext="\beta\vec{w}" display="inline"><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></math> admitem representações no plano <math id="SS2.p2.m31" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>. Sejam <math id="SS2.p2.m32" class="ltx_Math" alttext="\overrightarrow{AB}" display="inline"><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m33" class="ltx_Math" alttext="\overrightarrow{BC}" display="inline"><mover accent="true"><mrow><mi>B</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></math> representações dos vetores <math id="SS2.p2.m34" class="ltx_Math" alttext="\alpha\vec{v}" display="inline"><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></math> e <math id="SS2.p2.m35" class="ltx_Math" alttext="\beta\vec{w}" display="inline"><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></math>, respectivamente. Os pontos <math id="SS2.p2.m36" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, <math id="SS2.p2.m37" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> e <math id="SS2.p2.m38" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> pertencem a <math id="SS2.p2.m39" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>, assim como o segmento <math id="SS2.p2.m40" class="ltx_Math" alttext="AC" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow></math>. Como <math id="SS2.p2.m41" class="ltx_Math" alttext="\overrightarrow{AC}=\vec{u}=\alpha\vec{v}+\beta\vec{w}" display="inline"><mrow><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow></math>, concluímos que <math id="SS2.p2.m42" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p2.m43" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p2.m44" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são coplanares.</p>
+</div>
+<div id="SS2.p3" class="ltx_para">
+<p class="ltx_p">Reciprocamente, <span class="ltx_text" style="background-color:#FFFF00;">se <math id="SS2.p3.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">u</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math>, <math id="SS2.p3.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">v</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> e <math id="SS2.p3.m3" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">w</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> são coplanares, então <math id="SS2.p3.m4" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">u</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math>, <math id="SS2.p3.m5" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">v</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> e <math id="SS2.p3.m6" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi mathbackground="#FFFF00">w</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo></mover></math> são l.d.</span>. Consulte a Figura <a href="#cap_base_sec_deplinear:fig:vetores_coplanares_ld" title="Figura 2.5 ‣ 2.2.2 Três vetores no espaço ‣ 2.2 Dependência linear ‣ Capítulo 2 Bases e coordenadas ‣ Vetores" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a>.</p>
+</div>
+<figure id="cap_base_sec_deplinear:fig:vetores_coplanares_ld" class="ltx_figure"><img src="cap_base/dados/fig_vetores_coplanares_ld/fig.jpg" id="Ch2.F5.g1" class="ltx_graphics ltx_centering ltx_img_square" width="274" height="277" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.5</span>: </span><span class="ltx_text" style="font-size:90%;">Três vetores coplanares são l.d..</span></figcaption>
+</figure>
+<div id="SS2.p4" class="ltx_para">
+<p class="ltx_p">De fato, se um deles for nulo, por exemplo, <math id="SS2.p4.m1" class="ltx_Math" alttext="\vec{u}=\vec{0}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow></math>, então <math id="SS2.p4.m2" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> pode ser escrito como a seguinte combinação linear dos vetores <math id="SS2.p4.m3" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p4.m4" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math></p>
+<table id="Ch2.E33" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E33.m1" class="ltx_Math" alttext="\vec{u}=0\vec{v}+0\vec{w}." display="block"><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mn>0</mn><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mn>0</mn><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.33)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Neste caso, <math id="SS2.p4.m5" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p4.m6" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p4.m7" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d.. Também, se dois dos vetores forem paralelos, por exemplo, <math id="SS2.p4.m8" class="ltx_Math" alttext="\vec{u}\parallel\vec{v}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>∥</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></math>, então temos a combinação linear</p>
+<table id="Ch2.E34" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E34.m1" class="ltx_Math" alttext="\vec{u}=\alpha\vec{v}+0\vec{w}." display="block"><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mn>0</mn><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.34)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">E, então, <math id="SS2.p4.m9" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p4.m10" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p4.m11" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d.. Agora, suponhamos que <math id="SS2.p4.m12" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p4.m13" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p4.m14" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são não nulos e dois a dois concorrentes (i.e. todos com direções distintas). Sejam, então <math id="SS2.p4.m15" class="ltx_Math" alttext="\overrightarrow{PA}=\vec{u}" display="inline"><mrow><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>A</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow></math>, <math id="SS2.p4.m16" class="ltx_Math" alttext="\overrightarrow{PB}=\vec{v}" display="inline"><mrow><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></math> e <math id="SS2.p4.m17" class="ltx_Math" alttext="\overrightarrow{PC}=\vec{w}" display="inline"><mrow><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></math> representações sobre um plano <math id="SS2.p4.m18" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>. Sejam <math id="SS2.p4.m19" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> e <math id="SS2.p4.m20" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> as retas determinadas por <math id="SS2.p4.m21" class="ltx_Math" alttext="PA" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mi>A</mi></mrow></math> e <math id="SS2.p4.m22" class="ltx_Math" alttext="PC" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow></math>, respectivamente. Seja, então, <math id="SS2.p4.m23" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> o ponto de interseção da reta <math id="SS2.p4.m24" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> com a reta paralela a <math id="SS2.p4.m25" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> que passa pelo ponto <math id="SS2.p4.m26" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>. Seja, também, <math id="SS2.p4.m27" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> o ponto de interseção da reta <math id="SS2.p4.m28" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> com a reta paralela a <math id="SS2.p4.m29" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> que passa pelo ponto <math id="SS2.p4.m30" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>. Sejam, então, <math id="SS2.p4.m31" class="ltx_Math" alttext="\alpha" display="inline"><mi>α</mi></math> e <math id="SS2.p4.m32" class="ltx_Math" alttext="\beta" display="inline"><mi>β</mi></math> tais que <math id="SS2.p4.m33" class="ltx_Math" alttext="\alpha\vec{u}=\overrightarrow{PE}" display="inline"><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>=</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>E</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math> e <math id="SS2.p4.m34" class="ltx_Math" alttext="\beta\vec{w}=\overrightarrow{PD}" display="inline"><mrow><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow><mo>=</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>. Como <math id="SS2.p4.m35" class="ltx_Math" alttext="\vec{v}=\overrightarrow{PB}=\overrightarrow{PE}+\overrightarrow{PD}=\alpha\vec%
+{u}+\beta\vec{w}" display="inline"><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>E</mi></mrow><mo stretchy="false">→</mo></mover><mo>+</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover></mrow><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow></math>, temos que <math id="SS2.p4.m36" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> é combinação linear de <math id="SS2.p4.m37" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p4.m38" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math>, i.e. <math id="SS2.p4.m39" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS2.p4.m40" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS2.p4.m41" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d..</p>
+</div>
+</section>
+<section id="cap_base_sec_deplinear:subsec:4vec" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.3 </span>Quatro ou mais vetores no espaço</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">Quatro ou mais vetores são sempre l.d.</span><span id="Ch2.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>No espaço euclidiano tridimensional.</span></span></span>. De fato, sejam dados quatro vetores <math id="SS3.p1.m1" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS3.p1.m2" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS3.p1.m3" class="ltx_Math" alttext="\vec{c}" display="inline"><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS3.p1.m4" class="ltx_Math" alttext="\vec{d}" display="inline"><mover accent="true"><mi>d</mi><mo stretchy="false">→</mo></mover></math>. Se dois ou três destes forem l.d.entre si, então, por definição, os quatro são l.d.. Assim sendo, suponhamos que três dos vetores sejam l.i. e provaremos que, então, o outro vetor é combinação linear desses três.</p>
+</div>
+<div id="SS3.p2" class="ltx_para">
+<p class="ltx_p">Sem perda de generalidade, suponhamos que <math id="SS3.p2.m1" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS3.p2.m2" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math> e <math id="SS3.p2.m3" class="ltx_Math" alttext="\vec{c}" display="inline"><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover></math> são l.i.. Logo, eles não são coplanares. Seja, ainda, <math id="SS3.p2.m4" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math> o plano determinado pelos vetores <math id="SS3.p2.m5" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math>, <math id="SS3.p2.m6" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math> e as representações <math id="SS3.p2.m7" class="ltx_Math" alttext="\vec{a}=\overrightarrow{PA}" display="inline"><mrow><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>A</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>, <math id="SS3.p2.m8" class="ltx_Math" alttext="\vec{b}=\overrightarrow{PB}" display="inline"><mrow><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>, <math id="SS3.p2.m9" class="ltx_Math" alttext="\vec{c}=\overrightarrow{PC}" display="inline"><mrow><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math> e <math id="SS3.p2.m10" class="ltx_Math" alttext="\vec{d}=\overrightarrow{PD}" display="inline"><mrow><mover accent="true"><mi>d</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>.</p>
+</div>
+<figure id="cap_base_sec_deplinear:fig:quatro_vetores_ld" class="ltx_figure"><img src="cap_base/dados/fig_quatro_vetores_ld/fig.png" id="Ch2.F6.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="419" height="278" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.6</span>: </span><span class="ltx_text" style="font-size:90%;">Quatro vetores são l.d..</span></figcaption>
+</figure>
+<div id="SS3.p3" class="ltx_para">
+<p class="ltx_p">Tomamos a reta <math id="SS3.p3.m1" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> paralela a <math id="SS3.p3.m2" class="ltx_Math" alttext="\overrightarrow{PC}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></math> que passa pelo ponto <math id="SS3.p3.m3" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math>. Então, seja <math id="SS3.p3.m4" class="ltx_Math" alttext="E" display="inline"><mi>E</mi></math> o ponto de interseção de <math id="SS3.p3.m5" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> com o plano <math id="SS3.p3.m6" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>. Consultamos a Figura <a href="#cap_base_sec_deplinear:fig:quatro_vetores_ld" title="Figura 2.6 ‣ 2.2.3 Quatro ou mais vetores no espaço ‣ 2.2 Dependência linear ‣ Capítulo 2 Bases e coordenadas ‣ Vetores" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.6</span></a>. Observamos que o vetor <math id="SS3.p3.m7" class="ltx_Math" alttext="\overrightarrow{PE}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>E</mi></mrow><mo stretchy="false">→</mo></mover></math> é coplanar aos vetores <math id="SS3.p3.m8" class="ltx_Math" alttext="\overrightarrow{PA}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>A</mi></mrow><mo stretchy="false">→</mo></mover></math> e <math id="SS3.p3.m9" class="ltx_Math" alttext="\overrightarrow{PB}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></math> e, portanto, exitem números reais <math id="SS3.p3.m10" class="ltx_Math" alttext="\alpha" display="inline"><mi>α</mi></math> e <math id="SS3.p3.m11" class="ltx_Math" alttext="\beta" display="inline"><mi>β</mi></math> tal que</p>
+<table id="Ch2.E35" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E35.m1" class="ltx_Math" alttext="\overrightarrow{PE}=\alpha\overrightarrow{PA}+\beta\overrightarrow{PB}." display="block"><mrow><mrow><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>E</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>A</mi></mrow><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.35)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Além disso, como <math id="SS3.p3.m12" class="ltx_Math" alttext="\overrightarrow{ED}" display="inline"><mover accent="true"><mrow><mi>E</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover></math> tem a mesma direção e sentido de <math id="SS3.p3.m13" class="ltx_Math" alttext="\overrightarrow{PC}=\vec{c}" display="inline"><mrow><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover></mrow></math>, temos que</p>
+<table id="Ch2.E36" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E36.m1" class="ltx_Math" alttext="\overrightarrow{ED}=\gamma\overrightarrow{PC}" display="block"><mrow><mover accent="true"><mrow><mi>E</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mi>γ</mi><mo>⁢</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.36)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para algum número real <math id="SS3.p3.m14" class="ltx_Math" alttext="\gamma" display="inline"><mi>γ</mi></math>. Por fim, observamos que</p>
+<table id="Ch3.S6.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.Ex1.m1" class="ltx_Math" alttext="\displaystyle\overrightarrow{PD}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex1.m2" class="ltx_Math" alttext="\displaystyle=\overrightarrow{PE}+\overrightarrow{ED}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>E</mi></mrow><mo stretchy="false">→</mo></mover><mo>+</mo><mover accent="true"><mrow><mi>E</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex2.m1" class="ltx_Math" alttext="\displaystyle=\alpha\overrightarrow{PA}+\beta\overrightarrow{PB}+\gamma%
+\overrightarrow{PC}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>A</mi></mrow><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>γ</mi><mo>⁢</mo><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.Ex3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex3.m1" class="ltx_Math" alttext="\displaystyle=\alpha\vec{a}+\beta\vec{b}+\gamma\vec{c}." display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>γ</mi><mo>⁢</mo><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.4 </span>Exercícios resolvidos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 2.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="Thmexeresol1.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexeresol1.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> são l.i. e</p>
+<table id="Ch3.S6.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E37.m1" class="ltx_Math" alttext="\displaystyle\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E37.m2" class="ltx_Math" alttext="\displaystyle=2\vec{u}-3\vec{v}," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.37)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E38"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E38.m1" class="ltx_Math" alttext="\displaystyle\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E38.m2" class="ltx_Math" alttext="\displaystyle=\vec{u}+2\vec{v}," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.38)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">então <math id="Thmexeresol1.p1.m3" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexeresol1.p1.m4" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math> são l.d.?</p>
+</div>
+</div>
+<div id="Thmresolx9" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx9.p1" class="ltx_para">
+<p class="ltx_p">Os vetores <math id="Thmresolx9.p1.m1" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmresolx9.p1.m2" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math> são l.i. se, e somente se,</p>
+<table id="Ch2.E39" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E39.m1" class="ltx_Math" alttext="\alpha\vec{a}+\beta\vec{b}=\vec{0}\Rightarrow\alpha=\beta=0." display="block"><mrow><mrow><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover><mo stretchy="false">⇒</mo><mi>α</mi><mo>=</mo><mi>β</mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.39)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Observemos que</p>
+<table id="Ch3.S6.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E40.m1" class="ltx_Math" alttext="\displaystyle\vec{0}" display="inline"><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E40.m2" class="ltx_Math" alttext="\displaystyle=\alpha\vec{a}+\beta\vec{b}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.40)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E41.m1" class="ltx_Math" alttext="\displaystyle=\alpha(2\vec{u}-3\vec{v})+\beta(\vec{u}+2\vec{v})" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.41)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E42.m1" class="ltx_Math" alttext="\displaystyle=(2\alpha+\beta)\vec{u}+(-3\alpha+2\beta)\vec{v}" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>α</mi></mrow><mo>+</mo><mi>β</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>α</mi></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>β</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.42)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">implica</p>
+<table id="Ch3.S6.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E43.m1" class="ltx_Math" alttext="\displaystyle 2\alpha+\beta" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>α</mi></mrow><mo>+</mo><mi>β</mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E43.m2" class="ltx_Math" alttext="\displaystyle=0" display="inline"><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.43)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E44.m1" class="ltx_Math" alttext="\displaystyle-3\alpha+2\beta" display="inline"><mrow><mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>α</mi></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>β</mi></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E44.m2" class="ltx_Math" alttext="\displaystyle=0" display="inline"><mrow><mi></mi><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.44)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Resolvendo este sistema, vemos que <math id="Thmresolx9.p1.m3" class="ltx_Math" alttext="\alpha=\beta=0" display="inline"><mrow><mi>α</mi><mo>=</mo><mi>β</mi><mo>=</mo><mn>0</mn></mrow></math>. Logo, concluímos que <math id="Thmresolx9.p1.m4" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmresolx9.p1.m5" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math> são l.i..</p>
+</div>
+</div>
+<div id="Thmexeresol2" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 2.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Sejam <math id="Thmexeresol2.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="Thmexeresol2.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexeresol2.p1.m3" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> três vetores. Verifique a seguinte afirmação de que se <math id="Thmexeresol2.p1.m4" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexeresol2.p1.m5" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> são l.d., então <math id="Thmexeresol2.p1.m6" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="Thmexeresol2.p1.m7" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexeresol2.p1.m8" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d.. Justifique sua resposta.</p>
+</div>
+</div>
+<div id="Thmresolx10" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx10.p1" class="ltx_para">
+<p class="ltx_p">A afirmação é verdadeira. De fato, se <math id="Thmresolx10.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmresolx10.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> são l.d., então existe um escalar <math id="Thmresolx10.p1.m3" class="ltx_Math" alttext="\alpha" display="inline"><mi>α</mi></math> tal que</p>
+<table id="Ch2.E45" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E45.m1" class="ltx_Math" alttext="\vec{u}=\alpha\vec{v}." display="block"><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.45)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Segue que</p>
+<table id="Ch2.E46" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E46.m1" class="ltx_Math" alttext="\vec{u}=\alpha\vec{v}+0\vec{w}." display="block"><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mi>α</mi><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow><mo>+</mo><mrow><mn>0</mn><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.46)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Isto é, <math id="Thmresolx10.p1.m4" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> é combinação linear de <math id="Thmresolx10.p1.m5" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmresolx10.p1.m6" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math>. Então, por definição, <math id="Thmresolx10.p1.m7" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="Thmresolx10.p1.m8" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmresolx10.p1.m9" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d..</p>
+</div>
+</div>
+<div id="Thmexeresol3" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 2.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol3.p1" class="ltx_para">
+<p class="ltx_p">Sejam <math id="Thmexeresol3.p1.m1" class="ltx_Math" alttext="\vec{u}=\overrightarrow{AB}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math> e <math id="Thmexeresol3.p1.m2" class="ltx_Math" alttext="\vec{v}=\overrightarrow{AC}" display="inline"><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>. Mostre que <math id="Thmexeresol3.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, <math id="Thmexeresol3.p1.m4" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> e <math id="Thmexeresol3.p1.m5" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> são colineares se, e somente se, <math id="Thmexeresol3.p1.m6" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexeresol3.p1.m7" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> são l.d..</p>
+</div>
+</div>
+<div id="Thmresolx11" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx11.p1" class="ltx_para">
+<p class="ltx_p">Primeiramente, vamos verificar a implicação. Se <math id="Thmresolx11.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, <math id="Thmresolx11.p1.m2" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> e <math id="Thmresolx11.p1.m3" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> são colineares, então os segmentos <math id="Thmresolx11.p1.m4" class="ltx_Math" alttext="AB" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow></math> e <math id="Thmresolx11.p1.m5" class="ltx_Math" alttext="AC" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow></math> têm a mesma direção. Logo, são l.d. os vetores <math id="Thmresolx11.p1.m6" class="ltx_Math" alttext="\vec{u}=\overrightarrow{AB}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math> e <math id="Thmresolx11.p1.m7" class="ltx_Math" alttext="\vec{v}=\overrightarrow{AC}" display="inline"><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>.</p>
+</div>
+<div id="Thmresolx11.p2" class="ltx_para">
+<p class="ltx_p">Agora, verificamos a recíproca. Se <math id="Thmresolx11.p2.m1" class="ltx_Math" alttext="\vec{u}=\overrightarrow{AB}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math> e <math id="Thmresolx11.p2.m2" class="ltx_Math" alttext="\vec{v}=\overrightarrow{AC}" display="inline"><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math> são l.d., então os segmentos <math id="Thmresolx11.p2.m3" class="ltx_Math" alttext="AB" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow></math> e <math id="Thmresolx11.p2.m4" class="ltx_Math" alttext="AC" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow></math> têm a mesma direção. Como eles são concorrentes, segue que <math id="Thmresolx11.p2.m5" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, <math id="Thmresolx11.p2.m6" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math> e <math id="Thmresolx11.p2.m7" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> são colineares.</p>
+</div>
+</div>
+</section>
+<section id="SS5" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.5 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Sendo <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="\overrightarrow{AB}+2\overrightarrow{BC}=\vec{0}" display="inline"><mrow><mrow><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mrow><mi>B</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></mrow><mo>=</mo><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></mrow></math>, mostre que <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="\overrightarrow{PA}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>A</mi></mrow><mo stretchy="false">→</mo></mover></math>, <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="\overrightarrow{PB}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></math> e <math id="Thmexer1.p1.m4" class="ltx_Math" alttext="\overrightarrow{PC}" display="inline"><mover accent="true"><mrow><mi>P</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></math> são l.d. para qualquer ponto <math id="Thmexer1.p1.m5" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx37">Resposta</button></div><div class="collapse" id="Thmrespx37" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx37.p1" class="ltx_para">
+<p class="ltx_p">Dica: os vetores <math id="Thmrespx37.p1.m1" class="ltx_Math" alttext="\overrightarrow{AB}" display="inline"><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></math> e <math id="Thmrespx37.p1.m2" class="ltx_Math" alttext="\overrightarrow{BC}" display="inline"><mover accent="true"><mrow><mi>B</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></math> são l.d..</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Sejam dados três vetores quaisquer <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math>, <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexer2.p1.m3" class="ltx_Math" alttext="\vec{c}" display="inline"><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover></math>. Mostre que os vetores <math id="Thmexer2.p1.m4" class="ltx_Math" alttext="\vec{u}=2\vec{a}-\vec{b}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></mrow><mo>−</mo><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></mrow></mrow></math>, <math id="Thmexer2.p1.m5" class="ltx_Math" alttext="\vec{v}=-\vec{a}-2\vec{c}" display="inline"><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mo>−</mo><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow></math> e <math id="Thmexer2.p1.m6" class="ltx_Math" alttext="\vec{w}=\vec{b}+4\vec{c}" display="inline"><mrow><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mover accent="true"><mi>c</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow></math> são l.d..</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx38">Resposta</button></div><div class="collapse" id="Thmrespx38" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx38.p1" class="ltx_para">
+<p class="ltx_p">Dica: Escreva um dos vetores como combinação linear dos outros.</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Sejam <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\vec{u}=\overrightarrow{AB}" display="inline"><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>, <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="\vec{v}=\overrightarrow{AC}" display="inline"><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>C</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math> e <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="\vec{w}=\overrightarrow{AD}" display="inline"><mrow><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>D</mi></mrow><mo stretchy="false">→</mo></mover></mrow></math>. Mostre que <math id="Thmexer3.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, <math id="Thmexer3.p1.m5" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>, <math id="Thmexer3.p1.m6" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> e <math id="Thmexer3.p1.m7" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> são coplanares se, e somente se, <math id="Thmexer3.p1.m8" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="Thmexer3.p1.m9" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexer3.p1.m10" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d..</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx39">Resposta</button></div><div class="collapse" id="Thmrespx39" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx39.p1" class="ltx_para">
+<p class="ltx_p">Três vetores são l.d. se, e somente se, eles são coplanares.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> são l.i. e</p>
+<table id="Ch3.S6.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E47"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E47.m1" class="ltx_Math" alttext="\displaystyle\vec{a}=2\vec{u}-\vec{v}," display="inline"><mrow><mrow><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow><mo>−</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.47)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E48"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E48.m1" class="ltx_Math" alttext="\displaystyle\vec{b}=2\vec{v}-4\vec{u}," display="inline"><mrow><mrow><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.48)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">então <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="\vec{a}" display="inline"><mover accent="true"><mi>a</mi><mo stretchy="false">→</mo></mover></math> e <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="\vec{b}" display="inline"><mover accent="true"><mi>b</mi><mo stretchy="false">→</mo></mover></math> são l.i.? Justifique sua resposta.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx40">Resposta</button></div><div class="collapse" id="Thmrespx40" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx40.p1" class="ltx_para">
+<p class="ltx_p">Não.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Verifique se é verdadeira ou falsa cada uma das seguintes afirmações. Justifique sua resposta.</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i1.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i1.p1.m3" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> l.d. <math id="I3.i1.p1.m4" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math> <math id="I3.i1.p1.m5" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i1.p1.m6" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> l.d..</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i2.p1.m2" class="ltx_Math" alttext="\vec{0}" display="inline"><mover accent="true"><mn>0</mn><mo stretchy="false">→</mo></mover></math>, <math id="I3.i2.p1.m3" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> são l.d..</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i3.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i3.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> l.i. <math id="I3.i3.p1.m3" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math> <math id="I3.i3.p1.m4" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i3.p1.m5" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math> e <math id="I3.i3.p1.m6" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> l.i..</p>
+</div>
+</li>
+<li id="I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I3.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i4.p1.m1" class="ltx_Math" alttext="\vec{u}" display="inline"><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i4.p1.m2" class="ltx_Math" alttext="\vec{v}" display="inline"><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></math>, <math id="I3.i4.p1.m3" class="ltx_Math" alttext="\vec{w}" display="inline"><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></math> l.d. <math id="I3.i4.p1.m4" class="ltx_Math" alttext="\Rightarrow" display="inline"><mo stretchy="false">⇒</mo></math> <math id="I3.i4.p1.m5" class="ltx_Math" alttext="-\vec{u}" display="inline"><mrow><mo>−</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover></mrow></math>, <math id="I3.i4.p1.m6" class="ltx_Math" alttext="2\vec{v}" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover></mrow></math>, <math id="I3.i4.p1.m7" class="ltx_Math" alttext="-3\vec{w}" display="inline"><mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mover accent="true"><mi>w</mi><mo stretchy="false">→</mo></mover></mrow></mrow></math> l.d..</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx41">Resposta</button></div><div class="collapse" id="Thmrespx41" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx41.p1" class="ltx_para">
+<p class="ltx_p">a) falsa; b) verdadeira; c) falsa; d) verdadeira.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_base_sec_comblin.html" title="In Capítulo 2 Bases e coordenadas ‣ Vetores" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Combinação linear</span></a><a href="lastpage.html" title="In Vetores" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_base_sec_base.html" title="In Capítulo 2 Bases e coordenadas ‣ Vetores" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Bases e coordenadas</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:09:47 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

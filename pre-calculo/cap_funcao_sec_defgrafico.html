@@ -1,0 +1,1004 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo</title>
+<!--Generated on Tue Nov 25 11:09:07 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="up up" href="./" title="Pré-Cálculo">
+<link rel="start" href="./" title="Pré-Cálculo">
+<link rel="prev" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="next" href="cap_funcao_sec_funafim.html" title="3.2 Função afim ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funafim.html" title="3.2 Função afim ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funpot.html" title="3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funpoli.html" title="3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funracio.html" title="3.5 Função racional ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funtri.html" title="3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_opfun.html" title="3.7 Operações com funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funprop.html" title="3.8 Propriedades de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funexp.html" title="3.9 Funções exponenciais ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funlog.html" title="3.10 Funções logarítmicas ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Pré-Cálculo">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_numreal.html" title="Capítulo 1 Números reais ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_ineq.html" title="Capítulo 2 Equações e inequações ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Pré-Cálculo">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Pré-Cálculo</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_funcao.html" title="In Pré-Cálculo" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Funções</span></a><a href="cap_funcao.html" title="In Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Funções</span></a><a href="cap_funcao_sec_funafim.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Função afim</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.1 </span>Definição e gráfico de funções</h1>
+
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.1 </span>Definição</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p"><div class="d-flex justify-content-center"><iframe width="560" height="315"style="max-width:100%; height:100%; aspect-ratio:16/9;"src="https://www.youtube.com/embed/pJbR7bks71M"title="YouTube video player" frameborder="0"allow="accelerometer; autoplay; clipboard-write;encrypted-media; gyroscope; picture-in-picture; web-share"referrerpolicy="strict-origin-when-cross-origin"allowfullscreen></iframe></div>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Uma <span class="ltx_text ltx_font_bold">função</span> de um conjunto <math id="SS1.p2.m1" class="ltx_Math" alttext="D" display="inline"><mi mathbackground="#FFFF00">D</mi></math> em um conjunto <math id="SS1.p2.m2" class="ltx_Math" alttext="Y" display="inline"><mi mathbackground="#FFFF00">Y</mi></math> é uma regra que associa um único elemento <math id="SS1.p2.m3" class="ltx_Math" alttext="y\in Y" display="inline"><mrow><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00">∈</mo><mi mathbackground="#FFFF00">Y</mi></mrow></math> a cada dado elemento <math id="SS1.p2.m4" class="ltx_Math" alttext="x\in D" display="inline"><mrow><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">∈</mo><mi mathbackground="#FFFF00">D</mi></mrow></math></span>. Costumeiramente, identificamos uma função por uma letra, por exemplo, <math id="SS1.p2.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e escrevemos</p>
+<table id="Ch3.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E1.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}f:D\mapsto Y,%
+y=f(x)" display="block"><mrow><mi mathcolor="#0000FF">f</mi><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:</mo><mrow><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF" stretchy="false">↦</mo><mi mathcolor="#0000FF">Y</mi></mrow><mo mathcolor="#0000FF">,</mo><mrow><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para denotar que a função recebe <span class="ltx_text ltx_font_bold">valor de entrada</span> em <math id="SS1.p2.m6" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> e fornece <span class="ltx_text ltx_font_bold">valor de saída</span> em <math id="SS1.p2.m7" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math>, seguindo uma <span class="ltx_text ltx_font_bold">regra de associação</span> preestabelecida <math id="SS1.p2.m8" class="ltx_Math" alttext="y=f(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Usualmente, <math id="SS1.p2.m9" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> é chamado é <span class="ltx_text ltx_font_bold">conjunto de entrada</span> e <math id="SS1.p2.m10" class="ltx_Math" alttext="Y" display="inline"><mi>Y</mi></math> de <span class="ltx_text ltx_font_bold">conjunto de saída</span>.</p>
+</div>
+<figure id="LST24" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 24: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgU3ltYm9sLCBGdW5jdGlvbgp4ID0gU3ltYm9sKCd4JywgcmVhbD1UcnVlKQpmID0gRnVuY3Rpb24oJ2YnLCByZWFsPVRydWUpCnkgPSBmKHgpCnByaW50KCd5IGluIFI/JywgeS5pc19yZWFsKQ==" download="">⬇</a></div>
+<div id="lstnumberx234" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Function</span>
+</div>
+<div id="lstnumberx235" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx236" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Function</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'f'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx237" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx238" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'y<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>R?'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">is_real</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="SS1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,eSBpbiBSPyBUcnVl" download="">⬇</a></div>
+<div id="lstnumberx239" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">R</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">?</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span>
+</div>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Consultemos os seguintes exemplos:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="f:\mathbb{R}\mapsto\mathbb{R}" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>ℝ</mi><mo stretchy="false">↦</mo><mi>ℝ</mi></mrow></mrow></math>, <math id="I1.i1.p1.m2" class="ltx_Math" alttext="y=2x-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<p class="ltx_p">A função <math id="I1.i1.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> toma valor de entrada <math id="I1.i1.p2.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> no conjunto dos números reais <math id="I1.i1.p2.m3" class="ltx_Math" alttext="D=\mathbb{R}" display="inline"><mrow><mi>D</mi><mo>=</mo><mi>ℝ</mi></mrow></math> e fornece o valor de saída <math id="I1.i1.p2.m4" class="ltx_Math" alttext="y=2x-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, também no conjunto dos números reais <math id="I1.i1.p2.m5" class="ltx_Math" alttext="Y=\mathbb{R}" display="inline"><mrow><mi>Y</mi><mo>=</mo><mi>ℝ</mi></mrow></math>. A regra de associação é <math id="I1.i1.p2.m6" class="ltx_Math" alttext="y=2x-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>. Seguem alguns exemplos de aplicação:</p>
+<table id="Ch3.S10.EGx51" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E2.m1" class="ltx_Math" alttext="\displaystyle f(x)=2x-1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.2)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E3.m1" class="ltx_Math" alttext="\displaystyle f(-1)=2(-1)-1=-3" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mrow><mo>−</mo><mn>3</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.3)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E4.m1" class="ltx_Math" alttext="\displaystyle f(\sqrt{2})=2\sqrt{2}-1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msqrt><mn>2</mn></msqrt><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>2</mn></msqrt></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.4)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E5.m1" class="ltx_Math" alttext="\displaystyle f(z)=2z-1,\quad\forall z\in\mathbb{R}" display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>z</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>z</mi></mrow><mo>∈</mo><mi>ℝ</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.5)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="LST25" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 25: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgU3ltYm9sLCBMYW1iZGEsIHNxcnQKeCA9IFN5bWJvbCgneCcsIHJlYWw9VHJ1ZSkKZiA9IExhbWJkYSh4LCAyKnggLSAxKQpwcmludCgnZigtMSkgPScsIGYoLTEpKQpwcmludCgnZihzcXJ0KDIpKSA9JywgZihzcXJ0KDIpKSkKeiA9IFN5bWJvbCgneicsIHJlYWw9VHJ1ZSkKcHJpbnQoJ2YoeikgPScsIGYoeikp" download="">⬇</a></div>
+<div id="lstnumberx240" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Lambda</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span>
+</div>
+<div id="lstnumberx241" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx242" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Lambda</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1)</span>
+</div>
+<div id="lstnumberx243" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'f(-1)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1))</span>
+</div>
+<div id="lstnumberx244" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'f(sqrt(2))<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2)))</span>
+</div>
+<div id="lstnumberx245" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'z'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx246" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'f(z)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+</div>
+</figure>
+<div id="I1.i1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,ZigtMSkgPSAtMwpmKHNxcnQoMikpID0gLTEgKyAyKnNxcnQoMikKZih6KSA9IDIqeiAtIDE=" download="">⬇</a></div>
+<div id="lstnumberx247" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-3</span>
+</div>
+<div id="lstnumberx248" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2)</span>
+</div>
+<div id="lstnumberx249" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="g:\mathbb{Z}\mapsto\mathbb{Q}" display="inline"><mrow><mi>g</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>ℤ</mi><mo stretchy="false">↦</mo><mi>ℚ</mi></mrow></mrow></math>, <math id="I1.i2.p1.m2" class="ltx_Math" alttext="\displaystyle y=\frac{1}{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow></math></p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<p class="ltx_p">A função <math id="I1.i2.p2.m1" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> toma um valor de entrada em <math id="I1.i2.p2.m2" class="ltx_Math" alttext="D=\mathbb{Z}" display="inline"><mrow><mi>D</mi><mo>=</mo><mi>ℤ</mi></mrow></math> e fornece o valor de saída <math id="I1.i2.p2.m3" class="ltx_Math" alttext="\displaystyle y=\frac{1}{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow></math> no conjunto dos números racionais <math id="I1.i2.p2.m4" class="ltx_Math" alttext="\mathbb{Q}" display="inline"><mi>ℚ</mi></math>. A regra de associação é <math id="I1.i2.p2.m5" class="ltx_Math" alttext="\displaystyle y=\frac{1}{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow></math>. Segue alguns exemplos de aplicação:</p>
+<table id="Ch3.S10.EGx52" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E6.m1" class="ltx_Math" alttext="\displaystyle g(2)=\frac{1}{2}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.6)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E7.m1" class="ltx_Math" alttext="\displaystyle g(-5)=\frac{1}{-5}=-\frac{1}{5}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>5</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mo>−</mo><mn>5</mn></mrow></mfrac></mstyle><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>5</mn></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.7)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E8.m1" class="ltx_Math" alttext="\displaystyle g(u)=\frac{1}{u},\quad\forall u\in\mathbb{Z}^{*}" display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>u</mi></mfrac></mstyle></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>u</mi></mrow><mo>∈</mo><msup><mi>ℤ</mi><mo>∗</mo></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.8)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="LST26" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 26: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgc3ltYm9scywgTGFtYmRhLCBTCngsIHUgPSBzeW1ib2xzKCd4LCB1JywgaW50ZWdlcj1UcnVlKQpnID0gTGFtYmRhKHgsIFMoMSkveCkKcHJpbnQoJ2coeCkgPScsIGcoeCkpCnByaW50KCdnKDIpID0nLCBnKDIpKQpwcmludCgnZygtMS81KSA9JywgZyhTKC0xKS81KSkKcHJpbnQoJ2codSkgPScsIGcodSkp" download="">⬇</a></div>
+<div id="lstnumberx250" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">symbols</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Lambda</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">S</span>
+</div>
+<div id="lstnumberx251" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">symbols</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x,<span class="ltx_text ltx_lst_space"> </span>u'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integer</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx252" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Lambda</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">S</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1)/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx253" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'g(x)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx254" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'g(2)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2))</span>
+</div>
+<div id="lstnumberx255" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'g(-1/5)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">S</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1)/5))</span>
+</div>
+<div id="lstnumberx256" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'g(u)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+</div>
+</figure>
+<div id="I1.i2.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,Zyh4KSA9IDEveApnKDIpID0gMS8yCmcoLTEvNSkgPSAtNQpnKHUpID0gMS91" download="">⬇</a></div>
+<div id="lstnumberx257" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx258" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/2</span>
+</div>
+<div id="lstnumberx259" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1/5)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-5</span>
+</div>
+<div id="lstnumberx260" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 3.1.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Funções reais de variável real)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">Ao longo do texto, vamos assumir que as funções são definidas de <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="\mathbb{R}\mapsto\mathbb{R}" display="inline"><mrow><mi>ℝ</mi><mo stretchy="false">↦</mo><mi>ℝ</mi></mrow></math>, salvo explicitamente escrito diferente. Assim sendo, vamos passar a usar a notação simplificada</p>
+<table id="Ch3.E9" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E9.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}f:x\mapsto f(%
+x)." display="block"><mrow><mrow><mi mathcolor="#0000FF">f</mi><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:</mo><mrow><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">↦</mo><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.9)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Mais ainda, as funções serão descritas diretamente de suas regras associação.</p>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.2 </span>Domínio e imagem</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O conjunto <math id="SS2.p1.m1" class="ltx_Math" alttext="D" display="inline"><mi mathbackground="#FFFF00">D</mi></math> de todos os possíveis valores de entrada da função é chamado de <span class="ltx_text ltx_font_bold">domínio</span></span>. Para <math id="SS2.p1.m2" class="ltx_Math" alttext="f:D\mapsto Y" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>D</mi><mo stretchy="false">↦</mo><mi>Y</mi></mrow></mrow></math>, denotamos</p>
+<table id="Ch3.S10.EGx53" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E10.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+D_{f}:=\{x\in D:\leavevmode\nobreak\ f(x)\in Y\}," display="inline"><mrow><mrow><msub><mi mathcolor="#0000FF">D</mi><mi mathcolor="#0000FF">f</mi></msub><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mo mathcolor="#0000FF" stretchy="false">{</mo><mrow><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">∈</mo><mi mathcolor="#0000FF">D</mi></mrow><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.778em">:</mo><mrow><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">∈</mo><mi mathcolor="#0000FF">Y</mi></mrow><mo mathcolor="#0000FF" stretchy="false">}</mo></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.10)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">i.e. o domínio de <math id="SS2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é o conjunto de todos os valores <math id="SS2.p1.m4" class="ltx_Math" alttext="x\in D" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>D</mi></mrow></math>, tal que <math id="SS2.p1.m5" class="ltx_Math" alttext="f(x)\in Y" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mi>Y</mi></mrow></math>. Na a Figura <a href="#fig:fun_dominio" title="Figura 3.1 ‣ 3.1.2 Domínio e imagem ‣ 3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a>, temos que o domínio de <math id="SS2.p1.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é formado apenas pelos pontos marcados com <span class="ltx_text ltx_font_typewriter">x</span>.</p>
+</div>
+<figure id="fig:fun_dominio" class="ltx_figure"><img src="cap_funcao/dados/fig_fun_dominio/fig.png" id="Ch3.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="218" height="106" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.1</span>: </span><span class="ltx_text" style="font-size:90%;">Domínio (pontos marcados com <span class="ltx_text ltx_font_typewriter">x</span>) e imagem (pontos marcados com <span class="ltx_text ltx_font_typewriter">y</span>) de uma função.</span></figcaption>
+</figure>
+<div id="ex:funcao_defgrafico_dominio" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Estudemos os seguintes casos.</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="f:x\mapsto f(x),y=x^{2}" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>x</mi><mo stretchy="false">↦</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></mrow></math></p>
+</div>
+<div id="I2.i1.p2" class="ltx_para">
+<p class="ltx_p">Observamos que, dado qualquer valor de entrada <math id="I2.i1.p2.m1" class="ltx_Math" alttext="x\in\mathbb{R}" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>, <math id="I2.i1.p2.m2" class="ltx_Math" alttext="x^{2}" display="inline"><msup><mi>x</mi><mn>2</mn></msup></math> está definido e é, também, um número real. Desta forma, a função <math id="I2.i1.p2.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> está definida para todo <math id="I2.i1.p2.m4" class="ltx_Math" alttext="x\in\mathbb{R}" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>, i.e.</p>
+<table id="Ch3.S10.EGx54" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E11.m1" class="ltx_Math" alttext="\displaystyle D_{f}=\mathbb{R}." display="inline"><mrow><mrow><msub><mi>D</mi><mi>f</mi></msub><mo>=</mo><mi>ℝ</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.11)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Neste caso, dizemos que <math id="I2.i1.p2.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> está <span class="ltx_text ltx_font_bold">definida em toda parte</span>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g:x\mapsto g(x),y=\frac{1}{x}" display="inline"><mrow><mi>g</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>x</mi><mo stretchy="false">↦</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow></mrow></mrow></math>:</p>
+</div>
+<div id="I2.i2.p2" class="ltx_para">
+<p class="ltx_p">Lembramos que a divisão por zero não está definida. A expressão <math id="I2.i2.p2.m1" class="ltx_Math" alttext="1/x" display="inline"><mrow><mn>1</mn><mo>/</mo><mi>x</mi></mrow></math> está definida para todo número real não nulo, i.e. <math id="I2.i2.p2.m2" class="ltx_Math" alttext="x\in\mathbb{R}\setminus\{0\}" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mi>ℝ</mi><mo>∖</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow></mrow></mrow></math>. Logo, o domínio de <math id="I2.i2.p2.m3" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> é</p>
+<table id="Ch3.E12" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E12.m1" class="ltx_Math" alttext="D_{g}=\mathbb{R}\setminus\{0\}." display="block"><mrow><mrow><msub><mi>D</mi><mi>g</mi></msub><mo>=</mo><mrow><mi>ℝ</mi><mo>∖</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.12)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Equivalentemente, escrevemos que <math id="I2.i2.p2.m4" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> está definida para todo <math id="I2.i2.p2.m5" class="ltx_Math" alttext="x\in(-\infty,0)\cup(0,\infty)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, ou ainda, simplesmente para todo <math id="I2.i2.p2.m6" class="ltx_Math" alttext="x\neq 0" display="inline"><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="y=\sqrt{1-x^{2}}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></p>
+</div>
+<div id="I2.i3.p2" class="ltx_para">
+<p class="ltx_p">A partir da regra, entendemos que <math id="I2.i3.p2.m1" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> é função de <math id="I2.i3.p2.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, i.e. <math id="I2.i3.p2.m3" class="ltx_Math" alttext="y\mapsto y(x)" display="inline"><mrow><mi>y</mi><mo stretchy="false">↦</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Aqui, observamos que a raiz quadrada está definida apenas para números reais não negativos. Logo, esta função está definida para <math id="I2.i3.p2.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> tal que</p>
+<table id="Ch3.S10.EGx55" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E13"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E13.m1" class="ltx_Math" alttext="\displaystyle 1-x^{2}\geq 0" display="inline"><mrow><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>≥</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.13)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E14.m1" class="ltx_Math" alttext="\displaystyle-x^{2}\geq-1" display="inline"><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>≥</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.14)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E15"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E15.m1" class="ltx_Math" alttext="\displaystyle x^{2}\leq 1" display="inline"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>≤</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.15)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E16.m1" class="ltx_Math" alttext="\displaystyle\sqrt{x^{2}}\leq\sqrt{1}" display="inline"><mrow><msqrt><msup><mi>x</mi><mn>2</mn></msup></msqrt><mo>≤</mo><msqrt><mn>1</mn></msqrt></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.16)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E17"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E17.m1" class="ltx_Math" alttext="\displaystyle|x|\leq 1" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow><mo>≤</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.17)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E18"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E18.m1" class="ltx_Math" alttext="\displaystyle-1\leq x\leq 1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.18)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Concluímos que seu domínio é <math id="I2.i3.p2.m5" class="ltx_Math" alttext="x\in[-1,1]" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">Dada uma função <math id="SS2.p2.m1" class="ltx_Math" alttext="f:D\mapsto Y" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>D</mi><mo stretchy="false">↦</mo><mi>Y</mi></mrow></mrow></math>, <span class="ltx_text" style="background-color:#FFFF00;">o conjunto de todos os valores <math id="SS2.p2.m2" class="ltx_Math" alttext="f(x)\in Y" display="inline"><mrow><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">∈</mo><mi mathbackground="#FFFF00">Y</mi></mrow></math> tal que <math id="SS2.p2.m3" class="ltx_Math" alttext="x\in D" display="inline"><mrow><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">∈</mo><mi mathbackground="#FFFF00">D</mi></mrow></math> é chamado de <span class="ltx_text ltx_font_bold">imagem</span> da função</span>. Em notação de conjunto, temos</p>
+<table id="Ch3.E19" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E19.m1" class="ltx_Math" alttext="I_{f}=\{y\in Y:y=f(x)\land x\in D\}," display="block"><mrow><mrow><msub><mi>I</mi><mi>f</mi></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>y</mi><mo>∈</mo><mi>Y</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∧</mo><mi>x</mi></mrow><mo>∈</mo><mi>D</mi></mrow><mo stretchy="false">}</mo></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.19)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">i.e. o conjunto de todos os valores <math id="SS2.p2.m4" class="ltx_Math" alttext="y\in Y" display="inline"><mrow><mi>y</mi><mo>∈</mo><mi>Y</mi></mrow></math> tal que <math id="SS2.p2.m5" class="ltx_Math" alttext="y=f(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e <math id="SS2.p2.m6" class="ltx_Math" alttext="x\in D" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>D</mi></mrow></math>. Na Figura <a href="#fig:fun_dominio" title="Figura 3.1 ‣ 3.1.2 Domínio e imagem ‣ 3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a>, temos que a imagem de <math id="SS2.p2.m7" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é formada pelos pontos marcados com <span class="ltx_text ltx_font_typewriter">y</span>.</p>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Estudemos os seguintes casos.</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="f:\mathbb{R}\to\mathbb{R},y=x^{2}" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>ℝ</mi><mo stretchy="false">→</mo><mi>ℝ</mi></mrow><mo>,</mo><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></mrow></math>:</p>
+</div>
+<div id="I3.i1.p2" class="ltx_para">
+<p class="ltx_p">Observamos que para qualquer número real <math id="I3.i1.p2.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, temos <math id="I3.i1.p2.m2" class="ltx_Math" alttext="y=x^{2}\geq 0" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup><mo>≥</mo><mn>0</mn></mrow></math>. Além disso, para cada número real não negativo <math id="I3.i1.p2.m3" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>, temos que</p>
+<table id="Ch3.S10.EGx56" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E20.m1" class="ltx_Math" alttext="\displaystyle x^{2}=y" display="inline"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.20)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E21.m1" class="ltx_Math" alttext="\displaystyle|x|=\sqrt{y}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><msqrt><mi>y</mi></msqrt></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.21)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E22"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E22.m1" class="ltx_Math" alttext="\displaystyle x=\sqrt{y}\text{ ou }x=-\sqrt{y}." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mrow><msqrt><mi>y</mi></msqrt><mo>⁢</mo><mtext> ou </mtext><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mo>−</mo><msqrt><mi>y</mi></msqrt></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.22)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Logo, concluímos que a imagem de <math id="I3.i1.p2.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é</p>
+<table id="Ch3.E23" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E23.m1" class="ltx_Math" alttext="I_{f}=\mathbb{R}_{+}=[0,\infty)." display="block"><mrow><mrow><msub><mi>I</mi><mi>f</mi></msub><mo>=</mo><msub><mi>ℝ</mi><mo>+</mo></msub><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.23)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">i.e. o conjunto de todos os <math id="I3.i1.p2.m5" class="ltx_Math" alttext="y\geq 0" display="inline"><mrow><mi>y</mi><mo>≥</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="y=1/x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mi>x</mi></mrow></mrow></math>:</p>
+</div>
+<div id="I3.i2.p2" class="ltx_para">
+<p class="ltx_p">Primeiramente, observemos que se <math id="I3.i2.p2.m1" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math>, então não existe número real tal que <math id="I3.i2.p2.m2" class="ltx_Math" alttext="0=1/x" display="inline"><mrow><mn>0</mn><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mi>x</mi></mrow></mrow></math>. Ou seja, <math id="I3.i2.p2.m3" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> não pertence a imagem desta função. Por outro lado, dado qualquer número <math id="I3.i2.p2.m4" class="ltx_Math" alttext="y\neq 0" display="inline"><mrow><mi>y</mi><mo>≠</mo><mn>0</mn></mrow></math>, temos que</p>
+<table id="Ch3.S10.EGx57" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E24"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E24.m1" class="ltx_Math" alttext="\displaystyle\frac{1}{x}=y" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle><mo>=</mo><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.24)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E25"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E25.m1" class="ltx_Math" alttext="\displaystyle x=\frac{1}{y}." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>y</mi></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.25)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Logo, concluímos que a imagem desta função é o conjunto de todos os números reais não nulos, i.e. <math id="I3.i2.p2.m5" class="ltx_Math" alttext="\mathbb{R}^{*}=(-\infty,0)\cup(0,\infty)" display="inline"><mrow><msup><mi>ℝ</mi><mo>∗</mo></msup><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i3.p1.m1" class="ltx_Math" alttext="y=\sqrt{1-x^{2}}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></math>:</p>
+</div>
+<div id="I3.i3.p2" class="ltx_para">
+<p class="ltx_p">No Exemplo <a href="#ex:funcao_defgrafico_dominio" title="Exemplo 3.1.2. ‣ 3.1.2 Domínio e imagem ‣ 3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.2</span></a>, vimos que esta função está definida apenas para <math id="I3.i3.p2.m1" class="ltx_Math" alttext="-1\leq x\leq 1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math>. Ainda, <math id="I3.i3.p2.m2" class="ltx_Math" alttext="y\geq 0" display="inline"><mrow><mi>y</mi><mo>≥</mo><mn>0</mn></mrow></math> e, para <math id="I3.i3.p2.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> restrito a este intervalo, temos que</p>
+<table id="Ch3.S10.EGx58" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E26"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E26.m1" class="ltx_Math" alttext="\displaystyle y=\sqrt{1-x^{2}}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.26)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E27.m1" class="ltx_Math" alttext="\displaystyle y^{2}=1-x^{2}" display="inline"><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>=</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.27)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E28"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E28.m1" class="ltx_Math" alttext="\displaystyle x^{2}=1-y^{2}" display="inline"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.28)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E29"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E29.m1" class="ltx_Math" alttext="\displaystyle 0\leq 1-y^{2}\leq 1" display="inline"><mrow><mn>0</mn><mo>≤</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>≤</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.29)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E30.m1" class="ltx_Math" alttext="\displaystyle 0\leq y^{2}\leq 1" display="inline"><mrow><mn>0</mn><mo>≤</mo><msup><mi>y</mi><mn>2</mn></msup><mo>≤</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.30)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E31.m1" class="ltx_Math" alttext="\displaystyle 0\leq y\leq 1" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>y</mi><mo>≤</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.31)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou seja, a imagem desta função é o intervalo <math id="I3.i3.p2.m4" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmobs2" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 3.1.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Domínio e imagem em aplicações)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs2.p1" class="ltx_para">
+<p class="ltx_p">Em aplicações, o domínio e imagem de funções também podem ficar restritos à modelagem do problema. Por exemplo, pela <a href="https://pt.wikipedia.org/wiki/Lei_geral_dos_gases" title="" class="ltx_ref ltx_href">lei geral dos gases</a>, o produto da pressão <math id="Thmobs2.p1.m1" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> pelo volume <math id="Thmobs2.p1.m2" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> de uma gás é função da temperatura <math id="Thmobs2.p1.m3" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math> como segue</p>
+<table id="Ch3.E33" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E33.m1" class="ltx_Math" alttext="P=\frac{K}{V_{0}}\cdot T," display="block"><mrow><mrow><mi>P</mi><mo>=</mo><mrow><mfrac><mi>K</mi><msub><mi>V</mi><mn>0</mn></msub></mfrac><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>T</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.33)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmobs2.p1.m4" class="ltx_Math" alttext="V_{0}" display="inline"><msub><mi>V</mi><mn>0</mn></msub></math> é o volume dado do gás e <math id="Thmobs2.p1.m5" class="ltx_Math" alttext="K&gt;0" display="inline"><mrow><mi>K</mi><mo>&gt;</mo><mn>0</mn></mrow></math> é uma constante que depende do gás. A temperatura é dada em Kelvin<span id="Ch3.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>William Thomson, 1º Barão Kelvin, 1824 - 1907, físico e engenheiro britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/Lorde_Kelvin" title="" class="ltx_ref ltx_href">Wikipédia: Lorde Kelvin</a>.</span></span></span>, logo <math id="Thmobs2.p1.m6" class="ltx_Math" alttext="T\geq 0" display="inline"><mrow><mi>T</mi><mo>≥</mo><mn>0</mn></mrow></math>. Entendendo a pressão <math id="Thmobs2.p1.m7" class="ltx_Math" alttext="P" display="inline"><mi>P</mi></math> como função de <math id="Thmobs2.p1.m8" class="ltx_Math" alttext="T" display="inline"><mi>T</mi></math>, temos que o domínio é <math id="Thmobs2.p1.m9" class="ltx_Math" alttext="T_{0}&lt;T&lt;T_{1}" display="inline"><mrow><msub><mi>T</mi><mn>0</mn></msub><mo>&lt;</mo><mi>T</mi><mo>&lt;</mo><msub><mi>T</mi><mn>1</mn></msub></mrow></math>, onde <math id="Thmobs2.p1.m10" class="ltx_Math" alttext="T_{0}" display="inline"><msub><mi>T</mi><mn>0</mn></msub></math> é a menor temperatura que o gás admite e <math id="Thmobs2.p1.m11" class="ltx_Math" alttext="T_{1}" display="inline"><msub><mi>T</mi><mn>1</mn></msub></math> é a maior temperatura que o gás admite. A imagem é, então, <math id="Thmobs2.p1.m12" class="ltx_Math" alttext="\frac{K}{V_{0}}T_{0}&lt;P&lt;\frac{K}{V_{0}}T_{1}" display="inline"><mrow><mrow><mfrac><mi>K</mi><msub><mi>V</mi><mn>0</mn></msub></mfrac><mo>⁢</mo><msub><mi>T</mi><mn>0</mn></msub></mrow><mo>&lt;</mo><mi>P</mi><mo>&lt;</mo><mrow><mfrac><mi>K</mi><msub><mi>V</mi><mn>0</mn></msub></mfrac><mo>⁢</mo><msub><mi>T</mi><mn>1</mn></msub></mrow></mrow></math>.</p>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.3 </span>Gráfico</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O <span class="ltx_text ltx_font_bold">gráfico</span> de uma função <math id="SS3.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFF00">f</mi></math> é o conjunto dos <span class="ltx_text ltx_font_bold">pontos</span> (ou <span class="ltx_text ltx_font_bold">pares ordenados</span>) <math id="SS3.p1.m2" class="ltx_Math" alttext="(x,f(x))" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> tal que <math id="SS3.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi mathbackground="#FFFF00">x</mi></math> pertence ao domínio da função</span>. Mais precisamente, para uma função <math id="SS3.p1.m4" class="ltx_Math" alttext="f:D\to Y\mathbb{R}" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>D</mi><mo stretchy="false">→</mo><mrow><mi>Y</mi><mo>⁢</mo><mi>ℝ</mi></mrow></mrow></mrow></math>, o gráfico é o conjunto</p>
+<table id="Ch3.E34" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E34.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}G_{f}=\{(x,f(%
+x))\in\mathbb{D}\times\mathbb{Y}:\leavevmode\nobreak\ x\in D_{f}\}." display="block"><mrow><mrow><msub><mi mathcolor="#0000FF">G</mi><mi mathcolor="#0000FF">f</mi></msub><mo mathcolor="#0000FF">=</mo><mrow><mo mathcolor="#0000FF" stretchy="false">{</mo><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">,</mo><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo mathcolor="#0000FF">∈</mo><mrow><mi mathcolor="#0000FF">𝔻</mi><mo lspace="0.222em" mathcolor="#0000FF" rspace="0.222em">×</mo><mi mathcolor="#0000FF">𝕐</mi></mrow></mrow><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.778em">:</mo><mrow><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">∈</mo><msub><mi mathcolor="#0000FF">D</mi><mi mathcolor="#0000FF">f</mi></msub></mrow><mo mathcolor="#0000FF" stretchy="false">}</mo></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.34)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS3.p2" class="ltx_para">
+<p class="ltx_p">O <span class="ltx_text ltx_font_bold">esboço do gráfico</span> de uma função é, costumeiramente, uma representação geométrica dos pontos de seu gráfico em um <span class="ltx_text ltx_font_bold">plano cartesiano</span> <math id="SS3.p2.m1" class="ltx_Math" alttext="x-y" display="inline"><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow></math>.</p>
+</div>
+<div id="ex:grafico" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">Na sequência, temos os esboços dos gráficos de funções selecionadas.</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i1.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math></p>
+</div>
+<figure id="Ch3.F2" class="ltx_figure"><img src="cap_funcao/dados/fig_fun_x2/fig.png" id="Ch3.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="327" height="197" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.2</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F2.m2" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>.</span></figcaption>
+</figure>
+<figure id="LST27" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 27: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgU3ltYm9sLCBwbG90CnggPSBTeW1ib2woJ3gnKQpwbG90KHgqKjIsICh4LCAtMywgMykp" download="">⬇</a></div>
+<div id="lstnumberx261" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plot</span>
+</div>
+<div id="lstnumberx262" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx263" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-3,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">3))</span>
+</div>
+</div>
+</figure>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i2.p1.m1" class="ltx_Math" alttext="\displaystyle y=\frac{1}{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow></math></p>
+</div>
+<figure id="Ch3.F3" class="ltx_figure"><img src="cap_funcao/dados/fig_fun_1x/fig.png" id="Ch3.F3.g1" class="ltx_graphics ltx_centering ltx_img_square" width="250" height="253" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.3</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F3.m2" class="ltx_Math" alttext="\displaystyle y=\frac{1}{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mn mathsize="90%">1</mn><mi mathsize="90%">x</mi></mfrac></mstyle></mrow></math>.</span></figcaption>
+</figure>
+<figure id="LST28" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 28: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weS5wbG90dGluZyBpbXBvcnQgcGxvdApmcm9tIHN5bXB5LmFiYyBpbXBvcnQgeApwbG90KDEveCwgKHgsIC01LCA1KSwgeWxpbT1bLTUsIDVdKQ==" download="">⬇</a></div>
+<div id="lstnumberx264" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plotting</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plot</span>
+</div>
+<div id="lstnumberx265" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx266" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ylim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=[-5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5])</span>
+</div>
+</div>
+</figure>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i3.p1.m1" class="ltx_Math" alttext="y=\sqrt{1-x^{2}}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></math></p>
+</div>
+<figure id="Ch3.F4" class="ltx_figure"><img src="cap_funcao/dados/fig_fun_sqrt1mx2/fig.png" id="Ch3.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="250" height="174" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.4</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F4.m2" class="ltx_Math" alttext="y=\sqrt{1-x^{2}}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></math>.</span></figcaption>
+</figure>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.4 </span>Categorias de funções</h2>
+
+<section id="SS4.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Funções algébricas</h3>
+
+<div id="SS4.SSSx1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">Funções algébricas</span> são funções definidas a partir de somas, subtrações, multiplicações, divisões ou extração de raízes de funções polinomiais</span>. Funções polinomiais e as funções algébricas derivadas são estudas nas próximas seções.</p>
+</div>
+<div id="Thmex5" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmex5.p1" class="ltx_para">
+<p class="ltx_p">São exemplos de funções algébricas:</p>
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></math></p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g(x)=2x-1" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I5.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i3.p1.m1" class="ltx_Math" alttext="\displaystyle h(x)=2-x^{3}+x" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>−</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>+</mo><mi>x</mi></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I5.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I5.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i4.p1.m1" class="ltx_Math" alttext="\displaystyle f_{1}(u)=\frac{u^{2}+2u+1}{u-1}" display="inline"><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>u</mi></mrow><mo>+</mo><mn>1</mn></mrow><mrow><mi>u</mi><mo>−</mo><mn>1</mn></mrow></mfrac></mstyle></mrow></math></p>
+</div>
+</li>
+<li id="I5.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">e)</span> 
+<div id="I5.i5.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i5.p1.m1" class="ltx_Math" alttext="\displaystyle y=2^{z}-\sqrt{z-1}" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msup><mn>2</mn><mi>z</mi></msup><mo>−</mo><msqrt><mrow><mi>z</mi><mo>−</mo><mn>1</mn></mrow></msqrt></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="SS4.SSSx2" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Funções transcendentes</h3>
+
+<div id="SS4.SSSx2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">Funções transcendentes</span> são funções que não são algébricas</span>. Como exemplos, temos as funções trigonométricas, exponencial e logarítmica, as quais são introduzidas nas próximas seções.</p>
+</div>
+<div id="Thmex6" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmex6.p1" class="ltx_para">
+<p class="ltx_p">São exemplos de funções transcendentes:</p>
+<ol id="I6" class="ltx_enumerate">
+<li id="I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I6.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I6.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=e^{-x^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></math></p>
+</div>
+</li>
+<li id="I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I6.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I6.i2.p1.m1" class="ltx_Math" alttext="\displaystyle y=\log_{2}(2x-1)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I6.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I6.i3.p1.m1" class="ltx_Math" alttext="\displaystyle g(v)=\operatorname{sen}(v)-\cos(v)" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I6.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I6.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I6.i4.p1.m1" class="ltx_Math" alttext="\displaystyle h(u)=\operatorname{arctg}(u)" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>arctg</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="SS4.SSSx3" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Funções definidas por partes</h3>
+
+<div id="SS4.SSSx3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">Funções definidas por partes</span> são funções definidas por diferentes expressões matemáticas em diferentes partes de seu domínio</span>.</p>
+</div>
+<div id="SS4.SSSx3.p2" class="ltx_para">
+<p class="ltx_p">Um exemplo fundamental de função definida por partes é a <span class="ltx_text ltx_font_bold">função valor absoluto</span></p>
+<table id="Ch3.E35" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E35.m1" class="ltx_math_unparsed" alttext="|x|=\left\{\begin{array}[]{ll}x&amp;,x\geq 0\\
+-x&amp;,x&lt;0\end{array}\right." display="block"><mrow><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mi>x</mi></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>x</mi><mo>≥</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mo>−</mo><mi>x</mi></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.35)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Consultemos seu gráfico na Figura <a href="#fig:fun_abs" title="Figura 3.5 ‣ Funções definidas por partes ‣ 3.1.4 Categorias de funções ‣ 3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.5</span></a>.</p>
+</div>
+<figure id="fig:fun_abs" class="ltx_figure"><img src="cap_funcao/dados/fig_fun_abs/fig.png" id="Ch3.F5.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="234" height="150" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.5</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico da função valor absoluto <math id="Ch3.F5.m2" class="ltx_Math" alttext="y=|x|" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow></mrow></math>.</span></figcaption>
+</figure>
+<figure id="LST29" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 29: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgQWJzCkFicygtMSk=" download="">⬇</a></div>
+<div id="lstnumberx267" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Abs</span>
+</div>
+<div id="lstnumberx268" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Abs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1)</span>
+</div>
+</div>
+</figure>
+<div id="SS4.SSSx3.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MQ==" download="">⬇</a></div>
+<div id="lstnumberx269" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="SS5" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.5 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio e a imagem da função identidade, i.e. <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="f(x)=x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow></math>. Então, faça o esboço de seu gráfico.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx31">Resposta</button></div><div class="collapse" id="Thmrespx31" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx31.p1" class="ltx_para">
+<p class="ltx_p">Domínio: <math id="Thmrespx31.p1.m1" class="ltx_Math" alttext="\mathbb{R}" display="inline"><mi>ℝ</mi></math>; Imagem: <math id="Thmrespx31.p1.m2" class="ltx_Math" alttext="\mathbb{R}" display="inline"><mi>ℝ</mi></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio e a imagem da função <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}+1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn></mrow></mrow></math>. Então, faça o esboço de seu gráfico.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx32">Resposta</button></div><div class="collapse" id="Thmrespx32" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx32.p1" class="ltx_para">
+<p class="ltx_p">Domínio: <math id="Thmrespx32.p1.m1" class="ltx_Math" alttext="\mathbb{R}" display="inline"><mi>ℝ</mi></math>; Imagem: <math id="Thmrespx32.p1.m2" class="ltx_Math" alttext="[1,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio e a imagem da função <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="f(x)=1-x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math>. Então, faça o esboço de seu gráfico.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx33">Resposta</button></div><div class="collapse" id="Thmrespx33" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx33.p1" class="ltx_para">
+<p class="ltx_p">Domínio: <math id="Thmrespx33.p1.m1" class="ltx_Math" alttext="\mathbb{R}" display="inline"><mi>ℝ</mi></math>; Imagem: <math id="Thmrespx33.p1.m2" class="ltx_Math" alttext="(-\infty,1]" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,1</mn></mrow></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio e a imagem da função</p>
+<table id="Ch3.E36" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E36.m1" class="ltx_Math" alttext="h(x)=\frac{1}{x-1}-2." display="block"><mrow><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mfrac><mo>−</mo><mn>2</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.36)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Então, faça o esboço de seu gráfico.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx34">Resposta</button></div><div class="collapse" id="Thmrespx34" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx34.p1" class="ltx_para">
+<p class="ltx_p">Domínio: <math id="Thmrespx34.p1.m1" class="ltx_Math" alttext="(-\infty,1)\cup(1,\infty)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,1</mn></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></math>; Imagem: <math id="Thmrespx34.p1.m2" class="ltx_Math" alttext="(-\infty,-2)\cup(-2,\infty)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio e a imagem da função valor absoluto.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx35">Resposta</button></div><div class="collapse" id="Thmrespx35" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx35.p1" class="ltx_para">
+<p class="ltx_p">Domínio: <math id="Thmrespx35.p1.m1" class="ltx_Math" alttext="\mathbb{R}" display="inline"><mi>ℝ</mi></math>; Imagem: <math id="Thmrespx35.p1.m2" class="ltx_Math" alttext="[0,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_funcao.html" title="In Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Funções</span></a><a href="bib.html" title="In Pré-Cálculo" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_funcao_sec_funafim.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Função afim</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:09:07 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

@@ -1,0 +1,625 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I</title>
+<!--Generated on Tue Nov 25 11:09:09 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_ajuste.html" title="Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I">
+<link rel="up up" href="./" title="Matemática Numérica I">
+<link rel="start" href="./" title="Matemática Numérica I">
+<link rel="prev" href="cap_ajuste_sec_prob_lin.html" title="6.1 Problemas lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I">
+<link rel="next" href="bib.html" title="Referências ‣ Matemática Numérica I">
+<link rel="section" href="cap_ajuste_sec_prob_lin.html" title="6.1 Problemas lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Matemática Numérica I">
+<link rel="chapter" href="cap_aritm.html" title="Capítulo 1 Aritmética de máquina ‣ Matemática Numérica I">
+<link rel="chapter" href="cap_eq1d.html" title="Capítulo 2 Equação com uma incógnita ‣ Matemática Numérica I">
+<link rel="chapter" href="cap_sislin.html" title="Capítulo 3 Métodos para Sistemas Lineares ‣ Matemática Numérica I">
+<link rel="chapter" href="cap_snl.html" title="Capítulo 4 Métodos para Sistemas Não Lineares ‣ Matemática Numérica I">
+<link rel="chapter" href="cap_interp.html" title="Capítulo 5 Interpolação ‣ Matemática Numérica I">
+<link rel="chapter" href="cap_ajuste.html" title="Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Matemática Numérica I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Matemática Numérica I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_ajuste.html" title="In Matemática Numérica I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Aproximação por mínimos quadrados</span></a><a href="cap_ajuste_sec_prob_lin.html" title="In Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.1 </span>Problemas lineares</span></a><a href="bib.html" title="In Matemática Numérica I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Referências</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.2 </span>Problemas não lineares</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Um <span class="ltx_text" style="background-color:#FFFF00;">problema não linear de mínimos quadrados consiste em ajustar</span> uma dada função</p>
+<table id="Ch6.E31" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E31.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}y=f(x;%
+\boldsymbol{c})" display="block"><mrow><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">;</mo><mi mathcolor="#0000FF">𝒄</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.31)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">que dependa não linearmente dos parâmetros <math id="p2.m1" class="ltx_Math" alttext="\boldsymbol{c}=(c_{1},c_{2},\dotsc,c_{m})" display="inline"><mrow><mi mathbackground="#FFFF00">𝒄</mi><mo mathbackground="#FFFF00">=</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">c</mi><mn mathbackground="#FFFF00">1</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">c</mi><mn mathbackground="#FFFF00">2</mn></msub><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00" mathvariant="normal">…</mi><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">c</mi><mi mathbackground="#FFFF00">m</mi></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math>, <math id="p2.m2" class="ltx_Math" alttext="m\geq 1" display="inline"><mrow><mi mathbackground="#FFFF00">m</mi><mo mathbackground="#FFFF00">≥</mo><mn mathbackground="#FFFF00">1</mn></mrow></math>, a um dado conjunto de <math id="p2.m3" class="ltx_Math" alttext="n\geq m" display="inline"><mrow><mi mathbackground="#FFFF00">n</mi><mo mathbackground="#FFFF00">≥</mo><mi mathbackground="#FFFF00">m</mi></mrow></math> pontos <math id="p2.m4" class="ltx_Math" alttext="\{(x_{i},y_{i})\}_{i=1}^{n}" display="inline"><msubsup><mrow><mo mathbackground="#FFFF00" stretchy="false">{</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow><mo mathbackground="#FFFF00" stretchy="false">}</mo></mrow><mrow><mi mathbackground="#FFFF00">i</mi><mo mathbackground="#FFFF00">=</mo><mn mathbackground="#FFFF00">1</mn></mrow><mi mathbackground="#FFFF00">n</mi></msubsup></math></span>. Mais especificamente, buscamos resolver o seguinte <span class="ltx_text ltx_font_bold">problema de minimização</span></p>
+<table id="eq:prob_nlin_mq" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E32.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\min_{\{c_{1}%
+,c_{2},\dotsc,c_{m}\}}\left[E:=\sum_{i=1}^{n}\left(y_{i}-f(x_{i};c)\right)^{2}%
+\right]." display="block"><mrow><mrow><munder><mi mathcolor="#0000FF">min</mi><mrow><mo mathcolor="#0000FF" stretchy="false">{</mo><msub><mi mathcolor="#0000FF">c</mi><mn mathcolor="#0000FF">1</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">c</mi><mn mathcolor="#0000FF">2</mn></msub><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF" mathvariant="normal">…</mi><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">c</mi><mi mathcolor="#0000FF">m</mi></msub><mo mathcolor="#0000FF" stretchy="false">}</mo></mrow></munder><mo>⁡</mo><mrow><mo mathcolor="#0000FF">[</mo><mrow><mi mathcolor="#0000FF">E</mi><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.111em">:=</mo><mrow><munderover><mo mathcolor="#0000FF" movablelimits="false" rspace="0em">∑</mo><mrow><mi mathcolor="#0000FF">i</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">1</mn></mrow><mi mathcolor="#0000FF">n</mi></munderover><msup><mrow><mo mathcolor="#0000FF">(</mo><mrow><msub><mi mathcolor="#0000FF">y</mi><mi mathcolor="#0000FF">i</mi></msub><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mi mathcolor="#0000FF">i</mi></msub><mo mathcolor="#0000FF">;</mo><mi mathcolor="#0000FF">c</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0000FF">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow></mrow><mo mathcolor="#0000FF">]</mo></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.32)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Aqui, denotaremos por <math id="p2.m5" class="ltx_Math" alttext="r(c\boldsymbol{)}:=(r_{1}(\boldsymbol{c}),r_{2}(\boldsymbol{c}),\dotsc,r_{n}(%
+\boldsymbol{c}))" display="inline"><mrow><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo class="ltx_mathvariant_bold" mathvariant="bold" rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>r</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><msub><mi>r</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>r</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> o <span class="ltx_text ltx_font_bold">vetor dos resíduos</span> <math id="p2.m6" class="ltx_Math" alttext="r_{i}(\boldsymbol{c}):=y_{i}-f(x_{i},\boldsymbol{c})" display="inline"><mrow><mrow><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>. Com isso, o problema se resume a encontrar o vetor de parâmetros <math id="p2.m7" class="ltx_Math" alttext="\boldsymbol{c}" display="inline"><mi>𝒄</mi></math> que minimiza</p>
+<table id="Ch6.E33" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E33.m1" class="ltx_Math" alttext="E=\|r(\boldsymbol{c})\|^{2}." display="block"><mrow><mrow><mi>E</mi><mo>=</mo><msup><mrow><mo stretchy="false">‖</mo><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.33)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Tais parâmetros são solução do seguinte sistema de equações</p>
+<table id="Ch6.E34" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E34.m1" class="ltx_Math" alttext="\frac{\partial E}{\partial c_{j}}=2\sum_{i=1}^{n}r_{i}(\boldsymbol{c})\frac{%
+\partial}{\partial c_{j}}r_{i}(\boldsymbol{c})=0" display="block"><mrow><mfrac><mrow><mo rspace="0em">∂</mo><mi>E</mi></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>j</mi></msub></mrow></mfrac><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>j</mi></msub></mrow></mfrac><mo>⁢</mo><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.34)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou, equivalentemente, da equação</p>
+<table id="eq:grad_E" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E35.m1" class="ltx_Math" alttext="\nabla E=0\Leftrightarrow J_{R}^{T}(\boldsymbol{c})r(\boldsymbol{c})=0," display="block"><mrow><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>E</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo stretchy="false">⇔</mo><mrow><mrow><msubsup><mi>J</mi><mi>R</mi><mi>T</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.35)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde</p>
+<table id="Ch6.E36" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E36.m1" class="ltx_Math" alttext="J_{R}(\boldsymbol{c}):=\begin{bmatrix}\frac{\partial r_{1}}{\partial c_{1}}&amp;%
+\frac{\partial r_{1}}{\partial c_{2}}&amp;\cdots&amp;\frac{\partial r_{1}}{\partial c_%
+{m}}\\
+\frac{\partial r_{2}}{\partial c_{1}}&amp;\frac{\partial r_{2}}{\partial c_{2}}&amp;%
+\cdots&amp;\frac{\partial r_{2}}{\partial c_{m}}\\
+\vdots&amp;\vdots&amp;\vdots&amp;\vdots\\
+\frac{\partial r_{n}}{\partial c_{1}}&amp;\frac{\partial r_{n}}{\partial c_{2}}&amp;%
+\cdots&amp;\frac{\partial r_{n}}{\partial c_{m}}\end{bmatrix}" display="block"><mrow><mrow><msub><mi>J</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒄</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mfrac></mstyle></mtd><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>2</mn></msub></mrow></mfrac></mstyle></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>m</mi></msub></mrow></mfrac></mstyle></mtd></mtr><mtr><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mfrac></mstyle></mtd><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>2</mn></msub></mrow></mfrac></mstyle></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>m</mi></msub></mrow></mfrac></mstyle></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mi>n</mi></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mfrac></mstyle></mtd><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mi>n</mi></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>2</mn></msub></mrow></mfrac></mstyle></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><mstyle displaystyle="false"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mi>n</mi></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>m</mi></msub></mrow></mfrac></mstyle></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.36)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">é a jacobiana do resíduo <math id="p3.m1" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> em relação aos parâmetros <math id="p3.m2" class="ltx_Math" alttext="\boldsymbol{c}" display="inline"><mi>𝒄</mi></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Podemos usar o método de Newton para resolver (<a href="#eq:grad_E" title="In 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.35</span></a>). Para tanto, escolhemos uma aproximação inicial para <math id="p4.m1" class="ltx_Math" alttext="\boldsymbol{c}^{(1)}=(c_{1}^{(1)},c_{2}^{(1)},\dotsc,c_{m}^{(1)})" display="inline"><mrow><msup><mi>𝒄</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>c</mi><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>,</mo><msubsup><mi>c</mi><mn>2</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msubsup><mi>c</mi><mi>m</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo stretchy="false">)</mo></mrow></mrow></math> e iteramos</p>
+<table id="EGx175" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:mqnl_newton1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch6.E37.m1" class="ltx_Math" alttext="\displaystyle H_{R}(c^{(k)})\delta^{(k)}" display="inline"><mrow><msub><mi>H</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E37.m2" class="ltx_Math" alttext="\displaystyle=-J_{R}^{T}(c)r(c)" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>−</mo><mrow><msubsup><mi>J</mi><mi>R</mi><mi>T</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.37)</span></td>
+</tr></tbody>
+<tbody id="eq:mqnl_newton2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch6.E38.m1" class="ltx_Math" alttext="\displaystyle c^{(k+1)}" display="inline"><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E38.m2" class="ltx_Math" alttext="\displaystyle=c^{(k)}+\delta^{(k)}," display="inline"><mrow><mrow><mi></mi><mo>=</mo><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.38)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="p4.m2" class="ltx_Math" alttext="\delta^{(k)}=(\delta_{1}^{(k)},\delta_{2}^{(k)},\delta_{m}^{(k)})" display="inline"><mrow><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>δ</mi><mn>1</mn><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msubsup><mo>,</mo><msubsup><mi>δ</mi><mn>2</mn><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msubsup><mo>,</mo><msubsup><mi>δ</mi><mi>m</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msubsup><mo stretchy="false">)</mo></mrow></mrow></math> é a atualização de Newton (ou direção de busca) e <math id="p4.m3" class="ltx_Math" alttext="H_{R}(c):=[h_{p,q}(c)]_{p,q=1}^{m,m}" display="inline"><mrow><mrow><msub><mi>H</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><msubsup><mrow><mo stretchy="false">[</mo><mrow><msub><mi>h</mi><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mrow><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow><mo>=</mo><mn>1</mn></mrow><mrow><mi>m</mi><mo>,</mo><mi>m</mi></mrow></msubsup></mrow></math> é a matriz hessiana, cujos elementos são</p>
+<table id="Ch6.E39" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E39.m1" class="ltx_Math" alttext="h_{p,q}:=\sum_{i=1}^{n}\left\{\frac{\partial r_{i}}{\partial c_{q}}\frac{%
+\partial r_{i}}{\partial c_{p}}+r_{i}\frac{\partial^{2}r_{i}}{\partial c_{q}%
+\partial c_{p}}\right\}." display="block"><mrow><mrow><msub><mi>h</mi><mrow><mi>p</mi><mo>,</mo><mi>q</mi></mrow></msub><mo lspace="0.278em" rspace="0.111em">:=</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover><mrow><mo>{</mo><mrow><mrow><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mi>i</mi></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>q</mi></msub></mrow></mfrac><mo>⁢</mo><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>r</mi><mi>i</mi></msub></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>p</mi></msub></mrow></mfrac></mrow><mo>+</mo><mrow><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><msub><mi>r</mi><mi>i</mi></msub></mrow><mrow><mo rspace="0em">∂</mo><mrow><msub><mi>c</mi><mi>q</mi></msub><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>p</mi></msub></mrow></mrow></mrow></mfrac></mrow></mrow><mo>}</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.39)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="ex:mqnl_newton" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 6.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Consideremos o problema de ajustar, no sentido de mínimos quadrados, a função</p>
+<table id="Ch6.E40" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E40.m1" class="ltx_Math" alttext="f(x;c)=c_{1}e^{c_{2}x}" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><mi>x</mi></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.40)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ao seguinte conjunto de pontos</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r"><math id="Thmex1.p1.m1" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column"><math id="Thmex1.p1.m2" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column"><math id="Thmex1.p1.m3" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column"><math id="Thmex1.p1.m4" class="ltx_Math" alttext="3" display="inline"><mn>3</mn></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column"><math id="Thmex1.p1.m5" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t"><math id="Thmex1.p1.m6" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math></th>
+<td class="ltx_td ltx_align_right ltx_border_t"><math id="Thmex1.p1.m7" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_border_t"><math id="Thmex1.p1.m8" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_t"><math id="Thmex1.p1.m9" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_t"><math id="Thmex1.p1.m10" class="ltx_Math" alttext="1.5" display="inline"><mn>1.5</mn></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r"><math id="Thmex1.p1.m11" class="ltx_Math" alttext="y_{i}" display="inline"><msub><mi>y</mi><mi>i</mi></msub></math></th>
+<td class="ltx_td ltx_align_right ltx_border_b"><math id="Thmex1.p1.m12" class="ltx_Math" alttext="8.0" display="inline"><mn>8.0</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_b"><math id="Thmex1.p1.m13" class="ltx_Math" alttext="1.5" display="inline"><mn>1.5</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_b"><math id="Thmex1.p1.m14" class="ltx_Math" alttext="0.2" display="inline"><mn>0.2</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_b"><math id="Thmex1.p1.m15" class="ltx_Math" alttext="0.1" display="inline"><mn>0.1</mn></math></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<p class="ltx_p">Aqui, vamos utilizar a iteração de Newton para o problema de mínimos quadrados, i.e. a iteração dada em (<a href="#eq:mqnl_newton1" title="In 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.37</span></a>)-(<a href="#eq:mqnl_newton2" title="In 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.38</span></a>). Para tanto, para cada <math id="Thmex1.p2.m1" class="ltx_Math" alttext="i=1,2,3,4" display="inline"><mrow><mi>i</mi><mo>=</mo><mn>1,2,3,4</mn></mrow></math>, precisamos das seguintes derivadas parciais do resíduo <math id="Thmex1.p2.m2" class="ltx_Math" alttext="r_{i}(c):=y_{i}-c_{1}e^{c_{2}x_{i}}" display="inline"><mrow><mrow><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub></mrow></msup></mrow></mrow></mrow></math>:</p>
+<table id="EGx176" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E41.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial}{\partial c_{1}}r_{i}(c)=-e^{c_{2}x_{i}}," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub></mrow></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.41)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E42.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial}{\partial c_{2}}r_{i}(c)=-c_{1}x_{i}e^{c_{2}x_{i}}," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>2</mn></msub></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub><mo>⁢</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.42)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E43.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial^{2}}{\partial c_{1}^{2}}r_{i}(c)=0," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><msup><mo>∂</mo><mn>2</mn></msup><mrow><mo rspace="0em">∂</mo><msubsup><mi>c</mi><mn>1</mn><mn>2</mn></msubsup></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.43)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E44.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial^{2}}{\partial c_{1}\partial c_{2}}r_{i}(c)=\frac{%
+\partial^{2}}{\partial c_{2}\partial c_{1}}r_{i}(c)=-x_{i}e^{c_{2}x_{i}}," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><msup><mo>∂</mo><mn>2</mn></msup><mrow><mo rspace="0em">∂</mo><mrow><msub><mi>c</mi><mn>1</mn></msub><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>2</mn></msub></mrow></mrow></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><msup><mo>∂</mo><mn>2</mn></msup><mrow><mo rspace="0em">∂</mo><mrow><msub><mi>c</mi><mn>2</mn></msub><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mrow></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>⁢</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.44)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E45.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial^{2}}{\partial c_{2}^{2}}r_{i}(c)=-c_{1}x_{i}^{2}e^%
+{c_{2}x_{i}}." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><msup><mo>∂</mo><mn>2</mn></msup><mrow><mo rspace="0em">∂</mo><msubsup><mi>c</mi><mn>2</mn><mn>2</mn></msubsup></mrow></mfrac></mstyle><mo>⁢</mo><msub><mi>r</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><msubsup><mi>x</mi><mi>i</mi><mn>2</mn></msubsup><mo>⁢</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><msub><mi>x</mi><mi>i</mi></msub></mrow></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.45)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:ex_mqnl_newton" class="ltx_figure"><img src="cap_ajuste/dados/ex_mqnl_N/ex_mqnl_N.jpg" id="Ch6.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="598" height="450" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 6.4</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço da curva ajustada no Exemplo <a href="#ex:mqnl_newton" title="Exemplo 6.2.1. ‣ 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.2.1</span></a>.</span></figcaption>
+</figure>
+<div id="Thmex1.p3" class="ltx_para">
+<p class="ltx_p">Com isso e tomando <math id="Thmex1.p3.m1" class="ltx_Math" alttext="c^{(1)}=(1.4,-1.8)" display="inline"><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1.4</mn><mo>,</mo><mrow><mo>−</mo><mn>1.8</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math> (motivado do Exemplo <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:ex:mq_nlin0</span>), computamos as iterações de Newton (<a href="#eq:mqnl_newton1" title="In 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.37</span></a>)-(<a href="#eq:mqnl_newton2" title="In 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.38</span></a>). Iterando até a precisão de <math id="Thmex1.p3.m2" class="ltx_Math" alttext="TOL=10^{-4}" display="inline"><mrow><mrow><mi>T</mi><mo>⁢</mo><mi>O</mi><mo>⁢</mo><mi>L</mi></mrow><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></mrow></math>, obtemos a solução <math id="Thmex1.p3.m3" class="ltx_Math" alttext="c_{1}=1.471" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mn>1.471</mn></mrow></math> e <math id="Thmex1.p3.m4" class="ltx_Math" alttext="c_{2}=-1.6938" display="inline"><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>1.6938</mn></mrow></mrow></math>. Na Figura <a href="#fig:ex_mqnl_newton" title="Figura 6.4 ‣ Exemplo 6.2.1. ‣ 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.4</span></a> vemos uma comparação entre a curva aqui ajustada (<math id="Thmex1.p3.m5" class="ltx_Math" alttext="-" display="inline"><mo>−</mo></math>) e aquela obtida no Exemplo <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:ex:mq_nlin0</span> (<math id="Thmex1.p3.m6" class="ltx_Math" alttext="--" display="inline"><mrow><mo>−</mo><mo lspace="0em">⁣</mo><mo>−</mo></mrow></math>).</p>
+</div>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Observamos que a solução obtida no exemplo anterior (Exemplo <a href="#ex:mqnl_newton" title="Exemplo 6.2.1. ‣ 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.2.1</span></a>) difere da previamente encontrada no Exemplo <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:ex:mq_nlin0</span>. Naquele exemplo, os parâmetros obtidos nos fornecem <math id="p5.m1" class="ltx_Math" alttext="E=6.8\mathrm{e}\!-2\!" display="inline"><mrow><mi>E</mi><mo>=</mo><mrow><mrow><mn>6.8</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">−</mo><mn>2</mn></mrow></mrow></math>, enquanto que a solução do exemplo anterior fornece <math id="p5.m2" class="ltx_Math" alttext="E=6.1\mathrm{e}\!-3\!" display="inline"><mrow><mi>E</mi><mo>=</mo><mrow><mrow><mn>6.1</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">−</mo><mn>3</mn></mrow></mrow></math>. Isto é esperado, pois naquele exemplo resolvemos um problema aproximado, enquanto no exemplo anterior resolvemos o problema por si.</p>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">O emprego do método de Newton para o problema de mínimos quadrados tem a vantagem da taxa de convergência quadrática, entretanto requer a computação das derivadas parciais de segunda ordem do resíduo. Na sequência discutimos alternativas comumente empregadas.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.2.1 </span>Método de Gauss-Newton</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">O método de Gauss-Newton é uma técnica iterativa que aproxima o problema não linear de mínimos quadrados (<a href="#eq:prob_nlin_mq" title="In 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.32</span></a>) por uma sequência de problemas lineares. Para seu desenvolvimento, começamos de uma aproximação inicial <math id="SS1.p2.m1" class="ltx_Math" alttext="c^{(1)}=(c_{1}^{(1)},c_{2}^{(1)},\dotsc,c_{m}^{(1)})" display="inline"><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>c</mi><mn>1</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>,</mo><msubsup><mi>c</mi><mn>2</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msubsup><mi>c</mi><mi>m</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msubsup><mo stretchy="false">)</mo></mrow></mrow></math> dos parâmetros que queremos ajustar. Também, assumindo que a <math id="SS1.p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>-ésima iterada <math id="SS1.p2.m3" class="ltx_Math" alttext="c^{(k)}" display="inline"><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> é conhecida, faremos uso da aproximação de primeira ordem de <math id="SS1.p2.m4" class="ltx_Math" alttext="f(x,c)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></math> por polinômio de Taylor, i.e.</p>
+<table id="Ch6.E46" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E46.m1" class="ltx_Math" alttext="f(x;c^{(k+1)})\approx f(x;c^{(k)})+\nabla_{c}f(x;c^{(k)})(c^{(k+1)}-c^{(k)})," display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mrow><msub><mo rspace="0.167em">∇</mo><mi>c</mi></msub><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>−</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.46)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde</p>
+<table id="Ch6.E47" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E47.m1" class="ltx_Math" alttext="\nabla_{c}f(x;c)=\left[\frac{\partial}{\partial c_{1}}f(x;c)\leavevmode%
+\nobreak\ \frac{\partial}{\partial c_{2}}f(x;c)\leavevmode\nobreak\ \cdots%
+\leavevmode\nobreak\ \frac{\partial}{\partial c_{m}}f(x;c)\right]." display="block"><mrow><mrow><mrow><mrow><msub><mo>∇</mo><mi>c</mi></msub><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>[</mo><mrow><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>1</mn></msub></mrow></mfrac><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.500em">⁢</mo><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mn>2</mn></msub></mrow></mfrac><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.500em">⁢</mo><mi mathvariant="normal">⋯</mi><mo lspace="0.500em">⁢</mo><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><msub><mi>c</mi><mi>m</mi></msub></mrow></mfrac><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.47)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">O método consiste em obter a solução do problema não linear (<a href="#eq:prob_nlin_mq" title="In 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.32</span></a>) pelo limite dos seguintes problemas lineares de mínimos quadrados</p>
+<table id="EGx177" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:mq_gn0"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch6.E48.m1" class="ltx_Math" alttext="\displaystyle\min_{\delta^{(k)}}" display="inline"><munder><mi>min</mi><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></munder></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E48.m2" class="ltx_Math" alttext="\displaystyle\left[\tilde{E}:=\sum_{i=1}^{n}(y_{i}-f(x_{i},c^{(k)})-\nabla_{c}%
+f(x_{i};c^{(k)})\delta^{(k)})^{2}\right]" display="inline"><mrow><mo>[</mo><mrow><mover accent="true"><mi>E</mi><mo>~</mo></mover><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi>n</mi></munderover></mstyle><msup><mrow><mo stretchy="false">(</mo><mrow><msub><mi>y</mi><mi>i</mi></msub><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mrow><msub><mo rspace="0.167em">∇</mo><mi>c</mi></msub><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>;</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>]</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.48)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E49"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E49.m1" class="ltx_Math" alttext="\displaystyle c^{(k+1)}=c^{(k)}+\delta^{(k)}." display="inline"><mrow><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.49)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS1.p4" class="ltx_para">
+<p class="ltx_p">Agora, usando a notação de resíduo <math id="SS1.p4.m1" class="ltx_Math" alttext="r(c)=y-f(x;c)" display="inline"><mrow><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>y</mi><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>;</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, observamos que (<a href="#eq:mq_gn0" title="In 6.2.2 Método de Levenberg-Marquardt ‣ 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.55</span></a>) consiste no problema linear de mínimos quadrados</p>
+<table id="Ch6.E50" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E50.m1" class="ltx_Math" alttext="\min_{\delta^{(k)}}\|r(c^{(k)})+J_{R}(c^{(k)})\delta^{(k)}\|_{2}^{2}," display="block"><mrow><mrow><munder><mi>min</mi><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></munder><mo>⁡</mo><msubsup><mrow><mo stretchy="false">‖</mo><mrow><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>J</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.50)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">o qual é equivalente a resolver as equações normais</p>
+<table id="Ch6.E51" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E51.m1" class="ltx_Math" alttext="J_{R}^{T}(c^{(n)})J_{R}(c^{(n)})\delta^{(n)}=-J_{R}^{T}(c)r(c)." display="block"><mrow><mrow><mrow><msubsup><mi>J</mi><mi>R</mi><mi>T</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>J</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mo>−</mo><mrow><msubsup><mi>J</mi><mi>R</mi><mi>T</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.51)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS1.p5" class="ltx_para">
+<p class="ltx_p">Com isso, dada uma aproximação inicial <math id="SS1.p5.m1" class="ltx_Math" alttext="c^{(1)}" display="inline"><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></math>, a <span class="ltx_text ltx_font_bold">iteração do método de Gauss-Newton</span> consiste em</p>
+<table id="EGx178" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E52"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E52.m1" class="ltx_Math" alttext="\displaystyle J_{R}^{T}(c^{(k)})J_{R}(c^{(k)})\delta^{(k)}=-J_{R}^{T}(c)r(c)" display="inline"><mrow><mrow><msubsup><mi>J</mi><mi>R</mi><mi>T</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>J</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mo>−</mo><mrow><msubsup><mi>J</mi><mi>R</mi><mi>T</mi></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.52)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E53"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E53.m1" class="ltx_Math" alttext="\displaystyle c^{(k+1)}=c^{(k)}+\delta^{(k)}." display="inline"><mrow><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.53)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 6.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">A aplicação da iteração de Gauss-Newton ao problema de mínimos quadrados discutido no Exemplo <a href="#ex:mqnl_newton" title="Exemplo 6.2.1. ‣ 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.2.1</span></a> nos fornece a mesma solução obtida naquele exemplo (preservadas a aproximação inicial e a tolerância de precisão).</p>
+</div>
+</div>
+<div id="SS1.p6" class="ltx_para">
+<p class="ltx_p">O método de Gauss-Newton pode ser lentamente convergente para problemas muito não lineares ou com resíduos grandes. Nesse caso, métodos de Gauss-Newton com amortecimento são alternativas robustas <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib1" title="" class="ltx_ref">1</a>, <a href="bib.html#bib5" title="" class="ltx_ref">5</a>]</cite>. Na sequência, introduziremos um destes métodos, conhecido como método de Levenberg-Marquardt.</p>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.2.2 </span>Método de Levenberg-Marquardt</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">O método de Levenberg-Marquardt é uma variação do método de Gauss-Newton no qual a direção de busca <math id="SS2.p2.m1" class="ltx_Math" alttext="\delta^{(n)}" display="inline"><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup></math> é obtida da solução do seguinte problema regularizado</p>
+<table id="eq:mq_gn0" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E54.m1" class="ltx_Math" alttext="\min_{\delta^{(k)}}\{\|r(c^{(k)})+J_{R}(c^{(k)})\delta^{(k)}\|_{2}^{2}+\mu^{(k%
+)}\|\delta^{(k)}\|_{2}^{2}\}" display="block"><mrow><munder><mi>min</mi><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></munder><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mrow><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>J</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup><mo>+</mo><mrow><msup><mi>μ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msubsup><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.54)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou, equivalentemente,</p>
+<table id="eq:mq_gn0" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E55.m1" class="ltx_Math" alttext="\min_{\delta^{(k)}}\left\|\begin{bmatrix}r(c^{(k)})\\
+0\end{bmatrix}+\begin{bmatrix}J_{R}(c^{(k)})\\
+\mu^{(k)}I\end{bmatrix}\delta^{(k)}\right\|_{2}^{2}" display="block"><mrow><munder><mi>min</mi><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></munder><mo>⁡</mo><msubsup><mrow><mo>‖</mo><mrow><mrow><mo>[</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mi>r</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr></mtable><mo>]</mo></mrow><mo>+</mo><mrow><mrow><mo>[</mo><mtable displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><msub><mi>J</mi><mi>R</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mrow><msup><mi>μ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi>I</mi></mrow></mtd></mtr></mtable><mo>]</mo></mrow><mo>⁢</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo>‖</mo></mrow><mn>2</mn><mn>2</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.55)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS2.p3" class="ltx_para">
+<p class="ltx_p">A taxa de convergência das iterações de Levenberg-Marquardt é sensível a escolha do parâmetro <math id="SS2.p3.m1" class="ltx_Math" alttext="\mu^{(k)}\geq 0" display="inline"><mrow><msup><mi>μ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>≥</mo><mn>0</mn></mrow></math>. Aqui, faremos esta escolha por tentativa e erro. O leitor pode aprofundar-se mais sobre esta questão na literatura especializada (veja, por exemplo, <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib1" title="" class="ltx_ref">1</a>, <a href="bib.html#bib5" title="" class="ltx_ref">5</a>]</cite>).</p>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 6.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">Quando <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="\mu^{(k)}\equiv 0" display="inline"><mrow><msup><mi>μ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>≡</mo><mn>0</mn></mrow></math> para todo <math id="Thmobs1.p1.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>, o método de Levenberg-Marquardt é equivalente ao método de Gauss-Newton.</p>
+</div>
+</div>
+<div id="ex:mqnl_LM" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 6.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Consideremos o problema de mínimos quadrados discutido no Exemplo <a href="#ex:mqnl_newton" title="Exemplo 6.2.1. ‣ 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.2.1</span></a>. O método de Gauss-Newton falha para este problema se escolhermos, por exemplo, <math id="Thmex3.p1.m1" class="ltx_Math" alttext="c^{(1)}=(0,0)" display="inline"><mrow><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></math>. Isto ocorre pois, para esta escolha de <math id="Thmex3.p1.m2" class="ltx_Math" alttext="c^{(1)}" display="inline"><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></math>, a jacobiana <math id="Thmex3.p1.m3" class="ltx_Math" alttext="J(c^{(1)})" display="inline"><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></math> não tem posto completo. Entretanto, o método de Levenberg-Marquardt com <math id="Thmex3.p1.m4" class="ltx_Math" alttext="\mu^{(k)}=0.1" display="inline"><mrow><msup><mi>μ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>0.1</mn></mrow></math> é convergente, mesmo para esta escolha de <math id="Thmex3.p1.m5" class="ltx_Math" alttext="c^{(1)}" display="inline"><msup><mi>c</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></math>.</p>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.2.3 </span>Exercícios</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
+</div>
+<div id="exer:mqnl_GN" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 6.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Use o método de Gauss-Newton para ajustar, no sentido de mínimos quadrados e com precisão de <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="10^{-4}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>4</mn></mrow></msup></math>, a curva <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="y=c_{1}e^{c_{2}(x-c_{3})^{2}}" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>⁢</mo><msup><mi>e</mi><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>c</mi><mn>3</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msup></mrow></mrow></math> aos pontos</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r"><math id="Thmexer1.p1.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><math id="Thmexer1.p1.m4" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><math id="Thmexer1.p1.m5" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><math id="Thmexer1.p1.m6" class="ltx_Math" alttext="3" display="inline"><mn>3</mn></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><math id="Thmexer1.p1.m7" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><math id="Thmexer1.p1.m8" class="ltx_Math" alttext="5" display="inline"><mn>5</mn></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column"><math id="Thmexer1.p1.m9" class="ltx_Math" alttext="6" display="inline"><mn>6</mn></math></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t"><math id="Thmexer1.p1.m10" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math></th>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Thmexer1.p1.m11" class="ltx_Math" alttext="-0.5" display="inline"><mrow><mo>−</mo><mn>0.5</mn></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Thmexer1.p1.m12" class="ltx_Math" alttext="0.5" display="inline"><mn>0.5</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Thmexer1.p1.m13" class="ltx_Math" alttext="1.3" display="inline"><mn>1.3</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Thmexer1.p1.m14" class="ltx_Math" alttext="2.1" display="inline"><mn>2.1</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Thmexer1.p1.m15" class="ltx_Math" alttext="2.7" display="inline"><mn>2.7</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Thmexer1.p1.m16" class="ltx_Math" alttext="3.1" display="inline"><mn>3.1</mn></math></td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_b ltx_border_r"><math id="Thmexer1.p1.m17" class="ltx_Math" alttext="y_{i}" display="inline"><msub><mi>y</mi><mi>i</mi></msub></math></th>
+<td class="ltx_td ltx_align_center ltx_border_b"><math id="Thmexer1.p1.m18" class="ltx_Math" alttext="0.1" display="inline"><mn>0.1</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b"><math id="Thmexer1.p1.m19" class="ltx_Math" alttext="1.2" display="inline"><mn>1.2</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b"><math id="Thmexer1.p1.m20" class="ltx_Math" alttext="2.7" display="inline"><mn>2.7</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b"><math id="Thmexer1.p1.m21" class="ltx_Math" alttext="0.9" display="inline"><mn>0.9</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b"><math id="Thmexer1.p1.m22" class="ltx_Math" alttext="0.2" display="inline"><mn>0.2</mn></math></td>
+<td class="ltx_td ltx_align_center ltx_border_b"><math id="Thmexer1.p1.m23" class="ltx_Math" alttext="0.1" display="inline"><mn>0.1</mn></math></td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p">Use as condições iniciais:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="c_{1}=2.1" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mn>2.1</mn></mrow></math>, <math id="I1.i1.p1.m2" class="ltx_Math" alttext="c_{2}=-1" display="inline"><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> e <math id="I1.i1.p1.m3" class="ltx_Math" alttext="c_{3}=1.3" display="inline"><mrow><msub><mi>c</mi><mn>3</mn></msub><mo>=</mo><mn>1.3</mn></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="c_{1}=1" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></math>, <math id="I1.i2.p1.m2" class="ltx_Math" alttext="c_{2}=-1" display="inline"><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> e <math id="I1.i2.p1.m3" class="ltx_Math" alttext="c_{3}=-1" display="inline"><mrow><msub><mi>c</mi><mn>3</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx108">Resposta</button></div><div class="collapse" id="Thmrespx108" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx108.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx108.p1.m1" class="ltx_Math" alttext="c_{1}=2.69971\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mrow><mrow><mn>2.69971</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>, <math id="Thmrespx108.p1.m2" class="ltx_Math" alttext="c_{2}=-1.44723\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mrow><mrow><mo>−</mo><mrow><mn>1.44723</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>, <math id="Thmrespx108.p1.m3" class="ltx_Math" alttext="c_{3}=1.24333\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>3</mn></msub><mo>=</mo><mrow><mrow><mn>1.24333</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>; b) divergente.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 6.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Resolva o exercício anterior (E.<a href="#exer:mqnl_GN" title="E. 6.2.1. ‣ 6.2.3 Exercícios ‣ 6.2 Problemas não lineares ‣ Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.2.1</span></a>) usando o método de Levenberg-Marquardt com amortecimento constante <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="\mu=0.2" display="inline"><mrow><mi>μ</mi><mo>=</mo><mn>0.2</mn></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx109">Resposta</button></div><div class="collapse" id="Thmrespx109" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx109.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx109.p1.m1" class="ltx_Math" alttext="c_{1}=2.69971\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mrow><mrow><mn>2.69971</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>, <math id="Thmrespx109.p1.m2" class="ltx_Math" alttext="c_{2}=-1.44723\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mrow><mrow><mo>−</mo><mrow><mn>1.44723</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>, <math id="Thmrespx109.p1.m3" class="ltx_Math" alttext="c_{3}=1.24333\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>3</mn></msub><mo>=</mo><mrow><mrow><mn>1.24333</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>; b) <math id="Thmrespx109.p1.m4" class="ltx_Math" alttext="c_{1}=2.69971\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>1</mn></msub><mo>=</mo><mrow><mrow><mn>2.69971</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>, <math id="Thmrespx109.p1.m5" class="ltx_Math" alttext="c_{2}=-1.44723\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>2</mn></msub><mo>=</mo><mrow><mrow><mo>−</mo><mrow><mn>1.44723</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math>, <math id="Thmrespx109.p1.m6" class="ltx_Math" alttext="c_{3}=1.24333\mathrm{e}\!+0\!" display="inline"><mrow><msub><mi>c</mi><mn>3</mn></msub><mo>=</mo><mrow><mrow><mn>1.24333</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em">+</mo><mn>0</mn></mrow></mrow></math></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_ajuste_sec_prob_lin.html" title="In Capítulo 6 Aproximação por mínimos quadrados ‣ Matemática Numérica I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.1 </span>Problemas lineares</span></a><a href="bib.html" title="In Matemática Numérica I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="bib.html" title="In Matemática Numérica I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Referências</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:09:09 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

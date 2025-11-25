@@ -1,0 +1,701 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.5 Sincronização ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++</title>
+<!--Generated on Tue Nov 25 11:07:20 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_mp.html" title="Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="up up" href="./" title="Computação Paralela com C++">
+<link rel="start" href="./" title="Computação Paralela com C++">
+<link rel="prev" href="cap_mp_sec_lr.html" title="2.4 Laços e reduções ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="next" href="cap_mp_sec_sec.html" title="2.6 Seções ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="section" href="sec_ola_cap_mp.html" title="2.1 Olá, Mundo! ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="section" href="cap_mp_sec_ee.html" title="2.2 Escalabilidade e eficiência ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="section" href="cap_mp_sec_cr.html" title="2.3 Condição de corrida ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="section" href="cap_mp_sec_lr.html" title="2.4 Laços e reduções ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="section" href="cap_mp_sec_sec.html" title="2.6 Seções ‣ Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Computação Paralela com C++">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Computação Paralela com C++">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Computação Paralela com C++">
+<link rel="chapter" href="cap_mp.html" title="Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++">
+<link rel="chapter" href="cap_mpi.html" title="Capítulo 3 Computação paralela e distribuída (MPI) ‣ Computação Paralela com C++">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Computação Paralela com C++">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Computação Paralela com C++</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_mp.html" title="In Computação Paralela com C++" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Multiprocessamento (MP)</span></a><a href="cap_mp_sec_lr.html" title="In Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Laços e reduções</span></a><a href="cap_mp_sec_sec.html" title="In Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.6 </span>Seções</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.5 </span>Sincronização</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">A sincronização de <span class="ltx_text ltx_font_italic">threads</span> é uma forma de controlar o acesso a recursos compartilhados e de garantir que as operações sejam executadas em uma ordem específica. A sincronização é importante para evitar condições de corrida e garantir a consistência dos dados. Entretanto, a sincronização pode levar a uma diminuição do desempenho, pois <span class="ltx_text ltx_font_italic">threads</span> podem ficar bloqueadas esperando que a sincronização ocorra.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">As sincronizações podem ocorrer por uso de construtores específicos (por exemplo, <span class="ltx_text ltx_font_typewriter">omp critical</span> e <span class="ltx_text ltx_font_typewriter">omp barrier</span>) ou de forma implícita ao final de regiões paralelas. Por exemplo, ao final de uma região paralela, o <span class="ltx_text ltx_font_italic">master thread</span> espera que todos os outros <span class="ltx_text ltx_font_italic">threads</span> terminem suas operações antes de continuar a execução do código.</p>
+</div>
+<div id="p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_c++ ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,I3ByYWdtYSBvbXAgcGFyYWxsZWwKewogIC8vIHJlZ2nDo28gcGFyYWxlbGEKCn0gLy8gc2luY3Jvbml6YcOnw6Nv" download="">⬇</a></div>
+<div id="lstnumberx345" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">parallel</span>
+</div>
+<div id="lstnumberx346" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx347" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>regi<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>paralela</span></span>
+</div>
+<div id="lstnumberx348" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx349" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+</div>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Alguns construtores, como o do laço <span class="ltx_text ltx_font_typewriter">for</span>, também fazem sincronização implícita.</p>
+</div>
+<div id="p5" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_c++ ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,I3ByYWdtYSBvbXAgcGFyYWxsZWwKewogICAgLy8gcmVnacOjbyBwYXJhbGVsYQoKICAgICNwcmFnbWEgb21wIGZvcgogICAgZm9yIChpbnQgaSA9IDA7IGkgPCBuOyBpKyspCiAgICB7CiAgICAgICAgLy8gbGHDp28gcGFyYWxlbG8KCiAgICB9IC8vIHNpbmNyb25pemHDp8OjbwoKICAgIC8vIHJlZ2nDo28gcGFyYWxlbGEKCn0gLy8gc2luY3Jvbml6YcOnw6Nv" download="">⬇</a></div>
+<div id="lstnumberx350" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">parallel</span>
+</div>
+<div id="lstnumberx351" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx352" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>regi<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>paralela</span></span>
+</div>
+<div id="lstnumberx353" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx354" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span>
+</div>
+<div id="lstnumberx355" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++)</span>
+</div>
+<div id="lstnumberx356" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx357" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>la<span class="ltx_text ltx_lst_literate">ç</span>o<span class="ltx_text ltx_lst_space"> </span>paralelo</span></span>
+</div>
+<div id="lstnumberx358" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span>
+</div>
+<div id="lstnumberx359" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx360" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span>
+</div>
+<div id="lstnumberx361" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>regi<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>paralela</span></span>
+</div>
+<div id="lstnumberx362" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span>
+</div>
+<div id="lstnumberx363" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+</div>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Nestes casos, a sincronização pode ser evitada com o uso da cláusula <span class="ltx_text ltx_font_typewriter">nowait</span>.</p>
+</div>
+<div id="p7" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_c++ ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,I3ByYWdtYSBvbXAgcGFyYWxsZWwKewogICAgLy8gcmVnacOjbyBwYXJhbGVsYQoKICAgICNwcmFnbWEgb21wIGZvciBub3dhaXQKICAgIGZvciAoaW50IGkgPSAwOyBpIDwgbjsgaSsrKQogICAgewogICAgLy8gbGHDp28gcGFyYWxlbG8KCiAgICB9IC8vIG7Do28gaMOhIHNpbmNyb25pemHDp8OjbwoKICAgIC8vIHJlZ2nDo28gcGFyYWxlbGEKCn0gLy8gc2luY3Jvbml6YcOnw6Nv" download="">⬇</a></div>
+<div id="lstnumberx364" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">parallel</span>
+</div>
+<div id="lstnumberx365" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx366" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>regi<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>paralela</span></span>
+</div>
+<div id="lstnumberx367" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx368" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nowait</span>
+</div>
+<div id="lstnumberx369" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++)</span>
+</div>
+<div id="lstnumberx370" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx371" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>la<span class="ltx_text ltx_lst_literate">ç</span>o<span class="ltx_text ltx_lst_space"> </span>paralelo</span></span>
+</div>
+<div id="lstnumberx372" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span>
+</div>
+<div id="lstnumberx373" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>n<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>h<span class="ltx_text ltx_lst_literate">á</span><span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx374" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span>
+</div>
+<div id="lstnumberx375" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>regi<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>paralela</span></span>
+</div>
+<div id="lstnumberx376" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span>
+</div>
+<div id="lstnumberx377" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">O seguinte método <a href="https://www.openmp.org/" title="" class="ltx_ref ltx_href">OpenMP</a>/<a href="https://isocpp.org/" title="" class="ltx_ref ltx_href">C++</a> computa a norma do residuo de um sistema linear <math id="Thmex1.p1.m1" class="ltx_Math" alttext="Ax=b" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mi>b</mi></mrow></math>, i.e. <math id="Thmex1.p1.m2" class="ltx_Math" alttext="\|Ax-b\|_{2}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mi>b</mi></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn></msub></math>.</p>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_c++ ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,I2luY2x1ZGUgPG9tcC5oPgojaW5jbHVkZSA8Y21hdGg+CiNpbmNsdWRlIDxlaWdlbjMvRWlnZW4vRGVuc2U+Cgpkb3VibGUgcmVzX25vcm0oY29uc3QgRWlnZW46OlZlY3RvclhkICZ4LAogICAgICAgICAgICAgICAgY29uc3QgRWlnZW46Ok1hdHJpeFhkICZBLAogICAgICAgICAgICAgICAgY29uc3QgRWlnZW46OlZlY3RvclhkICZiKQp7CiAgICBpbnQgbiA9IEEucm93cygpOwogICAgaW50IG0gPSBBLmNvbHMoKTsKICAgIEVpZ2VuOjpWZWN0b3JYZCByID0gRWlnZW46OlZlY3RvclhkOjpaZXJvKG4pOwogICAgZG91YmxlIHJfbm9ybTIgPSAwLjA7CgogICAgI3ByYWdtYSBvbXAgcGFyYWxsZWwKICAgIHsKICAgICAgICAvLyByID0gQXggLSBiCiAgICAgICAgI3ByYWdtYSBvbXAgZm9yIHNjaGVkdWxlKHN0YXRpYykgbm93YWl0CiAgICAgICAgZm9yIChpbnQgaSA9IDA7IGkgPCBuOyBpKyspCiAgICAgICAgewogICAgICAgICAgICBmb3IgKGludCBqID0gMDsgaiA8IG07IGorKykKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgcltpXSArPSBBKGksIGopICogeFtqXTsKICAgICAgICAgICAgfQogICAgICAgICAgICByW2ldIC09IGJbaV07CiAgICAgICAgfSAvLyBuw6NvIGjDoSBzaW5jcm9uaXphw6fDo28KCiAgICAgICAgLy8gcmVzID0gfHxyfHxeMgogICAgICAgICNwcmFnbWEgb21wIGZvciBzY2hlZHVsZShzdGF0aWMpIHJlZHVjdGlvbigrOnJfbm9ybTIpCiAgICAgICAgZm9yIChpbnQgaSA9IDA7IGkgPCBuOyBpKyspCiAgICAgICAgewogICAgICAgICAgICByX25vcm0yICs9IHJbaV0gKiByW2ldOwogICAgICAgIH0gLy8gc2luY3Jvbml6YcOnw6NvCgogICAgfSAvLyBzaW5jcm9uaXphw6fDo28KCiAgICByZXR1cm4gc3FydChyX25vcm0yKTsKCn0=" download="">⬇</a></div>
+<div id="lstnumberx378" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#include</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span>
+</div>
+<div id="lstnumberx379" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#include</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cmath</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span>
+</div>
+<div id="lstnumberx380" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#include</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">eigen3</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Dense</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span>
+</div>
+<div id="lstnumberx381" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx382" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">double</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">res_norm</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">const</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&amp;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx383" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">const</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">MatrixXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&amp;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx384" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">const</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&amp;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx385" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx386" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rows</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">();</span>
+</div>
+<div id="lstnumberx387" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cols</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">();</span>
+</div>
+<div id="lstnumberx388" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Zero</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx389" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">double</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0;</span>
+</div>
+<div id="lstnumberx390" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span>
+</div>
+<div id="lstnumberx391" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">parallel</span>
+</div>
+<div id="lstnumberx392" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx393" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>r<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>Ax<span class="ltx_text ltx_lst_space"> </span>-<span class="ltx_text ltx_lst_space"> </span>b</span></span>
+</div>
+<div id="lstnumberx394" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">schedule</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">static</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nowait</span>
+</div>
+<div id="lstnumberx395" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++)</span>
+</div>
+<div id="lstnumberx396" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx397" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++)</span>
+</div>
+<div id="lstnumberx398" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx399" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">22</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">];</span>
+</div>
+<div id="lstnumberx400" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">23</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+<div id="lstnumberx401" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">24</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">];</span>
+</div>
+<div id="lstnumberx402" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">25</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>n<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>h<span class="ltx_text ltx_lst_literate">á</span><span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx403" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">26</span>
+</div>
+<div id="lstnumberx404" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">27</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>res<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>||r||^2</span></span>
+</div>
+<div id="lstnumberx405" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">28</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">schedule</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">static</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">reduction</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(+:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx406" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">29</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++)</span>
+</div>
+<div id="lstnumberx407" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">30</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx408" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">31</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">];</span>
+</div>
+<div id="lstnumberx409" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">32</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx410" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">33</span>
+</div>
+<div id="lstnumberx411" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">34</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx412" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">35</span>
+</div>
+<div id="lstnumberx413" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">36</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx414" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">37</span>
+</div>
+<div id="lstnumberx415" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">38</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+</div>
+</div>
+<div id="Thmex1.p3" class="ltx_para">
+<p class="ltx_p">Verifique!</p>
+</div>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.5.1 </span>Barreira</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Barreira é um tipo de sincronização em que as <span class="ltx_text ltx_font_italic">threads</span> devem esperar até que todas tenham alcançado um ponto específico do código. Uma barreira explícita pode ser criada com a diretiva <code class="ltx_verbatim ltx_font_typewriter">omp barrier</code>.</p>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Método de Jacobi)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">O seguinte código é uma implementação <a href="https://www.openmp.org/" title="" class="ltx_ref ltx_href">OpenMP</a>/<a href="https://isocpp.org/" title="" class="ltx_ref ltx_href">C++</a> do método de Jacobi para resolver um sistema linear <math id="Thmex2.p1.m1" class="ltx_Math" alttext="Ax=b" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mi>b</mi></mrow></math>. Nele, a distribuição do laço é feita de forma manual e estática. A cada iteração, as <span class="ltx_text ltx_font_italic">threads</span> devem esperar até que todas tenham terminado a iteração anterior. Isso é feito com a diretiva <code class="ltx_verbatim ltx_font_typewriter">omp barrier</code>.</p>
+</div>
+<figure id="cap_mp:cod:jacobi_v0" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 7: </span>jacobi_v0.hpp</figcaption>
+<div class="ltx_listing ltx_lst_language_c++ ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,I2luY2x1ZGUgPGlvc3RyZWFtPgojaW5jbHVkZSA8b21wLmg+CiNpbmNsdWRlIDxlaWdlbjMvRWlnZW4vRGVuc2U+CgpFaWdlbjo6VmVjdG9yWGQgamFjb2JpKGNvbnN0IEVpZ2VuOjpNYXRyaXhYZCAmQSwKICAgICAgICAgICAgICAgICAgICAgICAgY29uc3QgRWlnZW46OlZlY3RvclhkICZiKQp7CiAgICAvLyBwYXJhbXMKICAgIGludCBpdG1heCA9IDEwMDA7CiAgICBkb3VibGUgdG9sID0gMWUtODsKCiAgICBpbnQgbiA9IEEucm93cygpOwogICAgRWlnZW46OlZlY3RvclhkIHggPSBFaWdlbjo6VmVjdG9yWGQ6Olplcm8obik7CgogICAgZG91YmxlIHJfbm9ybSA9IDAuMDsKCiAgICAjcHJhZ21hIG9tcCBwYXJhbGxlbCBudW1fdGhyZWFkcygzKQogICAgewogICAgICAgIC8vIGRpc3RyaWJ1acOnw6NvCiAgICAgICAgaW50IG50aHJlYWRzID0gb21wX2dldF9udW1fdGhyZWFkcygpOwogICAgICAgIGludCB0aWQgPSBvbXBfZ2V0X3RocmVhZF9udW0oKTsKICAgICAgICBpbnQgY2h1bmsgPSBuIC8gbnRocmVhZHM7CiAgICAgICAgaW50IHN0YXJ0ID0gdGlkICogY2h1bms7CiAgICAgICAgaW50IGVuZCA9ICh0aWQgPT0gbnRocmVhZHMgLSAxKSA/IG4gOiBzdGFydCArIGNodW5rOwoKICAgICAgICAvLyBpdGVyYcOnw6NvIGRlIEphY29iaQogICAgICAgIGZvciAoaW50IGl0ID0gMDsgaXQgPCBpdG1heDsgKytpdCkKICAgICAgICB7CiAgICAgICAgICAgIGZvciAoaW50IGkgPSBzdGFydDsgaSA8IGVuZDsgKytpKQogICAgICAgICAgICB7CiAgICAgICAgICAgICAgICBkb3VibGUgc3VtID0gMC4wOwogICAgICAgICAgICAgICAgZm9yIChpbnQgaiA9IDA7IGogPCBuOyArK2opCiAgICAgICAgICAgICAgICB7CiAgICAgICAgICAgICAgICAgICAgaWYgKGkgIT0gaikKICAgICAgICAgICAgICAgICAgICAgICAgc3VtICs9IEEoaSwgaikgKiB4KGopOwogICAgICAgICAgICAgICAgfQogICAgICAgICAgICAgICAgeChpKSA9IChiKGkpIC0gc3VtKSAvIEEoaSwgaSk7CiAgICAgICAgICAgIH0KCiAgICAgICAgICAgIC8vIHNpbmNyb25pemHDp8OjbwogICAgICAgICAgICAjcHJhZ21hIG9tcCBiYXJyaWVyCgogICAgICAgICAgICAvLyB2ZXJpZmljYcOnw6NvCiAgICAgICAgICAgIGlmICh0aWQgPT0gMCkKICAgICAgICAgICAgewogICAgICAgICAgICAgICAgcl9ub3JtID0gKEEgKiB4IC0gYikubm9ybSgpOwogICAgICAgICAgICAgICAgaWYgKHJfbm9ybSA8IHRvbCkKICAgICAgICAgICAgICAgIHsKICAgICAgICAgICAgICAgICAgICBzdGQ6OmNvdXQgPDwgIkNvbnZlcmdlZCBpbiAiCiAgICAgICAgICAgICAgICAgICAgICAgIDw8IGl0IDw8ICIgaXRlcmF0aW9ucy4iCiAgICAgICAgICAgICAgICAgICAgICAgIDw8IHN0ZDo6ZW5kbDsKICAgICAgICAgICAgICAgIH0KICAgICAgICAgICAgfQoKICAgICAgICAgICAgLy8gc2luY3Jvbml6YcOnw6NvCiAgICAgICAgICAgICNwcmFnbWEgb21wIGJhcnJpZXIKICAgICAgICAgICAgaWYgKHJfbm9ybSA8IHRvbCkKICAgICAgICAgICAgICAgIGJyZWFrOwogICAgICAgIH0KICAgIH0KCiAgICByZXR1cm4geDsKCn0=" download="">⬇</a></div>
+<div id="lstnumberx416" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#include</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">iostream</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span>
+</div>
+<div id="lstnumberx417" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#include</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span>
+</div>
+<div id="lstnumberx418" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#include</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">eigen3</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Dense</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span>
+</div>
+<div id="lstnumberx419" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx420" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">jacobi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">const</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">MatrixXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&amp;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx421" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">const</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&amp;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx422" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx423" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>params</span></span>
+</div>
+<div id="lstnumberx424" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">itmax</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1000;</span>
+</div>
+<div id="lstnumberx425" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">double</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-8;</span>
+</div>
+<div id="lstnumberx426" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span>
+</div>
+<div id="lstnumberx427" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rows</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">();</span>
+</div>
+<div id="lstnumberx428" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Eigen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">VectorXd</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Zero</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx429" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span>
+</div>
+<div id="lstnumberx430" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">double</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0;</span>
+</div>
+<div id="lstnumberx431" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span>
+</div>
+<div id="lstnumberx432" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">parallel</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">num_threads</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(3)</span>
+</div>
+<div id="lstnumberx433" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx434" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>distribui<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx435" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nthreads</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp_get_num_threads</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">();</span>
+</div>
+<div id="lstnumberx436" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp_get_thread_num</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">();</span>
+</div>
+<div id="lstnumberx437" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">22</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">chunk</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nthreads</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx438" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">23</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">start</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">chunk</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx439" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">24</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">end</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nthreads</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">?</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">start</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">chunk</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx440" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">25</span>
+</div>
+<div id="lstnumberx441" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">26</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>itera<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>Jacobi</span></span>
+</div>
+<div id="lstnumberx442" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">27</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">itmax</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx443" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">28</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx444" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">29</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">start</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">end</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx445" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">30</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx446" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">31</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">double</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sum</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0;</span>
+</div>
+<div id="lstnumberx447" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">32</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">++</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx448" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">33</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx449" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">34</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx450" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">35</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sum</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx451" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">36</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+<div id="lstnumberx452" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">37</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sum</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">i</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">);</span>
+</div>
+<div id="lstnumberx453" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">38</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+<div id="lstnumberx454" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">39</span>
+</div>
+<div id="lstnumberx455" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">40</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx456" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">41</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">barrier</span>
+</div>
+<div id="lstnumberx457" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">42</span>
+</div>
+<div id="lstnumberx458" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">43</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>verifica<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx459" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">44</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0)</span>
+</div>
+<div id="lstnumberx460" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">45</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx461" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">46</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">).</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">norm</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">();</span>
+</div>
+<div id="lstnumberx462" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">47</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx463" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">48</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">{</span>
+</div>
+<div id="lstnumberx464" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">49</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">std</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cout</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Converged<span class="ltx_text ltx_lst_space"> </span>in<span class="ltx_text ltx_lst_space"> </span>"</span>
+</div>
+<div id="lstnumberx465" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">50</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">it</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"<span class="ltx_text ltx_lst_space"> </span>iterations."</span>
+</div>
+<div id="lstnumberx466" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">51</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">std</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">::</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">endl</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx467" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">52</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+<div id="lstnumberx468" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">53</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+<div id="lstnumberx469" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">54</span>
+</div>
+<div id="lstnumberx470" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">55</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">//<span class="ltx_text ltx_lst_space"> </span>sincroniza<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx471" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">56</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_directive ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">#pragma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">omp</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">barrier</span>
+</div>
+<div id="lstnumberx472" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">57</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">r_norm</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx473" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">58</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">break</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx474" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">59</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+<div id="lstnumberx475" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">60</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+<div id="lstnumberx476" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">61</span>
+</div>
+<div id="lstnumberx477" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">62</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">;</span>
+</div>
+<div id="lstnumberx478" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">63</span>
+</div>
+<div id="lstnumberx479" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">64</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">}</span>
+</div>
+</div>
+</figure>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Verifique!</p>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.5.2 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um método <a href="https://www.openmp.org/" title="" class="ltx_ref ltx_href">OpenMP</a>/<a href="https://isocpp.org/" title="" class="ltx_ref ltx_href">C++</a> para computar a multiplicação matriz-matriz <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="AB" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mi>B</mi></mrow></math>. O código deve fazer a distribuição das <span class="ltx_text ltx_font_italic">threads</span> nas colunas da matriz <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="B" display="inline"><mi>B</mi></math>. Use a cláusula <span class="ltx_text ltx_font_typewriter">omp nowait</span> para evitar sincronizações desnecessárias.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Implemente uma versão <a href="https://www.openmp.org/" title="" class="ltx_ref ltx_href">OpenMP</a>/<a href="https://isocpp.org/" title="" class="ltx_ref ltx_href">C++</a> do método de Jacobi para a solução de differenças finitas da equação de Laplace</p>
+<table id="Ch2.E4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E4.m1" class="ltx_Math" alttext="-\nabla u=f" display="block"><mrow><mrow><mo rspace="0.167em">−</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow><mo>=</mo><mi>f</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.4)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">em um domínio retangular e com condições de contorno de Dirichlet homogêneas.</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Implemente uma versão <a href="https://www.openmp.org/" title="" class="ltx_ref ltx_href">OpenMP</a>/<a href="https://isocpp.org/" title="" class="ltx_ref ltx_href">C++</a> do método de Euler explícito para a solução de diferenças finitas da equação do calor</p>
+<table id="Ch2.E5" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E5.m1" class="ltx_Math" alttext="\frac{\partial u}{\partial t}=\nabla^{2}u" display="block"><mrow><mfrac><mrow><mo rspace="0em">∂</mo><mi>u</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>t</mi></mrow></mfrac><mo>=</mo><mrow><msup><mo rspace="0.167em">∇</mo><mn>2</mn></msup><mi>u</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.5)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">em um domínio retangular e com condições de contorno de Dirichlet homogêneas e uma condição inicial arbitrária.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_mp_sec_lr.html" title="In Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Laços e reduções</span></a><a href="bib.html" title="In Computação Paralela com C++" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_mp_sec_sec.html" title="In Capítulo 2 Multiprocessamento (MP) ‣ Computação Paralela com C++" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.6 </span>Seções</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:07:20 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

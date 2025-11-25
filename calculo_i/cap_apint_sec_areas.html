@@ -1,0 +1,1045 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 6.1 Cálculo de áreas ‣ Capítulo 6 Aplicações da integral ‣ Cálculo I</title>
+<!--Generated on Tue Nov 25 11:10:09 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_apint.html" title="Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="up up" href="./" title="Cálculo I">
+<link rel="start" href="./" title="Cálculo I">
+<link rel="prev" href="cap_apint.html" title="Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="next" href="cap_apint_sec_volfat.html" title="6.2 Volumes por fatiamento e rotação ‣ Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="section" href="cap_apint_sec_volfat.html" title="6.2 Volumes por fatiamento e rotação ‣ Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo I">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo I">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Cálculo I">
+<link rel="chapter" href="cap_lim.html" title="Capítulo 2 Limites ‣ Cálculo I">
+<link rel="chapter" href="cap_deriv.html" title="Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="chapter" href="cap_apderiv.html" title="Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="chapter" href="cap_int.html" title="Capítulo 5 Integração ‣ Cálculo I">
+<link rel="chapter" href="cap_apint.html" title="Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="appendix" href="appendix_lista_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo I">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo I">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_apint.html" title="In Cálculo I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Aplicações da integral</span></a><a href="cap_apint.html" title="In Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Aplicações da integral</span></a><a href="cap_apint_sec_volfat.html" title="In Capítulo 6 Aplicações da integral ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.2 </span>Volumes por fatiamento e rotação</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">6.1 </span>Cálculo de áreas</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">A integral definida <math id="p1.m1" class="ltx_Math" alttext="\int_{a}^{b}f(x)\,dx" display="inline"><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math> está associada a área entre o gráfico da função <math id="p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e o eixo das abscissas no intervalo <math id="p1.m3" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> (consultemos a Figura <a href="#fig:apint_arealiq" title="Figura 6.1 ‣ 6.1 Cálculo de áreas ‣ Capítulo 6 Aplicações da integral ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.1</span></a>).</p>
+</div>
+<figure id="fig:apint_arealiq" class="ltx_figure"><img src="cap_apint/dados/fig_apint_arealiq/fig.png" id="Ch6.F1.g1" class="ltx_graphics ltx_centering ltx_img_square" width="214" height="188" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 6.1</span>: </span><span class="ltx_text" style="font-size:90%;">Integral definida e a área com sinal.</span></figcaption>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Ocorre que se <span class="ltx_text" style="background-color:#FFFF00;"><math id="p2.m1" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFF00">f</mi></math> for não negativa</span>, então</p>
+<table id="Ch6.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E1.m1" class="ltx_Math" alttext="\int_{a}^{b}f(x)\,dx\geq 0." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>≥</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Se <span class="ltx_text" style="background-color:#FFFF00;"><math id="p2.m2" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFF00">f</mi></math> for negativa</span>, então</p>
+<table id="Ch6.E2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E2.m1" class="ltx_Math" alttext="\int_{a}^{b}f(x)\,dx&lt;0." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Por isso, dizemos que <span class="ltx_text" style="background-color:#FFFF00;"><math id="p2.m3" class="ltx_Math" alttext="\int_{a}^{b}f(x)\,dx" display="inline"><mrow><msubsup><mo mathbackground="#FFFF00">∫</mo><mi mathbackground="#FFFF00">a</mi><mi mathbackground="#FFFF00">b</mi></msubsup><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathbackground="#FFFF00" rspace="0em">𝑑</mo><mi mathbackground="#FFFF00">x</mi></mrow></mrow></mrow></math> é a <span class="ltx_text ltx_font_bold">área líquida</span> (ou com sinal) entre o gráfico de <math id="p2.m4" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFF00">f</mi></math> e o eixo das abscissas</span>. No caso da Figura <a href="#fig:apint_arealiq" title="Figura 6.1 ‣ 6.1 Cálculo de áreas ‣ Capítulo 6 Aplicações da integral ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.1</span></a>, a área líquida é dada por</p>
+<table id="Ch6.E3" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E3.m1" class="ltx_Math" alttext="A=\int_{a}^{c}f(x)\,dx=A1-A2," display="block"><mrow><mrow><mi>A</mi><mo rspace="0.111em">=</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>c</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mn>1</mn></mrow><mo>−</mo><mrow><mi>A</mi><mo>⁢</mo><mn>2</mn></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.3)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="p2.m5" class="ltx_Math" alttext="A1" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mn>1</mn></mrow></math> é a área entre o gráfico de <math id="p2.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e o eixo das abscissas no intervalo <math id="p2.m7" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> e <math id="p2.m8" class="ltx_Math" alttext="A2" display="inline"><mrow><mi>A</mi><mo>⁢</mo><mn>2</mn></mrow></math> é a área entre o gráfico de <math id="p2.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e o eixo das abscissas no intervalo <math id="p2.m10" class="ltx_Math" alttext="[b,c]" display="inline"><mrow><mo stretchy="false">[</mo><mi>b</mi><mo>,</mo><mi>c</mi><mo stretchy="false">]</mo></mrow></math>. A área líquida é a diferença entre essas áreas.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Com isso em consideração, a área total de uma região delimitada pelo gráfico de <math id="p3.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e o eixo das abscissas em um intervalo <math id="p3.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> pode ser calculo por</p>
+<table id="Ch6.E4" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E4.m1" class="ltx_Math" alttext="A=\int_{a}^{b}|f(x)|\,dx." display="block"><mrow><mrow><mi>A</mi><mo rspace="0.111em">=</mo><mrow><msubsup><mo rspace="0em">∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.4)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para calcular essa área, fazemos o estudo de sinal de <math id="p3.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no intervalo <math id="p3.m4" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> e dividimos o intervalo em subintervalos onde <math id="p3.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é não-negativa ou negativa. No caso da Figura <a href="#fig:apint_arealiq" title="Figura 6.1 ‣ 6.1 Cálculo de áreas ‣ Capítulo 6 Aplicações da integral ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">6.1</span></a>, temos que</p>
+<table id="A2.S0.EGx408" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E5.m1" class="ltx_Math" alttext="\displaystyle A=\int_{a}^{b}|f(x)|\,dx" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">|</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.5)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E6.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{a}^{b}f(x)\,dx-\int_{b}^{c}f(x)\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>b</mi><mi>c</mi></msubsup></mstyle><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.6)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E7.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=A1+A2." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>A</mi><mn>1</mn><mo>+</mo><mi>A</mi><mn>2</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.7)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="ex:apint_arealiq" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 6.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Calculemos a área total entre o gráfico de <math id="Thmex1.p1.m1" class="ltx_Math" alttext="f(x)=(x-1)^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup></mrow></math> e o eixo das abscissas, restrito ao intervalo <math id="Thmex1.p1.m2" class="ltx_Math" alttext="[0,2]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,2</mn><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+<figure id="fig:ex_apint_arealiq" class="ltx_figure"><img src="cap_apint/dados/fig_ex_apint_arealiq/fig.png" id="Ch6.F2.g1" class="ltx_graphics ltx_centering ltx_img_square" width="196" height="163" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 6.2</span>: </span><span class="ltx_text" style="font-size:90%;">Área total entre o gráfico de <math id="Ch6.F2.m3" class="ltx_Math" alttext="f(x)=(x-1)^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup></mrow></math> e o eixo das abscissas para <math id="Ch6.F2.m4" class="ltx_Math" alttext="x\in[0,2]" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mn>0,2</mn><mo stretchy="false">]</mo></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex1.p2" class="ltx_para">
+<p class="ltx_p">Começamos fazendo o estudo de sinal de <math id="Thmex1.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no intervalo. Como <math id="Thmex1.p2.m2" class="ltx_Math" alttext="x-1\leq 0" display="inline"><mrow><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mn>0</mn></mrow></math> para <math id="Thmex1.p2.m3" class="ltx_Math" alttext="x\leq 1" display="inline"><mrow><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math> e, <math id="Thmex1.p2.m4" class="ltx_Math" alttext="x-1\geq 0" display="inline"><mrow><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo>≥</mo><mn>0</mn></mrow></math> para <math id="Thmex1.p2.m5" class="ltx_Math" alttext="x\geq 1" display="inline"><mrow><mi>x</mi><mo>≥</mo><mn>1</mn></mrow></math>, temos que <math id="Thmex1.p2.m6" class="ltx_Math" alttext="f(x)&lt;0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math> em <math id="Thmex1.p2.m7" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></math> e <math id="Thmex1.p2.m8" class="ltx_Math" alttext="f(x)&gt;0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> em <math id="Thmex1.p2.m9" class="ltx_Math" alttext="[1,2]" display="inline"><mrow><mo stretchy="false">[</mo><mn>1,2</mn><mo stretchy="false">]</mo></mrow></math>. Logo, a área total é dada por</p>
+<table id="Ch6.E8" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E8.m1" class="ltx_Math" alttext="A=-\int_{0}^{1}f(x)\,dx+\int_{1}^{2}f(x)\,dx." display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mrow><mo>−</mo><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.055em">+</mo><mrow><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.8)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex1.p3" class="ltx_para">
+<p class="ltx_p">Agora, usando a substituição <math id="Thmex1.p3.m1" class="ltx_Math" alttext="u=x-1" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mrow></math>, temos <math id="Thmex1.p3.m2" class="ltx_Math" alttext="du=dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math> e segue que</p>
+<table id="A2.S0.EGx409" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E9.m1" class="ltx_Math" alttext="\displaystyle\int f(x)\,dx=\int(x-1)^{3}\,dx" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle="true"><mrow><mo rspace="0em">∫</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.9)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E10.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int u^{3}\,du" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><msup><mi>u</mi><mn>3</mn></msup><mi>d</mi><mi>u</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.10)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E11.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{u^{4}}{4}+C" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>u</mi><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>+</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.11)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E12"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E12.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{(x-1)^{4}}{4}+C." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>+</mo><mi>C</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.12)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex1.p4" class="ltx_para">
+<p class="ltx_p">Então, do Teorema Fundamental do Cálculo, obtemos</p>
+<table id="A2.S0.EGx410" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E13"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E13.m1" class="ltx_Math" alttext="\displaystyle A=-\int_{0}^{1}f(x)\,dx+\int_{1}^{2}f(x)\,dx" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.13)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E14.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\left[\frac{(x-1)^{4}}{4}\right]_{0}^{1}+\left[%
+\frac{(x-1)^{4}}{4}\right]_{1}^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup><mo>+</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>]</mo></mrow><mn>1</mn><mn>2</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.14)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E15"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E15.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\left[\frac{(1-1)^{4}}{4}-\frac{(0-1)^{4}}{4}\right%
+]+\left[\frac{(2-1)^{4}}{4}-\frac{(1-1)^{4}}{4}\right]" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mn>0</mn><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>]</mo></mrow><mo>+</mo><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.15)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E16.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{4}+\frac{1}{4}=\frac{1}{2}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.16)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST95" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 95: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weS5hYmMgaW1wb3J0IHgKZnJvbSBzeW1weSBpbXBvcnQgaW50ZWdyYXRlCmYgPSBsYW1iZGEgeDogKHgtMSkqKjMKQTEgPSBpbnRlZ3JhdGUoZih4KSwgKHgsMCwxKSkKQTIgPSBpbnRlZ3JhdGUoZih4KSwgKHgsMSwyKSkKQSA9IEEyIC0gQTEKcHJpbnQoJ8OBcmVhIHRvdGFsID0nLCBBKQ==" download="">⬇</a></div>
+<div id="lstnumberx583" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx584" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span>
+</div>
+<div id="lstnumberx585" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">lambda</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1)**3</span>
+</div>
+<div id="lstnumberx586" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,0,1))</span>
+</div>
+<div id="lstnumberx587" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,1,2))</span>
+</div>
+<div id="lstnumberx588" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A1</span>
+</div>
+<div id="lstnumberx589" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'<span class="ltx_text ltx_lst_literate">Á</span>rea<span class="ltx_text ltx_lst_space"> </span>total<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="Thmex1.p5" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,w4FyZWEgdG90YWwgPSAxLzI=" download="">⬇</a></div>
+<div id="lstnumberx590" class="ltx_listingline">
+<span class="ltx_text ltx_lst_literate ltx_font_typewriter" style="font-size:90%;">Á</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rea</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">total</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.1.1 </span>Áreas entre curvas</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Observamos que se <math id="SS1.p1.m1" class="ltx_Math" alttext="f(x)\geq g(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no intervalo <math id="SS1.p1.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>, então</p>
+<table id="Ch6.E17" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E17.m1" class="ltx_Math" alttext="\int_{a}^{b}f(x)-g(x)\,dx=\int_{a}^{b}f(x)\,dx-\int_{a}^{b}g(x)\,dx" display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.055em">−</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.17)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">corresponde à área entre as curvas <math id="SS1.p1.m3" class="ltx_Math" alttext="y=f(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e <math id="SS1.p1.m4" class="ltx_Math" alttext="y=g(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> restritas ao intervalo <math id="SS1.p1.m5" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>. Ou seja, fazendo <math id="SS1.p1.m6" class="ltx_Math" alttext="h(x)=f(x)-g(x)" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, temos que</p>
+<table id="Ch6.E18" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E18.m1" class="ltx_Math" alttext="\int_{a}^{b}h(x)\,dx" display="block"><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.18)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">é a área entre essas curvas restritas ao intervalo <math id="SS1.p1.m7" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>. Ainda, se <math id="SS1.p1.m8" class="ltx_Math" alttext="f(x)\leq g(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, entre a área entre elas é dada por</p>
+<table id="Ch6.E19" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E19.m1" class="ltx_Math" alttext="-\int_{a}^{b}h(x)\,dx=\int_{a}^{b}g(x)\,dx-\int_{a}^{b}f(x)\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.055em">−</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.19)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="ex:apint_areacurvas" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 6.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Calculemos a área entre as curvas <math id="Thmex2.p1.m1" class="ltx_Math" alttext="y=(x-1)^{3}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup></mrow></math>, <math id="Thmex2.p1.m2" class="ltx_Math" alttext="y=x-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mrow></math>, <math id="Thmex2.p1.m3" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex2.p1.m4" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math>.</p>
+</div>
+<figure id="fig:ex_apint_areacurvas" class="ltx_figure"><img src="cap_apint/dados/fig_ex_apint_areacurvas/fig.png" id="Ch6.F3.g1" class="ltx_graphics ltx_centering ltx_img_portrait" width="171" height="213" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 6.3</span>: </span><span class="ltx_text" style="font-size:90%;">Área entre as curvas <math id="Ch6.F3.m5" class="ltx_Math" alttext="y=(x-1)^{3}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup></mrow></math>, <math id="Ch6.F3.m6" class="ltx_Math" alttext="y=x-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mrow></math>, <math id="Ch6.F3.m7" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Ch6.F3.m8" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex2.p2" class="ltx_para">
+<p class="ltx_p">Começamos definindo <math id="Thmex2.p2.m1" class="ltx_Math" alttext="h(x)=(x-1)^{3}-(x-1)" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. A fim de fazermos o estudo de sinal de <math id="Thmex2.p2.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>, identificamos seus zeros.</p>
+<table id="A2.S0.EGx411" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E20.m1" class="ltx_Math" alttext="\displaystyle h(x)=(x-1)^{3}-(x-1)" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.20)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E21.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=(x-1)\left[(x-1)^{2}-1\right]" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mrow><mo>[</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.21)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E22"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E22.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=(x-1)(x^{2}-2x)" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>2</mn><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.22)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E23"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E23.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=(x-1)\cdot x\cdot(x-2)." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo rspace="0.055em" stretchy="false">)</mo></mrow><mo rspace="0.222em">⋅</mo><mi>x</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.23)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou seja, <math id="Thmex2.p2.m3" class="ltx_Math" alttext="x_{1}=0" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math>, <math id="Thmex2.p2.m4" class="ltx_Math" alttext="x_{2}=1" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>1</mn></mrow></math> e <math id="Thmex2.p2.m5" class="ltx_Math" alttext="x_{3}=2" display="inline"><mrow><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mn>2</mn></mrow></math> são as raízes de <math id="Thmex2.p2.m6" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>. Daí, segue seu estudo de sinal:</p>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt"></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Thmex2.p2.m7" class="ltx_Math" alttext="0&lt;x&lt;1" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmex2.p2.m8" class="ltx_Math" alttext="1&lt;x&lt;2" display="inline"><mrow><mn>1</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>2</mn></mrow></math></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t"><math id="Thmex2.p2.m9" class="ltx_Math" alttext="(x-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math></th>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">-</td>
+<td class="ltx_td ltx_align_center ltx_border_t">+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r"><math id="Thmex2.p2.m10" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math></th>
+<td class="ltx_td ltx_align_center ltx_border_r">+</td>
+<td class="ltx_td ltx_align_center">+</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r"><math id="Thmex2.p2.m11" class="ltx_Math" alttext="(x-2)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></math></th>
+<td class="ltx_td ltx_align_center ltx_border_r">-</td>
+<td class="ltx_td ltx_align_center">-</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r ltx_border_t"><math id="Thmex2.p2.m12" class="ltx_Math" alttext="h(x)" display="inline"><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math></th>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r ltx_border_t">+</td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_t">-</td>
+</tr>
+</tbody>
+</table>
+<p class="ltx_p">Assim, temos que a área desejada pode ser calculada como</p>
+<table id="Ch6.E24" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch6.E24.m1" class="ltx_Math" alttext="A=\int_{0}^{1}h(x)\,dx-\int_{1}^{2}h(x)\,dx." display="block"><mrow><mrow><mi>A</mi><mo rspace="0.111em">=</mo><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.055em">−</mo><mrow><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.24)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2.p3" class="ltx_para">
+<p class="ltx_p">Agora, calculamos a integral de <math id="Thmex2.p3.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>, i.e.</p>
+<table id="A2.S0.EGx412" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E25"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E25.m1" class="ltx_Math" alttext="\displaystyle\int h(x)\,dx=\int(x-1)^{3}-(x-1)\,dx" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mrow><mo rspace="0em">∫</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup></mrow></mstyle><mo>−</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.25)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E26"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E26.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int(x-1)^{3}\,dx-\int x\,dx+\int\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>3</mn></msup><mi>d</mi><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>x</mi><mi>d</mi><mi>x</mi><mo>+</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.26)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E27.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{(x-1)^{4}}{4}-\frac{x^{2}}{2}+x+C." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>x</mi><mo>+</mo><mi>C</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.27)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2.p4" class="ltx_para">
+<p class="ltx_p">Por fim, do Teorema Fundamental do Cálculo, obtemos</p>
+<table id="A2.S0.EGx413" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E28"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E28.m1" class="ltx_Math" alttext="\displaystyle A=\int_{0}^{1}h(x)\,dx-\int_{1}^{2}h(x)\,dx" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.28)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E29"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E29.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[\frac{(x-1)^{4}}{4}-\frac{x^{2}}{2}+x\right]_{%
+0}^{1}-\left[\frac{(x-1)^{4}}{4}-\frac{x^{2}}{2}+x\right]_{1}^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>x</mi><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup><mo>−</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>x</mi><mo>]</mo></mrow><mn>1</mn><mn>2</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.29)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E30.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{1}{2}+1-\frac{1}{4}-\left(\frac{1}{4}-2+2+%
+\frac{1}{2}-1\right)" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>+</mo><mn>1</mn><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>−</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>4</mn></mfrac></mstyle><mo>−</mo><mn>2</mn><mo>+</mo><mn>2</mn><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>−</mo><mn>1</mn><mo>)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.30)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E31.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.31)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST96" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 96: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weS5hYmMgaW1wb3J0IHgKZnJvbSBzeW1weSBpbXBvcnQgaW50ZWdyYXRlCmYgPSBsYW1iZGEgeDogKHgtMSkqKjMKZyA9IGxhbWJkYSB4OiB4LTEKaCA9IGxhbWJkYSB4OiBmKHgpIC0gZyh4KQpBID0gaW50ZWdyYXRlKGFicyhoKHgpKSwgKHgsMCwyKSk=" download="">⬇</a></div>
+<div id="lstnumberx591" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx592" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span>
+</div>
+<div id="lstnumberx593" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">lambda</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1)**3</span>
+</div>
+<div id="lstnumberx594" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">lambda</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1</span>
+</div>
+<div id="lstnumberx595" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">lambda</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx596" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">abs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,0,2))</span>
+</div>
+</div>
+</figure>
+<div id="Thmex2.p5" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MS8y" download="">⬇</a></div>
+<div id="lstnumberx597" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<section id="SS1.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Calculando áreas em função de <math id="SS1.SSSx1.m1" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>
+</h3>
+
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 6.1.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área determinada pelas curvas <math id="Thmex3.p1.m1" class="ltx_Math" alttext="x=y^{2}" display="inline"><mrow><mi>x</mi><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></math> e <math id="Thmex3.p1.m2" class="ltx_Math" alttext="y=2-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>2</mn><mo>−</mo><mi>x</mi></mrow></mrow></math>.</p>
+</div>
+<figure id="fig:ex_apint_areacurvasy" class="ltx_figure"><img src="cap_apint/dados/fig_ex_apint_areacurvasy/fig.png" id="Ch6.F4.g1" class="ltx_graphics ltx_centering ltx_img_square" width="185" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 6.4</span>: </span><span class="ltx_text" style="font-size:90%;">Área determinada pelas curvas <math id="Ch6.F4.m3" class="ltx_Math" alttext="x=y^{2}" display="inline"><mrow><mi>x</mi><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></math> e <math id="Ch6.F4.m4" class="ltx_Math" alttext="y=2-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>2</mn><mo>−</mo><mi>x</mi></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex3.p2" class="ltx_para">
+<p class="ltx_p">Uma das formas mais práticas de calcular esta área é integrando em relação a <math id="Thmex3.p2.m1" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>. Para isso, precisamos que as curvas sejam descritas por funções de <math id="Thmex3.p2.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> em <math id="Thmex3.p2.m3" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>. A parábola <math id="Thmex3.p2.m4" class="ltx_Math" alttext="x=y^{2}" display="inline"><mrow><mi>x</mi><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></math> já está escrita como tal, e a reta <math id="Thmex3.p2.m5" class="ltx_Math" alttext="y=2-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>2</mn><mo>−</mo><mi>x</mi></mrow></mrow></math> é equivalente a <math id="Thmex3.p2.m6" class="ltx_Math" alttext="x=2-y" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mn>2</mn><mo>−</mo><mi>y</mi></mrow></mrow></math>. Com isso, temos que a área determinada por estas curvas tem medida</p>
+<table id="A2.S0.EGx414" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E32"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E32.m1" class="ltx_Math" alttext="\displaystyle\int_{-2}^{1}\left[(2-y)-(y^{2})\right]\,dy=\int_{-2}^{1}2-y-y^{2%
+}\,dy" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>2</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mrow><mo>[</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>−</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><msup><mi>y</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow><mo>]</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>2</mn></mrow><mn>1</mn></msubsup></mstyle><mn>2</mn></mrow><mo>−</mo><mi>y</mi><mo>−</mo><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.32)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E33"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E33.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left.2y-\frac{y^{2}}{2}-\frac{y^{3}}{3}\right|_{-2}%
+^{1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><mi>y</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>3</mn></msup><mn>3</mn></mfrac></mstyle><msubsup><mo fence="false">|</mo><mrow><mo>−</mo><mn>2</mn></mrow><mn>1</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.33)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E34"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E34.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{7}{6}+\frac{10}{3}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>7</mn><mn>6</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>10</mn><mn>3</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.34)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E35"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E35.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{9}{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>9</mn><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.35)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST97" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 97: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weS5hYmMgaW1wb3J0IHkKZnJvbSBzeW1weSBpbXBvcnQgaW50ZWdyYXRlCmYgPSBsYW1iZGEgeTogMiAtIHkgLSB5KioyCkEgPSBpbnRlZ3JhdGUoZih5KSwgKHksLTIsMSkpCnByaW50KCfDgXJlYSA9JywgQSk=" download="">⬇</a></div>
+<div id="lstnumberx598" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span>
+</div>
+<div id="lstnumberx599" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span>
+</div>
+<div id="lstnumberx600" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">lambda</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2</span>
+</div>
+<div id="lstnumberx601" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,-2,1))</span>
+</div>
+<div id="lstnumberx602" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'<span class="ltx_text ltx_lst_literate">Á</span>rea<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="Thmex3.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,w4FyZWEgPSA5LzI=" download="">⬇</a></div>
+<div id="lstnumberx603" class="ltx_listingline">
+<span class="ltx_text ltx_lst_literate ltx_font_typewriter" style="font-size:90%;">Á</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rea</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">9/2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.1.2 </span>Exercícios resolvidos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 6.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Cálculo a área entre a reta <math id="Thmexeresol1.p1.m1" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math> e o gráfico de <math id="Thmexeresol1.p1.m2" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> restritas ao intervalo <math id="Thmexeresol1.p1.m3" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx80" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx80.p1" class="ltx_para">
+<p class="ltx_p">Observamos que a medida desta área corresponde à área do quadrado <math id="Thmresolx80.p1.m1" class="ltx_Math" alttext="\{0\leq x\leq 1\}\times\{0\leq y\leq 1\}" display="inline"><mrow><mrow><mo stretchy="false">{</mo><mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow><mo rspace="0.055em" stretchy="false">}</mo></mrow><mo rspace="0.222em">×</mo><mrow><mo stretchy="false">{</mo><mrow><mn>0</mn><mo>≤</mo><mi>y</mi><mo>≤</mo><mn>1</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math> descontada a área sob o gráfico de <math id="Thmresolx80.p1.m2" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> restrita ao intervalo <math id="Thmresolx80.p1.m3" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></math>. Isto é,</p>
+<table id="A2.S0.EGx415" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E36"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E36.m1" class="ltx_Math" alttext="\displaystyle A=1-\int_{0}^{1}x^{2}\,dx" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><msup><mi>x</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.36)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E37.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=1-\left[\frac{x^{3}}{3}\right]_{0}^{1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>1</mn><mo>−</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mfrac></mstyle><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.37)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E38"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E38.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=1-\frac{2}{3}=\frac{1}{3}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>1</mn><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mn>3</mn></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>3</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.38)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmexeresol2" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 6.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área entre as curvas <math id="Thmexeresol2.p1.m1" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>, <math id="Thmexeresol2.p1.m2" class="ltx_Math" alttext="y=x" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math>, <math id="Thmexeresol2.p1.m3" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmexeresol2.p1.m4" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx81" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx81.p1" class="ltx_para">
+<p class="ltx_p">O problema é equivalente a calcular a área entre os gráficos das funções <math id="Thmresolx81.p1.m1" class="ltx_Math" alttext="f(x)=x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow></math> e <math id="Thmresolx81.p1.m2" class="ltx_Math" alttext="g(x)=x^{2}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> restritas ao intervalo <math id="Thmresolx81.p1.m3" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></math>. Como <math id="Thmresolx81.p1.m4" class="ltx_Math" alttext="f(x)\geq g(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> neste intervalo, temos</p>
+<table id="A2.S0.EGx416" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E39.m1" class="ltx_Math" alttext="\displaystyle A=\int_{0}^{1}f(x)-g(x)\,dx" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.39)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E40.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}x-x^{2}\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mi>x</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.40)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E41.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left.\frac{x^{2}}{2}-\frac{x^{3}}{3}\right|_{0}^{1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mfrac></mstyle><msubsup><mo fence="false">|</mo><mn>0</mn><mn>1</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.41)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E42.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{6}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.42)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmexeresol3" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 6.1.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol3.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área entre o gráfico de <math id="Thmexeresol3.p1.m1" class="ltx_Math" alttext="f(x)=x^{3}-x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mi>x</mi></mrow></mrow></math> e o eixo das abscissas no intervalo <math id="Thmexeresol3.p1.m2" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx82" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx82.p1" class="ltx_para">
+<p class="ltx_p">Para calcularmos a área entre o gráfico de <math id="Thmresolx82.p1.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> e o eixo das abscissas no intervalo <math id="Thmresolx82.p1.m2" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>, fazemos:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">O estudo de sinal de <math id="I1.i1.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no intervalo <math id="I1.i1.p1.m2" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<ol id="I1.i1.I1" class="ltx_enumerate">
+<li id="I1.i1.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span> 
+<div id="I1.i1.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Cálculo das raízes de <math id="I1.i1.I1.i1.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no intervalo <math id="I1.i1.I1.i1.p1.m2" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+<div id="I1.i1.I1.i1.p2" class="ltx_para">
+<table id="A2.S0.EGx417" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E43.m1" class="ltx_Math" alttext="\displaystyle x^{3}-x=0" display="inline"><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mi>x</mi></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.43)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E44.m1" class="ltx_Math" alttext="\displaystyle x(x^{2}-1)=0" display="inline"><mrow><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.44)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E45.m1" class="ltx_Math" alttext="\displaystyle x(x-1)(x+1)=0" display="inline"><mrow><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.45)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E46"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E46.m1" class="ltx_Math" alttext="\displaystyle x=-1\text{ ou }x=0\text{ ou }x=1." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mo>−</mo><mrow><mn>1</mn><mo>⁢</mo><mtext> ou </mtext><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>=</mo><mrow><mn>0</mn><mo>⁢</mo><mtext> ou </mtext><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.46)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I1.i1.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span> 
+<div id="I1.i1.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Os sinais de <math id="I1.i1.I1.i2.p1.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="I1.i1.I1.i2.p2" class="ltx_para">
+<table id="A2.S0.EGx418" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E47"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E47.m1" class="ltx_Math" alttext="\displaystyle-1\leq x\leq 0" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.47)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E48"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E48.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\Rightarrow f(x)\geq 0" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo stretchy="false">⇒</mo><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>≥</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.48)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E49"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E49.m1" class="ltx_Math" alttext="\displaystyle 0\leq x\leq 1" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.49)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E50"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E50.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\Rightarrow f(x)\leq 0." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo stretchy="false">⇒</mo><mi>f</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>≤</mo><mn>0</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.50)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Cálculo da área usando integrais definidas.</p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<ol id="I1.i2.I1" class="ltx_enumerate">
+<li id="I1.i2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span> 
+<div id="I1.i2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Cálculo da integral indefinida.</p>
+</div>
+<div id="I1.i2.I1.i1.p2" class="ltx_para">
+<table id="A2.S0.EGx419" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E51"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E51.m1" class="ltx_Math" alttext="\displaystyle\int f(x)\,dx=\int x^{3}-x\,dx" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></mstyle><mo>−</mo><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.51)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E52"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E52.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int x^{3}\,dx-\int x\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><msup><mi>x</mi><mn>3</mn></msup><mi>d</mi><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>x</mi><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.52)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E53"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E53.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{x^{4}}{4}-\frac{x^{2}}{2}+C." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>C</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.53)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I1.i2.I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(b)</span> 
+<div id="I1.i2.I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Cálculo da área.</p>
+</div>
+<div id="I1.i2.I1.i2.p2" class="ltx_para">
+<table id="A2.S0.EGx420" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch6.E54"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E54.m1" class="ltx_Math" alttext="\displaystyle A=\int_{-1}^{0}f(x)\,dx-\int_{0}^{1}f(x)\,dx" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.54)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E55"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E55.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[\frac{x^{4}}{4}-\frac{x^{2}}{2}\right]_{-1}^{0%
+}-\left[\frac{x^{4}}{4}-\frac{x^{2}}{2}\right]_{0}^{1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup><mo>−</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.55)</span></td>
+</tr></tbody>
+<tbody id="Ch6.E56"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch6.E56.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(6.56)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST98" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 98: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weS5hYmMgaW1wb3J0IHgKZnJvbSBzeW1weSBpbXBvcnQgcmVkdWNlX2luZXF1YWxpdGllcwpmID0gbGFtYmRhIHg6IHgqKjMgLSB4CnJlZHVjZV9pbmVxdWFsaXRpZXMoZih4KT49MCk=" download="">⬇</a></div>
+<div id="lstnumberx604" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx605" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">reduce_inequalities</span>
+</div>
+<div id="lstnumberx606" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">lambda</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx607" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">reduce_inequalities</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)&gt;=0)</span>
+</div>
+</div>
+</figure>
+<div id="Thmresolx82.p2" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,KCgtMSA8PSB4KSAmICh4IDw9IDApKSB8ICgoMSA8PSB4KSAmICh4IDwgb28pKQ==" download="">⬇</a></div>
+<div id="lstnumberx608" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((-1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&amp;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">|</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&amp;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">oo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgaW50ZWdyYXRlCkExID0gaW50ZWdyYXRlKGYoeCksICh4LCAtMSwgMCkpCkEyID0gaW50ZWdyYXRlKGYoeCksICh4LCAwLCAxKSkKQSA9IEExIC0gQTIKcHJpbnQoJ8OBcmVhID0nLCBBKQ==" download="">⬇</a></div>
+<div id="lstnumberx609" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span>
+</div>
+<div id="lstnumberx610" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0))</span>
+</div>
+<div id="lstnumberx611" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1))</span>
+</div>
+<div id="lstnumberx612" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A2</span>
+</div>
+<div id="lstnumberx613" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'<span class="ltx_text ltx_lst_literate">Á</span>rea<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,w4FyZWEgPSAxLzI=" download="">⬇</a></div>
+<div id="lstnumberx614" class="ltx_listingline">
+<span class="ltx_text ltx_lst_literate ltx_font_typewriter" style="font-size:90%;">Á</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rea</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">6.1.3 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 6.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área entre o gráfico de <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="y=x^{2}-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></mrow></math> e o eixo das abscissas, restrita ao intervalo <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx202">Resposta</button></div><div class="collapse" id="Thmrespx202" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx202.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx202.p1.m1" class="ltx_Math" alttext="4/3" display="inline"><mrow><mn>4</mn><mo>/</mo><mn>3</mn></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 6.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área entre o gráfico de <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="y=x^{2}-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></mrow></math> e o eixo das abscissas, restrita ao intervalo <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="[-1,2]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,2</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx203">Resposta</button></div><div class="collapse" id="Thmrespx203" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx203.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx203.p1.m1" class="ltx_Math" alttext="8/3" display="inline"><mrow><mn>8</mn><mo>/</mo><mn>3</mn></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 6.1.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área entre o gráfico de <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="f(x)=x^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math> e a reta <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math> restritas ao intervalo <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx204">Resposta</button></div><div class="collapse" id="Thmrespx204" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx204.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx204.p1.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 6.1.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área entre as curvas <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="y=x" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math>, <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>, <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx205">Resposta</button></div><div class="collapse" id="Thmrespx205" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx205.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx205.p1.m1" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 6.1.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Calcule a área determinada pelas curvas <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="x=y^{2}" display="inline"><mrow><mi>x</mi><mo>=</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></math> e <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="y=x-2" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx206">Resposta</button></div><div class="collapse" id="Thmrespx206" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx206.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx206.p1.m1" class="ltx_Math" alttext="9/2" display="inline"><mrow><mn>9</mn><mo>/</mo><mn>2</mn></mrow></math></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_apint.html" title="In Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Aplicações da integral</span></a><a href="bib.html" title="In Cálculo I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_apint_sec_volfat.html" title="In Capítulo 6 Aplicações da integral ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6.2 </span>Volumes por fatiamento e rotação</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:10:09 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

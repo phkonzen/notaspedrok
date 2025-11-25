@@ -1,0 +1,1056 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.6 Sequência de caracteres ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I</title>
+<!--Generated on Tue Nov 25 11:08:27 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_lingua.html" title="Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="up up" href="./" title="Algoritmos e Programação I">
+<link rel="start" href="./" title="Algoritmos e Programação I">
+<link rel="prev" href="cap_lingua_sec_bool.html" title="2.5 Dados booleanos ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="next" href="cap_lingua_sec_colecao.html" title="2.7 Coleção de dados ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_lim_sec_computador.html" title="2.1 Computador ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_lingua_sec_algoprog.html" title="2.2 Algoritmos e programação ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_lingua_sec_dados.html" title="2.3 Dados ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_lingua_sec_numop.html" title="2.4 Dados numéricos e operações ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_lingua_sec_bool.html" title="2.5 Dados booleanos ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_lingua_sec_colecao.html" title="2.7 Coleção de dados ‣ Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Algoritmos e Programação I">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_lingua.html" title="Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_progest.html" title="Capítulo 3 Programação estruturada ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_fun.html" title="Capítulo 4 Funções ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_arr.html" title="Capítulo 5 Arranjos e matrizes ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_ag.html" title="Capítulo 6 Arquivos e gráficos ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_poo.html" title="Capítulo 7 Orientação a objetos ‣ Algoritmos e Programação I">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Algoritmos e Programação I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Algoritmos e Programação I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_lingua.html" title="In Algoritmos e Programação I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Linguagem de programação</span></a><a href="cap_lingua_sec_bool.html" title="In Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Dados booleanos</span></a><a href="cap_lingua_sec_colecao.html" title="In Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.7 </span>Coleção de dados</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Compre o <a href="https://a.co/d/eRjID1A">e-book</a> deste material aqui! Consulte outras formas de <a href="../colaborar.html">colaborar</a>.</p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.6 </span>Sequência de caracteres</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Dados em formato texto também são comumente manipulados em programação. <span class="ltx_text" style="background-color:#FFFF00;">Um texto é interpretado como uma cadeia/<span class="ltx_text ltx_font_bold">sequência de caracteres</span></span><span id="Ch2.footnote20" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">20</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">20</sup><span class="ltx_tag ltx_tag_note">20</span>Caractere é qualquer letra, símbolo, sinal ou dígito representado em forma escrita.</span></span></span><span class="ltx_text" style="background-color:#FFFF00;">, chamada de <span class="ltx_text ltx_font_typewriter">string</span></span>. Para entrarmos com uma letra, palavra ou texto (uma <span class="ltx_text ltx_font_typewriter">string</span>), precisamos usar aspas (simples <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'<span class="ltx_text ltx_lst_space"> </span>'</span> ou duplas <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">"<span class="ltx_text ltx_lst_space"> </span>"</span>). Por exemplo,</p>
+</div>
+<div id="p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9ICdPbMOhLCBtdW5kbyEnCnByaW50KHMp" download="">⬇</a></div>
+<div id="lstnumberx305" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>mundo!'</span>
+</div>
+<div id="lstnumberx306" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,T2zDoSwgbXVuZG8h" download="">⬇</a></div>
+<div id="lstnumberx307" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mundo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!</span>
+</div>
+</div>
+</div>
+<div id="p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dHlwZShzKQ==" download="">⬇</a></div>
+<div id="lstnumberx308" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">type</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,PGNsYXNzICdzdHInPg==" download="">⬇</a></div>
+<div id="lstnumberx309" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">str</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'&gt;</span>
+</div>
+</div>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Uma <span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_typewriter">string</span> é um conjunto <span class="ltx_text ltx_font_bold">indexado</span> e <span class="ltx_text ltx_font_bold">imutável</span> de caracteres.</span> O primeiro caractere está na posição <math id="p4.m1" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>, o segundo na posição <math id="p4.m2" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> e assim por diante. Por exemplo,</p>
+<table id="Ch2.E43" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E43.m1" class="ltx_Math" alttext="\underset{\mathtt{0}}{\mathtt{O}}\,\underset{\mathtt{1}}{\mathtt{l}}\,%
+\underset{\mathtt{2}}{\mathtt{\acute{a}}}\,\underset{\mathtt{3}}{\mathtt{,}}\,%
+\underset{\mathtt{4}}{\mathtt{\_}}\,\underset{\mathtt{5}}{\mathtt{m}}\,%
+\underset{\mathtt{6}}{\mathtt{u}}\,\underset{\mathtt{7}}{\mathtt{n}}\,%
+\underset{\mathtt{8}}{\mathtt{d}}\,\underset{\mathtt{9}}{\mathtt{o}}\,%
+\underset{\mathtt{10}}{\mathtt{!}}" display="block"><mrow><munder accentunder="true"><mi>𝙾</mi><mo>𝟶</mo></munder><mo lspace="0.170em">⁢</mo><munder accentunder="true"><mi>𝚕</mi><mo>𝟷</mo></munder><mo>⁢</mo><munderover accent="true" accentunder="true"><mi>𝚊</mi><mo mathsize="142%">𝟸</mo><mo>´</mo></munderover><mo>⁢</mo><munder accentunder="true"><mo>,</mo><mo>𝟹</mo></munder><mo>⁢</mo><munder accentunder="true"><mi mathvariant="normal">_</mi><mo>𝟺</mo></munder><mo>⁢</mo><munder accentunder="true"><mi>𝚖</mi><mo>𝟻</mo></munder><mo>⁢</mo><munder accentunder="true"><mi>𝚞</mi><mo>𝟼</mo></munder><mo>⁢</mo><munder accentunder="true"><mi>𝚗</mi><mo>𝟽</mo></munder><mo>⁢</mo><munder accentunder="true"><mi>𝚍</mi><mo>𝟾</mo></munder><mo>⁢</mo><munder accentunder="true"><mi>𝚘</mi><mo>𝟿</mo></munder><mo>⁢</mo><munder accentunder="true"><mo>!</mo><mo>𝟷𝟶</mo></munder></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.43)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Observamos que o espaço também é um caractere. O tamanho da <span class="ltx_text ltx_font_typewriter">string</span> (número total de caracteres) pode ser obtido com o método <a href="https://docs.python.org/3/library/functions.html#len" title="" class="ltx_ref ltx_href ltx_font_typewriter">len</a>, por exemplo</p>
+</div>
+<div id="p5" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bGVuKHMp" download="">⬇</a></div>
+<div id="lstnumberx310" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">len</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MTE=" download="">⬇</a></div>
+<div id="lstnumberx311" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">11</span>
+</div>
+</div>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">A referência a um caractere de uma dada <span class="ltx_text ltx_font_typewriter">string</span> é feito usando-se seu identificador seguido do índice de sua posição entre colchetes. Por exemplo,</p>
+</div>
+<div id="p7" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,c1s2XQ==" download="">⬇</a></div>
+<div id="lstnumberx312" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[6]</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J3Un" download="">⬇</a></div>
+<div id="lstnumberx313" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span>
+</div>
+</div>
+</div>
+<div id="p8" class="ltx_para">
+<p class="ltx_p">Podemos, ainda, <span class="ltx_text" style="background-color:#FFFF00;">acessar fatias</span><span id="Ch2.footnote21" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">21</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">21</sup><span class="ltx_tag ltx_tag_note">21</span>Em inglês, <span class="ltx_text ltx_font_italic">slice</span>.</span></span></span><span class="ltx_text" style="background-color:#FFFF00;"> da sequência usando o operador <span class="ltx_text ltx_font_typewriter">:</span></span><span id="Ch2.footnote22" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">22</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">22</sup><span class="ltx_tag ltx_tag_note">22</span><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[<span class="ltx_text ltx_lst_identifier">start</span>:<span class="ltx_text ltx_lst_identifier">stop</span>:<span class="ltx_text ltx_lst_identifier">step</span>]</span></span>, padrão <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">start</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=0</span></span>, <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">stop</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=<span class="ltx_text ltx_lst_keyword ltx_lst_keywords2" style="color:#0000FF;">len</span>(<span class="ltx_text ltx_lst_identifier">x</span>)</span></span>, <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">step</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=1</span></span>.</span></span></span>, por exemplo,</p>
+</div>
+<div id="p9" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,c1s6M10=" download="">⬇</a></div>
+<div id="lstnumberx314" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[:3]</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J09sw6En" download="">⬇</a></div>
+<div id="lstnumberx315" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span>
+</div>
+</div>
+</div>
+<div id="p10" class="ltx_para">
+<p class="ltx_p">ou seja, os caracteres da posição <math id="p10.m1" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> à posição <math id="p10.m2" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math> (um antes do índice <math id="p10.m3" class="ltx_Math" alttext="3" display="inline"><mn>3</mn></math>). Também podemos tomar uma fatia entre posições, por exemplo,</p>
+</div>
+<div id="p11" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,c1s1OjEwXQ==" download="">⬇</a></div>
+<div id="lstnumberx316" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[5:10]</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J211bmRvJw==" download="">⬇</a></div>
+<div id="lstnumberx317" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mundo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span>
+</div>
+</div>
+</div>
+<div id="p12" class="ltx_para">
+<p class="ltx_p">o que nos fornece a fatia de caracteres que inicia na posição <math id="p12.m1" class="ltx_Math" alttext="5" display="inline"><mn>5</mn></math> e termina na posição <math id="p12.m2" class="ltx_Math" alttext="9" display="inline"><mn>9</mn></math>. Ou ainda,</p>
+</div>
+<div id="p13" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,c1s2Ol0=" download="">⬇</a></div>
+<div id="lstnumberx318" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[6:]</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J3VuZG8hJw==" download="">⬇</a></div>
+<div id="lstnumberx319" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">undo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!'</span>
+</div>
+</div>
+</div>
+<div id="p14" class="ltx_para">
+<p class="ltx_p">Também, pode-se controlar o passo do fatiamento, por exemplo</p>
+</div>
+<div id="p15" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,J2xhdXJhJ1s6OjJd" download="">⬇</a></div>
+<div id="lstnumberx320" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'laura'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[::2]</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J2x1YSc=" download="">⬇</a></div>
+<div id="lstnumberx321" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">lua</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span>
+</div>
+</div>
+</div>
+<div id="p16" class="ltx_para">
+<p class="ltx_p">Em <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>, exitem diversas <span class="ltx_text" style="background-color:#FFFF00;">formas de escrever <span class="ltx_text ltx_font_typewriter">strings</span></span>:</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">aspas simples</span></p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoJ3Blcm1pdGVtIGFzcGFzICJkdXBsYXMiIGVtYnV0aWRhcycp" download="">⬇</a></div>
+<div id="lstnumberx322" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'permitem<span class="ltx_text ltx_lst_space"> </span>aspas<span class="ltx_text ltx_lst_space"> </span>"duplas"<span class="ltx_text ltx_lst_space"> </span>embutidas'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,cGVybWl0ZW0gYXNwYXMgImR1cGxhcyIgZW1idXRpZGFz" download="">⬇</a></div>
+<div id="lstnumberx323" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">permitem</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">aspas</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">duplas</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">embutidas</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">aspas duplas</span></p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoInBlcm1pdGVtIGFzcGFzICdzaW1wbGVzJyBlbWJ1dGlkYXMiKQ==" download="">⬇</a></div>
+<div id="lstnumberx324" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"permitem<span class="ltx_text ltx_lst_space"> </span>aspas<span class="ltx_text ltx_lst_space"> </span>'simples'<span class="ltx_text ltx_lst_space"> </span>embutidas"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,cGVybWl0ZW0gYXNwYXMgJ3NpbXBsZXMnIGVtYnV0aWRhcw==" download="">⬇</a></div>
+<div id="lstnumberx325" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">permitem</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">aspas</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">simples</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">embutidas</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">aspas triplas</span></p>
+</div>
+<div id="I1.i3.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoJycnCnBlcm1pdGVtCiJkaXZlcnNhcyIKbGluaGFzCicnJyk=" download="">⬇</a></div>
+<div id="lstnumberx326" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">''</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'</span>
+</div>
+<div id="lstnumberx327" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">permitem</span>
+</div>
+<div id="lstnumberx328" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">"diversas"</span>
+</div>
+<div id="lstnumberx329" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">linhas</span>
+</div>
+<div id="lstnumberx330" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">''</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,cGVybWl0ZW0KImRpdmVyc2FzIgpsaW5oYXM=" download="">⬇</a></div>
+<div id="lstnumberx331" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">permitem</span>
+</div>
+<div id="lstnumberx332" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">"</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diversas</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">"</span>
+</div>
+<div id="lstnumberx333" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linhas</span>
+</div>
+</div>
+</div>
+<div id="I1.i3.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoIiIiCnBlcm1pdGVtCidkaXZlcnNhcycKbGluaGFzCiIiIik=" download="">⬇</a></div>
+<div id="lstnumberx334" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">""</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"</span>
+</div>
+<div id="lstnumberx335" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">permitem</span>
+</div>
+<div id="lstnumberx336" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'diversas'</span>
+</div>
+<div id="lstnumberx337" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">linhas</span>
+</div>
+<div id="lstnumberx338" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">"</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">""</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,cGVybWl0ZW0KJ2RpdmVyc2FzJwpsaW5oYXM=" download="">⬇</a></div>
+<div id="lstnumberx339" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">permitem</span>
+</div>
+<div id="lstnumberx340" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diversas</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span>
+</div>
+<div id="lstnumberx341" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linhas</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="p17" class="ltx_para">
+<p class="ltx_p">Em <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>, <span class="ltx_text ltx_font_typewriter">strings</span> usam o padrão <a href="https://home.unicode.org/" title="" class="ltx_ref ltx_href">Unicode</a>, que permite manipular textos de forma muito próxima da linguagem natural. Alguns caracteres especiais úteis são:</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'\n'</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">nova linha</span></p>
+</div>
+<div id="I2.i1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoJ1VtYSBub3ZhXG5saW5oYScp" download="">⬇</a></div>
+<div id="lstnumberx342" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Uma<span class="ltx_text ltx_lst_space"> </span>nova\nlinha'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,VW1hIG5vdmEKbGluaGE=" download="">⬇</a></div>
+<div id="lstnumberx343" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Uma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nova</span>
+</div>
+<div id="lstnumberx344" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linha</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'\t'</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">tabulação</span></p>
+</div>
+<div id="I2.i2.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoJ1VtYSBub3ZhXG5cdCBsaW5oYSBjb20gdGFidWxhw6fDo28nKQ==" download="">⬇</a></div>
+<div id="lstnumberx345" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Uma<span class="ltx_text ltx_lst_space"> </span>nova\n\t<span class="ltx_text ltx_lst_space"> </span>linha<span class="ltx_text ltx_lst_space"> </span>com<span class="ltx_text ltx_lst_space"> </span>tabula<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,VW1hIG5vdmEKICAgIGxpbmhhIGNvbSB0YWJ1bGHDp8Ojbw==" download="">⬇</a></div>
+<div id="lstnumberx346" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Uma</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nova</span>
+</div>
+<div id="lstnumberx347" class="ltx_listingline">
+<span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linha</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">com</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tabulação</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 2.6.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(<span class="ltx_text ltx_font_italic">Raw string</span>)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">Caso seja necessário imprimir os caracteres unicode especiais <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'\\n'</span>, <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'\\t'</span>, entre outros, pode-se usar <span class="ltx_text ltx_font_italic">raw strings</span>. Por exemplo,</p>
+</div>
+<div id="Thmobs1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQocidBcXVpLCBvIFxuIG7Do28gcXVlYnJhIGEgbGluaGEhJyk=" download="">⬇</a></div>
+<div id="lstnumberx348" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">r'Aqui,<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>\n<span class="ltx_text ltx_lst_space"> </span>n<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>quebra<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>linha!'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,QXF1aSwgbyBcbiBuw6NvIHF1ZWJyYSBhIGxpbmhhIQ==" download="">⬇</a></div>
+<div id="lstnumberx349" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Aqui</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">o</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">\</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">n</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">não</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">quebra</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linha</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!</span>
+</div>
+</div>
+</div>
+</div>
+<section id="cap_lingua_sec_string:subsec:format" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.6.1 </span>Formatação de <span class="ltx_text ltx_font_typewriter">strings</span>
+</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Em <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>, <span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_typewriter">strings</span> formatadas</span> são identificadas com a letra <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">f</span> no início. Elas <span class="ltx_text" style="background-color:#FFFF00;">aceitam o uso de identificadores</span> com valores predefinidos. Os identificadores são <span class="ltx_text" style="background-color:#FFFF00;">embutidos com</span> o uso de <span class="ltx_text" style="background-color:#FFFF00;">chaves</span> <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">{}</span> (<span class="ltx_text ltx_font_italic">placeholder</span>). Por exemplo,</p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bm9tZSA9ICdGdWxhbmUnCnByaW50KGYnT2zDoSwge25vbWV9IScp" download="">⬇</a></div>
+<div id="lstnumberx350" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nome</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Fulane'</span>
+</div>
+<div id="lstnumberx351" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>{nome}!'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J09sw6EsIEZ1bGFuZSEn" download="">⬇</a></div>
+<div id="lstnumberx352" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Fulane</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!'</span>
+</div>
+</div>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">Há várias <span class="ltx_text" style="background-color:#FFFF00;">especificações de formatação</span> disponíveis<span id="Ch2.footnote23" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">23</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">23</sup><span class="ltx_tag ltx_tag_note">23</span>Consulte na <span class="ltx_text ltx_font_italic">web</span> por <a href="https://docs.python.org/3/library/string.html#format-specification-mini-language" title="" class="ltx_ref ltx_href">Python Docs:String: Format Specification Mini-Language</a> para uma lista completa.</span></span></span>:</p>
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'d'</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">número inteiro</span></p>
+</div>
+<div id="I3.i1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoZicxMC8zIMOpIGlndWFsIGEgezEwLy8zOmR9IGUgcmVzdGEgezEwJTM6ZH0uJyk=" download="">⬇</a></div>
+<div id="lstnumberx353" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'10/3<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">é</span><span class="ltx_text ltx_lst_space"> </span>igual<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>{10//3:d}<span class="ltx_text ltx_lst_space"> </span>e<span class="ltx_text ltx_lst_space"> </span>resta<span class="ltx_text ltx_lst_space"> </span>{10%3:d}.'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MTAvMyDDqSBpZ3VhbCBhIDMgZSByZXN0YSAxLg==" download="">⬇</a></div>
+<div id="lstnumberx354" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">10/3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_literate ltx_font_typewriter" style="font-size:90%;">é</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">igual</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">resta</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'f'</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">número decimal</span></p>
+</div>
+<div id="I3.i2.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoZicxMy83IMOpIGFwcm94aW1hZGFtZW50ZSB7MTMvNzouM2Z9Jyk=" download="">⬇</a></div>
+<div id="lstnumberx355" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'13/7<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">é</span><span class="ltx_text ltx_lst_space"> </span>aproximadamente<span class="ltx_text ltx_lst_space"> </span>{13/7:.3f}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MTMvNyDDqSBhcHJveGltYWRhbWVudGUgMS44NTc=" download="">⬇</a></div>
+<div id="lstnumberx356" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">13/7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_literate ltx_font_typewriter" style="font-size:90%;">é</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">aproximadamente</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.857</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'e'</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">notação científica normalizada</span></p>
+</div>
+<div id="I3.i3.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cHJpbnQoZicxMDMvNyDDqSBhcHJveGltYWRhbWVudGUgezEwMy83Oi4zZX0nKQ==" download="">⬇</a></div>
+<div id="lstnumberx357" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'103/7<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">é</span><span class="ltx_text ltx_lst_space"> </span>aproximadamente<span class="ltx_text ltx_lst_space"> </span>{103/7:.3e}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MTAzLzcgw6kgYXByb3hpbWFkYW1lbnRlIDEuNDcxZSswMQ==" download="">⬇</a></div>
+<div id="lstnumberx358" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">103/7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_literate ltx_font_typewriter" style="font-size:90%;">é</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">aproximadamente</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.471</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+01</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.6.2 </span>Operações com <span class="ltx_text ltx_font_typewriter">strings</span>
+</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Em <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>, há uma grande variedade disponível de <span class="ltx_text" style="background-color:#FFFF00;">métodos para a manipulação de <span class="ltx_text ltx_font_typewriter">strings</span></span><span id="Ch2.footnote24" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">24</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">24</sup><span class="ltx_tag ltx_tag_note">24</span>Consulte na <span class="ltx_text ltx_font_italic">web</span> por <a href="https://docs.python.org/3/library/stdtypes.html#string-methods" title="" class="ltx_ref ltx_href">The Python Standard Library: String Methods</a>.</span></span></span>. Alguns operadores básicos são:</p>
+<ul id="I4" class="ltx_itemize">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">+</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">concatenação</span></p>
+</div>
+<div id="I4.i1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9ICdPbMOhLCBtdW5kbyEnCnNbOjVdICsgJ0Z1bGFuZSEn" download="">⬇</a></div>
+<div id="lstnumberx359" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>mundo!'</span>
+</div>
+<div id="lstnumberx360" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[:5]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Fulane!'</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J09sw6EsIEZ1bGFuZSEn" download="">⬇</a></div>
+<div id="lstnumberx361" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Fulane</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!'</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">*</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">repetição</span></p>
+</div>
+<div id="I4.i2.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,J2hhJyoz" download="">⬇</a></div>
+<div id="lstnumberx362" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'ha'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*3</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,J2hhaGFoYSc=" download="">⬇</a></div>
+<div id="lstnumberx363" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">hahaha</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_keyword ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;color:#0000FF;background-color:#F7F7F7;">in</span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">pertence</span></p>
+</div>
+<div id="I4.i3.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,J21hcicgaW4gJ2FtYXJlbG8n" download="">⬇</a></div>
+<div id="lstnumberx364" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'mar'</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'amarelo'</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,VHJ1ZQ==" download="">⬇</a></div>
+<div id="lstnumberx365" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.6.3 </span>Entrada de dados</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p">O método <a href="https://docs.python.org/3/library/functions.html#input" title="" class="ltx_ref ltx_href ltx_font_typewriter">input</a> pode ser usado para a <span class="ltx_text" style="background-color:#FFFF00;">entrada de <span class="ltx_text ltx_font_typewriter">string</span></span> via teclado. Por exemplo,</p>
+</div>
+<div id="SS3.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9IGlucHV0KCdEaWdpdGUgc2V1IG5vbWU6ICcpCnByaW50KGYnT2zDoSwge3N9Licp" download="">⬇</a></div>
+<div id="lstnumberx366" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Digite<span class="ltx_text ltx_lst_space"> </span>seu<span class="ltx_text ltx_lst_space"> </span>nome:<span class="ltx_text ltx_lst_space"> </span>'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx367" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>{s}.'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,RGlnaXRlIHNldSBub21lOiBGdWxhbmUKT2zDoSwgRnVsYW5lLg==" download="">⬇</a></div>
+<div id="lstnumberx368" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Digite</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">seu</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nome</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Fulane</span>
+</div>
+<div id="lstnumberx369" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Fulane</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span>
+</div>
+</div>
+</div>
+<div id="SS3.p3" class="ltx_para">
+<p class="ltx_p">A instrução da linha 1 pede para que a variável <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">s</span> receba a <span class="ltx_text ltx_font_typewriter">string</span> a ser digitada por usuária(o). A <span class="ltx_text ltx_font_typewriter">string</span> entre parênteses é informativa, o comando <a href="https://docs.python.org/3/library/functions.html#input" title="" class="ltx_ref ltx_href ltx_font_typewriter">input</a>, imprime esta mensagem e fica aguardado que uma nova <span class="ltx_text ltx_font_typewriter">string</span> seja digitada. Quando o usuário pressiona <span class="ltx_text ltx_font_typewriter">&lt;ENTER&gt;</span>, a <span class="ltx_text ltx_font_typewriter">string</span> digitada é alocada na variável <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">s</span>.</p>
+</div>
+<section id="SS3.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Conversão entre classes de dados</h3>
+
+<div id="SS3.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text" style="background-color:#FFFF00;">conversão entre classes de dados</span> é possível e é feita por métodos próprios de cada classe. Por exemplo,</p>
+</div>
+<div id="SS3.SSSx1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IyBpbnQgLT4gc3RyCnN0cigxMDEp" download="">⬇</a></div>
+<div id="lstnumberx370" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>int<span class="ltx_text ltx_lst_space"> </span>-&gt;<span class="ltx_text ltx_lst_space"> </span>str</span></span>
+</div>
+<div id="lstnumberx371" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">str</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(101)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,JzEwMSc=" download="">⬇</a></div>
+<div id="lstnumberx372" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'101'</span>
+</div>
+</div>
+</div>
+<div id="SS3.SSSx1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IyBzdHIgLT4gaW50CmludCgnMjMnKQ==" download="">⬇</a></div>
+<div id="lstnumberx373" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>str<span class="ltx_text ltx_lst_space"> </span>-&gt;<span class="ltx_text ltx_lst_space"> </span>int</span></span>
+</div>
+<div id="lstnumberx374" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'23'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MjM=" download="">⬇</a></div>
+<div id="lstnumberx375" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">23</span>
+</div>
+</div>
+</div>
+<div id="SS3.SSSx1.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IyBpbnQgLT4gZmxvYXQKZmxvYXQoMSk=" download="">⬇</a></div>
+<div id="lstnumberx376" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>int<span class="ltx_text ltx_lst_space"> </span>-&gt;<span class="ltx_text ltx_lst_space"> </span>float</span></span>
+</div>
+<div id="lstnumberx377" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MS4w" download="">⬇</a></div>
+<div id="lstnumberx378" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.0</span>
+</div>
+</div>
+</div>
+<div id="SS3.SSSx1.p5" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IyBmbG9hdCAtPiBpbnQKaW50KC0yLjkp" download="">⬇</a></div>
+<div id="lstnumberx379" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>float<span class="ltx_text ltx_lst_space"> </span>-&gt;<span class="ltx_text ltx_lst_space"> </span>int</span></span>
+</div>
+<div id="lstnumberx380" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-2.9)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,LTI=" download="">⬇</a></div>
+<div id="lstnumberx381" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2</span>
+</div>
+</div>
+</div>
+<div id="SS3.SSSx1.p6" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Atenção! Na conversão de <a href="https://docs.python.org/3/library/functions.html#float" title="" class="ltx_ref ltx_href ltx_font_typewriter">float</a> para <a href="https://docs.python.org/3/library/functions.html#int" title="" class="ltx_ref ltx_href ltx_font_typewriter">int</a>, fica-se apenas com a parte inteira do número</span>.</p>
+</div>
+<div id="Thmobs2" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 2.6.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Método <span class="ltx_text ltx_font_typewriter">input</span>)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs2.p1" class="ltx_para">
+<p class="ltx_p">O método <a href="https://docs.python.org/3/library/functions.html#input" title="" class="ltx_ref ltx_href ltx_font_typewriter">input</a> permite a entrada de <span class="ltx_text ltx_font_typewriter">strings</span>, que podem ser convertidas para outras classes de dados. Com isso, pode-se obter a entrada via teclado destes dados.</p>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">O seguinte código, computa a área de um triângulo com base e altura fornecidas por usuária(o).</p>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IyBlbnRyYWRhIGRlIGRhZG9zCmJhc2UgPSBmbG9hdChpbnB1dCgnRW50cmUgY29tIG8gdmFsb3IgZGEgYmFzZTpcblx0JykpCmFsdHVyYSA9IGZsb2F0KGlucHV0KCdFbnRyZSBjb20gbyB2YWxvciBkYSBhbHR1cmE6XG5cdCcpKQoKIyBjw6FsY3VsbyBkYSDDoXJlYQphcmVhID0gYmFzZSphbHR1cmEvMgoKIyBpbXByaW1lIGEgw6FyZWEKcHJpbnQoZifDgXJlYSBkbyB0cmlhbmd1bG8gZGUgJykKcHJpbnQoZidcdCBiYXNlID0ge2Jhc2U6ZX0nKQpwcmludChmJ1x0IGFsdHVyYSA9IHthbHR1cmE6ZX0nKQpwcmludChmJ8OpIGlndWFsIGEge2FyZWE6ZX0nKQ==" download="">⬇</a></div>
+<div id="lstnumberx382" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>entrada<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>dados</span></span>
+</div>
+<div id="lstnumberx383" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">base</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Entre<span class="ltx_text ltx_lst_space"> </span>com<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>valor<span class="ltx_text ltx_lst_space"> </span>da<span class="ltx_text ltx_lst_space"> </span>base:\n\t'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx384" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">altura</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Entre<span class="ltx_text ltx_lst_space"> </span>com<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>valor<span class="ltx_text ltx_lst_space"> </span>da<span class="ltx_text ltx_lst_space"> </span>altura:\n\t'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx385" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx386" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>c<span class="ltx_text ltx_lst_literate">á</span>lculo<span class="ltx_text ltx_lst_space"> </span>da<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">á</span>rea</span></span>
+</div>
+<div id="lstnumberx387" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">area</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">base</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">altura</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/2</span>
+</div>
+<div id="lstnumberx388" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span>
+</div>
+<div id="lstnumberx389" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>imprime<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">á</span>rea</span></span>
+</div>
+<div id="lstnumberx390" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'<span class="ltx_text ltx_lst_literate">Á</span>rea<span class="ltx_text ltx_lst_space"> </span>do<span class="ltx_text ltx_lst_space"> </span>triangulo<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx391" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'\t<span class="ltx_text ltx_lst_space"> </span>base<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{base:e}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx392" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'\t<span class="ltx_text ltx_lst_space"> </span>altura<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{altura:e}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx393" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'<span class="ltx_text ltx_lst_literate">é</span><span class="ltx_text ltx_lst_space"> </span>igual<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>{area:e}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.6.4 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Com base na linguagem <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>, complete as lacunas.</p>
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden">Caractere</span></span> é qualquer letra, símbolo, sinal ou dígito representado em forma escrita.</p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_typewriter">String</span> é uma sequência <span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden">caracteres</span></span>.</p>
+</div>
+</li>
+<li id="I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I5.i3.p1" class="ltx_para">
+<p class="ltx_p">Usam-se <span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden">aspas</span></span> para a entrada de <span class="ltx_text ltx_font_typewriter">strings</span>.</p>
+</div>
+</li>
+<li id="I5.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I5.i4.p1" class="ltx_para">
+<p class="ltx_p">O caractere especial <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_phantom ltx_font_typewriter ltx_framed ltx_framed_underline" style="font-size:90%;background-color:#F7F7F7;"><span style="visibility:hidden">'n'</span></span> insere uma nova linha, enquanto que o <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'\t'</span> insere uma <span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden">tabulação</span></span>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx49">Resposta</button></div><div class="collapse" id="Thmrespx49" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx49.p1" class="ltx_para">
+<p class="ltx_p">a) caractere. b) sequência de caracteres. c) aspas. d) <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lst_string ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">'\n'</span>; tabulação.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.6.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Aloque a palavra <span class="ltx_text ltx_font_italic">traitor</span> em uma variável <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>. Use de indexação por referência para:</p>
+<ol id="I6" class="ltx_enumerate">
+<li id="I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I6.i1.p1" class="ltx_para">
+<p class="ltx_p">Extrair a quarta letra da palavra.</p>
+</div>
+</li>
+<li id="I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I6.i2.p1" class="ltx_para">
+<p class="ltx_p">Extrair a <span class="ltx_text ltx_font_italic">substring<span id="Ch2.footnote25" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">25</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">25</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_upright">25</span></span><span class="ltx_text ltx_font_upright">Uma subsequência contínua de caracteres de uma </span><span class="ltx_text ltx_font_typewriter ltx_font_upright">string</span><span class="ltx_text ltx_font_upright">.</span></span></span></span></span> formada pelas quatro primeiras letras da palavra.</p>
+</div>
+</li>
+<li id="I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I6.i3.p1" class="ltx_para">
+<p class="ltx_p">Extrair a <span class="ltx_text ltx_font_typewriter">string</span> formadas pelas segunda, quarta e sexta letras (nesta ordem) da palavra.</p>
+</div>
+</li>
+<li id="I6.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I6.i4.p1" class="ltx_para">
+<p class="ltx_p">Extrair a <span class="ltx_text ltx_font_typewriter">string</span> formadas pelas penúltima e quarta letras (nesta ordem) da palavra.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx50">Resposta</button></div><div class="collapse" id="Thmrespx50" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx50.p1" class="ltx_para">
+<p class="ltx_p">a) <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[3]</span></span>; b) <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[:4]</span></span>; c) <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[1::2]</span></span>; d) <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">[-2:2:-2]</span></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.6.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Considere o seguinte código</p>
+</div>
+<div id="Thmexer3.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9ICd0cmFpdG9yJwpwcmludChzWzozXSArIHNbNDpdKQ==" download="">⬇</a></div>
+<div id="lstnumberx394" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'traitor'</span>
+</div>
+<div id="lstnumberx395" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[:3]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[4:])</span>
+</div>
+</div>
+</div>
+<div id="Thmexer3.p3" class="ltx_para">
+<p class="ltx_p">Sem implementá-lo, o que é impresso?</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx51">Resposta</button></div><div class="collapse" id="Thmrespx51" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx51.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">trator</span></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.6.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um contador de letras de palavras. Ou seja, crie um código que forneça o número de letras de uma palavra fornecida por usuário(a).</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx52">Resposta</button></div><div class="collapse" id="Thmrespx52" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx52.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9IGlucHV0KCdEaWdpdGUgdW1hIHBhbGF2cmE6XG5cdCcpCnByaW50KGYnQSBwYWxhdnJhIHtzfSB0ZW0ge2xlbihzKX0gbGV0cmFzLicp" download="">⬇</a></div>
+<div id="lstnumberx396" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:80%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'Digite<span class="ltx_text ltx_lst_space"> </span>uma<span class="ltx_text ltx_lst_space"> </span>palavra:\n\t'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">)</span>
+</div>
+<div id="lstnumberx397" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:80%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'A<span class="ltx_text ltx_lst_space"> </span>palavra<span class="ltx_text ltx_lst_space"> </span>{s}<span class="ltx_text ltx_lst_space"> </span>tem<span class="ltx_text ltx_lst_space"> </span>{len(s)}<span class="ltx_text ltx_lst_space"> </span>letras.'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">)</span>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.6.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um código que compute a área de um quadrado de lado fornecido por usuária(o). Assumindo que o lado é dado em centímetros, a área deve ser impressa em metros, usando notação decimal com <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math> dígitos depois da vírgula.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx53">Resposta</button></div><div class="collapse" id="Thmrespx53" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx53.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bGFkbyA9IGZsb2F0KGlucHV0KCdEaWdpdGUgbyBsYWRvIChlbSBjbSkgZG8gcXVhZHJhZG86XG5cdCcpKQphcmVhID0gbGFkbyoqMi8xMDAqKjIKcHJpbnQoZidPIHF1YWRyYWRvIGRlIGxhZG8ge2xhZG86ZX0gY20gdGVtIMOhcmVhIHthcmVhOi4yZn0gbS4nKQ==" download="">⬇</a></div>
+<div id="lstnumberx398" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">lado</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:80%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:80%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'Digite<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>lado<span class="ltx_text ltx_lst_space"> </span>(em<span class="ltx_text ltx_lst_space"> </span>cm)<span class="ltx_text ltx_lst_space"> </span>do<span class="ltx_text ltx_lst_space"> </span>quadrado:\n\t'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">))</span>
+</div>
+<div id="lstnumberx399" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">area</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">lado</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">**2/100**2</span>
+</div>
+<div id="lstnumberx400" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:80%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'O<span class="ltx_text ltx_lst_space"> </span>quadrado<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>lado<span class="ltx_text ltx_lst_space"> </span>{lado:e}<span class="ltx_text ltx_lst_space"> </span>cm<span class="ltx_text ltx_lst_space"> </span>tem<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">á</span>rea<span class="ltx_text ltx_lst_space"> </span>{area:.2f}<span class="ltx_text ltx_lst_space"> </span>m.'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">)</span>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexer6" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.6.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um código que verifica se um número é divisível por outro. Ou seja, a(o) usuária(o) entra com dois números inteiros e o código imprime verdadeiro (<a href="https://docs.python.org/3/library/constants.html#True" title="" class="ltx_ref ltx_href ltx_font_typewriter">True</a>) ou (<a href="https://docs.python.org/3/library/constants.html#False" title="" class="ltx_ref ltx_href ltx_font_typewriter">False</a>) conforme a divisibilidade de <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> por <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx54">Resposta</button></div><div class="collapse" id="Thmrespx54" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx54.p1" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,eCA9IGludChpbnB1dCgnRGlnaXRlIHVtIG7Dum1lcm8gaW50ZWlybzpcbicpKQp5ID0gaW50KGlucHV0KCdEaWdpdGUgb3V0cm8gbsO6bWVybyBpbnRlaXJvIG7Do28gbnVsbzpcbicpKQpwcmludChmJ3t4fSDDqSBkaXZpc8OtdmVsIHBvciB7eX0/JykKcHJpbnQoZid7eCV5PT0wfScp" download="">⬇</a></div>
+<div id="lstnumberx401" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:80%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:80%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'Digite<span class="ltx_text ltx_lst_space"> </span>um<span class="ltx_text ltx_lst_space"> </span>n<span class="ltx_text ltx_lst_literate">ú</span>mero<span class="ltx_text ltx_lst_space"> </span>inteiro:\n'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">))</span>
+</div>
+<div id="lstnumberx402" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:80%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:80%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:80%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'Digite<span class="ltx_text ltx_lst_space"> </span>outro<span class="ltx_text ltx_lst_space"> </span>n<span class="ltx_text ltx_lst_literate">ú</span>mero<span class="ltx_text ltx_lst_space"> </span>inteiro<span class="ltx_text ltx_lst_space"> </span>n<span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>nulo:\n'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">))</span>
+</div>
+<div id="lstnumberx403" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:80%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'{x}<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">é</span><span class="ltx_text ltx_lst_space"> </span>divis<span class="ltx_text ltx_lst_literate">í</span>vel<span class="ltx_text ltx_lst_space"> </span>por<span class="ltx_text ltx_lst_space"> </span>{y}?'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">)</span>
+</div>
+<div id="lstnumberx404" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:80%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:80%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:80%;">'{x%y==0}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:80%;">)</span>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexer7" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.6.7.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer7.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um código que computa a área de um triângulo de base e altura informadas por usuária(o). O resultado deve ser impresso em notação científica normalizada com três dígitos.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_lingua_sec_bool.html" title="In Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Dados booleanos</span></a><a href="bib.html" title="In Algoritmos e Programação I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_lingua_sec_colecao.html" title="In Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.7 </span>Coleção de dados</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:08:27 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

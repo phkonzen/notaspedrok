@@ -1,0 +1,527 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 1.7 Precondicionamento ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III</title>
+<!--Generated on Tue Nov 25 11:08:42 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_sislin.html" title="Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="up up" href="./" title="Matemática Numérica III">
+<link rel="start" href="./" title="Matemática Numérica III">
+<link rel="prev" href="cap_sislin_sec_gmres.html" title="1.6 Método GMRES ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="next" href="cap_sisnlin.html" title="Capítulo 2 Sistemas Não Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_matrizes_bandas.html" title="1.1 Matrizes bandas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_matesparsa.html" title="1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_metiterbas.html" title="1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_mgc.html" title="1.4 Método do gradiente conjugado ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_metproj.html" title="1.5 Métodos de projeção ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="section" href="cap_sislin_sec_gmres.html" title="1.6 Método GMRES ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Matemática Numérica III">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_sislin.html" title="Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_sisnlin.html" title="Capítulo 2 Sistemas Não Lineares ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_otimizacao.html" title="Capítulo 3 Otimização ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_autoval.html" title="Capítulo 4 Autovalores e Autovetores ‣ Matemática Numérica III">
+<link rel="chapter" href="cap_integracao.html" title="Capítulo 5 Integração ‣ Matemática Numérica III">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Matemática Numérica III">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Matemática Numérica III</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_sislin.html" title="In Matemática Numérica III" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1 </span>Sistemas Lineares</span></a><a href="cap_sislin_sec_gmres.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.6 </span>Método GMRES</span></a><a href="cap_sisnlin.html" title="In Matemática Numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Sistemas Não Lineares</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1.7 </span>Precondicionamento</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Os métodos iterativos vistos neste capítulo estão todos sujeitos a aparesentarem uma convergência lenta, devido a problemas inerentes de aplicações típicas. Precondicionamento é a técnica mais comum para acelerar a convergência nestes casos. A ideia básica é transformar o sistema linear original em um sistema equivalente (chamado de sistema precondicionado) que seja mais favorável para a aplicação de um método iterativo escolhido. De forma geral, o sistema precondicionado é definido como</p>
+<table id="Ch1.E204" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E204.m1" class="ltx_Math" alttext="M^{-1}A\boldsymbol{x}=M^{-1}\boldsymbol{b}," display="block"><mrow><mrow><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.204)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="p1.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> é a <span class="ltx_text ltx_font_bold">matriz de precondicionamento</span>, que deve ser escolhida de forma que o sistema precondicionado seja mais fácil de resolver do que o sistema original. A matriz <math id="p1.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> deve ser tal que:</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> seja uma boa aproximação de <math id="I1.i1.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, i.e. <math id="I1.i1.p1.m3" class="ltx_Math" alttext="M^{-1}A\approx I" display="inline"><mrow><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi></mrow><mo>≈</mo><mi>I</mi></mrow></math>;</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="M\boldsymbol{y}=\boldsymbol{c}" display="inline"><mrow><mrow><mi>M</mi><mo>⁢</mo><mi>𝒚</mi></mrow><mo>=</mo><mi>𝒄</mi></mrow></math> seja fácil de resolver.</p>
+</div>
+</li>
+</ul>
+<p class="ltx_p">Esta última condição vem do fato de que, na prática, não queremos calcular <math id="p1.m3" class="ltx_Math" alttext="M^{-1}" display="inline"><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math> explicitamente, mas sim resolver sistemas lineares <math id="p1.m4" class="ltx_Math" alttext="M\boldsymbol{y}=\boldsymbol{c}" display="inline"><mrow><mrow><mi>M</mi><mo>⁢</mo><mi>𝒚</mi></mrow><mo>=</mo><mi>𝒄</mi></mrow></math> a cada passo do método iterativo.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">No Seção <a href="cap_sislin_sec_metiterbas.html" title="1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.3</span></a>, vimos métodos iterativos simples, baseados nas técnicas de relaxação como o método de Jacobi, o método de Gauss-Seidel, SOR e SSOR. Estes métodos podem ser vistos como métodos de precondicionamento, onde a matriz de precondicionamento <math id="p2.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> é dada por:</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Jacobi</span>: <math id="I2.i1.p1.m1" class="ltx_Math" alttext="M_{\text{JAC}}=D" display="inline"><mrow><msub><mi>M</mi><mtext>JAC</mtext></msub><mo>=</mo><mi>D</mi></mrow></math>, onde <math id="I2.i1.p1.m2" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> é a matriz diagonal de <math id="I2.i1.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>;</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Gauss-Seidel</span>: <math id="I2.i2.p1.m1" class="ltx_Math" alttext="M_{\text{GS}}=D-L" display="inline"><mrow><msub><mi>M</mi><mtext>GS</mtext></msub><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow></mrow></math>, onde <math id="I2.i2.p1.m2" class="ltx_Math" alttext="-L" display="inline"><mrow><mo>−</mo><mi>L</mi></mrow></math> é a parte estritamente triangular inferior de <math id="I2.i2.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>;</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">SOR</span>: <math id="I2.i3.p1.m1" class="ltx_Math" alttext="M_{\text{SOR}}=(D-\omega L)" display="inline"><mrow><msub><mi>M</mi><mtext>SOR</mtext></msub><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>, onde <math id="I2.i3.p1.m2" class="ltx_Math" alttext="\omega" display="inline"><mi>ω</mi></math> é o parâmetro de relaxação;</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">SSOR</span>: <math id="I2.i4.p1.m1" class="ltx_Math" alttext="M_{\text{SSOR}}=(D-\omega U)D^{-1}(D-\omega L)" display="inline"><mrow><msub><mi>M</mi><mtext>SSOR</mtext></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>U</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, onde <math id="I2.i4.p1.m2" class="ltx_Math" alttext="-U" display="inline"><mrow><mo>−</mo><mi>U</mi></mrow></math> é a parte estritamente triangular superior de <math id="I2.i4.p1.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.</p>
+</div>
+</li>
+</ul>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.7.1 </span>GMRES precondicionado</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">O GMRES precondicionado é obtido aplicando o método GMRES ao sistema precondicionado</p>
+<table id="Ch1.E205" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E205.m1" class="ltx_Math" alttext="M^{-1}A\boldsymbol{x}=M^{-1}\boldsymbol{b}." display="block"><mrow><mrow><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.205)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A implementação do GMRES precondicionado é semelhante à do GMRES básico, com a diferença de que, a cada passo do método, precisamos resolver um sistema linear com a matriz de precondicionamento <math id="SS1.p1.m1" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>. Ou seja, o algoritmo do GMRES precondicionado pode ser descrito como segue.</p>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p ltx_align_center"><span class="ltx_text ltx_font_bold">GMRES precondicionado</span></p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">Compute <math id="I3.i1.p1.m1" class="ltx_Math" alttext="\boldsymbol{r}_{0}=M^{-1}(A\boldsymbol{x}-\boldsymbol{b})" display="inline"><mrow><msub><mi>𝒓</mi><mn>0</mn></msub><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>−</mo><mi>𝒃</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, <math id="I3.i1.p1.m2" class="ltx_Math" alttext="\beta=\|\boldsymbol{r}\|_{0}" display="inline"><mrow><mi>β</mi><mo>=</mo><msub><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mn>0</mn></msub></mrow></math>, <math id="I3.i1.p1.m3" class="ltx_Math" alttext="\boldsymbol{v}_{1}=\boldsymbol{r}_{0}/\beta" display="inline"><mrow><msub><mi>𝒗</mi><mn>1</mn></msub><mo>=</mo><mrow><msub><mi>𝒓</mi><mn>0</mn></msub><mo>/</mo><mi>β</mi></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Para <math id="I3.i2.p1.m1" class="ltx_Math" alttext="j=1,2,\dotsc,m" display="inline"><mrow><mi>j</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>m</mi></mrow></mrow></math>:</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p">Compute <math id="I3.i3.p1.m1" class="ltx_Math" alttext="\boldsymbol{w}=M^{-1}A\boldsymbol{v}_{j}" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><msub><mi>𝒗</mi><mi>j</mi></msub></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="I3.i4.p1" class="ltx_para">
+<p class="ltx_p">Para <math id="I3.i4.p1.m1" class="ltx_Math" alttext="i=1,2,\dotsc,j" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>j</mi></mrow></mrow></math>:</p>
+</div>
+</li>
+<li id="I3.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">5.</span> 
+<div id="I3.i5.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i5.p1.m1" class="ltx_Math" alttext="h_{i,j}=(\boldsymbol{w},\boldsymbol{v}_{i})" display="inline"><mrow><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><msub><mi>𝒗</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">6.</span> 
+<div id="I3.i6.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i6.p1.m1" class="ltx_Math" alttext="\boldsymbol{w}=\boldsymbol{w}-h_{i,j}\boldsymbol{v}_{i}" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mi>𝒘</mi><mo>−</mo><mrow><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>⁢</mo><msub><mi>𝒗</mi><mi>i</mi></msub></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">7.</span> 
+<div id="I3.i7.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i7.p1.m1" class="ltx_Math" alttext="h_{j+1,j}=\|\boldsymbol{w}|" display="inline"><mrow><msub><mi>h</mi><mrow><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mrow><mo stretchy="false">‖</mo><mi>𝒘</mi><mo stretchy="false">|</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">8.</span> 
+<div id="I3.i8.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I3.i8.p1.m1" class="ltx_Math" alttext="h_{j+1,j}=0" display="inline"><mrow><msub><mi>h</mi><mrow><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>j</mi></mrow></msub><mo>=</mo><mn>0</mn></mrow></math>, então pare</p>
+</div>
+</li>
+<li id="I3.i9" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">9.</span> 
+<div id="I3.i9.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i9.p1.m1" class="ltx_Math" alttext="\boldsymbol{v}_{j+1}=\boldsymbol{w}/h_{j+1,j}" display="inline"><mrow><msub><mi>𝒗</mi><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mrow><mi>𝒘</mi><mo>/</mo><msub><mi>h</mi><mrow><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>j</mi></mrow></msub></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i10" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">10.</span> 
+<div id="I3.i10.p1" class="ltx_para">
+<p class="ltx_p">Defina <math id="I3.i10.p1.m1" class="ltx_Math" alttext="V_{m}=[\boldsymbol{v}_{1},\dotsc,\boldsymbol{v}_{m}]" display="inline"><mrow><msub><mi>V</mi><mi>m</mi></msub><mo>=</mo><mrow><mo stretchy="false">[</mo><msub><mi>𝒗</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>𝒗</mi><mi>m</mi></msub><mo stretchy="false">]</mo></mrow></mrow></math>, <math id="I3.i10.p1.m2" class="ltx_Math" alttext="\bar{H}_{m}=[h_{i,j}]_{i=1,j=1}^{j+1,m}" display="inline"><mrow><msub><mover accent="true"><mi>H</mi><mo>¯</mo></mover><mi>m</mi></msub><mo>=</mo><msubsup><mrow><mo stretchy="false">[</mo><msub><mi>h</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false">]</mo></mrow><mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow></mrow><mrow><mrow><mi>j</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mi>m</mi></mrow></msubsup></mrow></math></p>
+</div>
+</li>
+<li id="I3.i11" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">11.</span> 
+<div id="I3.i11.p1" class="ltx_para">
+<p class="ltx_p">Resolva o sistema de mínimos quadrados <math id="I3.i11.p1.m1" class="ltx_Math" alttext="\boldsymbol{y}_{m}=\min_{\boldsymbol{y}\in\mathbb{R}^{m}}\|\beta\boldsymbol{e}%
+_{1}-\bar{H}_{m}\boldsymbol{y}\|_{2}" display="inline"><mrow><msub><mi>𝒚</mi><mi>m</mi></msub><mo>=</mo><mrow><msub><mi>min</mi><mrow><mi>𝒚</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>m</mi></msup></mrow></msub><mo>⁡</mo><msub><mrow><mo stretchy="false">‖</mo><mrow><mrow><mi>β</mi><mo>⁢</mo><msub><mi>𝒆</mi><mn>1</mn></msub></mrow><mo>−</mo><mrow><msub><mover accent="true"><mi>H</mi><mo>¯</mo></mover><mi>m</mi></msub><mo>⁢</mo><mi>𝒚</mi></mrow></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn></msub></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i12" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">12.</span> 
+<div id="I3.i12.p1" class="ltx_para">
+<p class="ltx_p">Atualize a solução <math id="I3.i12.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}_{m}=\boldsymbol{x}^{(0)}+V_{m}\boldsymbol{y}_{m}" display="inline"><mrow><msub><mi>𝒙</mi><mi>m</mi></msub><mo>=</mo><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msub><mi>V</mi><mi>m</mi></msub><mo>⁢</mo><msub><mi>𝒚</mi><mi>m</mi></msub></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i13" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">13.</span> 
+<div id="I3.i13.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I3.i13.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}_{m}" display="inline"><msub><mi>𝒙</mi><mi>m</mi></msub></math> satisfaz o critério de parada, então pare.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 1.7.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Consideremos novamente o problema de difusão-advecção 2D do Exemplo <a href="cap_sislin_sec_gmres.html#ex:diffadv2d_gmres" title="Exemplo 1.6.1.(Problema de difusão-advecção 2D) ‣ 1.6.1 O GMRES básico ‣ 1.6 Método GMRES ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6.1</span></a>. Vamos aplicar o GMRES precondicionado com as matrizes de precondicionamento de Jacobi, Gauss-Seidel, SOR (<math id="Thmex1.p1.m1" class="ltx_Math" alttext="\omega=1.3" display="inline"><mrow><mi>ω</mi><mo>=</mo><mn>1.3</mn></mrow></math>) e SSOR (<math id="Thmex1.p1.m2" class="ltx_Math" alttext="\omega=1.3" display="inline"><mrow><mi>ω</mi><mo>=</mo><mn>1.3</mn></mrow></math>).</p>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt"><math id="Thmex1.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt">GMRES</th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt">JAC</th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt">GS</th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt">SOR</th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt">SSOR</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t">11</th>
+<td class="ltx_td ltx_align_right ltx_border_t">29</td>
+<td class="ltx_td ltx_align_right ltx_border_t">29</td>
+<td class="ltx_td ltx_align_right ltx_border_t">14</td>
+<td class="ltx_td ltx_align_right ltx_border_t">13</td>
+<td class="ltx_td ltx_align_right ltx_border_t">8</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">21</th>
+<td class="ltx_td ltx_align_right">60</td>
+<td class="ltx_td ltx_align_right">60</td>
+<td class="ltx_td ltx_align_right">35</td>
+<td class="ltx_td ltx_align_right">32</td>
+<td class="ltx_td ltx_align_right">13</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">41</th>
+<td class="ltx_td ltx_align_right">132</td>
+<td class="ltx_td ltx_align_right">132</td>
+<td class="ltx_td ltx_align_right">80</td>
+<td class="ltx_td ltx_align_right">77</td>
+<td class="ltx_td ltx_align_right">26</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r">81</th>
+<td class="ltx_td ltx_align_right ltx_border_bb">293</td>
+<td class="ltx_td ltx_align_right ltx_border_bb">293</td>
+<td class="ltx_td ltx_align_right ltx_border_bb">174</td>
+<td class="ltx_td ltx_align_right ltx_border_bb">206</td>
+<td class="ltx_td ltx_align_right ltx_border_bb">64</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="Thmex1.p3" class="ltx_para">
+<p class="ltx_p">Um exemplo de uma implementação <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> do GMRES precondicionado segue abaixo.</p>
+</div>
+<figure id="cod:gmres_GS" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 11: </span>gmres_GS.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzY2lweS5zcGFyc2UubGluYWxnIGltcG9ydCBzcHNvbHZlLCBnbXJlcywgTGluZWFyT3BlcmF0b3IKCiMgY29udGFkb3IgZGUgaXRlcmHDp8O1ZXMKbml0ZXIgPSAwCmRlZiBjYWxsYmFjayhyayk6CiAgICBnbG9iYWwgbml0ZXIKICAgIG5pdGVyICs9IDEKCmRlZiBnbXJlc19ncyhBLCBiLCB4MCwgTSwKICAgICAgICAgICAgcnRvbD0xZS01LCBhdG9sPTAuMCwgbWF4aXRlcj0xMDAwMDApOgoKICAgICMgTV4oLTEpCiAgICBNaW52X3ggPSBsYW1iZGEgeDogc3Bzb2x2ZShNLCB4KQogICAgTV9pbnYgPSBMaW5lYXJPcGVyYXRvcihBLnNoYXBlLCBNX3gpCgogICAgbml0ZXIgPSAwCiAgICB4LCBpbmZvID0gZ21yZXMoQSwgYiwgeDAsIE09TV9pbnYsCiAgICAgICAgICAgIHJ0b2w9cnRvbCwgYXRvbD1hdG9sLCBtYXhpdGVyPW1heGl0ZXIsCiAgICAgICAgICAgIGNhbGxiYWNrPWNhbGxiYWNrLCBjYWxsYmFja190eXBlPSdwcl9ub3JtJykKCiAgICByZXR1cm4geCwgbml0ZXIsIGluZm8=" download="">⬇</a></div>
+<div id="lstnumberx384" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scipy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sparse</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linalg</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">spsolve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">gmres</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">LinearOperator</span>
+</div>
+<div id="lstnumberx385" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span>
+</div>
+<div id="lstnumberx386" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>contador<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>itera<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">õ</span>es</span></span>
+</div>
+<div id="lstnumberx387" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">niter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0</span>
+</div>
+<div id="lstnumberx388" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">callback</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rk</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx389" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">global</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">niter</span>
+</div>
+<div id="lstnumberx390" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">niter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span>
+</div>
+<div id="lstnumberx391" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span>
+</div>
+<div id="lstnumberx392" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">gmres_gs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x0</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx393" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rtol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">atol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=0.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">maxiter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=100000):</span>
+</div>
+<div id="lstnumberx394" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span>
+</div>
+<div id="lstnumberx395" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>M^(-1)</span></span>
+</div>
+<div id="lstnumberx396" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Minv_x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">lambda</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">spsolve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx397" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M_inv</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">LinearOperator</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">shape</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M_x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx398" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span>
+</div>
+<div id="lstnumberx399" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">niter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0</span>
+</div>
+<div id="lstnumberx400" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">info</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">gmres</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">A</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x0</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">M_inv</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx401" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rtol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rtol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">atol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">atol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">maxiter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">maxiter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx402" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">            </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">callback</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">callback</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">callback_type</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'pr_norm'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx403" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span>
+</div>
+<div id="lstnumberx404" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">niter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">info</span>
+</div>
+</div>
+</figure>
+</div>
+<section id="SS1.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Precondicionador ILU</h3>
+
+<div id="SS1.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">O <span class="ltx_text ltx_font_bold">precondicionador de fatoração incompleta LU</span> é uma técnica popular para precondicionamento de sistemas lineares esparsos. A ideia básica é aproximar a fatoração LU completa de uma matriz <math id="SS1.SSSx1.p1.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> por uma fatoração incompleta, onde apenas alguns elementos da matriz são mantidos, buscando manter a esparsidade da <math id="SS1.SSSx1.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>. Isto resulta em uma matriz de precondicionamento <math id="SS1.SSSx1.p1.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> que é mais fácil de inverter do que a matriz original <math id="SS1.SSSx1.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, mas ainda captura as propriedades essenciais da matriz.</p>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 1.7.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Consideremos novamente o problema de difusão-advecção 2D do Exemplo <a href="cap_sislin_sec_gmres.html#ex:diffadv2d_gmres" title="Exemplo 1.6.1.(Problema de difusão-advecção 2D) ‣ 1.6.1 O GMRES básico ‣ 1.6 Método GMRES ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.6.1</span></a>. Vamos aplicar o GMRES com precondicionar ILU.</p>
+</div>
+<div id="Thmex2.p2" class="ltx_para">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt"><math id="Thmex2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt">GMRES</th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt">ILU</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t">11</th>
+<td class="ltx_td ltx_align_right ltx_border_t">29</td>
+<td class="ltx_td ltx_align_right ltx_border_t">2</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">21</th>
+<td class="ltx_td ltx_align_right">60</td>
+<td class="ltx_td ltx_align_right">2</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">41</th>
+<td class="ltx_td ltx_align_right">132</td>
+<td class="ltx_td ltx_align_right">7</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r">81</th>
+<td class="ltx_td ltx_align_right ltx_border_bb">293</td>
+<td class="ltx_td ltx_align_right ltx_border_bb">88</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.7.2 </span>Exercícios</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_sislin_sec_gmres.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.6 </span>Método GMRES</span></a><a href="bib.html" title="In Matemática Numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_sisnlin.html" title="In Matemática Numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Sistemas Não Lineares</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:08:42 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

@@ -1,0 +1,967 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 4.1 Funções predefinidas e módulos ‣ Capítulo 4 Funções ‣ Algoritmos e Programação I</title>
+<!--Generated on Tue Nov 25 11:08:27 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_fun.html" title="Capítulo 4 Funções ‣ Algoritmos e Programação I">
+<link rel="up up" href="./" title="Algoritmos e Programação I">
+<link rel="start" href="./" title="Algoritmos e Programação I">
+<link rel="prev" href="cap_fun.html" title="Capítulo 4 Funções ‣ Algoritmos e Programação I">
+<link rel="next" href="cap_fun_sec_def.html" title="4.2 Definindo funções ‣ Capítulo 4 Funções ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_fun_sec_def.html" title="4.2 Definindo funções ‣ Capítulo 4 Funções ‣ Algoritmos e Programação I">
+<link rel="section" href="cap_fun_sec_params.html" title="4.3 Passagem de parâmetros ‣ Capítulo 4 Funções ‣ Algoritmos e Programação I">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Algoritmos e Programação I">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_lingua.html" title="Capítulo 2 Linguagem de programação ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_progest.html" title="Capítulo 3 Programação estruturada ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_fun.html" title="Capítulo 4 Funções ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_arr.html" title="Capítulo 5 Arranjos e matrizes ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_ag.html" title="Capítulo 6 Arquivos e gráficos ‣ Algoritmos e Programação I">
+<link rel="chapter" href="cap_poo.html" title="Capítulo 7 Orientação a objetos ‣ Algoritmos e Programação I">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Algoritmos e Programação I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Algoritmos e Programação I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_fun.html" title="In Algoritmos e Programação I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Funções</span></a><a href="cap_fun.html" title="In Algoritmos e Programação I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Funções</span></a><a href="cap_fun_sec_def.html" title="In Capítulo 4 Funções ‣ Algoritmos e Programação I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Definindo funções</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Compre o <a href="https://a.co/d/eRjID1A">e-book</a> deste material aqui! Consulte outras formas de <a href="../colaborar.html">colaborar</a>.</p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.1 </span>Funções predefinidas e módulos</h1>
+
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.1.1 </span>Funções predefinidas</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Como o nome indica, <span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">funções predefinidas</span> são aquelas disponíveis por padrão na linguagem de programação</span>, i.e. sem a necessidade de serem explicitamente definidas no código. As <span class="ltx_text" style="background-color:#FFFF00;">funções predefinidas do <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></span> podem ser consultadas em</p>
+<p class="ltx_p ltx_align_center"><a href="https://docs.python.org/3/library/functions.html" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://docs.python.org/3/library/functions.html</a></p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Nós já vinhamos utilizando várias dessas funções.</p>
+</div>
+<section id="SS1.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Entrada e saída de dados</h3>
+
+<div id="SS1.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">Na entrada e saída de dados, utilizamos</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://docs.python.org/3/library/functions.html#input" title="" class="ltx_ref ltx_href ltx_font_typewriter">input</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">entrada</span></p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<p class="ltx_p">Essa função lê uma linha digitada no <span class="ltx_text ltx_font_italic">prompt</span>, converte-a em uma <span class="ltx_text ltx_font_italic">string</span> e a retorna. Admite como entrada uma <span class="ltx_text ltx_font_italic">string</span> que é impressa no <span class="ltx_text ltx_font_italic">prompt</span> antes da leitura.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://docs.python.org/3/library/functions.html" title="" class="ltx_ref ltx_href ltx_lst_keyword ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;color:#0000FF;background-color:#F7F7F7;">print</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">saída</span></p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<p class="ltx_p">Essa função recebe um objeto e o imprime em formato texto, por padrão, no <span class="ltx_text ltx_font_italic">prompt</span> de saída.</p>
+</div>
+<div id="I1.i2.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9IGlucHV0KCdPbMOhLCBxdWFsIG8gc2V1IG5vbWU/ICcpCnByaW50KGYnQmVtIHZpbmRlLCB7c30hJyk=" download="">⬇</a></div>
+<div id="lstnumberx1202" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>qual<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>seu<span class="ltx_text ltx_lst_space"> </span>nome?<span class="ltx_text ltx_lst_space"> </span>'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1203" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Bem<span class="ltx_text ltx_lst_space"> </span>vinde,<span class="ltx_text ltx_lst_space"> </span>{s}!'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,T2zDoSwgcXVhbCBvIHNldSBub21lPyBGdWxhbmUKQmVtIHZpbmRlLCBGdWxhbmUh" download="">⬇</a></div>
+<div id="lstnumberx1204" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">qual</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">o</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">seu</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nome</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">?</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Fulane</span>
+</div>
+<div id="lstnumberx1205" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Bem</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">vinde</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Fulane</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS1.SSSx2" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Construtores de dados</h3>
+
+<div id="SS1.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">Temos as funções que constroem objetos de classes de números:</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">bool</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">booleano</span></p>
+</div>
+<div id="I2.i1.p2" class="ltx_para">
+<p class="ltx_p">Recebe um objeto e retorna outro da classe <a href="https://docs.python.org/3/library/stdtypes.html#boolean-type-bool" title="" class="ltx_ref ltx_href ltx_font_typewriter">bool</a>.</p>
+</div>
+<div id="I2.i1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ym9vbCgwKQ==" download="">⬇</a></div>
+<div id="lstnumberx1206" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">bool</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(0)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,RmFsc2U=" download="">⬇</a></div>
+<div id="lstnumberx1207" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">False</span>
+</div>
+</div>
+</div>
+<div id="I2.i1.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ym9vbCgxKQ==" download="">⬇</a></div>
+<div id="lstnumberx1208" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">bool</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,VHJ1ZQ==" download="">⬇</a></div>
+<div id="lstnumberx1209" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span>
+</div>
+</div>
+</div>
+<div id="I2.i1.p5" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ym9vbCgnJyk=" download="">⬇</a></div>
+<div id="lstnumberx1210" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">bool</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">''</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,RmFsc2U=" download="">⬇</a></div>
+<div id="lstnumberx1211" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">False</span>
+</div>
+</div>
+</div>
+<div id="I2.i1.p6" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Ym9vbCgnMCcp" download="">⬇</a></div>
+<div id="lstnumberx1212" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">bool</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'0'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,VHJ1ZQ==" download="">⬇</a></div>
+<div id="lstnumberx1213" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">inteiro</span></p>
+</div>
+<div id="I2.i2.p2" class="ltx_para">
+<p class="ltx_p">Recebe um número ou <span class="ltx_text ltx_font_italic">string</span> <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">x</span> e retorna um objeto da classe <a href="https://docs.python.org/3/library/functions.html#int" title="" class="ltx_ref ltx_href ltx_font_typewriter">int</a>.</p>
+</div>
+<div id="I2.i2.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW50KC0yLjEp" download="">⬇</a></div>
+<div id="lstnumberx1214" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-2.1)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,LTI=" download="">⬇</a></div>
+<div id="lstnumberx1215" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2</span>
+</div>
+</div>
+</div>
+<div id="I2.i2.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW50KDMuOSk=" download="">⬇</a></div>
+<div id="lstnumberx1216" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(3.9)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,Mw==" download="">⬇</a></div>
+<div id="lstnumberx1217" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">3</span>
+</div>
+</div>
+</div>
+<div id="I2.i2.p5" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW50KDUuNSk=" download="">⬇</a></div>
+<div id="lstnumberx1218" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(5.5)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,NQ==" download="">⬇</a></div>
+<div id="lstnumberx1219" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5</span>
+</div>
+</div>
+</div>
+<div id="I2.i2.p6" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW50KCc1MScp" download="">⬇</a></div>
+<div id="lstnumberx1220" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">int</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'51'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,NTE=" download="">⬇</a></div>
+<div id="lstnumberx1221" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">51</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">decimal</span></p>
+</div>
+<div id="I2.i3.p2" class="ltx_para">
+<p class="ltx_p">Recebe um número ou <span class="ltx_text ltx_font_italic">string</span> <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">x</span> e retorna um objeto da classe <a href="https://docs.python.org/3/library/functions.html#float" title="" class="ltx_ref ltx_href ltx_font_typewriter">float</a>.</p>
+</div>
+<div id="I2.i3.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZmxvYXQoMSk=" download="">⬇</a></div>
+<div id="lstnumberx1222" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MS4w" download="">⬇</a></div>
+<div id="lstnumberx1223" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.0</span>
+</div>
+</div>
+</div>
+<div id="I2.i3.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZmxvYXQoJy0yLjcnKQ==" download="">⬇</a></div>
+<div id="lstnumberx1224" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'-2.7'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,LTIuNw==" download="">⬇</a></div>
+<div id="lstnumberx1225" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2.7</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">complex</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">complexo</span></p>
+</div>
+<div id="I2.i4.p2" class="ltx_para">
+<p class="ltx_p">Recebe as partes real e imaginária de um número complexo ou uma <span class="ltx_text ltx_font_italic">string</span> e retorna um objeto da classe <a href="https://docs.python.org/3/library/functions.html#complex" title="" class="ltx_ref ltx_href ltx_font_typewriter">complex</a>.</p>
+</div>
+<div id="I2.i4.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y29tcGxleCgyLC0zKQ==" download="">⬇</a></div>
+<div id="lstnumberx1226" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">complex</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2,-3)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,KDItM2op" download="">⬇</a></div>
+<div id="lstnumberx1227" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2-3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+<div id="I2.i4.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y29tcGxleCgnLTcrNWonKQ==" download="">⬇</a></div>
+<div id="lstnumberx1228" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">complex</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'-7+5j'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,KC03KzVqKQ==" download="">⬇</a></div>
+<div id="lstnumberx1229" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-7+5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">j</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS1.SSSx2.p2" class="ltx_para">
+<p class="ltx_p">Para a construção de objetos de classes de coleção de dados, temos:</p>
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">dict</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">dicionário</span></p>
+</div>
+<div id="I3.i1.p2" class="ltx_para">
+<p class="ltx_p">Recebe um mapeamento ou um iterável e retorna um objeto da classe <a href="https://docs.python.org/3/tutorial/datastructures.html#dictionaries" title="" class="ltx_ref ltx_href ltx_font_typewriter">dict</a>.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">list</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">lista</span></p>
+</div>
+<div id="I3.i2.p2" class="ltx_para">
+<p class="ltx_p">Recebe um iterável e retorna um objeto da classe <a href="https://docs.python.org/3/library/stdtypes.html#lists" title="" class="ltx_ref ltx_href ltx_font_typewriter">list</a>.</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">set</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">conjunto</span></p>
+</div>
+<div id="I3.i3.p2" class="ltx_para">
+<p class="ltx_p">Recebe um iterável e retorna um objeto da classe <a href="https://docs.python.org/3/tutorial/datastructures.html#sets" title="" class="ltx_ref ltx_href ltx_font_typewriter">set</a>.</p>
+</div>
+</li>
+<li id="I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">str</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold ltx_font_italic" style="background-color:#FFFF00;">string</span></p>
+</div>
+<div id="I3.i4.p2" class="ltx_para">
+<p class="ltx_p">Recebe um objeto e retorna um outro da classe <a href="https://docs.python.org/3/library/stdtypes.html#text-sequence-type-str" title="" class="ltx_ref ltx_href ltx_font_typewriter">str</a>.</p>
+</div>
+</li>
+<li id="I3.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">tuple</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">n-upla</span></p>
+</div>
+<div id="I3.i5.p2" class="ltx_para">
+<p class="ltx_p">Recebe um iterável e retorna um objeto da classe <a href="https://docs.python.org/3/library/stdtypes.html#tuples" title="" class="ltx_ref ltx_href ltx_font_typewriter">tuple</a>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS1.SSSx2.p3" class="ltx_para">
+<p class="ltx_p">Alguns construtores de iteráveis especiais são:</p>
+<ul id="I4" class="ltx_itemize">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">range</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">sequência de números</span></p>
+</div>
+<div id="I4.i1.p2" class="ltx_para">
+<p class="ltx_p">Recebe até três inteiros <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">start</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">stop</span>, <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">step</span> e retorna um objeto <a href="https://docs.python.org/3/library/stdtypes.html#range" title="" class="ltx_ref ltx_href ltx_font_typewriter">range</a>, um iterável com início em <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">start</span> (incluído) e término em <span class="ltx_text ltx_lst_identifier ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">stop</span> (excluído).</p>
+</div>
+<div id="I4.i1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bGlzdChyYW5nZSg1KSk=" download="">⬇</a></div>
+<div id="lstnumberx1230" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">list</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">range</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(5))</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,WzAsIDEsIDIsIDMsIDRd" download="">⬇</a></div>
+<div id="lstnumberx1231" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">3,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">4]</span>
+</div>
+</div>
+</div>
+<div id="I4.i1.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,dHVwbGUocmFuZ2UoLTEwLDEsMikp" download="">⬇</a></div>
+<div id="lstnumberx1232" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">tuple</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">range</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-10,1,2))</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,KC0xMCwgLTgsIC02LCAtNCwgLTIsIDAp" download="">⬇</a></div>
+<div id="lstnumberx1233" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-10,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-8,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-6,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-4,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0)</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">enumerate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span></span> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">enumeração</span></p>
+</div>
+<div id="I4.i2.p2" class="ltx_para">
+<p class="ltx_p">Recebe um iterável e retorna um objeto <a href="https://docs.python.org/3/library/functions.html#enumerate" title="" class="ltx_ref ltx_href ltx_font_typewriter">enumerate</a>, um iterável de tuples que enumera os objetos do iterável de entrada.</p>
+</div>
+<div id="I4.i2.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Y29yZXMgPSBbJ2FtYXJlbG8nLCAnYXp1bCcsICd2ZXJtZWxobycsIF0KbGlzdChlbnVtZXJhdGUoY29yZXMpKQ==" download="">⬇</a></div>
+<div id="lstnumberx1234" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cores</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'amarelo'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'azul'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'vermelho'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span>
+</div>
+<div id="lstnumberx1235" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">list</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">enumerate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cores</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,WygwLCAnYW1hcmVsbycpLCAoMSwgJ2F6dWwnKSwgKDIsICd2ZXJtZWxobycpXQ==" download="">⬇</a></div>
+<div id="lstnumberx1236" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[(0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">amarelo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">azul</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">'</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">vermelho</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">')]</span>
+</div>
+</div>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.1.2 </span>Módulos</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">Módulos</span> são bibliotecas computacionais</span>, i.e. um arquivo contendo funções (e/ou constantes) que podem ser incorporadas e usadas em outros programas. Existem vários módulos disponíveis na linguagem <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>, para citar alguns:</p>
+<ul id="I5" class="ltx_itemize">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://docs.python.org/3/library/math.html#module-math" title="" class="ltx_ref ltx_href ltx_font_typewriter">math</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">módulo de matemática elementar</span></p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://docs.python.org/3/library/random.html#module-random" title="" class="ltx_ref ltx_href ltx_font_typewriter">random</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">módulo de números randômicos</span></p>
+</div>
+</li>
+<li id="I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i3.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://numpy.org/" title="" class="ltx_ref ltx_href ltx_font_typewriter">numpy</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">módulo de computação matricial</span></p>
+</div>
+</li>
+<li id="I5.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i4.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://matplotlib.org/" title="" class="ltx_ref ltx_href ltx_font_typewriter">matplotlib</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">módulo de vizualização gráfica</span></p>
+</div>
+</li>
+<li id="I5.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i5.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://www.sympy.org/" title="" class="ltx_ref ltx_href ltx_font_typewriter">sympy</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">módulo de matemática simbólica</span></p>
+</div>
+</li>
+<li id="I5.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I5.i6.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://pytorch.org/" title="" class="ltx_ref ltx_href ltx_font_typewriter">torch</a> <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">módulo de aprendizagem de máquina</span></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">Nesta seção vamos apenas introduzir o módulo <a href="https://docs.python.org/3/library/math.html#module-math" title="" class="ltx_ref ltx_href ltx_font_typewriter">math</a>. Mais a frente, também fazemos uma introdução aos módulos <a href="https://numpy.org/" title="" class="ltx_ref ltx_href ltx_font_typewriter">numpy</a> e <a href="https://matplotlib.org/" title="" class="ltx_ref ltx_href ltx_font_typewriter">matplotlib</a>.</p>
+</div>
+<section id="SS2.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Módulo <span class="ltx_text ltx_font_typewriter">math</span>
+</h3>
+
+<div id="SS2.SSSx1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O módulo <a href="https://docs.python.org/3/library/math.html#module-math" title="" class="ltx_ref ltx_href ltx_font_typewriter">math</a> contém constantes e funções matemáticas elementares de números reais</span>. Para <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">importar o módulo</span> em nosso código, podemos usar a instrução <span class="ltx_text" style="background-color:#FFFF00;"><a href="https://docs.python.org/3/reference/simple_stmts.html#the-import-statement" title="" class="ltx_ref ltx_href ltx_font_typewriter">import</a></span></p>
+</div>
+<div id="SS2.SSSx1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IG1hdGg=" download="">⬇</a></div>
+<div id="lstnumberx1237" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">math</span>
+</div>
+</div>
+</div>
+<div id="SS2.SSSx1.p3" class="ltx_para">
+<p class="ltx_p">Então, para usar algum recurso do módulo usamos <span class="ltx_text ltx_font_typewriter">math.</span> seguido do nome do recurso que queremos. Por exemplo,</p>
+</div>
+<div id="SS2.SSSx1.p4" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,bWF0aC5l" download="">⬇</a></div>
+<div id="lstnumberx1238" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">math</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,Mi43MTgyODE4Mjg0NTkwNDU=" download="">⬇</a></div>
+<div id="lstnumberx1239" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.718281828459045</span>
+</div>
+</div>
+</div>
+<div id="SS2.SSSx1.p5" class="ltx_para">
+<p class="ltx_p">retorna o número de Euler<span id="Ch4.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>Leonhard Paul Euler, 1707-1783, matemático e físico suíço. Fonte: <a href="https://pt.wikipedia.org/wiki/Ronald_Fisher" title="" class="ltx_ref ltx_href">Wikipédia: Ronald Fisher</a>.</span></span></span> em ponto flutuante.</p>
+</div>
+<div id="SS2.SSSx1.p6" class="ltx_para">
+<p class="ltx_p">Alternativamente, podemos importar o módulo com o nome que quisermos. Por padrão, usa-se</p>
+</div>
+<div id="SS2.SSSx1.p7" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IG1hdGggYXMgbQptLnBp" download="">⬇</a></div>
+<div id="lstnumberx1240" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">math</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">as</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span>
+</div>
+<div id="lstnumberx1241" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,My4xNDE1OTI2NTM1ODk3OTM=" download="">⬇</a></div>
+<div id="lstnumberx1242" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">3.141592653589793</span>
+</div>
+</div>
+</div>
+<div id="SS2.SSSx1.p8" class="ltx_para">
+<p class="ltx_p">Ainda, pode-se importar apenas um ou mais recursos específicos, por exemplo</p>
+</div>
+<div id="SS2.SSSx1.p9" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBtYXRoIGltcG9ydCBwaSwgc2luLCBjb3MKc2luKHBpKSoqMiArIGNvcyhwaSkgPT0gMQ==" download="">⬇</a></div>
+<div id="lstnumberx1243" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">math</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cos</span>
+</div>
+<div id="lstnumberx1244" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)**2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cos</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span>
+</div>
+</div>
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,RmFsc2U=" download="">⬇</a></div>
+<div id="lstnumberx1245" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">False</span>
+</div>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Considere um polinômio de segundo grau da forma</p>
+<table id="Ch4.E1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E1.m1" class="ltx_Math" alttext="p(x)=ax^{2}+bx+c." display="block"><mrow><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">O seguinte código, computa as raízes de <math id="Thmex1.p1.m1" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math> para valores dos coeficientes fornecidos por usuária(o).</p>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IG1hdGggYXMgbQoKIyBlbnRyYWRhIGRlIGRhZG9zCmEgPSBmbG9hdChpbnB1dCgnRGlnaXRlIG8gdmFsb3IgZGUgYTpcbicpKQpiID0gZmxvYXQoaW5wdXQoJ0RpZ2l0ZSBvIHZhbG9yIGRlIGI6XG4nKSkKYyA9IGZsb2F0KGlucHV0KCdEaWdpdGUgbyB2YWxvciBkZSBjOlxuJykpCgojIGRpc2NyaW1pbmFudGUKZGVsdGEgPSBiKioyIC0gNCphKmMKCiMgcmHDrXplcwojIHJhw616ZXMgZGlzdGludGFzCmlmIChkZWx0YSA+IDApOgogICAgeDEgPSAoLWIgKyBtLnNxcnQoZGVsdGEpKS8oMiphKQogICAgeDIgPSAoLWIgLSBtLnNxcnQoZGVsdGEpKS8oMiphKQojIHJhaXogZHVwbGEKZWxpZiAoZGVsdGEgPT0gMCk6CiAgICB4MSA9IC1iLygyKmEpCiAgICB4MiA9IHgxCiMgcmHDrXplcyBjb21wbGV4YXMKZWxzZToKICAgIHJlYWwgPSAtYi8oMiphKQogICAgaW1nID0gbS5zcXJ0KC1kZWx0YSkvKDIqYSkKICAgIHgxID0gY29tcGxleChyZWFsLCBpbWcpCiAgICB4MiA9IHgxLmNvbmp1Z2F0ZSgpCgpwcmludChmJ3gxID0ge3gxfScpCnByaW50KGYneDIgPSB7eDJ9Jyk=" download="">⬇</a></div>
+<div id="lstnumberx1246" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">math</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">as</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span>
+</div>
+<div id="lstnumberx1247" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span>
+</div>
+<div id="lstnumberx1248" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>entrada<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>dados</span></span>
+</div>
+<div id="lstnumberx1249" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Digite<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>valor<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>a:\n'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx1250" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Digite<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>valor<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>b:\n'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx1251" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">c</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">float</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">input</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'Digite<span class="ltx_text ltx_lst_space"> </span>o<span class="ltx_text ltx_lst_space"> </span>valor<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>c:\n'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx1252" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span>
+</div>
+<div id="lstnumberx1253" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>discriminante</span></span>
+</div>
+<div id="lstnumberx1254" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">delta</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">4*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">c</span>
+</div>
+<div id="lstnumberx1255" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span>
+</div>
+<div id="lstnumberx1256" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>ra<span class="ltx_text ltx_lst_literate">í</span>zes</span></span>
+</div>
+<div id="lstnumberx1257" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>ra<span class="ltx_text ltx_lst_literate">í</span>zes<span class="ltx_text ltx_lst_space"> </span>distintas</span></span>
+</div>
+<div id="lstnumberx1258" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">delta</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0):</span>
+</div>
+<div id="lstnumberx1259" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">delta</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))/(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1260" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">delta</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))/(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1261" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>raiz<span class="ltx_text ltx_lst_space"> </span>dupla</span></span>
+</div>
+<div id="lstnumberx1262" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">elif</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">delta</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">==</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0):</span>
+</div>
+<div id="lstnumberx1263" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1264" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x1</span>
+</div>
+<div id="lstnumberx1265" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>ra<span class="ltx_text ltx_lst_literate">í</span>zes<span class="ltx_text ltx_lst_space"> </span>complexas</span></span>
+</div>
+<div id="lstnumberx1266" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">else</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span>
+</div>
+<div id="lstnumberx1267" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">22</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1268" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">23</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">img</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">m</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">delta</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)/(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1269" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">24</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">complex</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">img</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1270" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">25</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">conjugate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx1271" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">26</span>
+</div>
+<div id="lstnumberx1272" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">27</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x1<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{x1}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1273" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">28</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x2<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{x2}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.1.3 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Complete as lacunas.</p>
+<ol id="I6" class="ltx_enumerate">
+<li id="I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I6.i1.p1" class="ltx_para">
+<p class="ltx_p">Funções <span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden">predefinidas</span></span> são aquelas disponíveis por padrão na linguagem de programação.</p>
+</div>
+</li>
+<li id="I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I6.i2.p1" class="ltx_para">
+<p class="ltx_p">A função <span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden"><a href="https://docs.python.org/3/library/functions.html#input" title="" class="ltx_ref ltx_href ltx_font_typewriter">input</a></span></span> permite a entrada de uma <span class="ltx_text ltx_font_typewriter">string</span>.</p>
+</div>
+</li>
+<li id="I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I6.i3.p1" class="ltx_para">
+<p class="ltx_p">A função <a href="https://docs.python.org/3/library/functions.html" title="" class="ltx_ref ltx_href ltx_lst_keyword ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;color:#0000FF;background-color:#F7F7F7;">print</a> permite a impressão de uma <span class="ltx_text ltx_phantom ltx_font_typewriter ltx_framed ltx_framed_underline"><span style="visibility:hidden">string</span></span>.</p>
+</div>
+</li>
+<li id="I6.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I6.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden">Construtores</span></span> são funções que permitem a alocação/<span class="ltx_text ltx_font_italic">casting</span> de objetos de uma dada classe.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx93">Resposta</button></div><div class="collapse" id="Thmrespx93" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx93.p1" class="ltx_para">
+<p class="ltx_p">a) predefinidas; b) <a href="https://docs.python.org/3/library/functions.html#input" title="" class="ltx_ref ltx_href ltx_font_typewriter">input</a>; c) <span class="ltx_text ltx_font_typewriter">string</span>; d) Construtores.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Complete as lacunas.</p>
+<ol id="I7" class="ltx_enumerate">
+<li id="I7.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I7.i1.p1" class="ltx_para">
+<p class="ltx_p">Um <span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden">módulo</span></span> é uma biblioteca computacional <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>.</p>
+</div>
+</li>
+<li id="I7.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I7.i2.p1" class="ltx_para">
+<p class="ltx_p">O módulo <span class="ltx_text ltx_phantom ltx_framed ltx_framed_underline"><span style="visibility:hidden"><a href="https://docs.python.org/3/library/math.html#module-math" title="" class="ltx_ref ltx_href ltx_font_typewriter">math</a></span></span> contém constantes e funções matemáticas elementares de números reais.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx94">Resposta</button></div><div class="collapse" id="Thmrespx94" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx94.p1" class="ltx_para">
+<p class="ltx_p">a) módulo; b) <a href="https://docs.python.org/3/library/math.html#module-math" title="" class="ltx_ref ltx_href ltx_font_typewriter">math</a></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.1.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um código que computa e imprime a hipotenusa <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> de um triângulo retângulo com catetos <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> e <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> fornecidos por usuária(o).</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx95">Resposta</button></div><div class="collapse" id="Thmrespx95" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx95.p1" class="ltx_para">
+<p class="ltx_p">Dica: use <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting" style="background-color:#F7F7F7;"><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">math</span>.<span class="ltx_text ltx_lst_identifier">sqrt</span>(<span class="ltx_text ltx_lst_identifier">a</span>**2</span></span> b**2)+.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.1.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Um triângulo de lados <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>, <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> e <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math>, existe se</p>
+<table id="Ch4.E2" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E2.m1" class="ltx_Math" alttext="|b-c|&lt;a&lt;b+c." display="block"><mrow><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>b</mi><mo>−</mo><mi>c</mi></mrow><mo stretchy="false">|</mo></mrow><mo>&lt;</mo><mi>a</mi><mo>&lt;</mo><mrow><mi>b</mi><mo>+</mo><mi>c</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Desenvolva um código que verifica e informa a existência de um triângulo de lados fornecidos por usuária(o).</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx96">Resposta</button></div><div class="collapse" id="Thmrespx96" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx96.p1" class="ltx_para">
+<p class="ltx_p">Dica: verifique a condição <span class="ltx_text ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_font_typewriter" style="font-size:90%;background-color:#F7F7F7;">(<span class="ltx_text ltx_lst_identifier">m</span>.<span class="ltx_text ltx_lst_identifier">fabs</span>(<span class="ltx_text ltx_lst_identifier">b</span>-<span class="ltx_text ltx_lst_identifier">c</span>)<span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">a</span>)<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_keyword" style="color:#0000FF;">and</span><span class="ltx_text ltx_lst_space"> </span>(<span class="ltx_text ltx_lst_identifier">a</span><span class="ltx_text ltx_lst_space"> </span>&lt;<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_identifier">b</span></span>c)+</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.1.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Considere um triangulo com as seguintes medidas</p>
+</div>
+<figure id="Thmexer5.fig1" class="ltx_figure"><img src="cap_fun/dados/fig_leiDosCossenos/fig.png" id="Thmexer5.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="200" height="133" alt="[Uncaptioned image]">
+</figure>
+<div id="Thmexer5.p2" class="ltx_para">
+<p class="ltx_p">Desenvolva um código que computa e imprime o valor da altura de um triangulo de lados <math id="Thmexer5.p2.m1" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math>, <math id="Thmexer5.p2.m2" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> e <math id="Thmexer5.p2.m3" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> fornecidos por usuária(o).</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx97">Resposta</button></div><div class="collapse" id="Thmrespx97" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx97.p1" class="ltx_para">
+<p class="ltx_p">Dica: use a <a href="https://pt.wikipedia.org/wiki/Lei_dos_cossenos" title="" class="ltx_ref ltx_href">lei dos cossenos</a> e relações fundamentais de triangulo retângulo para obter o valor da altura <math id="Thmrespx97.p1.m1" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>.</p>
+</div>
+</div>
+<div id="Thmexer6" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.1.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um código em que a(o) usuária forneça um ângulo <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="\theta" display="inline"><mi>θ</mi></math> em graus e seja computado e impresso os <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="\operatorname{sen}(\theta)" display="inline"><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmexer6.p1.m3" class="ltx_Math" alttext="\cos(\theta)" display="inline"><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx98">Resposta</button></div><div class="collapse" id="Thmrespx98" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx98.p1" class="ltx_para">
+<p class="ltx_p">Dica: consulte as funções <a href="https://docs.python.org/3/library/math.html#math.sin" title="" class="ltx_ref ltx_href ltx_font_typewriter">math.sin</a>, <a href="https://docs.python.org/3/library/math.html#math.cos" title="" class="ltx_ref ltx_href ltx_font_typewriter">math.cos</a>.</p>
+</div>
+</div>
+<div id="Thmexer7" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.1.7.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer7.p1" class="ltx_para">
+<p class="ltx_p">Desenvolva um jogo em que a(o) usuária(o) tenha três tentativas para adivinhar um número inteiro entre <math id="Thmexer7.p1.m1" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> a <math id="Thmexer7.p1.m2" class="ltx_Math" alttext="51" display="inline"><mn>51</mn></math> (incluídos).</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx99">Resposta</button></div><div class="collapse" id="Thmrespx99" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx99.p1" class="ltx_para">
+<p class="ltx_p">Dica: O módulo <a href="https://docs.python.org/3/library/random.html#module-random" title="" class="ltx_ref ltx_href ltx_font_typewriter">random</a> fornece a função <a href="https://docs.python.org/3/library/random.html#random.randint" title="" class="ltx_ref ltx_href ltx_font_typewriter">random.randint</a><span class="ltx_text ltx_font_typewriter">(a, b)</span> que retorna um inteiro <math id="Thmrespx99.p1.m1" class="ltx_Math" alttext="a\leq x\leq b" display="inline"><mrow><mi>a</mi><mo>≤</mo><mi>x</mi><mo>≤</mo><mi>b</mi></mrow></math>.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_fun.html" title="In Algoritmos e Programação I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Funções</span></a><a href="bib.html" title="In Algoritmos e Programação I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_fun_sec_def.html" title="In Capítulo 4 Funções ‣ Algoritmos e Programação I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Definindo funções</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:08:27 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

@@ -1,0 +1,740 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo</title>
+<!--Generated on Tue Nov 25 11:09:07 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="up up" href="./" title="Pré-Cálculo">
+<link rel="start" href="./" title="Pré-Cálculo">
+<link rel="prev" href="cap_funcao_sec_funpot.html" title="3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="next" href="cap_funcao_sec_funracio.html" title="3.5 Função racional ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_defgrafico.html" title="3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funafim.html" title="3.2 Função afim ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funpot.html" title="3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funracio.html" title="3.5 Função racional ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funtri.html" title="3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_opfun.html" title="3.7 Operações com funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funprop.html" title="3.8 Propriedades de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funexp.html" title="3.9 Funções exponenciais ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funlog.html" title="3.10 Funções logarítmicas ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Pré-Cálculo">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_numreal.html" title="Capítulo 1 Números reais ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_ineq.html" title="Capítulo 2 Equações e inequações ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Pré-Cálculo">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Pré-Cálculo</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_funcao.html" title="In Pré-Cálculo" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Funções</span></a><a href="cap_funcao_sec_funpot.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Função potência</span></a><a href="cap_funcao_sec_funracio.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Função racional</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.4 </span>Função polinomial</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Uma <span class="ltx_text ltx_font_bold">função polinomial</span> tem sua regra de associação dada por um polinômio</span>, i.e. uma função da forma</p>
+<table id="Ch3.E78" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E78.m1" class="ltx_Math" alttext="p(x)=a_{n}x^{n}+a_{n-1}x^{n-1}+\cdots+a_{1}x+a_{0}," display="block"><mrow><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>⁢</mo><msup><mi>x</mi><mi>n</mi></msup></mrow><mo>+</mo><mrow><msub><mi>a</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><msup><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>+</mo><mi mathvariant="normal">⋯</mi><mo>+</mo><mrow><msub><mi>a</mi><mn>1</mn></msub><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><msub><mi>a</mi><mn>0</mn></msub></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.78)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="p1.m1" class="ltx_Math" alttext="a_{i}" display="inline"><msub><mi>a</mi><mi>i</mi></msub></math> são coeficientes reais, <math id="p1.m2" class="ltx_Math" alttext="a_{n}\neq 0" display="inline"><mrow><msub><mi>a</mi><mi>n</mi></msub><mo>≠</mo><mn>0</mn></mrow></math> e <span class="ltx_text" style="background-color:#FFFF00;"><math id="p1.m3" class="ltx_Math" alttext="n" display="inline"><mi mathbackground="#FFFF00">n</mi></math> é inteiro não negativo</span>, este <span class="ltx_text" style="background-color:#FFFF00;">chamado de <span class="ltx_text ltx_font_bold">grau do polinômio</span></span>.</p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Polinômios são definidos em toda parte<span id="Ch3.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note">4</span>Uma função é dita ser definida em toda parte quando seu domínio é <math id="Ch3.footnote4.m1" class="ltx_Math" alttext="(\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">∞</mi><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math></span></span></span>. Polinômios de grau ímpar têm imagem <math id="p2.m1" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Entretanto, a imagem de polinômios de grau par dependem de cada caso. Iremos estudar mais propriedades de polinômios ao longo do curso de cálculo. Consultemos a Figura <a href="#fig:poli_graficos" title="Figura 3.20 ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.20</span></a>.</p>
+</div>
+<figure id="fig:poli_graficos" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2"><img src="cap_funcao/dados/fig_poli_graficos/fig_poli_impar.png" id="Ch3.F20.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="221" height="221" alt="Refer to caption"></div>
+<div class="ltx_flex_cell ltx_flex_size_2"><img src="cap_funcao/dados/fig_poli_graficos/fig_poli_par.png" id="Ch3.F20.g2" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="221" height="224" alt="Refer to caption"></div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.20</span>: </span><span class="ltx_text" style="font-size:90%;">Funções polinomiais: <math id="Ch3.F20.m3" class="ltx_Math" alttext="p(x)=x^{3}-2.5x^{2}-1.0x+2.5" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>2.5</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>1.0</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>2.5</mn></mrow></mrow></math> (acima); <math id="Ch3.F20.m4" class="ltx_Math" alttext="q(x)=x^{4}-3.5x^{3}+1.5x^{2}+3.5x-2.5" display="inline"><mrow><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>−</mo><mrow><mn>3.5</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>1.5</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>3.5</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>−</mo><mn>2.5</mn></mrow></mrow></math> (abaixo).</span></figcaption>
+</figure>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Quando <math id="p3.m1" class="ltx_Math" alttext="n=0" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>0</mn></mrow></math>, temos um polinômio de grau 0 (função constante). Quando <math id="p3.m2" class="ltx_Math" alttext="n=1" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow></math>, temos um polinômio de grau 1 (função afim ou linear). Ainda, quando <math id="p3.m3" class="ltx_Math" alttext="n=2" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow></math> temos uma <span class="ltx_text ltx_font_bold">função quadrática</span> e, quando <math id="p3.m4" class="ltx_Math" alttext="n=3" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow></math>, temos uma <span class="ltx_text ltx_font_bold">função cúbica</span> e assim por diante.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.4.1 </span>Função quadrática</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Funções quadráticas são definidas por pol polinômios de grau 2, i.e. têm a forma</span></p>
+<table id="Ch3.E79" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E79.m1" class="ltx_Math" alttext="f(x)=ax^{2}+bx+c," display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.79)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p1.m1" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> é chamado de <span class="ltx_text ltx_font_bold">coeficiente do termo quadrático</span>, <math id="SS1.p1.m2" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> o <span class="ltx_text ltx_font_bold">coeficiente do termo linear</span> e <math id="SS1.p1.m3" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> o <span class="ltx_text ltx_font_bold">coeficiente do termo constante</span>.</p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Os zeros de uma função quadrática podem ser calculados pela <span class="ltx_text ltx_font_bold">fórmula de Bhaskara<span id="Ch3.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">5</span></span><span class="ltx_text ltx_font_medium">Bhaskara Akaria, 1114 - 1185, matemático e astrônomo indiano. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Bhaskara_II" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Bhaskara II</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span></p>
+<table id="eq:Bhaskara" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E80.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}x_{0},x_{1}=%
+\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}." display="block"><mrow><mrow><mrow><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">1</mn></msub></mrow><mo mathcolor="#0000FF">=</mo><mfrac mathcolor="#0000FF"><mrow><mrow><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">b</mi></mrow><mo mathcolor="#0000FF">±</mo><msqrt mathcolor="#0000FF"><mrow><msup><mi mathcolor="#0000FF">b</mi><mn mathcolor="#0000FF">2</mn></msup><mo mathcolor="#0000FF">−</mo><mrow><mn mathcolor="#0000FF">4</mn><mo>⁢</mo><mi mathcolor="#0000FF">a</mi><mo>⁢</mo><mi mathcolor="#0000FF">c</mi></mrow></mrow></msqrt></mrow><mrow><mn mathcolor="#0000FF">2</mn><mo>⁢</mo><mi mathcolor="#0000FF">a</mi></mrow></mfrac></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.80)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">O esboço do gráfico de uma função quadrática é uma <span class="ltx_text ltx_font_bold">parábola côncava para cima</span> quando <math id="SS1.p3.m1" class="ltx_Math" alttext="a&gt;0" display="inline"><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow></math> e, <span class="ltx_text ltx_font_bold">côncava para baixo</span> quando <math id="SS1.p3.m2" class="ltx_Math" alttext="x&lt;0" display="inline"><mrow><mi>x</mi><mo>&lt;</mo><mn>0</mn></mrow></math>. Veja a Figura <a href="#fig:funquad_concavidade" title="Figura 3.21 ‣ 3.4.1 Função quadrática ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.21</span></a>.</p>
+</div>
+<figure id="fig:funquad_concavidade" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_2"><img src="cap_funcao/dados/fig_funquad_concavidade/fig_funquad_concavidade_cima.png" id="Ch3.F21.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_landscape" width="299" height="229" alt="Refer to caption"></div>
+<div class="ltx_flex_cell ltx_flex_size_2"><img src="cap_funcao/dados/fig_funquad_concavidade/fig_funquad_concavidade_baixo.png" id="Ch3.F21.g2" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_landscape" width="299" height="228" alt="Refer to caption"></div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.21</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço dos gráficos das funções quadráticas: <math id="Ch3.F21.m3" class="ltx_Math" alttext="f(x)=x^{2}-x-2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow></mrow></math> (esquerda) e <math id="Ch3.F21.m4" class="ltx_Math" alttext="g(x)=-x^{2}+x+2" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mrow></math> (direita).</span></figcaption>
+</figure>
+<div id="SS1.p4" class="ltx_para">
+<p class="ltx_p">O <span class="ltx_text ltx_font_bold">vértice</span> da parábola que representa uma função quadrática <math id="SS1.p4.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> com coeficiente quadrático positivo (com coeficiente quadrático negativo) é o ponto no qual ela atinge seu <span class="ltx_text ltx_font_bold">valor mínimo (máximo)</span> em todo o seu domínio natural. Quando <math id="SS1.p4.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> têm zeros reais, o ponto de abscissa do vértice é o ponto médio entre os zeros <math id="SS1.p4.m3" class="ltx_Math" alttext="x_{0}" display="inline"><msub><mi>x</mi><mn>0</mn></msub></math> e <math id="SS1.p4.m4" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math> da função, i.e. o vértice <math id="SS1.p4.m5" class="ltx_Math" alttext="V=(x_{v},y_{v})" display="inline"><mrow><mi>V</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>v</mi></msub><mo>,</mo><msub><mi>y</mi><mi>v</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math> é tal que</p>
+<table id="Ch3.E81" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E81.m1" class="ltx_Math" alttext="x_{v}=\frac{x_{0}+x_{1}}{2},\quad\text{e}\quad y_{v}=f(x_{v})." display="block"><mrow><mrow><mrow><msub><mi>x</mi><mi>v</mi></msub><mo>=</mo><mrow><mfrac><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mn>2</mn></mfrac><mo rspace="1.167em">,</mo><mtext>e</mtext></mrow></mrow><mspace width="1em"></mspace><mrow><msub><mi>y</mi><mi>v</mi></msub><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>v</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.81)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">O valor <math id="SS1.p4.m6" class="ltx_Math" alttext="x_{v}" display="inline"><msub><mi>x</mi><mi>v</mi></msub></math> é a abscissa do ponto em que a função quadrática <math id="SS1.p4.m7" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> atinge o <span class="ltx_text ltx_font_bold">valor máximo (valor mínimo)</span> <math id="SS1.p4.m8" class="ltx_Math" alttext="y_{v}" display="inline"><msub><mi>y</mi><mi>v</mi></msub></math>. Em geral, o vértice é dado por</p>
+<table id="Ch3.E82" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E82.m1" class="ltx_Math" alttext="(x_{v},y_{v})=\left(-\frac{b}{2a},-\frac{b^{2}-4ac}{4a}\right)" display="block"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>v</mi></msub><mo>,</mo><msub><mi>y</mi><mi>v</mi></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mi>b</mi><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow><mo>,</mo><mrow><mo>−</mo><mfrac><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow></mrow><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow><mo>)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.82)</span></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.4.2 </span>Técnica de completar o quadrado</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">A técnica de completar o quadrado, consiste em reescrever uma função quadrática</p>
+<table id="Ch3.E83" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E83.m1" class="ltx_Math" alttext="f(x)=ax^{2}+bx+c" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.83)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">na forma</p>
+<table id="eq:funquad_compquad" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E84.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}f(x)=a(x-h)^{%
+2}+k," display="block"><mrow><mrow><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">a</mi><mo>⁢</mo><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">h</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">k</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.84)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS2.p1.m1" class="ltx_Math" alttext="h=-b/(2a)" display="inline"><mrow><mi>h</mi><mo>=</mo><mrow><mo>−</mo><mrow><mi>b</mi><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math> e <math id="SS2.p1.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> é, portanto,</p>
+<table id="Ch3.E85" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E85.m1" class="ltx_Math" alttext="k=ax^{2}+bx+c-a(x-h)^{2}." display="block"><mrow><mrow><mi>k</mi><mo>=</mo><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow><mo>−</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.85)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A forma (<a href="#eq:funquad_compquad" title="In 3.4.2 Técnica de completar o quadrado ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.84</span></a>) é útil para resolver equações quadráticas, traçar o gráfico de uma função quadrática, entre várias aplicações na disciplina de Cálculo.</p>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.4.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Vamos completar o quadrado da função quadrática</p>
+<table id="Ch3.E86" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E86.m1" class="ltx_Math" alttext="f(x)=2x^{2}-4x+1." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.86)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Temos que <math id="Thmex1.p1.m1" class="ltx_Math" alttext="a=2" display="inline"><mrow><mi>a</mi><mo>=</mo><mn>2</mn></mrow></math>, <math id="Thmex1.p1.m2" class="ltx_Math" alttext="b=-4" display="inline"><mrow><mi>b</mi><mo>=</mo><mrow><mo>−</mo><mn>4</mn></mrow></mrow></math> e <math id="Thmex1.p1.m3" class="ltx_Math" alttext="c=1" display="inline"><mrow><mi>c</mi><mo>=</mo><mn>1</mn></mrow></math> e queremos reescrever <math id="Thmex1.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> na forma</p>
+<table id="Ch3.E87" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E87.m1" class="ltx_Math" alttext="f(x)=2(x-h)^{2}+k." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>+</mo><mi>k</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.87)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para tanto, colocamos o coeficiente <math id="Thmex1.p1.m5" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> em evidência</p>
+<table id="Ch3.E88" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E88.m1" class="ltx_Math" alttext="f(x)=2\left(x^{2}{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{%
+0,0,1}-2}x\right)+1" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mo>(</mo><mrow><msup><mi mathcolor="#000000">x</mi><mn mathcolor="#000000">2</mn></msup><mo mathcolor="#0000FF">−</mo><mrow><mn mathcolor="#0000FF">2</mn><mo>⁢</mo><mi mathcolor="#000000">x</mi></mrow></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.88)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Lembrando do produto notável</p>
+<table id="Ch3.E89" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E89.m1" class="ltx_Math" alttext="(x-h)^{2}=x^{2}{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{%
+0,0,1}-2h}x+h^{2}," display="block"><mrow><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mrow><mrow><msup><mi mathcolor="#000000">x</mi><mn mathcolor="#000000">2</mn></msup><mo mathcolor="#0000FF">−</mo><mrow><mn mathcolor="#0000FF">2</mn><mo>⁢</mo><mi mathcolor="#0000FF">h</mi><mo>⁢</mo><mi mathcolor="#000000">x</mi></mrow></mrow><mo>+</mo><msup><mi>h</mi><mn>2</mn></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.89)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">escolhemos <math id="Thmex1.p1.m6" class="ltx_Math" alttext="h=1" display="inline"><mrow><mi>h</mi><mo>=</mo><mn>1</mn></mrow></math>. Logo,</p>
+<table id="Ch3.S10.EGx69" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E90"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E90.m1" class="ltx_Math" alttext="\displaystyle f(x)=2\left((x-1)^{2}-1\right)+1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mo>(</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.90)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E91"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E91.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=2(x-1)^{2}-2+1" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>2</mn><mo>+</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.91)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E92"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E92.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=2(x-1)^{2}-1." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mn>1</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.92)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 3.4.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Fórmula de Bhaskara)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">A fórmula de Bhaskara (<a href="#eq:Bhaskara" title="In 3.4.1 Função quadrática ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.80</span></a>) é uma aplicação direta da técnica de completar o quadrado. Para ver isso, basta reescrever a função quadrática <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="f(x)=ax^{2}+bx+c" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow></mrow></math> na forma (<a href="#eq:funquad_compquad" title="In 3.4.2 Técnica de completar o quadrado ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.84</span></a>) e igualar a zero. Consultemos o E.<a href="#exer:bhaskara" title="E. 3.4.7. ‣ 3.4.4 Exercícios ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.4.7</span></a>.</p>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.4.3 </span>Exercícios Resolvidos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.4.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Determine os zeros do polinômio <math id="Thmexeresol1.p1.m1" class="ltx_Math" alttext="f(x)=x^{3}-x^{2}-2x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx3" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx3.p1" class="ltx_para">
+<p class="ltx_p">Determinar os zeros da função <math id="Thmresolx3.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> significa encontrar todos os valores de <math id="Thmresolx3.p1.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> tais que <math id="Thmresolx3.p1.m3" class="ltx_Math" alttext="f(x)=0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> (estes são as abscissas dos pontos nos quais o gráfico de <math id="Thmresolx3.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> intercepta o eixo das abscissas). Temos</p>
+<table id="Ch3.S10.EGx70" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E93"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E93.m1" class="ltx_Math" alttext="\displaystyle f(x)=0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.93)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E94"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E94.m1" class="ltx_Math" alttext="\displaystyle x^{3}-x^{2}-2x=0" display="inline"><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.94)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E95"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E95.m1" class="ltx_Math" alttext="\displaystyle x(x^{2}-x-2)=0" display="inline"><mrow><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.95)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E96"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E96.m1" class="ltx_Math" alttext="\displaystyle x=0\quad\text{ou}\quad x^{2}-x-2=0." display="inline"><mrow><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mn>0</mn><mspace width="1em"></mspace><mtext>ou</mtext></mrow></mrow><mspace width="1em"></mspace><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.96)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Então, usando a fórmula de Bhaskara (<a href="#eq:Bhaskara" title="In 3.4.1 Função quadrática ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.80</span></a>) na equação <math id="Thmresolx3.p1.m5" class="ltx_Math" alttext="x^{2}-x-2=0" display="inline"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo>=</mo><mn>0</mn></mrow></math>, obtemos</p>
+<table id="Ch3.S10.EGx71" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E97"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E97.m1" class="ltx_Math" alttext="\displaystyle x=\frac{-b\pm\sqrt{b^{2}-4ac}}{2a}" display="inline"><mrow><mi>x</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo>−</mo><mi>b</mi></mrow><mo>±</mo><msqrt><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow></mrow></msqrt></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.97)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E98"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E98.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1\pm\sqrt{1-4\cdot 1\cdot(-2)}}{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>±</mo><msqrt><mrow><mn>1</mn><mo>−</mo><mrow><mn>4</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></msqrt></mrow><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.98)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E99"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E99.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1\pm\sqrt{9}}{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>±</mo><msqrt><mn>9</mn></msqrt></mrow><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.99)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E100"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E100.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1\pm 3}{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>±</mo><mn>3</mn></mrow><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.100)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E101"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E101.m1" class="ltx_Math" alttext="\displaystyle=-1\leavevmode\nobreak\ \text{ou}\leavevmode\nobreak\ 2" display="inline"><mrow><mi></mi><mo>=</mo><mrow><mo>−</mo><mrow><mn>1</mn><mo lspace="0.500em">⁢</mo><mtext>ou</mtext><mo>⁢</mo><mn> 2</mn></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.101)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Com isso, temos que os zeros da função <math id="Thmresolx3.p1.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> ocorrem nos pontos <math id="Thmresolx3.p1.m7" class="ltx_Math" alttext="x_{0}=-1" display="inline"><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, <math id="Thmresolx3.p1.m8" class="ltx_Math" alttext="x_{1}=0" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmresolx3.p1.m9" class="ltx_Math" alttext="x_{2}=2" display="inline"><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>=</mo><mn>2</mn></mrow></math>.</p>
+</div>
+<div id="Thmresolx3.p2" class="ltx_para">
+<p class="ltx_p">Com o <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, podemos calcular os zeros da função <math id="Thmresolx3.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> com o seguinte comando:</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgIGZyb20gc3ltcHkgaW1wb3J0ICoKICAgIHNvbHZlKHgqKjMteCoqMi0yKngp" download="">⬇</a></div>
+<div id="lstnumberx299" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx300" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">solve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**3-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2-2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexeresol2" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.4.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Determine o valor mínimo da função <math id="Thmexeresol2.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}-x-2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>x</mi><mo>−</mo><mn>2</mn></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx4" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx4.p1" class="ltx_para">
+<p class="ltx_p">Como <math id="Thmresolx4.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é uma função quadrática com coeficiente quadrático positivo, temos que seu gráfico é uma parábola côncava para cima. Logo, <math id="Thmresolx4.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> atinge seu valor mínimo no seu vértice, que tem abscissa</p>
+<table id="Ch3.S10.EGx72" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E102"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E102.m1" class="ltx_Math" alttext="\displaystyle x_{v}=-\frac{b}{2a}" display="inline"><mrow><msub><mi>x</mi><mi>v</mi></msub><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mi>b</mi><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.102)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E103"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E103.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{-1}{2\cdot 1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mrow><mo>−</mo><mn>1</mn></mrow><mrow><mn>2</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>1</mn></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.103)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E104"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E104.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.104)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou seja, a abscissa do ponto de mínimo de <math id="Thmresolx4.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é <math id="Thmresolx4.p1.m4" class="ltx_Math" alttext="x_{v}=1/2" display="inline"><mrow><msub><mi>x</mi><mi>v</mi></msub><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></math> e seu valor mínimo é</p>
+<table id="Ch3.S10.EGx73" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E105"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E105.m1" class="ltx_Math" alttext="\displaystyle f\left(\frac{1}{2}\right)=\left(\frac{1}{2}\right)^{2}-\frac{1}{%
+2}-2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mn>2</mn></msup><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>−</mo><mn>2</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.105)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E106"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E106.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1-2-8}{4}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>−</mo><mn>2</mn><mo>−</mo><mn>8</mn></mrow><mn>4</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.106)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E107"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E107.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{9}{4}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>9</mn><mn>4</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.107)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmresolx4.p2" class="ltx_para">
+<p class="ltx_p">Usando <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, podemos resolver este exercício com o seguinte código:</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgIGZyb20gc3ltcHkgaW1wb3J0ICoKICAgIHggPSBTeW1ib2woJ3gnKQogICAgYSA9IDEKICAgIGIgPSAtMQogICAgYyA9IC0yCiAgICBmID0gTGFtYmRhKHgsIGEqeCoqMiArIGIqeCArIGMpCiAgICB4diA9IC1iLygyKmEpCiAgICBwcmludChmIlZhbG9yIG3DrW5pbW8gPSB7Zih4dil9Iik=" download="">⬇</a></div>
+<div id="lstnumberx301" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx302" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx303" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span>
+</div>
+<div id="lstnumberx304" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1</span>
+</div>
+<div id="lstnumberx305" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">c</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2</span>
+</div>
+<div id="lstnumberx306" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Lambda</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">c</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx307" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">xv</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">b</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx308" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Valor<span class="ltx_text ltx_lst_space"> </span>m<span class="ltx_text ltx_lst_literate">í</span>nimo<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{f(xv)}"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.4.4 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.4.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Faça o esboço dos gráficos das seguintes funções polinomiais:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="f(x)=1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="g(x)=-x+1" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mi>x</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">3.</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="h(x)=x^{2}-1" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">4.</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i4.p1.m1" class="ltx_Math" alttext="f_{1}(x)=x^{3}" display="inline"><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.4.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Determine os zeros do polinômio <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="f(x)=-x^{3}+x^{2}+2x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx47">Resposta</button></div><div class="collapse" id="Thmrespx47" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx47.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx47.p1.m1" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math>, <math id="Thmrespx47.p1.m2" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math>, <math id="Thmrespx47.p1.m3" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.4.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Determine o valor máximo da função <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="f(x)=-x^{2}+x+2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mi>x</mi><mo>+</mo><mn>2</mn></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx48">Resposta</button></div><div class="collapse" id="Thmrespx48" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx48.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx48.p1.m1" class="ltx_Math" alttext="9/4" display="inline"><mrow><mn>9</mn><mo>/</mo><mn>4</mn></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.4.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Faça um esboço da região determinada entre os gráficos de <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="y=x^{2}-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></mrow></math>, com <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="-1\leq x\leq 1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.4.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Determine os pontos de interseção dos gráficos de <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="f(x)=-x+1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mi>x</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="f(x)=x^{2}-1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx49">Resposta</button></div><div class="collapse" id="Thmrespx49" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx49.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx49.p1.m1" class="ltx_Math" alttext="(-2,3)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>2,3</mn></mrow><mo stretchy="false">)</mo></mrow></math>, <math id="Thmrespx49.p1.m2" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer6" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.4.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">(Aplicação.)
+Na <a href="https://pt.wikipedia.org/wiki/Mec%C3%A2nica_cl%C3%A1ssica" title="" class="ltx_ref ltx_href">mecânica clássica</a>, a <a href="https://pt.wikipedia.org/wiki/Energia_cin%C3%A9tica" title="" class="ltx_ref ltx_href">energia cinética</a> <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="E_{c}" display="inline"><msub><mi>E</mi><mi>c</mi></msub></math> de um objeto não rotativo de massa <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> [<span class="ltx_text ltx_markedasmath">kg</span>] movimentando-se com uma velocidade <math id="Thmexer6.p1.m4" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> [<math id="Thmexer6.p1.m5" class="ltx_Math" alttext="\text{m}/\text{s}" display="inline"><mrow><mtext>m</mtext><mo>/</mo><mtext>s</mtext></mrow></math>] é dada por</p>
+<table id="Ch3.E108" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E108.m1" class="ltx_Math" alttext="E_{c}=\frac{m}{2}v^{2}" display="block"><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>=</mo><mrow><mfrac><mi>m</mi><mn>2</mn></mfrac><mo>⁢</mo><msup><mi>v</mi><mn>2</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.108)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assumindo <math id="Thmexer6.p1.m6" class="ltx_Math" alttext="m&gt;0" display="inline"><mrow><mi>m</mi><mo>&gt;</mo><mn>0</mn></mrow></math> constante, temos que <math id="Thmexer6.p1.m7" class="ltx_Math" alttext="E_{c}" display="inline"><msub><mi>E</mi><mi>c</mi></msub></math> é função apenas de <math id="Thmexer6.p1.m8" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math>, i.e. <math id="Thmexer6.p1.m9" class="ltx_Math" alttext="E_{c}=E_{c}(v)" display="inline"><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>=</mo><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Responda cada um dos seguintes itens:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Qual a classe da função <math id="I2.i1.p1.m1" class="ltx_Math" alttext="E_{c}=E_{c}(v)" display="inline"><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>=</mo><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>?</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Qual o domínio da função <math id="I2.i2.p1.m1" class="ltx_Math" alttext="E_{c}=E_{c}(v)" display="inline"><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>=</mo><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p">Qual a imagem da função <math id="I2.i3.p1.m1" class="ltx_Math" alttext="E_{c}=E_{c}(v)" display="inline"><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>=</mo><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p">A função <math id="I2.i4.p1.m1" class="ltx_Math" alttext="E_{c}=E_{c}(v)" display="inline"><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>=</mo><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> tem valor mínimo? Se sim, qual é esse valor e para o valor de <math id="I2.i4.p1.m2" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math> em que isso ocorre?</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx50">Resposta</button></div><div class="collapse" id="Thmrespx50" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx50.p1" class="ltx_para">
+<p class="ltx_p">a) função quadrática. b) <math id="Thmrespx50.p1.m1" class="ltx_Math" alttext="D(E_{v})=\{v\in\mathbb{R}:\leavevmode\nobreak\ -c\leq v\leq c\}" display="inline"><mrow><mrow><mi>D</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mi>v</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>v</mi><mo>∈</mo><mi>ℝ</mi></mrow><mo lspace="0.278em" rspace="0.778em">:</mo><mrow><mrow><mo>−</mo><mi>c</mi></mrow><mo>≤</mo><mi>v</mi><mo>≤</mo><mi>c</mi></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, onde <math id="Thmrespx50.p1.m2" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> denota a <a href="https://pt.wikipedia.org/wiki/Velocidade_da_luz" title="" class="ltx_ref ltx_href">velocidade da luz</a>. c) <math id="Thmrespx50.p1.m3" class="ltx_Math" alttext="Im(E_{v})=\{e\in\mathbb{R}:0\leq e\leq\frac{m\cdot c^{2}}{2}\}" display="inline"><mrow><mrow><mi>I</mi><mo>⁢</mo><mi>m</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>E</mi><mi>v</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>e</mi><mo>∈</mo><mi>ℝ</mi></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mn>0</mn><mo>≤</mo><mi>e</mi><mo>≤</mo><mfrac><mrow><mi>m</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>c</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, onde <math id="Thmrespx50.p1.m4" class="ltx_Math" alttext="c" display="inline"><mi>c</mi></math> denota a <a href="https://pt.wikipedia.org/wiki/Velocidade_da_luz" title="" class="ltx_ref ltx_href">velocidade da luz</a>. d) Sim. Valor mínimo <math id="Thmrespx50.p1.m5" class="ltx_Math" alttext="E_{c}=0" display="inline"><mrow><msub><mi>E</mi><mi>c</mi></msub><mo>=</mo><mn>0</mn></mrow></math>. Ponto de mínimo <math id="Thmrespx50.p1.m6" class="ltx_Math" alttext="v=0" display="inline"><mrow><mi>v</mi><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</div>
+<div id="exer:bhaskara" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.4.7.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer7.p1" class="ltx_para">
+<p class="ltx_p">Use a técnica de completar o quadrado para mostrar que os zeros de uma função quadrática <math id="Thmexer7.p1.m1" class="ltx_Math" alttext="f(x)=ax^{2}+bx+c" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow></mrow></math> são dados pela fórmula de Bhaskara (<a href="#eq:Bhaskara" title="In 3.4.1 Função quadrática ‣ 3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.80</span></a>).</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx51">Resposta</button></div><div class="collapse" id="Thmrespx51" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx51.p1" class="ltx_para">
+<p class="ltx_p">Dica: mostre que</p>
+<table id="Ch3.Ex1" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.Ex1.m1" class="ltx_Math" alttext="ax^{2}+bx+c=a\left(x+\frac{b}{2a}\right)^{2}-\frac{b^{2}-4ac}{4a}." display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mi>b</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>c</mi></mrow><mo>=</mo><mrow><mrow><mi>a</mi><mo>⁢</mo><msup><mrow><mo>(</mo><mrow><mi>x</mi><mo>+</mo><mfrac><mi>b</mi><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo>−</mo><mfrac><mrow><msup><mi>b</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>c</mi></mrow></mrow><mrow><mn>4</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_funcao_sec_funpot.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Função potência</span></a><a href="bib.html" title="In Pré-Cálculo" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_funcao_sec_funracio.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Função racional</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:09:07 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

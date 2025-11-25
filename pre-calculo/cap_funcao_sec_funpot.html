@@ -1,0 +1,582 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo</title>
+<!--Generated on Tue Nov 25 11:09:07 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="up up" href="./" title="Pré-Cálculo">
+<link rel="start" href="./" title="Pré-Cálculo">
+<link rel="prev" href="cap_funcao_sec_funafim.html" title="3.2 Função afim ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="next" href="cap_funcao_sec_funpoli.html" title="3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_defgrafico.html" title="3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funafim.html" title="3.2 Função afim ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funpoli.html" title="3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funracio.html" title="3.5 Função racional ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funtri.html" title="3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_opfun.html" title="3.7 Operações com funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funprop.html" title="3.8 Propriedades de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funexp.html" title="3.9 Funções exponenciais ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funlog.html" title="3.10 Funções logarítmicas ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Pré-Cálculo">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_numreal.html" title="Capítulo 1 Números reais ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_ineq.html" title="Capítulo 2 Equações e inequações ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Pré-Cálculo">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Pré-Cálculo</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_funcao.html" title="In Pré-Cálculo" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Funções</span></a><a href="cap_funcao_sec_funafim.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Função afim</span></a><a href="cap_funcao_sec_funpoli.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Função polinomial</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.3 </span>Função potência</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Uma função da forma <math id="p1.m1" class="ltx_Math" alttext="f(x)=x^{n}" display="inline"><mrow><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">=</mo><msup><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">n</mi></msup></mrow></math>, onde <math id="p1.m2" class="ltx_Math" alttext="n\neq 0" display="inline"><mrow><mi mathbackground="#FFFF00">n</mi><mo mathbackground="#FFFF00">≠</mo><mn mathbackground="#FFFF00">0</mn></mrow></math>, é chamada de <span class="ltx_text ltx_font_bold">função potência</span></span>. Funções potência têm comportamentos característicos conforme o valor de <math id="p1.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>. Quando <math id="p1.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> é um inteiro positivo ímpar, seu domínio e sua imagem são <math id="p1.m5" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Consultemos a Figura <a href="#fig:funpot_impar" title="Figura 3.13 ‣ 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.13</span></a>.</p>
+</div>
+<figure id="fig:funpot_impar" class="ltx_figure"><img src="cap_funcao/dados/fig_funpot_impar/fig.png" id="Ch3.F13.g1" class="ltx_graphics ltx_centering ltx_img_square" width="221" height="217" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.13</span>: </span><span class="ltx_text" style="font-size:90%;">Funções potência <math id="Ch3.F13.m4" class="ltx_Math" alttext="y=x" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math>, <math id="Ch3.F13.m5" class="ltx_Math" alttext="y=x^{3}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>3</mn></msup></mrow></math> e <math id="Ch3.F13.m6" class="ltx_Math" alttext="y=x^{5}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>5</mn></msup></mrow></math>.</span></figcaption>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Funções potência com <math id="p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> positivo par estão definidas em toda parte e têm imagem <math id="p2.m2" class="ltx_Math" alttext="[0,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Consultemos a Figura <a href="#fig:funpot_par" title="Figura 3.14 ‣ 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.14</span></a>.</p>
+</div>
+<figure id="fig:funpot_par" class="ltx_figure"><img src="cap_funcao/dados/fig_funpot_par/fig.png" id="Ch3.F14.g1" class="ltx_graphics ltx_centering ltx_img_square" width="221" height="217" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.14</span>: </span><span class="ltx_text" style="font-size:90%;">Funções potência <math id="Ch3.F14.m4" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>, <math id="Ch3.F14.m5" class="ltx_Math" alttext="y=x^{4}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></math> e <math id="Ch3.F14.m6" class="ltx_Math" alttext="y=x^{6}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>6</mn></msup></mrow></math>.</span></figcaption>
+</figure>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Funções potência com <math id="p3.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> inteiro negativo ímpar não são definidas em <math id="p3.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math>, tendo domínio e imagem igual a <math id="p3.m3" class="ltx_Math" alttext="(-\infty,0)\cup(0,\infty)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Também, quando <math id="p3.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> inteiro negativo par, a função potência não está definida em <math id="p3.m5" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math>, tem domínio <math id="p3.m6" class="ltx_Math" alttext="(-\infty,0)\cup(0,\infty)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></math>, mas imagem <math id="p3.m7" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Consultemos a Figura <a href="#fig:funpot_negativo" title="Figura 3.15 ‣ 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>.</p>
+</div>
+<figure id="fig:funpot_negativo" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="cap_funcao/dados/fig_funpot_negativo/fig_negativo_impar.png" id="Ch3.F15.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="221" height="221" alt="Refer to caption"></div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="cap_funcao/dados/fig_funpot_negativo/fig_negativo_par.png" id="Ch3.F15.g2" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="221" height="217" alt="Refer to caption"></div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.15</span>: </span><span class="ltx_text" style="font-size:90%;">Funções potência <math id="Ch3.F15.m3" class="ltx_Math" alttext="y=1/x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mi>x</mi></mrow></mrow></math> (acima), <math id="Ch3.F15.m4" class="ltx_Math" alttext="y=1/x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>1</mn><mo>/</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math> (abaixo).</span></figcaption>
+</figure>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Há, ainda, comportamentos característicos quando <math id="p4.m1" class="ltx_Math" alttext="n=1/2" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></math>, <math id="p4.m2" class="ltx_Math" alttext="1/3" display="inline"><mrow><mn>1</mn><mo>/</mo><mn>3</mn></mrow></math>, <math id="p4.m3" class="ltx_Math" alttext="3/2" display="inline"><mrow><mn>3</mn><mo>/</mo><mn>2</mn></mrow></math> e <math id="p4.m4" class="ltx_Math" alttext="2/3" display="inline"><mrow><mn>2</mn><mo>/</mo><mn>3</mn></mrow></math>. Consultemos Figura <a href="#fig:funpot_racional" title="Figura 3.16 ‣ 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.16</span></a>.</p>
+</div>
+<figure id="fig:funpot_racional" class="ltx_figure">
+<div class="ltx_flex_figure">
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="cap_funcao/dados/fig_funpot_racional/fig_par.png" id="Ch3.F16.g1" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="221" height="249" alt="Refer to caption"></div>
+<div class="ltx_flex_break"></div>
+<div class="ltx_flex_cell ltx_flex_size_1"><img src="cap_funcao/dados/fig_funpot_racional/fig_impar.png" id="Ch3.F16.g2" class="ltx_graphics ltx_centering ltx_figure_panel ltx_img_square" width="221" height="217" alt="Refer to caption"></div>
+</div>
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.16</span>: </span><span class="ltx_text" style="font-size:90%;">Funções potência. Acima: <math id="Ch3.F16.m5" class="ltx_Math" alttext="y=\sqrt{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mi>x</mi></msqrt></mrow></math> e <math id="Ch3.F16.m6" class="ltx_Math" alttext="y=\sqrt{x^{3}}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><msup><mi>x</mi><mn>3</mn></msup></msqrt></mrow></math>. Abaixo: <math id="Ch3.F16.m7" class="ltx_Math" alttext="y=\sqrt[3]{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></math> e <math id="Ch3.F16.m8" class="ltx_Math" alttext="y=\sqrt[3]{x^{2}}" display="inline"><mrow><mi>y</mi><mo>=</mo><mroot><msup><mi>x</mi><mn>2</mn></msup><mn>3</mn></mroot></mrow></math>.</span></figcaption>
+</figure>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.3.1 </span>Exercícios Resolvidos</h2>
+
+<div id="exeresol:funpot_graf" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.3.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio e faça um esboço do gráfico de cada uma das seguintes funções:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=x^{5/2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>2</mn></mrow></msup></mrow></math>;</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g(x)=x^{5/3}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>3</mn></mrow></msup></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmresolx1" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx1.p1" class="ltx_para">
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Vamos analisar a função <math id="I2.i1.p1.m1" class="ltx_Math" alttext="f(x)=x^{5/2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>2</mn></mrow></msup></mrow></math>. Como <math id="I2.i1.p1.m2" class="ltx_Math" alttext="x^{5/2}=\sqrt{x^{5}}" display="inline"><mrow><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>2</mn></mrow></msup><mo>=</mo><msqrt><msup><mi>x</mi><mn>5</mn></msup></msqrt></mrow></math> e não existe a raiz quadrada de número negativo, temos que <math id="I2.i1.p1.m3" class="ltx_Math" alttext="x^{5}" display="inline"><msup><mi>x</mi><mn>5</mn></msup></math> deve ser não negativo. Daí, <math id="I2.i1.p1.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> deve ser não negativo. Logo, o domínio de <math id="I2.i1.p1.m5" class="ltx_Math" alttext="f(x)=x^{5/2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>2</mn></mrow></msup></mrow></math> é <math id="I2.i1.p1.m6" class="ltx_Math" alttext="[0,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Veja o esboço desta função na Figura <a href="#fig:exeresol_funpot_graf_a" title="Figura 3.17 ‣ item a ‣ Resolução 0. ‣ 3.3.1 Exercícios Resolvidos ‣ 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.17</span></a>.</p>
+</div>
+<figure id="fig:exeresol_funpot_graf_a" class="ltx_figure"><img src="cap_funcao/dados/fig_exeresol_funpot_graf/fig_exeresol_funpot_graf_a.png" id="Ch3.F17.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="220" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.17</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F17.m2" class="ltx_Math" alttext="f(x)=x^{5/2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>2</mn></mrow></msup></mrow></math>.</span></figcaption>
+</figure>
+<div id="I2.i1.p2" class="ltx_para">
+<p class="ltx_p">Verifique o gráfico plotando-o com o <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>!</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Vamos analisar a função <math id="I2.i2.p1.m1" class="ltx_Math" alttext="g(x)=x^{5/3}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>3</mn></mrow></msup></mrow></math>. Como <math id="I2.i2.p1.m2" class="ltx_Math" alttext="x^{5/3}=\sqrt[3]{x^{5}}" display="inline"><mrow><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>3</mn></mrow></msup><mo>=</mo><mroot><msup><mi>x</mi><mn>5</mn></msup><mn>3</mn></mroot></mrow></math>, não temos restrição sobre os valores de <math id="I2.i2.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>. Logo, o domínio da função <math id="I2.i2.p1.m4" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> é <math id="I2.i2.p1.m5" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Veja o esboço desta função na Figura <a href="#fig:exeresol_funpot_graf_b" title="Figura 3.18 ‣ item b ‣ Resolução 0. ‣ 3.3.1 Exercícios Resolvidos ‣ 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.18</span></a>.</p>
+</div>
+<figure id="fig:exeresol_funpot_graf_b" class="ltx_figure"><img src="cap_funcao/dados/fig_exeresol_funpot_graf/fig_exeresol_funpot_graf_b.png" id="Ch3.F18.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="222" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.18</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F18.m2" class="ltx_Math" alttext="g(x)=x^{5/3}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mrow><mn>5</mn><mo>/</mo><mn>3</mn></mrow></msup></mrow></math>.</span></figcaption>
+</figure>
+<div id="I2.i2.p2" class="ltx_para">
+<p class="ltx_p">Para plotar o gráfico de <math id="I2.i2.p2.m1" class="ltx_Math" alttext="g(x)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> com o <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, digitamos:</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgICAgZnJvbSBzeW1weSBpbXBvcnQgKgogICAgICBwID0gcGxvdChyZWFsX3Jvb3QoeCoqNSwzKSwoeCwtMiwyKSk=" download="">⬇</a></div>
+<div id="lstnumberx283" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx284" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">      </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">p</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real_root</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**5,3),(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,-2,2))</span>
+</div>
+</div>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="exeresol:funpot_intersep" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.3.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Determine a equação da reta que passa pelos pontos de interseção dos gráficos das funções <math id="Thmexeresol2.p1.m1" class="ltx_Math" alttext="f(x)=1/x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mi>x</mi></mrow></mrow></math> e <math id="Thmexeresol2.p1.m2" class="ltx_Math" alttext="g(x)=\sqrt[3]{x}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx2" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx2.p1" class="ltx_para">
+<p class="ltx_p">Para determinarmos a reta precisamos, antes, dos pontos de interseção. As funções se interceptam nos pontos de abscissa <math id="Thmresolx2.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> tais que</p>
+<table id="Ch3.S10.EGx67" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E63"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E63.m1" class="ltx_Math" alttext="\displaystyle f(x)=g(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.63)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E64"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E64.m1" class="ltx_Math" alttext="\displaystyle\frac{1}{x}=\sqrt[3]{x}" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.64)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E65"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E65.m1" class="ltx_Math" alttext="\displaystyle 1=x\sqrt[3]{x}" display="inline"><mrow><mn>1</mn><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.65)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E66"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E66.m1" class="ltx_Math" alttext="\displaystyle 1=x\cdot x^{\frac{1}{3}}" display="inline"><mrow><mn>1</mn><mo>=</mo><mrow><mi>x</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>x</mi><mfrac><mn>1</mn><mn>3</mn></mfrac></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.66)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E67"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E67.m1" class="ltx_Math" alttext="\displaystyle x^{1+\frac{1}{3}}=1" display="inline"><mrow><msup><mi>x</mi><mrow><mn>1</mn><mo>+</mo><mfrac><mn>1</mn><mn>3</mn></mfrac></mrow></msup><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.67)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E68"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E68.m1" class="ltx_Math" alttext="\displaystyle x^{\frac{4}{3}}=1" display="inline"><mrow><msup><mi>x</mi><mfrac><mn>4</mn><mn>3</mn></mfrac></msup><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.68)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E69"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E69.m1" class="ltx_Math" alttext="\displaystyle x^{4}=\sqrt[3]{1}" display="inline"><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>=</mo><mroot><mn>1</mn><mn>3</mn></mroot></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.69)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E70"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E70.m1" class="ltx_Math" alttext="\displaystyle x^{4}=1" display="inline"><mrow><msup><mi>x</mi><mn>4</mn></msup><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.70)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E71"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E71.m1" class="ltx_Math" alttext="\displaystyle x_{0}=-1\leavevmode\nobreak\ \text{ou}\leavevmode\nobreak\ x_{1}%
+=1." display="inline"><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mrow><mo>−</mo><mrow><mn>1</mn><mo lspace="0.500em">⁢</mo><mtext>ou</mtext><mo lspace="0.500em">⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.71)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou seja, os gráficos se interceptam nos pontos de abscissas <math id="Thmresolx2.p1.m2" class="ltx_Math" alttext="x_{0}=-1" display="inline"><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmresolx2.p1.m3" class="ltx_Math" alttext="x_{1}=1" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>=</mo><mn>1</mn></mrow></math>. Veja o esboço dos gráficos das funções na Figura <a href="#fig:exeresol_funpot_intersep" title="Figura 3.19 ‣ Resolução 0. ‣ 3.3.1 Exercícios Resolvidos ‣ 3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.19</span></a>. Agora, podemos usar qualquer uma das funções para obter as ordenadas dos pontos de interseção. Usando <math id="Thmresolx2.p1.m4" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>, temos</p>
+<table id="Ch3.E72" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E72.m1" class="ltx_Math" alttext="(x_{0},y_{0})=(x_{0},f(x_{0}))=(-1,-1)" display="block"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.72)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e</p>
+<table id="Ch3.E73" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E73.m1" class="ltx_Math" alttext="(x_{1},y_{1})=(x_{1},f(x_{1}))=(1,1)" display="block"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.73)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:exeresol_funpot_intersep" class="ltx_figure"><img src="cap_funcao/dados/fig_exeresol_funpot_intersep/fig_exeresol_funpot_intersep.png" id="Ch3.F19.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="228" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.19</span>: </span><span class="ltx_text" style="font-size:90%;">Interseção dos gráficos das funções <math id="Ch3.F19.m3" class="ltx_Math" alttext="f(x)=1/x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mi>x</mi></mrow></mrow></math> (azul) e <math id="Ch3.F19.m4" class="ltx_Math" alttext="g(x)=\sqrt[3]{x}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></math> (vermelho).</span></figcaption>
+</figure>
+<div id="Thmresolx2.p2" class="ltx_para">
+<p class="ltx_p">Agora, basta determinarmos a equação da reta que passa pelos pontos <math id="Thmresolx2.p2.m1" class="ltx_Math" alttext="(x_{0},y_{0})=(-1,-1)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmresolx2.p2.m2" class="ltx_Math" alttext="(x_{1},y_{1})=(1,1)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>y</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow></math>. De (<a href="cap_funcao_sec_funafim.html#eq:funafim_eq" title="In 3.2.1 Retas e coeficiente angular ‣ 3.2 Função afim ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.48</span></a>), temos que a equação da reta é tal que</p>
+<table id="Ch3.S10.EGx68" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E74"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E74.m1" class="ltx_Math" alttext="\displaystyle y=\frac{y_{1}-y_{0}}{x_{1}-x_{0}}(x-x_{0})+y_{0}" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><msub><mi>y</mi><mn>1</mn></msub><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.74)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E75"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E75.m1" class="ltx_Math" alttext="\displaystyle y=\frac{1-(-1)}{1-(-1)}(x-(-1))+(-1)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.75)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E76"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E76.m1" class="ltx_Math" alttext="\displaystyle y=x+1-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.76)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E77"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E77.m1" class="ltx_Math" alttext="\displaystyle y=x." display="inline"><mrow><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.77)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou seja, a que passa pelos pontos de interseção dos gráficos das funções <math id="Thmresolx2.p2.m3" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmresolx2.p2.m4" class="ltx_Math" alttext="g(x)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> tem equação <math id="Thmresolx2.p2.m5" class="ltx_Math" alttext="y=x" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math>.</p>
+</div>
+<div id="Thmresolx2.p3" class="ltx_para">
+<p class="ltx_p">Usando o <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, podemos resolver o problema com o seguinte código.</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgIGZyb20gc3ltcHkgaW1wb3J0ICoKICAgIHggPSBTeW1ib2woJ3gnKQogICAgZiA9IExhbWJkYSh4LCAxL3gpCiAgICBnID0gTGFtYmRhKHgsIHJlYWxfcm9vdCh4LDMpKQogICAgIyB4IHBvc2l0aXZvCiAgICB4ID0gU3ltYm9sKCd4JywgbmVnYXRpdmU9VHJ1ZSkKICAgIHgwID0gc29sdmUoZih4KS1nKHgpKVswXQogICAgeTAgPSBmKHgwKQogICAgIyB4IG5lZ2F0aXZvCiAgICB4ID0gU3ltYm9sKCd4JywgcG9zaXRpdmU9VHJ1ZSkKICAgIHgxID0gc29sdmUoZih4KS1nKHgpKVswXQogICAgeTEgPSBmKHgxKQoKICAgIHByaW50KGYieSA9IHsoeTEteTApLyh4MS14MCkqKHgteDApK3kwfSIp" download="">⬇</a></div>
+<div id="lstnumberx285" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx286" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx287" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Lambda</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx288" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Lambda</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real_root</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,3))</span>
+</div>
+<div id="lstnumberx289" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>x<span class="ltx_text ltx_lst_space"> </span>positivo</span></span>
+</div>
+<div id="lstnumberx290" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">negative</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx291" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">solve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))[0]</span>
+</div>
+<div id="lstnumberx292" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x0</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx293" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>x<span class="ltx_text ltx_lst_space"> </span>negativo</span></span>
+</div>
+<div id="lstnumberx294" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">positive</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx295" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">solve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">g</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))[0]</span>
+</div>
+<div id="lstnumberx296" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx297" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span>
+</div>
+<div id="lstnumberx298" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"y<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{(y1-y0)/(x1-x0)*(x-x0)+y0}"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.3.2 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.3.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio, a imagem e faça um esboço do gráfico de cada uma das seguintes funções:</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="f(x)=x^{7}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>7</mn></msup></mrow></math>;</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="g(x)=x^{8}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>8</mn></msup></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx42">Resposta</button></div><div class="collapse" id="Thmrespx42" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx42.p1" class="ltx_para">
+<p class="ltx_p">a) domínio: <math id="Thmrespx42.p1.m1" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>; imagem: <math id="Thmrespx42.p1.m2" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. b) domínio: <math id="Thmrespx42.p1.m3" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>; imagem: <math id="Thmrespx42.p1.m4" class="ltx_Math" alttext="[0,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Dica: use o <a href="https://www.sympygamma.com/" title="" class="ltx_ref ltx_href">SymPy Gamma</a> para verificar os esboços de seus gráficos.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.3.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio, a imagem e faça um esboço do gráfico de cada uma das seguintes funções:</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=\frac{1}{x^{7}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>x</mi><mn>7</mn></msup></mfrac></mstyle></mrow></math>;</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g(x)=\frac{1}{x^{8}}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>x</mi><mn>8</mn></msup></mfrac></mstyle></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx43">Resposta</button></div><div class="collapse" id="Thmrespx43" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx43.p1" class="ltx_para">
+<p class="ltx_p">a) domínio: <math id="Thmrespx43.p1.m1" class="ltx_Math" alttext="(-\infty,\infty)\setminus\{0\}" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow><mo>∖</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow></mrow></math>; imagem: <math id="Thmrespx43.p1.m2" class="ltx_Math" alttext="(-\infty,\infty)\setminus\{0\}" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow><mo>∖</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow></mrow></math>. b) domínio: <math id="Thmrespx43.p1.m3" class="ltx_Math" alttext="(-\infty,\infty)\setminus\{0\}" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow><mo>∖</mo><mrow><mo stretchy="false">{</mo><mn>0</mn><mo stretchy="false">}</mo></mrow></mrow></math>; imagem: <math id="Thmrespx43.p1.m4" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Dica: use o <a href="https://www.sympygamma.com/" title="" class="ltx_ref ltx_href">SymPy Gamma</a> para verificar os esboços de seus gráficos.</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.3.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Determine o domínio, a imagem e faça um esboço do gráfico de cada uma das seguintes funções:</p>
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=\sqrt{x^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msqrt><msup><mi>x</mi><mn>2</mn></msup></msqrt></mrow></math>;</p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g(x)=\sqrt[3]{x^{3}}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mroot><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mroot></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx44">Resposta</button></div><div class="collapse" id="Thmrespx44" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx44.p1" class="ltx_para">
+<p class="ltx_p">a) domínio: <math id="Thmrespx44.p1.m1" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>; imagem: <math id="Thmrespx44.p1.m2" class="ltx_Math" alttext="[0,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. b) domínio: <math id="Thmrespx44.p1.m3" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>; imagem: <math id="Thmrespx44.p1.m4" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>. Dica: use o <a href="https://www.sympygamma.com/" title="" class="ltx_ref ltx_href">SymPy Gamma</a> para verificar os esboços de seus gráficos.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.3.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Determine o(s) ponto(s) de interseção entre as funções <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="f(x)=x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>x</mi></mrow></math> e <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="g(x)=1/x" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mi>x</mi></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx45">Resposta</button></div><div class="collapse" id="Thmrespx45" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx45.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx45.p1.m1" class="ltx_Math" alttext="(-1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>, <math id="Thmrespx45.p1.m2" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.3.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Determine a equação da reta que passa pelos pontos de interseção entre as funções <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> e <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="g(x)=1/x^{2}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx46">Resposta</button></div><div class="collapse" id="Thmrespx46" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx46.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx46.p1.m1" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_funcao_sec_funafim.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Função afim</span></a><a href="bib.html" title="In Pré-Cálculo" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_funcao_sec_funpoli.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Função polinomial</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:09:07 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

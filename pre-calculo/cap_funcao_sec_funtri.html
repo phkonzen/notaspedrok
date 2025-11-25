@@ -1,0 +1,741 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo</title>
+<!--Generated on Tue Nov 25 11:09:07 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="up up" href="./" title="Pré-Cálculo">
+<link rel="start" href="./" title="Pré-Cálculo">
+<link rel="prev" href="cap_funcao_sec_funracio.html" title="3.5 Função racional ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="next" href="cap_funcao_sec_opfun.html" title="3.7 Operações com funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_defgrafico.html" title="3.1 Definição e gráfico de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funafim.html" title="3.2 Função afim ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funpot.html" title="3.3 Função potência ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funpoli.html" title="3.4 Função polinomial ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funracio.html" title="3.5 Função racional ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_opfun.html" title="3.7 Operações com funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funprop.html" title="3.8 Propriedades de funções ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funexp.html" title="3.9 Funções exponenciais ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="section" href="cap_funcao_sec_funlog.html" title="3.10 Funções logarítmicas ‣ Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Pré-Cálculo">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_numreal.html" title="Capítulo 1 Números reais ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_ineq.html" title="Capítulo 2 Equações e inequações ‣ Pré-Cálculo">
+<link rel="chapter" href="cap_funcao.html" title="Capítulo 3 Funções ‣ Pré-Cálculo">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Pré-Cálculo">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Pré-Cálculo</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_funcao.html" title="In Pré-Cálculo" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Funções</span></a><a href="cap_funcao_sec_funracio.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Função racional</span></a><a href="cap_funcao_sec_opfun.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Operações com funções</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.6 </span>Funções trigonométricas</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Funções trigonométricas são funções transcendentes e são construídas a partir do estudo trigonométrico de triângulos retângulos.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.6.1 </span>Seno e cosseno</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">As funções trigonométricas seno <math id="SS1.p1.m1" class="ltx_Math" alttext="y=\operatorname{sen}(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e cosseno <math id="SS1.p1.m2" class="ltx_Math" alttext="y=\cos(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> podem ser definidas a partir do <span class="ltx_text ltx_font_bold">círculo trigonométrico</span> (veja a Figura <a href="#fig:cos_seno" title="Figura 3.24 ‣ 3.6.1 Seno e cosseno ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.24</span></a>). Seja <math id="SS1.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> o ângulo<span id="Ch3.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note">6</span>Em geral utilizaremos a medida em radianos para ângulos.</span></span></span> de declividade da reta que passa pela origem do plano cartesiano (reta <math id="SS1.p1.m4" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> na Figura <a href="#fig:cos_seno" title="Figura 3.24 ‣ 3.6.1 Seno e cosseno ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.24</span></a>). Seja, então, <math id="SS1.p1.m5" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math> o ponto de interseção desta reta com a circunferência unitária<span id="Ch3.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note">7</span>Circunferência do círculo de raio 1.</span></span></span>. Então, definimos:</p>
+<table id="Ch3.E121" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E121.m1" class="ltx_Math" alttext="\operatorname{sen}(x)=b,\qquad\cos(x)=a." display="block"><mrow><mrow><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>b</mi></mrow><mo rspace="2.167em">,</mo><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>a</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.121)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A partir da definição, notamos que ambas funções têm domínio <math id="SS1.p1.m6" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math> e imagem <math id="SS1.p1.m7" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+<figure id="fig:cos_seno" class="ltx_figure"><img src="cap_funcao/dados/fig_cos_seno/fig.png" id="Ch3.F24.g1" class="ltx_graphics ltx_centering ltx_img_square" width="198" height="179" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.24</span>: </span><span class="ltx_text" style="font-size:90%;">Funções seno e cosseno no círculo trigonométrico.</span></figcaption>
+</figure>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Na Figura <a href="#fig:cos_seno_valores" title="Figura 3.25 ‣ 3.6.1 Seno e cosseno ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.25</span></a> temos a marcação dos valores das funções seno e cosseno para os ângulos fundamentais.</p>
+</div>
+<figure id="fig:cos_seno_valores" class="ltx_figure"><img src="cap_funcao/dados/fig_cos_seno_valores/fig.png" id="Ch3.F25.g1" class="ltx_graphics ltx_centering ltx_img_square" width="191" height="179" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.25</span>: </span><span class="ltx_text" style="font-size:90%;">Funções seno e cosseno no círculo trigonométrico.</span></figcaption>
+</figure>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">A partir da Figura <a href="#fig:cos_seno_valores" title="Figura 3.25 ‣ 3.6.1 Seno e cosseno ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.25</span></a>, temos:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}\left(\frac{\pi}{6}\right)=\frac{1}{2}" display="inline"><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>6</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></math></p>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST32" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 32: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgc2luLCBwaQpwcmludCgnc2VuKHBpLzYpID0nLCBzaW4ocGkvNikp" download="">⬇</a></div>
+<div id="lstnumberx311" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span>
+</div>
+<div id="lstnumberx312" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'sen(pi/6)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/6))</span>
+</div>
+</div>
+</figure>
+<div id="I1.i1.p2" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,c2VuKHBpLzYpID0gMS8y" download="">⬇</a></div>
+<div id="lstnumberx313" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sen</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/6)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/2</span>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\cos\left(\frac{\pi}{6}\right)=\frac{\sqrt{3}}{2}" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>6</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><msqrt><mn>3</mn></msqrt><mn>2</mn></mfrac></mstyle></mrow></math></p>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST33" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 33: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgY29zLCBwaQpwcmludCgnY29zKHBpLzYpID0nLCBjb3MocGkvNikp" download="">⬇</a></div>
+<div id="lstnumberx314" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cos</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span>
+</div>
+<div id="lstnumberx315" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'cos(pi/6)<span class="ltx_text ltx_lst_space"> </span>='</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cos</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/6))</span>
+</div>
+</div>
+</figure>
+<div id="I1.i2.p2" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,Y29zKHBpLzYpID0gc3FydCgzKS8y" download="">⬇</a></div>
+<div id="lstnumberx316" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cos</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/6)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(3)/2</span>
+</div>
+</div>
+</div>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}\left(\frac{3\pi}{4}\right)=\frac{\sqrt{2}}{2}" display="inline"><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>3</mn><mo>⁢</mo><mi>π</mi></mrow><mn>4</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><msqrt><mn>2</mn></msqrt><mn>2</mn></mfrac></mstyle></mrow></math></p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i4.p1.m1" class="ltx_Math" alttext="\displaystyle\cos\left(\frac{\pi}{4}\right)=-\frac{\sqrt{2}}{2}" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>4</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msqrt><mn>2</mn></msqrt><mn>2</mn></mfrac></mstyle></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">e)</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i5.p1.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}\left(\frac{8\pi}{6}\right)=-\frac{\sqrt{3}}{2}" display="inline"><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>8</mn><mo>⁢</mo><mi>π</mi></mrow><mn>6</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><msqrt><mn>3</mn></msqrt><mn>2</mn></mfrac></mstyle></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">f)</span> 
+<div id="I1.i6.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i6.p1.m1" class="ltx_Math" alttext="\displaystyle\cos\left(\frac{8\pi}{6}\right)=-\frac{1}{2}" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>8</mn><mo>⁢</mo><mi>π</mi></mrow><mn>6</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">g)</span> 
+<div id="I1.i7.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i7.p1.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}\left(\frac{11\pi}{6}\right)=-\frac{1}{2}" display="inline"><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>11</mn><mo>⁢</mo><mi>π</mi></mrow><mn>6</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i8" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">h)</span> 
+<div id="I1.i8.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i8.p1.m1" class="ltx_Math" alttext="\displaystyle\cos\left(\frac{11\pi}{6}\right)=\frac{\sqrt{3}}{2}" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>11</mn><mo>⁢</mo><mi>π</mi></mrow><mn>6</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><msqrt><mn>3</mn></msqrt><mn>2</mn></mfrac></mstyle></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">Uma <span class="ltx_text ltx_font_bold">função</span> <math id="SS1.p3.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> é dita <span class="ltx_text ltx_font_bold">periódica</span> quando existe um número <math id="SS1.p3.m2" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>, chamado de <span class="ltx_text ltx_font_bold">período</span> da função, tal que</p>
+<table id="Ch3.E122" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E122.m1" class="ltx_Math" alttext="f(x+p)=f(x)" display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mi>p</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.122)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para qualquer valor de <math id="SS1.p3.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> no domínio da função. Da definição das funções seno e cosseno, observamos que ambas são periódicas com período <math id="SS1.p3.m4" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math>, i.e.</p>
+<table id="Ch3.E123" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E123.m1" class="ltx_Math" alttext="\operatorname{sen}(x+2\pi)=\operatorname{sen}(x)" display="block"><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.123)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e</p>
+<table id="Ch3.E124" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E124.m1" class="ltx_Math" alttext="\cos(x+2\pi)=\cos(x)" display="block"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.124)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para qualquer valor de <math id="SS1.p3.m5" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>.</p>
+</div>
+<div id="SS1.p4" class="ltx_para">
+<p class="ltx_p">A Figura <a href="#fig:seno" title="Figura 3.26 ‣ 3.6.1 Seno e cosseno ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.26</span></a> contém o esboço do gráfico da função seno e a Figura <a href="#fig:cos" title="Figura 3.27 ‣ 3.6.1 Seno e cosseno ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.27</span></a> o da função cosseno.</p>
+</div>
+<figure id="fig:seno" class="ltx_figure"><img src="cap_funcao/dados/fig_cos_seno_graficos/fig_seno_grafico.png" id="Ch3.F26.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="225" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.26</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F26.m2" class="ltx_Math" alttext="y=\operatorname{sen}x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math>.</span></figcaption>
+</figure>
+<figure id="fig:cos" class="ltx_figure"><img src="cap_funcao/dados/fig_cos_seno_graficos/fig_cosseno_grafico.png" id="Ch3.F27.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="225" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.27</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F27.m2" class="ltx_Math" alttext="y=\cos x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math>.</span></figcaption>
+</figure>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.6.2 </span>Tangente, cotangente, secante e cossecante</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Das funções seno e cosseno, definimos as funções <span class="ltx_text ltx_font_bold">tangente</span>, <span class="ltx_text ltx_font_bold">cotangente</span>, <span class="ltx_text ltx_font_bold">secante</span> e <span class="ltx_text ltx_font_bold">cossecante</span> como seguem:</p>
+<table id="Ch3.S10.EGx74" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E125"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E125.m1" class="ltx_Math" alttext="\displaystyle\operatorname{tg}(x):=\frac{\operatorname{sen}(x)}{\cos(x)}" display="inline"><mrow><mrow><mi>tg</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.125)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E126"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E126.m1" class="ltx_Math" alttext="\displaystyle\operatorname{cotg}(x):=\frac{\cos(x)}{\operatorname{sen}(x)}" display="inline"><mrow><mrow><mi>cotg</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.126)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E127"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E127.m1" class="ltx_Math" alttext="\displaystyle\sec(x):=\frac{1}{\cos(x)}," display="inline"><mrow><mrow><mrow><mi>sec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.127)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E128"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E128.m1" class="ltx_Math" alttext="\displaystyle\operatorname{cosec}(x):=\frac{1}{\operatorname{sen}(x)}" display="inline"><mrow><mrow><mi>cosec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.128)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">No <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>+<a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, as funções tangente, cotangente, secante e cossecante podem ser computadas com as funções <math id="SS2.p2.m1" class="ltx_Math" alttext="\verb+tan+" display="inline"><mi>𝚝𝚊𝚗</mi></math>, <math id="SS2.p2.m2" class="ltx_Math" alttext="\verb+cot+" display="inline"><mi>𝚌𝚘𝚝</mi></math>, <math id="SS2.p2.m3" class="ltx_Math" alttext="\verb+sec+" display="inline"><mi>𝚜𝚎𝚌</mi></math> e <math id="SS2.p2.m4" class="ltx_Math" alttext="\verb+csc+" display="inline"><mi>𝚌𝚜𝚌</mi></math>, respectivamente. Por exemplo, podemos computar o valor de <math id="SS2.p2.m5" class="ltx_Math" alttext="\operatorname{cosec}(\pi/4)" display="inline"><mrow><mi>cosec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>/</mo><mn>4</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math> com o comando</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,SW4gOiBmcm9tIHN5bXB5IGltcG9ydCAqCi4uLjogY3NjKHBpLzQpCk91dDogc3FydCgyKQ==" download="">⬇</a></div>
+<div id="lstnumberx317" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">In</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx318" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">...:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">csc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pi</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/4)</span>
+</div>
+<div id="lstnumberx319" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Out</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2)</span>
+</div>
+</div>
+</div>
+<div id="SS2.p3" class="ltx_para">
+<p class="ltx_p">Na Figura <a href="#fig:tg_grafico" title="Figura 3.28 ‣ 3.6.2 Tangente, cotangente, secante e cossecante ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.28</span></a>, temos o esboço do gráfico da função <span class="ltx_text ltx_font_bold">tangente</span> e na Figura <a href="#fig:cotg_grafico" title="Figura 3.29 ‣ 3.6.2 Tangente, cotangente, secante e cossecante ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.29</span></a> o da <span class="ltx_text ltx_font_bold">cotangente</span>. Observemos que a função tangente não está definida nos pontos <math id="SS2.p3.m1" class="ltx_Math" alttext="(2k+1)\pi/2" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>2</mn></mrow></math>, para todo <math id="SS2.p3.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> inteiro. Já, a função cotangente não está definida nos pontos <math id="SS2.p3.m3" class="ltx_Math" alttext="k\pi" display="inline"><mrow><mi>k</mi><mo>⁢</mo><mi>π</mi></mrow></math>, para todo <math id="SS2.p3.m4" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> inteiro. Ambas estas funções têm imagem <math id="SS2.p3.m5" class="ltx_Math" alttext="(-\infty,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math> e período <math id="SS2.p3.m6" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>.</p>
+</div>
+<figure id="fig:tg_grafico" class="ltx_figure"><img src="cap_funcao/dados/fig_co_tg_graficos/fig_tg_grafico.png" id="Ch3.F28.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="228" alt="Refer to caption">
+<br class="ltx_break ltx_centering">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.28</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F28.m2" class="ltx_Math" alttext="y=\operatorname{tg}x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math>.</span></figcaption>
+</figure>
+<figure id="fig:cotg_grafico" class="ltx_figure"><img src="cap_funcao/dados/fig_co_tg_graficos/fig_cotg_grafico.png" id="Ch3.F29.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="234" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.29</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico de <math id="Ch3.F29.m2" class="ltx_Math" alttext="y=\operatorname{cotg}x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>cotg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="SS2.p4" class="ltx_para">
+<p class="ltx_p">Na Figura <a href="#fig:sec_grafico" title="Figura 3.30 ‣ 3.6.2 Tangente, cotangente, secante e cossecante ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.30</span></a>, temos o esboço do gráfico da função <span class="ltx_text ltx_font_bold">secante</span> e na Figura <a href="#fig:cossec_grafico" title="Figura 3.31 ‣ 3.6.2 Tangente, cotangente, secante e cossecante ‣ 3.6 Funções trigonométricas ‣ Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.31</span></a> o da função <span class="ltx_text ltx_font_bold">cossecante</span>. Observemos que a função secante não está definida nos pontos <math id="SS2.p4.m1" class="ltx_Math" alttext="(2k+1)\pi/2" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>2</mn></mrow></math>, para todo <math id="SS2.p4.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> inteiro. Já, a função cossecante não está definida nos pontos <math id="SS2.p4.m3" class="ltx_Math" alttext="k\pi" display="inline"><mrow><mi>k</mi><mo>⁢</mo><mi>π</mi></mrow></math>, para todo <math id="SS2.p4.m4" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math> inteiro. Ambas estas funções têm imagem <math id="SS2.p4.m5" class="ltx_math_unparsed" alttext="(-\infty,1]\cup[1,\infty)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mo lspace="0em">−</mo><mi mathvariant="normal">∞</mi><mn>,1</mn><mo stretchy="false">]</mo></mrow><mo>∪</mo><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></mrow></math> e período <math id="SS2.p4.m6" class="ltx_Math" alttext="\pi" display="inline"><mi>π</mi></math>.</p>
+</div>
+<figure id="fig:sec_grafico" class="ltx_figure"><img src="cap_funcao/dados/fig_co_sec_graficos/fig_sec_grafico.png" id="Ch3.F30.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="234" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.30</span>: </span><span class="ltx_text" style="font-size:90%;">Esboço do gráfico da função secante.</span></figcaption>
+</figure>
+<figure id="fig:cossec_grafico" class="ltx_figure"><img src="cap_funcao/dados/fig_co_sec_graficos/fig_cosec_grafico.png" id="Ch3.F31.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="299" height="239" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.31</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico da função cossecante.</span></figcaption>
+</figure>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.6.3 </span>Identidades trigonométricas</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p">Aqui, vamos apresentar algumas identidades trigonométricas que serão utilizadas ao longo do curso de cálculo. Comecemos pela <span class="ltx_text ltx_font_bold">identidade fundamental</span></p>
+<table id="Ch3.E129" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E129.m1" class="ltx_Math" alttext="\operatorname{sen}^{2}x+\cos^{2}x=1." display="block"><mrow><mrow><mrow><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>+</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.129)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Desta decorrem as identidades</p>
+<table id="Ch3.S10.EGx75" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E130"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E130.m1" class="ltx_Math" alttext="\displaystyle\operatorname{tg}^{2}(x)+1=\sec^{2}x," display="inline"><mrow><mrow><mrow><mrow><msup><mi>tg</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow><mo>=</mo><mrow><msup><mi>sec</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.130)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E131"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E131.m1" class="ltx_Math" alttext="\displaystyle 1+\operatorname{cotg}^{2}(x)=\operatorname{cosec}^{2}(x)." display="inline"><mrow><mrow><mrow><mn>1</mn><mo>+</mo><mrow><msup><mi>cotg</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><msup><mi>cosec</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.131)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS3.p2" class="ltx_para">
+<p class="ltx_p">Das seguintes fórmulas para soma/subtração de ângulos</p>
+<table id="Ch3.S10.EGx76" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E132"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E132.m1" class="ltx_Math" alttext="\displaystyle\cos(x\pm y)=\cos(x)\cos(y)\mp\operatorname{sen}(x)\operatorname{%
+sen}(y)," display="inline"><mrow><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>±</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>∓</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.132)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E133"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E133.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}(x\pm y)=\operatorname{sen}(x)cos(y)\pm\cos(x)%
+\operatorname{sen}(y)," display="inline"><mrow><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>±</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>c</mi><mo>⁢</mo><mi>o</mi><mo>⁢</mo><mi>s</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>±</mo><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.133)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">seguem as fórmulas para ângulo duplo</p>
+<table id="Ch3.S10.EGx77" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E134"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E134.m1" class="ltx_Math" alttext="\displaystyle\cos(2x)=\cos^{2}x-\operatorname{sen}^{2}x," display="inline"><mrow><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>−</mo><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.134)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E135"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E135.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}(2x)=2\operatorname{sen}x\cos x." display="inline"><mrow><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.135)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS3.p3" class="ltx_para">
+<p class="ltx_p">Também, temos as fórmulas para o ângulo metade</p>
+<table id="Ch3.S10.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E136"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E136.m1" class="ltx_Math" alttext="\displaystyle\cos^{2}x=\frac{1+\cos 2x}{2}," display="inline"><mrow><mrow><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>+</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mn>2</mn></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.136)</span></td>
+</tr></tbody>
+<tbody id="eq:id_trig_cos_x2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E137.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}^{2}x=\frac{1-\cos 2x}{2}." display="inline"><mrow><mrow><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>−</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mn>2</mn></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.137)</span></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.6.4 </span>Exercícios Resolvidos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Mostre que</p>
+<table id="Ch3.E138" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E138.m1" class="ltx_Math" alttext="\cos x-1=-2\operatorname{sen}^{2}\frac{x}{2}." display="block"><mrow><mrow><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mfrac><mi>x</mi><mn>2</mn></mfrac></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.138)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmresolx7" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx7.p1" class="ltx_para">
+<p class="ltx_p">A identidade trigonométrica</p>
+<table id="Ch3.E139" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E139.m1" class="ltx_Math" alttext="\operatorname{sen}^{2}x=\frac{1-\cos 2x}{2}," display="block"><mrow><mrow><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mn>2</mn></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.139)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">aplicada a metade do ângulo, fornece</p>
+<table id="Ch3.E140" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E140.m1" class="ltx_Math" alttext="\operatorname{sen}^{2}\frac{x}{2}=\frac{1-\cos x}{2}." display="block"><mrow><mrow><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mfrac><mi>x</mi><mn>2</mn></mfrac></mrow><mo>=</mo><mfrac><mrow><mn>1</mn><mo>−</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mn>2</mn></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.140)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Então, isolando <math id="Thmresolx7.p1.m1" class="ltx_Math" alttext="\cos x" display="inline"><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></math>, obtemos</p>
+<table id="Ch3.S10.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E141"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E141.m1" class="ltx_Math" alttext="\displaystyle\operatorname{sen}^{2}\frac{x}{2}=\frac{1-\cos x}{2}" display="inline"><mrow><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mstyle displaystyle="true"><mfrac><mi>x</mi><mn>2</mn></mfrac></mstyle></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>−</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.141)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E142"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E142.m1" class="ltx_Math" alttext="\displaystyle 1-\cos x=2\operatorname{sen}^{2}\frac{x}{2}" display="inline"><mrow><mrow><mn>1</mn><mo>−</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mstyle displaystyle="true"><mfrac><mi>x</mi><mn>2</mn></mfrac></mstyle></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.142)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E143"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E143.m1" class="ltx_Math" alttext="\displaystyle\cos x-1=-2\operatorname{sen}^{2}\frac{x}{2}." display="inline"><mrow><mrow><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><msup><mi>sen</mi><mn>2</mn></msup><mo lspace="0.167em">⁡</mo><mstyle displaystyle="true"><mfrac><mi>x</mi><mn>2</mn></mfrac></mstyle></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.143)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="SS5" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.6.5 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Calcule os seguintes valores</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="\operatorname{sen}(7\pi/6)" display="inline"><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>7</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="\cos(7\pi/6)" display="inline"><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>7</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="\operatorname{tg}(7\pi/6)" display="inline"><mrow><mi>tg</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>7</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i4.p1.m1" class="ltx_Math" alttext="\operatorname{cotg}(7\pi/6)" display="inline"><mrow><mi>cotg</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>7</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">e)</span> 
+<div id="I2.i5.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i5.p1.m1" class="ltx_Math" alttext="\sec(7\pi/6)" display="inline"><mrow><mi>sec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>7</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">f)</span> 
+<div id="I2.i6.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i6.p1.m1" class="ltx_Math" alttext="\operatorname{cosec}(7\pi/6)" display="inline"><mrow><mi>cosec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>7</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx58">Resposta</button></div><div class="collapse" id="Thmrespx58" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx58.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx58.p1.m1" class="ltx_Math" alttext="-1/2" display="inline"><mrow><mo>−</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></math>; b) <math id="Thmrespx58.p1.m2" class="ltx_Math" alttext="-\sqrt{3}/2" display="inline"><mrow><mo>−</mo><mrow><msqrt><mn>3</mn></msqrt><mo>/</mo><mn>2</mn></mrow></mrow></math>; c) <math id="Thmrespx58.p1.m3" class="ltx_Math" alttext="\sqrt{3}/3" display="inline"><mrow><msqrt><mn>3</mn></msqrt><mo>/</mo><mn>3</mn></mrow></math>; d) <math id="Thmrespx58.p1.m4" class="ltx_Math" alttext="\sqrt{3}" display="inline"><msqrt><mn>3</mn></msqrt></math>; e) <math id="Thmrespx58.p1.m5" class="ltx_Math" alttext="-2\sqrt{3}/3" display="inline"><mrow><mo>−</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>3</mn></msqrt></mrow><mo>/</mo><mn>3</mn></mrow></mrow></math>; f) <math id="Thmrespx58.p1.m6" class="ltx_Math" alttext="-2" display="inline"><mrow><mo>−</mo><mn>2</mn></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.6.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Calcule os seguintes valores</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="\operatorname{sen}(-pi/3)" display="inline"><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mrow><mi>p</mi><mo>⁢</mo><mi>i</mi></mrow><mo>/</mo><mn>3</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="tg(-3\pi/4)" display="inline"><mrow><mi>t</mi><mo>⁢</mo><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mrow><mn>3</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>4</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i3.p1.m1" class="ltx_Math" alttext="\cos(19\pi/6)" display="inline"><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>19</mn><mo>⁢</mo><mi>π</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx59">Resposta</button></div><div class="collapse" id="Thmrespx59" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx59.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx59.p1.m1" class="ltx_Math" alttext="-\sqrt{3}/2" display="inline"><mrow><mo>−</mo><mrow><msqrt><mn>3</mn></msqrt><mo>/</mo><mn>2</mn></mrow></mrow></math>; b) <math id="Thmrespx59.p1.m2" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>; c) <math id="Thmrespx59.p1.m3" class="ltx_Math" alttext="-\sqrt{3}/2" display="inline"><mrow><mo>−</mo><mrow><msqrt><mn>3</mn></msqrt><mo>/</mo><mn>2</mn></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.6.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Mostre que <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\operatorname{sen}x" display="inline"><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></math> é uma <span class="ltx_text ltx_font_bold">função ímpar<span id="Ch3.footnote8" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">8</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">8</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">8</span></span><span class="ltx_text ltx_font_medium">Por definição, </span><math id="Ch3.footnote8.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math><span class="ltx_text ltx_font_medium"> é função ímpar quando </span><math id="Ch3.footnote8.m2" class="ltx_Math" alttext="f(x)=-f(-x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math><span class="ltx_text ltx_font_medium">.</span></span></span></span></span>, i.e.</p>
+<table id="Ch3.E144" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E144.m1" class="ltx_Math" alttext="\operatorname{sen}x=-\operatorname{sen}(-x)" display="block"><mrow><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.144)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para todo número real <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx60">Resposta</button></div><div class="collapse" id="Thmrespx60" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx60.p1" class="ltx_para">
+<p class="ltx_p">Dica: analise o ciclo trigonométrico.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.6.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Mostre que <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\cos x" display="inline"><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></math> é uma <span class="ltx_text ltx_font_bold">função par<span id="Ch3.footnote9" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">9</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">9</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">9</span></span><span class="ltx_text ltx_font_medium">Por definição, </span><math id="Ch3.footnote9.m1" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math><span class="ltx_text ltx_font_medium"> é uma função par quando </span><math id="Ch3.footnote9.m2" class="ltx_Math" alttext="f(x)=f(-x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math><span class="ltx_text ltx_font_medium">.</span></span></span></span></span>, i.e.</p>
+<table id="Ch3.E145" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E145.m1" class="ltx_Math" alttext="\cos x=\cos(-x)" display="block"><mrow><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.145)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para todo número real <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx61">Resposta</button></div><div class="collapse" id="Thmrespx61" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx61.p1" class="ltx_para">
+<p class="ltx_p">Dica: analise o ciclo trigonométrico.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.6.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Determine os pontos de interseção entre as funções <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="f(x)=2x/\pi" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>/</mo><mi>π</mi></mrow></mrow></math> e <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="g(x)=\operatorname{sen}(x)" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx62">Resposta</button></div><div class="collapse" id="Thmrespx62" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx62.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx62.p1.m1" class="ltx_Math" alttext="(-\pi/2,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>, <math id="Thmrespx62.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmrespx62.p1.m3" class="ltx_Math" alttext="(\pi/2,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>/</mo><mn>2,1</mn></mrow><mo stretchy="false">)</mo></mrow></math></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_funcao_sec_funracio.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Função racional</span></a><a href="bib.html" title="In Pré-Cálculo" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_funcao_sec_opfun.html" title="In Capítulo 3 Funções ‣ Pré-Cálculo" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Operações com funções</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:09:07 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

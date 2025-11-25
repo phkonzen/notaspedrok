@@ -1,0 +1,461 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 1 Sobre a linguagem ‣ Python para Matemática Mini-Notas de Aula</title>
+<!--Generated on Tue Nov 25 11:09:42 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-article.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="./" title="Python para Matemática Mini-Notas de Aula">
+<link rel="start" href="./" title="Python para Matemática Mini-Notas de Aula">
+<link rel="prev" href="prefacio.html" title="Prefácio ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="next" href="sec_elem.html" title="2 Elementos da linguagem ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="section" href="sec_licenca.html" title="Licença ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="section" href="prefacio.html" title="Prefácio ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="section" href="sec_elem.html" title="2 Elementos da linguagem ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="section" href="sec_progest.html" title="3 Elementos da programação estruturada ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="section" href="sec_matricial.html" title="4 Elementos da computação matricial ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="section" href="sec_graf.html" title="5 Gráficos ‣ Python para Matemática Mini-Notas de Aula">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Python para Matemática Mini-Notas de Aula">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Minicurso de Python para Matemática</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="./" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Python para Matemática<span class="ltx_text"> </span><span class="ltx_text" style="font-size:90%;">Mini-Notas de Aula</span></span></a><a href="prefacio.html" title="In Python para Matemática Mini-Notas de Aula" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Prefácio</span></a><a href="sec_elem.html" title="In Python para Matemática Mini-Notas de Aula" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Elementos da linguagem</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Compre o <a href="https://clubedeautores.com.br/book/738083--Python_para_matematica">livro</a> ou o <a href="https://www.amazon.com.br/dp/B0DMPQ24VY">e-book</a> deste material aqui! Consulte outras formas de <a href="../colaborar.html">colaborar</a>.</p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">1 </span>Sobre a linguagem</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;"><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> é uma <span class="ltx_text ltx_font_bold">linguagem de programação</span> de propósito geral, de <span class="ltx_text ltx_font_bold">alto nível</span> e <span class="ltx_text ltx_font_bold">multiparadigma</span></span>. Ou seja, é relativamente próxima das linguagens humanas naturais, é desenvolvida para aplicações diversas e permite a utilização de diferentes paradigmas de programação (programação estruturada, orientada a objetos, orientada a eventos, paralelização, etc.).</p>
+</div>
+<div id="p2" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">Site oficial</span></p>
+<p class="ltx_p ltx_align_center"><a href="https://www.python.org/" title="" class="ltx_ref ltx_href">https://www.python.org/</a></p>
+</div>
+</li>
+</ul>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Foi lançada em 1991 por Guido van Rossum<span id="footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>Guido van Rossum, 1956-, matemático e programador de computadores holandês. Fonte: <a href="https://pt.wikipedia.org/wiki/Guido_van_Rossum" title="" class="ltx_ref ltx_href">Wikipédia: Guido van Rossum</a>.</span></span></span> e, atualmente, é mantida pela <a href="https://www.python.org/psf/" title="" class="ltx_ref ltx_href">Python Software Foundation</a> em um modelo de desenvolvimento comunitário e aberto.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.1 </span>Instalação e execução</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Para executar um código <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> em seu computador é necessário instalar um <span class="ltx_text ltx_font_bold">interpretador</span></span>. No <a href="https://www.python.org/" title="" class="ltx_ref ltx_href">site oficial</a>, estão disponíveis para <span class="ltx_text ltx_font_italic">download</span> interpretadores gratuitos e com licença livre para uso. Neste minicurso, vamos utilizar <span class="ltx_text ltx_font_bold">Python 3</span> <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib5" title="" class="ltx_ref">5</a>]</cite>.</p>
+</div>
+<section id="SS1.SSS1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">1.1.1 </span><span class="ltx_text ltx_font_italic">Online notebook</span>
+</h3>
+
+<div id="SS1.SSS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Usar um <span class="ltx_text ltx_font_bold ltx_font_italic">Notebook<span class="ltx_text ltx_font_upright"> <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> </span>online</span> é uma forma rápida e prática de iniciar os estudos na linguagem</span>. Rodam diretamente em nuvem e vários permitem o uso gratuito por tempo limitado. Algumas opções são:</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://deepnote.com" title="" class="ltx_ref ltx_href">Deepnote</a> - <a href="https://deepnote.com" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://deepnote.com</a></p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://colab.research.google.com/" title="" class="ltx_ref ltx_href">Google Colab</a> - <a href="https://colab.research.google.com/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://colab.research.google.com/</a></p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://www.kaggle.com/" title="" class="ltx_ref ltx_href">Kaggle</a> - <a href="https://www.kaggle.com/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://www.kaggle.com/</a></p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://www.paperspace.com/notebooks" title="" class="ltx_ref ltx_href">Paperspace Gradient</a> - <a href="https://www.paperspace.com/notebooks" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://www.paperspace.com/notebooks</a></p>
+</div>
+</li>
+<li id="I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i5.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://aws.amazon.com/sagemaker/" title="" class="ltx_ref ltx_href">SageMaker</a> - <a href="https://aws.amazon.com/sagemaker" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://aws.amazon.com/sagemaker</a></p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS1.SSS2" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">
+<span class="ltx_tag ltx_tag_subsubsection">1.1.2 </span>IDE</h3>
+
+<div id="SS1.SSS2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Usar um <span class="ltx_text ltx_font_bold">ambiente integrado de desenvolvimento</span> (IDE, em inglês, <span class="ltx_text ltx_font_italic">integrated development environment</span>) é a melhor forma de capturar todo o potencial da linguagem <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></span>. Algumas alternativas são:</p>
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://docs.python.org/3/library/idle.html" title="" class="ltx_ref ltx_href">IDLE</a> - <a href="https://docs.python.org/3/library/idle.html" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://docs.python.org/3/library/idle.html</a></p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://www.gnu.org/software/emacs/download.html" title="" class="ltx_ref ltx_href">GNU Emacs</a> - <a href="https://www.gnu.org/software/emacs/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://www.gnu.org/software/emacs/</a></p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://www.spyder-ide.org/" title="" class="ltx_ref ltx_href">Spyder</a> - <a href="https://www.spyder-ide.org/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://www.spyder-ide.org/</a></p>
+</div>
+</li>
+<li id="I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i4.p1" class="ltx_para">
+<p class="ltx_p"><a href="https://code.visualstudio.com/" title="" class="ltx_ref ltx_href">VS Code</a> - <a href="https://code.visualstudio.com/" title="" class="ltx_ref ltx_url ltx_font_typewriter">https://code.visualstudio.com/</a></p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">1.2 </span>Utilização</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text" style="background-color:#FFFF00;">execução de códigos <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></span> pode ser feita de três formas básicas:</p>
+<ul id="I4" class="ltx_itemize">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">em modo interativo em um console/<span class="ltx_text ltx_font_italic">notebook</span> <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></span>;</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">por execução de um código (<span class="ltx_text ltx_font_italic">script</span>) <span class="ltx_text ltx_font_typewriter">arqnome.py</span> em um console/<span class="ltx_text ltx_font_italic">notebook</span> <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></span>;</p>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">por execução de um cógido <span class="ltx_text ltx_font_typewriter">arqnome.py</span> em um terminal do sistema operacional</span>.</p>
+</div>
+</li>
+</ul>
+</div>
+<div id="SS2.Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 1.2.1.
+<br class="ltx_break">
+</h6>
+<div id="SS2.Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Consideramos o seguinte pseudocódigo.</p>
+</div>
+<div id="SS2.Thmex1.p2" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+s = "Ola, mundo!".
+imprime(s). (imprime a string s)
+</pre>
+</div>
+<div id="SS2.Thmex1.p3" class="ltx_para">
+<p class="ltx_p">Vamos digitá-lo em <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> e executá-lo:</p>
+</div>
+<div id="SS2.Thmex1.p4" class="ltx_para">
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p">Em um <span class="ltx_text ltx_font_italic">notebook</span>.</p>
+</div>
+<div id="I5.i1.p2" class="ltx_para">
+<p class="ltx_p">Iniciamos um <span class="ltx_text ltx_font_italic">notebook</span> <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> e digitamos o seguinte código em uma célula de entrada.</p>
+</div>
+<div id="I5.i1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9ICJPbMOhLCBNdW5kbyEiCiNpbXByaW1lIGEgc3RyaW5nIHMKcHJpbnQocyk=" download="">⬇</a></div>
+<div id="lstnumberx1" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>Mundo!"</span>
+</div>
+<div id="lstnumberx2" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#imprime<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>string<span class="ltx_text ltx_lst_space"> </span>s</span></span>
+</div>
+<div id="lstnumberx3" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</div>
+<div id="I5.i1.p4" class="ltx_para">
+<p class="ltx_p">Ao executarmos a célula, obtemos a saída</p>
+</div>
+<div id="I5.i1.p5" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,T2zDoSwgTXVuZG8h" download="">⬇</a></div>
+<div id="lstnumberx4" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Mundo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p">Em modo iterativo no console.</p>
+</div>
+<div id="I5.i2.p2" class="ltx_para">
+<p class="ltx_p">Iniciamos um console <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> em terminal do sistema e digitamos</p>
+</div>
+<div id="I5.i2.p3" class="ltx_para">
+<pre class="ltx_verbatim ltx_font_typewriter">
+$ python3
+</pre>
+</div>
+<div id="I5.i2.p4" class="ltx_para">
+<p class="ltx_p">Aqui, <span class="ltx_text ltx_font_typewriter">$<span id="footnote2" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_serif">2</span></span><span class="ltx_text ltx_font_serif">Ao longo do texto, vamos usar a notação do sistema operacional </span><a href="https://www.kernel.org/" title="" class="ltx_ref ltx_href ltx_font_serif">Linux</a><span class="ltx_text ltx_font_serif">.</span></span></span></span></span> é o símbolo de <span class="ltx_text ltx_font_italic">prompt</span> de entrada que pode ser diferente a depender do seu sistema operacional. Então, digitamos</p>
+</div>
+<div id="I5.i2.p5" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Pj4+IHMgPSAiT2zDoSwgTXVuZG8hIgo+Pj4gcHJpbnQocykgI2ltcHJpbWUgYSBzdHJpbmcgcw==" download="">⬇</a></div>
+<div id="lstnumberx5" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>Mundo!"</span>
+</div>
+<div id="lstnumberx6" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#imprime<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>string<span class="ltx_text ltx_lst_space"> </span>s</span></span>
+</div>
+</div>
+</div>
+<div id="I5.i2.p6" class="ltx_para">
+<p class="ltx_p">O símbolo <span class="ltx_text ltx_font_typewriter">&gt;&gt;&gt;</span> é do <span class="ltx_text ltx_font_italic">prompt</span> de entrada do console <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a>. A saída</p>
+</div>
+<div id="I5.i2.p7" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,T2zDoSwgTXVuZG8h" download="">⬇</a></div>
+<div id="lstnumberx7" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Olá</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Mundo</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">!</span>
+</div>
+</div>
+</div>
+<div id="I5.i2.p8" class="ltx_para">
+<p class="ltx_p">aparece logo abaixo da última linha de <span class="ltx_text ltx_font_italic">prompt</span> executada e, ao ter seu processamento finalizado, um novo <span class="ltx_text ltx_font_italic">prompt</span> <span class="ltx_text ltx_font_typewriter">&gt;&gt;&gt;</span> fica disponível para receber uma nova instrução. Para encerrar o console, digitamos</p>
+</div>
+<div id="I5.i2.p9" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Pj4+IHF1aXQoKQ==" download="">⬇</a></div>
+<div id="lstnumberx8" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">quit</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+</div>
+</div>
+</li>
+<li id="I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I5.i3.p1" class="ltx_para">
+<p class="ltx_p">Escrevendo o código <code class="ltx_verbatim ltx_font_typewriter">ola.py</code> e executando-o em um console/<span class="ltx_text ltx_font_italic">notebook</span>.</p>
+</div>
+<div id="I5.i3.p2" class="ltx_para">
+<p class="ltx_p">Primeiramente, escrevemos o código em uma IDE (ou em um simples editor de texto)</p>
+</div>
+<div id="I5.i3.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,cyA9ICJPbMOhLCBNdW5kbyEiCnByaW50KHMpICMgaW1wcmltZSBhIHN0cmluZyBz" download="">⬇</a></div>
+<div id="lstnumberx9" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Ol<span class="ltx_text ltx_lst_literate">á</span>,<span class="ltx_text ltx_lst_space"> </span>Mundo!"</span>
+</div>
+<div id="lstnumberx10" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>imprime<span class="ltx_text ltx_lst_space"> </span>a<span class="ltx_text ltx_lst_space"> </span>string<span class="ltx_text ltx_lst_space"> </span>s</span></span>
+</div>
+</div>
+</div>
+<div id="I5.i3.p4" class="ltx_para">
+<p class="ltx_p">Uma vez salvo em <span class="ltx_text ltx_font_typewriter">/caminho/ola.py</span>, executamo-lo no console/<span class="ltx_text ltx_font_italic">notebook</span> <a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a> com a instrução</p>
+</div>
+<div id="I5.i3.p5" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,Pj4+IGV4ZWMob3BlbignL2NhbWluaG8vb2xhLnB5JykucmVhZCgpKQ==" download="">⬇</a></div>
+<div id="lstnumberx11" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;&gt;&gt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">exec</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">open</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'/caminho/ola.py'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">).</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">read</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">())</span>
+</div>
+</div>
+</div>
+<div id="I5.i3.p6" class="ltx_para">
+<p class="ltx_p">A saída é impressa logo abaixo do <span class="ltx_text ltx_font_italic">prompt</span>/célula de entrada.</p>
+</div>
+</li>
+<li id="I5.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I5.i4.p1" class="ltx_para">
+<p class="ltx_p">Escrevendo o código <code class="ltx_verbatim ltx_font_typewriter">ola.py</code> e executando-o em terminal do sistema.</p>
+</div>
+<div id="I5.i4.p2" class="ltx_para">
+<p class="ltx_p">Assumindo que o código já esteja salvo no arquivo <span class="ltx_text ltx_font_typewriter">/caminho/ola.py</span>, podemos executá-lo em um terminal digitando</p>
+</div>
+<div id="I5.i4.p3" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,JCBweXRob24zIC9jYW1pbmhvL29sYS5weQ==" download="">⬇</a></div>
+<div id="lstnumberx12" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">$</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">python3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">caminho</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ola</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">py</span>
+</div>
+</div>
+</div>
+<div id="I5.i4.p4" class="ltx_para">
+<p class="ltx_p">A saída é impressa logo abaixo do <span class="ltx_text ltx_font_italic">prompt</span> de entrada do sistema.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="prefacio.html" title="In Python para Matemática Mini-Notas de Aula" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title">Prefácio</span></a><a href="bib.html" title="In Python para Matemática Mini-Notas de Aula" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="sec_elem.html" title="In Python para Matemática Mini-Notas de Aula" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Elementos da linguagem</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:09:42 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
