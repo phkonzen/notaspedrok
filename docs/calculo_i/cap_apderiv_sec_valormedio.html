@@ -1,0 +1,722 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I</title>
+<!--Generated on Tue Nov 25 11:50:01 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_apderiv.html" title="Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="up up" href="./" title="Cálculo I">
+<link rel="start" href="./" title="Cálculo I">
+<link rel="prev" href="cap_apderiv_sec_extfun.html" title="4.2 Extremos de funções ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="next" href="cap_apderiv_sec_tder1.html" title="4.4 Teste da primeira derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_lhospital.html" title="4.1 Regra de L’Hôpital ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_extfun.html" title="4.2 Extremos de funções ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_tder1.html" title="4.4 Teste da primeira derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_tder2.html" title="4.5 Concavidade e o teste da segunda derivada ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="section" href="cap_apderiv_sec_taxasrel.html" title="4.6 Taxas relacionadas ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo I">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo I">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Cálculo I">
+<link rel="chapter" href="cap_lim.html" title="Capítulo 2 Limites ‣ Cálculo I">
+<link rel="chapter" href="cap_deriv.html" title="Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="chapter" href="cap_apderiv.html" title="Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="chapter" href="cap_int.html" title="Capítulo 5 Integração ‣ Cálculo I">
+<link rel="chapter" href="cap_apint.html" title="Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="appendix" href="appendix_lista_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo I">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo I">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_apderiv.html" title="In Cálculo I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Aplicações da derivada</span></a><a href="cap_apderiv_sec_extfun.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Extremos de funções</span></a><a href="cap_apderiv_sec_tder1.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Teste da primeira derivada</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.3 </span>Teorema do valor médio</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O <span class="ltx_text ltx_font_bold">teorema do valor médio</span> é uma aplicação do <span class="ltx_text ltx_font_bold">teorema de Rolle</span></span>.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.3.1 </span>Teorema de Rolle</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">O Teorema de Rolle fornece uma condição suficiente para que uma dada função diferenciável tenha derivada nula em pelo menos um ponto.</p>
+</div>
+<figure id="fig:teo_Rolle" class="ltx_figure"><img src="cap_apderiv/dados/fig_teo_Rolle/fig.png" id="Ch4.F8.g1" class="ltx_graphics ltx_centering ltx_img_square" width="219" height="179" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.8</span>: </span><span class="ltx_text" style="font-size:90%;">Teorema de Rolle.</span></figcaption>
+</figure>
+<div id="Thmteo1" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 4.3.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Teorema de Rolle)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmteo1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmteo1.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> uma função contínua no intervalo fechado <math id="Thmteo1.p1.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> e diferenciável no intervalo aberto <math id="Thmteo1.p1.m3" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>. Se</p>
+<table id="Ch4.E81" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E81.m1" class="ltx_Math" alttext="f(a)=f(b)," display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.81)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">então existe pelo menos um <span class="ltx_text ltx_font_bold">ponto crítico</span> <math id="Thmteo1.p1.m4" class="ltx_Math" alttext="c\in(a,b)" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="Ch4.E82" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E82.m1" class="ltx_Math" alttext="f^{\prime}(c)=0." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.82)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">A ideia da demonstração é uma consequência dos Teorema <a href="cap_apderiv_sec_extfun.html#teo:valorextremo" title="Teorema 4.2.1.(Teorema do valor extremo) ‣ 4.2 Extremos de funções ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.2.1</span></a> e Teorema <a href="cap_apderiv_sec_extfun.html#teo:ptocritico" title="Teorema 4.2.2.(Derivada em pontos extremos locais) ‣ 4.2 Extremos de funções ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.2.2</span></a>. O primeiro, que existem pontos de mínimo e máximos globais <math id="SS1.p2.m1" class="ltx_Math" alttext="m,M\in[a,b]" display="inline"><mrow><mrow><mi>m</mi><mo>,</mo><mi>M</mi></mrow><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math>, i.e.</p>
+<table id="Ch4.E83" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E83.m1" class="ltx_Math" alttext="f(m)\leq f(x)\leq f(M)." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>m</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>M</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.83)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Se <math id="SS1.p2.m2" class="ltx_Math" alttext="m=M" display="inline"><mrow><mi>m</mi><mo>=</mo><mi>M</mi></mrow></math>, então <math id="SS1.p2.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é uma função contínua, donde segue que <math id="SS1.p2.m4" class="ltx_Math" alttext="f^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> para todo <math id="SS1.p2.m5" class="ltx_Math" alttext="x\in(a,b)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Agora, se <math id="SS1.p2.m6" class="ltx_Math" alttext="m\neq M" display="inline"><mrow><mi>m</mi><mo>≠</mo><mi>M</mi></mrow></math>, então <math id="SS1.p2.m7" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> ou <math id="SS1.p2.m8" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math> é um extremo local. Sem perda de generalidade, supomos que <math id="SS1.p2.m9" class="ltx_Math" alttext="c=m" display="inline"><mrow><mi>c</mi><mo>=</mo><mi>m</mi></mrow></math> seja o mínimo local. Neste caso, o Teorema <a href="cap_apderiv_sec_extfun.html#teo:ptocritico" title="Teorema 4.2.2.(Derivada em pontos extremos locais) ‣ 4.2 Extremos de funções ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.2.2</span></a> nos garante que <math id="SS1.p2.m10" class="ltx_Math" alttext="f^{\prime}(c)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>.
+∎</p>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.3.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">O polinômio <math id="Thmex1.p1.m1" class="ltx_Math" alttext="p(x)=x^{3}-4x^{2}+3x+1" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math> tem pelo menos um ponto crítico no intervalo <math id="Thmex1.p1.m2" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math> e no intervalo <math id="Thmex1.p1.m3" class="ltx_Math" alttext="(1,3)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,3</mn><mo stretchy="false">)</mo></mrow></math>. De fato,temos <math id="Thmex1.p1.m4" class="ltx_Math" alttext="p(0)=p(1)=1" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math> e, pelo teorema de Rolle, segue que existe pelo menos um ponto <math id="Thmex1.p1.m5" class="ltx_Math" alttext="c\in(0,1)" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></math> tal que <math id="Thmex1.p1.m6" class="ltx_Math" alttext="f^{\prime}(c)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. Analogamente, como também <math id="Thmex1.p1.m7" class="ltx_Math" alttext="p(1)=p(3)=1" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>3</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math>, segue do teorema que existe pelo menos um ponto crítico no intervalo <math id="Thmex1.p1.m8" class="ltx_Math" alttext="(1,3)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,3</mn><mo stretchy="false">)</mo></mrow></math>. Na Figura <a href="#fig:ex_teo_Rolle" title="Figura 4.9 ‣ Exemplo 4.3.1. ‣ 4.3.1 Teorema de Rolle ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.9</span></a> temos o gráfico de <math id="Thmex1.p1.m9" class="ltx_Math" alttext="p" display="inline"><mi>p</mi></math>.</p>
+</div>
+<figure id="fig:ex_teo_Rolle" class="ltx_figure"><img src="cap_apderiv/dados/fig_ex_teo_Rolle/fig.png" id="Ch4.F9.g1" class="ltx_graphics ltx_centering ltx_img_square" width="177" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.9</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico de <math id="Ch4.F9.m2" class="ltx_Math" alttext="p(x)=x^{3}-4x^{2}+3x+1" display="inline"><mrow><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex1.p2" class="ltx_para">
+<p class="ltx_p">De fato, como todo polinômio é derivável em toda parte, podemos calcular os pontos críticos como segue.</p>
+<table id="A2.S0.EGx223" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E84"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E84.m1" class="ltx_Math" alttext="\displaystyle p^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>p</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.84)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E85"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E85.m1" class="ltx_Math" alttext="\displaystyle 3x^{2}-8x+3=0" display="inline"><mrow><mrow><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>8</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>3</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.85)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E86"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E86.m1" class="ltx_Math" alttext="\displaystyle x=\frac{8\pm\cancelto{2\sqrt{7}}{\sqrt{64-36}}}{6}" display="inline"><mrow><mi>x</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>8</mn><mo>±</mo><msup><menclose notation="updiagonalstrike updiagonalarrow"><msqrt><mrow><mn>64</mn><mo>−</mo><mn>36</mn></mrow></msqrt></menclose><mrow><mn mathsize="142%">2</mn><mo>⁢</mo><msqrt><mn mathsize="142%">7</mn></msqrt></mrow></msup></mrow><mn>6</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.86)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E87"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E87.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad x_{1}=\frac{4-\sqrt{7}}{3}\approx 0.45," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>−</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>≈</mo><mn>0.45</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.87)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E88"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E88.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad x_{2}=\frac{4+\sqrt{7}}{3}\approx 2.22." display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>+</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>≈</mo><mn>2.22</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.88)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="ex:nteo_Rolle" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.3.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Vejamos os seguintes casos em que o Teorema de Rolle não se aplica:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">A função</p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<table id="Ch4.E89" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E89.m1" class="ltx_math_unparsed" alttext="f(x)=\left\{\begin{array}[]{ll}x&amp;,0\leq x&lt;1,\\
+0&amp;,x=1.\end{array}\right." display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mi>x</mi></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mn>,0</mn><mo>≤</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow><mo>,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mn>0</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>x</mi><mo>=</mo><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.89)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">é tal que <math id="I1.i1.p2.m1" class="ltx_Math" alttext="f(0)=f(1)=0" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, entretanto sua derivada <math id="I1.i1.p2.m2" class="ltx_Math" alttext="f^{\prime}(x)=1" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math> no intervalo <math id="I1.i1.p2.m3" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math>. Ou seja, a condição da <math id="I1.i1.p2.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> ser contínua no intervalo fechado associado é necessária no teorema de Rolle. Veja a Figura <a href="#fig:ex_fcont_h_2" title="Figura 4.10 ‣ item a ‣ Exemplo 4.3.2. ‣ 4.3.1 Teorema de Rolle ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.10</span></a> para o esboço do gráfico desta função.</p>
+</div>
+<figure id="fig:ex_fcont_h_2" class="ltx_figure"><img src="cap_apderiv/dados/fig_ex_fcont/fig_h.png" id="Ch4.F10.g1" class="ltx_graphics ltx_centering ltx_img_square" width="176" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.10</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico da função Exemplo <a href="#ex:nteo_Rolle" title="Exemplo 4.3.2. ‣ 4.3.1 Teorema de Rolle ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3.2</span></a> a).</span></figcaption>
+</figure>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Não existe ponto tal que a derivada da <math id="I1.i2.p1.m1" class="ltx_Math" alttext="g(x)=-|x-1|+1" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mrow><mo stretchy="false">|</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">|</mo></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math> seja nula. Entretanto, notemos que <math id="I1.i2.p1.m2" class="ltx_Math" alttext="g(0)=g(2)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="I1.i2.p1.m3" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> contínua no intervalo fechado <math id="I1.i2.p1.m4" class="ltx_Math" alttext="[0,2]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,2</mn><mo stretchy="false">]</mo></mrow></math>. O teorema de Rolle não se aplica neste caso, pois <math id="I1.i2.p1.m5" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> não é derivável no intervalo <math id="I1.i2.p1.m6" class="ltx_Math" alttext="(0,2)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,2</mn><mo stretchy="false">)</mo></mrow></math>, mais especificamente, no ponto <math id="I1.i2.p1.m7" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>. Veja a Figura <a href="#fig:ex_nteo_Rolle_nderiv" title="Figura 4.11 ‣ item b ‣ Exemplo 4.3.2. ‣ 4.3.1 Teorema de Rolle ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.11</span></a>.</p>
+</div>
+<figure id="fig:ex_nteo_Rolle_nderiv" class="ltx_figure"><img src="cap_apderiv/dados/fig_ex_nteo_Rolle_nderiv/fig.png" id="Ch4.F11.g1" class="ltx_graphics ltx_centering ltx_img_square" width="176" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.11</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico da função referente ao Exemplo <a href="#ex:nteo_Rolle" title="Exemplo 4.3.2. ‣ 4.3.1 Teorema de Rolle ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3.2</span></a> b).</span></figcaption>
+</figure>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.3.2 </span>Teorema do valor médio</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">O teorema do valor médio<span id="Ch4.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note">4</span>O teorema do valor médio também é conhecido como teorema de Lagrange</span></span></span> é uma generalização do teorema de Rolle.</p>
+</div>
+<figure id="fig:teo_valor_medio" class="ltx_figure"><img src="cap_apderiv/dados/fig_teo_valmed/fig.png" id="Ch4.F12.g1" class="ltx_graphics ltx_centering ltx_img_square" width="199" height="188" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.12</span>: </span><span class="ltx_text" style="font-size:90%;">Teorema do valor médio.</span></figcaption>
+</figure>
+<div id="teo:tvm" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 4.3.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Teorema do valor médio)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmteo2.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmteo2.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> uma função contínua no intervalo fechado <math id="Thmteo2.p1.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> e diferenciável no intervalo aberto <math id="Thmteo2.p1.m3" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>. Então, existe pelo menos um ponto <math id="Thmteo2.p1.m4" class="ltx_Math" alttext="c\in(a,b)" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="Ch4.E90" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E90.m1" class="ltx_Math" alttext="\frac{f(b)-f(a)}{b-a}=f^{\prime}(c)." display="block"><mrow><mrow><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow></mfrac><mo>=</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.90)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">O resultado segue da aplicação do teorema de Rolle (Teorema <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:teo:rolle</span>) a seguinte função</p>
+<table id="Ch4.E91" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E91.m1" class="ltx_Math" alttext="F(x)=f(x)-f(a)-\frac{f(b)-f(a)}{b-a}(x-a)" display="block"><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.91)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">De fato, <math id="SS2.p2.m1" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> é contínua em <math id="SS2.p2.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>, diferenciável em <math id="SS2.p2.m3" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math> e <math id="SS2.p2.m4" class="ltx_Math" alttext="F(a)=F(b)" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Logo, existe <math id="SS2.p2.m5" class="ltx_Math" alttext="c\in(a,b)" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="A2.S0.EGx224" class="ltx_equationgroup ltx_eqn_gather ltx_eqn_table">
+
+<tbody id="Ch4.E92"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E92.m1" class="ltx_Math" alttext="\displaystyle F^{\prime}(c)=0" display="block"><mrow><mrow><msup><mi>F</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.92)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E93"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E93.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(c)+\frac{f(b)-f(a)}{b-a}=0" display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow></mfrac></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.93)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E94"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E94.m1" class="ltx_Math" alttext="\displaystyle\frac{f(b)-f(a)}{b-a}=f^{\prime}(c)" display="block"><mrow><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow></mfrac><mo>=</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.94)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">∎</p>
+</div>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 4.3.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">Em um contexto de aplicação, o Teorema do valor médio relaciona a taxa de variação média da função em um intervalo <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> com a taxa de variação instantânea da função em um ponto interior deste intervalo.</p>
+</div>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.3.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">A função <math id="Thmex3.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> é contínua no intervalo <math id="Thmex3.p1.m2" class="ltx_Math" alttext="[0,2]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,2</mn><mo stretchy="false">]</mo></mrow></math> e diferenciável no intervalo <math id="Thmex3.p1.m3" class="ltx_Math" alttext="(0,2)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,2</mn><mo stretchy="false">)</mo></mrow></math>. Logo, segue do teorema do valor médio que existe pelo menos um ponto <math id="Thmex3.p1.m4" class="ltx_Math" alttext="c\in(0,2)" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0,2</mn><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="Ch4.E95" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E95.m1" class="ltx_Math" alttext="f^{\prime}(c)=\frac{f(2)-f(0)}{2-0}=2." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>2</mn><mo>−</mo><mn>0</mn></mrow></mfrac><mo>=</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.95)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">De fato, <math id="Thmex3.p1.m5" class="ltx_Math" alttext="f^{\prime}(x)=2x" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></math> e, portanto, tomando <math id="Thmex3.p1.m6" class="ltx_Math" alttext="c=1" display="inline"><mrow><mi>c</mi><mo>=</mo><mn>1</mn></mrow></math>, temos <math id="Thmex3.p1.m7" class="ltx_Math" alttext="f^{\prime}(c)=2" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmcorol1" class="ltx_theorem ltx_theorem_corol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Corolário 4.3.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Funções com derivadas nulas são constantes)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmcorol1.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="Thmcorol1.p1.m1" class="ltx_Math" alttext="f^{\prime}(x)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> para todos os pontos em um intervalo <math id="Thmcorol1.p1.m2" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>, então <math id="Thmcorol1.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é constante neste intervalo.</p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS2.p3" class="ltx_para">
+<p class="ltx_p">De fato, sejam <math id="SS2.p3.m1" class="ltx_Math" alttext="x_{1},x_{2}\in(a,b)" display="inline"><mrow><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> e, sem perda de generalidade, <math id="SS2.p3.m2" class="ltx_Math" alttext="x_{1}&lt;x_{2}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></math>. Então, temos <math id="SS2.p3.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é contínua no intervalo <math id="SS2.p3.m4" class="ltx_Math" alttext="[x_{1},x_{2}]" display="inline"><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mrow></math> e diferenciável em <math id="SS2.p3.m5" class="ltx_Math" alttext="(x_{1},x_{2})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></math>. Segue do teorema do valor médio que existe <math id="SS2.p3.m6" class="ltx_Math" alttext="c\in(x_{1},x_{2})" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="Ch4.E96" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E96.m1" class="ltx_Math" alttext="\frac{f(x_{2})-f(x_{1})}{x_{2}-x_{1}}=f^{\prime}(c)." display="block"><mrow><mrow><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac><mo>=</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.96)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="SS2.p3.m7" class="ltx_Math" alttext="f^{\prime}(c)=0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, temos <math id="SS2.p3.m8" class="ltx_Math" alttext="f(x_{2})=f(x_{1})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Ou seja, a função vale sempre o mesmo valor para quaisquer dois pontos no intervalo <math id="SS2.p3.m9" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>, logo é constante neste intervalo.
+∎</p>
+</div>
+</div>
+<div id="corol:apderiv_teomed_2" class="ltx_theorem ltx_theorem_corol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Corolário 4.3.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Função com a mesma derivada diferem por uma constante)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmcorol2.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="Thmcorol2.p1.m1" class="ltx_Math" alttext="f^{\prime}(x)=g^{\prime}(x)" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> para todos os pontos em um intervalo aberto <math id="Thmcorol2.p1.m2" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>, então <math id="Thmcorol2.p1.m3" class="ltx_Math" alttext="f(x)=g(x)+C" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mi>C</mi></mrow></mrow></math>, <math id="Thmcorol2.p1.m4" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> constante, para todo <math id="Thmcorol2.p1.m5" class="ltx_Math" alttext="x\in(a,b)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS2.p4" class="ltx_para">
+<p class="ltx_p">Segue, imediatamente, da aplicação do corolário anterior à função <math id="SS2.p4.m1" class="ltx_Math" alttext="h(x)=f(x)-g(x)" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>.
+∎</p>
+</div>
+</div>
+<div id="corol:mono_deriv" class="ltx_theorem ltx_theorem_corol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Corolário 4.3.3.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Monotonicidade e o sinal da derivada)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmcorol3.p1" class="ltx_para">
+<p class="ltx_p">Suponha que <math id="Thmcorol3.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> seja contínua em <math id="Thmcorol3.p1.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> e derivável em <math id="Thmcorol3.p1.m3" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>.</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I2.i1.p1.m1" class="ltx_Math" alttext="f^{\prime}(x)&gt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> para todo <math id="I2.i1.p1.m2" class="ltx_Math" alttext="x\in(a,b)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math>, então <math id="I2.i1.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é crescente<span id="Ch4.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span><math id="Ch4.footnote5.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é função crescente em um intervalo <math id="Ch4.footnote5.m2" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>, quando <math id="Ch4.footnote5.m3" class="ltx_Math" alttext="x_{1}&gt;x_{2}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></math> em <math id="Ch4.footnote5.m4" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> implica <math id="Ch4.footnote5.m5" class="ltx_Math" alttext="f(x_{1})&gt;f(x_{2})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</span></span></span> em <math id="I2.i1.p1.m4" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I2.i2.p1.m1" class="ltx_Math" alttext="f^{\prime}(x)&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math> para todo <math id="I2.i2.p1.m2" class="ltx_Math" alttext="x\in(a,b)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math>, então <math id="I2.i2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é decrescente<span id="Ch4.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note">6</span><math id="Ch4.footnote6.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é função decrescente em um intervalo <math id="Ch4.footnote6.m2" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>, quando <math id="Ch4.footnote6.m3" class="ltx_Math" alttext="x_{1}&gt;x_{2}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&gt;</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></math> em <math id="Ch4.footnote6.m4" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> implica <math id="Ch4.footnote6.m5" class="ltx_Math" alttext="f(x_{1})&lt;f(x_{2})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</span></span></span> em <math id="I2.i2.p1.m4" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS2.p5" class="ltx_para">
+<p class="ltx_p">Vamos demonstrar o item a), i.e. se <math id="SS2.p5.m1" class="ltx_Math" alttext="f^{\prime}(x)&gt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> para todo <math id="SS2.p5.m2" class="ltx_Math" alttext="x\in(a,b)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math>, então <math id="SS2.p5.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é crescente em <math id="SS2.p5.m4" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>. Sejam <math id="SS2.p5.m5" class="ltx_Math" alttext="x_{1}&lt;x_{2}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></math> com <math id="SS2.p5.m6" class="ltx_Math" alttext="x_{1},x_{2}\in[a,b]" display="inline"><mrow><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math>. Observamos que <math id="SS2.p5.m7" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é contínua em <math id="SS2.p5.m8" class="ltx_Math" alttext="[x_{1},x_{2}]" display="inline"><mrow><mo stretchy="false">[</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">]</mo></mrow></math> e diferenciável em <math id="SS2.p5.m9" class="ltx_Math" alttext="(x_{1},x_{2})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></math>. Logo, pelo Teorema do valor médio (Teorema <a href="#teo:tvm" title="Teorema 4.3.2.(Teorema do valor médio) ‣ 4.3.2 Teorema do valor médio ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3.2</span></a>), temos que existe <math id="SS2.p5.m10" class="ltx_Math" alttext="c\in(x_{1},x_{2})" display="inline"><mrow><mi>c</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="Ch4.E97" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E97.m1" class="ltx_Math" alttext="\frac{f(x_{2})-f(x_{1})}{x_{2}-x_{1}}=f^{\prime}(c)" display="block"><mrow><mfrac><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mfrac><mo>=</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.97)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou, equivalentemente,</p>
+<table id="Ch4.E98" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E98.m1" class="ltx_Math" alttext="f(x_{2})-f(x_{1})=f^{\prime}(c)\cdot(x_{2}-x_{1})." display="block"><mrow><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>c</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.98)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="SS2.p5.m11" class="ltx_Math" alttext="f^{\prime}(x)&gt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> para todo <math id="SS2.p5.m12" class="ltx_Math" alttext="x\in(a,b)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="SS2.p5.m13" class="ltx_Math" alttext="x_{2}-x_{1}&gt;0" display="inline"><mrow><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>, concluímos que <math id="SS2.p5.m14" class="ltx_Math" alttext="f(x_{2})-f(x_{1})&gt;0" display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>, i.e.</p>
+<table id="Ch4.E99" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E99.m1" class="ltx_Math" alttext="f(x_{1})&lt;f(x_{2})." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.99)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Com isso, mostramos que se <math id="SS2.p5.m15" class="ltx_Math" alttext="x_{1}&lt;x_{2}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub></mrow></math> com <math id="SS2.p5.m16" class="ltx_Math" alttext="x_{1},x_{2}\in[a,b]" display="inline"><mrow><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math>, então <math id="SS2.p5.m17" class="ltx_Math" alttext="f(x_{1})&lt;f(x_{2})" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, i.e. <math id="SS2.p5.m18" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é crescente em <math id="SS2.p5.m19" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+<div id="SS2.p6" class="ltx_para">
+<p class="ltx_p">A demonstração do item b) é análoga, consulte o E.<a href="#exer:mono_deriv" title="E. 4.3.6. ‣ 4.3.4 Exercícios ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3.6</span></a>.
+∎</p>
+</div>
+</div>
+<div id="Thmex4" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.3.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">Vamos estudar a monotonicidade da função polinomial <math id="Thmex4.p1.m1" class="ltx_Math" alttext="f(x)=x^{3}-4x^{2}+3x+1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math>. Na Figura <a href="#fig:ex_corol_mono_deriv" title="Figura 4.13 ‣ Exemplo 4.3.4. ‣ 4.3.2 Teorema do valor médio ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.13</span></a>, temos o esboço de seu gráfico.</p>
+</div>
+<figure id="fig:ex_corol_mono_deriv" class="ltx_figure"><img src="cap_apderiv/dados/fig_ex_corol_mono_deriv/fig.png" id="Ch4.F13.g1" class="ltx_graphics ltx_centering ltx_img_square" width="177" height="175" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 4.13</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico de <math id="Ch4.F13.m2" class="ltx_Math" alttext="f(x)=x^{3}-4x^{2}+3x+1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex4.p2" class="ltx_para">
+<p class="ltx_p">Podemos usar o Corolário <a href="#corol:mono_deriv" title="Corolário 4.3.3.(Monotonicidade e o sinal da derivada) ‣ 4.3.2 Teorema do valor médio ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3.3</span></a> para estudarmos a monotonicidade (i.e. intervalos de crescimento ou decrescimento). Isto é, fazemos o estudo de sinal da derivada de <math id="Thmex4.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Calculamos</p>
+<table id="Ch4.E100" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E100.m1" class="ltx_Math" alttext="f^{\prime}(x)=3x^{2}-8x+3." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>8</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>3</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.100)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Logo, temos</p>
+<img src="cap_apderiv/dados/fig_ex_monoderiv_poli/fig.png" id="Thmex4.p2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="209" height="60" alt="[Uncaptioned image]">
+<p class="ltx_p">Ou seja, <math id="Thmex4.p2.m2" class="ltx_Math" alttext="f^{\prime}(x)&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math> no conjunto <math id="Thmex4.p2.m3" class="ltx_Math" alttext="\displaystyle\left(-\infty,\frac{4-\sqrt{7}}{3}\right)\cup\left(\frac{4+\sqrt{%
+7}}{3},\infty\right)" display="inline"><mrow><mrow><mo>(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>−</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>)</mo></mrow><mo>∪</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>+</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>,</mo><mi mathvariant="normal">∞</mi><mo>)</mo></mrow></mrow></math> e <math id="Thmex4.p2.m4" class="ltx_Math" alttext="f^{\prime}(x)&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math> no conjunto <math id="Thmex4.p2.m5" class="ltx_Math" alttext="\displaystyle\left(\frac{4-\sqrt{7}}{3},\frac{4+\sqrt{7}}{3}\right)" display="inline"><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>−</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>+</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>)</mo></mrow></math>. Concluímos que <math id="Thmex4.p2.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é <span class="ltx_text ltx_font_bold">crescente</span> nos intervalos <math id="Thmex4.p2.m7" class="ltx_Math" alttext="\displaystyle\left(\left.-\infty,\frac{4-\sqrt{7}}{3}\right.\right]" display="inline"><mrow><mo>(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>−</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>]</mo></mrow></math> e <math id="Thmex4.p2.m8" class="ltx_Math" alttext="\displaystyle\left[\left.\frac{4+\sqrt{7}}{3},\infty\right)\right." display="inline"><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>+</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>,</mo><mi mathvariant="normal">∞</mi><mo>)</mo></mrow></math>, enquanto que <math id="Thmex4.p2.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é <span class="ltx_text ltx_font_bold">decrescente</span> no intervalo <math id="Thmex4.p2.m10" class="ltx_Math" alttext="\displaystyle\left[\frac{4-\sqrt{7}}{3},\frac{4+\sqrt{7}}{3}\right]" display="inline"><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>−</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>+</mo><msqrt><mn>7</mn></msqrt></mrow><mn>3</mn></mfrac></mstyle><mo>]</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmex5" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.3.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmex5.p1" class="ltx_para">
+<p class="ltx_p">A função exponencial <math id="Thmex5.p1.m1" class="ltx_Math" alttext="f(x)=e^{x}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup></mrow></math> é crescente em toda parte. De fato, temos</p>
+<table id="Ch4.E101" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E101.m1" class="ltx_Math" alttext="f^{\prime}(x)=e^{x}&gt;0," display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.101)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para todo <math id="Thmex5.p1.m2" class="ltx_Math" alttext="x\in\mathbb{R}" display="inline"><mrow><mi>x</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>.</p>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.3.3 </span>Exercícios resolvidos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 4.3.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Um carro percorreu 150 km em 1h30min. Mostre que em algum momento o carro estava a uma velocidade maior que 80 km/h.</p>
+</div>
+</div>
+<div id="Thmresolx51" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx51.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmresolx51.p1.m1" class="ltx_Math" alttext="s=s(t)" display="inline"><mrow><mi>s</mi><mo>=</mo><mrow><mi>s</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> a função distância percorrida pelo carro e <math id="Thmresolx51.p1.m2" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math> o tempo, em horas, contado do início do percurso. Do teorema do valor médio, exite tempo <math id="Thmresolx51.p1.m3" class="ltx_Math" alttext="t_{1}\in(0,\leavevmode\nobreak\ 1,5)" display="inline"><mrow><msub><mi>t</mi><mn>1</mn></msub><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0, 1,5</mn><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="Ch4.E102" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E102.m1" class="ltx_Math" alttext="f^{\prime}(t_{1})=\frac{s(1,5)-s(0)}{1,5-0}=\frac{150}{1,5}=100\leavevmode%
+\nobreak\ \text{km/h}." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mrow><mi>s</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1,5</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>s</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>1,5</mn><mo>−</mo><mn>0</mn></mrow></mfrac><mo>=</mo><mfrac><mn>150</mn><mn>1,5</mn></mfrac><mo>=</mo><mrow><mn>100</mn><mo lspace="0.500em">⁢</mo><mtext>km/h</mtext></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.102)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou seja, em algum momento o carro atingiu a velocidade de 100 km/h.</p>
+</div>
+</div>
+<div id="Thmexeresol2" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 4.3.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Estude a monotonicidade da função gaussiana <math id="Thmexeresol2.p1.m1" class="ltx_Math" alttext="f(x)=e^{-x^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmresolx52" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx52.p1" class="ltx_para">
+<p class="ltx_p">Para estudarmos a monotonicidade de uma função, podemos fazer o estudo de sinal de sua derivada. Neste caso, temos</p>
+<table id="Ch4.E103" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E103.m1" class="ltx_Math" alttext="f^{\prime}(x)=-2xe^{-x^{2}}." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.103)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, vemos que</p>
+<img src="cap_apderiv/dados/fig_exeresol_gauss_estsinal/fig.png" id="Thmresolx52.p1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="203" height="97" alt="[Uncaptioned image]">
+<p class="ltx_p">Concluímos que <math id="Thmresolx52.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é crescente no intervalo <math id="Thmresolx52.p1.m2" class="ltx_Math" alttext="(-\infty,0)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math> e decrescente no intervalo <math id="Thmresolx52.p1.m3" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.3.4 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.3.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Estude a monotonicidade de <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="f(x)=x^{2}-2x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx119">Resposta</button></div><div class="collapse" id="Thmrespx119" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx119.p1" class="ltx_para">
+<p class="ltx_p">Decrescente: <math id="Thmrespx119.p1.m1" class="ltx_Math" alttext="(-\infty,1]" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,1</mn></mrow></mrow><mo stretchy="false">]</mo></mrow></math>; Crescente: <math id="Thmrespx119.p1.m2" class="ltx_Math" alttext="[1,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.3.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Estude a monotonicidade de <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=\frac{x^{3}}{3}-x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mfrac></mstyle><mo>−</mo><mi>x</mi></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx120">Resposta</button></div><div class="collapse" id="Thmrespx120" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx120.p1" class="ltx_para">
+<p class="ltx_p">Decrescente: <math id="Thmrespx120.p1.m1" class="ltx_Math" alttext="[-1,1]" display="inline"><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></math>; Crescente: <math id="Thmrespx120.p1.m2" class="ltx_Math" alttext="(-\infty,-1]" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">]</mo></mrow></math>; <math id="Thmrespx120.p1.m3" class="ltx_Math" alttext="[1,\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.3.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Estude a monotonicidade de <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=\ln x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx121">Resposta</button></div><div class="collapse" id="Thmrespx121" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx121.p1" class="ltx_para">
+<p class="ltx_p">Crescente: <math id="Thmrespx121.p1.m1" class="ltx_Math" alttext="(0,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.3.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Estude a monotonicidade de <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\displaystyle f(x)=xe^{-x}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx122">Resposta</button></div><div class="collapse" id="Thmrespx122" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx122.p1" class="ltx_para">
+<p class="ltx_p">Crescente: <math id="Thmrespx122.p1.m1" class="ltx_Math" alttext="(-\infty,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mi mathvariant="normal">∞</mi><mo>⁢</mo><mn>,1</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math>; Decrescente de <math id="Thmrespx122.p1.m2" class="ltx_Math" alttext="(1,\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">∞</mi><mo stretchy="false">)</mo></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.3.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Demonstre que um polinômio cúbico pode ter no máximo <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="3" display="inline"><mn>3</mn></math> raízes reais.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx123">Resposta</button></div><div class="collapse" id="Thmrespx123" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx123.p1" class="ltx_para">
+<p class="ltx_p">Dica: use o teorema de Rolle.</p>
+</div>
+</div>
+<div id="exer:mono_deriv" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.3.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> contínua em <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math> e derivável em <math id="Thmexer6.p1.m3" class="ltx_Math" alttext="(a,b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math>. Mostre que se <math id="Thmexer6.p1.m4" class="ltx_Math" alttext="f^{\prime}(x)&lt;0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math> para todo <math id="Thmexer6.p1.m5" class="ltx_Math" alttext="x\in(a,b)" display="inline"><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math>, então <math id="Thmexer6.p1.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é decrescente em <math id="Thmexer6.p1.m7" class="ltx_Math" alttext="[a,b]" display="inline"><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx124">Resposta</button></div><div class="collapse" id="Thmrespx124" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx124.p1" class="ltx_para">
+<p class="ltx_p">Dica: consulte a demonstração do item a) do Corolário <a href="#corol:mono_deriv" title="Corolário 4.3.3.(Monotonicidade e o sinal da derivada) ‣ 4.3.2 Teorema do valor médio ‣ 4.3 Teorema do valor médio ‣ Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3.3</span></a>.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_apderiv_sec_extfun.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Extremos de funções</span></a><a href="bib.html" title="In Cálculo I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_apderiv_sec_tder1.html" title="In Capítulo 4 Aplicações da derivada ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Teste da primeira derivada</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:50:01 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

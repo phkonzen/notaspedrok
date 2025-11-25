@@ -1,0 +1,1080 @@
+<!DOCTYPE html><html lang="pt-BR">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 3.9 Diferenciabilidade da função inversa ‣ Capítulo 3 Derivadas ‣ Cálculo I</title>
+<!--Generated on Tue Nov 25 11:50:01 2025 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 25 de novembro de 2025.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_deriv.html" title="Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="up up" href="./" title="Cálculo I">
+<link rel="start" href="./" title="Cálculo I">
+<link rel="prev" href="cap_deriv_sec_cadeia.html" title="3.8 Regra da cadeia ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="next" href="cap_deriv_sec_derimp.html" title="3.10 Derivação implícita ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_derivpt.html" title="3.1 Derivada no ponto ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_funder.html" title="3.2 Função derivada ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_funcip.html" title="3.3 Derivada de funções constante, identidade e potência ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_funexplog.html" title="3.4 Derivada de função exponencial e logarítmica ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_regrasderiv.html" title="3.5 Regras básicas de derivação ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_trigo.html" title="3.6 Derivadas de funções trigonométricas ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_linearizacao.html" title="3.7 Linearização e diferenciais ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_cadeia.html" title="3.8 Regra da cadeia ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="section" href="cap_deriv_sec_derimp.html" title="3.10 Derivação implícita ‣ Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo I">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo I">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Cálculo I">
+<link rel="chapter" href="cap_lim.html" title="Capítulo 2 Limites ‣ Cálculo I">
+<link rel="chapter" href="cap_deriv.html" title="Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="chapter" href="cap_apderiv.html" title="Capítulo 4 Aplicações da derivada ‣ Cálculo I">
+<link rel="chapter" href="cap_int.html" title="Capítulo 5 Integração ‣ Cálculo I">
+<link rel="chapter" href="cap_apint.html" title="Capítulo 6 Aplicações da integral ‣ Cálculo I">
+<link rel="appendix" href="appendix_lista_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo I">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo I">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="mt-1 mb-2 fs-4">
+  <p class="text-left mb-0">
+    <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+    <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+    <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+    <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+    <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+  </p>
+</div>
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_deriv.html" title="In Cálculo I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Derivadas</span></a><a href="cap_deriv_sec_cadeia.html" title="In Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8 </span>Regra da cadeia</span></a><a href="cap_deriv_sec_derimp.html" title="In Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.10 </span>Derivação implícita</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt-BR">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.9 </span>Diferenciabilidade da função inversa</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> uma função diferenciável e injetora em um intervalo aberto <math id="p1.m2" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math>. Então, pode-se mostrar que sua inversa <math id="p1.m3" class="ltx_Math" alttext="f^{-1}" display="inline"><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math> é diferenciável em qualquer ponto da imagem da <math id="p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no qual <math id="p1.m5" class="ltx_Math" alttext="f^{\prime}(f^{-1}(x))\neq 0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mn>0</mn></mrow></math> e sua derivada é</p>
+<table id="eq:diff_funinv" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E516.m1" class="ltx_Math" alttext="{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\frac{d}{dx}%
+[f^{-1}(x)]=\frac{1}{f^{\prime}(f^{-1}(x))}}." display="block"><mrow><mrow><mrow><mfrac mathcolor="#0000FF"><mi mathcolor="#0000FF">d</mi><mrow><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">[</mo><mrow><msup><mi mathcolor="#0000FF">f</mi><mrow><mo mathcolor="#0000FF">−</mo><mn mathcolor="#0000FF">1</mn></mrow></msup><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">]</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mrow><msup><mi mathcolor="#0000FF">f</mi><mo mathcolor="#0000FF">′</mo></msup><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><msup><mi mathcolor="#0000FF">f</mi><mrow><mo mathcolor="#0000FF">−</mo><mn mathcolor="#0000FF">1</mn></mrow></msup><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.516)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.9.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmex1.p1.m1" class="ltx_Math" alttext="f(x)=(2x-1)^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></math> para <math id="Thmex1.p1.m2" class="ltx_Math" alttext="x&gt;1/2" display="inline"><mrow><mi>x</mi><mo>&gt;</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></math>. Para calcular sua inversa, fazemos</p>
+<table id="A2.S0.EGx184" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E517"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E517.m1" class="ltx_Math" alttext="\displaystyle y=(2x-1)^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.517)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E518"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E518.m1" class="ltx_Math" alttext="\displaystyle\sqrt{y}=2x-1" display="inline"><mrow><msqrt><mi>y</mi></msqrt><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.518)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E519"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E519.m1" class="ltx_Math" alttext="\displaystyle x=\frac{\sqrt{y}+1}{2}" display="inline"><mrow><mi>x</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msqrt><mi>y</mi></msqrt><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.519)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou seja,</p>
+<table id="Ch3.E520" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E520.m1" class="ltx_Math" alttext="f^{-1}(x)=\frac{1}{2}(\sqrt{x}+1)." display="block"><mrow><mrow><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msqrt><mi>x</mi></msqrt><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.520)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Calculando a derivada de <math id="Thmex1.p1.m3" class="ltx_Math" alttext="f^{-1}" display="inline"><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></math> diretamente, temos</p>
+<table id="A2.S0.EGx185" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E521"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E521.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}f^{-1}(x)=\frac{1}{2}\left(\sqrt{x}%
++1\right)^{\prime}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mrow><mo>(</mo><mrow><msqrt><mi>x</mi></msqrt><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow><mo>′</mo></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.521)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E522"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E522.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2}\cdot\frac{1}{2\sqrt{x}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">⋅</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><msqrt><mi>x</mi></msqrt></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.522)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E523"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E523.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{4\sqrt{x}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>4</mn><mo>⁢</mo><msqrt><mi>x</mi></msqrt></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.523)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Agora, usando (<a href="#eq:diff_funinv" title="In 3.9 Diferenciabilidade da função inversa ‣ Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.516</span></a>) e observando que <math id="Thmex1.p1.m4" class="ltx_Math" alttext="f^{\prime}(x)=8x-4" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>8</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>4</mn></mrow></mrow></math>, obtemos</p>
+<table id="A2.S0.EGx186" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E524"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E524.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}f^{-1}(x)=\frac{1}{f^{\prime}(f^{-1%
+}(x))}," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.524)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E525"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E525.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{8\cdot\frac{1}{2}\left(\sqrt{x}+1\right)-4}," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mrow><mrow><mn>8</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><msqrt><mi>x</mi></msqrt><mo>+</mo><mn>1</mn></mrow><mo>)</mo></mrow></mrow><mo>−</mo><mn>4</mn></mrow></mfrac></mstyle><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.525)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E526"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E526.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{4\sqrt{x}}," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>4</mn><mo>⁢</mo><msqrt><mi>x</mi></msqrt></mrow></mfrac></mstyle><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.526)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">como esperado.</p>
+</div>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 3.9.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Derivada da função logarítmica)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Tomando <math id="I1.i1.p1.m1" class="ltx_Math" alttext="f(x)=e^{x}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup></mrow></math> temos <math id="I1.i1.p1.m2" class="ltx_Math" alttext="f^{-1}(x)=\ln x" display="inline"><mrow><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math> e, daí por (<a href="#eq:diff_funinv" title="In 3.9 Diferenciabilidade da função inversa ‣ Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.516</span></a>)</p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<table id="Ch3.E527" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E527.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\ln x=\frac{1}{e^{\ln x}}=\frac{1}{x}." display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><msup><mi>e</mi><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></msup></mfrac><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.527)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Tomando <math id="I1.i2.p1.m1" class="ltx_Math" alttext="f(x)=a^{x}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>a</mi><mi>x</mi></msup></mrow></math>, <math id="I1.i2.p1.m2" class="ltx_Math" alttext="a&gt;0" display="inline"><mrow><mi>a</mi><mo>&gt;</mo><mn>0</mn></mrow></math> e <math id="I1.i2.p1.m3" class="ltx_Math" alttext="a\neq 1" display="inline"><mrow><mi>a</mi><mo>≠</mo><mn>1</mn></mrow></math>, temos <math id="I1.i2.p1.m4" class="ltx_Math" alttext="f^{-1}(x)=\log_{a}x" display="inline"><mrow><mrow><msup><mi>f</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>log</mi><mi>a</mi></msub><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math> e, por (<a href="#eq:diff_funinv" title="In 3.9 Diferenciabilidade da função inversa ‣ Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.516</span></a>),</p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<table id="Ch3.E528" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E528.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\log_{a}x=\frac{1}{a^{\log_{a}x}\ln a}=\frac{1}{%
+x\ln a}." display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><msub><mi>log</mi><mi>a</mi></msub><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><msup><mi>a</mi><mrow><msub><mi>log</mi><mi>a</mi></msub><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>a</mi></mrow></mrow></mfrac><mo>=</mo><mfrac><mn>1</mn><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>a</mi></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.528)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ul>
+</div>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.9.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Vamos calcular a derivada em relação a <math id="Thmex2.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> da função</p>
+<table id="Ch3.E529" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E529.m1" class="ltx_Math" alttext="f(x)=\ln\frac{1}{x}." display="block"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.529)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Aplicando a regra da cadeia na derivada da função logarítmica, temos</p>
+<table id="Ch3.E530" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E530.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\ln u=\frac{1}{u}\frac{\mathrm{d}u}{\mathrm{d}x}." display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mi>u</mi></mfrac><mo>⁢</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.530)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, temos</p>
+<table id="A2.S0.EGx187" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E531"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E531.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=\left(\ln\frac{1}{x}\right)^{\prime}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo>(</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle></mrow><mo>)</mo></mrow><mo>′</mo></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.531)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E532"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E532.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{x^{-1}}\cdot(-x^{-2})" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>x</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em">−</mo><msup><mi>x</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.532)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E533"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E533.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{1}{x}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.533)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2.p2" class="ltx_para">
+<p class="ltx_p">No <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, temos:</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgIGZyb20gc3ltcHkgaW1wb3J0ICoKICAgIHggPSBTeW1ib2woJ3gnKQogICAgZGlmZihsb2coMS94KSx4KQogICAgLTEveA==" download="">⬇</a></div>
+<div id="lstnumberx365" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx366" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx367" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diff</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">log</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx368" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+</div>
+</div>
+</div>
+<section id="cap_deriv_ssec_trigoinv" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.9.1 </span>Derivadas de funções trigonométricas inversas</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="SS1.p1.m1" class="ltx_Math" alttext="f(x)=\operatorname{sen}x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math> restrita a <math id="SS1.p1.m2" class="ltx_Math" alttext="-\pi/2\leq x\leq\pi/2" display="inline"><mrow><mrow><mo>−</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow></mrow></math>. Sua inversa é a função arco seno, denotada por</p>
+<table id="Ch3.E534" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E534.m1" class="ltx_Math" alttext="y=\operatorname{arc}\operatorname{sen}x." display="block"><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.534)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:diff_arc_sen" class="ltx_figure"><img src="cap_deriv/dados/fig_diff_arc_sen/fig.png" id="Ch3.F11.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="254" height="181" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.11</span>: </span><span class="ltx_text" style="font-size:90%;">Arco seno de um ângulo no triângulo retângulo.</span></figcaption>
+</figure>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Para calcular a derivada da função arco seno, vamos usar (<a href="#eq:diff_funinv" title="In 3.9 Diferenciabilidade da função inversa ‣ Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.516</span></a>) com <math id="SS1.p2.m1" class="ltx_Math" alttext="f(x)=\operatorname{sen}x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math> e <math id="SS1.p2.m2" class="ltx_Math" alttext="f^{\prime}(x)=\operatorname{arc}\operatorname{sen}x" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow></math>, donde</p>
+<table id="Ch3.E535" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E535.m1" class="ltx_Math" alttext="(\operatorname{arc}\operatorname{sen}x)^{\prime}=\frac{1}{\cos(\operatorname{%
+arc}\operatorname{sen}x)}." display="block"><mrow><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mfrac><mn>1</mn><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.535)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="SS1.p2.m3" class="ltx_Math" alttext="\cos(\operatorname{arc}\operatorname{sen}x)=\sqrt{1-x^{2}}" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> (consultemos a Figura <a href="#fig:diff_arc_sen" title="Figura 3.11 ‣ 3.9.1 Derivadas de funções trigonométricas inversas ‣ 3.9 Diferenciabilidade da função inversa ‣ Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.11</span></a>), concluímos</p>
+<table id="Ch3.E536" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E536.m1" class="ltx_Math" alttext="(\operatorname{arc}\operatorname{sen}x)^{\prime}=\frac{1}{\sqrt{1-x^{2}}}." display="block"><mrow><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mfrac><mn>1</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.536)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.9.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">A regra da cadeia aplicada à derivada da função arco seno é</p>
+<table id="Ch3.E537" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E537.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{sen}u=\frac{1}{%
+\sqrt{1-u^{2}}}\frac{\mathrm{d}u}{\mathrm{d}x}." display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>u</mi><mn>2</mn></msup></mrow></msqrt></mfrac><mo>⁢</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.537)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex3.p2" class="ltx_para">
+<p class="ltx_p">Por exemplo, temos</p>
+<table id="Ch3.E538" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E538.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{sen}x^{2}=\frac{%
+2x}{\sqrt{1-x^{4}}}." display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></mrow><mo>=</mo><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>4</mn></msup></mrow></msqrt></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.538)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex3.p3" class="ltx_para">
+<p class="ltx_p">No <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, temos:</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgIGZyb20gc3ltcHkgaW1wb3J0ICoKICAgIHggPSBTeW1ib2woJ3gnKQogICAgZGlmZihhc2luKHgqKjIpLHgpCiAgICAyKngvc3FydCgteCoqNCArIDEp" download="">⬇</a></div>
+<div id="lstnumberx369" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx370" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx371" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diff</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">asin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2),</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx372" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1)</span>
+</div>
+</div>
+</div>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">Com argumentos análogos aos usados no cálculo da derivada da função arco seno, podemos obter as seguintes derivadas:</p>
+<table id="A2.S0.EGx188" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E539"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E539.m1" class="ltx_Math" alttext="\displaystyle(\operatorname{arc}\cos x)^{\prime}=-\frac{1}{\sqrt{1-x^{2}}}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.539)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E540"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E540.m1" class="ltx_Math" alttext="\displaystyle(\operatorname{arc}\operatorname{tg}x)^{\prime}=\frac{1}{1+x^{2}}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.540)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E541"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E541.m1" class="ltx_Math" alttext="\displaystyle(\operatorname{arc}\operatorname{cotg}x)^{\prime}=-\frac{1}{1+x^{%
+2}}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>cotg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.541)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E542"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E542.m1" class="ltx_Math" alttext="\displaystyle(\operatorname{arc}\sec x)^{\prime}=\frac{1}{|x|\sqrt{x^{2}-1}}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sec</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow><mo>⁢</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></msqrt></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.542)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E543"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E543.m1" class="ltx_Math" alttext="\displaystyle(\operatorname{arc}\operatorname{cosec}x)^{\prime}=-\frac{1}{|x|%
+\sqrt{x^{2}-1}}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>cosec</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mrow><mo stretchy="false">|</mo><mi>x</mi><mo stretchy="false">|</mo></mrow><mo>⁢</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></msqrt></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.543)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex4" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.9.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">A regra da cadeia aplicada a função arco tangente é</p>
+<table id="Ch3.E544" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E544.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{tg}u=\frac{1}{1+%
+u^{2}}\frac{\mathrm{d}u}{\mathrm{d}x}." display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>u</mi><mn>2</mn></msup></mrow></mfrac><mo>⁢</mo><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.544)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex4.p2" class="ltx_para">
+<p class="ltx_p">Por exemplo, temos</p>
+<table id="A2.S0.EGx189" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E545"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E545.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{tg}%
+\sqrt{x}=\frac{1}{1+(\sqrt{x})^{2}}\frac{\mathrm{d}}{\mathrm{d}x}\sqrt{x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><msqrt><mi>x</mi></msqrt></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><msqrt><mi>x</mi></msqrt><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><msqrt><mi>x</mi></msqrt></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.545)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E546"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E546.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2(1+x)\sqrt{x}}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msqrt><mi>x</mi></msqrt></mrow></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.546)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex4.p3" class="ltx_para">
+<p class="ltx_p">No <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, temos:</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgIGZyb20gc3ltcHkgaW1wb3J0ICoKICAgIHggPSBTeW1ib2woJ3gnKQogICAgZGlmZihhdGFuKHNxcnQoeCkpKQogICAgMS8oMipzcXJ0KHgpKih4ICsgMSkp" download="">⬇</a></div>
+<div id="lstnumberx373" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx374" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx375" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diff</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">atan</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)))</span>
+</div>
+<div id="lstnumberx376" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1/(2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)*(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1))</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="deriv_tabela_de_derivadas" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.9.2 </span>Lista de derivadas</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<table id="A2.S0.EGx190" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E547"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E547.m1" class="ltx_Math" alttext="\displaystyle(ku)^{\prime}=ku^{\prime}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>⁢</mo><mi>u</mi></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mrow><mi>k</mi><mo>⁢</mo><msup><mi>u</mi><mo>′</mo></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.547)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E548"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E548.m1" class="ltx_Math" alttext="\displaystyle(u\pm v)^{\prime}=u^{\prime}\pm v^{\prime}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>±</mo><mi>v</mi></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>±</mo><msup><mi>v</mi><mo>′</mo></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.548)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E549"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E549.m1" class="ltx_Math" alttext="\displaystyle(uv)^{\prime}=u^{\prime}v+uv^{\prime}" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mi>v</mi></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.549)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E550"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E550.m1" class="ltx_Math" alttext="\displaystyle\left(\frac{u}{v}\right)^{\prime}=\frac{u^{\prime}v-uv^{\prime}}{%
+v^{2}}" display="inline"><mrow><msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi>u</mi><mi>v</mi></mfrac></mstyle><mo>)</mo></mrow><mo>′</mo></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mi>v</mi></mrow><mo>−</mo><mrow><mi>u</mi><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup></mrow></mrow><msup><mi>v</mi><mn>2</mn></msup></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.550)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E551"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E551.m1" class="ltx_Math" alttext="\displaystyle(k)^{\prime}=0" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.551)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E552"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E552.m1" class="ltx_Math" alttext="\displaystyle(x)^{\prime}=1" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.552)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E553"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E553.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}u^{r}=ru^{r-1}\frac{\mathrm{d}u}{%
+\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><msup><mi>u</mi><mi>r</mi></msup></mrow><mo>=</mo><mrow><mi>r</mi><mo>⁢</mo><msup><mi>u</mi><mrow><mi>r</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.553)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E554"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E554.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}a^{u}=a^{u}\ln a\frac{\mathrm{d}u}{%
+\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><msup><mi>a</mi><mi>u</mi></msup></mrow><mo>=</mo><mrow><msup><mi>a</mi><mi>u</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mrow><mi>a</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.554)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E555"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E555.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}e^{u}=e^{u}\frac{\mathrm{d}u}{%
+\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mi>u</mi></msup></mrow><mo>=</mo><mrow><msup><mi>e</mi><mi>u</mi></msup><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.555)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E556"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E556.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\log_{a}u=\frac{1}{u\ln a}\frac{%
+\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><msub><mi>log</mi><mi>a</mi></msub><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>u</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>a</mi></mrow></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.556)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E557"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E557.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\ln u=\frac{1}{u}\frac{\mathrm{d}u}%
+{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>u</mi></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.557)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E558"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E558.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{sen}u=\cos(u)\frac{%
+\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.558)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E559"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E559.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\cos u=-\operatorname{sen}(u)\frac{%
+\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.559)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E560"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E560.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{tg}u=\sec^{2}(u)\frac%
+{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>sec</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.560)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E561"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E561.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{cotg}u=-\operatorname%
+{cossec}^{2}(u)\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>cotg</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mrow><msup><mi>cossec</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.561)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E562"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E562.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\sec u=\sec(u)\operatorname{tg}(u)%
+\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>sec</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mrow><mi>sec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>tg</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.562)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E563"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E563.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{cossec}u=-%
+\operatorname{cossec}(u)\operatorname{cotg}(u)\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>cossec</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mrow><mi>cossec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mi>cotg</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.563)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E564"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E564.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{sen%
+}u=\frac{1}{\sqrt{1-u^{2}}}\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sen</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>u</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.564)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E565"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E565.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\cos u=-\frac{1}{%
+\sqrt{1-u^{2}}}\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>u</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.565)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E566"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E566.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{tg}%
+u=\frac{1}{1+u^{2}}\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>u</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.566)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E567"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E567.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{%
+cotg}u=-\frac{1}{1+u^{2}}\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>cotg</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>u</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.567)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E568"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E568.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\sec u=\frac{1}{|%
+u|\sqrt{u^{2}-1}}\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>sec</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mrow><mo stretchy="false">|</mo><mi>u</mi><mo stretchy="false">|</mo></mrow><mo>⁢</mo><msqrt><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></msqrt></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.568)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E569"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E569.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{%
+cossec}u=-\frac{1}{|u|\sqrt{u^{2}-1}}\frac{\mathrm{d}u}{\mathrm{d}x}" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>cossec</mi><mo lspace="0.167em">⁡</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mrow><mo stretchy="false">|</mo><mi>u</mi><mo stretchy="false">|</mo></mrow><mo>⁢</mo><msqrt><mrow><msup><mi>u</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow></msqrt></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.569)</span></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.9.3 </span>Exercícios resolvidos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.9.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Calcule a equação da reta tangente ao gráfico da função <math id="Thmexeresol1.p1.m1" class="ltx_Math" alttext="f(x)=\ln x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math> no ponto <math id="Thmexeresol1.p1.m2" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>. Faça, então, um esboço dos gráficos da função e da reta tangente.</p>
+</div>
+</div>
+<div id="Thmresolx40" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx40.p1" class="ltx_para">
+<p class="ltx_p">A equação da reta tangente ao gráfico da função <math id="Thmresolx40.p1.m1" class="ltx_Math" alttext="f(x)=\ln x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math> no ponto <math id="Thmresolx40.p1.m2" class="ltx_Math" alttext="x_{0}=1" display="inline"><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>=</mo><mn>1</mn></mrow></math> é</p>
+<table id="A2.S0.EGx191" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E570"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E570.m1" class="ltx_Math" alttext="\displaystyle y=f^{\prime}(x_{0})(x-x_{0})+f(x_{0})" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.570)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E571"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E571.m1" class="ltx_Math" alttext="\displaystyle y=f^{\prime}(1)(x-1)+f(1)." display="inline"><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.571)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Observando que</p>
+<table id="Ch3.E572" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E572.m1" class="ltx_Math" alttext="f^{\prime}(x)=(\ln x)^{\prime}=\frac{1}{x}," display="block"><mrow><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo>=</mo><mfrac><mn>1</mn><mi>x</mi></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.572)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">temos que a equação da reta tangente é</p>
+<table id="A2.S0.EGx192" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E573"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E573.m1" class="ltx_Math" alttext="\displaystyle y=\frac{1}{1}(x-1)+\ln 1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>1</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mn>1</mn></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.573)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E574"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E574.m1" class="ltx_Math" alttext="\displaystyle y=x-1." display="inline"><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.574)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Na Figura <a href="#fig:deriv_exeresol_rt_ln" title="Figura 3.12 ‣ Resolução 0. ‣ 3.9.3 Exercícios resolvidos ‣ 3.9 Diferenciabilidade da função inversa ‣ Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.12</span></a>, temos os gráficos da função e de sua reta tangente no ponto <math id="Thmresolx40.p1.m3" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>.</p>
+</div>
+<figure id="fig:deriv_exeresol_rt_ln" class="ltx_figure"><img src="cap_deriv/dados/fig_deriv_exeresol_rt_ln/fig.png" id="Ch3.F12.g1" class="ltx_graphics ltx_centering ltx_img_square" width="195" height="194" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.12</span>: </span><span class="ltx_text" style="font-size:90%;">Gráficos da função logarítmica natural e de sua reta tangente no ponto <math id="Ch3.F12.m2" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmresolx40.p2" class="ltx_para">
+<p class="ltx_p">No <a href="https://www.sympy.org" title="" class="ltx_ref ltx_href">SymPy</a>, temos:</p>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ICAgIGZyb20gc3ltcHkgaW1wb3J0ICoKICAgIHggPSBTeW1ib2woJ3gnKQogICAgcnQgPSBkaWZmKGxvZyh4KSkuc3Vicyh4LDEpKih4LTEpK2xvZygxKQogICAgcHJpbnQoInkgPSAlcyIgJSBydCkKICAgIHkgPSB4IC0gMQ==" download="">⬇</a></div>
+<div id="lstnumberx377" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span>
+</div>
+<div id="lstnumberx378" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Symbol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'x'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx379" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rt</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">diff</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">log</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)).</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">subs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,1)*(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1)+</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">log</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(1)</span>
+</div>
+<div id="lstnumberx380" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"y<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>%s"</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">%</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">rt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx381" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexeresol2" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.9.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Resolva a equação</p>
+<table id="Ch3.E575" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E575.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{tg}x=1." display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.575)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmresolx41" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx41.p1" class="ltx_para">
+<p class="ltx_p">Lembrando que</p>
+<table id="Ch3.E576" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E576.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{tg}x=\frac{1}{1+%
+x^{2}}," display="block"><mrow><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.576)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">temos</p>
+<table id="A2.S0.EGx193" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E577"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E577.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\operatorname{arc}\operatorname{tg}%
+x=1" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.577)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E578"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E578.m1" class="ltx_Math" alttext="\displaystyle\frac{1}{1+x^{2}}=1" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mfrac></mstyle><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.578)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E579"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E579.m1" class="ltx_Math" alttext="\displaystyle 1+x^{2}=1" display="inline"><mrow><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.579)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E580"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E580.m1" class="ltx_Math" alttext="\displaystyle x^{2}=0" display="inline"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.580)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E581"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E581.m1" class="ltx_Math" alttext="\displaystyle x=0." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.581)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmexeresol3" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 3.9.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol3.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch3.E582" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E582.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}x^{x}." display="block"><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><msup><mi>x</mi><mi>x</mi></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.582)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmresolx42" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolução.
+</h6>
+<div id="Thmresolx42.p1" class="ltx_para">
+<p class="ltx_p">Observamos que</p>
+<table id="A2.S0.EGx194" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E583"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E583.m1" class="ltx_Math" alttext="\displaystyle y=x^{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mi>x</mi></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.583)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E584"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E584.m1" class="ltx_Math" alttext="\displaystyle\ln y=\ln x^{x}" display="inline"><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>y</mi></mrow><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><msup><mi>x</mi><mi>x</mi></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.584)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E585"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E585.m1" class="ltx_Math" alttext="\displaystyle\ln y=x\ln x." display="inline"><mrow><mrow><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>y</mi></mrow><mo>=</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.585)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Agora, derivando em relação a <math id="Thmresolx42.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> ambos os lados desta equação, obtemos</p>
+<table id="A2.S0.EGx195" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E586"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E586.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}}{\mathrm{d}x}\ln y=\frac{\mathrm{d}}{\mathrm{d}x%
+}\left(x\ln x\right)" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>y</mi></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo>)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.586)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E587"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E587.m1" class="ltx_Math" alttext="\displaystyle\frac{1}{y}\frac{\mathrm{d}y}{\mathrm{d}x}=1+\ln x" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>y</mi></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle></mrow><mo>=</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.587)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E588"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E588.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}y}{\mathrm{d}x}=y(1+\ln x)" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.588)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E589"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E589.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathrm{d}x^{x}}{\mathrm{d}x}=x^{x}(1+\ln x)." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><msup><mi>x</mi><mi>x</mi></msup></mrow><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><msup><mi>x</mi><mi>x</mi></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.589)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.9.4 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.9.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Calcule a derivada em relação a <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> das seguintes funções:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="f(x)=\log_{2}x^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>log</mi><mn>2</mn></msub><mo lspace="0.167em">⁡</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="g(x)=\ln(xe^{x})" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx99">Resposta</button></div><div class="collapse" id="Thmrespx99" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx99.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx99.p1.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=\frac{2}{x\ln 2}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mn>2</mn></mrow></mrow></mfrac></mstyle></mrow></math>; b) <math id="Thmrespx99.p1.m2" class="ltx_Math" alttext="g^{\prime}(x)=\frac{1+x}{x}" display="inline"><mrow><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mi>x</mi></mfrac></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.9.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Calcule a derivada em relação a <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> das seguintes funções:</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="f(x)=\sqrt[3]{x^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mroot><msup><mi>x</mi><mn>2</mn></msup><mn>3</mn></mroot></mrow></math></p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="g(x)=(1+2x)^{e}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mi>e</mi></msup></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx100">Resposta</button></div><div class="collapse" id="Thmrespx100" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx100.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx100.p1.m1" class="ltx_Math" alttext="\displaystyle f^{\prime}(x)=\frac{2}{3\sqrt[3]{x}}" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mrow><mn>3</mn><mo>⁢</mo><mroot><mi>x</mi><mn>3</mn></mroot></mrow></mfrac></mstyle></mrow></math>; b) <math id="Thmrespx100.p1.m2" class="ltx_Math" alttext="g^{\prime}(x)=2e(1+2x)^{e-1}" display="inline"><mrow><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>e</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>e</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.9.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch3.E590" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E590.m1" class="ltx_Math" alttext="\frac{\mathrm{d}}{\mathrm{d}x}(1+x)^{x}." display="block"><mrow><mrow><mfrac><mi mathvariant="normal">d</mi><mrow><mi mathvariant="normal">d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mi>x</mi></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.590)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx101">Resposta</button></div><div class="collapse" id="Thmrespx101" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx101.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx101.p1.m1" class="ltx_Math" alttext="x(1+x)^{x-1}+(1+x)^{x}\ln(1+x)" display="inline"><mrow><mrow><mi>x</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>+</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.9.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Encontre a equação da reta tangente ao gráfico de <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="f(x)=\operatorname{arc}\operatorname{tg}x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>arc</mi><mo lspace="0.167em">⁡</mo><mrow><mi>tg</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></mrow></math> no ponto <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx102">Resposta</button></div><div class="collapse" id="Thmrespx102" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx102.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx102.p1.m1" class="ltx_Math" alttext="y=x" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_deriv_sec_cadeia.html" title="In Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.8 </span>Regra da cadeia</span></a><a href="bib.html" title="In Cálculo I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_deriv_sec_derimp.html" title="In Capítulo 3 Derivadas ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.10 </span>Derivação implícita</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Nov 25 11:50:01 2025 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
