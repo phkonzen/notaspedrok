@@ -1,0 +1,1438 @@
+<!DOCTYPE html><html lang="es">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK(es) - 5.5 Integración por partes ‣ Capítulo 5 Integración ‣ Cálculo I</title>
+<!--Generated on Tue Apr 14 14:52:27 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 14 de abril de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_int.html" title="Capítulo 5 Integración ‣ Cálculo I">
+<link rel="up up" href="./" title="Cálculo I">
+<link rel="start" href="./" title="Cálculo I">
+<link rel="prev" href="cap_int_sec_subs.html" title="5.4 Integración por sustitución ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="next" href="cap_int_sec_substrigo.html" title="5.6 Integración por sustitución trigonométrica ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="section" href="cap_int_sec_nocaoint.html" title="5.1 Noción de integral ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="section" href="cap_int_sec_propint.html" title="5.2 Propiedades de integración ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="section" href="cap_int_sec_regrasbasic.html" title="5.3 Reglas básicas de integración ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="section" href="cap_int_sec_subs.html" title="5.4 Integración por sustitución ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="section" href="cap_int_sec_substrigo.html" title="5.6 Integración por sustitución trigonométrica ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="section" href="cap_int_sec_frapar.html" title="5.7 Integración por fracciones parciales ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="section" href="cap_int_sec_intimp.html" title="5.8 Integrales impropias ‣ Capítulo 5 Integración ‣ Cálculo I">
+<link rel="chapter" href="licenca.html" title="Licencia ‣ Cálculo I">
+<link rel="chapter" href="prefacio.html" title="Prefacio ‣ Cálculo I">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introducción ‣ Cálculo I">
+<link rel="chapter" href="cap_lim.html" title="Capítulo 2 Límites ‣ Cálculo I">
+<link rel="chapter" href="cap_deriv.html" title="Capítulo 3 Derivadas ‣ Cálculo I">
+<link rel="chapter" href="cap_apderiv.html" title="Capítulo 4 Aplicaciones de la derivada ‣ Cálculo I">
+<link rel="chapter" href="cap_int.html" title="Capítulo 5 Integración ‣ Cálculo I">
+<link rel="chapter" href="cap_apint.html" title="Capítulo 6 Aplicaciones de la integral ‣ Cálculo I">
+<link rel="appendix" href="cap_tabela_deriv.html" title="Apéndice A Tabla de derivadas ‣ Cálculo I">
+<link rel="appendix" href="cap_tabela_int.html" title="Apéndice B Tabla de integrales ‣ Cálculo I">
+<link rel="bibliography" href="bib.html" title="Referencias ‣ Cálculo I">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de datos</h5>
+      Al navegar por este sitio, aceptas la <a href="../politica.html">política de uso de datos</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de datos</h5>
+      Al navegar por este sitio, aceptas la <a href="../politica.html">política de uso de datos</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Inicio</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Contenido</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Apuntes de Clase</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Mini cursos</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contacto</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de datos</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Acerca de</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="text-right mb-0"><a class="link-primary" href="https://notaspedrok.com.br/calculo_i/cap_int_sec_partes.html">PT</a><span class="mx-1">|</span><a class="link-success" href="https://notaspedrok.com.br/es/calculo_i/cap_int_sec_partes.html">ES</a>
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo I</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_int.html" title="In Cálculo I" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Integración</span></a><a href="cap_int_sec_subs.html" title="In Capítulo 5 Integración ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.4 </span>Integración por sustitución</span></a><a href="cap_int_sec_substrigo.html" title="In Capítulo 5 Integración ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6 </span>Integración por sustitución trigonométrica</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ayuda a mantener el sitio libre, gratuito y sin publicidad. <a href="../colaborar.html">¡Colabora!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="es">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">5.5 </span>Integración por partes</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Sean <math id="p1.m1" class="ltx_Math" alttext="u=u(x)" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> y <math id="p1.m2" class="ltx_Math" alttext="v=v(x)" display="inline"><mrow><mi>v</mi><mo>=</mo><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> funciones diferenciables, entonces de la regla del producto para derivadas tenemos</p>
+<table id="Ch5.E406" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E406.m1" class="ltx_Math" alttext="\frac{d}{dx}(uv)=\frac{du}{dx}v+u\frac{dv}{dx}\mathchar 46\relax" display="block"><mrow><mrow><mrow><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mi>v</mi></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.406)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Integrando ambos lados, obtenemos</p>
+<table id="Ch5.E407" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E407.m1" class="ltx_Math" alttext="\int\frac{d(uv)}{dx}dx=\int\frac{du}{dx}vdx+\int u\frac{dv}{dx}dx," display="block"><mrow><mrow><mrow><mo>∫</mo><mrow><mfrac><mrow><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><mo>∫</mo><mrow><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo>⁢</mo><mi>v</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.055em">+</mo><mrow><mo>∫</mo><mrow><mi>u</mi><mo>⁢</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.407)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">de donde</p>
+<table id="Ch5.E408" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E408.m1" class="ltx_Math" alttext="uv=\int vdu+\int udv\mathchar 46\relax" display="block"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo rspace="0.111em">=</mo><mrow><mrow><mo>∫</mo><mrow><mi>v</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>u</mi></mrow></mrow></mrow><mo rspace="0.055em">+</mo><mrow><mo>∫</mo><mrow><mi>u</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>v</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.408)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">De ahí se obtiene la <span class="ltx_text ltx_font_bold">fórmula de integración por partes</span></p>
+<table id="Ch5.E409" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E409.m1" class="ltx_Math" alttext="{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\int udv=uv-%
+\int vdu}\mathchar 46\relax" display="block"><mrow><mrow><mrow><mo mathcolor="#0000FF">∫</mo><mrow><mi mathcolor="#0000FF">u</mi><mo lspace="0em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">𝑑</mo><mi mathcolor="#0000FF">v</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">u</mi><mo>⁢</mo><mi mathcolor="#0000FF">v</mi></mrow><mo mathcolor="#0000FF" rspace="0.055em">−</mo><mrow><mo mathcolor="#0000FF">∫</mo><mrow><mi mathcolor="#0000FF">v</mi><mo lspace="0em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">𝑑</mo><mi mathcolor="#0000FF">u</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.409)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Ejemplo 5.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Vamos a calcular</p>
+<table id="Ch5.E410" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E410.m1" class="ltx_Math" alttext="\int xe^{x}\,dx\mathchar 46\relax" display="block"><mrow><mrow><mo>∫</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.410)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">usando integración por partes. Elegimos</p>
+<table id="A2.S0.EGx340" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E411"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E411.m1" class="ltx_Math" alttext="\displaystyle{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1%
+}u=x}" display="inline"><mrow><mi mathcolor="#0000FF">u</mi><mo mathcolor="#0000FF">=</mo><mi mathcolor="#0000FF">x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.411)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E412"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E412.m1" class="ltx_Math" alttext="\displaystyle\frac{du}{dx}=1" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.412)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E413"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E413.m1" class="ltx_Math" alttext="\displaystyle{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1%
+}du=dx}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">u</mi></mrow><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.413)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">y</p>
+<table id="A2.S0.EGx341" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E414"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E414.m1" class="ltx_Math" alttext="\displaystyle{\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0%
+}dv=e^{x}\,dx}" display="inline"><mrow><mrow><mi mathcolor="#FF0000">d</mi><mo>⁢</mo><mi mathcolor="#FF0000">v</mi></mrow><mo mathcolor="#FF0000">=</mo><mrow><msup><mi mathcolor="#FF0000">e</mi><mi mathcolor="#FF0000">x</mi></msup><mo>⁢</mo><mi mathcolor="#FF0000">d</mi><mo>⁢</mo><mi mathcolor="#FF0000">x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.414)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E415"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E415.m1" class="ltx_Math" alttext="\displaystyle\int dv=\int e^{x}\,dx" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mo lspace="0em" rspace="0em">𝑑</mo><mi>v</mi></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.415)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E416"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E416.m1" class="ltx_Math" alttext="\displaystyle{\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0%
+}v=e^{x}}\mathchar 46\relax" display="inline"><mrow><mrow><mi mathcolor="#FF0000">v</mi><mo mathcolor="#FF0000">=</mo><msup><mi mathcolor="#FF0000">e</mi><mi mathcolor="#FF0000">x</mi></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.416)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Observamos que al calcular <math id="Thmex1.p1.m1" class="ltx_Math" alttext="v" display="inline"><mi>v</mi></math>, despreciamos la constante de integración. Entonces, por la fórmula de integración por partes, tenemos</p>
+<table id="A2.S0.EGx342" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E417"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E417.m1" class="ltx_Math" alttext="\displaystyle\int{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{%
+0,0,1}x}{\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}e^{x%
+}\,dx}=\int{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}u%
+}{\color[rgb]{1,0,0}\definecolor[named]{pgfstrokecolor}{rgb}{1,0,0}dv}" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi mathcolor="#0000FF">x</mi><mo>⁢</mo><msup><mi mathcolor="#FF0000">e</mi><mi mathcolor="#FF0000">x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo mathcolor="#FF0000" rspace="0em">𝑑</mo><mi mathcolor="#FF0000">x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi mathcolor="#0000FF">u</mi><mo lspace="0em">⁢</mo><mrow><mo mathcolor="#FF0000" rspace="0em">𝑑</mo><mi mathcolor="#FF0000">v</mi></mrow></mrow></mrow></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.417)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E418"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E418.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad={\color[rgb]{0,0,1}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0,0,1}u}{\color[rgb]{1,0,0}\definecolor[named]{%
+pgfstrokecolor}{rgb}{1,0,0}v}-\int{\color[rgb]{1,0,0}\definecolor[named]{%
+pgfstrokecolor}{rgb}{1,0,0}v}{\color[rgb]{0,0,1}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0,0,1}du}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi mathcolor="#0000FF">u</mi><mi mathcolor="#FF0000">v</mi><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi mathcolor="#FF0000">v</mi><mi mathcolor="#0000FF">d</mi><mi mathcolor="#0000FF">u</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.418)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E419"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E419.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=xe^{x}-\int e^{x}dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><msup><mi>e</mi><mi>x</mi></msup><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><msup><mi>e</mi><mi>x</mi></msup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.419)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E420"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E420.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=xe^{x}-e^{x}+C\mathchar 46\relax" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><msup><mi>e</mi><mi>x</mi></msup><mo>−</mo><msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><mi>C</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.420)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">En algunos casos, es posible hacer más de una elección en la aplicación de la integración por partes.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.5.1 </span>La integral del logaritmo natural</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Vamos a calcular</p>
+<table id="Ch5.E421" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E421.m1" class="ltx_Math" alttext="\int\ln x\,dx\mathchar 46\relax" display="block"><mrow><mrow><mo>∫</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.421)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Usando integración por partes, elegimos</p>
+<table id="A2.S0.EGx343" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E422"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E422.m1" class="ltx_Math" alttext="\displaystyle u=\ln x" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.422)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E423"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E423.m1" class="ltx_Math" alttext="\displaystyle du=\frac{1}{x}\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.423)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">y</p>
+<table id="A2.S0.EGx344" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E424"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E424.m1" class="ltx_Math" alttext="\displaystyle dv=dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mo>=</mo><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.424)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E425"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E425.m1" class="ltx_Math" alttext="\displaystyle v=\int dx=x" display="inline"><mrow><mi>v</mi><mo>=</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mo lspace="0em" rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mstyle><mo>=</mo><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.425)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Por la fórmula de integración por partes, se sigue que</p>
+<table id="A2.S0.EGx345" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E426"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E426.m1" class="ltx_Math" alttext="\displaystyle\int\ln x\,dx=\int u\,dv" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>u</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>v</mi></mrow></mrow></mrow></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.426)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E427"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E427.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=uv-\int v\,du" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>u</mi><mi>v</mi><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>v</mi><mi>d</mi><mi>u</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.427)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E428"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E428.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=x\ln(x)-\int x\frac{1}{x}\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><mi>ln</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>x</mi><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.428)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E429"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E429.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=x\ln(x)-\int dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><mi>ln</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.429)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E430"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E430.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=x\ln(x)-x+C\mathchar 46\relax" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><mi>ln</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mi>x</mi><mo>+</mo><mi>C</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.430)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Es decir, concluimos que</p>
+<table id="eq:int_lnx" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E431.m1" class="ltx_Math" alttext="{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\int\ln x\,%
+dx=x\ln(x)-x+C}\mathchar 46\relax" display="block"><mrow><mrow><mrow><mo mathcolor="#0000FF">∫</mo><mrow><mi mathcolor="#0000FF">ln</mi><mo lspace="0.167em">⁡</mo><mrow><mi mathcolor="#0000FF">x</mi><mo lspace="0.170em">⁢</mo><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mrow><mi mathcolor="#0000FF">x</mi><mo lspace="0.167em">⁢</mo><mrow><mi mathcolor="#0000FF">ln</mi><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">C</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.431)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Ejemplo 5.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Calculamos las siguientes integrales:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{1}^{e}\ln(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mi>e</mi></msubsup></mstyle><mrow><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<table id="A2.S0.EGx346" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E432"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E432.m1" class="ltx_Math" alttext="\displaystyle\int_{1}^{e}\ln(x)\,dx=\left\mathchar 46\relax x\ln(x)-x\right|_{%
+1}^{e}" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mi>e</mi></msubsup></mstyle><mrow><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><msubsup><mrow><mi>x</mi><mo>|</mo></mrow><mn>1</mn><mi>e</mi></msubsup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.432)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E433"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E433.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=e\ln(e)-e-[1\cdot\ln(1)-1]" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>e</mi><mi>ln</mi><mrow><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mi>e</mi><mo>−</mo><mrow><mo stretchy="false">[</mo><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>ln</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>−</mo><mn>1</mn><mo stretchy="false">]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.433)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E434"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E434.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=e\ln(e)-e+1" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>e</mi><mi>ln</mi><mrow><mo stretchy="false">(</mo><mi>e</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mi>e</mi><mo>+</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.434)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int\ln(2x)\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></math></p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<p class="ltx_p">Usando el método de sustitución<span id="Ch5.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note">6</span>Consultemos la Sección <a href="cap_int_sec_subs.html" title="5.4 Integración por sustitución ‣ Capítulo 5 Integración ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4</span></a> para más información sobre integración por sustitución.</span></span></span>, elegimos</p>
+<table id="A2.S0.EGx347" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E435"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E435.m1" class="ltx_Math" alttext="\displaystyle u=2x" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.435)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E436"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E436.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad du=2\,dx\mathchar 46\relax" display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.436)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Haciendo la sustitución y calculando, tenemos</p>
+<table id="A2.S0.EGx348" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E437"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E437.m1" class="ltx_Math" alttext="\displaystyle\int\ln(2x)\,dx=\int\ln(u)\frac{du}{2}" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mn>2</mn></mfrac></mrow></mrow></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.437)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E438"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E438.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2}\int\ln(u)\,du" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>ln</mi><mrow><mo stretchy="false">(</mo><mi>u</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>u</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.438)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E439"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E439.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{u\ln(u)}{2}-\frac{u}{2}+C" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>u</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mi>u</mi><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.439)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E440"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E440.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=x\ln(2x)-x+C\mathchar 46\relax" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><mi>ln</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mi>x</mi><mo>+</mo><mi>C</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.440)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.5.2 </span>Integral definida</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Sean <math id="SS2.p1.m1" class="ltx_Math" alttext="u=u(x)" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> y <math id="SS2.p1.m2" class="ltx_Math" alttext="v=v(x)" display="inline"><mrow><mi>v</mi><mo>=</mo><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> funciones diferenciables en <math id="SS2.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>. Se sigue que <math id="SS2.p1.m4" class="ltx_Math" alttext="du=u^{\prime}(x)\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math> y <math id="SS2.p1.m5" class="ltx_Math" alttext="dv=v^{\prime}(x)\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mo>=</mo><mrow><msup><mi>v</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math>. De ello se sigue que la fórmula de integración por partes para integrales definidas es</p>
+<table id="Ch5.E441" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E441.m1" class="ltx_Math" alttext="{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\int_{x=a}^{%
+b}u\,dv=\left\mathchar 46\relax uv\right|_{x=a}^{b}-\int_{x=a}^{b}v\,du}%
+\mathchar 46\relax" display="block"><mrow><mrow><mrow><msubsup><mo mathcolor="#0000FF">∫</mo><mrow><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">=</mo><mi mathcolor="#0000FF">a</mi></mrow><mi mathcolor="#0000FF">b</mi></msubsup><mrow><mi mathcolor="#0000FF">u</mi><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">𝑑</mo><mi mathcolor="#0000FF">v</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><msubsup><mrow><mrow><mi mathcolor="#0000FF">u</mi><mo>⁢</mo><mi mathcolor="#0000FF">v</mi></mrow><mo mathcolor="#0000FF">|</mo></mrow><mrow><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">=</mo><mi mathcolor="#0000FF">a</mi></mrow><mi mathcolor="#0000FF">b</mi></msubsup><mo mathcolor="#0000FF" rspace="0.055em">−</mo><mrow><msubsup><mo mathcolor="#0000FF">∫</mo><mrow><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">=</mo><mi mathcolor="#0000FF">a</mi></mrow><mi mathcolor="#0000FF">b</mi></msubsup><mrow><mi mathcolor="#0000FF">v</mi><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">𝑑</mo><mi mathcolor="#0000FF">u</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.441)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Ejemplo 5.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Vamos a calcular</p>
+<table id="Ch5.E442" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E442.m1" class="ltx_Math" alttext="\int_{0}^{2}xe^{-x}\,dx\mathchar 46\relax" display="block"><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mn>2</mn></msubsup><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.442)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para aplicar integración por partes, elegimos</p>
+<table id="A2.S0.EGx349" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E443"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E443.m1" class="ltx_Math" alttext="\displaystyle u=x" display="inline"><mrow><mi>u</mi><mo>=</mo><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.443)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E444"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E444.m1" class="ltx_Math" alttext="\displaystyle du=dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.444)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">y</p>
+<table id="A2.S0.EGx350" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E445"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E445.m1" class="ltx_Math" alttext="\displaystyle dv=e^{-x}\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.445)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E446"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E446.m1" class="ltx_Math" alttext="\displaystyle v=-e^{-x}" display="inline"><mrow><mi>v</mi><mo>=</mo><mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.446)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">De la fórmula de integración por partes para integrales definidas se obtiene que</p>
+<table id="A2.S0.EGx351" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E447"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E447.m1" class="ltx_Math" alttext="\displaystyle\int_{0}^{2}xe^{-x}\,dx=\left\mathchar 46\relax uv\right|_{x=0}^{%
+2}-\int_{x=0}^{2}e^{-x}\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>2</mn></msubsup></mstyle><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><msubsup><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo>|</mo></mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><mn>2</mn></msubsup><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><mn>2</mn></msubsup></mstyle><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.447)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E448"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E448.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left\mathchar 46\relax-xe^{-x}\right|_{0}^{2}+\int_%
+{0}^{2}e^{-x}\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mi>x</mi><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><msubsup><mo fence="false">|</mo><mn>0</mn><mn>2</mn></msubsup><mo lspace="0em">+</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>2</mn></msubsup></mstyle><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.448)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E449"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E449.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-2e^{-2}+\left[-e^{-x}\right]_{0}^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mn>2</mn><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><msubsup><mrow><mo>[</mo><mo lspace="0em">−</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo>]</mo></mrow><mn>0</mn><mn>2</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.449)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E450"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E450.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-3e^{-2}+1\mathchar 46\relax" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mn>3</mn><msup><mi>e</mi><mrow><mo>−</mo><mn>2</mn></mrow></msup><mo>+</mo><mn>1</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.450)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.5.3 </span>Lista de integrales</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<table id="A2.S0.EGx352" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E451"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E451.m1" class="ltx_Math" alttext="\displaystyle\int k\cdot f(u)\,du=k\cdot\int f(u)\,du" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mrow><mi mathsize="90%">k</mi><mo lspace="0.222em" mathsize="90%" rspace="0.222em">⋅</mo><mi mathsize="90%">f</mi></mrow><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mi mathsize="90%">k</mi><mo lspace="0.222em" mathsize="90%" rspace="0.222em">⋅</mo><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mi mathsize="90%">f</mi><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.451)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E452"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E452.m1" class="ltx_Math" alttext="\displaystyle\int\left[f(u)\pm g(u)\right]\,du=\int f(u)\,du\pm\int g(u)\,du" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" rspace="0em" stretchy="true">∫</mo><mrow><mrow><mo>[</mo><mrow><mrow><mi mathsize="90%">f</mi><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo mathsize="90%">±</mo><mrow><mi mathsize="90%">g</mi><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow></mrow><mo>]</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mi mathsize="90%">f</mi><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">±</mo><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mi mathsize="90%">g</mi><mo>⁢</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.452)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E453"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E453.m1" class="ltx_Math" alttext="\displaystyle\int u^{r}\,du=\frac{u^{r+1}}{r+1}+C,~{}r\neq-1" display="inline"><mrow><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><msup><mi mathsize="90%">u</mi><mi mathsize="90%">r</mi></msup><mo lspace="0em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mstyle displaystyle="true"><mfrac><msup><mi mathsize="90%">u</mi><mrow><mi mathsize="90%">r</mi><mo mathsize="90%">+</mo><mn mathsize="90%">1</mn></mrow></msup><mrow><mi mathsize="90%">r</mi><mo mathsize="90%">+</mo><mn mathsize="90%">1</mn></mrow></mfrac></mstyle><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow><mo mathsize="90%" rspace="0.467em">,</mo><mrow><mi mathsize="90%">r</mi><mo mathsize="90%">≠</mo><mrow><mo mathsize="90%">−</mo><mn mathsize="90%">1</mn></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.453)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E454"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E454.m1" class="ltx_Math" alttext="\displaystyle\int\frac{1}{u}\,du=\ln|u|+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mfrac><mn mathsize="90%">1</mn><mi mathsize="90%">u</mi></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mrow><mi mathsize="90%">ln</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">|</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">|</mo></mrow></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.454)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E455"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E455.m1" class="ltx_Math" alttext="\displaystyle\int e^{u}\,du=e^{u}+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><msup><mi mathsize="90%">e</mi><mi mathsize="90%">u</mi></msup><mo lspace="0em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><msup><mi mathsize="90%">e</mi><mi mathsize="90%">u</mi></msup><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.455)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E456"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E456.m1" class="ltx_Math" alttext="\displaystyle\int a^{u}\,du=\frac{a^{u}}{\ln a}+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><msup><mi mathsize="90%">a</mi><mi mathsize="90%">u</mi></msup><mo lspace="0em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mstyle displaystyle="true"><mfrac><msup><mi mathsize="90%">a</mi><mi mathsize="90%">u</mi></msup><mrow><mi mathsize="90%">ln</mi><mo lspace="0.167em">⁡</mo><mi mathsize="90%">a</mi></mrow></mfrac></mstyle><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.456)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E457"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E457.m1" class="ltx_Math" alttext="\displaystyle\int\ln u\,du=u\ln(u)-u+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mi mathsize="90%">ln</mi><mo lspace="0.167em">⁡</mo><mrow><mi mathsize="90%">u</mi><mo lspace="0.170em">⁢</mo><mi mathsize="90%">d</mi><mo>⁢</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mrow><mrow><mi mathsize="90%">u</mi><mo lspace="0.167em">⁢</mo><mrow><mi mathsize="90%">ln</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow></mrow><mo mathsize="90%">−</mo><mi mathsize="90%">u</mi></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.457)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E458"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E458.m1" class="ltx_Math" alttext="\displaystyle\int\mathop{\operator@font sen}\nolimits(u)\,du=-\cos(u)+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mo lspace="0em" mathsize="90%" rspace="0em">sen</mo><mrow><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi mathsize="90%">d</mi><mo>⁢</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mrow><mo mathsize="90%" rspace="0.167em">−</mo><mrow><mi mathsize="90%">cos</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.458)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E459"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E459.m1" class="ltx_Math" alttext="\displaystyle\int\cos(u)\,du=\mathop{\operator@font sen}\nolimits(u)+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mrow><mi mathsize="90%">cos</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%" rspace="0.1389em">=</mo><mrow><mrow><mo lspace="0.1389em" mathsize="90%" rspace="0em">sen</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.459)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E460"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E460.m1" class="ltx_Math" alttext="\displaystyle\int\mathop{\operator@font tg}\nolimits(u)\,du=\ln|\sec(u)|+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mo lspace="0em" mathsize="90%" rspace="0em">tg</mo><mrow><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi mathsize="90%">d</mi><mo>⁢</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mrow><mi mathsize="90%">ln</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">|</mo><mrow><mi mathsize="90%">sec</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo maxsize="90%" minsize="90%">|</mo></mrow></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.460)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E461"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E461.m1" class="ltx_Math" alttext="\displaystyle\int\mathop{\operator@font cotg}\nolimits(u)\,du=\ln|\mathop{%
+\operator@font sen}\nolimits(u)|+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mo lspace="0em" mathsize="90%" rspace="0em">cotg</mo><mrow><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi mathsize="90%">d</mi><mo>⁢</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mrow><mi mathsize="90%">ln</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">|</mo><mrow><mo lspace="0em" mathsize="90%" rspace="0em">sen</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo maxsize="90%" minsize="90%">|</mo></mrow></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.461)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E462"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E462.m1" class="ltx_Math" alttext="\displaystyle\int\sec(u)\,du=\ln|\sec(u)+\mathop{\operator@font tg}\nolimits(u%
+)|+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mrow><mi mathsize="90%">sec</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mrow><mi mathsize="90%">ln</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">|</mo><mrow><mrow><mi mathsize="90%">sec</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo mathsize="90%">+</mo><mrow><mo lspace="0em" mathsize="90%" rspace="0em">tg</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow></mrow><mo maxsize="90%" minsize="90%">|</mo></mrow></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.462)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E463"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E463.m1" class="ltx_Math" alttext="\displaystyle\int\operatorname{cossec}(u)\,du=-\ln|\operatorname{cossec}(u)+%
+\mathop{\operator@font cotg}\nolimits(u)|+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo maxsize="90%" minsize="90%" stretchy="true">∫</mo><mrow><mrow><mi mathsize="90%">cossec</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathsize="90%" rspace="0em">𝑑</mo><mi mathsize="90%">u</mi></mrow></mrow></mrow></mstyle><mo mathsize="90%">=</mo><mrow><mrow><mo mathsize="90%" rspace="0.167em">−</mo><mrow><mi mathsize="90%">ln</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">|</mo><mrow><mrow><mi mathsize="90%">cossec</mi><mo>⁡</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow><mo mathsize="90%">+</mo><mrow><mo lspace="0em" mathsize="90%" rspace="0em">cotg</mo><mrow><mo maxsize="90%" minsize="90%">(</mo><mi mathsize="90%">u</mi><mo maxsize="90%" minsize="90%">)</mo></mrow></mrow></mrow><mo maxsize="90%" minsize="90%">|</mo></mrow></mrow></mrow><mo mathsize="90%">+</mo><mi mathsize="90%">C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.463)</span></td>
+</tr></tbody>
+</table>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.5.4 </span>Ejercicios resueltos</h2>
+
+<div id="Thmexeresol1" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 5.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol1.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch5.E464" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E464.m1" class="ltx_Math" alttext="\int x\ln x\,dx\mathchar 46\relax" display="block"><mrow><mrow><mo>∫</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.464)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmresolx71" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolución.
+</h6>
+<div id="Thmresolx71.p1" class="ltx_para">
+<p class="ltx_p">Usamos la fórmula de integración por partes</p>
+<table id="Ch5.E465" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E465.m1" class="ltx_Math" alttext="\int udv=uv-\int vdu\mathchar 46\relax" display="block"><mrow><mrow><mrow><mo>∫</mo><mrow><mi>u</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>v</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo rspace="0.055em">−</mo><mrow><mo>∫</mo><mrow><mi>v</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>u</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.465)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para ello, elegimos</p>
+<table id="A2.S0.EGx353" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E466"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E466.m1" class="ltx_Math" alttext="\displaystyle u=\ln x" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.466)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E467"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E467.m1" class="ltx_Math" alttext="\displaystyle du=\frac{1}{x}\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.467)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">y</p>
+<table id="A2.S0.EGx354" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E468"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E468.m1" class="ltx_Math" alttext="\displaystyle dv=x\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mo>=</mo><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.468)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E469"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E469.m1" class="ltx_Math" alttext="\displaystyle v=\frac{x^{2}}{2}" display="inline"><mrow><mi>v</mi><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.469)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Se sigue que</p>
+<table id="A2.S0.EGx355" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E470"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E470.m1" class="ltx_Math" alttext="\displaystyle\int x\ln x\,dx=\int udv" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mstyle><mo>=</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>u</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>v</mi></mrow></mrow></mrow></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.470)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E471"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E471.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=uv-\int v\,du" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>u</mi><mi>v</mi><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>v</mi><mi>d</mi><mi>u</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.471)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E472"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E472.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{x^{2}}{2}\ln x-\int\frac{x^{2}}{2}\frac{1}{x}%
+\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mi>ln</mi><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mstyle displaystyle="true"><mfrac><mn>1</mn><mi>x</mi></mfrac></mstyle><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.472)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E473"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E473.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{x^{2}}{2}\ln x-\frac{1}{2}\int x\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mi>ln</mi><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mstyle displaystyle="true"><mo>∫</mo></mstyle><mi>x</mi><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.473)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E474"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E474.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{x^{2}}{2}\ln x-\frac{1}{2}\frac{x^{2}}{2}+C" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mi>ln</mi><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.474)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E475"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E475.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{x^{2}}{2}\ln x-\frac{x^{2}}{4}+C\mathchar 46\relax" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mi>ln</mi><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>4</mn></mfrac></mstyle><mo>+</mo><mi>C</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.475)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST103" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 103: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgaW50ZWdyYXRlLCBsb2cKZnJvbSBzeW1weS5hYmMgaW1wb3J0IHgKaW50ZWdyYXRlKHgqbG9nKHgpLCB4KQ==" download="">⬇</a></div>
+<div id="lstnumberx559" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">log</span>
+</div>
+<div id="lstnumberx560" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx561" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">log</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="Thmresolx71.p2" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,eCoqMipsb2coeCkvMiAtIHgqKjIvNA==" download="">⬇</a></div>
+<div id="lstnumberx562" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">log</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)/2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**2/4</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexeresol2" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 5.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol2.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch5.E476" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E476.m1" class="ltx_Math" alttext="\int_{-1}^{1}xe^{x}\,dx\mathchar 46\relax" display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.476)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmresolx72" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolución.
+</h6>
+<div id="Thmresolx72.p1" class="ltx_para">
+<p class="ltx_p">Primeramente, vamos a calcular</p>
+<table id="Ch5.E477" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E477.m1" class="ltx_Math" alttext="\int xe^{-x}\,dx" display="block"><mrow><mo>∫</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.477)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Por integración por partes, elegimos</p>
+<table id="A2.S0.EGx356" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E478"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E478.m1" class="ltx_Math" alttext="\displaystyle u=x" display="inline"><mrow><mi>u</mi><mo>=</mo><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.478)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E479"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E479.m1" class="ltx_Math" alttext="\displaystyle du=dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.479)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">y</p>
+<table id="A2.S0.EGx357" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E480"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E480.m1" class="ltx_Math" alttext="\displaystyle dv=e^{x}\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mo>=</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.480)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E481"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E481.m1" class="ltx_Math" alttext="\displaystyle v=e^{x}" display="inline"><mrow><mi>v</mi><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.481)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Se sigue que</p>
+<table id="A2.S0.EGx358" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E482"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E482.m1" class="ltx_Math" alttext="\displaystyle\int xe^{x}\,dx=uv-\int v\,du" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo>−</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>u</mi></mrow></mrow></mrow></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.482)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E483"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E483.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=xe^{x}-\int e^{x}\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><msup><mi>e</mi><mi>x</mi></msup><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><msup><mi>e</mi><mi>x</mi></msup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.483)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E484"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E484.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=xe^{x}-e^{x}+C" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>x</mi><msup><mi>e</mi><mi>x</mi></msup><mo>−</mo><msup><mi>e</mi><mi>x</mi></msup><mo>+</mo><mi>C</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.484)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmresolx72.p2" class="ltx_para">
+<p class="ltx_p">Entonces, aplicamos el teorema fundamental del cálculo como sigue</p>
+<table id="A2.S0.EGx359" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E485"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E485.m1" class="ltx_Math" alttext="\displaystyle\int_{-1}^{1}xe^{x}\,dx=\left\mathchar 46\relax xe^{x}-e^{x}%
+\right|_{-1}^{1}" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup></mrow><mo>−</mo><msubsup><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>|</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.485)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E486"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E486.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=1\cdot e^{1}-e^{1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>e</mi><mn>1</mn></msup><mo>−</mo><msup><mi>e</mi><mn>1</mn></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.486)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E487"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E487.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad-(-1\cdot e^{-1}-e^{-1})" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.487)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E488"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E488.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{2}{e}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mi>e</mi></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.488)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST104" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 104: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgaW50ZWdyYXRlLCBleHAKZnJvbSBzeW1weS5hYmMgaW1wb3J0IHgKaW50ZWdyYXRlKHgqZXhwKHgpLCAoeCwgLTEsIDEpKQ==" download="">⬇</a></div>
+<div id="lstnumberx563" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span>
+</div>
+<div id="lstnumberx564" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx565" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1))</span>
+</div>
+</div>
+</figure>
+<div id="Thmresolx72.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,MipleHAoLTEp" download="">⬇</a></div>
+<div id="lstnumberx566" class="ltx_listingline">
+<span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1)</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div id="Thmexeresol3" class="ltx_theorem ltx_theorem_exeresol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">ER 5.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexeresol3.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch5.E489" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E489.m1" class="ltx_Math" alttext="\int e^{x}\mathop{\operator@font sen}\nolimits(x)\,dx\mathchar 46\relax" display="block"><mrow><mrow><mo>∫</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.489)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="Thmresolx73" class="ltx_theorem ltx_theorem_resol">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Resolución.
+</h6>
+<div id="Thmresolx73.p1" class="ltx_para">
+<p class="ltx_p">Por integración por partes, elegimos</p>
+<table id="A2.S0.EGx360" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E490"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E490.m1" class="ltx_Math" alttext="\displaystyle u=e^{x}" display="inline"><mrow><mi>u</mi><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.490)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E491"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E491.m1" class="ltx_Math" alttext="\displaystyle du=e^{x}\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.491)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">y</p>
+<table id="A2.S0.EGx361" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E492"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E492.m1" class="ltx_Math" alttext="\displaystyle dv=\mathop{\operator@font sen}\nolimits(x)\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mo rspace="0.1389em">=</mo><mrow><mo lspace="0.1389em" rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.492)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E493"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E493.m1" class="ltx_Math" alttext="\displaystyle v=-\cos(x)" display="inline"><mrow><mi>v</mi><mo>=</mo><mrow><mo rspace="0.167em">−</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.493)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Entonces, se sigue que</p>
+<table id="A2.S0.EGx362" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:exeresol_int_excosx"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E494.m2" class="ltx_Math" alttext="\displaystyle\int e^{x}\mathop{\operator@font sen}\nolimits(x)\,dx=uv-\int v\,du" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mstyle><mo>=</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo>−</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>u</mi></mrow></mrow></mrow></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.494)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E495"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E495.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-e^{x}\cos(x)+{\color[rgb]{0,0,1}\definecolor[named]%
+{pgfstrokecolor}{rgb}{0,0,1}\int e^{x}\cos(x)\,dx}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><msup><mi>e</mi><mi>x</mi></msup><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><mstyle displaystyle="true"><mo mathcolor="#0000FF">∫</mo></mstyle><msup><mi mathcolor="#0000FF">e</mi><mi mathcolor="#0000FF">x</mi></msup><mi mathcolor="#0000FF">cos</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" rspace="0.170em" stretchy="false">)</mo></mrow><mi mathcolor="#0000FF">d</mi><mi mathcolor="#0000FF">x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.495)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A su vez, integramos por partes esta última, eligiendo</p>
+<table id="A2.S0.EGx363" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E496"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E496.m1" class="ltx_Math" alttext="\displaystyle u=e^{x}" display="inline"><mrow><mi>u</mi><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.496)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E497"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E497.m1" class="ltx_Math" alttext="\displaystyle du=e^{x}\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>u</mi></mrow><mo>=</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.497)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">y</p>
+<table id="A2.S0.EGx364" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E498"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E498.m1" class="ltx_Math" alttext="\displaystyle dv=\cos(x)\,dx" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>v</mi></mrow><mo>=</mo><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.498)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E499"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E499.m1" class="ltx_Math" alttext="\displaystyle v=\mathop{\operator@font sen}\nolimits(x)" display="inline"><mrow><mi>v</mi><mo rspace="0.1389em">=</mo><mrow><mo lspace="0.1389em" rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.499)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Con ello, tenemos</p>
+<table id="A2.S0.EGx365" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E500"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E500.m1" class="ltx_Math" alttext="\displaystyle{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1%
+}\int e^{x}\cos(x)\,dx}=uv-\int v\,du" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo mathcolor="#0000FF">∫</mo><mrow><msup><mi mathcolor="#0000FF">e</mi><mi mathcolor="#0000FF">x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mi mathcolor="#0000FF">cos</mi><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">𝑑</mo><mi mathcolor="#0000FF">x</mi></mrow></mrow></mrow></mstyle><mo>=</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mi>v</mi></mrow><mo>−</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>u</mi></mrow></mrow></mrow></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.500)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E501"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E501.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=e^{x}\mathop{\operator@font sen}\nolimits(x)-\int e^%
+{x}\mathop{\operator@font sen}\nolimits(x)\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em" rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mstyle displaystyle="true"><mo>∫</mo></mstyle><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em" rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.501)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Entonces, volvemos a (<a href="#eq:exeresol_int_excosx" title="In Resolución 0. ‣ 5.5.4 Ejercicios resueltos ‣ 5.5 Integración por partes ‣ Capítulo 5 Integración ‣ Cálculo I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.494</span></a>) y obtenemos</p>
+<table id="A2.S0.EGx366" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch5.E502"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E502.m1" class="ltx_Math" alttext="\displaystyle\int e^{x}\mathop{\operator@font sen}\nolimits(x)\,dx=-e^{x}\cos(%
+x)+{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}e^{x}%
+\mathop{\operator@font sen}\nolimits(x)-\int e^{x}\mathop{\operator@font sen}%
+\nolimits(x)\,dx}" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mstyle><mo>=</mo><mrow><mrow><mrow><mo mathcolor="#000000">−</mo><mrow><msup><mi mathcolor="#000000">e</mi><mi mathcolor="#000000">x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mi mathcolor="#000000">cos</mi><mo>⁡</mo><mrow><mo mathcolor="#000000" stretchy="false">(</mo><mi mathcolor="#000000">x</mi><mo mathcolor="#000000" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo mathcolor="#000000">+</mo><mrow><msup><mi mathcolor="#0000FF">e</mi><mi mathcolor="#0000FF">x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">sen</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo mathcolor="#0000FF">−</mo><mstyle displaystyle="true"><mrow><mo mathcolor="#0000FF">∫</mo><mrow><msup><mi mathcolor="#0000FF">e</mi><mi mathcolor="#0000FF">x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">sen</mo><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow></mrow></mrow></mrow></mstyle></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.502)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E503"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E503.m1" class="ltx_Math" alttext="\displaystyle 2\int e^{x}\mathop{\operator@font sen}\nolimits(x)\,dx=-e^{x}%
+\cos(x)+e^{x}\mathop{\operator@font sen}\nolimits(x)" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mstyle></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>+</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.503)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E504"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E504.m1" class="ltx_Math" alttext="\displaystyle\int e^{x}\mathop{\operator@font sen}\nolimits(x)\,dx=\frac{1}{2}%
+e^{x}\mathop{\operator@font sen}\nolimits(x)-\frac{1}{2}e^{x}\cos(x)+C" display="inline"><mrow><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mstyle><mo>=</mo><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>+</mo><mi>C</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.504)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div class="ltx_logical-block ltx_minipage ltx_align_middle" style="width:433.6pt;">
+<figure id="LST105" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 105: </span><a href="https://www.python.org" title="" class="ltx_ref ltx_href">Python</a></figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBzeW1weSBpbXBvcnQgaW50ZWdyYXRlLCBleHAsIHNpbgpmcm9tIHN5bXB5LmFiYyBpbXBvcnQgeAppbnRlZ3JhdGUoZXhwKHgpKnNpbih4KSwgeCk=" download="">⬇</a></div>
+<div id="lstnumberx567" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span>
+</div>
+<div id="lstnumberx568" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sympy</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">abc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span>
+</div>
+<div id="lstnumberx569" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">integrate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="Thmresolx73.p2" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,ZXhwKHgpKnNpbih4KS8yIC0gZXhwKHgpKmNvcyh4KS8y" download="">⬇</a></div>
+<div id="lstnumberx570" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sin</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)/2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">exp</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)*</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cos</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)/2</span>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<section id="SS5" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">5.5.5 </span>Ejercicios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int xe^{2x}\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></math></p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int(x-1)e^{x}\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo rspace="0em">∫</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></math></p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="\displaystyle\int x^{2}\ln(x)\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx179">Respuesta</button></div><div class="collapse" id="Thmrespx179" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx179.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx179.p1.m1" class="ltx_Math" alttext="\frac{2x-1}{4}e^{2x}+C" display="inline"><mrow><mrow><mfrac><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mn>1</mn></mrow><mn>4</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></msup></mrow><mo>+</mo><mi>C</mi></mrow></math>; b) <math id="Thmrespx179.p1.m2" class="ltx_Math" alttext="(x-2)e^{x}+C" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup></mrow><mo>+</mo><mi>C</mi></mrow></math>; c) <math id="Thmrespx179.p1.m3" class="ltx_Math" alttext="\frac{x^{3}}{3}\ln(x)-\frac{x^{3}}{9}+C" display="inline"><mrow><mrow><mrow><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>3</mn></mfrac><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>−</mo><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>9</mn></mfrac></mrow><mo>+</mo><mi>C</mi></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{0}^{1}xe^{2x}\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{0}^{\ln 2}(x+1)e^{x}\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>ln</mi><mo lspace="0.167em">⁡</mo><mn>2</mn></mrow></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i3.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{1}^{e}x^{2}\ln(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mi>e</mi></msubsup></mstyle><mrow><msup><mi>x</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx180">Respuesta</button></div><div class="collapse" id="Thmrespx180" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx180.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx180.p1.m1" class="ltx_Math" alttext="\frac{1}{4}+\frac{e^{2}}{4}" display="inline"><mrow><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>+</mo><mfrac><msup><mi>e</mi><mn>2</mn></msup><mn>4</mn></mfrac></mrow></math>; b) <math id="Thmrespx180.p1.m2" class="ltx_Math" alttext="2\ln(2)" display="inline"><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math>; c) <math id="Thmrespx180.p1.m3" class="ltx_Math" alttext="\frac{1}{9}+\frac{2}{9}e^{3}" display="inline"><mrow><mfrac><mn>1</mn><mn>9</mn></mfrac><mo>+</mo><mrow><mfrac><mn>2</mn><mn>9</mn></mfrac><mo>⁢</mo><msup><mi>e</mi><mn>3</mn></msup></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch5.E505" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E505.m1" class="ltx_Math" alttext="\int\log_{2}(x)\,dx\mathchar 46\relax" display="block"><mrow><mrow><mo>∫</mo><mrow><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.505)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx181">Respuesta</button></div><div class="collapse" id="Thmrespx181" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx181.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx181.p1.m1" class="ltx_Math" alttext="\displaystyle\frac{x\ln(x)}{\log_{2}(x)}-\frac{x}{\log_{2}(x)}+C" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mi>x</mi><mrow><msub><mi>log</mi><mn>2</mn></msub><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow><mo>+</mo><mi>C</mi></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch5.E506" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E506.m1" class="ltx_Math" alttext="\int_{-1}^{1}x^{2}e^{x}\,dx\mathchar 46\relax" display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.506)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx182">Respuesta</button></div><div class="collapse" id="Thmrespx182" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx182.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx182.p1.m1" class="ltx_Math" alttext="-\frac{5}{e}+e" display="inline"><mrow><mrow><mo>−</mo><mfrac><mn>5</mn><mi>e</mi></mfrac></mrow><mo>+</mo><mi>e</mi></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int x\mathop{\operator@font sen}\nolimits(x)\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mstyle></math></p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int x\cos(x)\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx183">Respuesta</button></div><div class="collapse" id="Thmrespx183" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx183.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx183.p1.m1" class="ltx_Math" alttext="\displaystyle\mathop{\operator@font sen}\nolimits(x)-x\cos(x)+C" display="inline"><mrow><mrow><mrow><mo rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>+</mo><mi>C</mi></mrow></math>; b) <math id="Thmrespx183.p1.m2" class="ltx_Math" alttext="\displaystyle\cos(x)+x\mathop{\operator@font sen}\nolimits(x)+C" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mi>C</mi></mrow></math>;</p>
+</div>
+</div>
+<div id="Thmexer6" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int x^{2}e^{x}\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mstyle></math></p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int x^{2}\mathop{\operator@font sen}\nolimits(x)\,dx" display="inline"><mstyle displaystyle="true"><mrow><mo>∫</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></mstyle></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx184">Respuesta</button></div><div class="collapse" id="Thmrespx184" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx184.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx184.p1.m1" class="ltx_Math" alttext="\displaystyle\left(x^{2}-2x+2\right)e^{x}+C" display="inline"><mrow><mrow><mrow><mo>(</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>2</mn></mrow><mo>)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup></mrow><mo>+</mo><mi>C</mi></mrow></math>; b) <math id="Thmrespx184.p1.m2" class="ltx_Math" alttext="\displaystyle-x^{2}\cos(x)+2x\mathop{\operator@font sen}\nolimits(x)+2\cos(x)+C" display="inline"><mrow><mrow><mo>−</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mi>C</mi></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer7" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.7.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer7.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch5.E507" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E507.m1" class="ltx_Math" alttext="\int e^{x}\cos(x)\,dx\mathchar 46\relax" display="block"><mrow><mrow><mo>∫</mo><mrow><msup><mi>e</mi><mi>x</mi></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.507)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx185">Respuesta</button></div><div class="collapse" id="Thmrespx185" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx185.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx185.p1.m1" class="ltx_Math" alttext="\displaystyle\frac{\mathop{\operator@font sen}\nolimits(x)+\cos(x)}{2}e^{x}+C" display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mrow><mo rspace="0em">sen</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mn>2</mn></mfrac></mstyle><mo>⁢</mo><msup><mi>e</mi><mi>x</mi></msup></mrow><mo>+</mo><mi>C</mi></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer8" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.8.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer8.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<ol id="I6" class="ltx_enumerate">
+<li id="I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I6.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I6.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{0}^{\frac{\pi}{2}}x\mathop{\operator@font sen}\nolimits(x)%
+\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mfrac><mi>π</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">sen</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I6.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I6.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{-\pi}^{0}x\cos(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>π</mi></mrow><mn>0</mn></msubsup></mstyle><mrow><mi>x</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I6.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I6.i3.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{1}^{e}x^{2}\ln(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mi>e</mi></msubsup></mstyle><mrow><msup><mi>x</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx186">Respuesta</button></div><div class="collapse" id="Thmrespx186" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx186.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx186.p1.m1" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>; b) <math id="Thmrespx186.p1.m2" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math>; c) <math id="Thmrespx186.p1.m3" class="ltx_Math" alttext="\displaystyle\frac{1}{9}+\frac{2e^{3}}{9}" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>9</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mi>e</mi><mn>3</mn></msup></mrow><mn>9</mn></mfrac></mstyle></mrow></math></p>
+</div>
+</div>
+<div id="exer:int_sec3_x" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.5.9.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer9.p1" class="ltx_para">
+<p class="ltx_p">Calcule</p>
+<table id="Ch5.E508" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E508.m1" class="ltx_Math" alttext="\int\sec^{3}(x)\,dx" display="block"><mrow><mo>∫</mo><mrow><mrow><msup><mi>sec</mi><mn>3</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.508)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx187">Respuesta</button></div><div class="collapse" id="Thmrespx187" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+</h6>
+<div id="Thmrespx187.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx187.p1.m1" class="ltx_Math" alttext="\displaystyle\frac{\sec(x)\mathop{\operator@font tg}\nolimits(x)}{2}+\frac{1}{%
+2}\ln|\sec(x)+\mathop{\operator@font tg}\nolimits(x)|+C" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>sec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0em">tg</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mn>2</mn></mfrac></mstyle><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo lspace="0.167em">⁢</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">|</mo><mrow><mrow><mi>sec</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mo lspace="0em" rspace="0em">tg</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">|</mo></mrow></mrow></mrow><mo>+</mo><mi>C</mi></mrow></math></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envía tu comentario</h3><p class="form-text">Aprovecho para agradecer a todas/os que de forma asidua o esporádica contribuyen enviando correcciones, sugerencias y críticas. <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nombre</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Tu Nombre"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Ingresa tu nombre para que pueda contactarte.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">Correo Electrónico</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="tu-correo@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Ingresa tu correo electrónico para que pueda contactarte.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referencia</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Completado automáticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensaje</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Escribe tu mensaje aquí. (obligatorio)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">La información ingresada se envía por correo electrónico al
+      desarrollador del sitio y se trata de forma privada. Consulta la <a href="../politica.html">política de uso de
+        datos</a> para más información.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_int_sec_subs.html" title="In Capítulo 5 Integración ‣ Cálculo I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.4 </span>Integración por sustitución</span></a><a href="bib.html" title="In Cálculo I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referencias</span></a><a href="cap_int_sec_substrigo.html" title="In Capítulo 5 Integración ‣ Cálculo I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.6 </span>Integración por sustitución trigonométrica</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue Apr 14 14:52:27 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licencia Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto se publica bajo los términos de la Licencia <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.es">Creative Commons Atribución-CompartirIgual 4.0 Internacional</a>. Los íconos y elementos gráficos pueden estar sujetos a condiciones adicionales.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div class="me-auto">
+      <small class="text-muted">
+        <strong>Pedro H A Konzen</strong><br>
+        Sitio derivado de <a href="https://notaspedrok.com.br" class="link-secondary">notaspedrok.com.br</a>. Contiene traducciones al español realizadas con GitHub Copilot.
+      </small>
+    </div>
+    
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
