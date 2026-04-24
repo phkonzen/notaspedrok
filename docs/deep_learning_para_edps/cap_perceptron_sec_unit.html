@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais</title>
-<!--Generated on Fri Apr 24 13:02:07 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Fri Apr 24 13:11:44 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
 <!--Document created on 24 de abril de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -17,8 +17,8 @@
 <link rel="up up" href="./" title="Deep Learning para Equações Diferenciais Parciais">
 <link rel="start" href="./" title="Deep Learning para Equações Diferenciais Parciais">
 <link rel="prev" href="cap_perceptron.html" title="Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais">
-<link rel="next" href="cap_percepton_sec_train.html" title="2.2 Algoritmo de treinamento ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais">
-<link rel="section" href="cap_percepton_sec_train.html" title="2.2 Algoritmo de treinamento ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais">
+<link rel="next" href="cap_percepton_sec_retroprop.html" title="2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais">
+<link rel="section" href="cap_percepton_sec_retroprop.html" title="2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="chapter" href="licenca.html" title="Licença ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="chapter" href="prefacio.html" title="Prefácio ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="chapter" href="cap_siglas.html" title="Lista de siglas ‣ Deep Learning para Equações Diferenciais Parciais">
@@ -122,7 +122,7 @@
 <div class="ltx_page_main">
 <h1 class="ltx_title ltx_title_document fs-2">Deep Learning para Equações Diferenciais Parciais</h1><header class="ltx_page_header">
 <div class="ltx_align_center">
-<a href="cap_perceptron.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="cap_perceptron.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="cap_percepton_sec_train.html" title="In Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Algoritmo de treinamento</span></a>
+<a href="cap_perceptron.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="cap_perceptron.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="cap_percepton_sec_retroprop.html" title="In Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Treinamento por retro-propagação</span></a>
 </div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
 <div class="ltx_page_content">
 <section class="ltx_section ltx_authors_1line" lang="pt">
@@ -131,7 +131,7 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">A <span class="ltx_text" style="background-color:#FFFF00;">unidade básica de processamento (neurônio artificial) do tipo perceptron</span> segue o esquema dado na Figura <a href="#cap_perceptron:fig:perceptron" title="Figura 2.1 ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a>. <span class="ltx_text" style="background-color:#FFFF00;">Consiste na composição de uma <span class="ltx_text ltx_font_bold">função de ativação<span id="Ch2.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">1</span></span><span class="ltx_text ltx_font_medium">Originalmente, o perceptron tem a função sinal como função de ativação. Por referência histórica, vamos adotar este nome mesmo para unidades de processamento com outras funções de ativação</span></span></span></span></span> <math id="p1.m1" class="ltx_Math" alttext="\varphi:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi mathbackground="#FFFF00">φ</mi><mo lspace="0.278em" mathbackground="#FFFF00" rspace="0.278em">:</mo><mrow><mi mathbackground="#FFFF00">ℝ</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo><mi mathbackground="#FFFF00">ℝ</mi></mrow></mrow></math> com a <span class="ltx_text ltx_font_bold">pré-ativação</span></span></p>
-<table id="Ch4.S5.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -148,7 +148,7 @@ z:=\boldsymbol{w}\cdot\boldsymbol{x}+b" display="inline"><mrow><mi mathcolor="#0
 </tr></tbody>
 </table>
 <p class="ltx_p">onde, <math id="p1.m2" class="ltx_Math" alttext="\boldsymbol{x}=(x_{0},x_{1},\dotsc,x_{n-1})\in\mathbb{R}^{n}" display="inline"><mrow><mi>𝒙</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math> é o <span class="ltx_text ltx_font_bold">vetor de entrada</span>, <math id="p1.m3" class="ltx_Math" alttext="\boldsymbol{\theta}=(\boldsymbol{w},b)\in\mathbb{R}^{n+1}" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math> são of <span class="ltx_text ltx_font_bold">parâmetros da unidade</span>, formados pelos <span class="ltx_text ltx_font_bold">pesos</span> <math id="p1.m4" class="ltx_Math" alttext="\boldsymbol{w}=(w_{0},w_{1},\dotsc,w_{n-1})\in\mathbb{R}^{n}" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>w</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math> e o <span class="ltx_text ltx_font_bold ltx_font_italic">bias</span> <math id="p1.m5" class="ltx_Math" alttext="b\in\mathbb{R}" display="inline"><mrow><mi>b</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>. Escolhida uma função de ativação, a <span class="ltx_text ltx_font_bold">saída do neurônio</span> é computada por</p>
-<table id="Ch4.S5.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -217,7 +217,7 @@ y=\mathcal{N}\left(\boldsymbol{x};\boldsymbol{\theta}\right)" display="inline"><
 
 <div id="SS1.SSSx1.p1" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Nosso <span class="ltx_text ltx_font_bold">modelo</span> será um perceptron com duas entradas <math id="SS1.SSSx1.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}\in\{-1,1\}^{2}" display="inline"><mrow><mi mathbackground="#FFFF00">𝒙</mi><mo mathbackground="#FFFF00">∈</mo><msup><mrow><mo mathbackground="#FFFF00" stretchy="false">{</mo><mrow><mo mathbackground="#FFFF00">−</mo><mn mathbackground="#FFFF00">1,1</mn></mrow><mo mathbackground="#FFFF00" stretchy="false">}</mo></mrow><mn mathbackground="#FFFF00">2</mn></msup></mrow></math> e a função sinal</span></p>
-<table id="Ch4.S5.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -235,7 +235,7 @@ y=\mathcal{N}\left(\boldsymbol{x};\boldsymbol{\theta}\right)" display="inline"><
 </tr></tbody>
 </table>
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">como função de ativação</span>. Com isso, nosso modelo fornece a seguinte saída</p>
-<table id="Ch4.S5.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -323,7 +323,7 @@ w_{0}x_{0}+w_{1}x_{1}+b)," display="block"><mrow><mrow><mrow><mi class="ltx_font
 </tr></tbody>
 </table>
 <p class="ltx_p">corresponde à equação geral de uma reta no plano <math id="SS1.SSSx3.p2.m1" class="ltx_Math" alttext="\tau:x_{0}\times x_{1}" display="inline"><mrow><mi>τ</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo lspace="0.222em" rspace="0.222em">×</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow></math>. Esta reta divide o plano em dois semiplanos</p>
-<table id="Ch4.S5.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -357,7 +357,7 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 </figure>
 <div id="SS1.SSSx3.p3" class="ltx_para">
 <p class="ltx_p">Com base nessa interpretação geométrica, podemos escolher os parâmetros <math id="SS1.SSSx3.p3.m1" class="ltx_Math" alttext="\boldsymbol{\theta}=(\boldsymbol{w},b)" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> do nosso modelo de neurônio. Por exemplo, podemos escolher</p>
-<table id="Ch4.S5.EGx6" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx6" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -595,7 +595,7 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS2.p4" class="ltx_para">
 <p class="ltx_p">Assuma que iniciamos com <math id="SS2.p4.m1" class="ltx_Math" alttext="\boldsymbol{\theta}^{(0)}=\boldsymbol{0}" display="inline"><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math> e que na <math id="SS2.p4.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iteração de correção vamos computar os parâmetros <math id="SS2.p4.m3" class="ltx_Math" alttext="\boldsymbol{\theta}^{(k)}" display="inline"><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>. Seja <math id="SS2.p4.m4" class="ltx_Math" alttext="\beta" display="inline"><mi>β</mi></math> o ângulo entre os vetores <math id="SS2.p4.m5" class="ltx_Math" alttext="\boldsymbol{\theta}^{(k)}" display="inline"><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> e <math id="SS2.p4.m6" class="ltx_Math" alttext="\boldsymbol{\theta}^{*}" display="inline"><msup><mi>𝜽</mi><mo>∗</mo></msup></math>, então</p>
-<table id="Ch4.S5.EGx7" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx7" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -616,7 +616,7 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 </div>
 <div id="SS2.p5" class="ltx_para">
 <p class="ltx_p">Sem perda de generalidade, suponhamos que a amostra <math id="SS2.p5.m1" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> seja a amostra que gera a correção na <math id="SS2.p5.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iteração, ou seja, <math id="SS2.p5.m3" class="ltx_Math" alttext="y^{(s)}\boldsymbol{\theta}^{(k-1)}\cdot\tilde{\boldsymbol{x}}^{(s)}\leq 0" display="inline"><mrow><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>≤</mo><mn>0</mn></mrow></math>. Com isso, temos</p>
-<table id="Ch4.S5.EGx8" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx8" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -649,7 +649,7 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 </tr></tbody>
 </table>
 <p class="ltx_p">por indução matemática. Por outro lado, temos</p>
-<table id="Ch4.S5.EGx9" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx9" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E25"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -680,7 +680,7 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 </tr></tbody>
 </table>
 <p class="ltx_p">novamente por indução matemática. Com isso, temos</p>
-<table id="Ch4.S5.EGx10" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx10" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E29"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1226,9 +1226,9 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
   </div>
 </form><footer class="ltx_page_footer">
 <div class="ltx_align_center">
-<a href="cap_perceptron.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="lastpage.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_percepton_sec_train.html" title="In Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Algoritmo de treinamento</span></a>
+<a href="cap_perceptron.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="lastpage.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_percepton_sec_retroprop.html" title="In Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Treinamento por retro-propagação</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Apr 24 13:02:07 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Fri Apr 24 13:11:44 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

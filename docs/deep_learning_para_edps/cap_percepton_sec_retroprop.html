@@ -1,8 +1,8 @@
 <!DOCTYPE html><html lang="pt">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>NPK - 2.2 Algoritmo de treinamento ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais</title>
-<!--Generated on Fri Apr 24 13:02:07 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<title>NPK - 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais</title>
+<!--Generated on Fri Apr 24 13:11:44 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
 <!--Document created on 24 de abril de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -127,12 +127,15 @@
 <div class="ltx_page_content">
 <section class="ltx_section ltx_authors_1line" lang="pt">
 <h1 class="ltx_title ltx_title_section">
-<span class="ltx_tag ltx_tag_section">2.2 </span>Algoritmo de treinamento</h1>
+<span class="ltx_tag ltx_tag_section">2.2 </span>Treinamento por retro-propagação</h1>
 
 <div id="p1" class="ltx_para">
-<p class="ltx_p">Na seção anterior, desenvolvemos dois modelos de neurônios para problemas diferentes, um de classificação e outro de regressão. Em cada caso, utilizamos algoritmos de treinamento diferentes. Agora, vamos estudar algoritmos de treinamentos mais gerais<span id="Ch2.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note">3</span>Aqui, vamos explorar apenas algoritmos de treinamento supervisionado.</span></span></span>, que podem ser aplicados a ambos os problemas.</p>
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
 </div>
 <div id="p2" class="ltx_para">
+<p class="ltx_p">Na seção anterior, desenvolvemos dois modelos de neurônios para problemas diferentes, um de classificação e outro de regressão. Em cada caso, utilizamos algoritmos de treinamento diferentes. Agora, vamos estudar algoritmos de treinamentos mais gerais<span id="Ch2.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note">3</span>Aqui, vamos explorar apenas algoritmos de treinamento supervisionado.</span></span></span>, que podem ser aplicados a ambos os problemas.</p>
+</div>
+<div id="p3" class="ltx_para">
 <p class="ltx_p">Ao longo da seção, vamos considerar o <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">modelo</span> de neurônio</p>
 <table id="Ch2.E32" class="ltx_equation ltx_eqn_table">
 
@@ -145,7 +148,7 @@
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.32)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">com dada função de ativação <math id="p2.m1" class="ltx_Math" alttext="f:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>ℝ</mi><mo stretchy="false">→</mo><mi>ℝ</mi></mrow></mrow></math>, sendo os vetores de entrada <math id="p2.m2" class="ltx_Math" alttext="\boldsymbol{x}" display="inline"><mi>𝒙</mi></math> e dos pesos <math id="p2.m3" class="ltx_Math" alttext="\boldsymbol{w}" display="inline"><mi>𝒘</mi></math> de tamanho <math id="p2.m4" class="ltx_Math" alttext="n_{in}" display="inline"><msub><mi>n</mi><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></msub></math>. A pré-ativação do neurônio é denotada por</p>
+<p class="ltx_p">com dada função de ativação <math id="p3.m1" class="ltx_Math" alttext="f:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>ℝ</mi><mo stretchy="false">→</mo><mi>ℝ</mi></mrow></mrow></math>, sendo os vetores de entrada <math id="p3.m2" class="ltx_Math" alttext="\boldsymbol{x}" display="inline"><mi>𝒙</mi></math> e dos pesos <math id="p3.m3" class="ltx_Math" alttext="\boldsymbol{w}" display="inline"><mi>𝒘</mi></math> de tamanho <math id="p3.m4" class="ltx_Math" alttext="n_{in}" display="inline"><msub><mi>n</mi><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></msub></math>. A pré-ativação do neurônio é denotada por</p>
 <table id="Ch2.E33" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -156,9 +159,9 @@
 </tr></tbody>
 </table>
 </div>
-<div id="p3" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Fornecido um <span class="ltx_text ltx_font_bold">conjunto de treinamento</span></span> <math id="p3.m1" class="ltx_Math" alttext="\left\{\left(\boldsymbol{x}^{(s)},y^{(s)}\right)\right\}_{1}^{n_{s}}" display="inline"><msubsup><mrow><mo>{</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mo>}</mo></mrow><mn>1</mn><msub><mi>n</mi><mi>s</mi></msub></msubsup></math>, com <math id="p3.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> amostras, <span class="ltx_text" style="background-color:#FFFF00;">o objetivo é calcular os parâmetros <math id="p3.m3" class="ltx_Math" alttext="(\boldsymbol{w},b)" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">𝒘</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">b</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> que minimizam a <span class="ltx_text ltx_font_bold">função erro quadrático médio</span></span></p>
-<table id="Ch4.S5.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<div id="p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Fornecido um <span class="ltx_text ltx_font_bold">conjunto de treinamento</span></span> <math id="p4.m1" class="ltx_Math" alttext="\left\{\left(\boldsymbol{x}^{(s)},y^{(s)}\right)\right\}_{1}^{n_{s}}" display="inline"><msubsup><mrow><mo>{</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mo>}</mo></mrow><mn>1</mn><msub><mi>n</mi><mi>s</mi></msub></msubsup></math>, com <math id="p4.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> amostras, <span class="ltx_text" style="background-color:#FFFF00;">o objetivo é calcular os parâmetros <math id="p4.m3" class="ltx_Math" alttext="(\boldsymbol{w},b)" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">𝒘</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">b</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> que minimizam a <span class="ltx_text ltx_font_bold">função erro quadrático médio</span></span></p>
+<table id="Ch4.S3.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:percep_mse"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -177,7 +180,7 @@
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.35)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">onde <math id="p3.m4" class="ltx_Math" alttext="\tilde{y}^{(s)}=\mathcal{N}\left(\boldsymbol{x}^{(s)};(\boldsymbol{w},b)\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>)</mo></mrow></mrow></mrow></math> é o <span class="ltx_text ltx_font_bold">valor estimado</span> pelo modelo e <math id="p3.m5" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math> é o <span class="ltx_text ltx_font_bold">valor esperado</span> para a <math id="p3.m6" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra. A função erro para a <math id="p3.m7" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra é</p>
+<p class="ltx_p">onde <math id="p4.m4" class="ltx_Math" alttext="\tilde{y}^{(s)}=\mathcal{N}\left(\boldsymbol{x}^{(s)};(\boldsymbol{w},b)\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>)</mo></mrow></mrow></mrow></math> é o <span class="ltx_text ltx_font_bold">valor estimado</span> pelo modelo e <math id="p4.m5" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math> é o <span class="ltx_text ltx_font_bold">valor esperado</span> para a <math id="p4.m6" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra. A função erro para a <math id="p4.m7" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra é</p>
 <table id="Ch2.E36" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -189,7 +192,7 @@
 </tr></tbody>
 </table>
 </div>
-<div id="p4" class="ltx_para">
+<div id="p5" class="ltx_para">
 <p class="ltx_p">Ou seja, <span class="ltx_text" style="background-color:#FFFF00;">o treinamento consiste em resolver o seguinte <span class="ltx_text ltx_font_bold">problema de otimização</span></span></p>
 <table id="Ch2.E37" class="ltx_equation ltx_eqn_table">
 
@@ -202,7 +205,7 @@
 </tr></tbody>
 </table>
 </div>
-<div id="p5" class="ltx_para">
+<div id="p6" class="ltx_para">
 <p class="ltx_p">Para resolver este problema de otimização, vamos empregar o Método do Gradiente Descendente.</p>
 </div>
 <section id="SS1" class="ltx_subsection">
@@ -250,7 +253,7 @@ in}}},\frac{\partial\varepsilon}{\partial b}\right)" display="block"><mrow><mfra
 </div>
 <div id="SS1.p2" class="ltx_para">
 <p class="ltx_p">O cálculo do gradiente para os pesos <math id="SS1.p2.m1" class="ltx_Math" alttext="\boldsymbol{w}" display="inline"><mi>𝒘</mi></math> pode ser feito como segue<span id="Ch2.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note">4</span>Aqui, há um abuso de linguagem ao não se observar as dimensões dos operandos matriciais.</span></span></span></p>
-<table id="Ch4.S5.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -281,7 +284,7 @@ _{s=1}^{n_{s}}\varepsilon^{(s)}\right]" display="inline"><mrow><mi></mi><mo>=</m
 </tr></tbody>
 </table>
 <p class="ltx_p">Observando que</p>
-<table id="Ch4.S5.EGx13" class="ltx_equationgroup ltx_eqn_gather ltx_eqn_table">
+<table id="Ch4.S3.EGx13" class="ltx_equationgroup ltx_eqn_gather ltx_eqn_table">
 
 <tbody id="Ch2.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -317,7 +320,7 @@ n_{s}}2\left(\tilde{y}^{(s)}-y^{(s)}\right)f^{\prime}\left(z^{(s)}\right)%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.45)</span></td>
 </tr></tbody>
 </table>
-<table id="Ch4.S5.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E46"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -987,7 +990,7 @@ n_{s}}2\left(\tilde{y}^{(s)}-y^{(s)}\right)f^{\prime}\left(z^{(s)}\right)%
 <br class="ltx_break">
 </h6>
 <div id="Thmexer6.p1" class="ltx_para">
-<p class="ltx_p">Modifique o Código <a href="#cap_perceptron_sec_train:cod:perceptron_sgd" title="Código 4 ‣ Aplicação: problema de classificação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Algoritmo de treinamento ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a> substituindo o bloco de código</p>
+<p class="ltx_p">Modifique o Código <a href="#cap_perceptron_sec_train:cod:perceptron_sgd" title="Código 4 ‣ Aplicação: problema de classificação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a> substituindo o bloco de código</p>
 </div>
 <div id="Thmexer6.p2" class="ltx_para">
 <div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
@@ -1047,7 +1050,7 @@ n_{s}}2\left(\tilde{y}^{(s)}-y^{(s)}\right)f^{\prime}\left(z^{(s)}\right)%
 <div class="ltx_align_center">
 <a href="cap_perceptron_sec_unit.html" title="In Capítulo 2 Perceptron ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="lastpage.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_mlp.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Perceptron Multicamadas</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Apr 24 13:02:07 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Fri Apr 24 13:11:44 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

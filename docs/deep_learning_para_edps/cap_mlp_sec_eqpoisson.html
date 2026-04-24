@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 4.1 Aplicação: Equação de Poisson ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais</title>
-<!--Generated on Fri Apr 24 13:02:07 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Fri Apr 24 13:11:44 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
 <!--Document created on 24 de abril de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -20,8 +20,6 @@
 <link rel="next" href="cap_mlp_sec_calor.html" title="4.2 Aplicação: equação do calor ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="section" href="cap_mlp_sec_calor.html" title="4.2 Aplicação: equação do calor ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="section" href="cap_pinns_sec_param.html" title="4.3 PINN com parâmetro a determinar ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais">
-<link rel="section" href="cap_pinns_sec_integr.html" title="4.4 Integração de funções ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais">
-<link rel="section" href="cap_pinns_sec_fracder.html" title="4.5 Derivadas fracionárias ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="chapter" href="licenca.html" title="Licença ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="chapter" href="prefacio.html" title="Prefácio ‣ Deep Learning para Equações Diferenciais Parciais">
 <link rel="chapter" href="cap_siglas.html" title="Lista de siglas ‣ Deep Learning para Equações Diferenciais Parciais">
@@ -133,10 +131,13 @@
 <span class="ltx_tag ltx_tag_section">4.1 </span>Aplicação: Equação de Poisson</h1>
 
 <div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
+</div>
+<div id="p2" class="ltx_para">
 <p class="ltx_p">Vamos criar uma <span class="ltx_text" style="background-color:#FFFF00;">MLP para resolver o problema de Poisson</span><span id="Ch4.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>Siméon Denis Poisson, 1781 - 1840, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" title="" class="ltx_ref ltx_href">Wikipédia:Siméon Denis Poisson</a>.</span></span></span></p>
 <table id="cap_mlp_sec_eqlaplace:eq:prob" class="ltx_equationgroup ltx_eqn_table">
 <tbody>
-<tr id="Ch4.S5.EGx20" class="ltx_eqn_row"><td class="ltx_eqn_cell" colspan="4"></td></tr>
+<tr id="Ch4.S3.EGx20" class="ltx_eqn_row"><td class="ltx_eqn_cell" colspan="4"></td></tr>
 <tr id="cap_mlp_sec_eqpoisson:eq:eqPossion" class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
 <td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E1.1.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
@@ -165,7 +166,7 @@ u=0,\leavevmode\nobreak\ \boldsymbol{x}\in\partial D," display="inline"><mrow><m
 </tr></tbody>
 </table>
 </div>
-<div id="p2" class="ltx_para">
+<div id="p3" class="ltx_para">
 <p class="ltx_p">No treinamento, vamos usar a <span class="ltx_text" style="background-color:#FFFF00;">função erro baseada no resíduo da equação de Poisson</span> (<a href="#cap_mlp_sec_eqpoisson:eq:eqPossion" title="In 4.1 ‣ 4.1 Aplicação: Equação de Poisson ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1a</span></a>) <span class="ltx_text" style="background-color:#FFFF00;">e nas condições de contorno</span> (<a href="#cap_mlp_sec_eqpoisson:eq:cc" title="In 4.1 ‣ 4.1 Aplicação: Equação de Poisson ‣ Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1b</span></a>). Mais especificamente, assumimos a função erro</p>
 <table id="Ch4.E3" class="ltx_equation ltx_eqn_table">
 
@@ -190,7 +191,7 @@ n_{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}\right|^{2}}_{\text{c.c.}}," di
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.4)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">A cada época, conjuntos de pontos <math id="p2.m1" class="ltx_Math" alttext="\left\{\boldsymbol{x}^{(s)}\right\}_{s=1}^{n_{s,in}}\subset\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></msub></msubsup><mo>⊂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></math> e <math id="p2.m2" class="ltx_Math" alttext="\left\{\boldsymbol{x}^{(s)}\right\}_{s=1}^{n_{s,cc}}\subset\partial\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>c</mi><mo>⁢</mo><mi>c</mi></mrow></mrow></msub></msubsup><mo rspace="0.1389em">⊂</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></mrow></math> são randomicamente gerados com distribuição uniforme.</p>
+<p class="ltx_p">A cada época, conjuntos de pontos <math id="p3.m1" class="ltx_Math" alttext="\left\{\boldsymbol{x}^{(s)}\right\}_{s=1}^{n_{s,in}}\subset\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></msub></msubsup><mo>⊂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></math> e <math id="p3.m2" class="ltx_Math" alttext="\left\{\boldsymbol{x}^{(s)}\right\}_{s=1}^{n_{s,cc}}\subset\partial\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>c</mi><mo>⁢</mo><mi>c</mi></mrow></mrow></msub></msubsup><mo rspace="0.1389em">⊂</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></mrow></math> são randomicamente gerados com distribuição uniforme.</p>
 </div>
 <div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
 <h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 4.1.1.
@@ -568,7 +569,7 @@ n_{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}\right|^{2}}_{\text{c.c.}}," di
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Crie uma MLP para resolver</p>
-<table id="Ch4.S5.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -650,7 +651,7 @@ n_{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}\right|^{2}}_{\text{c.c.}}," di
 <div class="ltx_align_center">
 <a href="cap_pinns.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Redes informadas pela física</span></a><a href="lastpage.html" title="In Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_mlp_sec_calor.html" title="In Capítulo 4 Redes informadas pela física ‣ Deep Learning para Equações Diferenciais Parciais" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Aplicação: equação do calor</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Apr 24 13:02:07 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Fri Apr 24 13:11:44 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
