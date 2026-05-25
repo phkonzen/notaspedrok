@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 2.2 Problema modelo ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos</title>
-<!--Generated on Tue May 19 15:10:36 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 19 de maio de 2026.-->
+<!--Generated on Wed May  6 10:39:29 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 6 de maio de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -20,12 +20,10 @@
 <link rel="next" href="cap_mef2d_sec_malhas_adaptativas.html" title="2.3 Malha adaptativa baseada no resíduo ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos">
 <link rel="section" href="cap_mef2d_sec_malha.html" title="2.1 Malha e espaço ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos">
 <link rel="section" href="cap_mef2d_sec_malhas_adaptativas.html" title="2.3 Malha adaptativa baseada no resíduo ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos">
-<link rel="section" href="cap_mef2d_sec_malha_adaptativa_dual.html" title="2.4 Malha adaptativa dual ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos">
 <link rel="chapter" href="licenca.html" title="Licença ‣ Método dos Elementos Finitos">
 <link rel="chapter" href="prefacio.html" title="Prefácio ‣ Método dos Elementos Finitos">
 <link rel="chapter" href="cap_mef1d.html" title="Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos">
 <link rel="chapter" href="cap_mef2d.html" title="Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos">
-<link rel="chapter" href="cap_apl2d.html" title="Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos">
 <link rel="bibliography" href="lastpage.html" title="Referências ‣ Método dos Elementos Finitos">
 <meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -130,8 +128,8 @@
 <span class="ltx_tag ltx_tag_section">2.2 </span>Problema modelo</h1>
 
 <div id="p1" class="ltx_para">
-<p class="ltx_p">Vamos estudar a aplicação do <span class="ltx_text ltx_font_bold">método de elementos finitos</span> a equação de Poisson<span id="Ch2.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note">7</span>Siméon Denis Poisson, 1781 - 1840, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" title="" class="ltx_ref ltx_href">Wikipédia: Siméon Denis Poisson</a>.</span></span></span> com condições de Dirichlet<span id="Ch2.footnote8" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">8</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">8</sup><span class="ltx_tag ltx_tag_note">8</span>Johann Peter Gustav Lejeune Dirichlet, 1805 - 1859, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Johann_Peter_Gustav_Lejeune_Dirichlet" title="" class="ltx_ref ltx_href">Wikipédia: Johann Peter Gustav Lejeune Dirichlet</a>.</span></span></span>, que usaremos como um <span class="ltx_text ltx_font_bold">problema modelo</span>. Mais precisamente, definimos o chamdo <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">problema forte</span>: encontrar <math id="p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> tal que</p>
-<table id="Ch3.S1.EGx69" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Vamos estudar a aplicação do <span class="ltx_text ltx_font_bold">método de elementos finitos</span> a equação de Poisson<span id="Ch2.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note">7</span>Siméon Denis Poisson, 1781 - 1840, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" title="" class="ltx_ref ltx_href">Wikipédia:Siméon Denis Poisson</a>.</span></span></span> com condições de Dirichlet<span id="Ch2.footnote8" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">8</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">8</sup><span class="ltx_tag ltx_tag_note">8</span>Johann Peter Gustav Lejeune Dirichlet, 1805 - 1859, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Johann_Peter_Gustav_Lejeune_Dirichlet" title="" class="ltx_ref ltx_href">Wikipédia: Johann Peter Gustav Lejeune Dirichlet</a>.</span></span></span>, que usaremos como um <span class="ltx_text ltx_font_bold">problema modelo</span>. Mais precisamente, definimos o chamdo <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">problema forte</span>: encontrar <math id="p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> tal que</p>
+<table id="Ch2.S3.EGx69" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:mef2d_pm_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -163,7 +161,7 @@
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.33)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Então, no lado esquerdo, aplicamos a fórmula de Green<span id="Ch2.footnote10" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">10</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">10</sup><span class="ltx_tag ltx_tag_note">10</span>George Green, 1793 - 1841, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Green" title="" class="ltx_ref ltx_href">Wikipédia: George Green</a>.</span></span></span></p>
+<p class="ltx_p">Então, no lado esquerdo, aplicamos a fórmula de Green<span id="Ch2.footnote10" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">10</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">10</sup><span class="ltx_tag ltx_tag_note">10</span>George Green, 1793 - 1841, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Green" title="" class="ltx_ref ltx_href">Wikipédia:George Green </a>.</span></span></span></p>
 <table id="Ch2.E34" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -301,7 +299,7 @@ H%
 </tr></tbody>
 </table>
 <p class="ltx_p">temos</p>
-<table id="Ch3.S1.EGx70" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx70" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -369,7 +367,7 @@ H%
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Consideremos o seguinte problema de Poisson</p>
-<table id="Ch3.S1.EGx71" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx71" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E51"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -559,7 +557,7 @@ y%
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS3.SSSx1.p2" class="ltx_para">
 <p class="ltx_p">A matriz de rigidez <math id="SS3.SSSx1.p2.m1" class="ltx_Math" alttext="A=[a(\varphi_{j},\varphi_{i})]_{ij=0}^{n_{\text{in}}-1}" display="inline"><mrow><mi>A</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">[</mo><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>φ</mi><mi>j</mi></msub><mo>,</mo><msub><mi>φ</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mrow><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mtext>in</mtext></msub><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></math> é obviamente simétrica. Além disso, para todo <math id="SS3.SSSx1.p2.m2" class="ltx_Math" alttext="\boldsymbol{\xi}\in\mathbb{R}^{n_{\text{in}}}" display="inline"><mrow><mi>𝝃</mi><mo>∈</mo><msup><mi>ℝ</mi><msub><mi>n</mi><mtext>in</mtext></msub></msup></mrow></math>, <math id="SS3.SSSx1.p2.m3" class="ltx_Math" alttext="\boldsymbol{\xi}\neq 0" display="inline"><mrow><mi>𝝃</mi><mo>≠</mo><mn>0</mn></mrow></math>, temos</p>
-<table id="Ch3.S1.EGx72" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx72" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E53"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -694,7 +692,7 @@ j}\varphi_{j}\right)\right\|_{L^{2}(\Omega)}^{2}." display="inline"><mrow><mrow>
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS3.SSSx2.p3" class="ltx_para">
 <p class="ltx_p">Observando que <math id="SS3.SSSx2.p3.m1" class="ltx_Math" alttext="u-u_{h}=u-v_{h}+v_{h}-u_{h}" display="inline"><mrow><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo>=</mo><mrow><mrow><mrow><mi>u</mi><mo>−</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>+</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow></math> e usando a ortogonalidade de Galerkin (Teorema <a href="#teo:mef2d_orto_Galergin" title="Teorema 2.2.2.(Ortogonalidade de Galerkin) ‣ Estimativa a priori do erro ‣ 2.2.3 Análise de elementos finitos ‣ 2.2 Problema modelo ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2.2</span></a>), temos:</p>
-<table id="Ch3.S1.EGx73" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx73" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E62"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -760,7 +758,7 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS3.SSSx2.p4" class="ltx_para">
 <p class="ltx_p">Do resultado da melhor aproximação (Teorema <a href="#teo:mef2d_melhor_aprox" title="Teorema 2.2.3.(Melhor aproximação) ‣ Estimativa a priori do erro ‣ 2.2.3 Análise de elementos finitos ‣ 2.2 Problema modelo ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2.3</span></a>) e da estimativa do erro de interpolação (Proposição <a href="cap_mef2d_sec_malha.html#prop:interpc" title="Proposição 2.1.2.(Erro de interpolação em 𝑉_ℎ) ‣ Interpolação ‣ 2.1.3 Espaço contínuo dos polinômios afins por partes ‣ 2.1 Malha e espaço ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.2</span></a>), segue que</p>
-<table id="Ch3.S1.EGx74" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx74" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E68"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -810,7 +808,7 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS3.SSSx2.p6" class="ltx_para">
 <p class="ltx_p">Se <math id="SS3.SSSx2.p6.m1" class="ltx_Math" alttext="\Omega" display="inline"><mi mathvariant="normal">Ω</mi></math> tem contorno suficientemente suave, então existe <math id="SS3.SSSx2.p6.m2" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math> tal que <math id="SS3.SSSx2.p6.m3" class="ltx_Math" alttext="-\Delta\phi=1" display="inline"><mrow><mrow><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>ϕ</mi></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math> em <math id="SS3.SSSx2.p6.m4" class="ltx_Math" alttext="\Omega" display="inline"><mi mathvariant="normal">Ω</mi></math> com <math id="SS3.SSSx2.p6.m5" class="ltx_Math" alttext="\sup_{x\in\Omega}|\nabla\phi|&lt;C" display="inline"><mrow><mrow><msub><mo>sup</mo><mrow><mi>x</mi><mo>∈</mo><mi mathvariant="normal">Ω</mi></mrow></msub><mrow><mo lspace="0em" stretchy="false">|</mo><mrow><mo rspace="0.167em">∇</mo><mi>ϕ</mi></mrow><mo stretchy="false">|</mo></mrow></mrow><mo>&lt;</mo><mi>C</mi></mrow></math>. Com isso, temos</p>
-<table id="Ch3.S1.EGx75" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx75" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E72"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -825,8 +823,8 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.73)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Agora, usando o Teorema de Green<span id="Ch2.footnote11" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">11</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">11</sup><span class="ltx_tag ltx_tag_note">11</span>George Green, 1793 - 1841, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Green" title="" class="ltx_ref ltx_href">Wikipédia: George Green</a>.</span></span></span> e a desigualdade de Cauchy<span id="Ch2.footnote12" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">12</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">12</sup><span class="ltx_tag ltx_tag_note">12</span>Augustin-Louis Cauchy, 1789-1857, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Augustin-Louis_Cauchy" title="" class="ltx_ref ltx_href">Wikipédia: Augustin-Louis Cauchy</a>.</span></span></span>-Schwarz<span id="Ch2.footnote13" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">13</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">13</sup><span class="ltx_tag ltx_tag_note">13</span>Karl Hermann Amandus Schwarz, 1843-1921, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Hermann_Amandus_Schwarz" title="" class="ltx_ref ltx_href">Wikipédia: Hermann Amandus Schwarz</a>.</span></span></span>, obtemos</p>
-<table id="Ch3.S1.EGx76" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Agora, usando o Teorema de Green<span id="Ch2.footnote11" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">11</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">11</sup><span class="ltx_tag ltx_tag_note">11</span>George Green, 1793 - 1841, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Green" title="" class="ltx_ref ltx_href">Wikipédia:George Green </a>.</span></span></span> e a desigualdade de Cauchy<span id="Ch2.footnote12" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">12</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">12</sup><span class="ltx_tag ltx_tag_note">12</span>Augustin-Louis Cauchy, 1789-1857, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Augustin-Louis_Cauchy" title="" class="ltx_ref ltx_href">Wikipédia: Augustin-Louis Cauchy</a>.</span></span></span>-Schwarz<span id="Ch2.footnote13" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">13</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">13</sup><span class="ltx_tag ltx_tag_note">13</span>Karl Hermann Amandus Schwarz, 1843-1921, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Hermann_Amandus_Schwarz" title="" class="ltx_ref ltx_href">Wikipédia: Hermann Amandus Schwarz</a>.</span></span></span>, obtemos</p>
+<table id="Ch2.S3.EGx76" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E74"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -889,7 +887,7 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS3.SSSx2.p8" class="ltx_para">
 <p class="ltx_p">Seja <math id="SS3.SSSx2.p8.m1" class="ltx_Math" alttext="e=u-u_{h}" display="inline"><mrow><mi>e</mi><mo>=</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow></math> o erro e <math id="SS3.SSSx2.p8.m2" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math> a solução do problema dual (ou problema adjunto)</p>
-<table id="Ch3.S1.EGx77" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx77" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E79"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -905,8 +903,8 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.80)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Então, usando a fórmula de Green<span id="Ch2.footnote14" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">14</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">14</sup><span class="ltx_tag ltx_tag_note">14</span>George Green, 1793 - 1841, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Green" title="" class="ltx_ref ltx_href">Wikipédia: George Green</a>.</span></span></span>, a ortogonalidade de Galerkin<span id="Ch2.footnote15" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">15</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">15</sup><span class="ltx_tag ltx_tag_note">15</span>Boris Galerkin, 1871 - 1945, engenheiro e matemático soviético. Fonte: <a href="https://pt.wikipedia.org/wiki/Boris_Galerkin" title="" class="ltx_ref ltx_href">Wikipédia: Boris Galerkin</a>.</span></span></span> e, então, a desigualdade de Cauchy<span id="Ch2.footnote16" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">16</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">16</sup><span class="ltx_tag ltx_tag_note">16</span>Augustin-Louis Cauchy, 1789-1857, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Augustin-Louis_Cauchy" title="" class="ltx_ref ltx_href">Wikipédia: Augustin-Louis Cauchy</a>.</span></span></span>-Schwarz<span id="Ch2.footnote17" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">17</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">17</sup><span class="ltx_tag ltx_tag_note">17</span>Karl Hermann Amandus Schwarz, 1843-1921, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Hermann_Amandus_Schwarz" title="" class="ltx_ref ltx_href">Wikipédia: Hermann Amandus Schwarz</a>.</span></span></span>, temos</p>
-<table id="Ch3.S1.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Então, usando a fórmula de Green<span id="Ch2.footnote14" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">14</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">14</sup><span class="ltx_tag ltx_tag_note">14</span>George Green, 1793 - 1841, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Green" title="" class="ltx_ref ltx_href">Wikipédia:George Green </a>.</span></span></span>, a ortogonalidade de Galerkin<span id="Ch2.footnote15" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">15</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">15</sup><span class="ltx_tag ltx_tag_note">15</span>Boris Galerkin, 1871 - 1945, engenheiro e matemático soviético. Fonte: <a href="https://pt.wikipedia.org/wiki/Boris_Galerkin" title="" class="ltx_ref ltx_href">Wikipédia</a>.</span></span></span> e, então, a desigualdade de Cauchy<span id="Ch2.footnote16" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">16</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">16</sup><span class="ltx_tag ltx_tag_note">16</span>Augustin-Louis Cauchy, 1789-1857, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Augustin-Louis_Cauchy" title="" class="ltx_ref ltx_href">Wikipédia: Augustin-Louis Cauchy</a>.</span></span></span>-Schwarz<span id="Ch2.footnote17" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">17</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">17</sup><span class="ltx_tag ltx_tag_note">17</span>Karl Hermann Amandus Schwarz, 1843-1921, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Hermann_Amandus_Schwarz" title="" class="ltx_ref ltx_href">Wikipédia: Hermann Amandus Schwarz</a>.</span></span></span>, temos</p>
+<table id="Ch2.S3.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E81"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -945,8 +943,8 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.85)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Agora, da regularidade elíptica <math id="SS3.SSSx2.p8.m3" class="ltx_Math" alttext="\|D^{2}\phi\|_{L^{2}(\Omega)}\leq C\|\Delta\phi\|_{L^{2}(\Omega)}" display="inline"><mrow><msub><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>D</mi><mn>2</mn></msup><mo>⁢</mo><mi>ϕ</mi></mrow><mo stretchy="false">‖</mo></mrow><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">)</mo></mrow></mrow></msub><mo>≤</mo><mrow><mi>C</mi><mo>⁢</mo><msub><mrow><mo stretchy="false">‖</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>ϕ</mi></mrow><mo stretchy="false">‖</mo></mrow><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">)</mo></mrow></mrow></msub></mrow></mrow></math> <cite class="ltx_cite ltx_citemacro_cite">[<a href="lastpage.html#bib5" title="Partial differential equations" class="ltx_ref">5</a>, Seção 6.3]</cite> e da estimativa do erro de interpolação (Proposição <a href="cap_mef2d_sec_malha.html#prop:interpc" title="Proposição 2.1.2.(Erro de interpolação em 𝑉_ℎ) ‣ Interpolação ‣ 2.1.3 Espaço contínuo dos polinômios afins por partes ‣ 2.1 Malha e espaço ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.2</span></a>), temos</p>
-<table id="Ch3.S1.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Agora, da regularidade elíptica <math id="SS3.SSSx2.p8.m3" class="ltx_Math" alttext="\|D^{2}\phi\|_{L^{2}(\Omega)}\leq C\|\Delta\phi\|_{L^{2}(\Omega)}" display="inline"><mrow><msub><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>D</mi><mn>2</mn></msup><mo>⁢</mo><mi>ϕ</mi></mrow><mo stretchy="false">‖</mo></mrow><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">)</mo></mrow></mrow></msub><mo>≤</mo><mrow><mi>C</mi><mo>⁢</mo><msub><mrow><mo stretchy="false">‖</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>ϕ</mi></mrow><mo stretchy="false">‖</mo></mrow><mrow><msup><mi>L</mi><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">)</mo></mrow></mrow></msub></mrow></mrow></math> <cite class="ltx_cite ltx_citemacro_cite">[<a href="lastpage.html#bib4" title="Partial differential equations" class="ltx_ref">4</a>, Seção 6.3]</cite> e da estimativa do erro de interpolação (Proposição <a href="cap_mef2d_sec_malha.html#prop:interpc" title="Proposição 2.1.2.(Erro de interpolação em 𝑉_ℎ) ‣ Interpolação ‣ 2.1.3 Espaço contínuo dos polinômios afins por partes ‣ 2.1 Malha e espaço ‣ Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.2</span></a>), temos</p>
+<table id="Ch2.S3.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E86"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1047,7 +1045,7 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Compute uma aproximação de elementos finitos para a solução do seguinte problema de Poisson com condições de Dirichlet</p>
-<table id="Ch3.S1.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E90"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1086,7 +1084,7 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Compute uma aproximação de elementos finitos para a solução do seguinte problema de Poisson</p>
-<table id="Ch3.S1.EGx81" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx81" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E94"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1131,7 +1129,7 @@ h})\,dx" display="inline"><mrow><msubsup><mrow><mo stretchy="false">‖</mo><mro
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Compute uma aproximação de elementos finitos para a solução do seguinte problema de Poisson com condições de Robin</p>
-<table id="Ch3.S1.EGx82" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx82" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E99"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1179,7 +1177,7 @@ y%
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Compute uma aproximação de elementos finitos para a solução do seguinte problema do calor</p>
-<table id="Ch3.S1.EGx83" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx83" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1217,7 +1215,7 @@ y%
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
 <p class="ltx_p">Compute uma aproximação de elementos finitos para a solução do seguinte problema</p>
-<table id="Ch3.S1.EGx84" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch2.S3.EGx84" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E107"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1285,7 +1283,7 @@ y%
 <div class="ltx_align_center">
 <a href="cap_mef2d_sec_malha.html" title="In Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Malha e espaço</span></a><a href="lastpage.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_mef2d_sec_malhas_adaptativas.html" title="In Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Malha adaptativa baseada no resíduo</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Tue May 19 15:10:36 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Wed May  6 10:39:29 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
