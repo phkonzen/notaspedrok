@@ -1,0 +1,756 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos</title>
+<!--Generated on Tue May 19 15:10:36 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 19 de maio de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_apl2d.html" title="Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos">
+<link rel="up up" href="./" title="Método dos Elementos Finitos">
+<link rel="start" href="./" title="Método dos Elementos Finitos">
+<link rel="prev" href="cap_apl2d.html" title="Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos">
+<link rel="next" href="lastpage.html" title="Referências ‣ Método dos Elementos Finitos">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Método dos Elementos Finitos">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Método dos Elementos Finitos">
+<link rel="chapter" href="cap_mef1d.html" title="Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos">
+<link rel="chapter" href="cap_mef2d.html" title="Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos">
+<link rel="chapter" href="cap_apl2d.html" title="Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos">
+<link rel="bibliography" href="lastpage.html" title="Referências ‣ Método dos Elementos Finitos">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script></head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Método dos Elementos Finitos</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_apl2d.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Aplicações 2D</span></a><a href="cap_apl2d.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Aplicações 2D</span></a><a href="lastpage.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Referências</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.1 </span>Equação de advecção-difusão</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Vamos considerar a equação de advecção-difusão em 2D, dada por:</p>
+<table id="EGx96" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq_advecao_difusao"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E1.m2" class="ltx_Math" alttext="\displaystyle-\kappa\Delta u+\mathbf{a}\cdot\nabla u=f\quad\text{em }\Omega," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>+</mo><mrow><mi>𝐚</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mspace width="1em"></mspace><mrow><mtext>em </mtext><mo>⁢</mo><mi mathvariant="normal">Ω</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E1.m3" class="ltx_Math" alttext="\displaystyle u=0\quad\text{em }\Gamma," display="inline"><mrow><mrow><mi>u</mi><mo>=</mo><mrow><mn>0</mn><mspace width="1em"></mspace><mrow><mtext>em </mtext><mo>⁢</mo><mi mathvariant="normal">Γ</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.1)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="p2.m1" class="ltx_Math" alttext="\kappa&gt;0" display="inline"><mrow><mi>κ</mi><mo>&gt;</mo><mn>0</mn></mrow></math> é o coeficiente de difusão, <math id="p2.m2" class="ltx_Math" alttext="\boldsymbol{a}" display="inline"><mi>𝒂</mi></math> é o campo de velocidade, <math id="p2.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é a fonte e <math id="p2.m4" class="ltx_Math" alttext="\Gamma" display="inline"><mi mathvariant="normal">Γ</mi></math> é a fronteira do domínio <math id="p2.m5" class="ltx_Math" alttext="\Omega" display="inline"><mi mathvariant="normal">Ω</mi></math>. Por simplicidade, consideramos que <math id="p2.m6" class="ltx_Math" alttext="\boldsymbol{a}" display="inline"><mi>𝒂</mi></math> é um campo de velocidade constante; os desenvolvimentos a seguir podem ser estendidos a campos com divergência nula, <span class="ltx_text ltx_font_italic">i.e.</span></p>
+<table id="EGx97" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E2.m1" class="ltx_Math" alttext="\displaystyle\nabla\cdot\boldsymbol{a}=0." display="inline"><mrow><mrow><mrow><mo>∇</mo><mo lspace="0em" rspace="0.222em">⋅</mo><mi>𝒂</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.2)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Além disso, assumimos condições de contorno de Dirichlet homogêneas</p>
+<table id="EGx98" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E3.m1" class="ltx_Math" alttext="\displaystyle u=0\quad\text{em }\Gamma." display="inline"><mrow><mrow><mi>u</mi><mo>=</mo><mrow><mn>0</mn><mspace width="1em"></mspace><mrow><mtext>em </mtext><mo>⁢</mo><mi mathvariant="normal">Γ</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.3)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">A formulação variacional fraca para este problema é: encontrar <math id="p3.m1" class="ltx_Math" alttext="u\in H_{0}^{1}(\Omega)" display="inline"><mrow><mi>u</mi><mo>∈</mo><mrow><msubsup><mi>H</mi><mn>0</mn><mn>1</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> tal que</p>
+<table id="eq_variacional_advecao_difusao" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E4.m1" class="ltx_Math" alttext="\kappa\left(\nabla u,\nabla v\right)+\left(\boldsymbol{a}\cdot\nabla u,v\right%
+)=\left(f,v\right)\quad\forall v\in H_{0}^{1}(\Omega)." display="block"><mrow><mrow><mrow><mrow><mrow><mi>κ</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow><mo>,</mo><mrow><mo rspace="0.167em">∇</mo><mi>v</mi></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow><mo>,</mo><mi>v</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mi>f</mi><mo>,</mo><mi>v</mi><mo>)</mo></mrow></mrow><mspace width="1.167em"></mspace><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mrow><msubsup><mi>H</mi><mn>0</mn><mn>1</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi mathvariant="normal">Ω</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.4)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Tomando <math id="p4.m1" class="ltx_Math" alttext="v=u" display="inline"><mrow><mi>v</mi><mo>=</mo><mi>u</mi></mrow></math> em (<a href="#eq_variacional_advecao_difusao" title="In 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.4</span></a>), a parte de advecção pode ser reescrita usando a identidade de Gauss<span id="Ch3.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>Johann Carl Friedrich Gauss, 1777 - 1855, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Carl_Friedrich_Gauss" title="" class="ltx_ref ltx_href">Wikipédia: Carl Friedrich Gauss</a>.</span></span></span>:</p>
+<table id="EGx99" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex1.m1" class="ltx_Math" alttext="\displaystyle\left(\boldsymbol{a}\cdot\nabla u,u\right)=\int_{\Omega}\left(%
+\boldsymbol{a}\cdot\nabla u\right)\,u\,dx" display="inline"><mrow><mrow><mo>(</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow><mo>,</mo><mi>u</mi><mo>)</mo></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub></mstyle><mrow><mrow><mo>(</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow><mo>)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>u</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex2.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2}\int_{\Omega}\nabla\cdot(\boldsymbol{a}u^%
+{2})\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mstyle displaystyle="true"><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub></mstyle><mo lspace="0.167em">∇</mo><mo lspace="0em" rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mi>𝒂</mi><msup><mi>u</mi><mn>2</mn></msup><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex3.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{2}\int_{\Gamma}\boldsymbol{a}\cdot%
+\boldsymbol{n}u^{2}\,ds" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mstyle displaystyle="true"><msub><mo>∫</mo><mi mathvariant="normal">Γ</mi></msub></mstyle><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒏</mi><msup><mi>u</mi><mn>2</mn></msup><mi>d</mi><mi>s</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.Ex4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex4.m1" class="ltx_Math" alttext="\displaystyle\text{}\qquad-\frac{1}{2}\int_{\Omega}(\nabla\cdot\boldsymbol{a})%
+u^{2}\,dx=0." display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="2em"></mspace><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi mathvariant="normal">Ω</mi></msub></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><mo>∇</mo><mo lspace="0em" rspace="0.222em">⋅</mo><mi>𝒂</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>u</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Com isso, a expressão em (<a href="#eq_variacional_advecao_difusao" title="In 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.4</span></a>) pode ser limitada, à esquerda, por Poincaré<span id="Ch3.footnote2" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup><span class="ltx_tag ltx_tag_note">2</span>Henri Poincaré, 1854 - 1912, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Henri_Poincar%C3%A9" title="" class="ltx_ref ltx_href">Wikipédia: Henri Poincaré</a>.</span></span></span>–Friedrichs<span id="Ch3.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note">3</span>Kurt Otto Friedrichs, 1901 - 1982, matemático estadunidense-alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Kurt_Otto_Friedrichs" title="" class="ltx_ref ltx_href">Wikipédia: Kurt Otto Friedrichs</a>.</span></span></span> e, à direita, por Cauchy<span id="Ch3.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note">4</span>Augustin-Louis Cauchy, 1789-1857, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Augustin-Louis_Cauchy" title="" class="ltx_ref ltx_href">Wikipédia: Augustin-Louis Cauchy</a>.</span></span></span>–Schwarz<span id="Ch3.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span>Karl Hermann Amandus Schwarz, 1843-1921, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Hermann_Amandus_Schwarz" title="" class="ltx_ref ltx_href">Wikipédia: Hermann Amandus Schwarz</a>.</span></span></span>, resultando em:</p>
+<table id="EGx100" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E5.m1" class="ltx_Math" alttext="\displaystyle\kappa C\|u\|_{H^{1}_{0}}^{2}\leq\kappa\|\nabla u\|^{2}=\left(f,u%
+\right)\leq\|f\|\|u\|\leq\|f\|\|u\|_{H^{1}_{0}}." display="inline"><mrow><mrow><mrow><mi>κ</mi><mo>⁢</mo><mi>C</mi><mo>⁢</mo><msubsup><mrow><mo stretchy="false">‖</mo><mi>u</mi><mo stretchy="false">‖</mo></mrow><msubsup><mi>H</mi><mn>0</mn><mn>1</mn></msubsup><mn>2</mn></msubsup></mrow><mo>≤</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">‖</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup></mrow><mo>=</mo><mrow><mo>(</mo><mi>f</mi><mo>,</mo><mi>u</mi><mo>)</mo></mrow><mo>≤</mo><mrow><mrow><mo stretchy="false">‖</mo><mi>f</mi><mo stretchy="false">‖</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>u</mi><mo stretchy="false">‖</mo></mrow></mrow><mo>≤</mo><mrow><mrow><mo stretchy="false">‖</mo><mi>f</mi><mo stretchy="false">‖</mo></mrow><mo>⁢</mo><msub><mrow><mo stretchy="false">‖</mo><mi>u</mi><mo stretchy="false">‖</mo></mrow><msubsup><mi>H</mi><mn>0</mn><mn>1</mn></msubsup></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.5)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, temos a <span class="ltx_text ltx_font_bold">estimativa de estabilidade</span></p>
+<table id="EGx101" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E6.m1" class="ltx_Math" alttext="\displaystyle\|u\|_{H^{1}_{0}}\leq\frac{1}{\kappa C}\|f\|." display="inline"><mrow><mrow><msub><mrow><mo stretchy="false">‖</mo><mi>u</mi><mo stretchy="false">‖</mo></mrow><msubsup><mi>H</mi><mn>0</mn><mn>1</mn></msubsup></msub><mo>≤</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>κ</mi><mo>⁢</mo><mi>C</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>f</mi><mo stretchy="false">‖</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.6)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Esta estimativa mostra que a constante de estabilidade depende inversamente do coeficiente de difusão <math id="p4.m2" class="ltx_Math" alttext="\kappa" display="inline"><mi mathbackground="#FFFF00">κ</mi></math>. Como consequência, temos a indicação de que para valores pequenos de <math id="p4.m3" class="ltx_Math" alttext="\kappa" display="inline"><mi mathbackground="#FFFF00">κ</mi></math>, pequenas perturbações em <math id="p4.m4" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFF00">f</mi></math> podem levar a grandes variações em <math id="p4.m5" class="ltx_Math" alttext="u" display="inline"><mi mathbackground="#FFFF00">u</mi></math> (instabilidade)</span>.</p>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Classicamente, o problema de elementos finitos associado é: encontrar <math id="p5.m1" class="ltx_Math" alttext="u_{h}\in V_{h}" display="inline"><mrow><msub><mi>u</mi><mi>h</mi></msub><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></math> tal que</p>
+<table id="EGx102" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq_variacional_advecao_difusao_fem"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E7.m2" class="ltx_Math" alttext="\displaystyle\kappa\left(\nabla u_{h},\nabla v_{h}\right)+\left(\boldsymbol{a}%
+\cdot\nabla u_{h},v_{h}\right)=\left(f,v_{h}\right)\quad\forall v_{h}\in V_{h}." display="inline"><mrow><mrow><mrow><mrow><mrow><mi>κ</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo>,</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>(</mo><mi>f</mi><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo>)</mo></mrow></mrow><mspace width="1.167em"></mspace><mrow><mrow><mo rspace="0.167em">∀</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.7)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Este problema herda a instabilidade do problema fraco, o que pode levar a soluções oscilatórias, especialmente para valores pequenos de <math id="p5.m2" class="ltx_Math" alttext="\kappa" display="inline"><mi>κ</mi></math> (regime de advecção-dominante).</p>
+</div>
+<div id="ex:_ad_mef2d" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Vamos considerar o seguinte problema de advecção-difusão em 2D:</p>
+<table id="EGx103" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E8.m1" class="ltx_Math" alttext="\displaystyle-\kappa\Delta u+\boldsymbol{a}\cdot\nabla u=0,\text{em }(0,1)^{2}," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>+</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>0</mn><mo>,</mo><mrow><mtext>em </mtext><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.8)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E9.m1" class="ltx_Math" alttext="\displaystyle u(0,y)=1,\leavevmode\nobreak\ y\in(0.8,1)," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="0.667em">,</mo><mrow><mi>y</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0.8,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.9)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E10.m1" class="ltx_Math" alttext="\displaystyle u(0,y)=0,\leavevmode\nobreak\ y\in(0,0.8)," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="0.667em">,</mo><mrow><mi>y</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0,0.8</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.10)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E11.m1" class="ltx_Math" alttext="\displaystyle u(x,1)=1,\leavevmode\nobreak\ x\in(0,1)," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mn>,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="0.667em">,</mo><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.11)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E12"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E12.m1" class="ltx_Math" alttext="\displaystyle u_{y}(x,0)=0,\leavevmode\nobreak\ x\in(0,1)," display="inline"><mrow><mrow><mrow><mrow><msub><mi>u</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mn>,0</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="0.667em">,</mo><mrow><mi>x</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.12)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E13"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E13.m1" class="ltx_Math" alttext="\displaystyle u_{x}(1,y)=0,\leavevmode\nobreak\ y\in(0,1)," display="inline"><mrow><mrow><mrow><mrow><msub><mi>u</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="0.667em">,</mo><mrow><mi>y</mi><mo>∈</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.13)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmex1.p1.m1" class="ltx_Math" alttext="\boldsymbol{a}=(\sqrt{2}/2,-\sqrt{2}/2)" display="inline"><mrow><mi>𝒂</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><msqrt><mn>2</mn></msqrt><mo>/</mo><mn>2</mn></mrow><mo>,</mo><mrow><mo>−</mo><mrow><msqrt><mn>2</mn></msqrt><mo>/</mo><mn>2</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmex1.p1.m2" class="ltx_Math" alttext="\kappa=10^{-3}" display="inline"><mrow><mi>κ</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></mrow></math>. A solução deste problema apresenta uma camada de fronteira ao longo da diagonal do quadrado, o que pode levar a oscilações na solução numérica se o método de elementos finitos clássico for utilizado.</p>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<p class="ltx_p">A Figura <a href="#fig:ad_mef2d" title="Figura 3.1 ‣ Exemplo 3.1.1. ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a> mostra a solução numérica obtida utilizando o método de elementos finitos clássico implementado no Código <a href="#cod:ad_mef2d" title="Código 18 ‣ Exemplo 3.1.1. ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">18</span></a>.</p>
+</div>
+<figure id="fig:ad_mef2d" class="ltx_figure"><img src="cap_apl2d/dados/py_ad_mef2d/fig.png" id="Ch3.F1.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="318" height="191" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.1</span>: </span><span class="ltx_text" style="font-size:90%;">Solução numérica do problema de advecção-difusão utilizando o método de elementos finitos clássico.</span></figcaption>
+</figure>
+<figure id="cod:ad_mef2d" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 18: </span>ad_mef2d.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSBkb2xmaW54IGltcG9ydCBkZWZhdWx0X3NjYWxhcl90eXBlCmZyb20gZG9sZmlueC5mZW0gaW1wb3J0ICgKICAgIENvbnN0YW50LAogICAgRnVuY3Rpb24sCiAgICBmdW5jdGlvbnNwYWNlLAogICAgZGlyaWNobGV0YmMsCiAgICBmb3JtLAogICAgbG9jYXRlX2RvZnNfZ2VvbWV0cmljYWwKKQpmcm9tIGRvbGZpbnguZmVtLnBldHNjIGltcG9ydCBMaW5lYXJQcm9ibGVtCmZyb20gZG9sZmlueC5tZXNoIGltcG9ydCBjcmVhdGVfdW5pdF9zcXVhcmUKCmZyb20gbXBpNHB5IGltcG9ydCBNUEkKZnJvbSB1ZmwgaW1wb3J0ICgKICAgIFNwYXRpYWxDb29yZGluYXRlLAogICAgVGVzdEZ1bmN0aW9uLAogICAgVHJpYWxGdW5jdGlvbiwKICAgIGRvdCwKICAgIGRzLAogICAgZHgsCiAgICBncmFkCikKCmltcG9ydCBudW1weSBhcyBucAoKIyBlc3Bhw6dvCm1lc2ggPSBjcmVhdGVfdW5pdF9zcXVhcmUoTVBJLkNPTU1fV09STEQsIDEwLCAxMCkKViA9IGZ1bmN0aW9uc3BhY2UobWVzaCwgKCJMYWdyYW5nZSIsIDEpKQp1ID0gVHJpYWxGdW5jdGlvbihWKQp2ID0gVGVzdEZ1bmN0aW9uKFYpCgojIGZvcm1hIGJpbGluZWFyCmthcHBhID0gQ29uc3RhbnQobWVzaCwgMWUtMykKYSA9IENvbnN0YW50KG1lc2gsIG5wLmFycmF5KFtucC5zcXJ0KDIpLzIsIC1ucC5zcXJ0KDIpLzJdLCBkdHlwZT1kZWZhdWx0X3NjYWxhcl90eXBlKSkKYV9mb3JtID0ga2FwcGEgKiBkb3QoZ3JhZCh1KSwgZ3JhZCh2KSkgKiBkeCArIGRvdChhLCBncmFkKHUpKSAqIHYgKiBkeAoKIyBmb3JtYSBsaW5lYXIKemVybyA9IENvbnN0YW50KG1lc2gsIDAuMCkKTF9mb3JtID0gemVybyAqIHYgKiBkeAoKIyBjb25kacOnw7VlcyBkZSBEaXJpY2hsZXQKeCA9IFNwYXRpYWxDb29yZGluYXRlKG1lc2gpCgpkZWYgYm91bmRhcnlfbGVmdF90b3AoeCk6CiAgICByZXR1cm4gbnAubG9naWNhbF9hbmQobnAuaXNjbG9zZSh4WzBdLCAwKSwgeFsxXSA+PSAwLjgpCmRvZnNfYmMxID0gbG9jYXRlX2RvZnNfZ2VvbWV0cmljYWwoViwgYm91bmRhcnlfbGVmdF90b3ApCm9uZSA9IENvbnN0YW50KG1lc2gsIDEuMCkKYmMxID0gZGlyaWNobGV0YmMob25lLCBkb2ZzX2JjMSwgVikKCmRlZiBib3VuZGFyeV9sZWZ0X2JvdHRvbSh4KToKICAgIHJldHVybiBucC5sb2dpY2FsX2FuZChucC5pc2Nsb3NlKHhbMF0sIDApLCB4WzFdIDwgMC44KQpkb2ZzX2JjMiA9IGxvY2F0ZV9kb2ZzX2dlb21ldHJpY2FsKFYsIGJvdW5kYXJ5X2xlZnRfYm90dG9tKQpiYzIgPSBkaXJpY2hsZXRiYyh6ZXJvLCBkb2ZzX2JjMiwgVikKCmRlZiBib3VuZGFyeV90b3AoeCk6CiAgICByZXR1cm4gbnAuaXNjbG9zZSh4WzFdLCAxKQpkb2ZzX2JjMyA9IGxvY2F0ZV9kb2ZzX2dlb21ldHJpY2FsKFYsIGJvdW5kYXJ5X3RvcCkKYmMzID0gZGlyaWNobGV0YmMob25lLCBkb2ZzX2JjMywgVikKCmJjcyA9IFtiYzEsIGJjMiwgYmMzXQoKIyBwcm9ibGVtYSBsaW5lYXIKcHJvYmxlbSA9IExpbmVhclByb2JsZW0oYV9mb3JtLCBMX2Zvcm0sIGJjcz1iY3MsCiAgICAgICAgICAgICAgICAgICAgICAgIHBldHNjX29wdGlvbnNfcHJlZml4PSJhZF9tZWYyZCIpCnVoID0gcHJvYmxlbS5zb2x2ZSgpCgojIHBsb3QgM0Qgc3VyZmFjZQppbXBvcnQgcHl2aXN0YQpmcm9tIGRvbGZpbngucGxvdCBpbXBvcnQgdnRrX21lc2gKCnRvcG9sb2d5LCBjZWxsX3R5cGVzLCBnZW9tZXRyeSA9IHZ0a19tZXNoKFYpCgpncmlkID0gcHl2aXN0YS5VbnN0cnVjdHVyZWRHcmlkKHRvcG9sb2d5LCBjZWxsX3R5cGVzLCBnZW9tZXRyeSkKZ3JpZC5wb2ludF9kYXRhWyJ1aCJdID0gdWgueC5hcnJheS5yZWFsCnN1cmZhY2UgPSBncmlkLndhcnBfYnlfc2NhbGFyKCJ1aCIsIGZhY3Rvcj0xLjApCgpwbG90dGVyID0gcHl2aXN0YS5QbG90dGVyKCkKcGxvdHRlci5hZGRfbWVzaChzdXJmYWNlLCBzaG93X2VkZ2VzPUZhbHNlLCBzY2FsYXJzPSJ1aCIsCiAgICAgICAgICAgICAgICAgc2NhbGFyX2Jhcl9hcmdzPXsidGl0bGUiOiAidWgiLCAidmVydGljYWwiOiBUcnVlfSkKcGxvdHRlci52aWV3X3ZlY3RvcigoMSwgMSwgMSkpCnBsb3R0ZXIuYWRkX2F4ZXMoKQpwbG90dGVyLnZpZXdfdmVjdG9yKCgtMiwgMCwgMSkpCnBsb3R0ZXIuc2hvdygp" download="">⬇</a></div>
+<div id="lstnumberx982" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dolfinx</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">default_scalar_type</span>
+</div>
+<div id="lstnumberx983" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dolfinx</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fem</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span>
+</div>
+<div id="lstnumberx984" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Constant</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx985" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Function</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx986" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">functionspace</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx987" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dirichletbc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx988" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">form</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx989" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">locate_dofs_geometrical</span>
+</div>
+<div id="lstnumberx990" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx991" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dolfinx</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">fem</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">petsc</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">LinearProblem</span>
+</div>
+<div id="lstnumberx992" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dolfinx</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">create_unit_square</span>
+</div>
+<div id="lstnumberx993" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span>
+</div>
+<div id="lstnumberx994" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mpi4py</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">MPI</span>
+</div>
+<div id="lstnumberx995" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ufl</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span>
+</div>
+<div id="lstnumberx996" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">SpatialCoordinate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx997" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TestFunction</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx998" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TrialFunction</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx999" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx1000" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ds</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx1001" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dx</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx1002" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grad</span>
+</div>
+<div id="lstnumberx1003" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">22</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1004" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">23</span>
+</div>
+<div id="lstnumberx1005" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">24</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">numpy</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">as</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span>
+</div>
+<div id="lstnumberx1006" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">25</span>
+</div>
+<div id="lstnumberx1007" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">26</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>espa<span class="ltx_text ltx_lst_literate">ç</span>o</span></span>
+</div>
+<div id="lstnumberx1008" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">27</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">create_unit_square</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">MPI</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">COMM_WORLD</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">10,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">10)</span>
+</div>
+<div id="lstnumberx1009" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">28</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">functionspace</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"Lagrange"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1))</span>
+</div>
+<div id="lstnumberx1010" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">29</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TrialFunction</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1011" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">30</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">TestFunction</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1012" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">31</span>
+</div>
+<div id="lstnumberx1013" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">32</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>forma<span class="ltx_text ltx_lst_space"> </span>bilinear</span></span>
+</div>
+<div id="lstnumberx1014" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">33</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">kappa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Constant</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-3)</span>
+</div>
+<div id="lstnumberx1015" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">34</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Constant</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">array</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2)/2,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2)/2],</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dtype</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">default_scalar_type</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx1016" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">35</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a_form</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">kappa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dx</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dx</span>
+</div>
+<div id="lstnumberx1017" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">36</span>
+</div>
+<div id="lstnumberx1018" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">37</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>forma<span class="ltx_text ltx_lst_space"> </span>linear</span></span>
+</div>
+<div id="lstnumberx1019" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">38</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">zero</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Constant</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0)</span>
+</div>
+<div id="lstnumberx1020" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">39</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">L_form</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">zero</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dx</span>
+</div>
+<div id="lstnumberx1021" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">40</span>
+</div>
+<div id="lstnumberx1022" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">41</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>condi<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">õ</span>es<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>Dirichlet</span></span>
+</div>
+<div id="lstnumberx1023" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">42</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">SpatialCoordinate</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1024" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">43</span>
+</div>
+<div id="lstnumberx1025" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">44</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">boundary_left_top</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx1026" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">45</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">logical_and</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isclose</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0],</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[1]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&gt;=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.8)</span>
+</div>
+<div id="lstnumberx1027" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">46</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dofs_bc1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">locate_dofs_geometrical</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">boundary_left_top</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1028" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">47</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">one</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Constant</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.0)</span>
+</div>
+<div id="lstnumberx1029" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">48</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bc1</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dirichletbc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">one</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dofs_bc1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1030" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">49</span>
+</div>
+<div id="lstnumberx1031" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">50</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">boundary_left_bottom</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx1032" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">51</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">logical_and</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isclose</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[0],</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[1]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.8)</span>
+</div>
+<div id="lstnumberx1033" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">52</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dofs_bc2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">locate_dofs_geometrical</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">boundary_left_bottom</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1034" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">53</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bc2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dirichletbc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">zero</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dofs_bc2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1035" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">54</span>
+</div>
+<div id="lstnumberx1036" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">55</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">boundary_top</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx1037" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">56</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">np</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">isclose</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[1],</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1)</span>
+</div>
+<div id="lstnumberx1038" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">57</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dofs_bc3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">locate_dofs_geometrical</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">boundary_top</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1039" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">58</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bc3</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dirichletbc</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">one</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dofs_bc3</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1040" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">59</span>
+</div>
+<div id="lstnumberx1041" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">60</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bcs</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bc1</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bc2</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bc3</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span>
+</div>
+<div id="lstnumberx1042" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">61</span>
+</div>
+<div id="lstnumberx1043" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">62</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>problema<span class="ltx_text ltx_lst_space"> </span>linear</span></span>
+</div>
+<div id="lstnumberx1044" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">63</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">problem</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">LinearProblem</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a_form</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">L_form</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bcs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">bcs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx1045" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">64</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">petsc_options_prefix</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"ad_mef2d"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1046" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">65</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">uh</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">problem</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">solve</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx1047" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">66</span>
+</div>
+<div id="lstnumberx1048" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">67</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>plot<span class="ltx_text ltx_lst_space"> </span>3D<span class="ltx_text ltx_lst_space"> </span>surface</span></span>
+</div>
+<div id="lstnumberx1049" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">68</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pyvista</span>
+</div>
+<div id="lstnumberx1050" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">69</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dolfinx</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plot</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">vtk_mesh</span>
+</div>
+<div id="lstnumberx1051" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">70</span>
+</div>
+<div id="lstnumberx1052" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">71</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">topology</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cell_types</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">geometry</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">vtk_mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">V</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1053" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">72</span>
+</div>
+<div id="lstnumberx1054" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">73</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grid</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pyvista</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">UnstructuredGrid</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">topology</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">cell_types</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">geometry</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx1055" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">74</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grid</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">point_data</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"uh"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">]</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">uh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">array</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">real</span>
+</div>
+<div id="lstnumberx1056" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">75</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">surface</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grid</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">warp_by_scalar</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"uh"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">factor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=1.0)</span>
+</div>
+<div id="lstnumberx1057" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">76</span>
+</div>
+<div id="lstnumberx1058" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">77</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plotter</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">pyvista</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Plotter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx1059" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">78</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plotter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add_mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">surface</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">show_edges</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">False</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scalars</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"uh"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span>
+</div>
+<div id="lstnumberx1060" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">79</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                 </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">scalar_bar_args</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">={</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"title"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"uh"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"vertical"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">True</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">})</span>
+</div>
+<div id="lstnumberx1061" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">80</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plotter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">view_vector</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1))</span>
+</div>
+<div id="lstnumberx1062" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">81</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plotter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">add_axes</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx1063" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">82</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plotter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">view_vector</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((-2,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1))</span>
+</div>
+<div id="lstnumberx1064" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">83</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">plotter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">show</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+</div>
+</figure>
+</div>
+<section id="cap_apl2d_sec_supg" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.1 </span>SUPG</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Uma formulação de elementos finitos estabilizada para o problema de advecção-difusão (<a href="#eq_advecao_difusao" title="In 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1</span></a>) é a formulação SUPG (<span class="ltx_text ltx_font_italic">Streamline Upwind</span> Petrov<span id="Ch3.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note">6</span>Georgi Iwanowitsch Petrov, 1912 - 1987, engenheiro soviético. Fonte: <a href="https://de.wikipedia.org/wiki/Georgi_Iwanowitsch_Petrow" title="" class="ltx_ref ltx_href">Wikipedia: Georgi Iwanowitsch Petrov</a>.</span></span></span>-Galerkin<span id="Ch3.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note">7</span>Boris Galerkin, 1871 - 1945, engenheiro e matemático soviético. Fonte: <a href="https://pt.wikipedia.org/wiki/Boris_Galerkin" title="" class="ltx_ref ltx_href">Wikipédia: Boris Galerkin</a>.</span></span></span>). A formulação SUPG é dada por: encontrar <math id="SS1.p2.m1" class="ltx_Math" alttext="u_{h}\in V_{h}" display="inline"><mrow><msub><mi>u</mi><mi>h</mi></msub><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></math> tal que</p>
+<table id="EGx104" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq_variacional_advecao_difusao_supg"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.Ex5.m2" class="ltx_Math" alttext="\displaystyle\kappa\left(\nabla u_{h},\nabla v_{h}\right)+\left(\boldsymbol{a}%
+\cdot\nabla u_{h},v_{h}\right)+\sum_{K}\tau_{K}\left(-\kappa\Delta u_{h}+%
+\boldsymbol{a}\cdot\nabla u_{h},\boldsymbol{a}\cdot\nabla v_{h}\right)_{K}" display="inline"><mrow><mrow><mi>κ</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo>,</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mo>(</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo>)</mo></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mi>K</mi></munder></mstyle><mrow><msub><mi>τ</mi><mi>K</mi></msub><mo>⁢</mo><msub><mrow><mo>(</mo><mrow><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><mi mathvariant="normal">Δ</mi><mo>⁢</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow><mo>+</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow></mrow><mo>,</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><msub><mi>v</mi><mi>h</mi></msub></mrow></mrow><mo>)</mo></mrow><mi>K</mi></msub></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch3.E14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E14.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left(f,v_{h}\right)+\sum_{K}\tau_{K}\left(f,%
+\boldsymbol{a}\cdot\nabla v_{h}\right)_{K}," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mrow><mo>(</mo><mi>f</mi><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo>)</mo></mrow><mo>+</mo><mstyle displaystyle="true"><munder><mo movablelimits="false">∑</mo><mi>K</mi></munder></mstyle><msub><mi>τ</mi><mi>K</mi></msub><msub><mrow><mo>(</mo><mi>f</mi><mo>,</mo><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mo rspace="0.167em">∇</mo><msub><mi>v</mi><mi>h</mi></msub><mo>)</mo></mrow><mi>K</mi></msub><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.14)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p2.m2" class="ltx_Math" alttext="\tau_{K}" display="inline"><msub><mi>τ</mi><mi>K</mi></msub></math> é um parâmetro de estabilização que depende do tamanho do elemento <math id="SS1.p2.m3" class="ltx_Math" alttext="K" display="inline"><mi>K</mi></math>. Os termos adicionais na formulação SUPG atuam como um mecanismo de estabilização, reduzindo as oscilações na solução numérica pela adição de um termo de difusividade artificial ao longo das linhas de fluxo do campo de velocidade <math id="SS1.p2.m4" class="ltx_Math" alttext="\boldsymbol{a}" display="inline"><mi>𝒂</mi></math>. Existem várias formas de escolha do parâmetro <math id="SS1.p2.m5" class="ltx_Math" alttext="\tau_{K}" display="inline"><msub><mi>τ</mi><mi>K</mi></msub></math>, sendo uma escolha comum a seguinte:</p>
+<table id="EGx105" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:supg_tauk"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E15.m2" class="ltx_Math" alttext="\displaystyle\tau_{K}=\left(\left(\frac{2\|\boldsymbol{a}\|}{h_{K}}\right)^{2}%
++9\left(\frac{4\kappa}{h_{K}^{2}}\right)^{2}\right)^{-\frac{1}{2}}," display="inline"><mrow><mrow><msub><mi>τ</mi><mi>K</mi></msub><mo>=</mo><msup><mrow><mo>(</mo><mrow><msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒂</mi><mo stretchy="false">‖</mo></mrow></mrow><msub><mi>h</mi><mi>K</mi></msub></mfrac></mstyle><mo>)</mo></mrow><mn>2</mn></msup><mo>+</mo><mrow><mn>9</mn><mo>⁢</mo><msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>⁢</mo><mi>κ</mi></mrow><msubsup><mi>h</mi><mi>K</mi><mn>2</mn></msubsup></mfrac></mstyle><mo>)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mfrac><mn>1</mn><mn>2</mn></mfrac></mrow></msup></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.15)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p2.m6" class="ltx_Math" alttext="h_{K}" display="inline"><msub><mi>h</mi><mi>K</mi></msub></math> é o tamanho do elemento <math id="SS1.p2.m7" class="ltx_Math" alttext="K" display="inline"><mi>K</mi></math>. Para a justificativa desta escolha e de outras alternativas, consulte <cite class="ltx_cite ltx_citemacro_cite">[<a href="lastpage.html#bib4" title="Finite element methods for flow problems" class="ltx_ref">4</a>]</cite>.</p>
+</div>
+<div id="ex:_ad_mef2d_supg" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Vamos considerar o mesmo problema do Exemplo <a href="#ex:_ad_mef2d" title="Exemplo 3.1.1. ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.1</span></a>, mas agora utilizando a formulação SUPG. A Figura <a href="#fig:ad_mef2d_supg" title="Figura 3.2 ‣ Exemplo 3.1.2. ‣ 3.1.1 SUPG ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.2</span></a> mostra a solução numérica obtida utilizando a formulação SUPG com uma malha mais refinada de <math id="Thmex2.p1.m1" class="ltx_Math" alttext="640\times 640" display="inline"><mrow><mn>640</mn><mo lspace="0.222em" rspace="0.222em">×</mo><mn>640</mn></mrow></math> elementos triangulares.</p>
+</div>
+<figure id="fig:ad_mef2d_supg" class="ltx_figure"><img src="cap_apl2d/dados/py_ad_mef2d_supg/fig.png" id="Ch3.F2.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="318" height="211" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.2</span>: </span><span class="ltx_text" style="font-size:90%;">Solução numérica do problema de advecção-difusão utilizando a formulação SUPG.</span></figcaption>
+</figure>
+<div id="Thmex2.p2" class="ltx_para">
+<p class="ltx_p">O Código <a href="#cod:ad_mef2d" title="Código 18 ‣ Exemplo 3.1.1. ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">18</span></a> pode ser facilmente modificado pela inclusão do termo de estabilização SUPG. Consulte a implementação do termo de estabilização no Código <a href="#cod:ad_mef2d_supg" title="Código 19 ‣ Exemplo 3.1.2. ‣ 3.1.1 SUPG ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">19</span></a> e verifique a solução implementando-a no Código <a href="#cod:ad_mef2d" title="Código 18 ‣ Exemplo 3.1.1. ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">18</span></a>.</p>
+</div>
+<figure id="cod:ad_mef2d_supg" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 19: </span>ad_mef2d_supg.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,IyBTVVBHIHN0YWJpbGl6YXRpb24KaCA9IENlbGxEaWFtZXRlcihtZXNoKSAgIyBsb2NhbCBjZWxsIHNpemUgaF9LCmFfbm9ybSA9IHNxcnQoZG90KGEsIGEpKQojIENlbGwtd2lzZSB0YXVfSyBmb3IgYWR2ZWN0aW9uLWRpZmZ1c2lvbiAocm9idXN0IGZvciB2YXJ5aW5nIGhfSykKdGF1ID0gMS4wIC8gc3FydCgoMi4wICogYV9ub3JtIC8gaCkgKiogMiArIDkuMCAqICg0LjAgKiBrYXBwYSAvIGggKiogMikgKiogMikKYV9mb3JtICs9IHRhdSAqIGRvdChhLCBncmFkKHUpKSAqIGRvdChhLCBncmFkKHYpKSAqIGR4" download="">⬇</a></div>
+<div id="lstnumberx1065" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>SUPG<span class="ltx_text ltx_lst_space"> </span>stabilization</span></span>
+</div>
+<div id="lstnumberx1066" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">CellDiameter</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">mesh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>local<span class="ltx_text ltx_lst_space"> </span>cell<span class="ltx_text ltx_lst_space"> </span>size<span class="ltx_text ltx_lst_space"> </span>h_K</span></span>
+</div>
+<div id="lstnumberx1067" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a_norm</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span>
+</div>
+<div id="lstnumberx1068" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>Cell-wise<span class="ltx_text ltx_lst_space"> </span>tau_K<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>advection-diffusion<span class="ltx_text ltx_lst_space"> </span>(robust<span class="ltx_text ltx_lst_space"> </span>for<span class="ltx_text ltx_lst_space"> </span>varying<span class="ltx_text ltx_lst_space"> </span>h_K)</span></span>
+</div>
+<div id="lstnumberx1069" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tau</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">sqrt</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">((2.0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a_norm</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">9.0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(4.0</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">kappa</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">/</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">h</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2)</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">**</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2)</span>
+</div>
+<div id="lstnumberx1070" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a_form</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tau</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">u</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dot</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">a</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">v</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">))</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">*</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">dx</span>
+</div>
+</div>
+</figure>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.1.2 </span>Exercícios</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+</div>
+<div id="exer:_ad_1d" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Obtenha aproximações de elementos finitos da solução do seguinte problema de advecção-difusão em 1D:</p>
+<table id="EGx106" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E16.m1" class="ltx_Math" alttext="\displaystyle-\kappa u^{\prime\prime}+au^{\prime}=10e^{-5x}-4e^{-x},\text{em }%
+(0,1)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi>κ</mi><mo>⁢</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow></mrow><mo>+</mo><mrow><mi>a</mi><mo>⁢</mo><msup><mi>u</mi><mo>′</mo></msup></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>10</mn><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mn>5</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></msup></mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup></mrow></mrow><mo>,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.16)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E17"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E17.m1" class="ltx_Math" alttext="\displaystyle u(0)=0,\leavevmode\nobreak\ u(1)=1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.17)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verifique a estabilidade da solução numérica para diferentes valores do número de Péclet <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="Pe_{K}=\frac{ah_{K}}{2\kappa}=0.25,\dotsc,5" display="inline"><mrow><mrow><mrow><mi>P</mi><mo>⁢</mo><msub><mi>e</mi><mi>K</mi></msub></mrow><mo>=</mo><mfrac><mrow><mi>a</mi><mo>⁢</mo><msub><mi>h</mi><mi>K</mi></msub></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>κ</mi></mrow></mfrac><mo>=</mo><mn>0.25</mn></mrow><mo>,</mo><mrow><mi mathvariant="normal">…</mi><mo>⁢</mo><mn>,5</mn></mrow></mrow></math>. Use a formulação SUPG (com escolha de <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="\tau_{K}" display="inline"><msub><mi>τ</mi><mi>K</mi></msub></math> análoga à (<a href="#eq:supg_tauk" title="In 3.1.1 SUPG ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>)) para obter soluções estáveis e compare os resultados com a formulação clássica de elementos finitos. Por fim, faça uma análise de convergência de malha para ambos os métodos.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Para problemas de advecção-difusão em 1D, uma escolha apropriada do parâmetro de estabilização <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="\tau_{K}" display="inline"><msub><mi>τ</mi><mi>K</mi></msub></math> na formulação SUPG é dada por</p>
+<table id="EGx107" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E18"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E18.m1" class="ltx_Math" alttext="\displaystyle\tau_{K}=\frac{h_{K}}{2a}\left(\coth(Pe_{K})-\frac{1}{Pe_{K}}%
+\right)," display="inline"><mrow><mrow><msub><mi>τ</mi><mi>K</mi></msub><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><msub><mi>h</mi><mi>K</mi></msub><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mi>coth</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>P</mi><mo>⁢</mo><msub><mi>e</mi><mi>K</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>P</mi><mo>⁢</mo><msub><mi>e</mi><mi>K</mi></msub></mrow></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.18)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="Pe_{K}=\frac{ah_{K}}{2\kappa}" display="inline"><mrow><mrow><mi>P</mi><mo>⁢</mo><msub><mi>e</mi><mi>K</mi></msub></mrow><mo>=</mo><mfrac><mrow><mi>a</mi><mo>⁢</mo><msub><mi>h</mi><mi>K</mi></msub></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>κ</mi></mrow></mfrac></mrow></math> é o número de Péclet local. Implemente esta escolha de <math id="Thmexer2.p1.m3" class="ltx_Math" alttext="\tau_{K}" display="inline"><msub><mi>τ</mi><mi>K</mi></msub></math> para o problema do E.<a href="#exer:_ad_1d" title="E. 3.1.1. ‣ 3.1.2 Exercícios ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.1</span></a> e compare os resultados com a escolha de <math id="Thmexer2.p1.m4" class="ltx_Math" alttext="\tau_{K}" display="inline"><msub><mi>τ</mi><mi>K</mi></msub></math> análoga à (<a href="#eq:supg_tauk" title="In 3.1.1 SUPG ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>).</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.1.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Faça uma análise de convergência de malha para o problema de advecção-difusão em 2D apresentado no Exemplo <a href="#ex:_ad_mef2d" title="Exemplo 3.1.1. ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.1</span></a>, utilizando tanto a formulação clássica de elementos finitos quanto a formulação SUPG. Uma escolha alternativa para o parâmetro de estabilização <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\tau_{K}" display="inline"><msub><mi>τ</mi><mi>K</mi></msub></math> na formulação SUPG é dada por</p>
+<table id="EGx108" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E19.m1" class="ltx_Math" alttext="\displaystyle\tau_{K}=\left(\frac{2a}{h}+\frac{4\kappa}{h^{2}}\right)^{-1}." display="inline"><mrow><mrow><msub><mi>τ</mi><mi>K</mi></msub><mo>=</mo><msup><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi></mrow><mi>h</mi></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>⁢</mo><mi>κ</mi></mrow><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle></mrow><mo>)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.19)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para o problema em questão, esta escolha é melhor que a sugerida em (<a href="#eq:supg_tauk" title="In 3.1.1 SUPG ‣ 3.1 Equação de advecção-difusão ‣ Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.15</span></a>)? Justifique sua resposta.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_apl2d.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Aplicações 2D</span></a><a href="lastpage.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="lastpage.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title">Referências</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Tue May 19 15:10:36 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
