@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos</title>
-<!--Generated on Wed May  6 10:39:29 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 6 de maio de 2026.-->
+<!--Generated on Tue May 26 13:56:42 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 26 de maio de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -25,6 +25,7 @@
 <link rel="chapter" href="prefacio.html" title="Prefácio ‣ Método dos Elementos Finitos">
 <link rel="chapter" href="cap_mef1d.html" title="Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos">
 <link rel="chapter" href="cap_mef2d.html" title="Capítulo 2 Problemas bidimensionais ‣ Método dos Elementos Finitos">
+<link rel="chapter" href="cap_apl2d.html" title="Capítulo 3 Aplicações 2D ‣ Método dos Elementos Finitos">
 <link rel="bibliography" href="lastpage.html" title="Referências ‣ Método dos Elementos Finitos">
 <meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -130,7 +131,7 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Vamos fazer a <span class="ltx_text" style="background-color:#FFFF00;">introdução do método de elementos finitos</span> pela aplicação no seguinte problema de valor de contorno (<span class="ltx_text ltx_font_bold">problema forte</span>): encontrar <math id="p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> tal que</p>
-<table id="Ch2.S3.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:prob_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -166,7 +167,7 @@
 </div>
 <div id="SS1.p2" class="ltx_para">
 <p class="ltx_p">A formulação fraca é obtida multiplicando-se a equação diferencial (<a href="#eq:prob_eq" title="In 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.63</span></a>) por uma função teste <math id="SS1.p2.m1" class="ltx_Math" alttext="v\in V_{0}" display="inline"><mrow><mi>v</mi><mo>∈</mo><msub><mi>V</mi><mn>0</mn></msub></mrow></math> (arbitrária) e integrando-se por partes, <span class="ltx_text ltx_font_italic">i.e.</span></p>
-<table id="Ch2.S3.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E66"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -205,7 +206,7 @@
 </tr></tbody>
 </table>
 <p class="ltx_p">onde</p>
-<table id="Ch2.S3.EGx13" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx13" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:modelo_fbilinear"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -220,7 +221,7 @@
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.72)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">são chamadas de <span class="ltx_text ltx_font_bold">forma bilinear</span> e <span class="ltx_text ltx_font_bold">forma linear</span>, respectivamente. A formulação fraca construida aqui é chamada de <span class="ltx_text ltx_font_bold">formulação de Galerkin<span id="Ch1.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">5</span></span><span class="ltx_text ltx_font_medium">Boris Galerkin, 1871 - 1945, engenheiro e matemático soviético. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Boris_Galerkin" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span>, em que o espaço da solução é igual ao espaço das funções teste.</p>
+<p class="ltx_p">são chamadas de <span class="ltx_text ltx_font_bold">forma bilinear</span> e <span class="ltx_text ltx_font_bold">forma linear</span>, respectivamente. A formulação fraca construida aqui é chamada de <span class="ltx_text ltx_font_bold">formulação de Galerkin<span id="Ch1.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">5</span></span><span class="ltx_text ltx_font_medium">Boris Galerkin, 1871 - 1945, engenheiro e matemático soviético. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Boris_Galerkin" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Boris Galerkin</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span>, em que o espaço da solução é igual ao espaço das funções teste.</p>
 </div>
 </section>
 <section id="SS2" class="ltx_subsection">
@@ -276,7 +277,7 @@
 </div>
 <div id="SS2.p4" class="ltx_para">
 <p class="ltx_p">Agora, da forma bilinear (<a href="#eq:modelo_fbilinear" title="In 1.2.1 Formulação fraca ‣ 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.71</span></a>), temos</p>
-<table id="Ch2.S3.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E77"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -332,7 +333,7 @@
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o problema (<a href="#eq:prob_eq" title="In 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.63</span></a>)-(<a href="#eq:prob_bc" title="In 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.64</span></a>) com <math id="Thmex1.p1.m1" class="ltx_Math" alttext="f\equiv 10" display="inline"><mrow><mi>f</mi><mo>≡</mo><mn>10</mn></mrow></math> e <math id="Thmex1.p1.m2" class="ltx_Math" alttext="l=1" display="inline"><mrow><mi>l</mi><mo>=</mo><mn>1</mn></mrow></math>, i.e.</p>
-<table id="Ch2.S3.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:ex_modelo_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -537,7 +538,7 @@
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS3.p2" class="ltx_para">
 <p class="ltx_p">De (<a href="#eq:modelo_fem" title="In 1.2.2 Formulação de elementos finitos ‣ 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.74</span></a>), (<a href="#eq:modelo_ffraca" title="In 1.2.1 Formulação fraca ‣ 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.70</span></a>) e lembrando que <math id="SS3.p2.m1" class="ltx_Math" alttext="V_{h,0}\subset V_{0}" display="inline"><mrow><msub><mi>V</mi><mrow><mi>h</mi><mo>⁢</mo><mn>,0</mn></mrow></msub><mo>⊂</mo><msub><mi>V</mi><mn>0</mn></msub></mrow></math>, temos</p>
-<table id="Ch2.S3.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E88"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -579,7 +580,7 @@
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS3.p3" class="ltx_para">
 <p class="ltx_p">Escrevendo <math id="SS3.p3.m1" class="ltx_Math" alttext="u-u_{h}=u-v+v-u_{h}" display="inline"><mrow><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo>=</mo><mrow><mrow><mrow><mi>u</mi><mo>−</mo><mi>v</mi></mrow><mo>+</mo><mi>v</mi></mrow><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow></math> para qualquer <math id="SS3.p3.m2" class="ltx_Math" alttext="v\in V_{h,0}" display="inline"><mrow><mi>v</mi><mo>∈</mo><msub><mi>V</mi><mrow><mi>h</mi><mo>⁢</mo><mn>,0</mn></mrow></msub></mrow></math> e usando a ortogonalidade de Galerkin (Teorema <a href="#teo:ortogonalidade_de_Galerkin" title="Teorema 1.2.1.(Ortogonalidade de Galerkin) ‣ 1.2.3 Estimativa a priori ‣ 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.1</span></a>), temos</p>
-<table id="Ch2.S3.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E91"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -695,7 +696,7 @@
 <p class="ltx_p">assumindo uma malha uniforme, <span class="ltx_text ltx_font_italic">i.e.</span> <math id="Thmobs1.p1.m3" class="ltx_Math" alttext="h_{i}=h" display="inline"><mrow><msub><mi>h</mi><mi>i</mi></msub><mo>=</mo><mi>h</mi></mrow></math> para todo <math id="Thmobs1.p1.m4" class="ltx_Math" alttext="i=1,2,\dotsc,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. Verifique!</p>
 </div>
 <div id="Thmobs1.p2" class="ltx_para">
-<p class="ltx_p">Como observaremos no próximo Exemplo <a href="#ex:modelo_estapriori" title="Exemplo 1.2.2. ‣ 1.2.3 Estimativa a priori ‣ 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.2</span></a>, esta não é uma estimativa <span class="ltx_text ltx_font_italic">a priori</span> ótima. Na verdade, para elementos finitos <math id="Thmobs1.p2.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math>, pode-se mostrar que <cite class="ltx_cite ltx_citemacro_cite">[<a href="lastpage.html#bib2" title="The mathematical theory of finite element methods" class="ltx_ref">2</a>, Section 5.4]</cite></p>
+<p class="ltx_p">Como observaremos no próximo Exemplo <a href="#ex:modelo_estapriori" title="Exemplo 1.2.2. ‣ 1.2.3 Estimativa a priori ‣ 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.2</span></a>, esta não é uma estimativa <span class="ltx_text ltx_font_italic">a priori</span> ótima. Na verdade, para elementos finitos <math id="Thmobs1.p2.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math>, pode-se mostrar que <cite class="ltx_cite ltx_citemacro_cite">[<a href="lastpage.html#bib2" title="The mathematical theory of finite element methods" class="ltx_ref">3</a>, Section 5.4]</cite></p>
 <table id="Ch1.E101" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -854,7 +855,7 @@ L^{2}(I)}\leq Ch^{2}\|u^{\prime\prime}\|_{L^{2}(I)}," display="block"><mrow><mro
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS4.p2" class="ltx_para">
 <p class="ltx_p">Tomando <math id="SS4.p2.m1" class="ltx_Math" alttext="e=u-u_{h}" display="inline"><mrow><mi>e</mi><mo>=</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow></mrow></math> e usando a ortogonalidade de Galerkin (Teorema <a href="#teo:ortogonalidade_de_Galerkin" title="Teorema 1.2.1.(Ortogonalidade de Galerkin) ‣ 1.2.3 Estimativa a priori ‣ 1.2 Problema modelo ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.1</span></a>) temos</p>
-<table id="Ch2.S3.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E104"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -895,7 +896,7 @@ L^{2}(I)}\leq Ch^{2}\|u^{\prime\prime}\|_{L^{2}(I)}," display="block"><mrow><mro
 </tr></tbody>
 </table>
 <p class="ltx_p">Agora, usando as desigualdades de Cauchy-Schwarz e a estimativa padrão de interpolação (<a href="cap_mef1d_sec_interproj.html#eq:prop_pif_0" title="In 1.1.1 Interpolação ‣ 1.1 Interpolação e projeção ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.25</span></a>), obtemos</p>
-<table id="Ch2.S3.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E108"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -954,7 +955,7 @@ I_{i})}^{2}\right)^{1/2}\|e^{\prime}\|_{L^{2}(I)}," display="inline"><mrow><mrow
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Obtenha uma aproximação por elementos finitos <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math> da solução de</p>
-<table id="Ch2.S3.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E112"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -987,7 +988,7 @@ I_{i})}^{2}\right)^{1/2}\|e^{\prime}\|_{L^{2}(I)}," display="inline"><mrow><mrow
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Obtenha uma aproximação por elementos finitos <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="P1" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mn>1</mn></mrow></math> da solução de</p>
-<table id="Ch2.S3.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E114"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1012,7 +1013,7 @@ I_{i})}^{2}\right)^{1/2}\|e^{\prime}\|_{L^{2}(I)}," display="inline"><mrow><mrow
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Considere o seguinte problema de difusão-advecção</p>
-<table id="Ch2.S3.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E116"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1046,7 +1047,7 @@ I_{i})}^{2}\right)^{1/2}\|e^{\prime}\|_{L^{2}(I)}," display="inline"><mrow><mrow
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
 <p class="ltx_p">Estude aproximações por elementos finitos para o seguinte problema de difusão-advecção-reação com coeficientes variáveis</p>
-<table id="Ch2.S3.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E119"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1104,7 +1105,7 @@ I_{i})}^{2}\right)^{1/2}\|e^{\prime}\|_{L^{2}(I)}," display="inline"><mrow><mrow
 <div class="ltx_align_center">
 <a href="cap_mef1d_sec_interproj.html" title="In Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Interpolação e projeção</span></a><a href="lastpage.html" title="In Método dos Elementos Finitos" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_mef1d_sec_cc.html" title="In Capítulo 1 Problemas unidimensionais ‣ Método dos Elementos Finitos" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Condições de contorno</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Wed May  6 10:39:29 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Tue May 26 13:56:42 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
