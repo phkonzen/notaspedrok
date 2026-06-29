@@ -1,34 +1,55 @@
 (function () {
-        const selectors = ['.ltx_align_center','.ltx_align_left','.ltx_listing','.ltx_graphics','.ltx_tabular'].join(',');
+        const selectors = ['.ltx_align_center','.ltx_align_left','.ltx_listing','.ltx_tabular','.ltx_graphics'].join(',');
 
-        function attachScrollHandler(el){
-            if (el._overflowHandler) return;
+        function getScrollHost(el) {
+            let node = el;
+            while (node && node !== document.body) {
+                const style = getComputedStyle(node);
+                const allowsScrollX = /(auto|scroll|overlay)/.test(style.overflowX);
+                const hasHorizontalOverflow = node.scrollWidth > node.clientWidth + 1;
+                if (allowsScrollX && hasHorizontalOverflow) return node;
+                node = node.parentElement;
+            }
+            return el;
+        }
+
+        function attachScrollHandler(scrollHost){
+            if (scrollHost._overflowHandler) return;
+            const dismiss = ()=>{
+                scrollHost.dataset.overflowDismissed = '1';
+                scrollHost.classList.add('has-scrolled');
+            };
             const onScroll = ()=>{
-                // hide marker when content is scrolled away from start,
-                // show marker again when scrolled back to initial position.
-                if (el.scrollLeft > 0) {
-                    el.classList.add('has-scrolled');
+                // hide marker once the real horizontal scroller moved from start
+                if (scrollHost.dataset.overflowDismissed === '1' || scrollHost.scrollLeft > 0) {
+                    scrollHost.classList.add('has-scrolled');
                 } else {
-                    el.classList.remove('has-scrolled');
+                    scrollHost.classList.remove('has-scrolled');
                 }
             };
-            el.addEventListener('scroll', onScroll, { passive: true });
-            // pointerdown/touch may start interaction; run a quick check
-            el.addEventListener('pointerdown', ()=> setTimeout(onScroll, 0), { passive: true });
-            // initial check in case element already scrolled
+            scrollHost.addEventListener('scroll', onScroll, { passive: true });
+            // hide marker on user interaction even before first scroll event
+            scrollHost.addEventListener('pointerdown', dismiss, { passive: true });
+            scrollHost.addEventListener('click', dismiss, { passive: true });
+            // initial check in case element/host is already scrolled
             onScroll();
-            el._overflowHandler = true;
+            scrollHost._overflowHandler = true;
         }
 
         function checkEl(el){
-            const horiz = el.scrollWidth > el.clientWidth + 1;
-            const vert  = el.scrollHeight > el.clientHeight + 1;
-            el.classList.toggle('is-overflowing', horiz);
-            el.classList.toggle('is-overflowing-vertical', vert);
-            if (horiz) attachScrollHandler(el);
+            const scrollHost = getScrollHost(el);
+            const horiz = scrollHost.scrollWidth > scrollHost.clientWidth + 1;
+            const vert  = scrollHost.scrollHeight > scrollHost.clientHeight + 1;
+            scrollHost.classList.toggle('is-overflowing', horiz);
+            scrollHost.classList.toggle('is-overflowing-vertical', vert);
+            if (horiz) attachScrollHandler(scrollHost);
         }
 
         function scan(){
+            document.querySelectorAll('.is-overflowing, .is-overflowing-vertical').forEach((node)=>{
+                node.classList.remove('is-overflowing');
+                node.classList.remove('is-overflowing-vertical');
+            });
             document.querySelectorAll(selectors).forEach(checkEl);
         }
 

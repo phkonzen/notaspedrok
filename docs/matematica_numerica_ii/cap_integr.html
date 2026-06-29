@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="pt">
 <head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>NPK - Capítulo 3 Integração ‣ Matemática Numérica II</title>
-<!--Generated on Wed May  6 10:39:59 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 6 de maio de 2026.-->
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>NPK - 3 Integração‣ Matemática Numérica II</title>
+<!--Generated on Sun Jun 28 18:15:48 2026 by LaTeXML (version 0.8.6) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 28 de junho de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -12,7 +12,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
 <link rel="stylesheet" href="./notas.css" type="text/css">
-<script src="load-mathjax.js"></script>
+<script src="load-mathjax.js" type="text/javascript"></script>
 <link rel="up" href="./" title="Matemática Numérica II">
 <link rel="start" href="./" title="Matemática Numérica II">
 <link rel="prev" href="cap_extrapl_sec_Richardson.html" title="2.1 Extrapolação de Richardson ‣ Capítulo 2 Técnicas de extrapolação ‣ Matemática Numérica II">
@@ -126,8 +126,8 @@
 
 <div class="ltx_page_main">
 <h1 class="ltx_title ltx_title_document fs-2">Matemática Numérica II</h1><header class="ltx_page_header">
-<div class="ltx_align_center">
-<a href="./" title="" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Matemática Numérica II</span></a><a href="cap_extrapl_sec_Richardson.html" title="In Capítulo 2 Técnicas de extrapolação ‣ Matemática Numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Extrapolação de Richardson</span></a><a href="cap_integr_sec_nc.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Regras de Newton-Cotes</span></a>
+<div>
+<a href="./" title="Matemática Numérica II" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title">Matemática Numérica II</span></a><a href="cap_extrapl_sec_Richardson.html" title="2.1 Extrapolação de Richardson ‣ Capítulo 2 Técnicas de extrapolação ‣ Matemática Numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Extrapolação de Richardson</span></a><a href="cap_integr_sec_nc.html" title="3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Regras de Newton-Cotes</span></a>
 </div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
 <div class="ltx_page_content">
 <section class="ltx_chapter ltx_authors_1line" lang="pt">
@@ -138,26 +138,28 @@
 <p class="ltx_p">Neste capítulo, estudamos os métodos fundamentais para a <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">aproximação numérica de integrais definidas de funções</span> de uma variável real. São chamados de <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">quadraturas numéricas</span> e têm a forma</p>
 <table id="E1" class="ltx_equation ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="E1.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\int_{a}^{b}f%
-(x)\,dx\approx\sum_{i=1}^{n}f(x_{i})w_{i}," display="block"><mrow><mrow><mrow><msubsup><mo mathcolor="#0000FF">∫</mo><mi mathcolor="#0000FF">a</mi><mi mathcolor="#0000FF">b</mi></msubsup><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0em">𝑑</mo><mi mathcolor="#0000FF">x</mi></mrow></mrow></mrow><mo mathcolor="#0000FF" rspace="0.111em">≈</mo><mrow><munderover><mo mathcolor="#0000FF" movablelimits="false">∑</mo><mrow><mi mathcolor="#0000FF">i</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">1</mn></mrow><mi mathcolor="#0000FF">n</mi></munderover><mrow><mi mathcolor="#0000FF">f</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mi mathcolor="#0000FF">i</mi></msub><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi mathcolor="#0000FF">w</mi><mi mathcolor="#0000FF">i</mi></msub></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="E1.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\pgfsys@color@rgb@stroke{0}{0}{1}\pgfsys@color@rgb@fill{0}{0}{1}\int_{a}^{b}f(%
+x)\,dx\approx\sum_{i=1}^{n}f(x_{i})w_{i}," display="block"><mrow><mrow><mrow><msubsup><mo largeop="true" mathcolor="#0000FF" symmetric="true">∫</mo><mi mathcolor="#0000FF">a</mi><mi mathcolor="#0000FF">b</mi></msubsup><mrow><mi mathcolor="#0000FF">f</mi><mo mathcolor="#0000FF">⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF" rspace="4.2pt" stretchy="false">)</mo></mrow><mo mathcolor="#0000FF">⁢</mo><mrow><mo mathcolor="#0000FF" rspace="0pt">𝑑</mo><mi mathcolor="#0000FF">x</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">≈</mo><mrow><munderover><mo largeop="true" mathcolor="#0000FF" movablelimits="false" symmetric="true">∑</mo><mrow><mi mathcolor="#0000FF">i</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">1</mn></mrow><mi mathcolor="#0000FF">n</mi></munderover><mrow><mi mathcolor="#0000FF">f</mi><mo mathcolor="#0000FF">⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mi mathcolor="#0000FF">i</mi></msub><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo mathcolor="#0000FF">⁢</mo><msub><mi mathcolor="#0000FF">w</mi><mi mathcolor="#0000FF">i</mi></msub></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.1)</span></td>
-</tr></tbody>
+</tr>
 </table>
 <p class="ltx_p">onde <span class="ltx_text" style="background-color:#FFFF00;"><math id="p1.m1" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">i</mi></msub></math> e <math id="p1.m2" class="ltx_Math" alttext="w_{i}" display="inline"><msub><mi mathbackground="#FFFF00">w</mi><mi mathbackground="#FFFF00">i</mi></msub></math></span> são, respectivamente, o <math id="p1.m3" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>-ésimo <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">nodo</span> e o <math id="p1.m4" class="ltx_Math" alttext="i" display="inline"><mi>i</mi></math>-ésimo <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">peso da quadratura</span>, <math id="p1.m5" class="ltx_Math" alttext="i=1,2,\dotsc,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>.</p>
 </div>
-<nav class="ltx_TOC">
-<ol class="ltx_toclist ltx_toclist_chapter">
-<li class="ltx_tocentry"><a href="cap_integr_sec_nc.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Regras de Newton-Cotes</span></a></li>
-<li class="ltx_tocentry"><a href="cap_integr_sec_int_comp.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Regras Compostas de Newton-Cotes</span></a></li>
-<li class="ltx_tocentry"><a href="cap_integr_sec_Romberg.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Quadratura de Romberg</span></a></li>
-<li class="ltx_tocentry"><a href="cap_integr_sec_grau_exat.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Grau de Exatidão</span></a></li>
-<li class="ltx_tocentry"><a href="cap_integr_sec_Gauss-Legendre.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Quadratura Gauss-Legendre</span></a></li>
-<li class="ltx_tocentry"><a href="cap_integr_sec_Gauss_peso.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.6 </span>Quadraturas gaussianas com pesos</span></a></li>
-<li class="ltx_tocentry"><a href="cap_integr_sec_Monte_Carlo.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Método de Monte Carlo</span></a></li>
-</ol></nav>
+<div class="ltx_TOC">
+<ul class="ltx_toclist ltx_toclist_chapter">
+<li class="ltx_tocentry"><a href="cap_integr_sec_nc.html" title="3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Regras de Newton-Cotes</span></a></li>
+<li class="ltx_tocentry"><a href="cap_integr_sec_int_comp.html" title="3.2 Regras Compostas de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Regras Compostas de Newton-Cotes</span></a></li>
+<li class="ltx_tocentry"><a href="cap_integr_sec_Romberg.html" title="3.3 Quadratura de Romberg ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Quadratura de Romberg</span></a></li>
+<li class="ltx_tocentry"><a href="cap_integr_sec_grau_exat.html" title="3.4 Grau de Exatidão ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Grau de Exatidão</span></a></li>
+<li class="ltx_tocentry"><a href="cap_integr_sec_Gauss-Legendre.html" title="3.5 Quadratura Gauss-Legendre ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Quadratura Gauss-Legendre</span></a></li>
+<li class="ltx_tocentry"><a href="cap_integr_sec_Gauss_peso.html" title="3.6 Quadraturas gaussianas com pesos ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.6 </span>Quadraturas gaussianas com pesos</span></a></li>
+<li class="ltx_tocentry"><a href="cap_integr_sec_Monte_Carlo.html" title="3.7 Método de Monte Carlo ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Método de Monte Carlo</span></a></li>
+</ul>
+</div>
 </section>
 </div>
 <hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
@@ -194,10 +196,10 @@
     <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
   </div>
 </form><footer class="ltx_page_footer">
-<div class="ltx_align_center">
-<a href="cap_extrapl_sec_Richardson.html" title="In Capítulo 2 Técnicas de extrapolação ‣ Matemática Numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Extrapolação de Richardson</span></a><a href="bib.html" title="In Matemática Numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_integr_sec_nc.html" title="In Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Regras de Newton-Cotes</span></a>
+<div>
+<a href="cap_extrapl_sec_Richardson.html" title="2.1 Extrapolação de Richardson ‣ Capítulo 2 Técnicas de extrapolação ‣ Matemática Numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Extrapolação de Richardson</span></a><a href="bib.html" title="Referências ‣ Matemática Numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_integr_sec_nc.html" title="3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática Numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Regras de Newton-Cotes</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Wed May  6 10:39:59 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Sun Jun 28 18:15:48 2026 by <a href="http://dlmf.nist.gov/LaTeXML/">LaTeXML <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="[LOGO]"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
