@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III</title>
-<!--Generated on Thu Aug 13 15:27:27 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Thu Aug 13 17:14:09 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
 <!--Document created on 13 de agosto de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -137,35 +137,35 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Os primeiros métodos iterativos desenvolvidos para a solução de grandes sistemas lineares foram os <span class="ltx_text ltx_font_bold">métodos de relaxação</span>. Partindo-se de uma aproximação inicial <math id="p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}\in\mathbb{R}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>∈</mo><mi>ℝ</mi></mrow></math> da solução do sistema</p>
-<table id="Ch1.E84" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E84.m1" class="ltx_Math" alttext="A\boldsymbol{x}=\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.84)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">com matriz dos coeficientes <math id="p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> matriz <math id="p1.m3" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> e vetor dos termos constantes <math id="p1.m4" class="ltx_Math" alttext="\boldsymbol{b}\in\mathbb{R}^{n}" display="inline"><mrow><mi>𝒃</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math>, os métodos de relaxação constroem uma sequência de aproximações <math id="p1.m5" class="ltx_Math" alttext="\left(\boldsymbol{x}^{(k)}\right)_{k\in\mathbb{N}}" display="inline"><msub><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mrow><mi>k</mi><mo>∈</mo><mi>ℕ</mi></mrow></msub></math>. Cada nova aproximação <math id="p1.m6" class="ltx_Math" alttext="\boldsymbol{x}^{(k+1)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></math> é construída em etapas pela modificação de uma ou mais componentes da aproximação anterior <math id="p1.m7" class="ltx_Math" alttext="\boldsymbol{x}^{(k)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> buscando satisfazer a/s componentes selecionadas do resíduo do sistema</p>
 <table id="Ch1.E85" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E85.m1" class="ltx_Math" alttext="\left(\boldsymbol{b}-A\boldsymbol{x}^{(k+1)}\right)_{i}=0." display="block"><mrow><mrow><msub><mrow><mo>(</mo><mrow><mi>𝒃</mi><mo>−</mo><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo>)</mo></mrow><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E85.m1" class="ltx_Math" alttext="A\boldsymbol{x}=\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.85)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com matriz dos coeficientes <math id="p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> matriz <math id="p1.m3" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> e vetor dos termos constantes <math id="p1.m4" class="ltx_Math" alttext="\boldsymbol{b}\in\mathbb{R}^{n}" display="inline"><mrow><mi>𝒃</mi><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math>, os métodos de relaxação constroem uma sequência de aproximações <math id="p1.m5" class="ltx_Math" alttext="\left(\boldsymbol{x}^{(k)}\right)_{k\in\mathbb{N}}" display="inline"><msub><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mrow><mi>k</mi><mo>∈</mo><mi>ℕ</mi></mrow></msub></math>. Cada nova aproximação <math id="p1.m6" class="ltx_Math" alttext="\boldsymbol{x}^{(k+1)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></math> é construída em etapas pela modificação de uma ou mais componentes da aproximação anterior <math id="p1.m7" class="ltx_Math" alttext="\boldsymbol{x}^{(k)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> buscando satisfazer a/s componentes selecionadas do resíduo do sistema</p>
+<table id="Ch1.E86" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E86.m1" class="ltx_Math" alttext="\left(\boldsymbol{b}-A\boldsymbol{x}^{(k+1)}\right)_{i}=0." display="block"><mrow><mrow><msub><mrow><mo>(</mo><mrow><mi>𝒃</mi><mo>−</mo><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo>)</mo></mrow><mi>i</mi></msub><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.86)</span></td>
 </tr></tbody>
 </table>
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p">Começamos por decompor a matriz <math id="p2.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> como</p>
-<table id="Ch1.E86" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E87" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E86.m1" class="ltx_Math" alttext="A=D-L-U," display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi><mo>−</mo><mi>U</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E87.m1" class="ltx_Math" alttext="A=D-L-U," display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi><mo>−</mo><mi>U</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.86)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.87)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="p2.m2" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> é a matriz diagonal de <math id="p2.m3" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, <math id="p2.m4" class="ltx_Math" alttext="-L" display="inline"><mrow><mo>−</mo><mi>L</mi></mrow></math> é a parte estritamente triangular inferior de <math id="p2.m5" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> e <math id="p2.m6" class="ltx_Math" alttext="-U" display="inline"><mrow><mo>−</mo><mi>U</mi></mrow></math> é a parte estritamente triangular superior de <math id="p2.m7" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>.</p>
@@ -176,13 +176,13 @@
 
 <div id="SS1.p1" class="ltx_para">
 <p class="ltx_p">Dada uma aproximação inicial <math id="SS1.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{0}" display="inline"><msup><mi>𝒙</mi><mn>0</mn></msup></math>, o <span class="ltx_text ltx_font_bold">método de Jacobi</span> é o método de relaxação que consiste nas iterações</p>
-<table id="Ch1.E87" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E88" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E87.m1" class="ltx_Math" alttext="D\boldsymbol{x}^{(k+1)}=(L+U)\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi>D</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>L</mi><mo>+</mo><mi>U</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E88.m1" class="ltx_Math" alttext="D\boldsymbol{x}^{(k+1)}=(L+U)\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi>D</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>L</mi><mo>+</mo><mi>U</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.87)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.88)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="SS1.p1.m2" class="ltx_Math" alttext="k=0,1,2,\cdots,n_{\text{itmax}}" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>n</mi><mtext>itmax</mtext></msub></mrow></mrow></math>, onde <math id="SS1.p1.m3" class="ltx_Math" alttext="n_{\text{itmax}}" display="inline"><msub><mi>n</mi><mtext>itmax</mtext></msub></math> é o número máximo de iterações permitido.</p>
@@ -290,13 +290,13 @@
 
 <div id="SS2.p1" class="ltx_para">
 <p class="ltx_p">Dada uma aproximação inicial <math id="SS2.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{0}" display="inline"><msup><mi>𝒙</mi><mn>0</mn></msup></math>, o <span class="ltx_text ltx_font_bold">método de Gauss-Seidel</span> é o método de relaxação que consiste nas iterações</p>
-<table id="Ch1.E88" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E89" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E88.m1" class="ltx_Math" alttext="(D-L)\boldsymbol{x}^{(k+1)}=U\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mi>U</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E89.m1" class="ltx_Math" alttext="(D-L)\boldsymbol{x}^{(k+1)}=U\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mi>U</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.88)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.89)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="SS2.p1.m2" class="ltx_Math" alttext="k=0,1,2,\cdots,n_{\text{itmax}}" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>n</mi><mtext>itmax</mtext></msub></mrow></mrow></math>, onde <math id="SS2.p1.m3" class="ltx_Math" alttext="n_{\text{itmax}}" display="inline"><msub><mi>n</mi><mtext>itmax</mtext></msub></math> é o número máximo de iterações permitido.</p>
@@ -408,13 +408,13 @@
 
 <div id="SS2.SSSx1.p1" class="ltx_para">
 <p class="ltx_p">Dada uma aproximação inicial <math id="SS2.SSSx1.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{0}" display="inline"><msup><mi>𝒙</mi><mn>0</mn></msup></math>, o <span class="ltx_text ltx_font_bold">método de Gauss-Seidel retropropagado</span> é o método de relaxação que consiste nas iterações</p>
-<table id="Ch1.E89" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E90" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E89.m1" class="ltx_Math" alttext="(D-U)\boldsymbol{x}^{(k+1)}=L\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mi>U</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mi>L</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E90.m1" class="ltx_Math" alttext="(D-U)\boldsymbol{x}^{(k+1)}=L\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mi>U</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mi>L</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.89)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.90)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="SS2.SSSx1.p1.m2" class="ltx_Math" alttext="k=0,1,2,\cdots,n_{\text{itmax}}" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>n</mi><mtext>itmax</mtext></msub></mrow></mrow></math>, onde <math id="SS2.SSSx1.p1.m3" class="ltx_Math" alttext="n_{\text{itmax}}" display="inline"><msub><mi>n</mi><mtext>itmax</mtext></msub></math> é o número máximo de iterações permitido. Implemente!</p>
@@ -427,33 +427,33 @@
 <p class="ltx_p">Dada uma aproximação inicial <math id="SS2.SSSx2.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{0}" display="inline"><msup><mi>𝒙</mi><mn>0</mn></msup></math>, o <span class="ltx_text ltx_font_bold">método de Gauss-Seidel simétrico</span> é o método de relaxação que consiste nas iterações</p>
 <table id="Ch5.S2.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E90"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E90.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Propaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Propagação:</mtext></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.90)</span></td>
-</tr></tbody>
 <tbody id="Ch1.E91"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E91.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
-{rgb}{0,0,1}(D-L)\boldsymbol{x}^{(k+\frac{1}{2})}=U\boldsymbol{x}^{(k)}+%
-\boldsymbol{b}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">L</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mn mathcolor="#0000FF">2</mn></mfrac></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">U</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E91.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Propaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Propagação:</mtext></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.91)</span></td>
 </tr></tbody>
 <tbody id="Ch1.E92"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E92.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Retropropaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Retropropagação:</mtext></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E92.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
+{rgb}{0,0,1}(D-L)\boldsymbol{x}^{(k+\frac{1}{2})}=U\boldsymbol{x}^{(k)}+%
+\boldsymbol{b}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">L</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mn mathcolor="#0000FF">2</mn></mfrac></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">U</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.92)</span></td>
 </tr></tbody>
 <tbody id="Ch1.E93"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E93.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E93.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Retropropaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Retropropagação:</mtext></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.93)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E94"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E94.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
 {rgb}{0,0,1}(D-U)\boldsymbol{x}^{(k+1)}=L\boldsymbol{x}^{(k+\frac{1}{2})}+%
 \boldsymbol{b}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">U</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">L</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mn mathcolor="#0000FF">2</mn></mfrac></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.93)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.94)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="SS2.SSSx2.p1.m2" class="ltx_Math" alttext="k=0,1,2,\cdots,n_{\text{itmax}}" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>n</mi><mtext>itmax</mtext></msub></mrow></mrow></math>, onde <math id="SS2.SSSx2.p1.m3" class="ltx_Math" alttext="n_{\text{itmax}}" display="inline"><msub><mi>n</mi><mtext>itmax</mtext></msub></math> é o número máximo de iterações permitido. Implemente!</p>
@@ -502,49 +502,49 @@
 
 <div id="SS3.p1" class="ltx_para">
 <p class="ltx_p">Dada uma aproximação inicial <math id="SS3.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>, os métodos de Jacobi e de Gauss-Seidel têm ambos a forma iterada</p>
-<table id="Ch1.E94" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E94.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}M\boldsymbol{%
-x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi mathcolor="#0000FF">M</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">N</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.94)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">proveniente de uma decomposição (do tipo <span class="ltx_text ltx_font_italic">splitting</span>) da matriz <math id="SS3.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, i.e.</p>
 <table id="Ch1.E95" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E95.m1" class="ltx_Math" alttext="A=M-N." display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mi>M</mi><mo>−</mo><mi>N</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E95.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}M\boldsymbol{%
+x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi mathcolor="#0000FF">M</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">N</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.95)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">proveniente de uma decomposição (do tipo <span class="ltx_text ltx_font_italic">splitting</span>) da matriz <math id="SS3.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, i.e.</p>
+<table id="Ch1.E96" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E96.m1" class="ltx_Math" alttext="A=M-N." display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mi>M</mi><mo>−</mo><mi>N</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.96)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">De fato, <math id="SS3.p1.m3" class="ltx_Math" alttext="M=D" display="inline"><mrow><mi>M</mi><mo>=</mo><mi>D</mi></mrow></math> para o método de Jacobi e <math id="SS3.p1.m4" class="ltx_Math" alttext="M=D-L" display="inline"><mrow><mi>M</mi><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow></mrow></math> para o método de Gauss-Seidel.</p>
 </div>
 <div id="SS3.p2" class="ltx_para">
 <p class="ltx_p">A ideia do <span class="ltx_text ltx_font_bold">método de Sobre-Relaxação de Gauss-Seidel (SOR)</span> é introduzir um fator de relaxação <math id="SS3.p2.m1" class="ltx_Math" alttext="\omega&gt;0" display="inline"><mrow><mi>ω</mi><mo>&gt;</mo><mn>0</mn></mrow></math> na iteração acima, baseada na decomposição</p>
-<table id="Ch1.E96" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E96.m1" class="ltx_Math" alttext="\omega A=\underbrace{(D-\omega L)}_{M}-\underbrace{((1-\omega)D+\omega U)}_{N}," display="block"><mrow><mrow><mrow><mi>ω</mi><mo>⁢</mo><mi>A</mi></mrow><mo>=</mo><mrow><munder><munder accentunder="true"><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⏟</mo></munder><mi>M</mi></munder><mo>−</mo><munder><munder accentunder="true"><mrow><mo stretchy="false">(</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>ω</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>D</mi></mrow><mo>+</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>U</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⏟</mo></munder><mi>N</mi></munder></mrow></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.96)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">o que leva às iterações do método SOR</p>
 <table id="Ch1.E97" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E97.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}(D-\omega L)%
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E97.m1" class="ltx_Math" alttext="\omega A=\underbrace{(D-\omega L)}_{M}-\underbrace{((1-\omega)D+\omega U)}_{N}," display="block"><mrow><mrow><mrow><mi>ω</mi><mo>⁢</mo><mi>A</mi></mrow><mo>=</mo><mrow><munder><munder accentunder="true"><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⏟</mo></munder><mi>M</mi></munder><mo>−</mo><munder><munder accentunder="true"><mrow><mo stretchy="false">(</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>ω</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>D</mi></mrow><mo>+</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>U</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⏟</mo></munder><mi>N</mi></munder></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.97)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">o que leva às iterações do método SOR</p>
+<table id="Ch1.E98" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E98.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}(D-\omega L)%
 \boldsymbol{x}^{(k+1)}=((1-\omega)D+\omega U)\boldsymbol{x}^{(k)}+\omega%
 \boldsymbol{b}," display="block"><mrow><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">L</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">ω</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">D</mi></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">U</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.97)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.98)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="SS3.p2.m2" class="ltx_Math" alttext="k=0,1,2,\cdots,n_{\text{itmax}}" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>n</mi><mtext>itmax</mtext></msub></mrow></mrow></math>, onde <math id="SS3.p2.m3" class="ltx_Math" alttext="n_{\text{itmax}}" display="inline"><msub><mi>n</mi><mtext>itmax</mtext></msub></math> é o número máximo de iterações permitido.</p>
@@ -558,33 +558,33 @@ x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><m
 <p class="ltx_p">Dada uma aproximação inicial <math id="SS4.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>, o <span class="ltx_text ltx_font_bold">método de Sobre-Relaxação de Gauss-Seidel Simétrico (SSOR)</span> é o método de relaxação que consiste nas iterações</p>
 <table id="Ch5.S2.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E98"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E98.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Propaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Propagação:</mtext></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.98)</span></td>
-</tr></tbody>
 <tbody id="Ch1.E99"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E99.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
-{rgb}{0,0,1}(D-\omega L)\boldsymbol{x}^{(k+\frac{1}{2})}=((1-\omega)D+\omega U%
-)\boldsymbol{x}^{(k)}+\omega\boldsymbol{b}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">L</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mn mathcolor="#0000FF">2</mn></mfrac></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">ω</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">D</mi></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">U</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E99.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Propaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Propagação:</mtext></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.99)</span></td>
 </tr></tbody>
 <tbody id="Ch1.E100"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E100.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Retropropaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Retropropagação:</mtext></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E100.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
+{rgb}{0,0,1}(D-\omega L)\boldsymbol{x}^{(k+\frac{1}{2})}=((1-\omega)D+\omega U%
+)\boldsymbol{x}^{(k)}+\omega\boldsymbol{b}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">L</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mn mathcolor="#0000FF">2</mn></mfrac></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">ω</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">D</mi></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">U</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.100)</span></td>
 </tr></tbody>
 <tbody id="Ch1.E101"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E101.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E101.m1" class="ltx_Math" alttext="\displaystyle\bullet\text{Retropropaga\c{c}\~{a}o:}" display="inline"><mrow><mi></mi><mo lspace="0.222em" rspace="0.222em">∙</mo><mtext>Retropropagação:</mtext></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.101)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E102"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E102.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
 {rgb}{0,0,1}(D-\omega U)\boldsymbol{x}^{(k+1)}=((1-\omega)D+\omega L)%
 \boldsymbol{x}^{(k+\frac{1}{2})}+\omega\boldsymbol{b}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">D</mi><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">U</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">ω</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">D</mi></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">L</mi></mrow></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mn mathcolor="#0000FF">2</mn></mfrac></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mrow><mi mathcolor="#0000FF">ω</mi><mo>⁢</mo><mi mathcolor="#0000FF">𝒃</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.101)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.102)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="SS4.p1.m2" class="ltx_Math" alttext="k=0,1,2,\cdots,n_{\text{itmax}}" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><msub><mi>n</mi><mtext>itmax</mtext></msub></mrow></mrow></math>, onde <math id="SS4.p1.m3" class="ltx_Math" alttext="n_{\text{itmax}}" display="inline"><msub><mi>n</mi><mtext>itmax</mtext></msub></math> é o número máximo de iterações permitido.</p>
@@ -596,23 +596,23 @@ x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><m
 
 <div id="SS5.p1" class="ltx_para">
 <p class="ltx_p">Dada a decomposição da matriz</p>
-<table id="Ch1.E102" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E102.m1" class="ltx_Math" alttext="A=M-N," display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mi>M</mi><mo>−</mo><mi>N</mi></mrow></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.102)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">para algum método de relaxação, temos que a iteração</p>
 <table id="Ch1.E103" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E103.m1" class="ltx_Math" alttext="M\boldsymbol{x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi>M</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mi>N</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E103.m1" class="ltx_Math" alttext="A=M-N," display="block"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mi>M</mi><mo>−</mo><mi>N</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.103)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para algum método de relaxação, temos que a iteração</p>
+<table id="Ch1.E104" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E104.m1" class="ltx_Math" alttext="M\boldsymbol{x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><mrow><mi>M</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mrow><mi>N</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>+</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.104)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">pode ser escrita como</p>
@@ -620,90 +620,90 @@ x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><m
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E104.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\boldsymbol{x%
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E105.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\boldsymbol{x%
 }^{(k+1)}=G\boldsymbol{x}^{(k)}+\boldsymbol{c}," display="block"><mrow><mrow><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">G</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">𝒄</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.104)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">onde <math id="SS5.p1.m1" class="ltx_Math" alttext="G=M^{-1}N" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>N</mi></mrow></mrow></math> e <math id="SS5.p1.m2" class="ltx_Math" alttext="\boldsymbol{c}=M^{-1}\boldsymbol{b}" display="inline"><mrow><mi>𝒄</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow></math> são chamados de <span class="ltx_text ltx_font_bold">matriz</span> e <span class="ltx_text ltx_font_bold">vetor de iteração</span>, respectivamente. Por exemplo, para o método de Jacobi, temos</p>
-<table id="Ch1.E105" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E105.m1" class="ltx_Math" alttext="G_{J}=D^{-1}(L+U)" display="block"><mrow><msub><mi>G</mi><mi>J</mi></msub><mo>=</mo><mrow><msup><mi>D</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>L</mi><mo>+</mo><mi>U</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.105)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">e, para o método de Gauss-Seidel, temos</p>
+<p class="ltx_p">onde <math id="SS5.p1.m1" class="ltx_Math" alttext="G=M^{-1}N" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>N</mi></mrow></mrow></math> e <math id="SS5.p1.m2" class="ltx_Math" alttext="\boldsymbol{c}=M^{-1}\boldsymbol{b}" display="inline"><mrow><mi>𝒄</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow></math> são chamados de <span class="ltx_text ltx_font_bold">matriz</span> e <span class="ltx_text ltx_font_bold">vetor de iteração</span>, respectivamente. Por exemplo, para o método de Jacobi, temos</p>
 <table id="Ch1.E106" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E106.m1" class="ltx_Math" alttext="G_{GS}=(D-L)^{-1}U." display="block"><mrow><mrow><msub><mi>G</mi><mrow><mi>G</mi><mo>⁢</mo><mi>S</mi></mrow></msub><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>U</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E106.m1" class="ltx_Math" alttext="G_{J}=D^{-1}(L+U)" display="block"><mrow><msub><mi>G</mi><mi>J</mi></msub><mo>=</mo><mrow><msup><mi>D</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>L</mi><mo>+</mo><mi>U</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.106)</span></td>
 </tr></tbody>
 </table>
-</div>
-<div id="SS5.p2" class="ltx_para">
-<p class="ltx_p">A iteração (<a href="#eq:itmat" title="In 1.3.5 Métodos de relaxação como precondicionadoras ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.104</span></a>) pode ser vista como uma iteração de ponto fixo para resolver o sistema linear</p>
-<table id="eq:sislinpf" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">e, para o método de Gauss-Seidel, temos</p>
+<table id="Ch1.E107" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E107.m1" class="ltx_Math" alttext="(I-G)\boldsymbol{x}=\boldsymbol{c}." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒄</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E107.m1" class="ltx_Math" alttext="G_{GS}=(D-L)^{-1}U." display="block"><mrow><mrow><msub><mi>G</mi><mrow><mi>G</mi><mo>⁢</mo><mi>S</mi></mrow></msub><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow><mo stretchy="false">)</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>U</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.107)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Observando que</p>
-<table id="Ch1.E108" class="ltx_equation ltx_eqn_table">
+</div>
+<div id="SS5.p2" class="ltx_para">
+<p class="ltx_p">A iteração (<a href="#eq:itmat" title="In 1.3.5 Métodos de relaxação como precondicionadoras ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.105</span></a>) pode ser vista como uma iteração de ponto fixo para resolver o sistema linear</p>
+<table id="eq:sislinpf" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E108.m1" class="ltx_Math" alttext="I-G=I-M^{-1}N=M^{-1}(M-N)=M^{-1}A," display="block"><mrow><mrow><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo>=</mo><mrow><mi>I</mi><mo>−</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>N</mi></mrow></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>M</mi><mo>−</mo><mi>N</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E108.m1" class="ltx_Math" alttext="(I-G)\boldsymbol{x}=\boldsymbol{c}." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒄</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.108)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">vemos que o sistema é equivalente ao sistema original <math id="SS5.p2.m1" class="ltx_Math" alttext="A\boldsymbol{x}=\boldsymbol{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math> precondicionado à esquerda por <math id="SS5.p2.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, i.e.</p>
+<p class="ltx_p">Observando que</p>
 <table id="Ch1.E109" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E109.m1" class="ltx_Math" alttext="M^{-1}A\boldsymbol{x}=M^{-1}\boldsymbol{b}." display="block"><mrow><mrow><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E109.m1" class="ltx_Math" alttext="I-G=I-M^{-1}N=M^{-1}(M-N)=M^{-1}A," display="block"><mrow><mrow><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo>=</mo><mrow><mi>I</mi><mo>−</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>N</mi></mrow></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>M</mi><mo>−</mo><mi>N</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.109)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">vemos que o sistema é equivalente ao sistema original <math id="SS5.p2.m1" class="ltx_Math" alttext="A\boldsymbol{x}=\boldsymbol{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math> precondicionado à esquerda por <math id="SS5.p2.m2" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>, i.e.</p>
+<table id="Ch1.E110" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E110.m1" class="ltx_Math" alttext="M^{-1}A\boldsymbol{x}=M^{-1}\boldsymbol{b}." display="block"><mrow><mrow><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.110)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">As precondicionadoras de Jacobi (JA), Gauss-Seidel (GS), SOR e SSOR são, portanto, respectivamente</p>
 <table id="Ch5.S2.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E110"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E110.m1" class="ltx_Math" alttext="\displaystyle M_{\text{JA}}=D," display="inline"><mrow><mrow><msub><mi>M</mi><mtext>JA</mtext></msub><mo>=</mo><mi>D</mi></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.110)</span></td>
-</tr></tbody>
 <tbody id="Ch1.E111"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E111.m1" class="ltx_Math" alttext="\displaystyle M_{\text{GS}}=D-L," display="inline"><mrow><mrow><msub><mi>M</mi><mtext>GS</mtext></msub><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E111.m1" class="ltx_Math" alttext="\displaystyle M_{\text{JA}}=D," display="inline"><mrow><mrow><msub><mi>M</mi><mtext>JA</mtext></msub><mo>=</mo><mi>D</mi></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.111)</span></td>
 </tr></tbody>
 <tbody id="Ch1.E112"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E112.m1" class="ltx_Math" alttext="\displaystyle M_{\text{SOR}}=D-\omega L," display="inline"><mrow><mrow><msub><mi>M</mi><mtext>SOR</mtext></msub><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E112.m1" class="ltx_Math" alttext="\displaystyle M_{\text{GS}}=D-L," display="inline"><mrow><mrow><msub><mi>M</mi><mtext>GS</mtext></msub><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mi>L</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.112)</span></td>
 </tr></tbody>
 <tbody id="Ch1.E113"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E113.m1" class="ltx_Math" alttext="\displaystyle M_{\text{SSOR}}=(D-\omega U)D^{-1}(D-\omega L)." display="inline"><mrow><mrow><msub><mi>M</mi><mtext>SSOR</mtext></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>U</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E113.m1" class="ltx_Math" alttext="\displaystyle M_{\text{SOR}}=D-\omega L," display="inline"><mrow><mrow><msub><mi>M</mi><mtext>SOR</mtext></msub><mo>=</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.113)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E114"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E114.m1" class="ltx_Math" alttext="\displaystyle M_{\text{SSOR}}=(D-\omega U)D^{-1}(D-\omega L)." display="inline"><mrow><mrow><msub><mi>M</mi><mtext>SSOR</mtext></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>U</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>D</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>D</mi><mo>−</mo><mrow><mi>ω</mi><mo>⁢</mo><mi>L</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.114)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -718,51 +718,51 @@ x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><m
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E114.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\boldsymbol{x%
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E115.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\boldsymbol{x%
 }^{(k+1)}=G\boldsymbol{x}^{(k)}+\boldsymbol{c}," display="block"><mrow><mrow><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">=</mo><mrow><mrow><mi mathcolor="#0000FF">G</mi><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">𝒄</mi></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.114)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.115)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="SS6.p1.m1" class="ltx_Math" alttext="G=M^{-1}N" display="inline"><mrow><mi>G</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>N</mi></mrow></mrow></math> e <math id="SS6.p1.m2" class="ltx_Math" alttext="\boldsymbol{c}=M^{-1}\boldsymbol{b}" display="inline"><mrow><mi>𝒄</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow></math> são a matriz e o vetor de iteração do método obtido a partir de uma decomposição <math id="SS6.p1.m3" class="ltx_Math" alttext="A=M-N" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mi>M</mi><mo>−</mo><mi>N</mi></mrow></mrow></math>.</p>
 </div>
 <div id="SS6.p2" class="ltx_para">
-<p class="ltx_p">Vamos analisar alguns aspectos sobre a convergência das iterações (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.114</span></a>).</p>
+<p class="ltx_p">Vamos analisar alguns aspectos sobre a convergência das iterações (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.115</span></a>).</p>
 <ol id="I1" class="ltx_enumerate">
 <li id="I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">a)</span> 
 <div id="I1.i1.p1" class="ltx_para">
-<p class="ltx_p">Se a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.114</span></a>) converge para qualquer aproximação inicial <math id="I1.i1.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>, então, converge para a solução do sistema linear original <math id="I1.i1.p1.m2" class="ltx_Math" alttext="A\boldsymbol{x}=\boldsymbol{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math>?</p>
+<p class="ltx_p">Se a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.115</span></a>) converge para qualquer aproximação inicial <math id="I1.i1.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>, então, converge para a solução do sistema linear original <math id="I1.i1.p1.m2" class="ltx_Math" alttext="A\boldsymbol{x}=\boldsymbol{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math>?</p>
 </div>
 <div id="I1.i1.p2" class="ltx_para">
-<p class="ltx_p">Se a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.114</span></a>) converge, então, existe <math id="I1.i1.p2.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(k)}\to\boldsymbol{x}^{*}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">→</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow></math> é tal que</p>
-<table id="Ch1.E115" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E115.m1" class="ltx_Math" alttext="\boldsymbol{x}^{*}=G\boldsymbol{x}^{*}+\boldsymbol{c}." display="block"><mrow><mrow><msup><mi>𝒙</mi><mo>∗</mo></msup><mo>=</mo><mrow><mrow><mi>G</mi><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow><mo>+</mo><mi>𝒄</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.115)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Assim, temos</p>
+<p class="ltx_p">Se a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.115</span></a>) converge, então, existe <math id="I1.i1.p2.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(k)}\to\boldsymbol{x}^{*}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">→</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow></math> é tal que</p>
 <table id="Ch1.E116" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E116.m1" class="ltx_Math" alttext="(I-G)\boldsymbol{x}^{*}=\boldsymbol{c}." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow><mo>=</mo><mi>𝒄</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E116.m1" class="ltx_Math" alttext="\boldsymbol{x}^{*}=G\boldsymbol{x}^{*}+\boldsymbol{c}." display="block"><mrow><mrow><msup><mi>𝒙</mi><mo>∗</mo></msup><mo>=</mo><mrow><mrow><mi>G</mi><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow><mo>+</mo><mi>𝒄</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.116)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Como <math id="I1.i1.p2.m2" class="ltx_Math" alttext="I-G=M^{-1}A" display="inline"><mrow><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi></mrow></mrow></math> e <math id="I1.i1.p2.m3" class="ltx_Math" alttext="\boldsymbol{c}=M^{-1}\boldsymbol{b}" display="inline"><mrow><mi>𝒄</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow></math>, temos</p>
+<p class="ltx_p">Assim, temos</p>
 <table id="Ch1.E117" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E117.m1" class="ltx_Math" alttext="M^{-1}A\boldsymbol{x}^{*}=M^{-1}\boldsymbol{b}," display="block"><mrow><mrow><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E117.m1" class="ltx_Math" alttext="(I-G)\boldsymbol{x}^{*}=\boldsymbol{c}." display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow><mo>=</mo><mi>𝒄</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.117)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="I1.i1.p2.m2" class="ltx_Math" alttext="I-G=M^{-1}A" display="inline"><mrow><mrow><mi>I</mi><mo>−</mo><mi>G</mi></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi></mrow></mrow></math> e <math id="I1.i1.p2.m3" class="ltx_Math" alttext="\boldsymbol{c}=M^{-1}\boldsymbol{b}" display="inline"><mrow><mi>𝒄</mi><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow></math>, temos</p>
+<table id="Ch1.E118" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E118.m1" class="ltx_Math" alttext="M^{-1}A\boldsymbol{x}^{*}=M^{-1}\boldsymbol{b}," display="block"><mrow><mrow><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow><mo>=</mo><mrow><msup><mi>M</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mi>𝒃</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.118)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">o que implica que <math id="I1.i1.p2.m4" class="ltx_Math" alttext="A\boldsymbol{x}^{*}=\boldsymbol{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow><mo>=</mo><mi>𝒃</mi></mrow></math>, ou seja, <math id="I1.i1.p2.m5" class="ltx_Math" alttext="\boldsymbol{x}^{*}" display="inline"><msup><mi>𝒙</mi><mo>∗</mo></msup></math> é a solução do sistema linear original.</p>
@@ -771,18 +771,18 @@ x}^{(k+1)}=N\boldsymbol{x}^{(k)}+\boldsymbol{b}," display="block"><mrow><mrow><m
 <li id="I1.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">b)</span> 
 <div id="I1.i2.p1" class="ltx_para">
-<p class="ltx_p">Sobre quais condições a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.114</span></a>) converge para qualquer aproximação inicial <math id="I1.i2.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>?</p>
+<p class="ltx_p">Sobre quais condições a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.115</span></a>) converge para qualquer aproximação inicial <math id="I1.i2.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>?</p>
 </div>
 <div id="I1.i2.p2" class="ltx_para">
-<p class="ltx_p">Pode-se mostrar que a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.114</span></a>) converge para qualquer aproximação inicial <math id="I1.i2.p2.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>, se <span class="ltx_text" style="background-color:#FFFF00;"><math id="I1.i2.p2.m2" class="ltx_Math" alttext="(I-G)" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mrow><mi mathbackground="#FFFF00">I</mi><mo mathbackground="#FFFF00">−</mo><mi mathbackground="#FFFF00">G</mi></mrow><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> for não singular e o raio espectral de <math id="I1.i2.p2.m3" class="ltx_Math" alttext="G" display="inline"><mi mathbackground="#FFFF00">G</mi></math> for estritamente menor que 1, i.e. <math id="I1.i2.p2.m4" class="ltx_Math" alttext="\rho(G)&lt;1" display="inline"><mrow><mrow><mi mathbackground="#FFFF00">ρ</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">G</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">&lt;</mo><mn mathbackground="#FFFF00">1</mn></mrow></math></span>. Outro importante resultado é uma consequência do teorema de Gershgorin<span id="Ch1.footnote14" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">14</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">14</sup><span class="ltx_tag ltx_tag_note">14</span>Semyon Aronovich Gershgorin, 1901 - 1933, matemático russo-soviético. Fonte: <a href="https://en.wikipedia.org/wiki/Semyon_Gershgorin" title="" class="ltx_ref ltx_href">Wikipedia: Semyon Gershgorin</a>.</span></span></span>. Temos que os <span class="ltx_text" style="background-color:#FFFF00;">métodos de Jacobi e de Gauss-Seidel convergem para qualquer aproximação inicial <math id="I1.i2.p2.m5" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi mathbackground="#FFFF00">𝒙</mi><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mn mathbackground="#FFFF00">0</mn><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></msup></math>, se <math id="I1.i2.p2.m6" class="ltx_Math" alttext="A" display="inline"><mi mathbackground="#FFFF00">A</mi></math> for estritamente diagonal dominante</span>, i.e. se</p>
-<table id="Ch1.E118" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">Pode-se mostrar que a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.115</span></a>) converge para qualquer aproximação inicial <math id="I1.i2.p2.m1" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></math>, se <span class="ltx_text" style="background-color:#FFFF00;"><math id="I1.i2.p2.m2" class="ltx_Math" alttext="(I-G)" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mrow><mi mathbackground="#FFFF00">I</mi><mo mathbackground="#FFFF00">−</mo><mi mathbackground="#FFFF00">G</mi></mrow><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> for não singular e o raio espectral de <math id="I1.i2.p2.m3" class="ltx_Math" alttext="G" display="inline"><mi mathbackground="#FFFF00">G</mi></math> for estritamente menor que 1, i.e. <math id="I1.i2.p2.m4" class="ltx_Math" alttext="\rho(G)&lt;1" display="inline"><mrow><mrow><mi mathbackground="#FFFF00">ρ</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">G</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">&lt;</mo><mn mathbackground="#FFFF00">1</mn></mrow></math></span>. Outro importante resultado é uma consequência do teorema de Gershgorin<span id="Ch1.footnote14" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">14</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">14</sup><span class="ltx_tag ltx_tag_note">14</span>Semyon Aronovich Gershgorin, 1901 - 1933, matemático russo-soviético. Fonte: <a href="https://en.wikipedia.org/wiki/Semyon_Gershgorin" title="" class="ltx_ref ltx_href">Wikipedia: Semyon Gershgorin</a>.</span></span></span>. Temos que os <span class="ltx_text" style="background-color:#FFFF00;">métodos de Jacobi e de Gauss-Seidel convergem para qualquer aproximação inicial <math id="I1.i2.p2.m5" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi mathbackground="#FFFF00">𝒙</mi><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mn mathbackground="#FFFF00">0</mn><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></msup></math>, se <math id="I1.i2.p2.m6" class="ltx_Math" alttext="A" display="inline"><mi mathbackground="#FFFF00">A</mi></math> for estritamente diagonal dominante</span>, i.e. se</p>
+<table id="Ch1.E119" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E118.m1" class="ltx_Math" alttext="|a_{ii}|&gt;\sum_{\begin{subarray}{c}j=1\\
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E119.m1" class="ltx_Math" alttext="|a_{ii}|&gt;\sum_{\begin{subarray}{c}j=1\\
 j\neq i\end{subarray}}^{n}|a_{ij}|," display="block"><mrow><mrow><mrow><mo stretchy="false">|</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>⁢</mo><mi>i</mi></mrow></msub><mo stretchy="false">|</mo></mrow><mo rspace="0.111em">&gt;</mo><mrow><munderover><mo movablelimits="false" rspace="0em">∑</mo><mtable rowspacing="0pt"><mtr><mtd><mrow><mi>j</mi><mo>=</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mi>j</mi><mo>≠</mo><mi>i</mi></mrow></mtd></mtr></mtable><mi>n</mi></munderover><mrow><mo stretchy="false">|</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>⁢</mo><mi>j</mi></mrow></msub><mo stretchy="false">|</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.118)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.119)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para todo <math id="I1.i2.p2.m7" class="ltx_Math" alttext="i=1,2,\cdots,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">⋯</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. Ainda, <span class="ltx_text" style="background-color:#FFFF00;">se <math id="I1.i2.p2.m8" class="ltx_Math" alttext="A" display="inline"><mi mathbackground="#FFFF00">A</mi></math> for simétrica positiva definida e <math id="I1.i2.p2.m9" class="ltx_Math" alttext="0&lt;\omega&lt;2" display="inline"><mrow><mn mathbackground="#FFFF00">0</mn><mo mathbackground="#FFFF00">&lt;</mo><mi mathbackground="#FFFF00">ω</mi><mo mathbackground="#FFFF00">&lt;</mo><mn mathbackground="#FFFF00">2</mn></mrow></math>, então, o método SOR converge para qualquer aproximação inicial <math id="I1.i2.p2.m10" class="ltx_Math" alttext="\boldsymbol{x}^{(0)}" display="inline"><msup><mi mathbackground="#FFFF00">𝒙</mi><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mn mathbackground="#FFFF00">0</mn><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></msup></math></span>.</p>
@@ -791,36 +791,36 @@ j\neq i\end{subarray}}^{n}|a_{ij}|," display="block"><mrow><mrow><mrow><mo stret
 <li id="I1.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">c)</span> 
 <div id="I1.i3.p1" class="ltx_para">
-<p class="ltx_p">Quando a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.114</span></a>) converge, qual é a taxa de convergência?</p>
+<p class="ltx_p">Quando a iteração (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.115</span></a>) converge, qual é a taxa de convergência?</p>
 </div>
 <div id="I1.i3.p2" class="ltx_para">
-<p class="ltx_p">Do fato dos métodos de relaxação serem iterações de ponto fixo (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.114</span></a>), temos que a taxa de convergência é linear e dada por</p>
+<p class="ltx_p">Do fato dos métodos de relaxação serem iterações de ponto fixo (<a href="#eq:itmat2" title="In 1.3.6 Aspectos de convergência ‣ 1.3 Métodos iterativos básicos ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.115</span></a>), temos que a taxa de convergência é linear e dada por</p>
 <table id="Ch5.S2.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E119"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E119.m1" class="ltx_Math" alttext="\displaystyle\|\boldsymbol{x}^{k+1}-\boldsymbol{x}^{k}\|\leq\|G\|\|\boldsymbol%
-{x}^{k}-\boldsymbol{x}^{k-1}\|" display="inline"><mrow><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>𝒙</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>𝒙</mi><mi>k</mi></msup></mrow><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mrow><mo stretchy="false">‖</mo><mi>G</mi><mo stretchy="false">‖</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>𝒙</mi><mi>k</mi></msup><mo>−</mo><msup><mi>𝒙</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo stretchy="false">‖</mo></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.119)</span></td>
-</tr></tbody>
 <tbody id="Ch1.E120"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E120.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\leq\|G\|^{k}\|\boldsymbol{x}^{1}-\boldsymbol{x}^{0}\|." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">≤</mo><mo lspace="0em" rspace="0.167em">∥</mo><mi>G</mi><msup><mo lspace="0em" rspace="0.0835em">∥</mo><mi>k</mi></msup><mo lspace="0.0835em" rspace="0.167em">∥</mo><msup><mi>𝒙</mi><mn>1</mn></msup><mo>−</mo><msup><mi>𝒙</mi><mn>0</mn></msup><mo lspace="0em" rspace="0.0835em">∥</mo><mo lspace="0.0835em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E120.m1" class="ltx_Math" alttext="\displaystyle\|\boldsymbol{x}^{k+1}-\boldsymbol{x}^{k}\|\leq\|G\|\|\boldsymbol%
+{x}^{k}-\boldsymbol{x}^{k-1}\|" display="inline"><mrow><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>𝒙</mi><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>−</mo><msup><mi>𝒙</mi><mi>k</mi></msup></mrow><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mrow><mo stretchy="false">‖</mo><mi>G</mi><mo stretchy="false">‖</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>𝒙</mi><mi>k</mi></msup><mo>−</mo><msup><mi>𝒙</mi><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo stretchy="false">‖</mo></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.120)</span></td>
 </tr></tbody>
+<tbody id="Ch1.E121"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E121.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\leq\|G\|^{k}\|\boldsymbol{x}^{1}-\boldsymbol{x}^{0}\|." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">≤</mo><mo lspace="0em" rspace="0.167em">∥</mo><mi>G</mi><msup><mo lspace="0em" rspace="0.0835em">∥</mo><mi>k</mi></msup><mo lspace="0.0835em" rspace="0.167em">∥</mo><msup><mi>𝒙</mi><mn>1</mn></msup><mo>−</mo><msup><mi>𝒙</mi><mn>0</mn></msup><mo lspace="0em" rspace="0.0835em">∥</mo><mo lspace="0.0835em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.121)</span></td>
+</tr></tbody>
 </table>
 <p class="ltx_p">Lembrando que <math id="I1.i3.p2.m1" class="ltx_Math" alttext="\rho(G)\leq\|G\|" display="inline"><mrow><mrow><mi>ρ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><mo stretchy="false">‖</mo><mi>G</mi><mo stretchy="false">‖</mo></mrow></mrow></math> para qualquer norma natural, temos que a taxa de convergência é governada por <math id="I1.i3.p2.m2" class="ltx_Math" alttext="\rho(G)" display="inline"><mrow><mi>ρ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>G</mi><mo stretchy="false">)</mo></mrow></mrow></math>, i.e.</p>
-<table id="Ch1.E121" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E122" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E121.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\|\boldsymbol%
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E122.m1" class="ltx_Math" alttext="\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}\|\boldsymbol%
 {x}^{k+1}-\boldsymbol{x}^{k}\|\lessapprox\rho(G)^{k}\|\boldsymbol{x}^{1}-%
 \boldsymbol{x}^{0}\|." display="block"><mrow><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">‖</mo><mrow><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mi mathcolor="#0000FF">k</mi><mo mathcolor="#0000FF">+</mo><mn mathcolor="#0000FF">1</mn></mrow></msup><mo mathcolor="#0000FF">−</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mi mathcolor="#0000FF">k</mi></msup></mrow><mo mathcolor="#0000FF" stretchy="false">‖</mo></mrow><mo mathcolor="#0000FF">⪅</mo><mrow><mi mathcolor="#0000FF">ρ</mi><mo>⁢</mo><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">G</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mi mathcolor="#0000FF">k</mi></msup><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">‖</mo><mrow><msup><mi mathcolor="#0000FF">𝒙</mi><mn mathcolor="#0000FF">1</mn></msup><mo mathcolor="#0000FF">−</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mn mathcolor="#0000FF">0</mn></msup></mrow><mo mathcolor="#0000FF" stretchy="false">‖</mo></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.121)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.122)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -870,13 +870,13 @@ j\neq i\end{subarray}}^{n}|a_{ij}|," display="block"><mrow><mrow><mrow><mo stret
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
 <p class="ltx_p">Para um sistema <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="A\boldsymbol{x}=b" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>b</mi></mrow></math>, com <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> matriz definida positiva e tridiagonal, a escolha ótima de <math id="Thmexer5.p1.m3" class="ltx_Math" alttext="\omega" display="inline"><mi>ω</mi></math> para o método SOR é dada por <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="Análise numérica" class="ltx_ref">2</a>]</cite></p>
-<table id="Ch1.E122" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E123" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E122.m1" class="ltx_Math" alttext="\omega_{\text{opt}}=\frac{2}{1+\sqrt{1-\rho(G_{JA})^{2}}}," display="block"><mrow><mrow><msub><mi>ω</mi><mtext>opt</mtext></msub><mo>=</mo><mfrac><mn>2</mn><mrow><mn>1</mn><mo>+</mo><msqrt><mrow><mn>1</mn><mo>−</mo><mrow><mi>ρ</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><msub><mi>G</mi><mrow><mi>J</mi><mo>⁢</mo><mi>A</mi></mrow></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mrow></mfrac></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E123.m1" class="ltx_Math" alttext="\omega_{\text{opt}}=\frac{2}{1+\sqrt{1-\rho(G_{JA})^{2}}}," display="block"><mrow><mrow><msub><mi>ω</mi><mtext>opt</mtext></msub><mo>=</mo><mfrac><mn>2</mn><mrow><mn>1</mn><mo>+</mo><msqrt><mrow><mn>1</mn><mo>−</mo><mrow><mi>ρ</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><msub><mi>G</mi><mrow><mi>J</mi><mo>⁢</mo><mi>A</mi></mrow></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow></msqrt></mrow></mfrac></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.122)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.123)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmexer5.p1.m4" class="ltx_Math" alttext="G_{JA}" display="inline"><msub><mi>G</mi><mrow><mi>J</mi><mo>⁢</mo><mi>A</mi></mrow></msub></math> é a matriz de iteração do método de Jacobi. Verifique este resultado numericamente para o sistema linear associado ao problema de Poisson<span id="Ch1.footnote19" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">19</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">19</sup><span class="ltx_tag ltx_tag_note">19</span>Siméon Denis Poisson, 1781 - 1840, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" title="" class="ltx_ref ltx_href">Wikipédia: Siméon Denis Poisson</a>.</span></span></span> 1D dado no Exemplo <a href="cap_sislin_sec_matriz_banda.html#ex:poisson1d" title="Exemplo 1.1.2.(Equaçao de Poisson 1D) ‣ 1.1 Matrizes banda ‣ Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.1.2</span></a>, para diferentes tamanhos de malha.</p>
@@ -922,7 +922,7 @@ j\neq i\end{subarray}}^{n}|a_{ij}|," display="block"><mrow><mrow><mrow><mo stret
 <div class="ltx_align_center">
 <a href="cap_sislin_sec_matesparsa.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Matrizes esparsas</span></a><a href="bib.html" title="In Matemática Numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_sislin_sec_mgc.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática Numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Método do gradiente conjugado</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Thu Aug 13 15:27:27 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Aug 13 17:14:09 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
