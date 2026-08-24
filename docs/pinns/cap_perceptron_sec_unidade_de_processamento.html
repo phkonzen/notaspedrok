@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs</title>
-<!--Generated on Fri Aug 21 10:15:21 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 21 de agosto de 2026.-->
+<!--Generated on Mon Aug 24 13:10:00 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 24 de agosto de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -19,6 +19,7 @@
 <link rel="prev" href="cap_perceptron.html" title="Capítulo 2 Perceptron ‣ Introdução a PINNs">
 <link rel="next" href="cap_percepton_sec_retroprop.html" title="2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
 <link rel="section" href="cap_percepton_sec_retroprop.html" title="2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="section" href="cap_perceptron_sec_ativacao.html" title="2.3 Funções de ativação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
 <link rel="chapter" href="licenca.html" title="Licença ‣ Introdução a PINNs">
 <link rel="chapter" href="prefacio.html" title="Prefácio ‣ Introdução a PINNs">
 <link rel="chapter" href="./" title="Introdução a PINNs ‣ Introdução a PINNs">
@@ -131,13 +132,19 @@
 <span class="ltx_tag ltx_tag_section">2.1 </span>Unidade de processamento</h1>
 
 <div id="p1" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">unidade</span> básica de processamento</span><span id="Ch2.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>A unidade básica de processamento de uma RNA também é chamada de neurônio artificial ou nodo da rede.</span></span></span><span class="ltx_text" style="background-color:#FFFF00;"> do tipo <span class="ltx_text ltx_font_bold">perceptron</span></span> segue o esquema dado na Figura <a href="#cap_perceptron:fig:perceptron" title="Figura 2.1 ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a>. <span class="ltx_text" style="background-color:#FFFF00;">Consiste na composição de uma <span class="ltx_text ltx_font_bold">função de ativação</span></span><span id="Ch2.footnote2" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup><span class="ltx_tag ltx_tag_note">2</span>Originalmente, o perceptron tem a função sinal como função de ativação. Por referência histórica, vamos adotar este nome mesmo para unidades de processamento com outras funções de ativação</span></span></span><span class="ltx_text" style="background-color:#FFFF00;"> <math id="p1.m1" class="ltx_Math" alttext="\varphi:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi mathbackground="#FFFF00">φ</mi><mo lspace="0.278em" mathbackground="#FFFF00" rspace="0.278em">:</mo><mrow><mi mathbackground="#FFFF00">ℝ</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo><mi mathbackground="#FFFF00">ℝ</mi></mrow></mrow></math> com a <span class="ltx_text ltx_font_bold">pré-ativação</span></span></p>
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">unidade</span> básica de processamento</span><span id="Ch2.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>A unidade básica de processamento de uma RNA também é chamada de neurônio artificial ou nodo da rede.</span></span></span><span class="ltx_text" style="background-color:#FFFF00;"> do tipo <span class="ltx_text ltx_font_bold">perceptron</span></span> segue o esquema apresentado na Figura <a href="#cap_perceptron:fig:perceptron" title="Figura 2.1 ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a>.</p>
+</div>
+<figure id="cap_perceptron:fig:perceptron" class="ltx_figure"><img src="cap_perceptron/dados/fig_perceptron/fig.png" id="Ch2.F1.g1" class="ltx_graphics ltx_centering ltx_img_square" width="204" height="196" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.1</span>: </span><span class="ltx_text" style="font-size:90%;">Unidade básica de processamento do tipo perceptron: <math id="Ch2.F1.m2" class="ltx_Math" alttext="y=\eta(\bm{x};\bm{\theta})" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>η</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo>;</mo><mi>𝜽</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Consiste na composição de uma <span class="ltx_text ltx_font_bold">função de ativação</span></span><span id="Ch2.footnote2" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup><span class="ltx_tag ltx_tag_note">2</span>Originalmente, o perceptron tem a função sinal como função de ativação. Por referência histórica, vamos adotar este nome mesmo para unidades de processamento com outras funções de ativação</span></span></span><span class="ltx_text" style="background-color:#FFFF00;"> <math id="p2.m1" class="ltx_Math" alttext="\varphi:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi mathbackground="#FFFF00">φ</mi><mo lspace="0.278em" mathbackground="#FFFF00" rspace="0.278em">:</mo><mrow><mi mathbackground="#FFFF00">ℝ</mi><mo mathbackground="#FFFF00" stretchy="false">→</mo><mi mathbackground="#FFFF00">ℝ</mi></mrow></mrow></math> com a <span class="ltx_text ltx_font_bold">pré-ativação</span></span></p>
 <table id="Ch4.S3.EGx1" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
 <td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E1.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
-z:=\bm{w}\cdot\boldsymbol{x}+b" display="inline"><mrow><mi mathcolor="#0000FF">z</mi><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mrow><mi mathcolor="#0000FF">𝒘</mi><mo lspace="0.222em" mathcolor="#0000FF" rspace="0.222em">⋅</mo><mi mathcolor="#0000FF">𝒙</mi></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">b</mi></mrow></mrow></math></td>
+z:=\bm{w}\cdot\bm{x}+b" display="inline"><mrow><mi mathcolor="#0000FF">z</mi><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mrow><mi mathcolor="#0000FF">𝒘</mi><mo lspace="0.222em" mathcolor="#0000FF" rspace="0.222em">⋅</mo><mi mathcolor="#0000FF">𝒙</mi></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">b</mi></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.1)</span></td>
 </tr></tbody>
@@ -148,248 +155,238 @@ z:=\bm{w}\cdot\boldsymbol{x}+b" display="inline"><mrow><mi mathcolor="#0000FF">z
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.2)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">onde, <math id="p1.m2" class="ltx_Math" alttext="\boldsymbol{x}=(x_{0},x_{1},\dotsc,x_{n-1})\in\mathbb{R}^{n}" display="inline"><mrow><mi>𝒙</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math> é o <span class="ltx_text ltx_font_bold">vetor de entrada</span>, <math id="p1.m3" class="ltx_Math" alttext="\boldsymbol{\theta}=(\boldsymbol{w},b)\in\mathbb{R}^{n+1}" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup></mrow></math> são of <span class="ltx_text ltx_font_bold">parâmetros da unidade</span>, formados pelos <span class="ltx_text ltx_font_bold">pesos</span> <math id="p1.m4" class="ltx_Math" alttext="\boldsymbol{w}=(w_{0},w_{1},\dotsc,w_{n-1})\in\mathbb{R}^{n}" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>w</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math> e o <span class="ltx_text ltx_font_bold ltx_font_italic">bias</span> <math id="p1.m5" class="ltx_Math" alttext="b\in\mathbb{R}" display="inline"><mrow><mi>b</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>. Escolhida uma função de ativação, a <span class="ltx_text ltx_font_bold">saída do neurônio</span> é computada por</p>
+<p class="ltx_p">onde, <math id="p2.m2" class="ltx_Math" alttext="\bm{x}=(x_{0},x_{1},\dotsc,x_{n_{\text{in}}-1})\in\mathbb{R}^{n_{\text{in}}}" display="inline"><mrow><mi>𝒙</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>x</mi><mrow><msub><mi>n</mi><mtext>in</mtext></msub><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><msub><mi>n</mi><mtext>in</mtext></msub></msup></mrow></math> é o <span class="ltx_text ltx_font_bold">vetor de entrada</span>, <math id="p2.m3" class="ltx_Math" alttext="\bm{\theta}=(\bm{w},b)\in\mathbb{R}^{n_{\text{in}}+1}" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mrow><msub><mi>n</mi><mtext>in</mtext></msub><mo>+</mo><mn>1</mn></mrow></msup></mrow></math> são of <span class="ltx_text ltx_font_bold">parâmetros da unidade</span>, formados pelos <span class="ltx_text ltx_font_bold">pesos</span> <math id="p2.m4" class="ltx_Math" alttext="\bm{w}=(w_{0},w_{1},\dotsc,w_{n_{\text{in}}-1})\in\mathbb{R}^{n_{\text{in}}}" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>w</mi><mrow><msub><mi>n</mi><mtext>in</mtext></msub><mo>−</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><msub><mi>n</mi><mtext>in</mtext></msub></msup></mrow></math> e o <span class="ltx_text ltx_font_bold ltx_font_italic">bias</span> <math id="p2.m5" class="ltx_Math" alttext="b\in\mathbb{R}" display="inline"><mrow><mi>b</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>. Escolhida uma função de ativação, a <span class="ltx_text ltx_font_bold">saída do neurônio</span> é computada por</p>
 <table id="Ch4.S3.EGx2" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
 <td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E3.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
-y=\eta\left(\boldsymbol{x};\boldsymbol{\theta}\right):=\varphi(z)" display="inline"><mrow><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">η</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF">(</mo><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF">;</mo><mi mathcolor="#0000FF">𝜽</mi><mo mathcolor="#0000FF" rspace="0.278em">)</mo></mrow></mrow><mo mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mi mathcolor="#0000FF">φ</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+y=\eta(\bm{x};\bm{\theta}):=\varphi(z)" display="inline"><mrow><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">η</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF">;</mo><mi mathcolor="#0000FF">𝜽</mi><mo mathcolor="#0000FF" rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mi mathcolor="#0000FF">φ</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.3)</span></td>
 </tr></tbody>
 <tbody id="Ch2.E4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E4.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\varphi(\boldsymbol{w}\cdot\boldsymbol{x}+b)" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>φ</mi><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E4.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\varphi(\bm{w}\cdot\bm{x}+b)" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>φ</mi><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.4)</span></td>
 </tr></tbody>
 </table>
 </div>
-<figure id="cap_perceptron:fig:perceptron" class="ltx_figure"><img src="cap_perceptron/dados/fig_perceptron/fig.png" id="Ch2.F1.g1" class="ltx_graphics ltx_centering ltx_img_square" width="165" height="164" alt="Refer to caption">
-<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.1</span>: </span><span class="ltx_text" style="font-size:90%;">Esquema de um perceptron (unidade básica de processamento): <math id="Ch2.F1.m2" class="ltx_Math" alttext="y=\eta(\boldsymbol{x};\boldsymbol{\theta})" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>η</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo>;</mo><mi>𝜽</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</span></figcaption>
-</figure>
-<div id="p2" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O <span class="ltx_text ltx_font_bold">treinamento</span> (calibração) consiste em determinar os parâmetros <math id="p2.m1" class="ltx_Math" alttext="\boldsymbol{\theta}" display="inline"><mi mathbackground="#FFFF00">𝜽</mi></math> de forma que o neurônio forneça as saídas <math id="p2.m2" class="ltx_Math" alttext="y" display="inline"><mi mathbackground="#FFFF00">y</mi></math> esperadas com base em um critério predeterminado</span>. O perceptron é um classificador linear, <span class="ltx_text ltx_font_italic">i.e.</span> é capaz de classificar dados que sejam linearmente separáveis.</p>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O <span class="ltx_text ltx_font_bold">treinamento</span> (calibração) consiste em determinar os parâmetros <math id="p3.m1" class="ltx_Math" alttext="\bm{\theta}" display="inline"><mi mathbackground="#FFFF00">𝜽</mi></math> de forma que o neurônio forneça as saídas <math id="p3.m2" class="ltx_Math" alttext="y" display="inline"><mi mathbackground="#FFFF00">y</mi></math> esperadas com base em um critério predeterminado</span>.</p>
 </div>
 <section id="cap_perceptron_ssec_classic" class="ltx_subsection">
 <h2 class="ltx_title ltx_title_subsection">
 <span class="ltx_tag ltx_tag_subsection">2.1.1 </span>Um problema de classificação</h2>
 
 <div id="SS1.p1" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Vamos desenvolver um perceptron que emule a operação booleana</span><span id="Ch2.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note">3</span>George Boole, 1815 - 1864, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Boole" title="" class="ltx_ref ltx_href">Wikipédia: George Boole</a>.</span></span></span><span class="ltx_text" style="background-color:#FFFF00;"> <math id="SS1.p1.m1" class="ltx_Math" alttext="\land" display="inline"><mo mathbackground="#FFFF00">∧</mo></math> (e-lógico)</span>. Mais especificamente, dados dois valores booleanos <math id="SS1.p1.m2" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math> e <math id="SS1.p1.m3" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math> (V, verdadeiro ou F, falso), esperamos que nosso neurônio forneça como saída o valor booleano <math id="SS1.p1.m4" class="ltx_Math" alttext="R=A_{1}\land A_{2}" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>A</mi><mn>2</mn></msub></mrow></mrow></math>. Lembremos a tabela verdade da operação <math id="SS1.p1.m5" class="ltx_Math" alttext="\land" display="inline"><mo>∧</mo></math>:</p>
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O perceptron é um classificador linear</span>, <span class="ltx_text ltx_font_italic">i.e.</span>, é capaz de classificar dados que sejam linearmente separáveis. Como aplicação deste fato que demonstraremos mais adiante, <span class="ltx_text" style="background-color:#FFFF00;">vamos criar um perceptron que emule a operação booleana</span><span id="Ch2.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note">3</span>George Boole, 1815 - 1864, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/George_Boole" title="" class="ltx_ref ltx_href">Wikipédia: George Boole</a>.</span></span></span><span class="ltx_text" style="background-color:#FFFF00;"> <math id="SS1.p1.m1" class="ltx_Math" alttext="\land" display="inline"><mo mathbackground="#FFFF00">∧</mo></math> (e-lógico)</span>. Para tanto, precisamos definir o problema, os dados originais de treinamento, o modelo do perceptron, o pré-processamento dos dados, o método de treinamento e, por fim, realizar a implementação do modelo.</p>
 </div>
-<div id="SS1.p2" class="ltx_para">
+<section id="SS1.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Problema e dados de treinamento</h3>
+
+<div id="SS1.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">Dados dois valores booleanos <math id="SS1.SSSx1.p1.m1" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math> e <math id="SS1.SSSx1.p1.m2" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math> (<math id="SS1.SSSx1.p1.m3" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math>, verdadeiro ou <math id="SS1.SSSx1.p1.m4" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math>, falso), esperamos que nossa unidade de processamento forneça como saída o valor booleano <math id="SS1.SSSx1.p1.m5" class="ltx_Math" alttext="R=A_{1}\land A_{2}" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>A</mi><mn>2</mn></msub></mrow></mrow></math>. Para isso, precisamos de um <span class="ltx_text ltx_font_bold">conjunto de dados de treinamento</span> e de um critério de treinamento. Como dados, podemos usar a tabela verdade do e-lógico (consultemos aTabela <a href="#tab:tabela_verdade_e" title="Tabela 2.1 ‣ Problema e dados de treinamento ‣ 2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a>). Esta tabela nos fornece um conjunto de dados de entrada e saída esperada. O critério de treinamento vamos definir mais adiante.</p>
+</div>
+<figure id="tab:tabela_verdade_e" class="ltx_table">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">Tabela 2.1</span>: </span><span class="ltx_text" style="font-size:90%;">Tabela verdade da operação booleana <math id="Ch2.T1.m2" class="ltx_Math" alttext="\land" display="inline"><mo>∧</mo></math> (e-lógico).</span></figcaption>
 <table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
 <thead class="ltx_thead">
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="SS1.m1" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="SS1.m2" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt">R</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Ch2.T1.m3" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T1.m4" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Ch2.T1.m5" class="ltx_Math" alttext="R:=A_{1}\land A_{2}" display="inline"><mrow><mi>R</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>A</mi><mn>2</mn></msub></mrow></mrow></math></th>
 </tr>
 </thead>
 <tbody class="ltx_tbody">
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_t">V</td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Ch2.T1.m6" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="Ch2.T1.m7" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Ch2.T1.m8" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center">F</td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T1.m9" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T1.m10" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T1.m11" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">F</td>
-<td class="ltx_td ltx_align_center ltx_border_r">V</td>
-<td class="ltx_td ltx_align_center">F</td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T1.m12" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T1.m13" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T1.m14" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
+<td class="ltx_td ltx_align_center ltx_border_bb"><math id="Ch2.T1.m15" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r"><math id="Ch2.T1.m16" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb"><math id="Ch2.T1.m17" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
 </tr>
 </tbody>
 </table>
-</div>
-<section id="SS1.SSSx1" class="ltx_subsubsection">
+</figure>
+</section>
+<section id="SS1.SSSx2" class="ltx_subsubsection">
 <h3 class="ltx_title ltx_title_subsubsection">Modelo</h3>
 
-<div id="SS1.SSSx1.p1" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Nosso <span class="ltx_text ltx_font_bold">modelo</span> será um perceptron com duas entradas <math id="SS1.SSSx1.p1.m1" class="ltx_Math" alttext="\boldsymbol{x}\in\{-1,1\}^{2}" display="inline"><mrow><mi mathbackground="#FFFF00">𝒙</mi><mo mathbackground="#FFFF00">∈</mo><msup><mrow><mo mathbackground="#FFFF00" stretchy="false">{</mo><mrow><mo mathbackground="#FFFF00">−</mo><mn mathbackground="#FFFF00">1,1</mn></mrow><mo mathbackground="#FFFF00" stretchy="false">}</mo></mrow><mn mathbackground="#FFFF00">2</mn></msup></mrow></math> e a função sinal</span></p>
+<div id="SS1.SSSx2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Nosso <span class="ltx_text ltx_font_bold">modelo</span> será um perceptron</span></p>
 <table id="Ch4.S3.EGx3" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E5.m1" class="ltx_Math" alttext="\displaystyle\varphi(z)=\operatorname{sign}(z)" display="inline"><mrow><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E5.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+y=\eta(\bm{x};\bm{\theta})," display="inline"><mrow><mrow><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">η</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF">;</mo><mi mathcolor="#0000FF">𝜽</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.5)</span></td>
 </tr></tbody>
 <tbody id="Ch2.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E6.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad:=\begin{cases}1&amp;,z&gt;0\\
-0&amp;,z=0\\
--1&amp;,z&lt;0\end{cases}" display="inline"><mrow><mrow></mrow><mspace width="1.278em"></mspace><mo rspace="0.278em">:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mn>1</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>z</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mn>0</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>z</mi><mo>=</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>z</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E6.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
+{rgb}{0,0,1}=\operatorname{sign}(\bm{w}\cdot\bm{x}+b)," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo mathcolor="#0000FF">=</mo><mi mathcolor="#0000FF">sign</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒘</mi><mo lspace="0.222em" mathcolor="#0000FF" rspace="0.222em">⋅</mo><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">b</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.6)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">como função de ativação</span>. Com isso, nosso modelo fornece a seguinte saída</p>
+<p class="ltx_p">com <span class="ltx_text ltx_font_bold">entradas</span> <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="\bm{x}=(x_{0},x_{1})\in\{-1,1\}^{2}" display="inline"><mrow><mi>𝒙</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mrow><mo stretchy="false">{</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">}</mo></mrow><mn>2</mn></msup></mrow></math>, <math id="SS1.SSSx2.p1.m2" class="ltx_Math" alttext="n_{\text{in}}=2" display="inline"><mrow><msub><mi>n</mi><mtext>in</mtext></msub><mo>=</mo><mn>2</mn></mrow></math>, função sinal</p>
 <table id="Ch4.S3.EGx4" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E7.m1" class="ltx_Math" alttext="\displaystyle y=\mathcal{N}\left(\boldsymbol{x};\boldsymbol{\theta}\right)," display="inline"><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo>(</mo><mi>𝒙</mi><mo>;</mo><mi>𝜽</mi><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E7.m1" class="ltx_math_unparsed" alttext="\displaystyle\varphi(z)=\operatorname{sign}(z):=\begin{cases}1&amp;,z&gt;0\\
+0&amp;,z=0\\
+-1&amp;,z&lt;0\end{cases}," display="inline"><mrow><mrow><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mn>1</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>z</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mn>0</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>z</mi><mo>=</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>z</mi><mo>&lt;</mo><mn>0</mn></mrow></mtd></mtr></mtable></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.7)</span></td>
 </tr></tbody>
-<tbody id="Ch2.E8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E8.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\operatorname{sign}(\boldsymbol{w}\cdot\boldsymbol{x%
-}+b)," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>sign</mi><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi><mo>+</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.8)</span></td>
-</tr></tbody>
 </table>
-<p class="ltx_p">onde <math id="SS1.SSSx1.p1.m2" class="ltx_Math" alttext="\boldsymbol{\theta}=(w_{0},w_{1},b)\in\mathbb{R}^{3}" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mn>3</mn></msup></mrow></math> são parâmetros a determinar. A ideia, aqui, é que o valor <math id="SS1.SSSx1.p1.m3" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math> esteja associado ao valor lógico <math id="SS1.SSSx1.p1.m4" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> (falso) e o valor <math id="SS1.SSSx1.p1.m5" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> ao valor lógico <math id="SS1.SSSx1.p1.m6" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> (verdadeiro).</p>
+<p class="ltx_p">como <span class="ltx_text ltx_font_bold">função de ativação</span>, saída <math id="SS1.SSSx2.p1.m3" class="ltx_Math" alttext="y\in\{-1,0,1\}" display="inline"><mrow><mi>y</mi><mo>∈</mo><mrow><mo stretchy="false">{</mo><mrow><mo>−</mo><mn>1,0,1</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math> e <span class="ltx_text ltx_font_bold">parâmetros a determinar</span> <math id="SS1.SSSx2.p1.m4" class="ltx_Math" alttext="\bm{\theta}=(w_{0},w_{1},b)\in\mathbb{R}^{3}" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mi>ℝ</mi><mn>3</mn></msup></mrow></math>.</p>
 </div>
 </section>
-<section id="SS1.SSSx2" class="ltx_subsubsection">
+<section id="SS1.SSSx3" class="ltx_subsubsection">
 <h3 class="ltx_title ltx_title_subsubsection">Pré-processamento</h3>
 
-<div id="SS1.SSSx2.p1" class="ltx_para">
-<p class="ltx_p">Precisamos pré-processar os dados do problema de forma a compatibilizá-los com o modelo. Assumindo que valor booleano <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> (falso) seja associado a <math id="SS1.SSSx2.p1.m2" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math> e que valor booleano <math id="SS1.SSSx2.p1.m3" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> (verdadeiro) a <math id="SS1.SSSx2.p1.m4" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>, temos os seguintes <span class="ltx_text ltx_font_bold">dados de treinamento</span> para o nosso modelo de neurônio</p>
+<div id="SS1.SSSx3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O <span class="ltx_text ltx_font_bold">pré-processamento dos dados</span> de treinamento consiste em compatibilizá-los com o modelo</span>. No caso em estudo, podemos assumir que o valor booleano <math id="SS1.SSSx3.p1.m1" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math> (falso) seja associado a <math id="SS1.SSSx3.p1.m2" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math> e que valor booleano <math id="SS1.SSSx3.p1.m3" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> (verdadeiro) a <math id="SS1.SSSx3.p1.m4" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>. Com isso, os dados de treinamento originais podem ser reescritos como na Tabela <a href="#tab:dados_treinamento_e_preprocessados" title="Tabela 2.2 ‣ Pré-processamento ‣ 2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2</span></a>. Denotaremos o <span class="ltx_text ltx_font_bold">conjunto de treinamento pré-processado</span> por <math id="SS1.SSSx3.p1.m5" class="ltx_Math" alttext="\{\bm{x}^{(s)},y^{(s)}\}_{s=0}^{n_{s}-1}" display="inline"><msubsup><mrow><mo stretchy="false">{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></math>, onde <math id="SS1.SSSx3.p1.m6" class="ltx_Math" alttext="n_{s}=4" display="inline"><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>=</mo><mn>4</mn></mrow></math> é o número de amostras, <math id="SS1.SSSx3.p1.m7" class="ltx_Math" alttext="\bm{x}^{(s)}=(x_{0}^{(s)},x_{1}^{(s)})" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><msubsup><mi>x</mi><mn>0</mn><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msubsup><mo>,</mo><msubsup><mi>x</mi><mn>1</mn><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msubsup><mo stretchy="false">)</mo></mrow></mrow></math> é o vetor de entrada da <math id="SS1.SSSx3.p1.m8" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra e <math id="SS1.SSSx3.p1.m9" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math> é a saída esperada para a <math id="SS1.SSSx3.p1.m10" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra.</p>
 </div>
-<div id="SS1.SSSx2.p2" class="ltx_para">
+<figure id="tab:dados_treinamento_e_preprocessados" class="ltx_table">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">Tabela 2.2</span>: </span><span class="ltx_text" style="font-size:90%;">Dados de treinamento pré-processados para o treinamento do modelo do e-lógico.</span></figcaption>
 <table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
 <thead class="ltx_thead">
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_th_row ltx_border_tt"><math id="SS1.SSSx2.m1" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math></th>
-<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="SS1.SSSx2.m2" class="ltx_Math" alttext="x_{2}" display="inline"><msub><mi>x</mi><mn>2</mn></msub></math></th>
-<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><math id="SS1.SSSx2.m3" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt"><math id="Ch2.T2.m1" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><math id="Ch2.T2.m2" class="ltx_Math" alttext="x^{(s)}_{0}" display="inline"><msubsup><mi>x</mi><mn>0</mn><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msubsup></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T2.m3" class="ltx_Math" alttext="x^{(s)}_{1}" display="inline"><msubsup><mi>x</mi><mn>1</mn><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msubsup></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_tt"><math id="Ch2.T2.m4" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math></th>
 </tr>
 </thead>
 <tbody class="ltx_tbody">
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_t">1</th>
-<td class="ltx_td ltx_align_right ltx_border_r ltx_border_t">1</td>
-<td class="ltx_td ltx_align_right ltx_border_t">1</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_r ltx_border_t"><math id="Ch2.T2.m5" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></th>
+<td class="ltx_td ltx_align_right ltx_border_t"><math id="Ch2.T2.m6" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_r ltx_border_t"><math id="Ch2.T2.m7" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_t"><math id="Ch2.T2.m8" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_right ltx_th ltx_th_row">1</th>
-<td class="ltx_td ltx_align_right ltx_border_r">-1</td>
-<td class="ltx_td ltx_align_right">-1</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_r"><math id="Ch2.T2.m9" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></th>
+<td class="ltx_td ltx_align_right"><math id="Ch2.T2.m10" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_right ltx_border_r"><math id="Ch2.T2.m11" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_right"><math id="Ch2.T2.m12" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_right ltx_th ltx_th_row">-1</th>
-<td class="ltx_td ltx_align_right ltx_border_r">1</td>
-<td class="ltx_td ltx_align_right">-1</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_r"><math id="Ch2.T2.m13" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></th>
+<td class="ltx_td ltx_align_right"><math id="Ch2.T2.m14" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_border_r"><math id="Ch2.T2.m15" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_right"><math id="Ch2.T2.m16" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
 </tr>
 <tr class="ltx_tr">
-<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_bb">-1</th>
-<td class="ltx_td ltx_align_right ltx_border_bb ltx_border_r">-1</td>
-<td class="ltx_td ltx_align_right ltx_border_bb">-1</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_bb ltx_border_r"><math id="Ch2.T2.m17" class="ltx_Math" alttext="3" display="inline"><mn>3</mn></math></th>
+<td class="ltx_td ltx_align_right ltx_border_bb"><math id="Ch2.T2.m18" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_border_bb ltx_border_r"><math id="Ch2.T2.m19" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_border_bb"><math id="Ch2.T2.m20" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
 </tr>
 </tbody>
 </table>
-</div>
+</figure>
 </section>
-<section id="SS1.SSSx3" class="ltx_subsubsection">
+<section id="SS1.SSSx4" class="ltx_subsubsection">
 <h3 class="ltx_title ltx_title_subsubsection">Treinamento</h3>
 
-<div id="SS1.SSSx3.p1" class="ltx_para">
-<p class="ltx_p">Agora, nos falta <span class="ltx_text" style="background-color:#FFFF00;">treinar nosso neurônio para fornecer o valor de <math id="SS1.SSSx3.p1.m1" class="ltx_Math" alttext="y" display="inline"><mi mathbackground="#FFFF00">y</mi></math> esperado para cada dada entrada <math id="SS1.SSSx3.p1.m2" class="ltx_Math" alttext="\boldsymbol{x}" display="inline"><mi mathbackground="#FFFF00">𝒙</mi></math></span>. Isso <span class="ltx_text" style="background-color:#FFFF00;">consiste em um método para escolhermos os parâmetros <math id="SS1.SSSx3.p1.m3" class="ltx_Math" alttext="\boldsymbol{\theta}" display="inline"><mi mathbackground="#FFFF00">𝜽</mi></math></span> que sejam adequados para esta tarefa. Vamos explorar mais sobre isso na sequência do texto, mas, aqui, vamos empregar uma análise geométrica para escolhermos os parâmetros <math id="SS1.SSSx3.p1.m4" class="ltx_Math" alttext="\boldsymbol{\theta}" display="inline"><mi>𝜽</mi></math>.</p>
+<div id="SS1.SSSx4.p1" class="ltx_para">
+<p class="ltx_p">Agora, nos falta <span class="ltx_text" style="background-color:#FFFF00;">treinar nosso neurônio para fornecer o valor esperado de <math id="SS1.SSSx4.p1.m1" class="ltx_Math" alttext="y" display="inline"><mi mathbackground="#FFFF00">y</mi></math> para cada dada entrada <math id="SS1.SSSx4.p1.m2" class="ltx_Math" alttext="\bm{x}" display="inline"><mi mathbackground="#FFFF00">𝒙</mi></math></span>. Isso consiste em determinar <span class="ltx_text ltx_font_bold">método (de treinamento)</span> para escolhermos os parâmetros <math id="SS1.SSSx4.p1.m3" class="ltx_Math" alttext="\bm{\theta}" display="inline"><mi>𝜽</mi></math> que sejam adequados para esta tarefa. Vamos explorar mais sobre isso na sequência do texto, sendo que aqui vamos empregar uma análise geométrica para escolhermos os parâmetros.</p>
 </div>
-<div id="SS1.SSSx3.p2" class="ltx_para">
-<p class="ltx_p">Lembrando que nosso modelo é dado por</p>
-<table id="Ch2.E9" class="ltx_equation ltx_eqn_table">
+<div id="SS1.SSSx4.p2" class="ltx_para">
+<p class="ltx_p">Lembrando que nosso modelo é</p>
+<table id="Ch4.S3.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch2.E8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E9.m1" class="ltx_Math" alttext="\mathcal{N}\left(\boldsymbol{x};(\boldsymbol{w},b)\right)=\operatorname{sign}(%
-w_{0}x_{0}+w_{1}x_{1}+b)," display="block"><mrow><mrow><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo>(</mo><mi>𝒙</mi><mo>;</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E8.m1" class="ltx_Math" alttext="\displaystyle\eta\left(\bm{x};\bm{\theta}\right)=\operatorname{sign}(\color[%
+rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}w_{0}x_{0}+w_{1}x_{1%
+}+b)," display="inline"><mrow><mrow><mrow><mi>η</mi><mo>⁢</mo><mrow><mo>(</mo><mi>𝒙</mi><mo>;</mo><mi>𝜽</mi><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi mathcolor="#0000FF">w</mi><mn mathcolor="#0000FF">0</mn></msub><mo>⁢</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub></mrow><mo mathcolor="#0000FF">+</mo><mrow><msub><mi mathcolor="#0000FF">w</mi><mn mathcolor="#0000FF">1</mn></msub><mo>⁢</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">1</mn></msub></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">b</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.8)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">observamos que</p>
+<table id="Ch4.S3.EGx6" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E9.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+w_{0}x_{0}+w_{1}x_{1}+b=0" display="inline"><mrow><mrow><mrow><msub><mi mathcolor="#0000FF">w</mi><mn mathcolor="#0000FF">0</mn></msub><mo>⁢</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub></mrow><mo mathcolor="#0000FF">+</mo><mrow><msub><mi mathcolor="#0000FF">w</mi><mn mathcolor="#0000FF">1</mn></msub><mo>⁢</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">1</mn></msub></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">b</mi></mrow><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">0</mn></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.9)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">observamos que</p>
-<table id="Ch2.E10" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">corresponde à equação geral de uma reta no plano <math id="SS1.SSSx4.p2.m1" class="ltx_Math" alttext="\tau:x_{0}\times x_{1}" display="inline"><mrow><mi>τ</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo lspace="0.222em" rspace="0.222em">×</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow></math>. Esta reta divide o plano em dois semiplanos</p>
+<table id="Ch4.S3.EGx7" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch2.E10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E10.m1" class="ltx_Math" alttext="w_{0}x_{0}+w_{1}x_{1}+b=0" display="block"><mrow><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E10.m1" class="ltx_Math" alttext="\displaystyle\tau^{+}=\{\bm{x}\in\mathbb{R}^{2}:w_{0}x_{0}+w_{1}x_{1}+b&gt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>+</mo></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>𝒙</mi><mo>∈</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo>&gt;</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.10)</span></td>
 </tr></tbody>
-</table>
-<p class="ltx_p">corresponde à equação geral de uma reta no plano <math id="SS1.SSSx3.p2.m1" class="ltx_Math" alttext="\tau:x_{0}\times x_{1}" display="inline"><mrow><mi>τ</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo lspace="0.222em" rspace="0.222em">×</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow></math>. Esta reta divide o plano em dois semiplanos</p>
-<table id="Ch4.S3.EGx5" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
 <tbody id="Ch2.E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E11.m1" class="ltx_Math" alttext="\displaystyle\tau^{+}=\{\boldsymbol{x}\in\mathbb{R}^{2}:w_{0}x_{0}+w_{1}x_{1}+%
-b&gt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>+</mo></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>𝒙</mi><mo>∈</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo>&gt;</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E11.m1" class="ltx_Math" alttext="\displaystyle\tau^{-}=\{\bm{x}\in\mathbb{R}^{2}:w_{0}x_{0}+w_{1}x_{1}+b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>𝒙</mi><mo>∈</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo>&lt;</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.11)</span></td>
 </tr></tbody>
+</table>
+<p class="ltx_p">O primeiro está no sentido do vetor normal à reta <math id="SS1.SSSx4.p2.m2" class="ltx_Math" alttext="\bm{w}=(w_{0},w_{1})" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> e o segundo no sentido oposto. Com isso, o problema de treinamento se reduz a encontrar os coeficientes da reta</p>
+<table id="Ch4.S3.EGx8" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
 <tbody id="Ch2.E12"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E12.m1" class="ltx_Math" alttext="\displaystyle\tau^{-}=\{\boldsymbol{x}\in\mathbb{R}^{2}:w_{0}x_{0}+w_{1}x_{1}+%
-b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mi>𝒙</mi><mo>∈</mo><msup><mi>ℝ</mi><mn>2</mn></msup></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo>&lt;</mo><mn>0</mn></mrow><mo stretchy="false">}</mo></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E12.m1" class="ltx_Math" alttext="\displaystyle w_{0}x_{0}+w_{1}x_{1}+b=0" display="inline"><mrow><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.12)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">O primeiro está na direção do vetor normal à reta <math id="SS1.SSSx3.p2.m2" class="ltx_Math" alttext="\boldsymbol{w}=(w_{0},w_{1})" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>w</mi><mn>0</mn></msub><mo>,</mo><msub><mi>w</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> e o segundo no sentido oposto. Com isso, o problema de treinar nosso neurônio para o problema de classificação consiste em encontrar a reta</p>
-<table id="Ch2.E13" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">de forma a separar o ponto <math id="SS1.SSSx4.p2.m3" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math> no semiplano positivo <math id="SS1.SSSx4.p2.m4" class="ltx_Math" alttext="\tau^{+}" display="inline"><msup><mi>τ</mi><mo>+</mo></msup></math> e os demais pontos no semiplano negativo <math id="SS1.SSSx4.p2.m5" class="ltx_Math" alttext="\tau^{-}" display="inline"><msup><mi>τ</mi><mo>−</mo></msup></math>. Consultemos a Figura <a href="#fig:class_e" title="Figura 2.2 ‣ Treinamento ‣ 2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2</span></a>.</p>
+</div>
+<figure id="fig:class_e" class="ltx_figure"><img src="cap_perceptron/dados/fig_class_e/fig.png" id="Ch2.F2.g1" class="ltx_graphics ltx_centering ltx_img_square" width="233" height="229" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.2</span>: </span><span class="ltx_text" style="font-size:90%;">Interpretação geométrica do perceptron aplicado ao problema de classificação associado à operação lógica <math id="Ch2.F2.m2" class="ltx_Math" alttext="\land" display="inline"><mo>∧</mo></math> (e-lógico).</span></figcaption>
+</figure>
+<div id="SS1.SSSx4.p3" class="ltx_para">
+<p class="ltx_p">Com base nessa interpretação geométrica, podemos escolher os parâmetros <math id="SS1.SSSx4.p3.m1" class="ltx_Math" alttext="\bm{\theta}=(\bm{w},b)" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> do nosso modelo. Por exemplo, escolhendo <math id="SS1.SSSx4.p3.m2" class="ltx_Math" alttext="\bm{w}=(1,1)" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="SS1.SSSx4.p3.m3" class="ltx_Math" alttext="b=-1" display="inline"><mrow><mi>b</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, temos o modelo</p>
+<table id="Ch4.S3.EGx9" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch2.E13"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E13.m1" class="ltx_Math" alttext="w_{0}x_{0}+w_{1}x_{1}+b=0" display="block"><mrow><mrow><mrow><msub><mi>w</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo>+</mo><mrow><msub><mi>w</mi><mn>1</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>+</mo><mi>b</mi></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E13.m1" class="ltx_Math" alttext="\displaystyle\eta(\bm{x})=\operatorname{sign}(x_{0}+x_{1}-1)" display="inline"><mrow><mrow><mi>η</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.13)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">de forma que o ponto <math id="SS1.SSSx3.p2.m3" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math> esteja no semiplano positivo <math id="SS1.SSSx3.p2.m4" class="ltx_Math" alttext="\tau^{+}" display="inline"><msup><mi>τ</mi><mo>+</mo></msup></math> e os demais pontos no semiplano negativo <math id="SS1.SSSx3.p2.m5" class="ltx_Math" alttext="\tau^{-}" display="inline"><msup><mi>τ</mi><mo>−</mo></msup></math>. Consultemos a Figura <a href="#fig:class_e" title="Figura 2.2 ‣ Treinamento ‣ 2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2</span></a>.</p>
-</div>
-<figure id="fig:class_e" class="ltx_figure"><img src="cap_perceptron/dados/fig_class_e/fig.png" id="Ch2.F2.g1" class="ltx_graphics ltx_centering ltx_img_square" width="252" height="249" alt="Refer to caption">
-<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.2</span>: </span><span class="ltx_text" style="font-size:90%;">Interpretação geométrica do perceptron aplicado ao problema de classificação associado à operação lógica <math id="Ch2.F2.m2" class="ltx_Math" alttext="\land" display="inline"><mo>∧</mo></math> (e-lógico).</span></figcaption>
-</figure>
-<div id="SS1.SSSx3.p3" class="ltx_para">
-<p class="ltx_p">Com base nessa interpretação geométrica, podemos escolher os parâmetros <math id="SS1.SSSx3.p3.m1" class="ltx_Math" alttext="\boldsymbol{\theta}=(\boldsymbol{w},b)" display="inline"><mrow><mi>𝜽</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math> do nosso modelo de neurônio. Por exemplo, podemos escolher</p>
-<table id="Ch4.S3.EGx6" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch2.E14"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E14.m1" class="ltx_Math" alttext="\displaystyle\boldsymbol{w}=(1,1)," display="inline"><mrow><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.14)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E15"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E15.m1" class="ltx_Math" alttext="\displaystyle b=-1." display="inline"><mrow><mrow><mi>b</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.15)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Com isso, nosso perceptron é</p>
-<table id="Ch2.E16" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E16.m1" class="ltx_Math" alttext="\mathcal{N}(\boldsymbol{x})=\operatorname{sign}(x_{0}+x_{1}-1)" display="block"><mrow><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.16)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Verifique que o modelo fornece a saída esperada para cada dada entrada <math id="SS1.SSSx3.p3.m2" class="ltx_Math" alttext="\boldsymbol{x}" display="inline"><mi>𝒙</mi></math>.</p>
+<p class="ltx_p">Verifique que o modelo fornece a saída esperada para cada entrada <math id="SS1.SSSx4.p3.m4" class="ltx_Math" alttext="\bm{x}" display="inline"><mi>𝒙</mi></math> da Tabela <a href="#tab:dados_treinamento_e_preprocessados" title="Tabela 2.2 ‣ Pré-processamento ‣ 2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2</span></a>!</p>
 </div>
 </section>
-<section id="SS1.SSSx4" class="ltx_subsubsection">
+<section id="SS1.SSSx5" class="ltx_subsubsection">
 <h3 class="ltx_title ltx_title_subsubsection">Implementação</h3>
 
-<div id="SS1.SSSx4.p1" class="ltx_para">
-<p class="ltx_p">O Código <a href="#cod:perceptron" title="Código 1 ‣ Implementação ‣ 2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> é uma implementação deste modelo de neurônio. Verifique!</p>
+<div id="SS1.SSSx5.p1" class="ltx_para">
+<p class="ltx_p">O Código <a href="#cod:perceptron" title="Código 1 ‣ Implementação ‣ 2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1</span></a> é uma implementação do modelo que criamos. Verifique!</p>
 </div>
 <figure id="cod:perceptron" class="ltx_float ltx_lstlisting">
 <figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 1: </span>perceptron.py</figcaption>
@@ -509,15 +506,15 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <span class="ltx_tag ltx_tag_subsection">2.1.2 </span>Algoritmo de treinamento: perceptron</h2>
 
 <div id="SS2.p1" class="ltx_para">
-<p class="ltx_p">O <span class="ltx_text" style="background-color:#FFFF00;">algoritmo de treinamento perceptron permite computar os parâmetros de um neurônio para fazer a classificação de dados linearmente separáveis</span>. Trata-se de um algoritmo para o <span class="ltx_text ltx_font_bold">treinamento supervisionado</span> de um modelo, <span class="ltx_text ltx_font_italic">i.e.</span>. a calibração dos pesos é feita com base em um dado <span class="ltx_text ltx_font_bold">conjunto de amostras de treinamento</span>.</p>
+<p class="ltx_p">O <span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">algoritmo de treinamento perceptron</span> permite computar os parâmetros do modelo para fazer a classificação de dados linearmente separáveis</span>. Trata-se de um método para o <span class="ltx_text ltx_font_bold">treinamento supervisionado</span> de um modelo, <span class="ltx_text ltx_font_italic">i.e.</span>, a calibração dos pesos é feita com base em um <span class="ltx_text ltx_font_bold">conjunto de amostras de treinamento</span> que contém pares de entradas e saídas esperadas.</p>
 </div>
 <div id="SS2.p2" class="ltx_para">
-<p class="ltx_p">Seja dado um conjunto de treinamento <math id="SS2.p2.m1" class="ltx_Math" alttext="\{\boldsymbol{x}^{(s)},y^{(s)}\}_{s=0}^{n_{s}-1}" display="inline"><msubsup><mrow><mo stretchy="false">{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></math>, onde <math id="SS2.p2.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> é o número de amostras. O algoritmo consiste no seguinte:</p>
+<p class="ltx_p">Seja dado um conjunto de treinamento <math id="SS2.p2.m1" class="ltx_Math" alttext="\{\bm{x}^{(s)},y^{(s)}\}_{s=0}^{n_{s}-1}" display="inline"><msubsup><mrow><mo stretchy="false">{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></math>, onde <math id="SS2.p2.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> é o número de amostras, <math id="SS2.p2.m3" class="ltx_Math" alttext="\bm{x}^{(s)}\in\mathbb{R}^{n}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math> e <math id="SS2.p2.m4" class="ltx_Math" alttext="y^{(s)}\in\mathbb{R}" display="inline"><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>∈</mo><mi>ℝ</mi></mrow></math>, <math id="SS2.p2.m5" class="ltx_Math" alttext="s=0,1,\dotsc,n_{s}" display="inline"><mrow><mi>s</mi><mo>=</mo><mrow><mn>0,1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>n</mi><mi>s</mi></msub></mrow></mrow></math>. O algoritmo consiste no seguinte:</p>
 <ol id="I1" class="ltx_enumerate">
 <li id="I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">1.</span> 
 <div id="I1.i1.p1" class="ltx_para">
-<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="\boldsymbol{w}\leftarrow\boldsymbol{0}" display="inline"><mrow><mi>𝒘</mi><mo stretchy="false">←</mo><mn>𝟎</mn></mrow></math>, <math id="I1.i1.p1.m2" class="ltx_Math" alttext="b\leftarrow 0" display="inline"><mrow><mi>b</mi><mo stretchy="false">←</mo><mn>0</mn></mrow></math>.</p>
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="\bm{w}\leftarrow\bm{0}" display="inline"><mrow><mi>𝒘</mi><mo stretchy="false">←</mo><mn>𝟎</mn></mrow></math>, <math id="I1.i1.p1.m2" class="ltx_Math" alttext="b\leftarrow 0" display="inline"><mrow><mi>b</mi><mo stretchy="false">←</mo><mn>0</mn></mrow></math>.</p>
 </div>
 </li>
 <li id="I1.i2" class="ltx_item" style="list-style-type:none;">
@@ -533,12 +530,12 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <li id="I1.i2.I1.i1.I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">i.</span> 
 <div id="I1.i2.I1.i1.I1.i1.p1" class="ltx_para">
-<p class="ltx_p">Se <math id="I1.i2.I1.i1.I1.i1.p1.m1" class="ltx_Math" alttext="y^{(s)}\mathcal{N}\left(\boldsymbol{x}^{(s)}\right)\leq 0" display="inline"><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow></mrow><mo>≤</mo><mn>0</mn></mrow></math>:</p>
+<p class="ltx_p">Se <math id="I1.i2.I1.i1.I1.i1.p1.m1" class="ltx_Math" alttext="y^{(s)}\eta\left(\bm{x}^{(s)}\right)\leq 0" display="inline"><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi>η</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow></mrow><mo>≤</mo><mn>0</mn></mrow></math>:</p>
 <ol id="I1.i2.I1.i1.I1.i1.I1" class="ltx_enumerate">
 <li id="I1.i2.I1.i1.I1.i1.I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">A.</span> 
 <div id="I1.i2.I1.i1.I1.i1.I1.i1.p1" class="ltx_para">
-<p class="ltx_p"><math id="I1.i2.I1.i1.I1.i1.I1.i1.p1.m1" class="ltx_Math" alttext="\boldsymbol{w}\leftarrow\boldsymbol{w}+y^{(s)}\boldsymbol{x}^{(s)}" display="inline"><mrow><mi>𝒘</mi><mo stretchy="false">←</mo><mrow><mi>𝒘</mi><mo>+</mo><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow></math></p>
+<p class="ltx_p"><math id="I1.i2.I1.i1.I1.i1.I1.i1.p1.m1" class="ltx_Math" alttext="\bm{w}\leftarrow\bm{w}+y^{(s)}\bm{x}^{(s)}" display="inline"><mrow><mi>𝒘</mi><mo stretchy="false">←</mo><mrow><mi>𝒘</mi><mo>+</mo><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow></math></p>
 </div>
 </li>
 <li id="I1.i2.I1.i1.I1.i1.I1.i2" class="ltx_item" style="list-style-type:none;">
@@ -557,17 +554,17 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 </div>
 </li>
 </ol>
-<p class="ltx_p">onde, <math id="SS2.p2.m3" class="ltx_Math" alttext="n_{e}" display="inline"><msub><mi>n</mi><mi>e</mi></msub></math> é um dado número de épocas. Usualmente, uma época consiste no número de vezes que todas as amostras serão utilizadas para realizar a correção dos pesos.</p>
+<p class="ltx_p">onde, <math id="SS2.p2.m6" class="ltx_Math" alttext="n_{e}" display="inline"><msub><mi>n</mi><mi>e</mi></msub></math> é um dado <span class="ltx_text ltx_font_bold">número de épocas</span>. Usualmente, uma época é definida como o número de vezes que todas as amostras serão utilizadas para realizar a correção dos pesos.</p>
 </div>
 <div id="SS2.p3" class="ltx_para">
-<p class="ltx_p">Para mostrarmos a convergência do algoritmo de treinamento perceptron, vamos simplificar a notação, assumindo <math id="SS2.p3.m1" class="ltx_Math" alttext="\boldsymbol{\tilde{x}}=(x_{0},x_{1},\dotsc,x_{n-1},1)" display="inline"><mrow><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>x</mi><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mn>,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. Com isso, um conjunto <math id="SS2.p3.m2" class="ltx_Math" alttext="D=\{\boldsymbol{\tilde{x}}^{(s)},y^{(s)}\}_{s=0}^{n_{s}-1}" display="inline"><mrow><mi>D</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">{</mo><msup><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></math> é linearmente separável, se existe <math id="SS2.p3.m3" class="ltx_Math" alttext="\boldsymbol{\theta}" display="inline"><mi>𝜽</mi></math> tal que</p>
-<table id="Ch2.E17" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">Para mostrarmos a convergência do algoritmo de treinamento perceptron, vamos simplificar a notação, assumindo <math id="SS2.p3.m1" class="ltx_Math" alttext="\bm{\tilde{x}}=(x_{0},x_{1},\dotsc,x_{n_{\text{in}}-1},1)" display="inline"><mrow><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>x</mi><mrow><msub><mi>n</mi><mtext>in</mtext></msub><mo>−</mo><mn>1</mn></mrow></msub><mo>⁢</mo><mn>,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math>. Com isso, um conjunto <math id="SS2.p3.m2" class="ltx_Math" alttext="D=\{\bm{\tilde{x}}^{(s)},y^{(s)}\}_{s=0}^{n_{s}-1}" display="inline"><mrow><mi>D</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">{</mo><msup><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></math> é linearmente separável, se existe <math id="SS2.p3.m3" class="ltx_Math" alttext="\bm{\theta}" display="inline"><mi>𝜽</mi></math> tal que</p>
+<table id="Ch2.E14" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E17.m1" class="ltx_Math" alttext="y^{(s)}\boldsymbol{\theta}\cdot\tilde{\boldsymbol{x}}^{(s)}&gt;0," display="block"><mrow><mrow><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi>𝜽</mi></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E14.m1" class="ltx_Math" alttext="y^{(s)}\bm{\theta}\cdot\tilde{\bm{x}}^{(s)}&gt;0," display="block"><mrow><mrow><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi>𝜽</mi></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.17)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.14)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para todas as amostras <math id="SS2.p3.m4" class="ltx_Math" alttext="s=0,1,\dotsc,n_{s}-1" display="inline"><mrow><mi>s</mi><mo>=</mo><mrow><mn>0,1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></mrow></mrow></math>. Com isso, temos o seguinte resultado.</p>
@@ -577,117 +574,115 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <br class="ltx_break">
 </h6>
 <div id="Thmteo1.p1" class="ltx_para">
-<p class="ltx_p">Seja dado um conjunto de treinamento <math id="Thmteo1.p1.m1" class="ltx_Math" alttext="D=\{\boldsymbol{\tilde{x}}^{(s)},y^{(s)}\}_{s=0}^{n_{s}-1}" display="inline"><mrow><mi>D</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">{</mo><msup><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></math>, onde <math id="Thmteo1.p1.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> é o número de amostras. Se existe <math id="Thmteo1.p1.m3" class="ltx_Math" alttext="\boldsymbol{\theta}^{*}" display="inline"><msup><mi>𝜽</mi><mo>∗</mo></msup></math> tal que</p>
-<table id="Ch2.E18" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">Seja dado um conjunto de treinamento <math id="Thmteo1.p1.m1" class="ltx_Math" alttext="D=\{\bm{\tilde{x}}^{(s)},y^{(s)}\}_{s=0}^{n_{s}-1}" display="inline"><mrow><mi>D</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">{</mo><msup><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></mrow></math>, onde <math id="Thmteo1.p1.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> é o número de amostras. Se existe <math id="Thmteo1.p1.m3" class="ltx_Math" alttext="\bm{\theta}^{*}" display="inline"><msup><mi>𝜽</mi><mo>∗</mo></msup></math> tal que</p>
+<table id="Ch2.E15" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E18.m1" class="ltx_Math" alttext="y^{(s)}\frac{\boldsymbol{\theta}^{*}\cdot\tilde{\boldsymbol{x}}^{(s)}}{\|%
-\boldsymbol{\theta}\|}\geq\gamma&gt;0," display="block"><mrow><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mfrac><mrow><msup><mi>𝜽</mi><mo>∗</mo></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo stretchy="false">‖</mo><mi>𝜽</mi><mo stretchy="false">‖</mo></mrow></mfrac></mrow><mo>≥</mo><mi>γ</mi><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E15.m1" class="ltx_Math" alttext="y^{(s)}\frac{\bm{\theta}^{*}\cdot\tilde{\bm{x}}^{(s)}}{\|\bm{\theta}\|}\geq%
+\gamma&gt;0," display="block"><mrow><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mfrac><mrow><msup><mi>𝜽</mi><mo>∗</mo></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo stretchy="false">‖</mo><mi>𝜽</mi><mo stretchy="false">‖</mo></mrow></mfrac></mrow><mo>≥</mo><mi>γ</mi><mo>&gt;</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.18)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.15)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">e <math id="Thmteo1.p1.m4" class="ltx_Math" alttext="\|\boldsymbol{\tilde{x}}^{s}\|\leq R" display="inline"><mrow><mrow><mo stretchy="false">‖</mo><msup><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mi>s</mi></msup><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mi>R</mi></mrow></math>, para <math id="Thmteo1.p1.m5" class="ltx_Math" alttext="s=0,1,\dotsc,n_{s}-1" display="inline"><mrow><mi>s</mi><mo>=</mo><mrow><mn>0,1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></mrow></mrow></math>, então o algoritmo de treinamento perceptron converge em no máximo <math id="Thmteo1.p1.m6" class="ltx_Math" alttext="(R/\gamma)^{2}" display="inline"><msup><mrow><mo stretchy="false">(</mo><mrow><mi>R</mi><mo>/</mo><mi>γ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></math> épocas.</p>
+<p class="ltx_p">e <math id="Thmteo1.p1.m4" class="ltx_Math" alttext="\|\bm{\tilde{x}}^{(s)}\|\leq R" display="inline"><mrow><mrow><mo stretchy="false">‖</mo><msup><mover accent="true"><mi>𝒙</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mi>R</mi></mrow></math>, para todo <math id="Thmteo1.p1.m5" class="ltx_Math" alttext="s=0,1,\dotsc,n_{s}-1" display="inline"><mrow><mi>s</mi><mo>=</mo><mrow><mn>0,1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></mrow></mrow></math>, então o algoritmo de treinamento perceptron converge em no máximo <math id="Thmteo1.p1.m6" class="ltx_Math" alttext="(R/\gamma)^{2}" display="inline"><msup><mrow><mo stretchy="false">(</mo><mrow><mi>R</mi><mo>/</mo><mi>γ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></math> épocas.</p>
 </div>
 </div>
 <div class="ltx_proof">
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
 <div id="SS2.p4" class="ltx_para">
-<p class="ltx_p">Assuma que iniciamos com <math id="SS2.p4.m1" class="ltx_Math" alttext="\boldsymbol{\theta}^{(0)}=\boldsymbol{0}" display="inline"><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math> e que na <math id="SS2.p4.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iteração de correção vamos computar os parâmetros <math id="SS2.p4.m3" class="ltx_Math" alttext="\boldsymbol{\theta}^{(k)}" display="inline"><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>. Seja <math id="SS2.p4.m4" class="ltx_Math" alttext="\beta" display="inline"><mi>β</mi></math> o ângulo entre os vetores <math id="SS2.p4.m5" class="ltx_Math" alttext="\boldsymbol{\theta}^{(k)}" display="inline"><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> e <math id="SS2.p4.m6" class="ltx_Math" alttext="\boldsymbol{\theta}^{*}" display="inline"><msup><mi>𝜽</mi><mo>∗</mo></msup></math>, então</p>
-<table id="Ch4.S3.EGx7" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Assuma que iniciamos com <math id="SS2.p4.m1" class="ltx_Math" alttext="\bm{\theta}^{(0)}=\bm{0}" display="inline"><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math> e que na <math id="SS2.p4.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iteração de correção vamos computar os parâmetros <math id="SS2.p4.m3" class="ltx_Math" alttext="\bm{\theta}^{(k)}" display="inline"><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>. Seja <math id="SS2.p4.m4" class="ltx_Math" alttext="\beta" display="inline"><mi>β</mi></math> o ângulo entre os vetores <math id="SS2.p4.m5" class="ltx_Math" alttext="\bm{\theta}^{(k)}" display="inline"><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> e <math id="SS2.p4.m6" class="ltx_Math" alttext="\bm{\theta}^{*}" display="inline"><msup><mi>𝜽</mi><mo>∗</mo></msup></math>, então</p>
+<table id="Ch4.S3.EGx10" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
+<tbody id="Ch2.E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E16.m1" class="ltx_Math" alttext="\displaystyle\cos(\beta)=\frac{\bm{\theta}^{(k)}\cdot\bm{\theta}^{*}}{\|\bm{%
+\theta}^{(k)}\|\|\bm{\theta}^{*}\|}" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>β</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.16)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E17"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E17.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{\bm{\theta}^{(k)}\cdot\bm{\theta}^{*}}{\|\bm{%
+\theta}^{*}\|}\frac{1}{\|\bm{\theta}^{(k)}\|}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.17)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS2.p5" class="ltx_para">
+<p class="ltx_p">Sem perda de generalidade, suponhamos que a amostra <math id="SS2.p5.m1" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> seja a amostra que gera a correção na <math id="SS2.p5.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iteração, ou seja, <math id="SS2.p5.m3" class="ltx_Math" alttext="y^{(s)}\bm{\theta}^{(k-1)}\cdot\tilde{\bm{x}}^{(s)}\leq 0" display="inline"><mrow><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>≤</mo><mn>0</mn></mrow></math>. Com isso, temos</p>
+<table id="Ch4.S3.EGx11" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E18"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E18.m1" class="ltx_Math" alttext="\displaystyle\frac{\bm{\theta}^{(k)}\cdot\bm{\theta}^{*}}{\|\bm{\theta}^{*}\|}%
+=\frac{(\bm{\theta}^{(k-1)}+y^{(s)}\tilde{\bm{x}}^{(s)})\cdot\bm{\theta}^{*}}{%
+\|\bm{\theta}^{*}\|}" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo rspace="0.055em" stretchy="false">)</mo></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.18)</span></td>
+</tr></tbody>
 <tbody id="Ch2.E19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E19.m1" class="ltx_Math" alttext="\displaystyle\cos(\beta)=\frac{\boldsymbol{\theta}^{(k)}\cdot\boldsymbol{%
-\theta}^{*}}{\|\boldsymbol{\theta}^{(k)}\|\|\boldsymbol{\theta}^{*}\|}" display="inline"><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>β</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E19.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{\bm{\theta}^{(k-1)}\cdot\bm{\theta}^{*}}{\|\bm%
+{\theta}^{*}\|}+y^{(s)}\frac{\tilde{\bm{x}}^{(s)}\cdot\bm{\theta}^{*}}{\|\bm{%
+\theta}^{*}\|}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo>+</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mstyle displaystyle="true"><mfrac><mrow><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.19)</span></td>
 </tr></tbody>
 <tbody id="Ch2.E20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E20.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{\boldsymbol{\theta}^{(k)}\cdot\boldsymbol{%
-\theta}^{*}}{\|\boldsymbol{\theta}^{*}\|}\frac{1}{\|\boldsymbol{\theta}^{(k)}%
-\|}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E20.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\geq\frac{\bm{\theta}^{(k-1)}\cdot\bm{\theta}^{*}}{\|%
+\bm{\theta}^{*}\|}+\gamma" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>≥</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo>+</mo><mi>γ</mi></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.20)</span></td>
 </tr></tbody>
-</table>
-</div>
-<div id="SS2.p5" class="ltx_para">
-<p class="ltx_p">Sem perda de generalidade, suponhamos que a amostra <math id="SS2.p5.m1" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> seja a amostra que gera a correção na <math id="SS2.p5.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iteração, ou seja, <math id="SS2.p5.m3" class="ltx_Math" alttext="y^{(s)}\boldsymbol{\theta}^{(k-1)}\cdot\tilde{\boldsymbol{x}}^{(s)}\leq 0" display="inline"><mrow><mrow><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>≤</mo><mn>0</mn></mrow></math>. Com isso, temos</p>
-<table id="Ch4.S3.EGx8" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
 <tbody id="Ch2.E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E21.m1" class="ltx_Math" alttext="\displaystyle\frac{\boldsymbol{\theta}^{(k)}\cdot\boldsymbol{\theta}^{*}}{\|%
-\boldsymbol{\theta}^{*}\|}=\frac{(\boldsymbol{\theta}^{(k-1)}+y^{(s)}\tilde{%
-\boldsymbol{x}}^{(s)})\cdot\boldsymbol{\theta}^{*}}{\|\boldsymbol{\theta}^{*}\|}" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo rspace="0.055em" stretchy="false">)</mo></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E21.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\geq k\gamma," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>≥</mo><mi>k</mi><mi>γ</mi><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.21)</span></td>
 </tr></tbody>
+</table>
+<p class="ltx_p">por indução matemática. Por outro lado, temos</p>
+<table id="Ch4.S3.EGx12" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
 <tbody id="Ch2.E22"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E22.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{\boldsymbol{\theta}^{(k-1)}\cdot\boldsymbol{%
-\theta}^{*}}{\|\boldsymbol{\theta}^{*}\|}+y^{(s)}\frac{\tilde{\boldsymbol{x}}^%
-{(s)}\cdot\boldsymbol{\theta}^{*}}{\|\boldsymbol{\theta}^{*}\|}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo>+</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mstyle displaystyle="true"><mfrac><mrow><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E22.m1" class="ltx_Math" alttext="\displaystyle\|\bm{\theta}^{(k)}\|^{2}=\|\bm{\theta}^{(k-1)}+y^{(s)}\tilde{\bm%
+{x}}^{(s)}\|^{2}" display="inline"><mrow><msup><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.22)</span></td>
 </tr></tbody>
 <tbody id="Ch2.E23"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E23.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\geq\frac{\boldsymbol{\theta}^{(k-1)}\cdot\boldsymbol%
-{\theta}^{*}}{\|\boldsymbol{\theta}^{*}\|}+\gamma" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>≥</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝜽</mi><mo>∗</mo></msup></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mo>∗</mo></msup><mo stretchy="false">‖</mo></mrow></mfrac></mstyle><mo>+</mo><mi>γ</mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E23.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\|\bm{\theta}^{(k-1)}\|^{2}+\underbrace{2y^{(s)}\bm{%
+\theta}^{(k-1)}\cdot\tilde{\bm{x}}^{(s)}}_{\leq 0}+\|\tilde{\bm{x}}^{(s)}\|^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em" rspace="0.167em">∥</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><msup><mo lspace="0em" rspace="0em">∥</mo><mn>2</mn></msup><mo lspace="0em">+</mo><munder><munder accentunder="true"><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>⏟</mo></munder><mrow><mi></mi><mo>≤</mo><mn>0</mn></mrow></munder><mo rspace="0em">+</mo><mo lspace="0em" rspace="0.167em">∥</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><msup><mo lspace="0em">∥</mo><mn>2</mn></msup></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.23)</span></td>
 </tr></tbody>
 <tbody id="Ch2.E24"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E24.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\geq k\gamma," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>≥</mo><mi>k</mi><mi>γ</mi><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E24.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\leq\|\bm{\theta}^{(k-1)}\|^{2}+R^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">≤</mo><mo lspace="0em" rspace="0.167em">∥</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><msup><mo lspace="0em" rspace="0em">∥</mo><mn>2</mn></msup><mo lspace="0em">+</mo><msup><mi>R</mi><mn>2</mn></msup></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.24)</span></td>
 </tr></tbody>
-</table>
-<p class="ltx_p">por indução matemática. Por outro lado, temos</p>
-<table id="Ch4.S3.EGx9" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
 <tbody id="Ch2.E25"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E25.m1" class="ltx_Math" alttext="\displaystyle\|\boldsymbol{\theta}^{(k)}\|^{2}=\|\boldsymbol{\theta}^{(k-1)}+y%
-^{(s)}\tilde{\boldsymbol{x}}^{(s)}\|^{2}" display="inline"><mrow><msup><mrow><mo stretchy="false">‖</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup><mo>=</mo><msup><mrow><mo stretchy="false">‖</mo><mrow><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo stretchy="false">‖</mo></mrow><mn>2</mn></msup></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E25.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\leq kR^{2}," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>≤</mo><mi>k</mi><msup><mi>R</mi><mn>2</mn></msup><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.25)</span></td>
 </tr></tbody>
-<tbody id="Ch2.E26"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E26.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\|\boldsymbol{\theta}^{(k-1)}\|^{2}+\underbrace{2y^{%
-(s)}\boldsymbol{\theta}^{(k-1)}\cdot\tilde{\boldsymbol{x}}^{(s)}}_{\leq 0}+\|%
-\tilde{\boldsymbol{x}}^{(s)}\|^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em" rspace="0.167em">∥</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><msup><mo lspace="0em" rspace="0em">∥</mo><mn>2</mn></msup><mo lspace="0em">+</mo><munder><munder accentunder="true"><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>⏟</mo></munder><mrow><mi></mi><mo>≤</mo><mn>0</mn></mrow></munder><mo rspace="0em">+</mo><mo lspace="0em" rspace="0.167em">∥</mo><msup><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><msup><mo lspace="0em">∥</mo><mn>2</mn></msup></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.26)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E27.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\leq\|\boldsymbol{\theta}^{(k-1)}\|^{2}+R^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">≤</mo><mo lspace="0em" rspace="0.167em">∥</mo><msup><mi>𝜽</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><msup><mo lspace="0em" rspace="0em">∥</mo><mn>2</mn></msup><mo lspace="0em">+</mo><msup><mi>R</mi><mn>2</mn></msup></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.27)</span></td>
-</tr></tbody>
-<tbody id="Ch2.E28"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E28.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\leq kR^{2}," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>≤</mo><mi>k</mi><msup><mi>R</mi><mn>2</mn></msup><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.28)</span></td>
-</tr></tbody>
 </table>
 <p class="ltx_p">novamente por indução matemática. Com isso, temos</p>
-<table id="Ch4.S3.EGx10" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx13" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch2.E29"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch2.E26"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E29.m1" class="ltx_Math" alttext="\displaystyle 1\geq\cos(\beta)\geq k\gamma\frac{1}{\sqrt{k}R}=\sqrt{k}\frac{%
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E26.m1" class="ltx_Math" alttext="\displaystyle 1\geq\cos(\beta)\geq k\gamma\frac{1}{\sqrt{k}R}=\sqrt{k}\frac{%
 \gamma}{R}" display="inline"><mrow><mn>1</mn><mo>≥</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>β</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mrow><mi>k</mi><mo>⁢</mo><mi>γ</mi><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><msqrt><mi>k</mi></msqrt><mo>⁢</mo><mi>R</mi></mrow></mfrac></mstyle></mrow><mo>=</mo><mrow><msqrt><mi>k</mi></msqrt><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mi>γ</mi><mi>R</mi></mfrac></mstyle></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.29)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.26)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">e, portanto, <math id="SS2.p5.m4" class="ltx_Math" alttext="k\leq(R/\gamma)^{2}" display="inline"><mrow><mi>k</mi><mo>≤</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>R</mi><mo>/</mo><mi>γ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></math>.
@@ -909,7 +904,7 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <br class="ltx_break">
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
-<p class="ltx_p">Dado um perceptron com parâmetros <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="\boldsymbol{w}=(1,-1)" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="b=0.5" display="inline"><mrow><mi>b</mi><mo>=</mo><mn>0.5</mn></mrow></math>, esboce a reta de separação associada a este modelo e indique os semiplanos <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="\tau^{+}" display="inline"><msup><mi>τ</mi><mo>+</mo></msup></math> e <math id="Thmexer1.p1.m4" class="ltx_Math" alttext="\tau^{-}" display="inline"><msup><mi>τ</mi><mo>−</mo></msup></math>. Então, classifique os seguintes pontos utilizando este modelo: <math id="Thmexer1.p1.m5" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmexer1.p1.m6" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmexer1.p1.m7" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></math> e <math id="Thmexer1.p1.m8" class="ltx_Math" alttext="(-1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>.</p>
+<p class="ltx_p">Seja um perceptron com função sinal como função de ativação e parâmetros <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="\bm{w}=(1,-1)" display="inline"><mrow><mi>𝒘</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="b=0.5" display="inline"><mrow><mi>b</mi><mo>=</mo><mn>0.5</mn></mrow></math>. Esboce a reta de separação associada a este modelo e indique os semiplanos <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="\tau^{+}" display="inline"><msup><mi>τ</mi><mo>+</mo></msup></math> e <math id="Thmexer1.p1.m4" class="ltx_Math" alttext="\tau^{-}" display="inline"><msup><mi>τ</mi><mo>−</mo></msup></math>. Então, classifique os seguintes pontos utilizando este modelo: <math id="Thmexer1.p1.m5" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmexer1.p1.m6" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmexer1.p1.m7" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></math> e <math id="Thmexer1.p1.m8" class="ltx_Math" alttext="(-1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>.</p>
 </div>
 </div>
 <div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
@@ -917,39 +912,21 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <br class="ltx_break">
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
-<p class="ltx_p">Crie um perceptron que emule a operação booleana do <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="\lor" display="inline"><mo>∨</mo></math> (<span class="ltx_text ltx_font_typewriter">ou</span>-lógico).</p>
-<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
-<thead class="ltx_thead">
-<tr class="ltx_tr">
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer2.p1.m2" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Thmexer2.p1.m3" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer2.p1.m4" class="ltx_Math" alttext="A_{1}\lor A_{2}" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∨</mo><msub><mi>A</mi><mn>2</mn></msub></mrow></math></th>
-</tr>
-</thead>
-<tbody class="ltx_tbody">
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_t">V</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center">V</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">F</td>
-<td class="ltx_td ltx_align_center ltx_border_r">V</td>
-<td class="ltx_td ltx_align_center">V</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
-</tr>
-</tbody>
-</table>
-<p class="ltx_p">Primeiramente, treine-o utilizando uma análise geométrica. Depois, implemente o algoritmo de treinamento perceptron para treinar os parâmetros do modelo.</p>
+<p class="ltx_p">Crie um perceptron que emule a operação booleana do <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="\lor" display="inline"><mo>∨</mo></math> (ou-lógico). Treine o modelo utilizando:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p">uma análise geométrica;</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">o algoritmo de treinamento perceptron.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
@@ -957,26 +934,21 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <br class="ltx_break">
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
-<p class="ltx_p">Crie um perceptron que emule a operação booleana do <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\lnot" display="inline"><mo>¬</mo></math> (<span class="ltx_text ltx_font_typewriter">não</span>-lógico).</p>
-<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
-<thead class="ltx_thead">
-<tr class="ltx_tr">
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Thmexer3.p1.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer3.p1.m3" class="ltx_Math" alttext="\lnot A" display="inline"><mrow><mo rspace="0.167em">¬</mo><mi>A</mi></mrow></math></th>
-</tr>
-</thead>
-<tbody class="ltx_tbody">
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_t">F</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">V</td>
-</tr>
-</tbody>
-</table>
-<p class="ltx_p">Primeiramente, treine-o utilizando uma análise geométrica. Depois, implemente o algoritmo de treinamento perceptron para treinar os parâmetros do modelo.</p>
+<p class="ltx_p">Crie um perceptron que emule a operação booleana do <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\lnot" display="inline"><mo>¬</mo></math> (negação-lógico). Treine o modelo utilizando:</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p">uma análise geométrica;</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">o algoritmo de treinamento perceptron.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
 <div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
@@ -984,209 +956,62 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <br class="ltx_break">
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
-<p class="ltx_p">Crie um perceptron que emule a operação booleana <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\lnot\land" display="inline"><mrow><mo>¬</mo><mo lspace="0em">∧</mo></mrow></math> (<span class="ltx_text ltx_font_typewriter">nand</span>-lógico).</p>
-<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
-<thead class="ltx_thead">
-<tr class="ltx_tr">
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer4.p1.m2" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Thmexer4.p1.m3" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer4.p1.m4" class="ltx_Math" alttext="\lnot(A_{1}\land A_{2})" display="inline"><mrow><mo>¬</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∧</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></math></th>
-</tr>
-</thead>
-<tbody class="ltx_tbody">
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_t">F</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center">V</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">F</td>
-<td class="ltx_td ltx_align_center ltx_border_r">V</td>
-<td class="ltx_td ltx_align_center">V</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">V</td>
-</tr>
-</tbody>
-</table>
-<p class="ltx_p">Primeiramente, treine-o utilizando uma análise geométrica. Depois, implemente o algoritmo de treinamento perceptron para treinar os parâmetros do modelo.</p>
+<p class="ltx_p">Crie um perceptron que emule a operação booleana <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\lnot\land" display="inline"><mrow><mo>¬</mo><mo lspace="0em">∧</mo></mrow></math> (negação do e-lógico). Treine o modelo utilizando:</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p">uma análise geométrica;</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p">o algoritmo de treinamento perceptron.</p>
+</div>
+</li>
+</ol>
 </div>
 </div>
-<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<div id="exer:perceptron_xor" class="ltx_theorem ltx_theorem_exer">
 <h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.5.
 <br class="ltx_break">
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
-<p class="ltx_p">Crie um perceptron que emule a operação booleana <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="\lnot\lor" display="inline"><mrow><mo>¬</mo><mo lspace="0em">∨</mo></mrow></math> (<span class="ltx_text ltx_font_typewriter">nor</span>-lógico).</p>
-<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
-<thead class="ltx_thead">
-<tr class="ltx_tr">
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer5.p1.m2" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Thmexer5.p1.m3" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer5.p1.m4" class="ltx_Math" alttext="\lnot(A_{1}\lor A_{2})" display="inline"><mrow><mo>¬</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>∨</mo><msub><mi>A</mi><mn>2</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></math></th>
-</tr>
-</thead>
-<tbody class="ltx_tbody">
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_t">F</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center">F</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">F</td>
-<td class="ltx_td ltx_align_center ltx_border_r">V</td>
-<td class="ltx_td ltx_align_center">F</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">V</td>
-</tr>
-</tbody>
-</table>
-<p class="ltx_p">Primeiramente, treine-o utilizando uma análise geométrica. Depois, implemente o algoritmo de treinamento perceptron para treinar os parâmetros do modelo.</p>
+<p class="ltx_p">Busque criar um perceptron que emule a operação lógica do <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> (ou-exclusivo-lógico). É possível? Justifique sua resposta.</p>
 </div>
-</div>
-<div id="exer:xor" class="ltx_theorem ltx_theorem_exer">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.6.
-<br class="ltx_break">
-</h6>
-<div id="Thmexer6.p1" class="ltx_para">
-<p class="ltx_p">Busque criar um perceptron que emule a operação lógica do <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span>.</p>
+<figure id="tab:tabela_verdade_xor" class="ltx_table">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">Tabela 2.3</span>: </span><span class="ltx_text" style="font-size:90%;">Tabela verdade da operação booleana <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> (ou-exclusivo-lógico).</span></figcaption>
 <table class="ltx_tabular ltx_centering ltx_align_middle">
 <tbody class="ltx_tbody">
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Thmexer6.p1.m2" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math></td>
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math id="Thmexer6.p1.m3" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math></td>
-<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Thmexer6.p1.m4" class="ltx_Math" alttext="A_{1}\texttt{ xor }A_{2}" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>⁢</mo><mtext class="ltx_mathvariant_monospace"> xor </mtext><mo>⁢</mo><msub><mi>A</mi><mn>2</mn></msub></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Ch2.T3.m3" class="ltx_Math" alttext="A_{1}" display="inline"><msub><mi>A</mi><mn>1</mn></msub></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_tt"><math id="Ch2.T3.m4" class="ltx_Math" alttext="A_{2}" display="inline"><msub><mi>A</mi><mn>2</mn></msub></math></td>
+<td class="ltx_td ltx_align_center ltx_border_tt"><math id="Ch2.T3.m5" class="ltx_Math" alttext="A_{1}\texttt{ xor }A_{2}" display="inline"><mrow><msub><mi>A</mi><mn>1</mn></msub><mo>⁢</mo><mtext class="ltx_mathvariant_monospace"> xor </mtext><mo>⁢</mo><msub><mi>A</mi><mn>2</mn></msub></mrow></math></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">V</td>
-<td class="ltx_td ltx_align_center ltx_border_t">F</td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Ch2.T3.m6" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="Ch2.T3.m7" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Ch2.T3.m8" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">V</td>
-<td class="ltx_td ltx_align_center ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center">V</td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m9" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m10" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m11" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">F</td>
-<td class="ltx_td ltx_align_center ltx_border_r">V</td>
-<td class="ltx_td ltx_align_center">V</td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m12" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m13" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m14" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math></td>
 </tr>
 <tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">F</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">F</td>
+<td class="ltx_td ltx_align_center ltx_border_bb"><math id="Ch2.T3.m15" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r"><math id="Ch2.T3.m16" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb"><math id="Ch2.T3.m17" class="ltx_Math" alttext="F" display="inline"><mi>F</mi></math></td>
 </tr>
 </tbody>
 </table>
-<p class="ltx_p">É possível? Justifique sua resposta.</p>
-</div>
-</div>
-<div id="Thmexer7" class="ltx_theorem ltx_theorem_exer">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.7.
-<br class="ltx_break">
-</h6>
-<div id="Thmexer7.p1" class="ltx_para">
-<p class="ltx_p">Crie um perceptron para classificar os seguintes dados</p>
-<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
-<thead class="ltx_thead">
-<tr class="ltx_tr">
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer7.p1.m1" class="ltx_Math" alttext="x_{0}" display="inline"><msub><mi>x</mi><mn>0</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer7.p1.m2" class="ltx_Math" alttext="x_{1}" display="inline"><msub><mi>x</mi><mn>1</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Thmexer7.p1.m3" class="ltx_Math" alttext="x_{2}" display="inline"><msub><mi>x</mi><mn>2</mn></msub></math></th>
-<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer7.p1.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math></th>
-</tr>
-</thead>
-<tbody class="ltx_tbody">
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_t">1.0</td>
-<td class="ltx_td ltx_align_center ltx_border_t">1.0</td>
-<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">0.0</td>
-<td class="ltx_td ltx_align_center ltx_border_t">1</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">1.0</td>
-<td class="ltx_td ltx_align_center">0.5</td>
-<td class="ltx_td ltx_align_center ltx_border_r">0.5</td>
-<td class="ltx_td ltx_align_center">1</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">0.8</td>
-<td class="ltx_td ltx_align_center">0.2</td>
-<td class="ltx_td ltx_align_center ltx_border_r">0.0</td>
-<td class="ltx_td ltx_align_center">1</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">0.0</td>
-<td class="ltx_td ltx_align_center">0.0</td>
-<td class="ltx_td ltx_align_center ltx_border_r">0.0</td>
-<td class="ltx_td ltx_align_center">-1</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center">0.2</td>
-<td class="ltx_td ltx_align_center">0.1</td>
-<td class="ltx_td ltx_align_center ltx_border_r">0.0</td>
-<td class="ltx_td ltx_align_center">-1</td>
-</tr>
-<tr class="ltx_tr">
-<td class="ltx_td ltx_align_center ltx_border_bb">-0.5</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">0.4</td>
-<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">0.2</td>
-<td class="ltx_td ltx_align_center ltx_border_bb">-1</td>
-</tr>
-</tbody>
-</table>
-<p class="ltx_p">Treine-o utilizando o algoritmo de treinamento perceptron. Então, faça a interpretação geométrica do modelo encontrado.</p>
-</div>
-</div>
-<div id="Thmexer8" class="ltx_theorem ltx_theorem_exer">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.8.
-<br class="ltx_break">
-</h6>
-<div id="Thmexer8.p1" class="ltx_para">
-<p class="ltx_p">No E.<a href="#exer:xor" title="E. 2.1.6. ‣ 2.1.3 Exercícios ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.6</span></a>, vimos que não é possível criar um perceptron para emular a operação lógica do <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span>. Assumindo que <math id="Thmexer8.p1.m2" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> esteja associado ao valor <math id="Thmexer8.p1.m3" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> e <math id="Thmexer8.p1.m4" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math> ao valor <math id="Thmexer8.p1.m5" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math>, podemos contornar esta limitação adicionando uma nova entrada <math id="Thmexer8.p1.m6" class="ltx_Math" alttext="x_{3}" display="inline"><msub><mi>x</mi><mn>3</mn></msub></math> ao modelo, que seja dada por <math id="Thmexer8.p1.m7" class="ltx_Math" alttext="x_{3}=x_{0}x_{1}" display="inline"><mrow><msub><mi>x</mi><mn>3</mn></msub><mo>=</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>x</mi><mn>1</mn></msub></mrow></mrow></math>. Verifique e explique como isso é possível. Implemente o modelo e treine-o utilizando o algoritmo de treinamento perceptron.</p>
-</div>
-</div>
-<div id="Thmexer9" class="ltx_theorem ltx_theorem_exer">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.9.
-<br class="ltx_break">
-</h6>
-<div id="Thmexer9.p1" class="ltx_para">
-<p class="ltx_p">Dado um perceptron <math id="Thmexer9.p1.m1" class="ltx_Math" alttext="\tilde{y}=\mathcal{N}(\boldsymbol{x};\boldsymbol{\theta})" display="inline"><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo>;</mo><mi>𝜽</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Mostre que o valor absoluto de</p>
-<table id="eq:dist_perceptron" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E31.m1" class="ltx_Math" alttext="y\frac{\boldsymbol{\theta}\cdot\tilde{\boldsymbol{x}}}{\|\boldsymbol{\theta}\|}" display="block"><mrow><mi>y</mi><mo>⁢</mo><mfrac><mrow><mi>𝜽</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover></mrow><mrow><mo stretchy="false">‖</mo><mi>𝜽</mi><mo stretchy="false">‖</mo></mrow></mfrac></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.31)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">é a distância do ponto <math id="Thmexer9.p1.m2" class="ltx_Math" alttext="\tilde{\boldsymbol{x}}" display="inline"><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover></math> à reta dada por <math id="Thmexer9.p1.m3" class="ltx_Math" alttext="\boldsymbol{\theta}\cdot\tilde{\boldsymbol{x}}=0" display="inline"><mrow><mrow><mi>𝜽</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover></mrow><mo>=</mo><mn>0</mn></mrow></math>. Ainda, mostre que o sinal de (<a href="#eq:dist_perceptron" title="In E. 2.1.9. ‣ 2.1.3 Exercícios ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.31</span></a>) está associado ao semiplano onde o ponto <math id="Thmexer9.p1.m4" class="ltx_Math" alttext="\tilde{\boldsymbol{x}}" display="inline"><mover accent="true"><mi>𝒙</mi><mo>~</mo></mover></math> está localizado.</p>
-</div>
-</div>
-<div id="Thmexer10" class="ltx_theorem ltx_theorem_exer">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.10.
-<br class="ltx_break">
-</h6>
-<div id="Thmexer10.p1" class="ltx_para">
-<p class="ltx_p">Considerando um conjunto de dados linearmente separáveis, verifique que o algoritmo de treinamento perceptron é convergente para uma escolha arbitrária de parâmetros iniciais. Faça a devida modificação no código do Código <a href="#cod:algo_perceptron" title="Código 2 ‣ Aplicação ‣ 2.1.2 Algoritmo de treinamento: perceptron ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2</span></a> e verifique a convergência do algoritmo para diferentes escolhas de parâmetros iniciais.</p>
-</div>
+</figure>
 </div>
 </section>
 </section>
@@ -1228,7 +1053,7 @@ b&lt;0\}" display="inline"><mrow><msup><mi>τ</mi><mo>−</mo></msup><mo>=</mo><
 <div class="ltx_align_center">
 <a href="cap_perceptron.html" title="In Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_percepton_sec_retroprop.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.2 </span>Treinamento por retro-propagação</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Aug 21 10:15:21 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Mon Aug 24 13:10:00 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

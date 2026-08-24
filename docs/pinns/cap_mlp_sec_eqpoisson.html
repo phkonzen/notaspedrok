@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 4.1 Aplicação: Equação de Poisson ‣ Capítulo 4 Redes informadas pela física ‣ Introdução a PINNs</title>
-<!--Generated on Fri Aug 21 10:15:21 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 21 de agosto de 2026.-->
+<!--Generated on Mon Aug 24 13:10:00 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 24 de agosto de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -136,19 +136,19 @@
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p">Vamos criar uma <span class="ltx_text" style="background-color:#FFFF00;">MLP para resolver o problema de Poisson</span><span id="Ch4.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>Siméon Denis Poisson, 1781 - 1840, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" title="" class="ltx_ref ltx_href">Wikipédia: Siméon Denis Poisson</a>.</span></span></span></p>
-<table id="Ch4.S3.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx31" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_mlp_sec_eqpoisson:eq:eqPossion"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
 <td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E1.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
--\Delta u=f,\leavevmode\nobreak\ \boldsymbol{x}\in\mathcal{D}=(-1,1)^{2}," display="inline"><mrow><mrow><mrow><mrow><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">u</mi></mrow></mrow><mo mathcolor="#0000FF">=</mo><mi mathcolor="#0000FF">f</mi></mrow><mo mathcolor="#0000FF" rspace="0.667em">,</mo><mrow><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF">∈</mo><mi class="ltx_font_mathcaligraphic" mathcolor="#0000FF">𝒟</mi><mo mathcolor="#0000FF">=</mo><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mo mathcolor="#0000FF">−</mo><mn mathcolor="#0000FF">1,1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+-\Delta u=f,\leavevmode\nobreak\ \bm{x}\in\mathcal{D}=(-1,1)^{2}," display="inline"><mrow><mrow><mrow><mrow><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">u</mi></mrow></mrow><mo mathcolor="#0000FF">=</mo><mi mathcolor="#0000FF">f</mi></mrow><mo mathcolor="#0000FF" rspace="0.667em">,</mo><mrow><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF">∈</mo><mi class="ltx_font_mathcaligraphic" mathcolor="#0000FF">𝒟</mi><mo mathcolor="#0000FF">=</mo><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mo mathcolor="#0000FF">−</mo><mn mathcolor="#0000FF">1,1</mn></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.1)</span></td>
 </tr></tbody>
 <tbody id="cap_mlp_sec_eqpoisson:eq:cc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
 <td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E2.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
-u=0,\leavevmode\nobreak\ \boldsymbol{x}\in\partial D," display="inline"><mrow><mrow><mrow><mi mathcolor="#0000FF">u</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">0</mn></mrow><mo mathcolor="#0000FF" rspace="0.667em">,</mo><mrow><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF" rspace="0.1389em">∈</mo><mrow><mo lspace="0.1389em" mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">D</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+u=0,\leavevmode\nobreak\ \bm{x}\in\partial D," display="inline"><mrow><mrow><mrow><mi mathcolor="#0000FF">u</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">0</mn></mrow><mo mathcolor="#0000FF" rspace="0.667em">,</mo><mrow><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF" rspace="0.1389em">∈</mo><mrow><mo lspace="0.1389em" mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">D</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.2)</span></td>
 </tr></tbody>
@@ -190,7 +190,7 @@ n_{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}\right|^{2}}_{\text{c.c.}}," di
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.5)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">A cada época, conjuntos de pontos <math id="p3.m1" class="ltx_Math" alttext="\left\{\boldsymbol{x}^{(s)}\right\}_{s=1}^{n_{s,in}}\subset\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></msub></msubsup><mo>⊂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></math> e <math id="p3.m2" class="ltx_Math" alttext="\left\{\boldsymbol{x}^{(s)}\right\}_{s=1}^{n_{s,cc}}\subset\partial\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>c</mi><mo>⁢</mo><mi>c</mi></mrow></mrow></msub></msubsup><mo rspace="0.1389em">⊂</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></mrow></math> são randomicamente gerados com distribuição uniforme.</p>
+<p class="ltx_p">A cada época, conjuntos de pontos <math id="p3.m1" class="ltx_Math" alttext="\left\{\bm{x}^{(s)}\right\}_{s=1}^{n_{s,in}}\subset\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>i</mi><mo>⁢</mo><mi>n</mi></mrow></mrow></msub></msubsup><mo>⊂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></math> e <math id="p3.m2" class="ltx_Math" alttext="\left\{\bm{x}^{(s)}\right\}_{s=1}^{n_{s,cc}}\subset\partial\mathcal{D}" display="inline"><mrow><msubsup><mrow><mo>{</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mrow><mi>s</mi><mo>,</mo><mrow><mi>c</mi><mo>⁢</mo><mi>c</mi></mrow></mrow></msub></msubsup><mo rspace="0.1389em">⊂</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mi class="ltx_font_mathcaligraphic">𝒟</mi></mrow></mrow></math> são randomicamente gerados com distribuição uniforme.</p>
 </div>
 <div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
 <h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 4.1.1.
@@ -568,11 +568,11 @@ n_{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}\right|^{2}}_{\text{c.c.}}," di
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Crie uma MLP para resolver</p>
-<table id="Ch4.S3.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch4.S3.EGx32" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E7.m1" class="ltx_Math" alttext="\displaystyle-\Delta u=0,\leavevmode\nobreak\ \boldsymbol{x}\in D=(0,1)^{2}," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="0.667em">,</mo><mrow><mi>𝒙</mi><mo>∈</mo><mi>D</mi><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E7.m1" class="ltx_Math" alttext="\displaystyle-\Delta u=0,\leavevmode\nobreak\ \bm{x}\in D=(0,1)^{2}," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="0.667em">,</mo><mrow><mi>𝒙</mi><mo>∈</mo><mi>D</mi><mo>=</mo><msup><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.7)</span></td>
 </tr></tbody>
@@ -603,12 +603,12 @@ n_{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}\right|^{2}}_{\text{c.c.}}," di
 </table>
 </div>
 </div>
-<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx2">Resposta</button></div><div class="collapse" id="Thmrespx2" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx1">Resposta</button></div><div class="collapse" id="Thmrespx1" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
 <h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
 <br class="ltx_break">
 </h6>
-<div id="Thmrespx2.p1" class="ltx_para">
-<p class="ltx_p">Dica: solução analítica <math id="Thmrespx2.p1.m1" class="ltx_Math" alttext="u(x_{1},x_{2})=x_{1}(1-x_{1})-x_{2}(1-x_{2})" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>.</p>
+<div id="Thmrespx1.p1" class="ltx_para">
+<p class="ltx_p">Dica: solução analítica <math id="Thmrespx1.p1.m1" class="ltx_Math" alttext="u(x_{1},x_{2})=x_{1}(1-x_{1})-x_{2}(1-x_{2})" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>1</mn></msub><mo>,</mo><msub><mi>x</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msub><mi>x</mi><mn>1</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msub><mi>x</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msub><mi>x</mi><mn>2</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>.</p>
 </div>
 </div>
 </section>
@@ -651,7 +651,7 @@ n_{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}\right|^{2}}_{\text{c.c.}}," di
 <div class="ltx_align_center">
 <a href="cap_pinns.html" title="In Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Redes informadas pela física</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_mlp_sec_calor.html" title="In Capítulo 4 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Aplicação: equação do calor</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Aug 21 10:15:21 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Mon Aug 24 13:10:00 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
