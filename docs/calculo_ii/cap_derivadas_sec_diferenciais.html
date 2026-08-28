@@ -1,0 +1,944 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II</title>
+<!--Generated on Fri Aug 28 12:50:08 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 28 de agosto de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="up up" href="./" title="Cálculo II">
+<link rel="start" href="./" title="Cálculo II">
+<link rel="prev" href="cap_derivadas_sec_derivadas_parciais.html" title="2.1 Derivadas parciais ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="next" href="cap_derivadas_sec_regra_cadeia.html" title="2.3 Regra da cadeia ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_derivadas_parciais.html" title="2.1 Derivadas parciais ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_regra_cadeia.html" title="2.3 Regra da cadeia ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_gradiente.html" title="2.4 Derivada direcional e gradiente ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo II">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo II">
+<link rel="chapter" href="./" title="Cálculo II ‣ Cálculo II">
+<link rel="chapter" href="cap_introducao.html" title="Capítulo 1 Introdução ‣ Cálculo II">
+<link rel="chapter" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo II">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo II">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script><link rel="canonical" href="https://notaspedrok.com.br/calculo_ii/cap_derivadas_sec_diferenciais.html" />
+</head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo II</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_derivadas.html" title="In Cálculo II" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Derivadas</span></a><a href="cap_derivadas_sec_derivadas_parciais.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Derivadas parciais</span></a><a href="cap_derivadas_sec_regra_cadeia.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Regra da cadeia</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.2 </span>Diferenciais e aproximações lineares</h1>
+
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.1 </span>Plano tangente</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="SS1.p1.m1" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Definimos o <span class="ltx_text ltx_font_bold">plano tangente</span> à superfície <math id="SS1.p1.m2" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no ponto <math id="SS1.p1.m3" class="ltx_Math" alttext="(x_{0},y_{0},f(x_{0},y_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math> como</p>
+<table id="A2.S0.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:plano_tangente"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E108.m1" class="ltx_Math" alttext="\displaystyle z=f_{x}(x_{0},y_{0})(x-x_{0})+f_{y}(x_{0},y_{0})(y-y_{0})+f(x_{0%
+},y_{0})." display="inline"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.108)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A Figura <a href="#fig:derivadas_linearizacao" title="Figura 2.3 ‣ 2.2.1 Plano tangente ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a> ilustra o plano tangente à superfície <math id="SS1.p1.m4" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no ponto <math id="SS1.p1.m5" class="ltx_Math" alttext="(x_{0},y_{0},f(x_{0},y_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<figure id="fig:derivadas_linearizacao" class="ltx_figure"><img src="cap_derivadas/dados/fig_derivadas_linearizacao/fig.png" id="Ch2.F3.g1" class="ltx_graphics ltx_centering ltx_img_square" width="257" height="219" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.3</span>: </span><span class="ltx_text" style="font-size:90%;">Plano tangente à superfície <math id="Ch2.F3.m3" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no ponto <math id="Ch2.F3.m4" class="ltx_Math" alttext="(x_{0},y_{0},f(x_{0},y_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>.</span></figcaption>
+</figure>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">O plano tangente é o plano determinado pelas retas tangentes à superfície <math id="SS1.p2.m1" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> na direção do eixo <math id="SS1.p2.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> e na direção do eixo <math id="SS1.p2.m3" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> no ponto <math id="SS1.p2.m4" class="ltx_Math" alttext="(x_{0},y_{0},f(x_{0},y_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>. De fato, a reta tangente à superfície <math id="SS1.p2.m5" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> na direção do eixo <math id="SS1.p2.m6" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> no ponto <math id="SS1.p2.m7" class="ltx_Math" alttext="(x_{0},y_{0},f(x_{0},y_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math> tem equação</p>
+<table id="A2.S0.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E109"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E109.m1" class="ltx_Math" alttext="\displaystyle z=f_{x}(x_{0},y_{0})(x-x_{0})+f(x_{0},y_{0}),y=y_{0}," display="inline"><mrow><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.109)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e a reta tangente à superfície <math id="SS1.p2.m8" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> na direção do eixo <math id="SS1.p2.m9" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> neste mesmo ponto tem equação</p>
+<table id="A2.S0.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E110"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E110.m1" class="ltx_Math" alttext="\displaystyle z=f_{y}(x_{0},y_{0})(y-y_{0})+f(x_{0},y_{0}),x=x_{0}." display="inline"><mrow><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo><mrow><mi>x</mi><mo>=</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.110)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Lembremos que um plano fica determinado por seus vetores diretores e por um ponto de ancoragem. Com isso, escolhendo</p>
+<table id="A2.S0.EGx81" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E111"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E111.m1" class="ltx_Math" alttext="\displaystyle\vec{u}=(x-x_{0},0,f_{x}(x_{0},y_{0})(x-x0))," display="inline"><mrow><mrow><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>⁢</mo><mn>,0</mn></mrow></mrow><mo>,</mo><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mrow><mi>x</mi><mo>⁢</mo><mn>0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.111)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E112"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E112.m1" class="ltx_Math" alttext="\displaystyle\vec{v}=(0,y-y_{0},f_{y}(x_{0},y_{0})(y-y0))." display="inline"><mrow><mrow><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo>,</mo><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><mrow><mi>y</mi><mo>⁢</mo><mn>0</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.112)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e <math id="SS1.p2.m10" class="ltx_math_unparsed" alttext="A(x_{0},y_{0},f(x_{0},y_{0})" display="inline"><mrow><mi>A</mi><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mi>f</mi><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math> como um ponto de ancoragem do plano, temos a equação do plano fica determinada por</p>
+<table id="A2.S0.EGx82" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E113"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E113.m1" class="ltx_Math" alttext="\displaystyle[\overrightarrow{AP},\vec{u},\vec{v}]=0," display="inline"><mrow><mrow><mrow><mo stretchy="false">[</mo><mover accent="true"><mrow><mi>A</mi><mo>⁢</mo><mi>P</mi></mrow><mo stretchy="false">→</mo></mover><mo>,</mo><mover accent="true"><mi>u</mi><mo stretchy="false">→</mo></mover><mo>,</mo><mover accent="true"><mi>v</mi><mo stretchy="false">→</mo></mover><mo stretchy="false">]</mo></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.113)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p2.m11" class="ltx_Math" alttext="P(x,y,z)" display="inline"><mrow><mi>P</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> é um ponto qualquer do plano e <math id="SS1.p2.m12" class="ltx_Math" alttext="[\cdot,\cdot,\cdot]" display="inline"><mrow><mo stretchy="false">[</mo><mo lspace="0em" rspace="0em">⋅</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">⋅</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">⋅</mo><mo stretchy="false">]</mo></mrow></math> é o produto misto de vetores. Calculamos</p>
+<table id="A2.S0.EGx83" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E114"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E114.m1" class="ltx_Math" alttext="\displaystyle 0=\begin{bmatrix}x-x_{0}&amp;y-y_{0}&amp;z-f(x_{0},y_{0})\\
+x-x_{0}&amp;0&amp;f_{x}(x_{0},y_{0})(x-x_{0})\\
+0&amp;y-y_{0}&amp;f_{y}(x_{0},y_{0})(y-y_{0})\end{bmatrix}" display="inline"><mrow><mn>0</mn><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mtd><mtd><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mtd><mtd><mrow><mi>z</mi><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mtd></mtr><mtr><mtd><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mtd><mtd><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.114)</span></td>
+</tr></tbody>
+<tbody id="Ch2.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex1.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=(x-x_{0})(y-y_{0})(z-f(x_{0},y_{0}))-(x-x_{0})^{2}(y%
+-y_{0})f_{x}(x_{0},y_{0})" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>z</mi><mo>−</mo><mi>f</mi><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><msub><mi>f</mi><mi>x</mi></msub><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.E115"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E115.m1" class="ltx_Math" alttext="\displaystyle\text{}\qquad-(x-x_{0})(y-y_{0})^{2}f_{y}(x_{0},y_{0})" display="inline"><mrow><mrow></mrow><mspace width="2em"></mspace><mrow><mo>−</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>⁢</mo><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.115)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E116"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E116.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=z-f(x_{0},y_{0})-f_{x}(x_{0},y_{0})(x-x_{0})-f_{y}(x%
+_{0},y_{0})(y-y_{0})," display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>z</mi><mo>−</mo><mi>f</mi><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>−</mo><msub><mi>f</mi><mi>x</mi></msub><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>−</mo><msub><mi>f</mi><mi>y</mi></msub><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.116)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">donde concluímos que a equação do plano tangente é dada por (<a href="#eq:plano_tangente" title="In 2.2.1 Plano tangente ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.108</span></a>).</p>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Plano tangente)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmex1.p1.m1" class="ltx_Math" alttext="f(x,y)=-x^{2}-y^{2}+2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow></mrow></math>. A derivada parcial de <math id="Thmex1.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> em relação a <math id="Thmex1.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> é <math id="Thmex1.p1.m4" class="ltx_Math" alttext="f_{x}(x,y)=-2x" display="inline"><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math> e a derivada parcial de <math id="Thmex1.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> em relação a <math id="Thmex1.p1.m6" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> é <math id="Thmex1.p1.m7" class="ltx_Math" alttext="f_{y}(x,y)=-2y" display="inline"><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math>. No ponto <math id="Thmex1.p1.m8" class="ltx_Math" alttext="(\frac{1}{2},\frac{1}{2})" display="inline"><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></math>, temos</p>
+<table id="A2.S0.EGx84" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E117"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E117.m1" class="ltx_Math" alttext="\displaystyle f_{x}\left(\frac{1}{2},\frac{1}{2}\right)=-2\left(\frac{1}{2}%
+\right)=-1," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.117)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E118"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E118.m1" class="ltx_Math" alttext="\displaystyle f_{y}\left(\frac{1}{2},\frac{1}{2}\right)=-2\left(\frac{1}{2}%
+\right)=-1," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.118)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E119"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E119.m1" class="ltx_Math" alttext="\displaystyle f\left(\frac{1}{2},\frac{1}{2}\right)=-\left(\frac{1}{2}\right)^%
+{2}-\left(\frac{1}{2}\right)^{2}+2=\frac{3}{2}." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo>−</mo><msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.119)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, o plano tangente à superfície <math id="Thmex1.p1.m9" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no ponto <math id="Thmex1.p1.m10" class="ltx_Math" alttext="(\frac{1}{2},\frac{1}{2},\frac{3}{2})" display="inline"><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></math> é</p>
+<table id="A2.S0.EGx85" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E120"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E120.m1" class="ltx_Math" alttext="\displaystyle z=-1\left(x-\frac{1}{2}\right)-1\left(y-\frac{1}{2}\right)+\frac%
+{3}{2}." display="inline"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mrow><mo>−</mo><mrow><mn>1</mn><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow></mrow><mo>−</mo><mrow><mn>1</mn><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>y</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.120)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, temos que o plano tangente a superfície <math id="Thmex1.p1.m11" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no ponto <math id="Thmex1.p1.m12" class="ltx_Math" alttext="(\frac{1}{2},\frac{1}{2},\frac{3}{2})" display="inline"><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></math> é</p>
+<table id="A2.S0.EGx86" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E121"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E121.m1" class="ltx_Math" alttext="\displaystyle z=-x-y+\frac{5}{2}." display="inline"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mrow><mo>−</mo><mi>x</mi></mrow><mo>−</mo><mi>y</mi></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>5</mn><mn>2</mn></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.121)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verifique!</p>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.2 </span>Linearização</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">A <span class="ltx_text ltx_font_bold">linearização</span> de uma função <math id="SS2.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> no ponto <math id="SS2.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> é a função linear</p>
+<table id="A2.S0.EGx87" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E122"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E122.m1" class="ltx_Math" alttext="\displaystyle L(x,y)=f_{x}(x_{0},y_{0})(x-x_{0})+f_{y}(x_{0},y_{0})(y-y_{0})+f%
+(x_{0},y_{0})," display="inline"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.122)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p"><span class="ltx_text ltx_font_italic">i.e.</span>, a função que representa o plano tangente à superfície <math id="SS2.p1.m3" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no ponto <math id="SS2.p1.m4" class="ltx_Math" alttext="(x_{0},y_{0},f(x_{0},y_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>. Voltando a Figura <a href="#fig:derivadas_linearizacao" title="Figura 2.3 ‣ 2.2.1 Plano tangente ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a>, temos lá que o plano tangente à superfície é a representação gráfica da linearização de <math id="SS2.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no ponto <math id="SS2.p1.m6" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>. Vamos denotar o erro em se aproximar <math id="SS2.p1.m7" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> por <math id="SS2.p1.m8" class="ltx_Math" alttext="L(x,y)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> por <math id="SS2.p1.m9" class="ltx_Math" alttext="\varepsilon=L(x,y)-f(x,y)" display="inline"><mrow><mi>ε</mi><mo>=</mo><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>.</p>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Linearização)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmex2.p1.m1" class="ltx_Math" alttext="f(x,y)=-x^{2}-y^{2}+2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow></mrow></math>. A linearização de <math id="Thmex2.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no ponto <math id="Thmex2.p1.m3" class="ltx_Math" alttext="(\frac{1}{2},\frac{1}{2})" display="inline"><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></math> é</p>
+<table id="A2.S0.EGx88" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E123"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E123.m1" class="ltx_Math" alttext="\displaystyle L(x,y)=f_{x}\left(\frac{1}{2},\frac{1}{2}\right)\left(x-\frac{1}%
+{2}\right)+f_{y}\left(\frac{1}{2},\frac{1}{2}\right)\left(y-\frac{1}{2}\right)%
++f\left(\frac{1}{2},\frac{1}{2}\right)" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mo>⁢</mo><mrow><mo>(</mo><mrow><mi>y</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.123)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E124"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E124.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-1\left(x-\frac{1}{2}\right)-1\left(y-\frac{1}{2}%
+\right)+\frac{3}{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mn>1</mn><mrow><mo>(</mo><mi>x</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mo>−</mo><mn>1</mn><mrow><mo>(</mo><mi>y</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.124)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Donde concluímos que <math id="Thmex2.p1.m4" class="ltx_Math" alttext="L(x,y)=-x-y+\frac{5}{2}" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><mi>x</mi></mrow><mo>−</mo><mi>y</mi></mrow><mo>+</mo><mfrac><mn>5</mn><mn>2</mn></mfrac></mrow></mrow></math>. A Tabela <a href="#tab:derivadas_linearizacao" title="Tabela 2.1 ‣ Exemplo 2.2.2.(Linearização) ‣ 2.2.2 Linearização ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1</span></a> apresenta um estudo do comportamento do erro <math id="Thmex2.p1.m5" class="ltx_Math" alttext="\varepsilon" display="inline"><mi>ε</mi></math> em se aproximar <math id="Thmex2.p1.m6" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> por sua linearização <math id="Thmex2.p1.m7" class="ltx_Math" alttext="L(x,y)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<figure id="tab:derivadas_linearizacao" class="ltx_table">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">Tabela 2.1</span>: </span><span class="ltx_text" style="font-size:90%;">Estudo do erro em se aproximar <math id="Ch2.T1.m7" class="ltx_Math" alttext="f(x,y)=-x^{2}-y^{2}+2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow></mrow></math> por sua linearização <math id="Ch2.T1.m8" class="ltx_Math" alttext="L(x,y)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> no ponto <math id="Ch2.T1.m9" class="ltx_Math" alttext="(x_{0},y_{0})=(\frac{1}{2},\frac{1}{2})" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></mrow></math>. A distância entre <math id="Ch2.T1.m10" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></math> e <math id="Ch2.T1.m11" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> é denotada por <math id="Ch2.T1.m12" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>.</span></figcaption>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_th_row ltx_border_tt"><math id="Ch2.T1.m13" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T1.m14" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T1.m15" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_th_row ltx_border_tt"><math id="Ch2.T1.m16" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T1.m17" class="ltx_Math" alttext="L(x,y)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math></th>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T1.m18" class="ltx_Math" alttext="|\varepsilon|" display="inline"><mrow><mo stretchy="false">|</mo><mi>ε</mi><mo stretchy="false">|</mo></mrow></math></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_t">2.00</th>
+<td class="ltx_td ltx_align_right ltx_border_r ltx_border_t">2.00</td>
+<td class="ltx_td ltx_align_right ltx_border_r ltx_border_t">2.12</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_t">-6.00</th>
+<td class="ltx_td ltx_align_right ltx_border_r ltx_border_t">-1.50</td>
+<td class="ltx_td ltx_align_right ltx_border_r ltx_border_t">4.50</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row">1.00</th>
+<td class="ltx_td ltx_align_right ltx_border_r">1.00</td>
+<td class="ltx_td ltx_align_right ltx_border_r">0.71</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row">0.00</th>
+<td class="ltx_td ltx_align_right ltx_border_r">0.50</td>
+<td class="ltx_td ltx_align_right ltx_border_r">0.50</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row">0.75</th>
+<td class="ltx_td ltx_align_right ltx_border_r">0.75</td>
+<td class="ltx_td ltx_align_right ltx_border_r">0.35</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row">0.87</th>
+<td class="ltx_td ltx_align_right ltx_border_r">1.00</td>
+<td class="ltx_td ltx_align_right ltx_border_r">0.13</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row">0.60</th>
+<td class="ltx_td ltx_align_right ltx_border_r">0.60</td>
+<td class="ltx_td ltx_align_right ltx_border_r">0.14</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row">1.28</th>
+<td class="ltx_td ltx_align_right ltx_border_r">1.30</td>
+<td class="ltx_td ltx_align_right ltx_border_r">0.02</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_bb">0.50</th>
+<td class="ltx_td ltx_align_right ltx_border_bb ltx_border_r">0.50</td>
+<td class="ltx_td ltx_align_right ltx_border_bb ltx_border_r">0.00</td>
+<th class="ltx_td ltx_align_right ltx_th ltx_th_row ltx_border_bb">1.50</th>
+<td class="ltx_td ltx_align_right ltx_border_bb ltx_border_r">1.50</td>
+<td class="ltx_td ltx_align_right ltx_border_bb ltx_border_r">0.00</td>
+</tr>
+</tbody>
+</table>
+</figure>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.3 </span>Diferenciabilidade</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Dizemos que uma função <math id="SS3.p1.m1" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi mathbackground="#FFFF00">z</mi><mo mathbackground="#FFFF00">=</mo><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></mrow></math> é <span class="ltx_text ltx_font_bold">diferenciável</span> no ponto <math id="SS3.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> quando existem as derivadas parciais <math id="SS3.p1.m3" class="ltx_Math" alttext="f_{x}(x_{0},y_{0})" display="inline"><mrow><msub><mi mathbackground="#FFFF00">f</mi><mi mathbackground="#FFFF00">x</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> e <math id="SS3.p1.m4" class="ltx_Math" alttext="f_{y}(x_{0},y_{0})" display="inline"><mrow><msub><mi mathbackground="#FFFF00">f</mi><mi mathbackground="#FFFF00">y</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> e</span></p>
+<table id="A2.S0.EGx89" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:derivadas_diferenciabilidade"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E125.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\lim_{(\Delta x,\Delta y)\to(0,0)}\frac{\Delta z-f_{x}(x_{0},y_{0})\Delta x-f_%
+{y}(x_{0},y_{0})\Delta y}{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}=0," display="inline"><mrow><mrow><mrow><munder><mo mathcolor="#0000FF" movablelimits="false">lim</mo><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF">,</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">y</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo mathcolor="#0000FF" stretchy="false">→</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mn mathcolor="#0000FF">0,0</mn><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></munder><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">z</mi></mrow><mo mathcolor="#0000FF">−</mo><mrow><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">x</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">y</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF">−</mo><mrow><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">y</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">y</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">y</mi></mrow></mrow><msqrt mathcolor="#0000FF"><mrow><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup><mo mathcolor="#0000FF">+</mo><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">y</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">0</mn></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.125)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com <math id="SS3.p1.m5" class="ltx_Math" alttext="\Delta z=f(x_{0}+\Delta x,y_{0}+\Delta y)-f(x_{0},y_{0})" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>z</mi></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, <math id="SS3.p1.m6" class="ltx_Math" alttext="\Delta x=x-x_{0}" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mrow></math> e <math id="SS3.p1.m7" class="ltx_Math" alttext="\Delta y=y-y_{0}" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo>=</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mrow></math>.</p>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Vamos verificar se <math id="Thmex3.p1.m1" class="ltx_Math" alttext="f(x,y)=-x^{2}-y^{2}+2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow></mrow></math> é diferenciável no ponto <math id="Thmex3.p1.m2" class="ltx_Math" alttext="(\frac{1}{2},\frac{1}{2})" display="inline"><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></math>. Temos que</p>
+<table id="A2.S0.EGx90" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E126"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E126.m1" class="ltx_Math" alttext="\displaystyle f_{x}\left(\frac{1}{2},\frac{1}{2}\right)=-1," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.126)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E127"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E127.m1" class="ltx_Math" alttext="\displaystyle f_{y}\left(\frac{1}{2},\frac{1}{2}\right)=-1," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.127)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E128"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E128.m1" class="ltx_Math" alttext="\displaystyle f\left(\frac{1}{2},\frac{1}{2}\right)=\frac{3}{2}." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.128)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Agora, calculando o limite</p>
+<table id="A2.S0.EGx91" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E129"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E129.m1" class="ltx_Math" alttext="\displaystyle\lim_{(\Delta x,\Delta y)\to(0,0)}\frac{\Delta z-f_{x}(\frac{1}{2%
+},\frac{1}{2})\Delta x-f_{y}(\frac{1}{2},\frac{1}{2})\Delta y}{\sqrt{(\Delta x%
+)^{2}+(\Delta y)^{2}}}" display="inline"><mrow><munder><mo movablelimits="false">lim</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">→</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></munder><mstyle displaystyle="true"><mfrac><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>z</mi></mrow><mo>−</mo><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><msqrt><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.129)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E130"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E130.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\lim_{(\Delta x,\Delta y)\to(0,0)}\frac{f(\frac{1}{2%
+}+\Delta x,\frac{1}{2}+\Delta y)-f(\frac{1}{2},\frac{1}{2})+\Delta x+\Delta y}%
+{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0.1389em">=</mo><munder><mo lspace="0.1389em" movablelimits="false" rspace="0.167em">lim</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">→</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></munder><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><msqrt><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.130)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E131"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E131.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\lim_{(\Delta x,\Delta y)\to(0,0)}\frac{-\left(\frac%
+{1}{2}+\Delta x\right)^{2}-\left(\frac{1}{2}+\Delta y\right)^{2}+2-\frac{3}{2}%
++\Delta x+\Delta y}{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0.1389em">=</mo><munder><mo lspace="0.1389em" movablelimits="false" rspace="0.167em">lim</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">→</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></munder><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mrow><mrow><mo>−</mo><msup><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo>−</mo><msup><mrow><mo>(</mo><mrow><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>)</mo></mrow><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><msqrt><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.131)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E132"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E132.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\lim_{(\Delta x,\Delta y)\to(0,0)}\frac{-\frac{1}{4}%
+-\Delta x-(\Delta x)^{2}-\frac{1}{4}-\Delta y-(\Delta y)^{2}+2-\frac{3}{2}+%
+\Delta x+\Delta y}{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0.1389em">=</mo><munder><mo lspace="0.1389em" movablelimits="false" rspace="0.167em">lim</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">→</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></munder><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mfrac><mn>1</mn><mn>4</mn></mfrac></mrow><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>−</mo><mfrac><mn>1</mn><mn>4</mn></mfrac><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow><mo>−</mo><mfrac><mn>3</mn><mn>2</mn></mfrac></mrow><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><msqrt><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.132)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E133"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E133.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\lim_{(\Delta x,\Delta y)\to(0,0)}\frac{-(\Delta x)^%
+{2}-(\Delta y)^{2}}{\sqrt{(\Delta x)^{2}+(\Delta y)^{2}}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0.1389em">=</mo><munder><mo lspace="0.1389em" movablelimits="false" rspace="0.167em">lim</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">→</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></munder><mstyle displaystyle="true"><mfrac><mrow><mrow><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><msqrt><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.133)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E134"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E134.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\lim_{(\Delta x,\Delta y)\to(0,0)}-\sqrt{(\Delta x)^%
+{2}+(\Delta y)^{2}}=0." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0.1389em">=</mo><munder><mo lspace="0.1389em" movablelimits="false" rspace="0em">lim</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>,</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">→</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></munder><mo lspace="0em">−</mo><msqrt><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msqrt><mo>=</mo><mn>0</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.134)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, <math id="Thmex3.p1.m3" class="ltx_Math" alttext="f(x,y)=-x^{2}-y^{2}+2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow></mrow></math> é diferenciável no ponto <math id="Thmex3.p1.m4" class="ltx_Math" alttext="(\frac{1}{2},\frac{1}{2})" display="inline"><mrow><mo stretchy="false">(</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo>,</mo><mfrac><mn>1</mn><mn>2</mn></mfrac><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmobs1" class="ltx_theorem ltx_theorem_obs">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Observação 2.2.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Funções diferenciáveis de várias variáveis)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmobs1.p1" class="ltx_para">
+<p class="ltx_p">A definição de diferenciabilidade de uma função de várias variáveis é uma generalização da definição acima (<a href="#eq:derivadas_diferenciabilidade" title="In 2.2.3 Diferenciabilidade ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.125</span></a>). Por exemplo, uma função <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="f(x,y,z)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> é diferenciável no ponto <math id="Thmobs1.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0},z_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> quando existem as derivadas parciais <math id="Thmobs1.p1.m3" class="ltx_Math" alttext="f_{x}(x_{0},y_{0},z_{0})" display="inline"><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math>, <math id="Thmobs1.p1.m4" class="ltx_Math" alttext="f_{y}(x_{0},y_{0},z_{0})" display="inline"><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmobs1.p1.m5" class="ltx_Math" alttext="f_{z}(x_{0},y_{0},z_{0})" display="inline"><mrow><msub><mi>f</mi><mi>z</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></math> e</p>
+<table id="A2.S0.EGx92" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.Ex2.m1" class="ltx_math_unparsed" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\lim_{(\Delta x,\Delta y,\Delta z)\to(0,0,0)}\left[\Delta w-f_{x}(x_{0},y_{0},%
+z_{0})\Delta x-f_{y}(x_{0},y_{0},z_{0})\Delta y\right." display="inline"><mrow><munder><mo mathcolor="#0000FF" movablelimits="false">lim</mo><mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF">,</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">y</mi></mrow><mo mathcolor="#0000FF">,</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">z</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo mathcolor="#0000FF" stretchy="false">→</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mn mathcolor="#0000FF">0,0,0</mn><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></munder><mrow><mo lspace="0em" mathcolor="#0000FF">[</mo><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mi mathcolor="#0000FF">w</mi><mo mathcolor="#0000FF">−</mo><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">x</mi></msub><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">y</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">z</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">−</mo><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">y</mi></msub><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">y</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">z</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mi mathcolor="#0000FF">y</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+<tbody id="Ch2.E135"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E135.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\qquad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor%
+}{rgb}{0,0,1}\left.-f_{z}(x_{0},y_{0},z_{0})\Delta z\right]\frac{1}{\sqrt{(%
+\Delta x)^{2}+(\Delta y)^{2}+(\Delta z)^{2}}}=0," display="inline"><mrow><mrow></mrow><mspace width="2em"></mspace><mo mathcolor="#0000FF">−</mo><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">z</mi></msub><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><msub><mi mathcolor="#0000FF">x</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">y</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF">,</mo><msub><mi mathcolor="#0000FF">z</mi><mn mathcolor="#0000FF">0</mn></msub><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF">]</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><msqrt mathcolor="#0000FF"><mrow><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup><mo mathcolor="#0000FF">+</mo><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">y</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup><mo mathcolor="#0000FF">+</mo><msup><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mi mathcolor="#0000FF" mathvariant="normal">Δ</mi><mo>⁢</mo><mi mathcolor="#0000FF">z</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow></msqrt></mfrac></mstyle><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">0</mn><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.135)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com <math id="Thmobs1.p1.m6" class="ltx_Math" alttext="\Delta w=f(x_{0}+\Delta x,y_{0}+\Delta y,z_{0}+\Delta z)-f(x_{0},y_{0},z_{0})" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>w</mi></mrow><mo>=</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mn>0</mn></msub><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo><mrow><msub><mi>z</mi><mn>0</mn></msub><mo>+</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>z</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><msub><mi>z</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, <math id="Thmobs1.p1.m7" class="ltx_Math" alttext="\Delta x=x-x_{0}" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>x</mi><mo>−</mo><msub><mi>x</mi><mn>0</mn></msub></mrow></mrow></math>, <math id="Thmobs1.p1.m8" class="ltx_Math" alttext="\Delta y=y-y_{0}" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>y</mi></mrow><mo>=</mo><mrow><mi>y</mi><mo>−</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></mrow></math> e <math id="Thmobs1.p1.m9" class="ltx_Math" alttext="\Delta z=z-z_{0}" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>z</mi></mrow><mo>=</mo><mrow><mi>z</mi><mo>−</mo><msub><mi>z</mi><mn>0</mn></msub></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="SS3.p2" class="ltx_para">
+<p class="ltx_p">Uma função é dita ser <span class="ltx_text ltx_font_bold">diferenciável em toda parte</span> (de seu domínio) quando ela é diferenciável em todos os pontos de seu domínio. Por exemplo, a função <math id="SS3.p2.m1" class="ltx_Math" alttext="f(x,y)=-x^{2}-y^{2}+2" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mn>2</mn></mrow></mrow></math> é diferenciável em toda parte. Verifique!</p>
+</div>
+<div id="teo:dif_cont" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 2.2.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Diferenciabilidade e continuidade)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmteo1.p1" class="ltx_para">
+<p class="ltx_p">Se uma função <math id="Thmteo1.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> é diferenciável em um ponto <math id="Thmteo1.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>, então ela é contínua nesse ponto.</p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS3.p3" class="ltx_para">
+<p class="ltx_p">Consultemos o E.<a href="#exer:dif_cont" title="E. 2.2.6.(Teorema 2.2.1) ‣ 2.2.5 Exercícios ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2.6</span></a>.
+∎</p>
+</div>
+</div>
+<div id="Thmex4" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.4.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Contra-exemplo)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">A recíproca do Teorema <a href="#teo:dif_cont" title="Teorema 2.2.1.(Diferenciabilidade e continuidade) ‣ 2.2.3 Diferenciabilidade ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2.1</span></a> não é verdadeira. Por exemplo, a função <math id="Thmex4.p1.m1" class="ltx_Math" alttext="f(x,y)=\sqrt{x^{2}+y^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> é contínua no ponto <math id="Thmex4.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> (verifique!), mas não é diferenciável nesse ponto. De fato, temos que</p>
+<table id="A2.S0.EGx93" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E136"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E136.m1" class="ltx_Math" alttext="\displaystyle f_{x}(x,y)=\frac{x}{\sqrt{x^{2}+y^{2}}}," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mi>x</mi><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.136)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E137"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E137.m1" class="ltx_Math" alttext="\displaystyle f_{y}(0,0)=\frac{y}{\sqrt{x^{2}+y^{2}}}," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mi>y</mi><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.137)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">sendo que <math id="Thmex4.p1.m3" class="ltx_Math" alttext="f_{x}(0,0)" display="inline"><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></math> e <math id="Thmex4.p1.m4" class="ltx_Math" alttext="f_{y}(0,0)" display="inline"><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></math> não existem. Portanto, <math id="Thmex4.p1.m5" class="ltx_Math" alttext="f(x,y)=\sqrt{x^{2}+y^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> não é diferenciável no ponto <math id="Thmex4.p1.m6" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmteo2" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 2.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmteo2.p1" class="ltx_para">
+<p class="ltx_p">Se todas as derivadas parciais de primeira ordem de uma função <math id="Thmteo2.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> são contínuas em um ponto <math id="Thmteo2.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>, então <math id="Thmteo2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é diferenciável nesse ponto.</p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS3.p4" class="ltx_para">
+<p class="ltx_p">A demonstração deste teorema foge do escopo destas notas de aula. Para a demonstração, consulte <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="Curso de análise" class="ltx_ref">2</a>]</cite>.
+∎</p>
+</div>
+</div>
+<div id="Thmex5" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmex5.p1" class="ltx_para">
+<p class="ltx_p">A função</p>
+<table id="A2.S0.EGx94" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E138"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E138.m1" class="ltx_Math" alttext="\displaystyle f(x,y,z)=x^{2}y+e^{yz}+z^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><msup><mi>e</mi><mrow><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow></msup><mo>+</mo><msup><mi>z</mi><mn>3</mn></msup></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.138)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">é diferenciável em toda parte, pois suas derivadas parciais de primeira ordem são</p>
+<table id="A2.S0.EGx95" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E139"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E139.m1" class="ltx_Math" alttext="\displaystyle f_{x}(x,y,z)=2xy," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.139)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E140"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E140.m1" class="ltx_Math" alttext="\displaystyle f_{y}(x,y,z)=x^{2}+ze^{yz}," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mi>z</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.140)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E141"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E141.m1" class="ltx_Math" alttext="\displaystyle f_{z}(x,y,z)=ye^{yz}+3z^{2}," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>z</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>y</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow></msup></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>z</mi><mn>2</mn></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.141)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">que são funções contínuas em toda parte (verifique!).</p>
+</div>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.4 </span>Diferenciais</h2>
+
+<div id="SS4.p1" class="ltx_para">
+<p class="ltx_p">Motivadas/os pelo que vimos até aqui nesta seção, definimos a <span class="ltx_text ltx_font_bold">diferencial total</span> de uma função <math id="SS4.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> por</p>
+<table id="A2.S0.EGx96" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E142"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E142.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+dz=f_{x}(x,y)dx+f_{y}(x,y)dy," display="inline"><mrow><mrow><mrow><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">z</mi></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">x</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF">+</mo><mrow><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">y</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">y</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.142)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS4.p1.m2" class="ltx_Math" alttext="dx" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></math> e <math id="SS4.p1.m3" class="ltx_Math" alttext="dy" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></math> são incrementos infinitesimais de <math id="SS4.p1.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> e <math id="SS4.p1.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>, respectivamente.</p>
+</div>
+<div id="SS4.p2" class="ltx_para">
+<p class="ltx_p">Uma aplicação da diferencial total é a estimativa de variação de uma função, <span class="ltx_text ltx_font_italic">i.e.</span>, <math id="SS4.p2.m1" class="ltx_Math" alttext="\Delta z\approx dz" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>z</mi></mrow><mo>≈</mo><mrow><mi>d</mi><mo>⁢</mo><mi>z</mi></mrow></mrow></math>.</p>
+</div>
+<div id="Thmex6" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.2.6.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Estimativa de variação)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex6.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmex6.p1.m1" class="ltx_Math" alttext="V=a^{2}h" display="inline"><mrow><mi>V</mi><mo>=</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>h</mi></mrow></mrow></math> o volume de um paralelepípedo de base quadrada de lado <math id="Thmex6.p1.m2" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> e altura <math id="Thmex6.p1.m3" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math>. A diferencial total de <math id="Thmex6.p1.m4" class="ltx_Math" alttext="V" display="inline"><mi>V</mi></math> é</p>
+<table id="A2.S0.EGx97" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E143"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E143.m1" class="ltx_Math" alttext="\displaystyle dV=2ah\,da+a^{2}\,dh." display="inline"><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>V</mi></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>a</mi><mo>⁢</mo><mi>h</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>a</mi></mrow><mo>+</mo><mrow><msup><mi>a</mi><mn>2</mn></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>h</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.143)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Suponha que <math id="Thmex6.p1.m5" class="ltx_Math" alttext="a=2\leavevmode\nobreak\ \text{m}" display="inline"><mrow><mi>a</mi><mo>=</mo><mrow><mn>2</mn><mo lspace="0.500em">⁢</mo><mtext>m</mtext></mrow></mrow></math> e <math id="Thmex6.p1.m6" class="ltx_Math" alttext="h=5\leavevmode\nobreak\ \text{m}" display="inline"><mrow><mi>h</mi><mo>=</mo><mrow><mn>5</mn><mo lspace="0.500em">⁢</mo><mtext>m</mtext></mrow></mrow></math>. Se <math id="Thmex6.p1.m7" class="ltx_Math" alttext="a" display="inline"><mi>a</mi></math> aumenta <math id="Thmex6.p1.m8" class="ltx_Math" alttext="0.01\leavevmode\nobreak\ \text{m}" display="inline"><mrow><mn>0.01</mn><mo lspace="0.500em">⁢</mo><mtext>m</mtext></mrow></math> e <math id="Thmex6.p1.m9" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> aumenta <math id="Thmex6.p1.m10" class="ltx_Math" alttext="0.02\leavevmode\nobreak\ \text{m}" display="inline"><mrow><mn>0.02</mn><mo lspace="0.500em">⁢</mo><mtext>m</mtext></mrow></math>, então a variação estimada do volume é</p>
+<table id="A2.S0.EGx98" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E144"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E144.m1" class="ltx_Math" alttext="\displaystyle dV=2(2)(5)(0,01)+(2)^{2}(0,02)=0,2+0,08=0,28\leavevmode\nobreak%
+\ \text{m}^{3}." display="inline"><mrow><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>V</mi></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>5</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,01</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,02</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mn>0,2</mn><mo>+</mo><mn>0,08</mn></mrow><mo>=</mo><mrow><mn>0,28</mn><mo lspace="0.500em">⁢</mo><msup><mtext>m</mtext><mn>3</mn></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.144)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Observemos que o valor real da variação do volume é</p>
+<table id="A2.S0.EGx99" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E145"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E145.m1" class="ltx_Math" alttext="\displaystyle\Delta V=V(2.01,5.02)-V(2,5)=(2.01)^{2}(5.02)-(2)^{2}(5)" display="inline"><mrow><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>V</mi></mrow><mo>=</mo><mrow><mrow><mi>V</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2.01,5.02</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>V</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2,5</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><msup><mrow><mo stretchy="false">(</mo><mn>2.01</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>5.02</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>5</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.145)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E146"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E146.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=0,2813\leavevmode\nobreak\ \text{m}^{3}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>0,2813</mn><msup><mtext>m</mtext><mn>3</mn></msup><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.146)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">O que é muito próximo do valor estimado pelo diferencial total <math id="Thmex6.p1.m11" class="ltx_Math" alttext="dV" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>V</mi></mrow></math>.</p>
+</div>
+</div>
+<div id="SS4.p3" class="ltx_para">
+<p class="ltx_p">Para funções de várias variáveis, a diferencial total é definida de maneira análoga. Por exemplo, a diferencial total de uma função <math id="SS4.p3.m1" class="ltx_Math" alttext="f(x,y,z)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> é</p>
+<table id="A2.S0.EGx100" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E147"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E147.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+dw=f_{x}(x,y,z)dx+f_{y}(x,y,z)dy+f_{z}(x,y,z)dz," display="inline"><mrow><mrow><mrow><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">w</mi></mrow><mo mathcolor="#0000FF">=</mo><mrow><mrow><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">x</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">x</mi></mrow><mo mathcolor="#0000FF">+</mo><mrow><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">y</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">y</mi></mrow><mo mathcolor="#0000FF">+</mo><mrow><msub><mi mathcolor="#0000FF">f</mi><mi mathcolor="#0000FF">z</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">x</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0000FF">d</mi><mo>⁢</mo><mi mathcolor="#0000FF">z</mi></mrow></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.147)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS4.p3.m2" class="ltx_Math" alttext="dx" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></math>, <math id="SS4.p3.m3" class="ltx_Math" alttext="dy" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></math> e <math id="SS4.p3.m4" class="ltx_Math" alttext="dz" display="inline"><mrow><mi>d</mi><mo>⁢</mo><mi>z</mi></mrow></math> são incrementos infinitesimais de <math id="SS4.p3.m5" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, <math id="SS4.p3.m6" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> e <math id="SS4.p3.m7" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>, respectivamente.</p>
+</div>
+</section>
+<section id="SS5" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.5 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Para cada uma das funções abaixo, determine o plano tangente à superfície <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> no ponto <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0},f(x_{0},y_{0}))" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></math>.</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="f(x,y)=2x^{2}+3y^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math>, <math id="I1.i1.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})=(1,1)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="f(x,y)=e^{xy}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msup><mi>e</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msup></mrow></math>, <math id="I1.i2.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})=(0,0)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="f(x,y)=e^{-x}\cos(\pi y)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, <math id="I1.i3.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})=(0,1)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i4.p1.m1" class="ltx_Math" alttext="f(x,y)=2x-5y+3" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>5</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>+</mo><mn>3</mn></mrow></mrow></math>, <math id="I1.i4.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})=(2,-1)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx22">Resposta</button></div><div class="collapse" id="Thmrespx22" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx22.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx22.p1.m1" class="ltx_Math" alttext="z=4x+6y-5" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>6</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>−</mo><mn>5</mn></mrow></mrow></math>. b) <math id="Thmrespx22.p1.m2" class="ltx_Math" alttext="z=1" display="inline"><mrow><mi>z</mi><mo>=</mo><mn>1</mn></mrow></math>. c) <math id="Thmrespx22.p1.m3" class="ltx_Math" alttext="z=x-1" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></mrow></math>. e) <math id="Thmrespx22.p1.m4" class="ltx_Math" alttext="z=2x-5y+3" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>5</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>+</mo><mn>3</mn></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Para cada uma das funções abaixo, determine a linearização de <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> no ponto <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>.</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="f(x,y)=2y-3x+1" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math>, <math id="I2.i1.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})=(1,2)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,2</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="f(x,y)=x^{2}y^{3}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>y</mi><mn>3</mn></msup></mrow></mrow></math>, <math id="I2.i2.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})=(1,1)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="f(x,y)=\ln(x^{2}y+1)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, <math id="I2.i3.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})=(1,0)" display="inline"><mrow><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx23">Resposta</button></div><div class="collapse" id="Thmrespx23" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx23.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx23.p1.m1" class="ltx_Math" alttext="L(x,y)=2y-3x+1" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mn>1</mn></mrow></mrow></math>. b) <math id="Thmrespx23.p1.m2" class="ltx_Math" alttext="L(x,y)=1+2(x-1)+3(y-1)" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>. c) <math id="Thmrespx23.p1.m3" class="ltx_Math" alttext="L(x,y)=\ln(2)+\frac{y}{2}" display="inline"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mfrac><mi>y</mi><mn>2</mn></mfrac></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Em cada item abaixo, use uma linearização apropriada para estimar o valor da função no ponto indicado.</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{2}y+3xy^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math>, <math id="I3.i1.p1.m2" class="ltx_Math" alttext="f(1.01,0.99)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1.01,0.99</mn><mo stretchy="false">)</mo></mrow></mrow></math>?</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g(x,y)=\frac{x-y}{x^{2}+y}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>y</mi></mrow></mfrac></mstyle></mrow></math>, <math id="I3.i2.p1.m2" class="ltx_Math" alttext="g(-2.98,1.03)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>2.98,1.03</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></math>?</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx24">Resposta</button></div><div class="collapse" id="Thmrespx24" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx24.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx24.p1.m1" class="ltx_Math" alttext="f(1.01,0.99)\approx L(1+0.01,1-0.01)=3.98" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1.01,0.99</mn><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>1</mn><mo>+</mo><mn>0.01,1</mn></mrow><mo>−</mo><mn>0.01</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>3.98</mn></mrow></math>. b) <math id="Thmrespx24.p1.m2" class="ltx_Math" alttext="g(-2.98,1.03)\approx L(-3+0.02,1+0.03)=-0.4046" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>2.98,1.03</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>≈</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mn>3</mn></mrow><mo>+</mo><mn>0.02,1</mn><mo>+</mo><mn>0.03</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>0.4046</mn></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Calcule a diferencial total de cada uma das funções abaixo.</p>
+<ol id="I4" class="ltx_enumerate">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=2x^{2}+3y^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g(x,y)=xe^{xy}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msup></mrow></mrow></math></p>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I4.i3.p1.m1" class="ltx_Math" alttext="\displaystyle h(x,y,z)=e^{-xy}+\operatorname{sen}(xyz)" display="inline"><mrow><mrow><mi>h</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></msup><mo>+</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx25">Resposta</button></div><div class="collapse" id="Thmrespx25" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx25.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx25.p1.m1" class="ltx_Math" alttext="dz=4x\,dx+6y\,dy" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>z</mi></mrow><mo>=</mo><mrow><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>6</mn><mo>⁢</mo><mi>y</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math>. b) <math id="Thmrespx25.p1.m2" class="ltx_Math" alttext="dg=e^{xy}(1+xy)\,dx+x^{2}e^{xy}\,dy" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>g</mi></mrow><mo>=</mo><mrow><mrow><msup><mi>e</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>e</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math>. c) <math id="Thmrespx25.p1.m3" class="ltx_Math" alttext="dh=(-ye^{-xy}+yz\cos(xyz))\,dx+(-xe^{-xy}+xz\cos(xyz))\,dy+(xy\cos(xyz))\,dz" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>h</mi></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mrow><mi>y</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></msup></mrow></mrow><mo>+</mo><mrow><mi>y</mi><mo>⁢</mo><mi>z</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mo>−</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></msup></mrow></mrow><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>z</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>z</mi></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Em cada item abaixo, use da diferencial total para estimar a variação da função quando <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> e <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> variam de acordo com os valores indicados.</p>
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i1.p1.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=xy^{2}+2xy^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math>, <math id="I5.i1.p1.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> aumenta de <math id="I5.i1.p1.m3" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> para <math id="I5.i1.p1.m4" class="ltx_Math" alttext="1.01" display="inline"><mn>1.01</mn></math> e <math id="I5.i1.p1.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> diminui de <math id="I5.i1.p1.m6" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math> para <math id="I5.i1.p1.m7" class="ltx_Math" alttext="0.99" display="inline"><mn>0.99</mn></math>.</p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I5.i2.p1.m1" class="ltx_Math" alttext="\displaystyle g(x,y)=\frac{x+y}{x^{2}+y}" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>y</mi></mrow></mfrac></mstyle></mrow></math>, <math id="I5.i2.p1.m2" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> aumenta de <math id="I5.i2.p1.m3" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math> para <math id="I5.i2.p1.m4" class="ltx_Math" alttext="2.02" display="inline"><mn>2.02</mn></math> e <math id="I5.i2.p1.m5" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> aumenta de <math id="I5.i2.p1.m6" class="ltx_Math" alttext="-3" display="inline"><mrow><mo>−</mo><mn>3</mn></mrow></math> para <math id="I5.i2.p1.m7" class="ltx_Math" alttext="-2.94" display="inline"><mrow><mo>−</mo><mn>2.94</mn></mrow></math>.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx26">Resposta</button></div><div class="collapse" id="Thmrespx26" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx26.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx26.p1.m1" class="ltx_Math" alttext="df=0.24" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>f</mi></mrow><mo>=</mo><mn>0.24</mn></mrow></math>. b) <math id="Thmrespx26.p1.m2" class="ltx_Math" alttext="dg=0.16" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>g</mi></mrow><mo>=</mo><mn>0.16</mn></mrow></math>.</p>
+</div>
+</div>
+<div id="exer:dif_cont" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.6.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Teorema <a href="#teo:dif_cont" title="Teorema 2.2.1.(Diferenciabilidade e continuidade) ‣ 2.2.3 Diferenciabilidade ‣ 2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2.1</span></a>)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">Mostre que se <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> é diferenciável no ponto <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>, então ela é contínua nesse ponto.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx27">Resposta</button></div><div class="collapse" id="Thmrespx27" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx27.p1" class="ltx_para">
+<p class="ltx_p">Dica: basta mostrar que <math id="Thmrespx27.p1.m1" class="ltx_Math" alttext="\lim_{(x,y)\to(x_{0},y_{0})}[f(x,y)-f(x_{0},y_{0})]=0" display="inline"><mrow><mrow><msub><mo>lim</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">→</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></msub><mrow><mo lspace="0em" stretchy="false">[</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_derivadas_sec_derivadas_parciais.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Derivadas parciais</span></a><a href="bib.html" title="In Cálculo II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_derivadas_sec_regra_cadeia.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Regra da cadeia</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Aug 28 12:50:08 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

@@ -1,0 +1,1025 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs</title>
+<!--Generated on Fri Aug 28 12:51:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 28 de agosto de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_perceptron.html" title="Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="up up" href="./" title="Introdução a PINNs">
+<link rel="start" href="./" title="Introdução a PINNs">
+<link rel="prev" href="cap_perceptron_sec_unidade_de_processamento.html" title="2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="next" href="cap_perceptron_sec_ativacao.html" title="2.3 Funções de ativação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="section" href="cap_perceptron_sec_unidade_de_processamento.html" title="2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="section" href="cap_perceptron_sec_ativacao.html" title="2.3 Funções de ativação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Introdução a PINNs">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Introdução a PINNs">
+<link rel="chapter" href="./" title="Introdução a PINNs ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_perceptron.html" title="Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_mlp.html" title="Capítulo 3 Perceptron Multicamadas ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_pinns.html" title="Capítulo 4 Redes informadas pela física ‣ Introdução a PINNs">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Introdução a PINNs">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script><link rel="canonical" href="https://notaspedrok.com.br/pinns/cap_percepton_sec_retroprop.html" />
+</head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Introdução a PINNs</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_perceptron.html" title="In Introdução a PINNs" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="cap_perceptron_sec_unidade_de_processamento.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="cap_perceptron_sec_ativacao.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Funções de ativação</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.2 </span>Treinamento por retro-propagação</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Embora o algoritmo de treinamento perceptron seja eficiente para problemas de classificação linearmente separáveis, ele não é aplicável a problemas mais gerais. Para isso, <span class="ltx_text" style="background-color:#FFFF00;">vamos introduzir o problema de treinamento de um perceptron como um problema de otimização</span>. A ideia é definir uma <span class="ltx_text ltx_font_bold">função de perda</span> que quantifique o erro entre as saídas estimadas pelo modelo e as saídas esperadas. E, então, minimizar essa função de perda em relação aos parâmetros do modelo.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Ao longo da seção, vamos considerar o <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">modelo</span> de perceptron</p>
+<table id="Ch4.S3.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E28"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E28.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\tilde{y}=\eta\left(\bm{x};\bm{\theta}=(\bm{w},b)\right)=\varphi\underbrace{(%
+\bm{w}\cdot\bm{x}+b)}_{z}," display="inline"><mrow><mrow><mover accent="true"><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">~</mo></mover><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">η</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF">(</mo><mrow><mrow><mi mathcolor="#0000FF">𝒙</mi><mo mathcolor="#0000FF">;</mo><mi mathcolor="#0000FF">𝜽</mi></mrow><mo mathcolor="#0000FF">=</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒘</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">b</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">φ</mi><mo>⁢</mo><munder><munder accentunder="true"><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mrow><mi mathcolor="#0000FF">𝒘</mi><mo lspace="0.222em" mathcolor="#0000FF" rspace="0.222em">⋅</mo><mi mathcolor="#0000FF">𝒙</mi></mrow><mo mathcolor="#0000FF">+</mo><mi mathcolor="#0000FF">b</mi></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo mathcolor="#0000FF">⏟</mo></munder><mi mathcolor="#0000FF">z</mi></munder></mrow></mrow><mo mathcolor="#0000FF">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.28)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com função de ativação <math id="p3.m1" class="ltx_Math" alttext="\varphi:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi>φ</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>ℝ</mi><mo stretchy="false">→</mo><mi>ℝ</mi></mrow></mrow></math>, sendo os vetores de entrada <math id="p3.m2" class="ltx_Math" alttext="\bm{x}" display="inline"><mi>𝒙</mi></math> e dos pesos <math id="p3.m3" class="ltx_Math" alttext="\bm{w}" display="inline"><mi>𝒘</mi></math> de tamanho <math id="p3.m4" class="ltx_Math" alttext="n_{\textbf{in}}" display="inline"><msub><mi>n</mi><mtext class="ltx_mathvariant_bold">in</mtext></msub></math>. A pré-ativação do neurônio é denotada por <math id="p3.m5" class="ltx_Math" alttext="z:=\bm{w}\cdot\bm{x}+b" display="inline"><mrow><mi>z</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mrow><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi></mrow><mo>+</mo><mi>b</mi></mrow></mrow></math>.</p>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Fornecido um <span class="ltx_text ltx_font_bold">conjunto de treinamento</span> <math id="p4.m1" class="ltx_Math" alttext="\left\{\left(\bm{x}^{(s)},y^{(s)}\right)\right\}_{s=0}^{n_{s}}" display="inline"><msubsup><mrow><mo>{</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><msub><mi>n</mi><mi>s</mi></msub></msubsup></math>, com <math id="p4.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> amostras, <span class="ltx_text" style="background-color:#FFFF00;">o objetivo é calcular os parâmetros <math id="p4.m3" class="ltx_Math" alttext="\bm{\theta}=(\bm{w},b)" display="inline"><mrow><mi mathbackground="#FFFF00">𝜽</mi><mo mathbackground="#FFFF00">=</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">𝒘</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">b</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> que minimizam a <span class="ltx_text ltx_font_bold">função de perda</span></span> erro quadrático médio (EQM)</p>
+<table id="Ch4.S3.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:percep_mse"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E29.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\varepsilon(\bm{w},b):=\frac{1}{n_{s}}\sum_{s=1}^{n_{s}}\left(\tilde{y}^{(s)}-%
+y^{(s)}\right)^{2}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">ε</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒘</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">b</mi><mo mathcolor="#0000FF" rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><msub><mi mathcolor="#0000FF">n</mi><mi mathcolor="#0000FF">s</mi></msub></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo mathcolor="#0000FF" movablelimits="false">∑</mo><mrow><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">1</mn></mrow><msub><mi mathcolor="#0000FF">n</mi><mi mathcolor="#0000FF">s</mi></msub></munderover></mstyle><msup><mrow><mo mathcolor="#0000FF">(</mo><mrow><msup><mover accent="true"><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">~</mo></mover><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">−</mo><msup><mi mathcolor="#0000FF">y</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.29)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E30.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{n_{s}}\sum_{s=1}^{n_{s}}\varepsilon^{(s)}(%
+\bm{w},b)" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msub><mi>n</mi><mi>s</mi></msub></mfrac></mstyle><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mi>s</mi></msub></munderover></mstyle><msup><mi>ε</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.30)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="p4.m4" class="ltx_Math" alttext="\tilde{y}^{(s)}=\eta\left(\bm{x}^{(s)};\bm{\theta}\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mi>η</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mi>𝜽</mi><mo>)</mo></mrow></mrow></mrow></math> é o <span class="ltx_text ltx_font_bold">valor estimado</span> pelo modelo e <math id="p4.m5" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math> é o <span class="ltx_text ltx_font_bold">valor esperado</span> da <math id="p4.m6" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra. Nesta escolha, a função de perda para a <math id="p4.m7" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra é</p>
+<table id="Ch4.S3.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E31.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\varepsilon^{(s)}:=\left(\tilde{y}^{(s)}-y^{(s)}\right)^{2}." display="inline"><mrow><mrow><msup><mi mathcolor="#0000FF">ε</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:=</mo><msup><mrow><mo mathcolor="#0000FF">(</mo><mrow><msup><mover accent="true"><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">~</mo></mover><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">−</mo><msup><mi mathcolor="#0000FF">y</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">)</mo></mrow><mn mathcolor="#0000FF">2</mn></msup></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.31)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">Ou seja, <span class="ltx_text" style="background-color:#FFFF00;">o treinamento consiste em resolver o seguinte <span class="ltx_text ltx_font_bold">problema de otimização</span></span></p>
+<table id="Ch4.S3.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:percep_prob_otim"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E32.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\operatorname*{arg\,min}_{(\bm{w},b)}\varepsilon(\bm{w},b)" display="inline"><mrow><mrow><munder><mrow><mi mathcolor="#0000FF">arg</mi><mo lspace="0.170em">⁢</mo><mi mathcolor="#0000FF">min</mi></mrow><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒘</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">b</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></munder><mo lspace="0.167em">⁡</mo><mi mathcolor="#0000FF">ε</mi></mrow><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒘</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">b</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.32)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Neste contexto, o método que escolhemos para resolver (<a href="#eq:percep_prob_otim" title="In 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.32</span></a>) é chamado de <span class="ltx_text ltx_font_bold">otimizador</span>. Na sequência, vamos estudar que <span class="ltx_text" style="background-color:#FFFF00;">otimizadores baseados em gradientes da função de perda podem ser aplicados de forma eficiente para o treinamento de perceptrons</span>.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.1 </span>Método do gradiente descendente</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O <span class="ltx_text ltx_font_bold">método do gradiente descendente</span> (GD) é um dos métodos mais simples de otimização baseados em gradiente. É um método de declive, em que os parâmetros do modelo são atualizados na direção e sentido oposto ao gradiente da função de perda</span>.</p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Aplicado ao nosso modelo de perceptron consiste no seguinte algoritmo:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="(\bm{w},b)" display="inline"><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></math> aproximação inicial.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Para <math id="I1.i2.p1.m1" class="ltx_Math" alttext="e\leftarrow 1,\dotsc,n_{e}" display="inline"><mrow><mi>e</mi><mo stretchy="false">←</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>n</mi><mi>e</mi></msub></mrow></mrow></math>:</p>
+<ol id="I1.i2.I1" class="ltx_enumerate">
+<li id="I1.i2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">(a)</span> 
+<div id="I1.i2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.I1.i1.p1.m1" class="ltx_Math" alttext="\displaystyle(\bm{w},b)\leftarrow(\bm{w},b)-l_{r}\frac{\partial\varepsilon}{%
+\partial(\bm{w},b)}" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">←</mo><mrow><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mrow><msub><mi>l</mi><mi>r</mi></msub><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ε</mi></mrow><mrow><mo rspace="0em">∂</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mstyle></mrow></mrow></mrow></math></p>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+<p class="ltx_p">onde, escolhemos o <span class="ltx_text ltx_font_bold">número de épocas</span> <math id="SS1.p2.m1" class="ltx_Math" alttext="n_{e}" display="inline"><msub><mi>n</mi><mi>e</mi></msub></math>, a <span class="ltx_text ltx_font_bold">taxa de aprendizagem<span id="Ch2.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">4</span></span><span class="ltx_text ltx_font_medium">A taxa de aprendizagem é usualmente escolhida como um valor pequeno </span><math id="Ch2.footnote4.m1" class="ltx_Math" alttext="0&lt;l_{r}&lt;1" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>l</mi><mi>r</mi></msub><mo>&lt;</mo><mn>1</mn></mrow></math><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> <math id="SS1.p2.m2" class="ltx_Math" alttext="l_{r}\in\mathbb{R}" display="inline"><mrow><msub><mi>l</mi><mi>r</mi></msub><mo>∈</mo><mi>ℝ</mi></mrow></math> (do inglês, <span class="ltx_text ltx_font_italic">learning rate</span>). Sendo o <span class="ltx_text ltx_font_bold">gradiente</span> definido por</p>
+<table id="Ch4.S3.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E33"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E33.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\frac{\partial\varepsilon}{\partial(\bm{w},b)}:=\left(\frac{\partial%
+\varepsilon}{\partial w_{1}},\dotsc,\frac{\partial\varepsilon}{\partial w_{n_{%
+in}}},\frac{\partial\varepsilon}{\partial b}\right)." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">ε</mi></mrow><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">𝒘</mi><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">b</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mfrac></mstyle><mo lspace="0.278em" mathcolor="#0000FF" rspace="0.278em">:=</mo><mrow><mo mathcolor="#0000FF">(</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">ε</mi></mrow><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><msub><mi mathcolor="#0000FF">w</mi><mn mathcolor="#0000FF">1</mn></msub></mrow></mfrac></mstyle><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF" mathvariant="normal">…</mi><mo mathcolor="#0000FF">,</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">ε</mi></mrow><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><msub><mi mathcolor="#0000FF">w</mi><msub><mi mathcolor="#0000FF">n</mi><mrow><mi mathcolor="#0000FF">i</mi><mo>⁢</mo><mi mathcolor="#0000FF">n</mi></mrow></msub></msub></mrow></mfrac></mstyle><mo mathcolor="#0000FF">,</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">ε</mi></mrow><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">b</mi></mrow></mfrac></mstyle><mo mathcolor="#0000FF">)</mo></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.33)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">O cálculo do gradiente para os pesos <math id="SS1.p3.m1" class="ltx_Math" alttext="\bm{w}" display="inline"><mi>𝒘</mi></math> pode ser feito como segue<span id="Ch2.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span>Aqui, há um abuso de linguagem ao não se observar as dimensões dos operandos matriciais.</span></span></span></p>
+<table id="Ch4.S3.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E34"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E34.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\varepsilon}{\partial\bm{w}}=\frac{\partial}{%
+\partial\bm{w}}\left[\frac{1}{n_{s}}\sum_{s=1}^{n_{s}}\varepsilon^{(s)}\right]" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ε</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>𝒘</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>𝒘</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msub><mi>n</mi><mi>s</mi></msub></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><msub><mi>n</mi><mi>s</mi></msub></munderover></mstyle><msup><mi>ε</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.34)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E35"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E35.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{n_{s}}\sum_{s=1}^{ns}\frac{\partial%
+\varepsilon^{(s)}}{\partial\tilde{y}^{(s)}}\frac{\partial\tilde{y}^{(s)}}{%
+\partial\bm{w}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msub><mi>n</mi><mi>s</mi></msub></mfrac></mstyle><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>⁢</mo><mi>s</mi></mrow></munderover></mstyle><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>ε</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><mi>𝒘</mi></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.35)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E36"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E36.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{ns}\sum_{s=1}^{ns}\frac{\partial\varepsilon%
+^{(s)}}{\partial\tilde{y}^{(s)}}\frac{\partial\tilde{y}^{(s)}}{\partial z^{(s)%
+}}\frac{\partial z^{(s)}}{\partial\bm{w}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>n</mi><mo>⁢</mo><mi>s</mi></mrow></mfrac></mstyle><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>⁢</mo><mi>s</mi></mrow></munderover></mstyle><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>ε</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><msup><mi>z</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>z</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><mi>𝒘</mi></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.36)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Observando que</p>
+<table id="Ch4.S3.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E37.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\varepsilon^{(s)}}{\partial\tilde{y}^{(s)}}=2\left(%
+\tilde{y}^{(s)}-y^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>ε</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo>(</mo><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>−</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.37)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E38"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E38.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\tilde{y}^{(s)}}{\partial z^{(s)}}=f^{\prime}\left(%
+z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><msup><mi>z</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle><mo>=</mo><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo>(</mo><msup><mi>z</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.38)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E39.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial z^{(s)}}{\partial\bm{w}}=\bm{x}^{(s)}," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>z</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><mi>𝒘</mi></mrow></mfrac></mstyle><mo>=</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.39)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">obtemos</p>
+<table id="Ch4.S3.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:percep_grad_w"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E40.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\frac{\partial\varepsilon}{\partial\bm{w}}=\frac{1}{n_{s}}\sum_{s=1}^{n_{s}}2%
+\left(\tilde{y}^{(s)}-y^{(s)}\right)f^{\prime}\left(z^{(s)}\right)\bm{x}^{(s)}" display="inline"><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">ε</mi></mrow><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">𝒘</mi></mrow></mfrac></mstyle><mo mathcolor="#0000FF">=</mo><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><msub><mi mathcolor="#0000FF">n</mi><mi mathcolor="#0000FF">s</mi></msub></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo mathcolor="#0000FF" movablelimits="false">∑</mo><mrow><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">1</mn></mrow><msub><mi mathcolor="#0000FF">n</mi><mi mathcolor="#0000FF">s</mi></msub></munderover></mstyle><mrow><mn mathcolor="#0000FF">2</mn><mo>⁢</mo><mrow><mo mathcolor="#0000FF">(</mo><mrow><msup><mover accent="true"><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">~</mo></mover><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">−</mo><msup><mi mathcolor="#0000FF">y</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0000FF">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">f</mi><mo mathcolor="#0000FF">′</mo></msup><mo>⁢</mo><mrow><mo mathcolor="#0000FF">(</mo><msup><mi mathcolor="#0000FF">z</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0000FF">𝒙</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.40)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS1.p4" class="ltx_para">
+<p class="ltx_p">Analogamente, segue o cálculo do gradiente para o <span class="ltx_text ltx_font_italic">bias</span> <math id="SS1.p4.m1" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>:</p>
+<table id="Ch4.S3.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E41.m1" class="ltx_Math" alttext="\displaystyle{\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1%
+}\frac{\partial\varepsilon}{\partial b}}=\frac{1}{ns}\sum_{s=1}^{ns}\frac{%
+\partial\varepsilon^{(s)}}{\partial\tilde{y}^{(s)}}\frac{\partial\tilde{y}^{(s%
+)}}{\partial z^{(s)}}\frac{\partial z^{(s)}}{\partial b}" display="inline"><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">ε</mi></mrow><mrow><mo mathcolor="#0000FF" rspace="0em">∂</mo><mi mathcolor="#0000FF">b</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>n</mi><mo>⁢</mo><mi>s</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>s</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>⁢</mo><mi>s</mi></mrow></munderover></mstyle><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>ε</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><msup><mi>z</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>z</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><mi>b</mi></mrow></mfrac></mstyle></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.41)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E42.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}%
+{rgb}{0,0,1}=\frac{1}{n_{s}}\sum_{s=1}^{n_{s}}2\left(\tilde{y}^{(s)}-y^{(s)}%
+\right)f^{\prime}\left(z^{(s)}\right)\cdot 1" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo mathcolor="#0000FF">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><msub><mi mathcolor="#0000FF">n</mi><mi mathcolor="#0000FF">s</mi></msub></mfrac></mstyle><mstyle displaystyle="true"><munderover><mo mathcolor="#0000FF" movablelimits="false">∑</mo><mrow><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF">=</mo><mn mathcolor="#0000FF">1</mn></mrow><msub><mi mathcolor="#0000FF">n</mi><mi mathcolor="#0000FF">s</mi></msub></munderover></mstyle><mn mathcolor="#0000FF">2</mn><mrow><mo mathcolor="#0000FF">(</mo><msup><mover accent="true"><mi mathcolor="#0000FF">y</mi><mo mathcolor="#0000FF">~</mo></mover><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">−</mo><msup><mi mathcolor="#0000FF">y</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF">)</mo></mrow><msup><mi mathcolor="#0000FF">f</mi><mo mathcolor="#0000FF">′</mo></msup><mrow><mo mathcolor="#0000FF">(</mo><msup><mi mathcolor="#0000FF">z</mi><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">s</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0000FF" rspace="0.055em">)</mo></mrow><mo mathcolor="#0000FF" rspace="0.222em">⋅</mo><mn mathcolor="#0000FF">1</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.42)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:percep_rp_fluxograma" class="ltx_figure"><img src="cap_perceptron/dados/fig_percep_rp_fluxograma/fig.png" id="Ch2.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="282" height="153" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.3</span>: </span><span class="ltx_text" style="font-size:90%;">Fluxograma de uma época de treinamento.</span></figcaption>
+</figure>
+<div id="SS1.p5" class="ltx_para">
+<p class="ltx_p">Observemos cada época consiste de duas etapas (consultemos a Figura <a href="#fig:percep_rp_fluxograma" title="Figura 2.3 ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a>):</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Propagação</span></p>
+</div>
+<div id="I2.i1.p2" class="ltx_para">
+<p class="ltx_p">A etapa de propagação na amostragem, avaliação e cálculo da função de perda. A <span class="ltx_text ltx_font_bold">amostragem</span> é a escolha (ou construção) das amostras de treinamento que serão utilizadas para a atualização dos parâmetros do modelo. A <span class="ltx_text ltx_font_bold">avaliação</span> é o cálculo dos valores estimados <math id="I2.i1.p2.m1" class="ltx_Math" alttext="\bm{\tilde{y}}" display="inline"><mover accent="true"><mi>𝒚</mi><mo class="ltx_mathvariant_bold" mathvariant="bold">~</mo></mover></math> (saída do modelo) para as amostras escolhidas. O <span class="ltx_text ltx_font_bold">cálculo da função de perda</span> é feito com base nos valores estimados.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Retro-propagação</span></p>
+</div>
+<div id="I2.i2.p2" class="ltx_para">
+<p class="ltx_p">A etapa de retro-propagação consiste no cálculo do gradiente da função de perda e na atualização dos parâmetros do modelo. O <span class="ltx_text ltx_font_bold">cálculo do gradiente</span> é feito por um processo de acumulação do gradiente da função de perda para cada amostra utilizada na etapa de propagação. A <span class="ltx_text ltx_font_bold">atualização dos parâmetros</span> é feita com base nos gradientes calculados.</p>
+</div>
+</li>
+</ol>
+</div>
+<section id="SS1.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Aplicação</h3>
+
+<div id="SS1.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">Na Subseção <a href="cap_perceptron_sec_unidade_de_processamento.html#cap_perceptron_ssec_classic" title="2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.1</span></a>, <span class="ltx_text" style="background-color:#FFFF00;">treinamos um perceptron para o problema de classificação do e-lógico</span>. A função de ativação <math id="SS1.SSSx1.p1.m1" class="ltx_Math" alttext="f(x)=\operatorname{sign}(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> não é adequada para a aplicação do método GD, pois <math id="SS1.SSSx1.p1.m2" class="ltx_Math" alttext="f^{\prime}(x)\equiv 0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mn>0</mn></mrow></math> para <math id="SS1.SSSx1.p1.m3" class="ltx_Math" alttext="x\neq 0" display="inline"><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow></math>. Alternativamente, podemos utilizar a função tangente hiperbólica como função de ativação</p>
+<table id="Ch4.S3.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E43.m1" class="ltx_Math" alttext="\displaystyle\varphi(x)=\tanh(x)" display="inline"><mrow><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>tanh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.43)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">que é diferenciável com derivada</p>
+<table id="Ch4.S3.EGx24" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch2.E44.m1" class="ltx_Math" alttext="\displaystyle\varphi^{\prime}(x)=1-\tanh^{2}(x)." display="inline"><mrow><mrow><mrow><msup><mi>φ</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mrow><msup><mi>tanh</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.44)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:percep_tanh" class="ltx_figure"><img src="cap_perceptron/dados/fig_percep_tanh/fig.png" id="Ch2.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="268" height="173" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.4</span>: </span><span class="ltx_text" style="font-size:90%;">Função tangente hiperbólica e sua derivada.</span></figcaption>
+</figure>
+<div id="SS1.SSSx1.p2" class="ltx_para">
+<p class="ltx_p">O Código <a href="#cap_perceptron_sec_train:cod:perceptron_gd" title="Código 3 ‣ Aplicação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> contém uma implementação do treinamento de um perceptron para o problema de classificação do e-lógico utilizando o método GD. Verifique!</p>
+</div>
+<figure id="cap_perceptron_sec_train:cod:perceptron_gd" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 3: </span>perceptron_gd.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IHRvcmNoCgojIG1vZGVsbwoKY2xhc3MgUGVyY2VwdHJvbih0b3JjaC5ubi5Nb2R1bGUpOgogICAgZGVmIF9faW5pdF9fKHNlbGYpOgogICAgICAgIHN1cGVyKCkuX19pbml0X18oKQogICAgICAgIHNlbGYubGluZWFyID0gdG9yY2gubm4uTGluZWFyKDIsMSkKCiAgICBkZWYgZm9yd2FyZChzZWxmLCB4KToKICAgICAgICB6ID0gIHNlbGYubGluZWFyKHgpCiAgICAgICAgeSA9IHRvcmNoLnRhbmgoeikKICAgICAgICByZXR1cm4geQoKbW9kZWwgPSBQZXJjZXB0cm9uKCkKCiMgdHJlaW5hbWVudG8KCiMjIG9wdGltaXphZG9yCm9wdGltID0gdG9yY2gub3B0aW0uU0dEKG1vZGVsLnBhcmFtZXRlcnMoKSwgbHI9MC41KQoKIyMgZnVuw6fDo28gZXJybwpsb3NzX2Z1biA9IHRvcmNoLm5uLk1TRUxvc3MoKQoKIyMgZGFkb3MgZGUgdHJlaW5hbWVudG8KWF90cmFpbiA9IHRvcmNoLnRlbnNvcihbWzEuLCAxLl0sCiAgICAgICAgICAgICAgICAgIFsxLiwgLTEuXSwKICAgICAgICAgICAgICAgICAgWy0xLiwgMS5dLAogICAgICAgICAgICAgICAgICBbLTEuLCAtMS5dXSkKeV90cmFpbiA9IHRvcmNoLnRlbnNvcihbMS4sIC0xLiwgLTEuLCAtMS5dKS5yZXNoYXBlKC0xLDEpCgpwcmludCgiXG5EYWRvcyBkZSB0cmVpbmFtZW50byIpCnByaW50KCJYX3RyYWluID0iKQpwcmludChYX3RyYWluKQpwcmludCgieV90cmFpbiA9ICIpCnByaW50KHlfdHJhaW4pCgojIyBudW0gbWF4IMOpcG9jYXMKbmVwb2NocyA9IDEwMAp0b2wgPSA1ZS0yCgpmb3IgZXBvY2ggaW4gcmFuZ2UobmVwb2Nocyk6CgogICAgIyBmb3J3YXJkCiAgICB5X2VzdCA9IG1vZGVsKFhfdHJhaW4pCgogICAgIyBlcnJvCiAgICBsb3NzID0gbG9zc19mdW4oeV9lc3QsIHlfdHJhaW4pCgogICAgcHJpbnQoZid7ZXBvY2h9OiB7bG9zcy5pdGVtKCk6LjRlfScpCgogICAgIyBjcml0w6lyaW8gZGUgcGFyYWRhCiAgICBpZiAobG9zcy5pdGVtKCkgPCB0b2wpOgogICAgICAgIGJyZWFrCgogICAgIyBiYWNrd2FyZAogICAgb3B0aW0uemVyb19ncmFkKCkKICAgIGxvc3MuYmFja3dhcmQoKQogICAgb3B0aW0uc3RlcCgpCgoKIyB2ZXJpZmljYcOnw6NvCnkgPSBtb2RlbChYX3RyYWluKQpwcmludChmJ3lfZXN0ID0ge3l9Jyk=" download="">⬇</a></div>
+<div id="lstnumberx100" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span>
+</div>
+<div id="lstnumberx101" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span>
+</div>
+<div id="lstnumberx102" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>modelo</span></span>
+</div>
+<div id="lstnumberx103" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx104" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Perceptron</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Module</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx105" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">__init__</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx106" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">super</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">().</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">__init__</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx107" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linear</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Linear</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2,1)</span>
+</div>
+<div id="lstnumberx108" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span>
+</div>
+<div id="lstnumberx109" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">forward</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx110" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linear</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx111" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tanh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx112" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span>
+</div>
+<div id="lstnumberx113" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span>
+</div>
+<div id="lstnumberx114" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Perceptron</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx115" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span>
+</div>
+<div id="lstnumberx116" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>treinamento</span></span>
+</div>
+<div id="lstnumberx117" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span>
+</div>
+<div id="lstnumberx118" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">##<span class="ltx_text ltx_lst_space"> </span>optimizador</span></span>
+</div>
+<div id="lstnumberx119" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">SGD</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">parameters</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">lr</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=0.5)</span>
+</div>
+<div id="lstnumberx120" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span>
+</div>
+<div id="lstnumberx121" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">22</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">##<span class="ltx_text ltx_lst_space"> </span>fun<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>erro</span></span>
+</div>
+<div id="lstnumberx122" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">23</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_fun</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">MSELoss</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx123" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">24</span>
+</div>
+<div id="lstnumberx124" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">25</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">##<span class="ltx_text ltx_lst_space"> </span>dados<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>treinamento</span></span>
+</div>
+<div id="lstnumberx125" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">26</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([[1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.],</span>
+</div>
+<div id="lstnumberx126" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">27</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.],</span>
+</div>
+<div id="lstnumberx127" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">28</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.],</span>
+</div>
+<div id="lstnumberx128" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">29</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.]])</span>
+</div>
+<div id="lstnumberx129" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">30</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.]).</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">reshape</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1,1)</span>
+</div>
+<div id="lstnumberx130" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">31</span>
+</div>
+<div id="lstnumberx131" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">32</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"\nDados<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>treinamento"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx132" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">33</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"X_train<span class="ltx_text ltx_lst_space"> </span>="</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx133" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">34</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx134" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">35</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"y_train<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx135" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">36</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx136" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">37</span>
+</div>
+<div id="lstnumberx137" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">38</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">##<span class="ltx_text ltx_lst_space"> </span>num<span class="ltx_text ltx_lst_space"> </span>max<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">é</span>pocas</span></span>
+</div>
+<div id="lstnumberx138" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">39</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nepochs</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">100</span>
+</div>
+<div id="lstnumberx139" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">40</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2</span>
+</div>
+<div id="lstnumberx140" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">41</span>
+</div>
+<div id="lstnumberx141" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">42</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">epoch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">range</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nepochs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx142" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">43</span>
+</div>
+<div id="lstnumberx143" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">44</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>forward</span></span>
+</div>
+<div id="lstnumberx144" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">45</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_est</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx145" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">46</span>
+</div>
+<div id="lstnumberx146" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">47</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>erro</span></span>
+</div>
+<div id="lstnumberx147" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">48</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_fun</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_est</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx148" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">49</span>
+</div>
+<div id="lstnumberx149" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">50</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'{epoch}:<span class="ltx_text ltx_lst_space"> </span>{loss.item():.4e}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx150" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">51</span>
+</div>
+<div id="lstnumberx151" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">52</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>crit<span class="ltx_text ltx_lst_literate">é</span>rio<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>parada</span></span>
+</div>
+<div id="lstnumberx152" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">53</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">item</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx153" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">54</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">break</span>
+</div>
+<div id="lstnumberx154" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">55</span>
+</div>
+<div id="lstnumberx155" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">56</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>backward</span></span>
+</div>
+<div id="lstnumberx156" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">57</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">zero_grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx157" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">58</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">backward</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx158" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">59</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">step</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx159" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">60</span>
+</div>
+<div id="lstnumberx160" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">61</span>
+</div>
+<div id="lstnumberx161" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">62</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>verifica<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx162" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">63</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx163" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">64</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'y_est<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{y}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+</section>
+<section id="SS1.SSSx2" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Retro-propagação</h3>
+
+<div id="SS1.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">O termo <span class="ltx_text ltx_font_bold">retro-propagação</span> é usado para enfatizar que o cálculo do gradiente da função de perda é feito de forma retroativa, ou seja, a partir da saída do modelo e voltando-se para os parâmetros do modelo. A Figura <a href="#fig:percep_propag" title="Figura 2.5 ‣ Retro-propagação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a> ilustra o processo de retro-propagação aplicado ao treinamento de um perceptron. Observemos que a inferência do modelo pode ser esquematizada como uma árvore. No cálculo da pré-ativação <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="z=\bm{w}\cdot\bm{x}+b" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi></mrow><mo>+</mo><mi>b</mi></mrow></mrow></math>, o gradiente <math id="SS1.SSSx2.p1.m2" class="ltx_Math" alttext="\partial z/\partial\bm{\theta}=\partial z/\partial(\bm{w},b)" display="inline"><mrow><mrow><mo rspace="0em">∂</mo><mrow><mi>z</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mi>𝜽</mi></mrow></mrow></mrow><mo rspace="0.1389em">=</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mrow><mi>z</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math> pode ser calculado diretamente e armazenado como uma folha da árvore. Em seguida, a saída da rede é calculada como <math id="SS1.SSSx2.p1.m3" class="ltx_Math" alttext="\tilde{y}=\varphi(z)" display="inline"><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>=</mo><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, e o gradiente <math id="SS1.SSSx2.p1.m4" class="ltx_Math" alttext="\partial\tilde{y}/\partial z" display="inline"><mrow><mo rspace="0em">∂</mo><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mi>z</mi></mrow></mrow></mrow></math> também pode ser calculado e armazenado como uma folha da árvore. Por fim, a função de perda é calculada e o gradiente <math id="SS1.SSSx2.p1.m5" class="ltx_Math" alttext="\partial\varepsilon/\partial\tilde{y}" display="inline"><mrow><mo rspace="0em">∂</mo><mrow><mi>ε</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mover accent="true"><mi>y</mi><mo>~</mo></mover></mrow></mrow></mrow></math> calculado e armazenado como uma folha da árvore. Terminada a etapa de propagação (inferência do modelo), as folhas da árvore contém todos os fatores necessários para o cálculo do gradiente da função de perda em relação aos parâmetros do modelo, lembrando que, por meio da regra da cadeia, temos</p>
+<table id="Ch4.S3.EGx25" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E45.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\varepsilon}{\partial\bm{\theta}}=\frac{\partial%
+\varepsilon}{\partial\tilde{y}}\frac{\partial\tilde{y}}{\partial z}\frac{%
+\partial z}{\partial\bm{\theta}}." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ε</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>𝜽</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ε</mi></mrow><mrow><mo rspace="0em">∂</mo><mover accent="true"><mi>y</mi><mo>~</mo></mover></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mover accent="true"><mi>y</mi><mo>~</mo></mover></mrow><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>𝜽</mi></mrow></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.45)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Com isso, o cálculo do gradiente da função de perda em relação aos parâmetros pode ser feito por um processo de acumulação, um somatório de produtos de gradientes. No próximo capítulo, vamos explorar mais detalhadamente o processo de retro-propagação como uma aplicação de diferenciação automática.</p>
+</div>
+<figure id="fig:percep_propag" class="ltx_figure"><img src="cap_perceptron/dados/fig_percep_rp/fig.png" id="Ch2.F5.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="244" height="128" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.5</span>: </span><span class="ltx_text" style="font-size:90%;">Fluxograma do método de retro-propagação aplicado ao treinamento de um perceptron.</span></figcaption>
+</figure>
+</section>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.2 </span>Método do gradiente estocástico</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">O <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">método do gradiente descentente estocástico</span> (GDE<span id="Ch2.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note">6</span><span class="ltx_text ltx_font_italic">SGD</span>, do inglês, <span class="ltx_text ltx_font_italic">Stochastic Gradient Descent Method</span></span></span></span>) é um variação do método GD. <span class="ltx_text" style="background-color:#FFFF00;">A ideia é atualizar os parâmetros do modelo com base no gradiente do erro de cada amostra</span> (ou um subconjunto de amostras<span id="Ch2.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note">7</span>Nest caso, é conhecido como <span class="ltx_text ltx_font_italic">batch-SGD</span>.</span></span></span>). A estocasticidade é obtida da randomização com que as amostras são escolhidas a cada época. O algoritmos consiste no seguinte:</p>
+<ol id="I3" class="ltx_enumerate">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="\bm{w}" display="inline"><mi>𝒘</mi></math>, <math id="I3.i1.p1.m2" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math> aproximações inicial.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">2.</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p">Para <math id="I3.i2.p1.m1" class="ltx_Math" alttext="e\leftarrow 1,\dotsc,n_{e}" display="inline"><mrow><mi>e</mi><mo stretchy="false">←</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>n</mi><mi>e</mi></msub></mrow></mrow></math>:</p>
+<ol id="I3.i2.I1" class="ltx_enumerate">
+<li id="I3.i2.I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">1.1.</span> 
+<div id="I3.i2.I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Para <math id="I3.i2.I1.i1.p1.m1" class="ltx_Math" alttext="s\leftarrow\texttt{random}(1,\dotsc,n_{s})" display="inline"><mrow><mi>s</mi><mo stretchy="false">←</mo><mrow><mtext class="ltx_mathvariant_monospace">random</mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>n</mi><mi>s</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>:</p>
+<table id="Ch2.E46" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E46.m1" class="ltx_Math" alttext="(\bm{w},b)\leftarrow(\bm{w},b)-l_{r}\frac{\partial\varepsilon^{(s)}}{\partial(%
+\bm{w},b)}" display="block"><mrow><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">←</mo><mrow><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mrow><msub><mi>l</mi><mi>r</mi></msub><mo>⁢</mo><mfrac><mrow><mo rspace="0em">∂</mo><msup><mi>ε</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mo rspace="0em">∂</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mfrac></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.46)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</div>
+<section id="SS2.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Aplicação</h3>
+
+<div id="SS2.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">O Código <a href="#cap_perceptron_sec_train:cod:perceptron_gde" title="Código 4 ‣ Aplicação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a> é uma implementação do treinamento de um perceptron para o problema de classificação do e-lógico utilizando o método GDE. Verifique!</p>
+</div>
+<figure id="cap_perceptron_sec_train:cod:perceptron_gde" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 4: </span>perceptron_gde.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IHRvcmNoCgojIG1vZGVsbwoKY2xhc3MgUGVyY2VwdHJvbih0b3JjaC5ubi5Nb2R1bGUpOgogICAgZGVmIF9faW5pdF9fKHNlbGYpOgogICAgICAgIHN1cGVyKCkuX19pbml0X18oKQogICAgICAgIHNlbGYubGluZWFyID0gdG9yY2gubm4uTGluZWFyKDIsMSkKCiAgICBkZWYgZm9yd2FyZChzZWxmLCB4KToKICAgICAgICB6ID0gIHNlbGYubGluZWFyKHgpCiAgICAgICAgeSA9IHRvcmNoLnRhbmgoeikKICAgICAgICByZXR1cm4geQoKbW9kZWwgPSBQZXJjZXB0cm9uKCkKCiMgdHJlaW5hbWVudG8KCiMgb3B0aW1pemFkb3IKb3B0aW0gPSB0b3JjaC5vcHRpbS5TR0QobW9kZWwucGFyYW1ldGVycygpLCBscj0wLjUpCgojIGZ1bsOnw6NvIGVycm8KbG9zc19mdW4gPSB0b3JjaC5ubi5NU0VMb3NzKCkKCiMgZGFkb3MgZGUgdHJlaW5hbWVudG8KWF90cmFpbiA9IHRvcmNoLnRlbnNvcihbWzEuLCAxLl0sCiAgICAgICAgICAgICAgICAgIFsxLiwgLTEuXSwKICAgICAgICAgICAgICAgICAgWy0xLiwgMS5dLAogICAgICAgICAgICAgICAgICBbLTEuLCAtMS5dXSkKeV90cmFpbiA9IHRvcmNoLnRlbnNvcihbMS4sIC0xLiwgLTEuLCAtMS5dKS5yZXNoYXBlKC0xLDEpCgojIG51bSBkZSBhbW9zdHJhcwpucyA9IHlfdHJhaW4uc2l6ZSgwKQoKcHJpbnQoIlxuRGFkb3MgZGUgdHJlaW5hbWVudG8iKQpwcmludCgiWF90cmFpbiA9IikKcHJpbnQoWF90cmFpbikKcHJpbnQoInlfdHJhaW4gPSAiKQpwcmludCh5X3RyYWluKQoKIyBudW0gbWF4IMOpcG9jYXMKbmVwb2NocyA9IDEwMAp0b2wgPSA1ZS0yCgpmb3IgZXBvY2ggaW4gcmFuZ2UobmVwb2Nocyk6CgogICAgbW9kZWwudHJhaW4oKQogICAgZm9yIHMgaW4gdG9yY2gucmFuZHBlcm0obnMpOgogICAgICAgICMgcHJvcGFnYcOnw6NvCiAgICAgICAgeV9lc3RfcyA9IG1vZGVsKFhfdHJhaW5bczpzKzEsOl0pCgogICAgICAgICMgZnVuw6fDo28gZGUgcGVyZGEgZGEgYW1vc3RyYQogICAgICAgIGxvc3NfcyA9ICh5X2VzdF9zIC0geV90cmFpbltzXSkqKjIKCiAgICAgICAgIyByZXRyby1wcm9wYWdhw6fDo28KICAgICAgICBvcHRpbS56ZXJvX2dyYWQoKQogICAgICAgIGxvc3Nfcy5iYWNrd2FyZCgpCiAgICAgICAgb3B0aW0uc3RlcCgpCgogICAgIyBjcml0w6lyaW8gZGUgcGFyYWRhCiAgICBtb2RlbC5ldmFsKCkKICAgIHlfdmFsID0gbW9kZWwoWF90cmFpbikKCiAgICBsb3NzX3ZhbCA9IGxvc3NfZnVuKHlfdmFsLCB5X3RyYWluKQogICAgcHJpbnQoZid7ZXBvY2h9OiB7bG9zc192YWwuaXRlbSgpOi40ZX0nKQoKICAgIGlmIChsb3NzX3ZhbC5pdGVtKCkgPCB0b2wpOgogICAgICAgIGJyZWFrCgojIHZlcmlmaWNhw6fDo28KcHJpbnQoZid5ID0ge3lfdmFsfScp" download="">⬇</a></div>
+<div id="lstnumberx164" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span>
+</div>
+<div id="lstnumberx165" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span>
+</div>
+<div id="lstnumberx166" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>modelo</span></span>
+</div>
+<div id="lstnumberx167" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span>
+</div>
+<div id="lstnumberx168" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">class</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Perceptron</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Module</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx169" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">6</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">__init__</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx170" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">7</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">super</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">().</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">__init__</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx171" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">8</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linear</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Linear</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(2,1)</span>
+</div>
+<div id="lstnumberx172" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">9</span>
+</div>
+<div id="lstnumberx173" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">10</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">def</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">forward</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx174" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">11</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">self</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">linear</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">x</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx175" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">12</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tanh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx176" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">13</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">return</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y</span>
+</div>
+<div id="lstnumberx177" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">14</span>
+</div>
+<div id="lstnumberx178" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">15</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Perceptron</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx179" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">16</span>
+</div>
+<div id="lstnumberx180" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">17</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>treinamento</span></span>
+</div>
+<div id="lstnumberx181" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">18</span>
+</div>
+<div id="lstnumberx182" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">19</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>optimizador</span></span>
+</div>
+<div id="lstnumberx183" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">20</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">SGD</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">parameters</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(),</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">lr</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=0.5)</span>
+</div>
+<div id="lstnumberx184" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">21</span>
+</div>
+<div id="lstnumberx185" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">22</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>fun<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>erro</span></span>
+</div>
+<div id="lstnumberx186" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">23</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_fun</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">MSELoss</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx187" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">24</span>
+</div>
+<div id="lstnumberx188" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">25</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>dados<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>treinamento</span></span>
+</div>
+<div id="lstnumberx189" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">26</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([[1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.],</span>
+</div>
+<div id="lstnumberx190" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">27</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.],</span>
+</div>
+<div id="lstnumberx191" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">28</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">1.],</span>
+</div>
+<div id="lstnumberx192" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">29</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">                  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.]])</span>
+</div>
+<div id="lstnumberx193" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">30</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-1.]).</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">reshape</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(-1,1)</span>
+</div>
+<div id="lstnumberx194" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">31</span>
+</div>
+<div id="lstnumberx195" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">32</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>num<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>amostras</span></span>
+</div>
+<div id="lstnumberx196" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">33</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ns</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">size</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(0)</span>
+</div>
+<div id="lstnumberx197" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">34</span>
+</div>
+<div id="lstnumberx198" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">35</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"\nDados<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>treinamento"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx199" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">36</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"X_train<span class="ltx_text ltx_lst_space"> </span>="</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx200" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">37</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx201" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">38</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">"y_train<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>"</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx202" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">39</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx203" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">40</span>
+</div>
+<div id="lstnumberx204" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">41</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>num<span class="ltx_text ltx_lst_space"> </span>max<span class="ltx_text ltx_lst_space"> </span><span class="ltx_text ltx_lst_literate">é</span>pocas</span></span>
+</div>
+<div id="lstnumberx205" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">42</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nepochs</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">100</span>
+</div>
+<div id="lstnumberx206" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">43</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">e</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2</span>
+</div>
+<div id="lstnumberx207" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">44</span>
+</div>
+<div id="lstnumberx208" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">45</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">epoch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">range</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nepochs</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx209" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">46</span>
+</div>
+<div id="lstnumberx210" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">47</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx211" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">48</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">for</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">in</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">randperm</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ns</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx212" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">49</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>propaga<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx213" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">50</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_est_s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">:</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">+1,:])</span>
+</div>
+<div id="lstnumberx214" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">51</span>
+</div>
+<div id="lstnumberx215" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">52</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>fun<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>perda<span class="ltx_text ltx_lst_space"> </span>da<span class="ltx_text ltx_lst_space"> </span>amostra</span></span>
+</div>
+<div id="lstnumberx216" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">53</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_est_s</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">[</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">])**2</span>
+</div>
+<div id="lstnumberx217" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">54</span>
+</div>
+<div id="lstnumberx218" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">55</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>retro-propaga<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx219" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">56</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">zero_grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx220" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">57</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">backward</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx221" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">58</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">step</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx222" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">59</span>
+</div>
+<div id="lstnumberx223" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">60</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>crit<span class="ltx_text ltx_lst_literate">é</span>rio<span class="ltx_text ltx_lst_space"> </span>de<span class="ltx_text ltx_lst_space"> </span>parada</span></span>
+</div>
+<div id="lstnumberx224" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">61</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_keyword ltx_lst_keywords2 ltx_font_typewriter" style="font-size:90%;color:#0000FF;">eval</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx225" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">62</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_val</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">model</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">X_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx226" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">63</span>
+</div>
+<div id="lstnumberx227" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">64</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_val</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_fun</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_val</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">y_train</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx228" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">65</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'{epoch}:<span class="ltx_text ltx_lst_space"> </span>{loss_val.item():.4e}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+<div id="lstnumberx229" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">66</span>
+</div>
+<div id="lstnumberx230" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">67</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">    </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">if</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_val</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">item</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">&lt;</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tol</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">):</span>
+</div>
+<div id="lstnumberx231" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">68</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">break</span>
+</div>
+<div id="lstnumberx232" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">69</span>
+</div>
+<div id="lstnumberx233" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">70</span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>verifica<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+</div>
+<div id="lstnumberx234" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">71</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">print</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">f</span><span class="ltx_text ltx_lst_string ltx_font_typewriter" style="font-size:90%;">'y<span class="ltx_text ltx_lst_space"> </span>=<span class="ltx_text ltx_lst_space"> </span>{y_val}'</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+</section>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.2.3 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Faça um estudo de convergência para comparar o algoritmo de treinamento perceptron, com o algoritmo de treinamento por retro-propagação utilizando o método GD e o método GDE. Para isso, utilize o problema de classificação do e-lógico.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">No E.<a href="cap_perceptron_sec_unidade_de_processamento.html#exer:perceptron_xor" title="E. 2.1.5. ‣ 2.1.3 Exercícios ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.5</span></a> foi verificado que não é possível criar um perceptron para emular a operação lógica <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> e o algoritmo de treinamento perceptron acaba convergindo para uma saída nula. O que ocorre se tentarmos treinar um perceptron para emular a operação lógica <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> utilizando o método GD e o método GDE? As saídas estimadas convergem para algum valor? Justifique sua resposta.</p>
+</div>
+</div>
+<div id="cap_perceptron_sec_train:exer:ajuste" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Crie um perceptron que se ajuste ao seguinte conjunto de dados de entrada e saída.</p>
+</div>
+<figure id="Thmexer3.tab1" class="ltx_table">
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt">s</th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer3.m1" class="ltx_Math" alttext="x^{(s)}" display="inline"><msup><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt"><math id="Thmexer3.m2" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math></th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r ltx_border_t">1</th>
+<td class="ltx_td ltx_align_left ltx_border_t">0.5</td>
+<td class="ltx_td ltx_align_left ltx_border_t">1.2</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">2</th>
+<td class="ltx_td ltx_align_left">1.0</td>
+<td class="ltx_td ltx_align_left">2.1</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_r">3</th>
+<td class="ltx_td ltx_align_left">1.5</td>
+<td class="ltx_td ltx_align_left">2.6</td>
+</tr>
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_left ltx_th ltx_th_row ltx_border_bb ltx_border_r">4</th>
+<td class="ltx_td ltx_align_left ltx_border_bb">2.0</td>
+<td class="ltx_td ltx_align_left ltx_border_bb">3.6</td>
+</tr>
+</tbody>
+</table>
+</figure>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Nos Código <a href="#cap_perceptron_sec_train:cod:perceptron_gd" title="Código 3 ‣ Aplicação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> e Código <a href="#cap_perceptron_sec_train:cod:perceptron_gde" title="Código 4 ‣ Aplicação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>, substitua o trecho de código</p>
+</div>
+<div id="Thmexer4.p2" class="ltx_para">
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,b3B0aW0uemVyb19ncmFkKCkKbG9zc19zLmJhY2t3YXJkKCkKb3B0aW0uc3RlcCgp" download="">⬇</a></div>
+<div id="lstnumberx235" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">zero_grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx236" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">loss_s</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">backward</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx237" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">step</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+</div>
+</div>
+<div id="Thmexer4.p3" class="ltx_para">
+<p class="ltx_p">por uma implementação manual, em que os gradientes sejam calculados explicitamente e os parâmetros atualizados manualmente.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Adicione ao método GD um método de busca linear para a escolha da taxa de aprendizagem <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="l_{r}" display="inline"><msub><mi>l</mi><mi>r</mi></msub></math> em cada época.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_perceptron_sec_unidade_de_processamento.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_perceptron_sec_ativacao.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Funções de ativação</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Aug 28 12:51:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
