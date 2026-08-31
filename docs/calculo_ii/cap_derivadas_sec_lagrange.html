@@ -1,0 +1,574 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.6 Multiplicadores de Lagrange ‣ Capítulo 2 Derivadas ‣ Cálculo II</title>
+<!--Generated on Mon Aug 31 13:04:50 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 31 de agosto de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="up up" href="./" title="Cálculo II">
+<link rel="start" href="./" title="Cálculo II">
+<link rel="prev" href="cap_derivadas_sec_max_min.html" title="2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="next" href="cap_tabela_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_derivadas_parciais.html" title="2.1 Derivadas parciais ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_diferenciais.html" title="2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_regra_cadeia.html" title="2.3 Regra da cadeia ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_gradiente.html" title="2.4 Derivada direcional e gradiente ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_max_min.html" title="2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo II">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo II">
+<link rel="chapter" href="./" title="Cálculo II ‣ Cálculo II">
+<link rel="chapter" href="cap_introducao.html" title="Capítulo 1 Introdução ‣ Cálculo II">
+<link rel="chapter" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo II">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo II">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script><link rel="canonical" href="https://notaspedrok.com.br/calculo_ii/cap_derivadas_sec_lagrange.html" />
+</head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo II</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_derivadas.html" title="In Cálculo II" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Derivadas</span></a><a href="cap_derivadas_sec_max_min.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Máximos e mínimos</span></a><a href="cap_tabela_deriv.html" title="In Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Tabela de derivadas</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.6 </span>Multiplicadores de Lagrange</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Multiplicadores de Lagrange<span id="Ch2.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">3</span></span><span class="ltx_text ltx_font_medium">Joseph-Louis Lagrange, 1736 - 1813, matemático italiano. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Joseph-Louis_Lagrange" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Joseph-Louis Lagrange</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> é um método para encontrar máximos e mínimos de funções sujeitas a restrições. Os problemas de otimização devem ser da forma: encontrar o máximo/mínimo de uma função <math id="p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> sujeita a uma restrição</p>
+<table id="A2.S0.EGx200" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E336"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E336.m1" class="ltx_Math" alttext="\displaystyle g(x,y)=0." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.336)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Ou, em três variáveis, encontrar o máximo/mínimo de uma função <math id="p1.m2" class="ltx_Math" alttext="f(x,y,z)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> sujeita a uma restrição</p>
+<table id="A2.S0.EGx201" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E337"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E337.m1" class="ltx_Math" alttext="\displaystyle g(x,y,z)=0." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.337)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Em geral, pode ser estendido para mais variáveis e mais restrições.</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.6.1 </span>Função de duas variáveis com uma restrição</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Vamos considerar o caso de duas variáveis. Suponha que <math id="SS1.p1.m1" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> seja um extremo da função <math id="SS1.p1.m2" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> sujeita a uma restrição <math id="SS1.p1.m3" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. Ainda, suponha que a curva <math id="SS1.p1.m4" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> seja parametrizada por</p>
+<table id="A2.S0.EGx202" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E338"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E338.m1" class="ltx_Math" alttext="\displaystyle x=x(s)," display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.338)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E339"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E339.m1" class="ltx_Math" alttext="\displaystyle y=y(s)," display="inline"><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.339)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p1.m5" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math> é o parâmetro comprimento de arco a partir do ponto <math id="SS1.p1.m6" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>, em que <math id="SS1.p1.m7" class="ltx_Math" alttext="s=0" display="inline"><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow></math>. Desta forma, o problema de otimização pode ser reescrito como encontrar o máximo/mínimo da função</p>
+<table id="A2.S0.EGx203" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E340"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E340.m1" class="ltx_Math" alttext="\displaystyle z=f(x(s),y(s))." display="inline"><mrow><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.340)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="SS1.p1.m8" class="ltx_Math" alttext="s=0" display="inline"><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow></math> é um extremo local de <math id="SS1.p1.m9" class="ltx_Math" alttext="f(x(s),y(s))" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math>, temos que</p>
+<table id="A2.S0.EGx204" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E341"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E341.m1" class="ltx_Math" alttext="\displaystyle\frac{dz}{ds}=0" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>z</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow></mfrac></mstyle><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.341)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E342"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E342.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial f}{\partial x}\frac{dx}{ds}+\frac{\partial f}{%
+\partial y}\frac{dy}{ds}=0" display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>f</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow></mfrac></mstyle></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>f</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>⁢</mo><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow></mfrac></mstyle></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.342)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E343"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E343.m1" class="ltx_Math" alttext="\displaystyle\left(\frac{\partial f}{\partial x}\bm{i}+\frac{\partial f}{%
+\partial y}\bm{j}\right)\cdot\left(\frac{dx}{ds}\bm{i}+\frac{dy}{ds}\bm{j}%
+\right)=0," display="inline"><mrow><mrow><mrow><mrow><mo>(</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>f</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>f</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>𝒋</mi></mrow></mrow><mo rspace="0.055em">)</mo></mrow><mo rspace="0.222em">⋅</mo><mrow><mo>(</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow><mrow><mi>d</mi><mo>⁢</mo><mi>s</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi>𝒋</mi></mrow></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.343)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">donde concluímos que</p>
+<table id="A2.S0.EGx205" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E344"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E344.m1" class="ltx_Math" alttext="\displaystyle\nabla f(x_{0},y_{0})\cdot\bm{t}=0," display="inline"><mrow><mrow><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>𝒕</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.344)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p1.m10" class="ltx_Math" alttext="\bm{t}" display="inline"><mi>𝒕</mi></math> é o vetor tangente à curva <math id="SS1.p1.m11" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> no ponto <math id="SS1.p1.m12" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>. Portanto, o vetor gradiente de <math id="SS1.p1.m13" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é nulo ou é ortogonal ao vetor tangente à curva de restrição. Por outro lado, o vetor gradiente de <math id="SS1.p1.m14" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> também é ortogonal ao vetor tangente à curva de restrição (curva de nível <math id="SS1.p1.m15" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>). Portanto, os vetores gradientes de <math id="SS1.p1.m16" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e <math id="SS1.p1.m17" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> são paralelos, ou seja, existe um número real <math id="SS1.p1.m18" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> tal que</p>
+<table id="A2.S0.EGx206" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E345"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E345.m1" class="ltx_Math" alttext="\displaystyle\nabla f(x_{0},y_{0})=\lambda\nabla g(x_{0},y_{0})." display="inline"><mrow><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>λ</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0.167em">∇</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.345)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Este escalar <math id="SS1.p1.m19" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> é chamado de <span class="ltx_text ltx_font_bold">multiplicador de Lagrange</span>.</p>
+</div>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">Das observações acima, o <span class="ltx_text ltx_font_bold">método dos multiplicadores de Lagrange</span> consiste em resolver o sistema de equações</p>
+<table id="A2.S0.EGx207" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E346"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E346.m1" class="ltx_Math" alttext="\displaystyle\nabla f(x,y)=\lambda\nabla g(x,y)," display="inline"><mrow><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>λ</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0.167em">∇</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.346)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E347"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E347.m1" class="ltx_Math" alttext="\displaystyle g(x,y)=0," display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.347)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p2.m1" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></math> são as coordenadas a calcular e <math id="SS1.p2.m2" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> é o multiplicador de Lagrange. O sistema acima fornece três equações com três incógnitas: <math id="SS1.p2.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, <math id="SS1.p2.m4" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> e <math id="SS1.p2.m5" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math>. As soluções do sistema fornecem os pontos candidatos a extremos da função <math id="SS1.p2.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> sujeita à restrição <math id="SS1.p2.m7" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. A classificação destes pontos candidatos é feita comparando os valores de <math id="SS1.p2.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> nos pontos candidatos.</p>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Vamos usar o método dos multiplicadores de Lagrange para encontrar os pontos de máximo e mínimo da função <math id="Thmex1.p1.m1" class="ltx_Math" alttext="f(x,y)=x^{2}+y^{2}+4xy" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math> sujeita à restrição <math id="Thmex1.p1.m2" class="ltx_Math" alttext="g(x,y)=x^{2}+y^{2}=1" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>1</mn></mrow></math>. Consultemos a Figura <span class="ltx_ref ltx_missing_label ltx_ref_self">LABEL:fig:lagrange_fxy_g</span>.</p>
+</div>
+<figure id="fig:lagrange_fx_g" class="ltx_figure"><img src="cap_derivadas/dados/fig_lagrange_fxy_g/fig.png" id="Ch2.F14.g1" class="ltx_graphics ltx_centering ltx_img_square" width="236" height="232" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.14</span>: </span><span class="ltx_text" style="font-size:90%;">Curvas de nível da função <math id="Ch2.F14.m3" class="ltx_Math" alttext="f(x,y)=x^{2}+y^{2}+4xy" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math> e da restrição <math id="Ch2.F14.m4" class="ltx_Math" alttext="g(x,y)=x^{2}+y^{2}-1=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex1.p2" class="ltx_para">
+<p class="ltx_p">Ou seja, queremos encontrar os pontos de máximo e mínimo da função <math id="Thmex1.p2.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> sujeita à restrição</p>
+<table id="A2.S0.EGx208" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E348"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E348.m1" class="ltx_Math" alttext="\displaystyle g(x,y)=x^{2}+y^{2}-1=0." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.348)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Primeiramente, calculamos os vetores gradientes de <math id="Thmex1.p2.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> e <math id="Thmex1.p2.m3" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math></p>
+<table id="A2.S0.EGx209" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E349"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E349.m1" class="ltx_Math" alttext="\displaystyle\nabla f(x,y)=(2x+4y)\bm{i}+(2y+4x)\bm{j}," display="inline"><mrow><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.349)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E350"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E350.m1" class="ltx_Math" alttext="\displaystyle\nabla g(x,y)=2x\bm{i}+2y\bm{j}." display="inline"><mrow><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.350)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Notemos que <math id="Thmex1.p2.m4" class="ltx_Math" alttext="\nabla g(x,y)\neq 0" display="inline"><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≠</mo><mn>0</mn></mrow></math> para todos os pontos da curva de restrição <math id="Thmex1.p2.m5" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. Portanto, podemos aplicar o método dos multiplicadores de Lagrange, que consiste em resolver o sistema de equações</p>
+<table id="A2.S0.EGx210" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E351"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E351.m1" class="ltx_Math" alttext="\displaystyle\nabla f(x,y)=\lambda\nabla g(x,y)," display="inline"><mrow><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>λ</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0.167em">∇</mo><mi>g</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.351)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E352"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E352.m1" class="ltx_Math" alttext="\displaystyle g(x,y)=0." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.352)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Substituindo os vetores gradientes, obtemos o sistema</p>
+<table id="A2.S0.EGx211" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E353"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E353.m1" class="ltx_Math" alttext="\displaystyle 2x+4y=\lambda 2x," display="inline"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mrow><mi>λ</mi><mo>⁢</mo><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.353)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E354"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E354.m1" class="ltx_Math" alttext="\displaystyle 2y+4x=\lambda 2y," display="inline"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>=</mo><mrow><mi>λ</mi><mo>⁢</mo><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.354)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E355"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E355.m1" class="ltx_Math" alttext="\displaystyle x^{2}+y^{2}-1=0." display="inline"><mrow><mrow><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.355)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para resolver o sistema, podemos reescrever as duas primeiras equações como</p>
+<table id="A2.S0.EGx212" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E356"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E356.m1" class="ltx_Math" alttext="\displaystyle 2x(1-\lambda)+4y=0," display="inline"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.356)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E357"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E357.m1" class="ltx_Math" alttext="\displaystyle 4x+2y(1-\lambda)=0." display="inline"><mrow><mrow><mrow><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.357)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Donde, podemos multiplicar a primeira equação por <math id="Thmex1.p2.m6" class="ltx_Math" alttext="1-\lambda" display="inline"><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow></math> e a segunda equação por <math id="Thmex1.p2.m7" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math>, obtendo</p>
+<table id="A2.S0.EGx213" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E358"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E358.m1" class="ltx_Math" alttext="\displaystyle 2x(1-\lambda)^{2}+4y(1-\lambda)=0," display="inline"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.358)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E359"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E359.m1" class="ltx_Math" alttext="\displaystyle 8x+4y(1-\lambda)=0." display="inline"><mrow><mrow><mrow><mrow><mn>8</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.359)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Subtraindo a primeira equação da segunda, obtemos</p>
+<table id="A2.S0.EGx214" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E360"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E360.m1" class="ltx_Math" alttext="\displaystyle 8x-2x(1-\lambda)^{2}=0" display="inline"><mrow><mrow><mrow><mn>8</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.360)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E361"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E361.m1" class="ltx_Math" alttext="\displaystyle 2x\left(4-(1-\lambda)^{2}\right)=0." display="inline"><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mn>4</mn><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.361)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, temos duas possibilidades: <math id="Thmex1.p2.m8" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> ou <math id="Thmex1.p2.m9" class="ltx_Math" alttext="4-(1-\lambda)^{2}=0" display="inline"><mrow><mrow><mn>4</mn><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>=</mo><mn>0</mn></mrow></math>. Se <math id="Thmex1.p2.m10" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math>, então a primeira equação do sistema acima nos fornece <math id="Thmex1.p2.m11" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math>, o que não satisfaz a restrição <math id="Thmex1.p2.m12" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>. Portanto, devemos ter</p>
+<table id="A2.S0.EGx215" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E362"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E362.m1" class="ltx_Math" alttext="\displaystyle 4-(1-\lambda)^{2}=0" display="inline"><mrow><mrow><mn>4</mn><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.362)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E363"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E363.m1" class="ltx_Math" alttext="\displaystyle(1-\lambda)^{2}=4" display="inline"><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>4</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.363)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E364"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E364.m1" class="ltx_Math" alttext="\displaystyle 1-\lambda=\pm 2." display="inline"><mrow><mrow><mrow><mn>1</mn><mo>−</mo><mi>λ</mi></mrow><mo>=</mo><mrow><mo>±</mo><mn>2</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.364)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, temos duas possibilidades: <math id="Thmex1.p2.m13" class="ltx_Math" alttext="\lambda=-1" display="inline"><mrow><mi>λ</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> ou <math id="Thmex1.p2.m14" class="ltx_Math" alttext="\lambda=3" display="inline"><mrow><mi>λ</mi><mo>=</mo><mn>3</mn></mrow></math>. Se <math id="Thmex1.p2.m15" class="ltx_Math" alttext="\lambda=-1" display="inline"><mrow><mi>λ</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, então a primeira equação do sistema acima nos fornece <math id="Thmex1.p2.m16" class="ltx_Math" alttext="2x(1-(-1))+4y=0\Rightarrow 4x+4y=0\Rightarrow x+y=0" display="inline"><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn><mo stretchy="false">⇒</mo><mrow><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn><mo stretchy="false">⇒</mo><mrow><mi>x</mi><mo>+</mo><mi>y</mi></mrow><mo>=</mo><mn>0</mn></mrow></math>. Substituindo na restrição <math id="Thmex1.p2.m17" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, obtemos</p>
+<table id="A2.S0.EGx216" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E365"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E365.m1" class="ltx_Math" alttext="\displaystyle x^{2}+(-x)^{2}-1=0" display="inline"><mrow><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.365)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E366"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E366.m1" class="ltx_Math" alttext="\displaystyle 2x^{2}-1=0" display="inline"><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.366)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E367"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E367.m1" class="ltx_Math" alttext="\displaystyle x^{2}=\frac{1}{2}" display="inline"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.367)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E368"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E368.m1" class="ltx_Math" alttext="\displaystyle x=\pm\frac{1}{\sqrt{2}}." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mo>±</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.368)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, temos dois pontos candidatos a extremos: <math id="Thmex1.p2.m18" class="ltx_Math" alttext="\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>,</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>)</mo></mrow></math> e <math id="Thmex1.p2.m19" class="ltx_Math" alttext="\left(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>,</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>)</mo></mrow></math>. Se <math id="Thmex1.p2.m20" class="ltx_Math" alttext="\lambda=3" display="inline"><mrow><mi>λ</mi><mo>=</mo><mn>3</mn></mrow></math>, então a primeira equação do sistema acima nos fornece</p>
+<table id="A2.S0.EGx217" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E369"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E369.m1" class="ltx_Math" alttext="\displaystyle 2x(1-3)+4y=0\Rightarrow-4x+4y=0\Rightarrow x-y=0." display="inline"><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mn>3</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn><mo stretchy="false">⇒</mo><mrow><mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn><mo stretchy="false">⇒</mo><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.369)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Substituindo na restrição <math id="Thmex1.p2.m21" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, obtemos</p>
+<table id="A2.S0.EGx218" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E370"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E370.m1" class="ltx_Math" alttext="\displaystyle x^{2}+x^{2}-1=0" display="inline"><mrow><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.370)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E371"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E371.m1" class="ltx_Math" alttext="\displaystyle 2x^{2}-1=0" display="inline"><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.371)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E372"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E372.m1" class="ltx_Math" alttext="\displaystyle x^{2}=\frac{1}{2}" display="inline"><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.372)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E373"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E373.m1" class="ltx_Math" alttext="\displaystyle x=\pm\frac{1}{\sqrt{2}}." display="inline"><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mo>±</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.373)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, temos mais dois pontos candidatos a extremos: <math id="Thmex1.p2.m22" class="ltx_Math" alttext="\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>,</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>)</mo></mrow></math> e <math id="Thmex1.p2.m23" class="ltx_Math" alttext="\left(-\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>,</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>)</mo></mrow></math>. Avaliando a função <math id="Thmex1.p2.m24" class="ltx_Math" alttext="f(x,y)=x^{2}+y^{2}+4xy" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math> nos quatro pontos candidatos, obtemos</p>
+<table id="A2.S0.EGx219" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E374"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E374.m1" class="ltx_Math" alttext="\displaystyle f\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)=-1," display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle><mo>,</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.374)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E375"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E375.m1" class="ltx_Math" alttext="\displaystyle f\left(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)=-1," display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle></mrow><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.375)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E376"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E376.m1" class="ltx_Math" alttext="\displaystyle f\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)=3," display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle><mo>,</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle><mo>)</mo></mrow></mrow><mo>=</mo><mn>3</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.376)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E377"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E377.m1" class="ltx_Math" alttext="\displaystyle f\left(-\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)=3." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle></mrow><mo>,</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mstyle></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mn>3</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.377)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, o valor máximo de <math id="Thmex1.p2.m25" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> sujeito à restrição <math id="Thmex1.p2.m26" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> é <math id="Thmex1.p2.m27" class="ltx_Math" alttext="3" display="inline"><mn>3</mn></math>, que ocorre nos pontos <math id="Thmex1.p2.m28" class="ltx_Math" alttext="\left(\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>,</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>)</mo></mrow></math> e <math id="Thmex1.p2.m29" class="ltx_Math" alttext="\left(-\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>,</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>)</mo></mrow></math>, e o valor mínimo de <math id="Thmex1.p2.m30" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> sujeito à restrição <math id="Thmex1.p2.m31" class="ltx_Math" alttext="g(x,y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> é <math id="Thmex1.p2.m32" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math>, que ocorre nos pontos <math id="Thmex1.p2.m33" class="ltx_Math" alttext="\left(\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>,</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>)</mo></mrow></math> e <math id="Thmex1.p2.m34" class="ltx_Math" alttext="\left(-\frac{1}{\sqrt{2}},\frac{1}{\sqrt{2}}\right)" display="inline"><mrow><mo>(</mo><mrow><mo>−</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac></mrow><mo>,</mo><mfrac><mn>1</mn><msqrt><mn>2</mn></msqrt></mfrac><mo>)</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.6.2.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Aplicação)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_phantom"><span style="visibility:hidden"></span></span></p>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.6.2 </span>Três variáveis com uma restrição</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.6.3 </span>Exercícios</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_derivadas_sec_max_min.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Máximos e mínimos</span></a><a href="bib.html" title="In Cálculo II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_tabela_deriv.html" title="In Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Tabela de derivadas</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Mon Aug 31 13:04:50 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

@@ -1,0 +1,1170 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II</title>
+<!--Generated on Mon Aug 31 13:04:50 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 31 de agosto de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="up up" href="./" title="Cálculo II">
+<link rel="start" href="./" title="Cálculo II">
+<link rel="prev" href="cap_derivadas_sec_gradiente.html" title="2.4 Derivada direcional e gradiente ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="next" href="cap_derivadas_sec_lagrange.html" title="2.6 Multiplicadores de Lagrange ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_derivadas_parciais.html" title="2.1 Derivadas parciais ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_diferenciais.html" title="2.2 Diferenciais e aproximações lineares ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_regra_cadeia.html" title="2.3 Regra da cadeia ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_gradiente.html" title="2.4 Derivada direcional e gradiente ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="section" href="cap_derivadas_sec_lagrange.html" title="2.6 Multiplicadores de Lagrange ‣ Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo II">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo II">
+<link rel="chapter" href="./" title="Cálculo II ‣ Cálculo II">
+<link rel="chapter" href="cap_introducao.html" title="Capítulo 1 Introdução ‣ Cálculo II">
+<link rel="chapter" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo II">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo II">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script><link rel="canonical" href="https://notaspedrok.com.br/calculo_ii/cap_derivadas_sec_max_min.html" />
+</head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
+              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo II</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_derivadas.html" title="In Cálculo II" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Derivadas</span></a><a href="cap_derivadas_sec_gradiente.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Derivada direcional e gradiente</span></a><a href="cap_derivadas_sec_lagrange.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.6 </span>Multiplicadores de Lagrange</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.5 </span>Máximos e mínimos</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Um ponto <span class="ltx_text" style="background-color:#FFFF00;"><math id="p1.m1" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> é um <span class="ltx_text ltx_font_bold">mínimo local</span> de uma função <math id="p1.m2" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> se <math id="p1.m3" class="ltx_Math" alttext="f(x_{0},y_{0})\leq f(x,y)" display="inline"><mrow><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">≤</mo><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></mrow></math> para todos os pontos <math id="p1.m4" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> em uma vizinhança aberta de <math id="p1.m5" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math></span>. Analogamente, um ponto <span class="ltx_text" style="background-color:#FFFF00;"><math id="p1.m6" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> é um <span class="ltx_text ltx_font_bold">máximo local</span> de uma função <math id="p1.m7" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> se <math id="p1.m8" class="ltx_Math" alttext="f(x_{0},y_{0})\geq f(x,y)" display="inline"><mrow><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">≥</mo><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></mrow></math> para todos os pontos <math id="p1.m9" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> em uma vizinhança aberta de <math id="p1.m10" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math></span>. Os máximos e mínimos locais de uma função <math id="p1.m11" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> são chamados de <span class="ltx_text ltx_font_bold">extremos locais<span id="Ch2.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">1</span></span><span class="ltx_text ltx_font_medium">Extremos locais também são chamados de extremos relativos.</span></span></span></span></span> de <math id="p1.m12" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Consultemos a Figura <a href="#fig:min_max_locais" title="Figura 2.7 ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.7</span></a>.</p>
+</div>
+<figure id="fig:min_max_locais" class="ltx_figure"><img src="cap_derivadas/dados/fig_min_max_locais/fig.png" id="Ch2.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="210" height="156" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.7</span>: </span><span class="ltx_text" style="font-size:90%;">O ponto <math id="Ch2.F7.m5" class="ltx_Math" alttext="(x_{m},y_{m})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>m</mi></msub><mo>,</mo><msub><mi>y</mi><mi>m</mi></msub><mo stretchy="false">)</mo></mrow></math> é um mínimo local de <math id="Ch2.F7.m6" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> e o ponto <math id="Ch2.F7.m7" class="ltx_Math" alttext="(x_{M},y_{M})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>M</mi></msub><mo>,</mo><msub><mi>y</mi><mi>M</mi></msub><mo stretchy="false">)</mo></mrow></math> é um máximo local de <math id="Ch2.F7.m8" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Um ponto de <span class="ltx_text ltx_font_bold">máximo global</span> de uma função <math id="p2.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> é um ponto <math id="p2.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> tal que <math id="p2.m3" class="ltx_Math" alttext="f(x_{0},y_{0})\geq f(x,y)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≥</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> para todos os pontos do domínio de <math id="p2.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Analogamente, um ponto de <span class="ltx_text ltx_font_bold">mínimo global</span> da função é um ponto <math id="p2.m5" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> tal que <math id="p2.m6" class="ltx_Math" alttext="f(x_{0},y_{0})\leq f(x,y)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>≤</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> para todos os pontos do domínio de <math id="p2.m7" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Pontos de máximo e mínimo global são chamados de <span class="ltx_text ltx_font_bold">extremos globais<span id="Ch2.footnote2" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">2</span></span><span class="ltx_text ltx_font_medium">Extremos globais também são chamados de extremos absolutos.</span></span></span></span></span> de <math id="p2.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</p>
+</div>
+<div id="teo:valor_extremo" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 2.5.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Teorema do valor extremo)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmteo1.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="Thmteo1.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> é contínua em uma região fechada e limitada <math id="Thmteo1.p1.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>, então <math id="Thmteo1.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> possui um máximo global e um mínimo global em <math id="Thmteo1.p1.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>.</p>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">A demonstração foge aos objetivos destas notas de aula. Consulte, por exemplo, <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="Curso de análise" class="ltx_ref">2</a>]</cite>.
+∎</p>
+</div>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Notemos que é esperado que as retas tangentes à uma superfície suave <math id="p4.m1" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> em um ponto extremo local sejam horizontais em qualquer direção. Consultemos a Figura <a href="#fig:extremo_local" title="Figura 2.8 ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.8</span></a>. Tendo em vista que a derivada direcional de <math id="p4.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> na direção e sentido de um vetor unitário <math id="p4.m3" class="ltx_Math" alttext="\bm{u}" display="inline"><mi>𝒖</mi></math> é dada por</p>
+<table id="A2.S0.EGx160" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E266"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E266.m1" class="ltx_Math" alttext="\displaystyle D_{\bm{u}}f(x,y)=\nabla f(x,y)\cdot\bm{u}," display="inline"><mrow><mrow><mrow><msub><mi>D</mi><mi>𝒖</mi></msub><mo>⁢</mo><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo rspace="0.167em">∇</mo><mi>f</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><mi>𝒖</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.266)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">temos que para que as retas tangentes à superfície sejam horizontais, basta que o vetor gradiente de <math id="p4.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> seja nulo no ponto extremo local.</p>
+</div>
+<figure id="fig:extremo_local" class="ltx_figure"><img src="cap_derivadas/dados/fig_extremo_local/fig.png" id="Ch2.F8.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="223" height="177" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.8</span>: </span><span class="ltx_text" style="font-size:90%;">As retas tangentes à superfície <math id="Ch2.F8.m2" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> em um ponto extremo local são horizontais em qualquer direção.</span></figcaption>
+</figure>
+<div id="teo_fermat" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 2.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmteo2.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="Thmteo2.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> possui um extremo local em <math id="Thmteo2.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> e se as derivadas parciais de <math id="Thmteo2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> existem neste ponto, então</p>
+<table id="A2.S0.EGx161" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E267"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E267.m1" class="ltx_Math" alttext="\displaystyle f_{x}(x_{0},y_{0})=0," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.267)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E268"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E268.m1" class="ltx_Math" alttext="\displaystyle f_{y}(x_{0},y_{0})=0." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.268)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="p5" class="ltx_para">
+<p class="ltx_p">A demonstração foge aos objetivos destas notas de aula. Consulte, por exemplo, <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="Curso de análise" class="ltx_ref">2</a>]</cite>.
+∎</p>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Recíproca não é verdadeira)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Considere a função <math id="Thmex1.p1.m1" class="ltx_Math" alttext="f(x,y)=x^{2}-y^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math>. Temos que</p>
+<table id="A2.S0.EGx162" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E269"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E269.m1" class="ltx_Math" alttext="\displaystyle f_{x}(x,y)=2x," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.269)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E270"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E270.m1" class="ltx_Math" alttext="\displaystyle f_{y}(x,y)=-2y." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.270)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">O ponto <math id="Thmex1.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> satisfaz <math id="Thmex1.p1.m3" class="ltx_Math" alttext="f_{x}(0,0)=0" display="inline"><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex1.p1.m4" class="ltx_Math" alttext="f_{y}(0,0)=0" display="inline"><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, mas não é um ponto extremo local de <math id="Thmex1.p1.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Trata-se de um ponto de sela, como podemos verificar na Figura <a href="#fig:ponto_sela" title="Figura 2.9 ‣ Exemplo 2.5.1.(Recíproca não é verdadeira) ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.9</span></a>.</p>
+</div>
+<figure id="fig:ponto_sela" class="ltx_figure"><img src="cap_derivadas/dados/fig_ponto_de_sela/fig.png" id="Ch2.F9.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="207" height="166" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.9</span>: </span><span class="ltx_text" style="font-size:90%;">O ponto <math id="Ch2.F9.m3" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> é um ponto de sela da superfície <math id="Ch2.F9.m4" class="ltx_Math" alttext="z=f(x,y)=x^{2}-y^{2}" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math>.</span></figcaption>
+</figure>
+</div>
+<div id="p6" class="ltx_para">
+<p class="ltx_p">Temos, portanto, que a condição <math id="p6.m1" class="ltx_Math" alttext="f_{x}(x_{0},y_{0})=0" display="inline"><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="p6.m2" class="ltx_Math" alttext="f_{y}(x_{0},y_{0})=0" display="inline"><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> é necessária, mas não suficiente, para que <math id="p6.m3" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> seja um ponto extremo local de <math id="p6.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Ainda, se uma ou ambas as derivadas parciais de <math id="p6.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> não existem em <math id="p6.m6" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>, então <math id="p6.m7" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> também pode ser um ponto extremo local de <math id="p6.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</p>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">A função <math id="Thmex2.p1.m1" class="ltx_Math" alttext="f(x,y)=\sqrt{x^{2}+y^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> possui um mínimo local em <math id="Thmex2.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, mas as derivadas parciais de <math id="Thmex2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> não existem neste ponto. Consultemos a Figura <a href="#fig:minimo_local_sem_derivadas" title="Figura 2.10 ‣ Exemplo 2.5.2. ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.10</span></a>.</p>
+</div>
+<figure id="fig:minimo_local_sem_derivadas" class="ltx_figure"><img src="cap_derivadas/dados/fig_min_local_sem_derivada/fig.png" id="Ch2.F10.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="220" height="177" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.10</span>: </span><span class="ltx_text" style="font-size:90%;">A função <math id="Ch2.F10.m5" class="ltx_Math" alttext="f(x,y)=\sqrt{x^{2}+y^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msqrt><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></msqrt></mrow></math> representa um cone com vértice em <math id="Ch2.F10.m6" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, que possui um mínimo local em <math id="Ch2.F10.m7" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, mas as derivadas parciais de <math id="Ch2.F10.m8" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> não existem neste ponto.</span></figcaption>
+</figure>
+</div>
+<div id="p7" class="ltx_para">
+<p class="ltx_p">Com base nas observações acima, <span class="ltx_text" style="background-color:#FFFF00;">definimos um <span class="ltx_text ltx_font_bold">ponto crítico</span> de uma função <math id="p7.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">y</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> como um ponto <math id="p7.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> tal que <math id="p7.m3" class="ltx_Math" alttext="f_{x}(x_{0},y_{0})=0" display="inline"><mrow><mrow><msub><mi mathbackground="#FFFF00">f</mi><mi mathbackground="#FFFF00">x</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">=</mo><mn mathbackground="#FFFF00">0</mn></mrow></math> e <math id="p7.m4" class="ltx_Math" alttext="f_{y}(x_{0},y_{0})=0" display="inline"><mrow><mrow><msub><mi mathbackground="#FFFF00">f</mi><mi mathbackground="#FFFF00">y</mi></msub><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow><mo mathbackground="#FFFF00">=</mo><mn mathbackground="#FFFF00">0</mn></mrow></math> ou tal que uma ou ambas as derivadas parciais de <math id="p7.m5" class="ltx_Math" alttext="f" display="inline"><mi mathbackground="#FFFF00">f</mi></math> não existem em <math id="p7.m6" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mn mathbackground="#FFFF00">0</mn></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math></span>.</p>
+</div>
+<div id="Thmteo3" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 2.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmteo3.p1" class="ltx_para">
+<p class="ltx_p">Se uma função <math id="Thmteo3.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> tiver um extremo global em um ponto interior de seu domínio, então este ponto é um ponto crítico de <math id="Thmteo3.p1.m2" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</p>
+</div>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.5.1 </span>Teste da segunda derivada</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">O seguinte teorema fornece um teste para classificar os pontos críticos de uma função <math id="SS1.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
+</div>
+<div id="teo_teste_segunda_derivada" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 2.5.4.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Teste da segunda derivada)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmteo4.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmteo4.p1.m1" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> uma função com derivadas parciais de segunda ordem contínuas em uma vizinhança de um ponto crítico <math id="Thmteo4.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>. Definimos</p>
+<table id="A2.S0.EGx163" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E271"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E271.m1" class="ltx_Math" alttext="\displaystyle D=f_{xx}(x_{0},y_{0})f_{yy}(x_{0},y_{0})-f_{xy}^{2}(x_{0},y_{0})." display="inline"><mrow><mrow><mi>D</mi><mo>=</mo><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>f</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mn>2</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.271)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Então, temos:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I1.i1.p1.m1" class="ltx_Math" alttext="D&gt;0" display="inline"><mrow><mi>D</mi><mo>&gt;</mo><mn>0</mn></mrow></math> e <math id="I1.i1.p1.m2" class="ltx_Math" alttext="f_{xx}(x_{0},y_{0})&gt;0" display="inline"><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math>, então <math id="I1.i1.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> possui um mínimo local em <math id="I1.i1.p1.m4" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I1.i2.p1.m1" class="ltx_Math" alttext="D&gt;0" display="inline"><mrow><mi>D</mi><mo>&gt;</mo><mn>0</mn></mrow></math> e <math id="I1.i2.p1.m2" class="ltx_Math" alttext="f_{xx}(x_{0},y_{0})&lt;0" display="inline"><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>0</mn></mrow></math>, então <math id="I1.i2.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> possui um máximo local em <math id="I1.i2.p1.m4" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I1.i3.p1.m1" class="ltx_Math" alttext="D&lt;0" display="inline"><mrow><mi>D</mi><mo>&lt;</mo><mn>0</mn></mrow></math>, então <math id="I1.i3.p1.m2" class="ltx_Math" alttext="(x_{0},y_{0})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mn>0</mn></msub><mo>,</mo><msub><mi>y</mi><mn>0</mn></msub><mo stretchy="false">)</mo></mrow></math> é um ponto de sela de <math id="I1.i3.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p">Se <math id="I1.i4.p1.m1" class="ltx_Math" alttext="D=0" display="inline"><mrow><mi>D</mi><mo>=</mo><mn>0</mn></mrow></math>, o teste é inconclusivo.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">A demonstração foge aos objetivos destas notas de aula. Consulte, por exemplo, <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="Curso de análise" class="ltx_ref">2</a>]</cite>.
+∎</p>
+</div>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Vamos localizar e classificar todos os pontos críticos da função</p>
+<table id="A2.S0.EGx164" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E272"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E272.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{2}+xy-3x+y^{2}+3." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.272)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Consultemos o gráfico da superfície <math id="Thmex3.p1.m1" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> é apresentado na Figura <a href="#fig:exemplo_max_min" title="Figura 2.11 ‣ Exemplo 2.5.3. ‣ 2.5.1 Teste da segunda derivada ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.11</span></a>.</p>
+</div>
+<figure id="fig:exemplo_max_min" class="ltx_figure"><img src="cap_derivadas/dados/fig_ex_ponto_de_min/fig.png" id="Ch2.F11.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="233" height="187" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.11</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico da superfície <math id="Ch2.F11.m4" class="ltx_Math" alttext="z=f(x,y)=x^{2}+xy-3x+y^{2}+3" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn></mrow></mrow></math>. O ponto crítico <math id="Ch2.F11.m5" class="ltx_Math" alttext="(2,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math> é um mínimo local de <math id="Ch2.F11.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</span></figcaption>
+</figure>
+<div id="Thmex3.p2" class="ltx_para">
+<p class="ltx_p">Calculamos as derivadas parciais de primeira ordem de <math id="Thmex3.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math></p>
+<table id="A2.S0.EGx165" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E273"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E273.m1" class="ltx_Math" alttext="\displaystyle f_{x}(x,y)=2x+y-3," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>y</mi></mrow><mo>−</mo><mn>3</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.273)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E274"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E274.m1" class="ltx_Math" alttext="\displaystyle f_{y}(x,y)=x+2y." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.274)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como ambas são contínuas, os pontos críticos são obtidos igualando as derivadas parciais a zero, obtendo o sistema</p>
+<table id="A2.S0.EGx166" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E275"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E275.m1" class="ltx_Math" alttext="\displaystyle 2x+y-3=0," display="inline"><mrow><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>y</mi></mrow><mo>−</mo><mn>3</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.275)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E276"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E276.m1" class="ltx_Math" alttext="\displaystyle x+2y=0." display="inline"><mrow><mrow><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.276)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Resolvendo o sistema, obtemos <math id="Thmex3.p2.m2" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math> e <math id="Thmex3.p2.m3" class="ltx_Math" alttext="y=-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> (verifique). Portanto, <math id="Thmex3.p2.m4" class="ltx_Math" alttext="(2,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math> é o único ponto crítico de <math id="Thmex3.p2.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Para classificá-lo, calculamos as derivadas parciais de segunda ordem de <math id="Thmex3.p2.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math></p>
+<table id="A2.S0.EGx167" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E277"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E277.m1" class="ltx_Math" alttext="\displaystyle f_{xx}(x,y)=2," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.277)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E278"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E278.m1" class="ltx_Math" alttext="\displaystyle f_{yy}(x,y)=2," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.278)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E279"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E279.m1" class="ltx_Math" alttext="\displaystyle f_{xy}(x,y)=1." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.279)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Avaliando no ponto crítico <math id="Thmex3.p2.m7" class="ltx_Math" alttext="(2,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>, temos</p>
+<table id="A2.S0.EGx168" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E280"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E280.m1" class="ltx_Math" alttext="\displaystyle D=f_{xx}(2,-1)f_{yy}(2,-1)-f_{xy}^{2}(2,-1)" display="inline"><mrow><mi>D</mi><mo>=</mo><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>f</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mn>2</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.280)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E281"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E281.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=2\cdot 2-1^{2}=3&gt;0." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>2</mn><mo>−</mo><msup><mn>1</mn><mn>2</mn></msup><mo>=</mo><mn>3</mn><mo>&gt;</mo><mn>0</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.281)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="Thmex3.p2.m8" class="ltx_Math" alttext="D&gt;0" display="inline"><mrow><mi>D</mi><mo>&gt;</mo><mn>0</mn></mrow></math> e <math id="Thmex3.p2.m9" class="ltx_Math" alttext="f_{xx}(2,-1)=2&gt;0" display="inline"><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn><mo>&gt;</mo><mn>0</mn></mrow></math>, concluímos que <math id="Thmex3.p2.m10" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> possui um mínimo local em <math id="Thmex3.p2.m11" class="ltx_Math" alttext="(2,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="Thmex4" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">Vamos localizar e classificar todos os pontos críticos da função</p>
+<table id="A2.S0.EGx169" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E282"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E282.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{3}+y^{3}-3x-3y." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.282)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Consultemos o gráfico das linhas de nível dessa função na Figura <a href="#fig:ex_extremos_curva_de_nivel" title="Figura 2.12 ‣ Exemplo 2.5.4. ‣ 2.5.1 Teste da segunda derivada ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.12</span></a>.</p>
+</div>
+<figure id="fig:ex_extremos_curva_de_nivel" class="ltx_figure"><img src="cap_derivadas/dados/fig_ex_extremos_curva_de_nivel/fig.png" id="Ch2.F12.g1" class="ltx_graphics ltx_centering ltx_img_square" width="233" height="228" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.12</span>: </span><span class="ltx_text" style="font-size:90%;">Curvas de nível da função <math id="Ch2.F12.m2" class="ltx_Math" alttext="f(x,y)=x^{3}+y^{3}-3x-3y" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math> e seus pontos críticos.</span></figcaption>
+</figure>
+<div id="Thmex4.p2" class="ltx_para">
+<p class="ltx_p">Começamos calculando as derivadas parciais de primeira ordem de <math id="Thmex4.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math></p>
+<table id="A2.S0.EGx170" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E283"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E283.m1" class="ltx_Math" alttext="\displaystyle f_{x}(x,y)=3x^{2}-3," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>3</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.283)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E284"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E284.m1" class="ltx_Math" alttext="\displaystyle f_{y}(x,y)=3y^{2}-3." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>3</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.284)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como ambas são contínuas, os pontos críticos são obtidos igualando as derivadas parciais a zero, obtendo o sistema</p>
+<table id="A2.S0.EGx171" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E285"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E285.m1" class="ltx_Math" alttext="\displaystyle 3x^{2}-3=0," display="inline"><mrow><mrow><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>3</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.285)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E286"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E286.m1" class="ltx_Math" alttext="\displaystyle 3y^{2}-3=0." display="inline"><mrow><mrow><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>−</mo><mn>3</mn></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.286)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Resolvendo o sistema, obtemos <math id="Thmex4.p2.m2" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math> e <math id="Thmex4.p2.m3" class="ltx_Math" alttext="x=-1" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmex4.p2.m4" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math> e <math id="Thmex4.p2.m5" class="ltx_Math" alttext="y=-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> (verifique). Portanto, os pontos críticos de <math id="Thmex4.p2.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> são <math id="Thmex4.p2.m7" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmex4.p2.m8" class="ltx_Math" alttext="(1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>, <math id="Thmex4.p2.m9" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></math> e <math id="Thmex4.p2.m10" class="ltx_Math" alttext="(-1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>. Para classificá-los, calculamos as derivadas parciais de segunda ordem de <math id="Thmex4.p2.m11" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math></p>
+<table id="A2.S0.EGx172" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E287"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E287.m1" class="ltx_Math" alttext="\displaystyle f_{xx}(x,y)=6x," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.287)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E288"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E288.m1" class="ltx_Math" alttext="\displaystyle f_{yy}(x,y)=6y," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>6</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.288)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E289"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E289.m1" class="ltx_Math" alttext="\displaystyle f_{xy}(x,y)=0." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.289)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Avaliando os pontos críticos, podemos organizar a Tabela <a href="#tab:ex_extermos_curva_de_nivel" title="Tabela 2.2 ‣ Exemplo 2.5.4. ‣ 2.5.1 Teste da segunda derivada ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.2</span></a> contendo a classificação dos pontos críticos de <math id="Thmex4.p2.m12" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</p>
+</div>
+<figure id="tab:ex_extermos_curva_de_nivel" class="ltx_table">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">Tabela 2.2</span>: </span><span class="ltx_text" style="font-size:90%;">Classificação dos pontos críticos da função <math id="Ch2.T2.m2" class="ltx_Math" alttext="f(x,y)=x^{3}+y^{3}-3x-3y" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math>.</span></figcaption>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt">Ponto crítico</th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T2.m3" class="ltx_Math" alttext="f_{xx}" display="inline"><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T2.m4" class="ltx_Math" alttext="f_{yy}" display="inline"><msub><mi>f</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T2.m5" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt">Classificação</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="Ch2.T2.m6" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">6</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">6</td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t">36</td>
+<td class="ltx_td ltx_align_center ltx_border_t">Mínimo local</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T2.m7" class="ltx_Math" alttext="(1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r">6</td>
+<td class="ltx_td ltx_align_center ltx_border_r">-6</td>
+<td class="ltx_td ltx_align_center ltx_border_r">-36</td>
+<td class="ltx_td ltx_align_center">Ponto de sela</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T2.m8" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r">-6</td>
+<td class="ltx_td ltx_align_center ltx_border_r">6</td>
+<td class="ltx_td ltx_align_center ltx_border_r">-36</td>
+<td class="ltx_td ltx_align_center">Ponto de sela</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r"><math id="Ch2.T2.m9" class="ltx_Math" alttext="(-1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">-6</td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">-6</td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r">36</td>
+<td class="ltx_td ltx_align_center ltx_border_bb">Máximo local</td>
+</tr>
+</tbody>
+</table>
+</figure>
+</div>
+<div id="Thmex5" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.5.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Região fechada e limitada)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex5.p1" class="ltx_para">
+<p class="ltx_p">Vamos determinar valor máximo da função</p>
+<table id="A2.S0.EGx173" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E290"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E290.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{3}-3xy^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.290)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">restrita à região fechada e limitada <math id="Thmex5.p1.m1" class="ltx_Math" alttext="R=[-1,1]\times[-1,1]" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo rspace="0.055em" stretchy="false">]</mo></mrow><mo rspace="0.222em">×</mo><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math>. Consultemos o gráfico da superfície <math id="Thmex5.p1.m2" class="ltx_Math" alttext="z=f(x,y)" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> é apresentado na Figura <a href="#fig:ex_min_max_restrita" title="Figura 2.13 ‣ Exemplo 2.5.5.(Região fechada e limitada) ‣ 2.5.1 Teste da segunda derivada ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.13</span></a>.</p>
+</div>
+<figure id="fig:ex_min_max_restrita" class="ltx_figure"><img src="cap_derivadas/dados/fig_ex_min_max_restrita/fig.png" id="Ch2.F13.g1" class="ltx_graphics ltx_centering ltx_img_square" width="233" height="188" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.13</span>: </span><span class="ltx_text" style="font-size:90%;">Gráfico da superfície <math id="Ch2.F13.m4" class="ltx_Math" alttext="z=f(x,y)=x^{3}-3xy^{2}" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math>. O ponto crítico <math id="Ch2.F13.m5" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> é um ponto de sela de <math id="Ch2.F13.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>.</span></figcaption>
+</figure>
+<div id="Thmex5.p2" class="ltx_para">
+<p class="ltx_p">Primeiramente, vamos determinar os pontos críticos de <math id="Thmex5.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> nos pontos interiores da região <math id="Thmex5.p2.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>. Calculamos as derivadas parciais de primeira ordem de <math id="Thmex5.p2.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math></p>
+<table id="A2.S0.EGx174" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E291"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E291.m1" class="ltx_Math" alttext="\displaystyle f_{x}(x,y)=3x^{2}-3y^{2}," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.291)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E292"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E292.m1" class="ltx_Math" alttext="\displaystyle f_{y}(x,y)=-6xy." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.292)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como ambas são contínuas, os pontos críticos são obtidos igualando as derivadas parciais a zero, obtendo o sistema</p>
+<table id="A2.S0.EGx175" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E293"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E293.m1" class="ltx_Math" alttext="\displaystyle 3x^{2}-3y^{2}=0," display="inline"><mrow><mrow><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.293)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E294"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E294.m1" class="ltx_Math" alttext="\displaystyle-6xy=0." display="inline"><mrow><mrow><mrow><mo>−</mo><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.294)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Resolvendo o sistema, obtemos <math id="Thmex5.p2.m4" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex5.p2.m5" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> (verifique). Portanto, <math id="Thmex5.p2.m6" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> é o único ponto crítico de <math id="Thmex5.p2.m7" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> nos pontos interiores da região <math id="Thmex5.p2.m8" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>. Para classificá-lo, calculamos as derivadas parciais de segunda ordem de <math id="Thmex5.p2.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math></p>
+<table id="A2.S0.EGx176" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E295"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E295.m1" class="ltx_Math" alttext="\displaystyle f_{xx}(x,y)=6x," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.295)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E296"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E296.m1" class="ltx_Math" alttext="\displaystyle f_{yy}(x,y)=-6x," display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>6</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.296)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E297"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E297.m1" class="ltx_Math" alttext="\displaystyle f_{xy}(x,y)=-6y." display="inline"><mrow><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mn>6</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.297)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Avaliando no ponto crítico <math id="Thmex5.p2.m10" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, temos</p>
+<table id="A2.S0.EGx177" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E298"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E298.m1" class="ltx_Math" alttext="\displaystyle D=f_{xx}(0,0)f_{yy}(0,0)-f_{xy}^{2}(0,0)" display="inline"><mrow><mi>D</mi><mo>=</mo><mrow><mrow><msub><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>f</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>f</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mn>2</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.298)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E299"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E299.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=6\cdot 0\cdot(-6\cdot 0)-(-6\cdot 0)^{2}=0." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>6</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em">−</mo><mn>6</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>−</mo><msup><mrow><mo stretchy="false">(</mo><mo lspace="0em">−</mo><mn>6</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>=</mo><mn>0</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.299)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="Thmex5.p2.m11" class="ltx_Math" alttext="D=0" display="inline"><mrow><mi>D</mi><mo>=</mo><mn>0</mn></mrow></math>, o teste da segunda derivada é inconclusivo. Por outro lado, podemos observar na Figura <a href="#fig:ex_min_max_restrita" title="Figura 2.13 ‣ Exemplo 2.5.5.(Região fechada e limitada) ‣ 2.5.1 Teste da segunda derivada ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.13</span></a> que <math id="Thmex5.p2.m12" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> é um ponto de sela de <math id="Thmex5.p2.m13" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math>. Isto pode ser confirmado estudando o sinal de <math id="Thmex5.p2.m14" class="ltx_Math" alttext="f_{x}" display="inline"><msub><mi>f</mi><mi>x</mi></msub></math> e de <math id="Thmex5.p2.m15" class="ltx_Math" alttext="f_{y}" display="inline"><msub><mi>f</mi><mi>y</mi></msub></math> em uma vizinhança de <math id="Thmex5.p2.m16" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> (verifique).</p>
+</div>
+<div id="Thmex5.p3" class="ltx_para">
+<p class="ltx_p">Até aqui, podemos concluir que a função <math id="Thmex5.p3.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> não possui extremos locais em pontos interiores da região <math id="Thmex5.p3.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>. Como a região <math id="Thmex5.p3.m3" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é fechada e limitada, o teorema do valor extremo (Teorema <a href="#teo:valor_extremo" title="Teorema 2.5.1.(Teorema do valor extremo) ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5.1</span></a>) garante que <math id="Thmex5.p3.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> possui extremos globais em <math id="Thmex5.p3.m5" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>. Portanto, devemos estudar o comportamento de <math id="Thmex5.p3.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> na fronteira da região <math id="Thmex5.p3.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>. A fronteira de <math id="Thmex5.p3.m8" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é composta por quatro segmentos de reta e vamos estudar o comportamento de <math id="Thmex5.p3.m9" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> em cada um deles:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="y=-1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, com <math id="I2.i1.p1.m2" class="ltx_Math" alttext="-1\leq x\leq 1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math></p>
+</div>
+<div id="I2.i1.p2" class="ltx_para">
+<p class="ltx_p">A função <math id="I2.i1.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> restrita a este segmento de reta é</p>
+<table id="A2.S0.EGx178" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E300"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E300.m1" class="ltx_Math" alttext="\displaystyle g(x)=f(x,-1)=x^{3}-3x(-1)^{2}=x^{3}-3x." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.300)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Os pontos extremos globais de <math id="I2.i1.p2.m2" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> neste segmento de reta são:</p>
+<table id="A2.S0.EGx179" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E301"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E301.m1" class="ltx_Math" alttext="\displaystyle x=-1:g(-1)=f(-1,-1)=2," display="inline"><mrow><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.301)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E302"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E302.m1" class="ltx_Math" alttext="\displaystyle x=1:g(1)=f(1,-1)=-2," display="inline"><mrow><mrow><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>2</mn></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.302)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verifique!</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i2.p1.m1" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>, com <math id="I2.i2.p1.m2" class="ltx_Math" alttext="-1\leq y\leq 1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>y</mi><mo>≤</mo><mn>1</mn></mrow></math></p>
+</div>
+<div id="I2.i2.p2" class="ltx_para">
+<p class="ltx_p">A função <math id="I2.i2.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> restrita a este segmento de reta é</p>
+<table id="A2.S0.EGx180" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E304"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E304.m1" class="ltx_Math" alttext="\displaystyle g(y)=f(1,y)=1^{3}-3(1)y^{2}=1-3y^{2}." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mn>1</mn><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.304)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Os pontos extremos globais de <math id="I2.i2.p2.m2" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> neste segmento de reta são:</p>
+<table id="A2.S0.EGx181" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E305"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E305.m1" class="ltx_Math" alttext="\displaystyle y=-1ey=1:g(-1)=g(1)=-2," display="inline"><mrow><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mo>−</mo><mrow><mn>1</mn><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>2</mn></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.305)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E306"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E306.m1" class="ltx_Math" alttext="\displaystyle y=0:g(0)=1," display="inline"><mrow><mrow><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.306)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verifique!</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i3.p1.m1" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math>, com <math id="I2.i3.p1.m2" class="ltx_Math" alttext="-1\leq x\leq 1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math>;</p>
+</div>
+<div id="I2.i3.p2" class="ltx_para">
+<p class="ltx_p">A função <math id="I2.i3.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> restrita a este segmento de reta é</p>
+<table id="A2.S0.EGx182" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E308"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E308.m1" class="ltx_Math" alttext="\displaystyle g(x)=f(x,1)=x^{3}-3x(1)^{2}=x^{3}-3x." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mn>,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.308)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Os pontos extremos globais de <math id="I2.i3.p2.m2" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> neste segmento de reta são:</p>
+<table id="A2.S0.EGx183" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E309"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E309.m1" class="ltx_Math" alttext="\displaystyle x=-1:g(-1)=f(-1,1)=2," display="inline"><mrow><mrow><mrow><mi>x</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.309)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E310"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E310.m1" class="ltx_Math" alttext="\displaystyle x=1:g(1)=f(1,1)=-2," display="inline"><mrow><mrow><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>2</mn></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.310)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verifique!</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i4.p1.m1" class="ltx_Math" alttext="x=-1" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, com <math id="I2.i4.p1.m2" class="ltx_Math" alttext="-1\leq y\leq 1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>≤</mo><mi>y</mi><mo>≤</mo><mn>1</mn></mrow></math>.</p>
+</div>
+<div id="I2.i4.p2" class="ltx_para">
+<p class="ltx_p">A função <math id="I2.i4.p2.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> restrita a este segmento de reta é</p>
+<table id="A2.S0.EGx184" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E312"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E312.m1" class="ltx_Math" alttext="\displaystyle g(y)=f(-1,y)=(-1)^{3}-3(-1)y^{2}=-1+3y^{2}." display="inline"><mrow><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.312)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Os pontos extremos globais de <math id="I2.i4.p2.m2" class="ltx_Math" alttext="g" display="inline"><mi>g</mi></math> neste segmento de reta são:</p>
+<table id="A2.S0.EGx185" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E313"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E313.m1" class="ltx_Math" alttext="\displaystyle y=-1ey=1:g(-1)=g(1)=2," display="inline"><mrow><mrow><mrow><mi>y</mi><mo>=</mo><mrow><mo>−</mo><mrow><mn>1</mn><mo>⁢</mo><mi>e</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>2</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.313)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E314"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E314.m1" class="ltx_Math" alttext="\displaystyle y=0:g(0)=-1," display="inline"><mrow><mrow><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.314)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verifique!</p>
+</div>
+</li>
+</ol>
+</div>
+<div id="Thmex5.p4" class="ltx_para">
+<p class="ltx_p">Na Tabela <a href="#tab:ex_min_max_restrita" title="Tabela 2.3 ‣ Exemplo 2.5.5.(Região fechada e limitada) ‣ 2.5.1 Teste da segunda derivada ‣ 2.5 Máximos e mínimos ‣ Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a>, organimos os resultados obtidos acima. A partir desta tabela, podemos concluir que o valor máximo global de <math id="Thmex5.p4.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> na região <math id="Thmex5.p4.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é <math id="Thmex5.p4.m3" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math>, que ocorre nos pontos de fronteira <math id="Thmex5.p4.m4" class="ltx_Math" alttext="(-1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>, <math id="Thmex5.p4.m5" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></math>, e que o valor mínimo global de <math id="Thmex5.p4.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> na região <math id="Thmex5.p4.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é <math id="Thmex5.p4.m8" class="ltx_Math" alttext="-2" display="inline"><mrow><mo>−</mo><mn>2</mn></mrow></math>, que ocorre nos pontos <math id="Thmex5.p4.m9" class="ltx_Math" alttext="(1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math> e <math id="Thmex5.p4.m10" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<figure id="tab:ex_min_max_restrita" class="ltx_table">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_table"><span class="ltx_text" style="font-size:90%;">Tabela 2.3</span>: </span><span class="ltx_text" style="font-size:90%;">Valores de <math id="Ch2.T3.m3" class="ltx_Math" alttext="f(x,y)=x^{3}-3xy^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math> nos pontos extremos da fronteira da região <math id="Ch2.T3.m4" class="ltx_Math" alttext="R=[-1,1]\times[-1,1]" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo rspace="0.055em" stretchy="false">]</mo></mrow><mo rspace="0.222em">×</mo><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math>.</span></figcaption>
+<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<thead class="ltx_thead">
+<tr class="ltx_tr">
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_tt"><math id="Ch2.T3.m5" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></math></th>
+<th class="ltx_td ltx_align_center ltx_th ltx_th_column ltx_border_r ltx_border_tt"><math id="Ch2.T3.m6" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math></th>
+<th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_border_tt">Classificação</th>
+</tr>
+</thead>
+<tbody class="ltx_tbody">
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_t"><math id="Ch2.T3.m7" class="ltx_Math" alttext="(-1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r ltx_border_t"><math id="Ch2.T3.m8" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_border_t">Valor máximo global</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m9" class="ltx_Math" alttext="(1,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m10" class="ltx_Math" alttext="-2" display="inline"><mrow><mo>−</mo><mn>2</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left">Valor mínimo global</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m11" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m12" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math></td>
+<td class="ltx_td ltx_align_left">-x-</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m13" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m14" class="ltx_Math" alttext="-2" display="inline"><mrow><mo>−</mo><mn>2</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left">Valor mínimo global</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m15" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m16" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></td>
+<td class="ltx_td ltx_align_left">Valor máximo global</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m17" class="ltx_Math" alttext="(-1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,0</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m18" class="ltx_Math" alttext="-1" display="inline"><mrow><mo>−</mo><mn>1</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left">-x-</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m19" class="ltx_Math" alttext="(0,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m20" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></td>
+<td class="ltx_td ltx_align_left">-x-</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center"><math id="Ch2.T3.m21" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_r"><math id="Ch2.T3.m22" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></td>
+<td class="ltx_td ltx_align_left">-x-</td>
+</tr>
+<tr class="ltx_tr">
+<td class="ltx_td ltx_align_center ltx_border_bb"><math id="Ch2.T3.m23" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_center ltx_border_bb ltx_border_r"><math id="Ch2.T3.m24" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math></td>
+<td class="ltx_td ltx_align_left ltx_border_bb">-x-</td>
+</tr>
+</tbody>
+</table>
+</figure>
+</div>
+<div id="Thmex6" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 2.5.6.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Aplicação)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex6.p1" class="ltx_para">
+<p class="ltx_p">Uma fabricante de caixas retangulares sem tampa deseja construir uma caixa com volume de <math id="Thmex6.p1.m1" class="ltx_Math" alttext="12" display="inline"><mn>12</mn></math> centímetros cúbicos. O custo do material para a base da caixa é de <math id="Thmex6.p1.m2" class="ltx_Math" alttext="R\$\leavevmode\nobreak\ 0.50" display="inline"><mrow><mi>R</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0.167em">$</mo><mn> 0.50</mn></mrow></mrow></math> por centímetro quadrado. O custo do material para os dois lados de dimensões <math id="Thmex6.p1.m3" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> por <math id="Thmex6.p1.m4" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> é de <math id="Thmex6.p1.m5" class="ltx_Math" alttext="R\$\leavevmode\nobreak\ 0.375" display="inline"><mrow><mi>R</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0.167em">$</mo><mn> 0.375</mn></mrow></mrow></math> por centímetro quadrado e o custo do material para os dois lados de dimensões <math id="Thmex6.p1.m6" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> por <math id="Thmex6.p1.m7" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> é de <math id="Thmex6.p1.m8" class="ltx_Math" alttext="R\$\leavevmode\nobreak\ 0.25" display="inline"><mrow><mi>R</mi><mo lspace="0.167em">⁢</mo><mrow><mo rspace="0.167em">$</mo><mn> 0.25</mn></mrow></mrow></math> por centímetro quadrado. Determine as dimensões da caixa que minimizam o custo do material.</p>
+</div>
+<div id="Thmex6.p2" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmex6.p2.m1" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math> a largura da caixa, <math id="Thmex6.p2.m2" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> o comprimento da caixa e <math id="Thmex6.p2.m3" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> a altura da caixa. O volume da caixa é dado por</p>
+<table id="A2.S0.EGx186" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E316"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E316.m1" class="ltx_Math" alttext="\displaystyle V=xyz=12." display="inline"><mrow><mrow><mi>V</mi><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow><mo>=</mo><mn>12</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.316)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">O custo do material para a base da caixa é dado por</p>
+<table id="A2.S0.EGx187" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E317"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E317.m1" class="ltx_Math" alttext="\displaystyle C_{b}=0.50xy," display="inline"><mrow><mrow><msub><mi>C</mi><mi>b</mi></msub><mo>=</mo><mrow><mn>0.50</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.317)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e o custo do material para os lados da caixa é dado por</p>
+<table id="A2.S0.EGx188" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E318"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E318.m1" class="ltx_Math" alttext="\displaystyle C_{l}=0.375(2xz)+0.25(2yz)=0.75xz+0.5yz." display="inline"><mrow><mrow><msub><mi>C</mi><mi>l</mi></msub><mo>=</mo><mrow><mrow><mn>0.375</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>0.25</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mn>0.75</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>z</mi></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.318)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, o custo total do material é dado por</p>
+<table id="A2.S0.EGx189" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E319"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E319.m1" class="ltx_Math" alttext="\displaystyle C(x,y,z)=C_{b}+C_{l}=0.50xy+0.75xz+0.5yz." display="inline"><mrow><mrow><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>C</mi><mi>b</mi></msub><mo>+</mo><msub><mi>C</mi><mi>l</mi></msub></mrow><mo>=</mo><mrow><mrow><mn>0.50</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mn>0.75</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>z</mi></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.319)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Substituindo <math id="Thmex6.p2.m4" class="ltx_Math" alttext="z=\frac{12}{xy}" display="inline"><mrow><mi>z</mi><mo>=</mo><mfrac><mn>12</mn><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mfrac></mrow></math> na equação acima, temos</p>
+<table id="A2.S0.EGx190" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E320"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E320.m1" class="ltx_Math" alttext="\displaystyle C(x,y)=0.50xy+0.75\left(\frac{12}{xy}\right)x+0.5\left(\frac{12}%
+{xy}\right)y" display="inline"><mrow><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>0.50</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mn>0.75</mn><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>12</mn><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mfrac></mstyle><mo>)</mo></mrow><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>0.5</mn><mo>⁢</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>12</mn><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mfrac></mstyle><mo>)</mo></mrow><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.320)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E321"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E321.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=0.50xy+\frac{9}{y}+\frac{6}{x}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>0.50</mn><mi>x</mi><mi>y</mi><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>9</mn><mi>y</mi></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>6</mn><mi>x</mi></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.321)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Para minimizar o custo total do material, devemos encontrar os pontos críticos de <math id="Thmex6.p2.m5" class="ltx_Math" alttext="C(x,y)" display="inline"><mrow><mi>C</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Calculamos as derivadas parciais de primeira ordem de <math id="Thmex6.p2.m6" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math></p>
+<table id="A2.S0.EGx191" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E322"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E322.m1" class="ltx_Math" alttext="\displaystyle C_{x}(x,y)=0.50y-\frac{6}{x^{2}}," display="inline"><mrow><mrow><mrow><msub><mi>C</mi><mi>x</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>0.50</mn><mo>⁢</mo><mi>y</mi></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac></mstyle></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.322)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E323"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E323.m1" class="ltx_Math" alttext="\displaystyle C_{y}(x,y)=0.50x-\frac{9}{y^{2}}." display="inline"><mrow><mrow><mrow><msub><mi>C</mi><mi>y</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>0.50</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>9</mn><msup><mi>y</mi><mn>2</mn></msup></mfrac></mstyle></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.323)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Igualando as derivadas parciais a zero, obtemos o sistema</p>
+<table id="A2.S0.EGx192" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E324"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E324.m1" class="ltx_Math" alttext="\displaystyle 0.50y-\frac{6}{x^{2}}=0," display="inline"><mrow><mrow><mrow><mrow><mn>0.50</mn><mo>⁢</mo><mi>y</mi></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>6</mn><msup><mi>x</mi><mn>2</mn></msup></mfrac></mstyle></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.324)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E325"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E325.m1" class="ltx_Math" alttext="\displaystyle 0.50x-\frac{9}{y^{2}}=0." display="inline"><mrow><mrow><mrow><mrow><mn>0.50</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>9</mn><msup><mi>y</mi><mn>2</mn></msup></mfrac></mstyle></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.325)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Resolvendo o sistema, obtemos <math id="Thmex6.p2.m7" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math> e <math id="Thmex6.p2.m8" class="ltx_Math" alttext="y=3" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>3</mn></mrow></math> (verifique). Para aplicar o teste da segunda derivada, calculamos</p>
+<table id="A2.S0.EGx193" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E326"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E326.m1" class="ltx_Math" alttext="\displaystyle C_{xx}(x,y)=\frac{12}{x^{3}}," display="inline"><mrow><mrow><mrow><msub><mi>C</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>12</mn><msup><mi>x</mi><mn>3</mn></msup></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.326)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E327"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E327.m1" class="ltx_Math" alttext="\displaystyle C_{yy}(x,y)=\frac{18}{y^{3}}," display="inline"><mrow><mrow><mrow><msub><mi>C</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>18</mn><msup><mi>y</mi><mn>3</mn></msup></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.327)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E328"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E328.m1" class="ltx_Math" alttext="\displaystyle C_{xy}(x,y)=0.50." display="inline"><mrow><mrow><mrow><msub><mi>C</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0.50</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.328)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">No ponto crítico <math id="Thmex6.p2.m9" class="ltx_Math" alttext="(2,3)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2,3</mn><mo stretchy="false">)</mo></mrow></math>, temos</p>
+<table id="A2.S0.EGx194" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E329"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E329.m1" class="ltx_Math" alttext="\displaystyle D=C_{xx}(2,3)C_{yy}(2,3)-C_{xy}^{2}(2,3)" display="inline"><mrow><mi>D</mi><mo>=</mo><mrow><mrow><msub><mi>C</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2,3</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>C</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2,3</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><msubsup><mi>C</mi><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mn>2</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2,3</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.329)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E330"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E330.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{3}{2}\cdot\frac{2}{3}-0.50^{2}=\frac{3}{4}&gt;0." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">⋅</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mn>3</mn></mfrac></mstyle><mo>−</mo><msup><mn>0.50</mn><mn>2</mn></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>4</mn></mfrac></mstyle><mo>&gt;</mo><mn>0</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.330)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="Thmex6.p2.m10" class="ltx_Math" alttext="D&gt;0" display="inline"><mrow><mi>D</mi><mo>&gt;</mo><mn>0</mn></mrow></math> e <math id="Thmex6.p2.m11" class="ltx_Math" alttext="C_{xx}(2,3)=\frac{3}{2}&gt;0" display="inline"><mrow><mrow><msub><mi>C</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2,3</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mfrac><mn>3</mn><mn>2</mn></mfrac><mo>&gt;</mo><mn>0</mn></mrow></math>, o custo possui um mínimo local em <math id="Thmex6.p2.m12" class="ltx_Math" alttext="(2,3)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2,3</mn><mo stretchy="false">)</mo></mrow></math>. Portanto, as dimensões da caixa que minimizam o custo do material são <math id="Thmex6.p2.m13" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math> centímetros, <math id="Thmex6.p2.m14" class="ltx_Math" alttext="y=3" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>3</mn></mrow></math> centímetros e <math id="Thmex6.p2.m15" class="ltx_Math" alttext="z=2" display="inline"><mrow><mi>z</mi><mo>=</mo><mn>2</mn></mrow></math> centímetros.</p>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.5.2 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Calcule e classifique os pontos críticos da função</p>
+<table id="A2.S0.EGx195" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E331"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E331.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{2}+2xy+3y^{2}." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.331)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx41">Resposta</button></div><div class="collapse" id="Thmrespx41" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx41.p1" class="ltx_para">
+<p class="ltx_p">O único ponto crítico de <math id="Thmrespx41.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é <math id="Thmrespx41.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, que é um mínimo local.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Calcule e classifique os pontos críticos da função</p>
+<table id="A2.S0.EGx196" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E332"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E332.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=2x^{2}+2xy-y^{2}+4x+3y+5." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mn>5</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.332)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx42">Resposta</button></div><div class="collapse" id="Thmrespx42" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx42.p1" class="ltx_para">
+<p class="ltx_p">O único ponto crítico de <math id="Thmrespx42.p1.m1" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> é <math id="Thmrespx42.p1.m2" class="ltx_Math" alttext="(-7/8,5/8)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mn>7</mn><mo>/</mo><mn>8,5</mn><mo>/</mo><mn>8</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math>, que é um ponto de sela.</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Calcule e classifique os pontos críticos da função</p>
+<table id="A2.S0.EGx197" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E333"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E333.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{3}+2xy-y^{2}." display="inline"><mrow><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.333)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx43">Resposta</button></div><div class="collapse" id="Thmrespx43" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx43.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx43.p1.m1" class="ltx_Math" alttext="(-2/3,2/3)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mn>2</mn><mo>/</mo><mn>3,2</mn><mo>/</mo><mn>3</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math>: ponto de máximo local; <math id="Thmrespx43.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>: ponto de sela.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Calcule e classifique os pontos críticos da função</p>
+<table id="A2.S0.EGx198" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E334"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E334.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{3}+y^{3}-4x-3x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.334)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx44">Resposta</button></div><div class="collapse" id="Thmrespx44" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx44.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx44.p1.m1" class="ltx_Math" alttext="(-2\sqrt{3}/3,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>3</mn></msqrt></mrow><mo>/</mo><mn>3</mn></mrow></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>: ponto de máximo local; <math id="Thmrespx44.p1.m2" class="ltx_Math" alttext="(-2\sqrt{3}/3,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>3</mn></msqrt></mrow><mo>/</mo><mn>3,1</mn></mrow></mrow><mo stretchy="false">)</mo></mrow></math>: ponto de sela; <math id="Thmrespx44.p1.m3" class="ltx_Math" alttext="(2\sqrt{3}/3,-1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>3</mn></msqrt></mrow><mo>/</mo><mn>3</mn></mrow><mo>,</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></math>: ponto de sela; <math id="Thmrespx44.p1.m4" class="ltx_Math" alttext="(2\sqrt{3}/3,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>3</mn></msqrt></mrow><mo>/</mo><mn>3,1</mn></mrow><mo stretchy="false">)</mo></mrow></math>: ponto de mínimo local.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Determine os pontos e os valores máximo e mínimo globais da função</p>
+<table id="A2.S0.EGx199" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E335"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E335.m1" class="ltx_Math" alttext="\displaystyle f(x,y)=x^{3}+y^{3}-4x-3x" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><msup><mi>y</mi><mn>3</mn></msup></mrow><mo>−</mo><mrow><mn>4</mn><mo>⁢</mo><mi>x</mi></mrow><mo>−</mo><mrow><mn>3</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.335)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">limitada à região <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="R=[-1,3]\times[0,3]" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,3</mn></mrow><mo rspace="0.055em" stretchy="false">]</mo></mrow><mo rspace="0.222em">×</mo><mrow><mo stretchy="false">[</mo><mn>0,3</mn><mo stretchy="false">]</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx45">Resposta</button></div><div class="collapse" id="Thmrespx45" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx45.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx45.p1.m1" class="ltx_Math" alttext="(2\sqrt{3}/3,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><msqrt><mn>3</mn></msqrt></mrow><mo>/</mo><mn>3,1</mn></mrow><mo stretchy="false">)</mo></mrow></math>: valor mínimo global <math id="Thmrespx45.p1.m2" class="ltx_Math" alttext="-\sqrt{3}-2" display="inline"><mrow><mrow><mo>−</mo><msqrt><mn>3</mn></msqrt></mrow><mo>−</mo><mn>2</mn></mrow></math>; <math id="Thmrespx45.p1.m3" class="ltx_Math" alttext="(3,3)" display="inline"><mrow><mo stretchy="false">(</mo><mn>3,3</mn><mo stretchy="false">)</mo></mrow></math>: valor máximo global <math id="Thmrespx45.p1.m4" class="ltx_Math" alttext="33" display="inline"><mn>33</mn></math>.</p>
+</div>
+</div>
+<div id="Thmexer6" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.5.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer6.p1" class="ltx_para">
+<p class="ltx_p">Determine as dimensões da caixa retangular sem tampa de volume <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math> centímetros cúbicos e cuja construção requeira uma quantidade mínima de material.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx46">Resposta</button></div><div class="collapse" id="Thmrespx46" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx46.p1" class="ltx_para">
+<p class="ltx_p">Largura <math id="Thmrespx46.p1.m1" class="ltx_Math" alttext="x=2\leavevmode\nobreak\ \text{cm}" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mn>2</mn><mo lspace="0.500em">⁢</mo><mtext>cm</mtext></mrow></mrow></math>; comprimento <math id="Thmrespx46.p1.m2" class="ltx_Math" alttext="y=2\leavevmode\nobreak\ \text{cm}" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>2</mn><mo lspace="0.500em">⁢</mo><mtext>cm</mtext></mrow></mrow></math>; altura <math id="Thmrespx46.p1.m3" class="ltx_Math" alttext="z=1\leavevmode\nobreak\ \text{cm}" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mn>1</mn><mo lspace="0.500em">⁢</mo><mtext>cm</mtext></mrow></mrow></math>.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_derivadas_sec_gradiente.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.4 </span>Derivada direcional e gradiente</span></a><a href="bib.html" title="In Cálculo II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_derivadas_sec_lagrange.html" title="In Capítulo 2 Derivadas ‣ Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.6 </span>Multiplicadores de Lagrange</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Mon Aug 31 13:04:50 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
