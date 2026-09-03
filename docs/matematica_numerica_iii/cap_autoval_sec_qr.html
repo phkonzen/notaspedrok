@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 4.2 Iteração QR ‣ Capítulo 4 Autovalores e Autovetores ‣ Matemática numérica III</title>
-<!--Generated on Tue Sep  1 15:23:04 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 1 de setembro de 2026.-->
+<!--Generated on Thu Sep  3 15:27:25 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 3 de setembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -93,10 +93,9 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
         </li>
-        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        <li class="nav-item"><a id="conteudo" class="nav-link" href="./index.html"><i class="fa-solid fa-bars-staggered text-primary"></i> Conteúdo</a>
         </li>
-        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
-              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart text-danger"></i> Colaborar</a></li>
         <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
         <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
         <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
@@ -125,7 +124,7 @@
 <h1 class="ltx_title ltx_title_document fs-2">Matemática numérica III</h1><header class="ltx_page_header">
 <div class="ltx_align_center">
 <a href="cap_autoval.html" title="In Matemática numérica III" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Autovalores e Autovetores</span></a><a href="cap_autoval_sec_pot.html" title="In Capítulo 4 Autovalores e Autovetores ‣ Matemática numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Método da Potência</span></a><a href="cap_integracao.html" title="In Matemática numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Integração</span></a>
-</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart text-danger"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
 <div class="ltx_page_content">
 <section class="ltx_section ltx_authors_1line" lang="pt">
 <h1 class="ltx_title ltx_title_section">
@@ -151,7 +150,7 @@
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Assumindo <math id="p3.m1" class="ltx_Math" alttext="A\in\mathbb{R}^{n\times n}" display="inline"><mrow><mi>A</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math>, sejam <math id="p3.m2" class="ltx_Math" alttext="Q^{(0)}\in\mathbb{R}^{n\times n}" display="inline"><mrow><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math> uma <span class="ltx_text ltx_font_bold">matriz ortogonal<span id="Ch4.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">6</span></span><span class="ltx_text ltx_font_medium">Uma matriz </span><math id="Ch4.footnote6.m1" class="ltx_Math" alttext="Q" display="inline"><mi>Q</mi></math><span class="ltx_text ltx_font_medium"> é dita ortogonal quando </span><math id="Ch4.footnote6.m2" class="ltx_Math" alttext="Q^{T}Q=I" display="inline"><mrow><mrow><msup><mi>Q</mi><mi>T</mi></msup><mo>⁢</mo><mi>Q</mi></mrow><mo>=</mo><mi>I</mi></mrow></math><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> e <math id="p3.m3" class="ltx_Math" alttext="T^{(0)}=(Q^{(0)})^{T}AQ^{(0)}" display="inline"><mrow><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mi>T</mi></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></math>. A iteração <math id="p3.m4" class="ltx_Math" alttext="QR" display="inline"><mrow><mi>Q</mi><mo>⁢</mo><mi>R</mi></mrow></math> consiste em</p>
-<table id="Ch5.S2.EGx56" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx60" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -176,7 +175,7 @@
 </div>
 <div id="p4" class="ltx_para">
 <p class="ltx_p">Ou seja, a cada iteração <math id="p4.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>, computa-se a fatoração da matriz <math id="p4.m2" class="ltx_Math" alttext="T^{(k-1)}" display="inline"><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></math> como o produto de uma matriz ortogonal <math id="p4.m3" class="ltx_Math" alttext="Q^{(k)}" display="inline"><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> com uma matriz triangular superior <math id="p4.m4" class="ltx_Math" alttext="R^{(k)}" display="inline"><msup><mi>R</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>. Então, computa-se uma nova aproximação <math id="p4.m5" class="ltx_Math" alttext="T^{(k)}" display="inline"><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> pela multiplicação de <math id="p4.m6" class="ltx_Math" alttext="R^{(k)}" display="inline"><msup><mi>R</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> por <math id="p4.m7" class="ltx_Math" alttext="Q^{(k)}" display="inline"><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>. Com isso, temos</p>
-<table id="Ch5.S2.EGx57" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx61" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -339,7 +338,7 @@
 </h6>
 <div id="Thmobs3.p1" class="ltx_para">
 <p class="ltx_p">Vamos denotar <math id="Thmobs3.p1.m1" class="ltx_Math" alttext="\tilde{Q}^{(k)}=Q^{(0)}\cdots Q^{(k)}" display="inline"><mrow><msup><mover accent="true"><mi>Q</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></math>. Se <math id="Thmobs3.p1.m2" class="ltx_Math" alttext="\bm{v}" display="inline"><mi>𝒗</mi></math> é autovetor associado ao autovalor simples <math id="Thmobs3.p1.m3" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> de <math id="Thmobs3.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, então</p>
-<table id="Ch5.S2.EGx58" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx62" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -439,7 +438,7 @@
 </section>
 </section>
 </div>
-<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart text-danger"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
   action="https://formspree.io/f/mzbolaeo">
 
   <div class="form-group mb-3">
@@ -476,7 +475,7 @@
 <div class="ltx_align_center">
 <a href="cap_autoval_sec_pot.html" title="In Capítulo 4 Autovalores e Autovetores ‣ Matemática numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Método da Potência</span></a><a href="bib.html" title="In Matemática numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_integracao.html" title="In Matemática numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Integração</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Tue Sep  1 15:23:04 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Sep  3 15:27:25 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
