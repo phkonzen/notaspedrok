@@ -1,0 +1,750 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs</title>
+<!--Generated on Fri Sep 11 12:56:24 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 11 de setembro de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_rede_feedforward.html" title="Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="up up" href="./" title="Introdução a PINNs">
+<link rel="start" href="./" title="Introdução a PINNs">
+<link rel="prev" href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="2.3 Rede perceptron multicamadas ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="next" href="cap_rede_feedforward_sec_apfun.html" title="2.5 Aproximação de funções ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_unidade_de_processamento.html" title="2.1 Unidade de processamento ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_percepton_sec_retroprop.html" title="2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="2.3 Rede perceptron multicamadas ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_apfun.html" title="2.5 Aproximação de funções ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_autograd.html" title="2.6 Diferenciação automática ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Introdução a PINNs">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Introdução a PINNs">
+<link rel="chapter" href="./" title="Introdução a PINNs ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_rede_feedforward.html" title="Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_pinns.html" title="Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Introdução a PINNs">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script><link rel="canonical" href="https://notaspedrok.com.br/pinns/cap_rede_feedforward_sec_ativacao.html" />
+</head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="conteudo" class="nav-link" href="./index.html"><i class="fa-solid fa-bars-staggered text-primary"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart text-danger"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Introdução a PINNs</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_rede_feedforward.html" title="In Introdução a PINNs" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Redes neurais <span class="ltx_text ltx_font_italic">feedforward</span></span></a><a href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Rede perceptron multicamadas</span></a><a href="cap_rede_feedforward_sec_apfun.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Aproximação de funções</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart text-danger"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">2.4 </span>Funções de ativação</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Usualmente, a escolha das funções de ativação de uma rede é feita <span class="ltx_text ltx_font_italic">a priori</span> em uma tomada de decisão que envolve suas características e o problema a ser resolvido. A escolha da função de ativação é importante, pois ela influencia diretamente na capacidade de aproximação da rede, na velocidade de convergência do treinamento e na estabilidade numérica do processo de retropropagação. Nesta seção, vamos estudar algumas das funções de ativação mais utilizadas em redes MLP para problemas de aproximação de funções, tema que iremos abordar com mais detalhes na próxima seção (Seção <a href="cap_rede_feedforward_sec_apfun.html" title="2.5 Aproximação de funções ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a>).</p>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.1 </span>Função tangente hiperbólica</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Nas aplicações anteriores usamos a função tangente hiperbólica como função de ativação em alguns modelos. A função tangente hiperbólica é uma função não linear, diferenciável e limitada, com valores de saída no intervalo <math id="SS1.p1.m1" class="ltx_Math" alttext="(-1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></math>. A Figura <a href="#fig:rede_feedforward_tanh" title="Figura 2.8 ‣ 2.4.1 Função tangente hiperbólica ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.8</span></a> contém o gráfico da função tangente hiperbólica e de sua derivada. Sua expressão analítica é dada por</p>
+<table id="Ch3.S3.EGx38" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E63"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E63.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\tanh(z)=\frac{e^{z}-e^{-z}}{e^{z}+e^{-z}}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">tanh</mi><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mrow><msup><mi mathcolor="#0000FF">e</mi><mi mathcolor="#0000FF">z</mi></msup><mo mathcolor="#0000FF">−</mo><msup><mi mathcolor="#0000FF">e</mi><mrow><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">z</mi></mrow></msup></mrow><mrow><msup><mi mathcolor="#0000FF">e</mi><mi mathcolor="#0000FF">z</mi></msup><mo mathcolor="#0000FF">+</mo><msup><mi mathcolor="#0000FF">e</mi><mrow><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">z</mi></mrow></msup></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.63)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e sua derivada é</p>
+<table id="Ch3.S3.EGx39" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E64"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E64.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\tanh^{\prime}(z)=1-\tanh^{2}(z)." display="inline"><mrow><mrow><mrow><msup><mi mathcolor="#0000FF">tanh</mi><mo mathcolor="#0000FF">′</mo></msup><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">−</mo><mrow><msup><mi mathcolor="#0000FF">tanh</mi><mn mathcolor="#0000FF">2</mn></msup><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.64)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:rede_feedforward_tanh" class="ltx_figure"><img src="cap_rede_feedforward/dados/fig_mlp_tanh/fig.png" id="Ch2.F8.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="248" height="184" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.8</span>: </span><span class="ltx_text" style="font-size:90%;">Função tangente hiperbólica e sua derivada.</span></figcaption>
+</figure>
+<div id="SS1.p2" class="ltx_para">
+<p class="ltx_p">No Código <a href="#cod:rede_feedforward_tanh" title="Código 7 ‣ 2.4.1 Função tangente hiperbólica ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">7</span></a> temos uma implementação da função tangente hiperbólica utilizando a biblioteca <a href="https://pytorch.org/" title="" class="ltx_ref ltx_href">PyTorch</a>. Verifique!</p>
+</div>
+<figure id="cod:rede_feedforward_tanh" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 7: </span>tanh.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSB0b3JjaCBpbXBvcnQgdGVuc29yCmZyb20gdG9yY2gubm4gaW1wb3J0IFRhbmgKeiA9IHRlbnNvcihbLTUuMCwgLTIuNSwgMC4wLCAyLjUsIDUuMF0pCmFjdF9mdW4gPSBUYW5oKCkKYWN0X2Z1bih6KQ==" download="">⬇</a></div>
+<div id="lstnumberx335" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span>
+</div>
+<div id="lstnumberx336" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Tanh</span>
+</div>
+<div id="lstnumberx337" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([-5.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5.0])</span>
+</div>
+<div id="lstnumberx338" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Tanh</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx339" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="SS1.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,dGVuc29yKFstMC45OTk5LCAtMC45ODY2LCAgMC4wMDAwLCAgMC45ODY2LCAgMC45OTk5XSk=" download="">⬇</a></div>
+<div id="lstnumberx340" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([-0.9999,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-0.9866,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0000,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.9866,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">  </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.9999])</span>
+</div>
+</div>
+</div>
+<div id="SS1.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Algumas características da função tangente hiperbólica são</span>:</p>
+<ul id="I1" class="ltx_itemize">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função suave</span>.</p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<p class="ltx_p">É uma função suave com derivadas não nulas de todas as ordens. Esta é uma boa propriedade para o treinamento de redes neurais, pois garante que o gradiente da função de perda em relação aos parâmetros da rede seja bem definido e não nulo, mesmo quando envolve derivadas de ordens superiores, caso usual em aplicações envolvendo equações diferenciais.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função monotonicamente crescente</span>.</p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<p class="ltx_p">É uma função monótona crescente, i.e. <math id="I1.i2.p2.m1" class="ltx_Math" alttext="\tanh(z_{1})&lt;\tanh(z_{2})" display="inline"><mrow><mrow><mi>tanh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mi>z</mi><mn>1</mn></msub><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mrow><mi>tanh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><msub><mi>z</mi><mn>2</mn></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math> se <math id="I1.i2.p2.m2" class="ltx_Math" alttext="z_{1}&lt;z_{2}" display="inline"><mrow><msub><mi>z</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>z</mi><mn>2</mn></msub></mrow></math>. Esta propriedade é importante para o treinamento de redes neurais, pois garante que a função de ativação preserve a monotonicidade dos valores de entrada, o que pode ser útil em problemas de classificação e regressão.</p>
+</div>
+</li>
+<li id="I1.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Ponto de inflexão</span>.</p>
+</div>
+<div id="I1.i3.p2" class="ltx_para">
+<p class="ltx_p">Tem um ponto de inflexão em <math id="I1.i3.p2.m1" class="ltx_Math" alttext="z=0" display="inline"><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow></math>, i.e. <math id="I1.i3.p2.m2" class="ltx_Math" alttext="\tanh(0)=0" display="inline"><mrow><mrow><mi>tanh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e <math id="I1.i3.p2.m3" class="ltx_Math" alttext="\tanh^{\prime}(0)=1" display="inline"><mrow><mrow><msup><mi>tanh</mi><mo>′</mo></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></math>. Esta propriedade é importante para o treinamento de redes neurais, pois garante que a função de ativação tenha uma região de maior sensibilidade em torno do ponto de inflexão, o que pode ser útil para capturar variações sutis nos dados de entrada.</p>
+</div>
+</li>
+<li id="I1.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função saturada</span>.</p>
+</div>
+<div id="I1.i4.p2" class="ltx_para">
+<p class="ltx_p">É uma função saturada, <span class="ltx_text ltx_font_italic">i.e.</span> contém assíntotas horizontais <math id="I1.i4.p2.m1" class="ltx_Math" alttext="\tanh(z)\to 1" display="inline"><mrow><mrow><mi>tanh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">→</mo><mn>1</mn></mrow></math> se <math id="I1.i4.p2.m2" class="ltx_Math" alttext="z\to+\infty" display="inline"><mrow><mi>z</mi><mo stretchy="false">→</mo><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow></mrow></math> e <math id="I1.i4.p2.m3" class="ltx_Math" alttext="\tanh(z)\to-1" display="inline"><mrow><mrow><mi>tanh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">→</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> se <math id="I1.i4.p2.m4" class="ltx_Math" alttext="z\to-\infty" display="inline"><mrow><mi>z</mi><mo stretchy="false">→</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow></mrow></math>. Esta propriedade pode ser um problema para o treinamento de redes neurais, pois pode levar ao problema do <span class="ltx_text ltx_font_italic">vanishing gradient</span>, onde os gradientes da função de perda em relação aos parâmetros da rede se tornam muito pequenos, facilitando a estagnação do treinamento em mínimos locais.</p>
+</div>
+</li>
+<li id="I1.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função limitada com derivada limitada</span>.</p>
+</div>
+<div id="I1.i5.p2" class="ltx_para">
+<p class="ltx_p">É uma função limitada com derivada limitada: <math id="I1.i5.p2.m1" class="ltx_Math" alttext="-1&lt;\tanh(z)&lt;1" display="inline"><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo>&lt;</mo><mrow><mi>tanh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>1</mn></mrow></math>, <math id="I1.i5.p2.m2" class="ltx_Math" alttext="0&lt;\tanh^{\prime}(z)&lt;1" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mrow><msup><mi>tanh</mi><mo>′</mo></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&lt;</mo><mn>1</mn></mrow></math>. Esta é uma boa propriedade para o treinamento de redes neurais, pois ajuda na estabilidade numérica do processo de treinamento, evitando que os valores de saída da função de ativação se tornem muito grandes ou muito pequenos, o que poderia levar a problemas de overflow ou underflow numérico.</p>
+</div>
+</li>
+<li id="I1.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I1.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Custo computacional alto</span>.</p>
+</div>
+<div id="I1.i6.p2" class="ltx_para">
+<p class="ltx_p">Em comparação com funções de ativação mais simples, a função tangente hiperbólica tem um custo computacional alto, o que é uma desvantagem em aplicações que exigem grandes redes neurais.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.2 </span>Função sigmoide</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">A função sigmoide<span id="Ch2.footnote9" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">9</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">9</sup><span class="ltx_tag ltx_tag_note">9</span>A função sigmoide na biblioteca <a href="https://pytorch.org/" title="" class="ltx_ref ltx_href">PyTorch</a> é a comumente chamada de função logística padrão na matemática.</span></span></span> é uma função não linear, diferenciável e limitada, com valores de saída no intervalo <math id="SS2.p1.m1" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math>. A Figura <a href="#fig:rede_feedforward_sigmoid" title="Figura 2.9 ‣ 2.4.2 Função sigmoide ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.9</span></a> contém o gráfico da função sigmoide e de sua derivada. Sua expressão analítica é dada por</p>
+<table id="Ch3.S3.EGx40" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E65"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E65.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\sigma(z)=\frac{1}{1+e^{-z}}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">σ</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">+</mo><msup><mi mathcolor="#0000FF">e</mi><mrow><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">z</mi></mrow></msup></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.65)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e sua derivada é</p>
+<table id="Ch3.S3.EGx41" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E66"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E66.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\sigma^{\prime}(z)=\sigma(z)\left(1-\sigma(z)\right)." display="inline"><mrow><mrow><mrow><msup><mi mathcolor="#0000FF">σ</mi><mo mathcolor="#0000FF">′</mo></msup><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">σ</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo mathcolor="#0000FF">(</mo><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">−</mo><mrow><mi mathcolor="#0000FF">σ</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0000FF">)</mo></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.66)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:rede_feedforward_sigmoid" class="ltx_figure"><img src="cap_rede_feedforward/dados/fig_mlp_sigmoid/fig.png" id="Ch2.F9.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="239" height="184" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.9</span>: </span><span class="ltx_text" style="font-size:90%;">Função sigmoide e sua derivada.</span></figcaption>
+</figure>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">No Código <a href="#cod:rede_feedforward_sigmoid" title="Código 8 ‣ 2.4.2 Função sigmoide ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">8</span></a> temos uma implementação da função sigmoide utilizando a biblioteca <a href="https://pytorch.org/" title="" class="ltx_ref ltx_href">PyTorch</a>. Verifique!</p>
+</div>
+<figure id="cod:rede_feedforward_sigmoid" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 8: </span>sigmoid.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSB0b3JjaCBpbXBvcnQgdGVuc29yCmZyb20gdG9yY2gubm4gaW1wb3J0IFNpZ21vaWQKeiA9IHRlbnNvcihbLTUuMCwgLTIuNSwgMC4wLCAyLjUsIDUuMF0pCmFjdF9mdW4gPSBTaWdtb2lkKCkKYWN0X2Z1bih6KQ==" download="">⬇</a></div>
+<div id="lstnumberx341" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span>
+</div>
+<div id="lstnumberx342" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Sigmoid</span>
+</div>
+<div id="lstnumberx343" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([-5.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5.0])</span>
+</div>
+<div id="lstnumberx344" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Sigmoid</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx345" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="SS2.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,dGVuc29yKFswLjAwNjcsIDAuMDc1OSwgMC41MDAwLCAwLjkyNDEsIDAuOTkzM10p" download="">⬇</a></div>
+<div id="lstnumberx346" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([0.0067,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0759,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.5000,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.9241,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.9933])</span>
+</div>
+</div>
+</div>
+<div id="SS2.p4" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Algumas características da função sigmoide são</span>:</p>
+<ul id="I2" class="ltx_itemize">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função suave</span>.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função monotonicamente crescente</span>.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Ponto de inflexão</span>.</p>
+</div>
+</li>
+<li id="I2.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função saturada</span>.</p>
+</div>
+</li>
+<li id="I2.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função limitada com derivada limitada</span>.</p>
+</div>
+</li>
+<li id="I2.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Custo computacional alto</span>.</p>
+</div>
+</li>
+<li id="I2.i7" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I2.i7.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função positiva</span>.</p>
+</div>
+<div id="I2.i7.p2" class="ltx_para">
+<p class="ltx_p">Esta é uma das características que mais diferencia a aplicação da função sigmoide da função tangente hiperbólica no contexto de redes neurais. A função sigmoide é uma função positiva, <span class="ltx_text ltx_font_italic">i.e.</span> <math id="I2.i7.p2.m1" class="ltx_Math" alttext="\sigma(z)&gt;0" display="inline"><mrow><mrow><mi>σ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>&gt;</mo><mn>0</mn></mrow></math> para todo <math id="I2.i7.p2.m2" class="ltx_Math" alttext="z\in\mathbb{R}" display="inline"><mrow><mi>z</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>. Esta propriedade pode ser uma vantagem em problema em que a positividade seja uma propriedade a ser preservada.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.3 </span>Função ReLU</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p">A função ReLU (do inglês, <span class="ltx_text ltx_font_italic">Rectified Linear Unit</span>) é uma função não linear, diferenciável quase em todo o seu domínio e não limitada, com valores de saída no intervalo <math id="SS3.p1.m1" class="ltx_Math" alttext="[0,+\infty)" display="inline"><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow><mo stretchy="false">)</mo></mrow></math>. A Figura <a href="#fig:rede_feedforward_relu" title="Figura 2.10 ‣ 2.4.3 Função ReLU ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.10</span></a> contém o gráfico da função ReLU e de sua derivada. Sua expressão analítica é dada por</p>
+<table id="Ch3.S3.EGx42" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E67"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E67.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\operatorname{relu}(z)=\max(0,z)." display="inline"><mrow><mrow><mrow><mi mathcolor="#0000FF">relu</mi><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">max</mi><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mn mathcolor="#0000FF">0</mn><mo mathcolor="#0000FF">,</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.67)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="SS3.p2" class="ltx_para">
+<p class="ltx_p">Note que a função ReLU não é diferenciável em <math id="SS3.p2.m1" class="ltx_Math" alttext="z=0" display="inline"><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow></math>, mas é diferenciável em todo o restante do seu domínio. Para fins de aplicação no treinamento de redes neurais por retropropagação, a derivada da função ReLU é definida como<span id="Ch2.footnote10" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">10</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">10</sup><span class="ltx_tag ltx_tag_note">10</span>A escolha aqui de tomar a derivada pela esquerda é arbitrária, mas é a utilizada na biblioteca <a href="https://pytorch.org/" title="" class="ltx_ref ltx_href">PyTorch</a>.</span></span></span></p>
+<table id="Ch3.S3.EGx43" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E68"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E68.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\operatorname{relu}^{\prime}(z)=\begin{cases}0,&amp;z\leq 0,\\
+1,&amp;z&gt;0.\end{cases}" display="inline"><mrow><mrow><msup><mi mathcolor="#0000FF">relu</mi><mo mathcolor="#0000FF">′</mo></msup><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mo mathcolor="#0000FF">{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn mathcolor="#0000FF">0</mn><mo mathcolor="#0000FF">,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF">≤</mo><mn mathcolor="#0000FF">0</mn></mrow><mo mathcolor="#0000FF">,</mo></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">,</mo></mrow></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mrow><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF">&gt;</mo><mn mathcolor="#0000FF">0</mn></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></mtd></mtr></mtable></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.68)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:rede_feedforward_relu" class="ltx_figure"><img src="cap_rede_feedforward/dados/fig_mlp_relu/fig.png" id="Ch2.F10.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="229" height="183" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.10</span>: </span><span class="ltx_text" style="font-size:90%;">Função ReLU e sua derivada.</span></figcaption>
+</figure>
+<div id="SS3.p3" class="ltx_para">
+<p class="ltx_p">No Código <a href="#cod:rede_feedforward_relu" title="Código 9 ‣ 2.4.3 Função ReLU ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">9</span></a> temos uma implementação da função ReLU utilizando a biblioteca <a href="https://pytorch.org/" title="" class="ltx_ref ltx_href">PyTorch</a>. Verifique!</p>
+</div>
+<figure id="cod:rede_feedforward_relu" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 9: </span>relu.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSB0b3JjaCBpbXBvcnQgdGVuc29yCmZyb20gdG9yY2gubm4gaW1wb3J0IFJlTFUKeiA9IHRlbnNvcihbLTUuMCwgLTIuNSwgMC4wLCAyLjUsIDUuMF0pCmFjdF9mdW4gPSBSZUxVKCkKYWN0X2Z1bih6KQ==" download="">⬇</a></div>
+<div id="lstnumberx347" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span>
+</div>
+<div id="lstnumberx348" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ReLU</span>
+</div>
+<div id="lstnumberx349" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([-5.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5.0])</span>
+</div>
+<div id="lstnumberx350" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">ReLU</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx351" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="SS3.p4" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,dGVuc29yKFswLjAwMDAsIDAuMDAwMCwgMC4wMDAwLCAyLjUwMDAsIDUuMDAwMF0p" download="">⬇</a></div>
+<div id="lstnumberx352" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([0.0000,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0000,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0000,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.5000,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5.0000])</span>
+</div>
+</div>
+</div>
+<div id="SS3.p5" class="ltx_para">
+<p class="ltx_p">Algumas características da função ReLU são:</p>
+<ul id="I3" class="ltx_itemize">
+<li id="I3.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função não limitada e monotonicamente não decrescente</span>.</p>
+</div>
+<div id="I3.i1.p2" class="ltx_para">
+<p class="ltx_p">Embora a função ReLU seja não limitada, sua derivada é, o que na estabilidade numérica do treinamento de redes neurais.</p>
+</div>
+</li>
+<li id="I3.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função positiva</span>.</p>
+</div>
+</li>
+<li id="I3.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função com derivadas mais altas nulas</span>.</p>
+</div>
+<div id="I3.i3.p2" class="ltx_para">
+<p class="ltx_p">Embora a função ReLU seja diferenciável quase em todo o seu domínio, suas derivadas de ordens mais altas são nulas. Este é um problema para o treinamento de redes neurais em aplicações envolvendo equações diferenciais, em que termos envolvendo derivadas de ordens mais altas podem aparecer na função de perda. Neste caso, a função ReLU não é uma boa escolha como função de ativação.</p>
+</div>
+</li>
+<li id="I3.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função não saturada</span>.</p>
+</div>
+<div id="I3.i4.p2" class="ltx_para">
+<p class="ltx_p">Esta é uma das principais vantagens da função ReLU em relação às funções tangente hiperbólica e sigmoide. A função ReLU não satura para valores de entrada positivos, o que ajuda a evitar o problema do <span class="ltx_text ltx_font_italic">vanishing gradient</span> durante o treinamento da rede.</p>
+</div>
+</li>
+<li id="I3.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função nula para valores de entrada negativos</span>.</p>
+</div>
+<div id="I3.i5.p2" class="ltx_para">
+<p class="ltx_p">Esta é uma das principais vantagens da função ReLU em aplicações com grandes redes neurais. A função ReLU é nula para valores de entrada negativos, o que ajuda na desativação de neurônios que não contribuem para a saída da rede, tornando o treinamento mais eficiente e menos sensível a ruídos nos dados de entrada.</p>
+</div>
+</li>
+<li id="I3.i6" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I3.i6.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Custo computacional baixo</span>.</p>
+</div>
+<div id="I3.i6.p2" class="ltx_para">
+<p class="ltx_p">Em comparação com as funções tangente hiperbólica e sigmoide, a função ReLU tem um custo computacional baixo, o que é uma grande vantangem em aplicações que exigem grandes redes neurais.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.4 </span>Função Softplus</h2>
+
+<div id="SS4.p1" class="ltx_para">
+<p class="ltx_p">A função Softplus é uma função não linear, diferenciável e limitada inferiormente, com valores de saída no intervalo <math id="SS4.p1.m1" class="ltx_Math" alttext="(0,+\infty)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mo>+</mo><mi mathvariant="normal">∞</mi></mrow><mo stretchy="false">)</mo></mrow></math>. A Figura <a href="#fig:rede_feedforward_softplus" title="Figura 2.11 ‣ 2.4.4 Função Softplus ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.11</span></a> contém o gráfico da função Softplus e de sua derivada. Sua expressão analítica é dada por</p>
+<table id="Ch3.S3.EGx44" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E69"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E69.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\operatorname{softplus}(z)=\ln(1+e^{z})" display="inline"><mrow><mrow><mi mathcolor="#0000FF">softplus</mi><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">ln</mi><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">+</mo><msup><mi mathcolor="#0000FF">e</mi><mi mathcolor="#0000FF">z</mi></msup></mrow><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.69)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e sua derivada é</p>
+<table id="Ch3.S3.EGx45" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E70"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E70.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0,0,1}\definecolor[named]{pgfstrokecolor}{rgb}{0,0,1}%
+\operatorname{softplus}^{\prime}(z)=\frac{1}{1+e^{-z}}=\sigma(z)." display="inline"><mrow><mrow><mrow><msup><mi mathcolor="#0000FF">softplus</mi><mo mathcolor="#0000FF">′</mo></msup><mo>⁡</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0000FF">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0000FF"><mn mathcolor="#0000FF">1</mn><mrow><mn mathcolor="#0000FF">1</mn><mo mathcolor="#0000FF">+</mo><msup><mi mathcolor="#0000FF">e</mi><mrow><mo mathcolor="#0000FF">−</mo><mi mathcolor="#0000FF">z</mi></mrow></msup></mrow></mfrac></mstyle><mo mathcolor="#0000FF">=</mo><mrow><mi mathcolor="#0000FF">σ</mi><mo>⁢</mo><mrow><mo mathcolor="#0000FF" stretchy="false">(</mo><mi mathcolor="#0000FF">z</mi><mo mathcolor="#0000FF" stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0000FF">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.70)</span></td>
+</tr></tbody>
+</table>
+</div>
+<figure id="fig:rede_feedforward_softplus" class="ltx_figure"><img src="cap_rede_feedforward/dados/fig_mlp_softplus/fig.png" id="Ch2.F11.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="229" height="183" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.11</span>: </span><span class="ltx_text" style="font-size:90%;">Função Softplus e sua derivada.</span></figcaption>
+</figure>
+<div id="SS4.p2" class="ltx_para">
+<p class="ltx_p">No Código <a href="#cod:rede_feedforward_softplus" title="Código 10 ‣ 2.4.4 Função Softplus ‣ 2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">10</span></a> temos uma implementação da função Softplus utilizando a biblioteca <a href="https://pytorch.org/" title="" class="ltx_ref ltx_href">PyTorch</a>. Verifique!</p>
+</div>
+<figure id="cod:rede_feedforward_softplus" class="ltx_float ltx_lstlisting">
+<figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 10: </span>softplus.py</figcaption>
+<div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
+<div class="ltx_listing_data"><a href="data:text/plain;base64,ZnJvbSB0b3JjaCBpbXBvcnQgdGVuc29yCmZyb20gdG9yY2gubm4gaW1wb3J0IFNvZnRwbHVzCnogPSB0ZW5zb3IoWy01LjAsIC0yLjUsIDAuMCwgMi41LCA1LjBdKQphY3RfZnVuID0gU29mdHBsdXMoKQphY3RfZnVuKHop" download="">⬇</a></div>
+<div id="lstnumberx353" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span>
+</div>
+<div id="lstnumberx354" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">2</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">from</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">nn</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Softplus</span>
+</div>
+<div id="lstnumberx355" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">3</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([-5.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">-2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.5,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5.0])</span>
+</div>
+<div id="lstnumberx356" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">4</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">=</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">Softplus</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
+</div>
+<div id="lstnumberx357" class="ltx_listingline">
+<span class="ltx_tag ltx_tag_listingline">5</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">act_fun</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">(</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">z</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">)</span>
+</div>
+</div>
+</figure>
+<div id="SS4.p3" class="ltx_para">
+<div class="ltx_listing ltx_lstlisting ltx_listing" style="background-color:#FFFFFF;">
+<div class="ltx_listing_data" style="display:none;"><a href="data:text/plain;base64,dGVuc29yKFswLjAwNjcsIDAuMDc4OSwgMC42OTMxLCAyLjU3ODksIDUuMDA2N10p" download="">⬇</a></div>
+<div id="lstnumberx358" class="ltx_listingline">
+<span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">tensor</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">([0.0067,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.0789,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">0.6931,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">2.5789,</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">5.0067])</span>
+</div>
+</div>
+</div>
+<div id="SS4.p4" class="ltx_para">
+<p class="ltx_p">Algumas características da função Softplus são:</p>
+<ul id="I4" class="ltx_itemize">
+<li id="I4.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função suave</span>.</p>
+</div>
+</li>
+<li id="I4.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i2.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função monotonicamente crescente</span>.</p>
+</div>
+</li>
+<li id="I4.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i3.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função não limitada com derivada limitada</span>.</p>
+</div>
+</li>
+<li id="I4.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i4.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Função positiva</span>.</p>
+</div>
+</li>
+<li id="I4.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">•</span> 
+<div id="I4.i5.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">Custo computacional alto</span>.</p>
+</div>
+</li>
+</ul>
+</div>
+</section>
+<section id="SS5" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">2.4.5 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.4.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Crie modelos de perceptrons (uma única unidade de processamento), utilizando as funções de ativação conforme indicado em cada item a seguir. Treine cada modelo para emular a operação lógica <span class="ltx_text ltx_font_typewriter">or</span> e compare os resultados obtidos. Qual(is) a(s) melhor(es) função(ões) de ativação para este problema? Justifique sua resposta.</p>
+<ol id="I5" class="ltx_enumerate">
+<li id="I5.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I5.i1.p1" class="ltx_para">
+<p class="ltx_p">Função tangente hiperbólica.</p>
+</div>
+</li>
+<li id="I5.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I5.i2.p1" class="ltx_para">
+<p class="ltx_p">Função sigmoide.</p>
+</div>
+</li>
+<li id="I5.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I5.i3.p1" class="ltx_para">
+<p class="ltx_p">Função ReLU.</p>
+</div>
+</li>
+<li id="I5.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I5.i4.p1" class="ltx_para">
+<p class="ltx_p">Função Softplus.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="exer:rede_feedforward_actfun_or" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.4.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Crie modelo de MLPs com uma camada escondida com dois neurônios, utilizando as funções de ativação conforme indicado em cada item a seguir. Treine cada modelo para emular a operação lógica <span class="ltx_text ltx_font_typewriter">xor</span> e compare os resultados obtidos. Qual(is) a(s) melhor(es) função(ões) de ativação para este problema? Justifique sua resposta.</p>
+<ol id="I6" class="ltx_enumerate">
+<li id="I6.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I6.i1.p1" class="ltx_para">
+<p class="ltx_p">Camada escondida com função tangente hiperbólica e camada de saída com função identidade.</p>
+</div>
+</li>
+<li id="I6.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I6.i2.p1" class="ltx_para">
+<p class="ltx_p">Camada escondida e camada de saída com função sigmoide.</p>
+</div>
+</li>
+<li id="I6.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I6.i3.p1" class="ltx_para">
+<p class="ltx_p">Camada escondida com função tangente hiperbólica e camada de saída com função sigmoide.</p>
+</div>
+</li>
+<li id="I6.i4" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">d)</span> 
+<div id="I6.i4.p1" class="ltx_para">
+<p class="ltx_p">Camada escondida com função ReLU e camada de saída com função identidade.</p>
+</div>
+</li>
+<li id="I6.i5" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">e)</span> 
+<div id="I6.i5.p1" class="ltx_para">
+<p class="ltx_p">Camada escondida e camada de saída com função Softplus.</p>
+</div>
+</li>
+</ol>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.4.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Considere MLPs com uma camada escondida com <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="n^{(1)}" display="inline"><msup><mi>n</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></math> neurônios, utilizando as funções de ativação ReLU na camada escondida e função identidade na camada de saída. Treine cada modelo para emular a operação lógica <span class="ltx_text ltx_font_typewriter">and</span> e verifique o efeito do número de neurônios na camada escondida. A partir de qual número de neurônios <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="n^{(1)}" display="inline"><msup><mi>n</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></msup></math> a rede passa a desativar neurônios na camada escondida? Justifique sua resposta.</p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.4.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Faça um estudo comparativo do tempo computacional de inferência das funções de ativação estudadas nesta seção. Quanto mais rápida é a função ReLU em relação às demais funções de ativação? Justifique sua resposta.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.4.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Crie uma MLP para emular as operações lógicas <span class="ltx_text ltx_font_typewriter">and</span>, <span class="ltx_text ltx_font_typewriter">or</span> e <span class="ltx_text ltx_font_typewriter">xor</span> com uma única rede. Isto é, a rede deve ter três saídas, cada uma emulando uma das operações. Escolha as funções de ativação mais adequadas para cada camada da rede e treine seu modelo por retropropagação com o otimizador GDE.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart text-danger"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Rede perceptron multicamadas</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_rede_feedforward_sec_apfun.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.5 </span>Aproximação de funções</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Sep 11 12:56:24 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>

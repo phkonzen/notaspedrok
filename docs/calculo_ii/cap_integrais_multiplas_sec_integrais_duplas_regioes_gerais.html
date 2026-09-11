@@ -1,0 +1,878 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II</title>
+<!--Generated on Fri Sep 11 12:54:43 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 11 de setembro de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_integrais_multiplas.html" title="Capítulo 3 Integrais múltiplas ‣ Cálculo II">
+<link rel="up up" href="./" title="Cálculo II">
+<link rel="start" href="./" title="Cálculo II">
+<link rel="prev" href="cap_integrais_multiplas_sec_integrais_duplas.html" title="3.1 Integrais duplas ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II">
+<link rel="next" href="cap_tabela_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo II">
+<link rel="section" href="cap_integrais_multiplas_sec_integrais_duplas.html" title="3.1 Integrais duplas ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo II">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo II">
+<link rel="chapter" href="./" title="Cálculo II ‣ Cálculo II">
+<link rel="chapter" href="cap_introducao.html" title="Capítulo 1 Introdução ‣ Cálculo II">
+<link rel="chapter" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="chapter" href="cap_integrais_multiplas.html" title="Capítulo 3 Integrais múltiplas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo II">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo II">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script><link rel="canonical" href="https://notaspedrok.com.br/calculo_ii/cap_integrais_multiplas_sec_integrais_duplas_regioes_gerais.html" />
+</head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="conteudo" class="nav-link" href="./index.html"><i class="fa-solid fa-bars-staggered text-primary"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart text-danger"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo II</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_integrais_multiplas.html" title="In Cálculo II" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Integrais múltiplas</span></a><a href="cap_integrais_multiplas_sec_integrais_duplas.html" title="In Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Integrais duplas</span></a><a href="cap_tabela_deriv.html" title="In Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Tabela de derivadas</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart text-danger"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">3.2 </span>Integrais duplas em regiões gerais</h1>
+
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2.1 </span>Limites de integração não constantes</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Antes de calcularmos integrais duplas sobre regiões gerais, não retangulares, observemos que uma integral dupla pode envolver linites de integração não constantes. Por exemplo, podemos ter</p>
+<table id="A2.S0.EGx252" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E35"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E35.m1" class="ltx_Math" alttext="\displaystyle\int_{a}^{b}\int_{g_{1}(x)}^{g_{2}(x)}f(x,y)\,dy\,dx=\int_{a}^{b}%
+\left[\int_{g_{1}(x)}^{g_{2}(x)}f(x,y)\,dy\right]dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>g</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>g</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow><mo>]</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.35)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou</p>
+<table id="A2.S0.EGx253" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E36"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E36.m1" class="ltx_Math" alttext="\displaystyle\int_{c}^{d}\int_{h_{1}(y)}^{h_{2}(y)}f(x,y)\,dx\,dy=\int_{c}^{d}%
+\left[\int_{h_{1}(y)}^{h_{2}(y)}f(x,y)\,dx\right]dy." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>c</mi><mi>d</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>h</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>c</mi><mi>d</mi></msubsup></mstyle><mrow><mrow><mo>[</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>h</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>]</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.36)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="ex:cap_integrais_multiplas_ex_limites_nao_constantes" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text ltx_phantom"><span style="visibility:hidden"></span></span></p>
+<table id="A2.S0.EGx254" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E37.m1" class="ltx_math_unparsed" alttext="\displaystyle a)" display="inline"><mrow><mi>a</mi><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E37.m2" class="ltx_Math" alttext="\displaystyle\int_{-1}^{1}\int_{x}^{-x^{2}}x^{2}y\,dy\,dx=\int_{-1}^{1}\left[%
+\frac{x^{2}y^{2}}{2}\right]_{y=x}^{-x^{2}}dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>x</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msubsup></mstyle><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msubsup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.37)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E38"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E38.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{-1}^{1}\left(\frac{x^{6}}{2}-\frac{x^{4}}{2}%
+\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>6</mn></msup><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>4</mn></msup><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.38)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E39.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[\frac{x^{7}}{14}-\frac{x^{5}}{10}\right]_{-1}^%
+{1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>7</mn></msup><mn>14</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>5</mn></msup><mn>10</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.39)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E40.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1}{14}-\frac{1}{10}-\left(-\frac{1}{14}+\frac{%
+1}{10}\right)=-\frac{2}{35}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>14</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>10</mn></mfrac></mstyle><mo>−</mo><mrow><mo>(</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>14</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>10</mn></mfrac></mstyle><mo>)</mo></mrow><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mn>35</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.40)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<table id="A2.S0.EGx255" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E41.m1" class="ltx_math_unparsed" alttext="\displaystyle b)" display="inline"><mrow><mi>b</mi><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E41.m2" class="ltx_Math" alttext="\displaystyle\int_{1}^{0}\int_{\sqrt[3]{y}}^{-y}x^{2}y\,dx\,dy=\int_{1}^{0}%
+\left[\frac{x^{3}y}{3}\right]_{x=\sqrt[3]{y}}^{-y}dy" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>0</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mroot><mi>y</mi><mn>3</mn></mroot><mrow><mo>−</mo><mi>y</mi></mrow></msubsup></mstyle><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>0</mn></msubsup></mstyle><mrow><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>⁢</mo><mi>y</mi></mrow><mn>3</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mi>x</mi><mo>=</mo><mroot><mi>y</mi><mn>3</mn></mroot></mrow><mrow><mo>−</mo><mi>y</mi></mrow></msubsup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.41)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E42.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{1}^{0}\left(-\frac{y^{4}}{3}-\frac{y^{2}}{3}%
+\right)dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>0</mn></msubsup></mstyle><mrow><mo>(</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>4</mn></msup><mn>3</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>2</mn></msup><mn>3</mn></mfrac></mstyle><mo>)</mo></mrow><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.42)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E43.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{1}{3}\int_{1}^{0}\left(y^{4}+y^{2}\right)dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>3</mn></mfrac></mstyle><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>0</mn></msubsup></mstyle><mrow><mo>(</mo><msup><mi>y</mi><mn>4</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>)</mo></mrow><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.43)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E44.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{1}{3}\left[\frac{y^{5}}{5}+\frac{y^{3}}{3}%
+\right]_{1}^{0}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>3</mn></mfrac></mstyle><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>5</mn></msup><mn>5</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>3</mn></msup><mn>3</mn></mfrac></mstyle><mo>]</mo></mrow><mn>1</mn><mn>0</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.44)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E45.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{1}{3}\left(0-\frac{1}{5}-\frac{1}{3}\right)=%
+\frac{8}{45}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>3</mn></mfrac></mstyle><mrow><mo>(</mo><mn>0</mn><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>5</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>3</mn></mfrac></mstyle><mo>)</mo></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>8</mn><mn>45</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.45)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2.2 </span>Integrais em regiões não retangulares</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Vamos separar as regiões de integração em dois tipos: regiões do tipo I e regiões do tipo II.</p>
+</div>
+<section id="SS2.SSSx1" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Regiões do tipo I</h3>
+
+<div id="SS2.SSSx1.p1" class="ltx_para">
+<p class="ltx_p">Uma região <math id="SS2.SSSx1.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> do plano é dita do tipo I se ela for limitada à esquerda e à direita por retas verticais <math id="SS2.SSSx1.p1.m2" class="ltx_Math" alttext="x=a" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>a</mi></mrow></math> e <math id="SS2.SSSx1.p1.m3" class="ltx_Math" alttext="x=b" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>b</mi></mrow></math>, e limitada acima e abaixo por curvas <math id="SS2.SSSx1.p1.m4" class="ltx_Math" alttext="y=g_{1}(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e <math id="SS2.SSSx1.p1.m5" class="ltx_Math" alttext="y=g_{2}(x)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msub><mi>g</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, respectivamente. Neste caso, a integral dupla de uma função <math id="SS2.SSSx1.p1.m6" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> sobre a região <math id="SS2.SSSx1.p1.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> pode ser expressa como</p>
+<table id="A2.S0.EGx256" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E46"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E46.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\int_{a}^{b}\int_{g_{1}(x)}^{g_{2}(x)}f(x,y)%
+\,dy\,dx." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>g</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.46)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="ex:cap_integrais_multiplas_ex_regiao_tipo_I" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Vamos calcular a integral dupla da função <math id="Thmex2.p1.m1" class="ltx_Math" alttext="f(x,y)=x^{2}+y^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math> sobre a região <math id="Thmex2.p1.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> limitada pelas curvas <math id="Thmex2.p1.m3" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>, <math id="Thmex2.p1.m4" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math>, <math id="Thmex2.p1.m5" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex2.p1.m6" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>. Consultemos a Figura <a href="#fig:ex_regiao_tipo_I" title="Figura 3.3 ‣ Exemplo 3.2.2. ‣ Regiões do tipo I ‣ 3.2.2 Integrais em regiões não retangulares ‣ 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.3</span></a> para a ilustração da região <math id="Thmex2.p1.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>.</p>
+</div>
+<figure id="fig:ex_regiao_tipo_I" class="ltx_figure"><img src="cap_integrais_multiplas/dados/fig_ex_regiao_tipo_I/fig.png" id="Ch3.F3.g1" class="ltx_graphics ltx_centering ltx_img_square" width="263" height="266" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.3</span>: </span><span class="ltx_text" style="font-size:90%;">Região <math id="Ch3.F3.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> do tipo I limitada pelas curvas <math id="Ch3.F3.m7" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>, <math id="Ch3.F3.m8" class="ltx_Math" alttext="x=2" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>2</mn></mrow></math>, <math id="Ch3.F3.m9" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Ch3.F3.m10" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex2.p2" class="ltx_para">
+<p class="ltx_p">A integral dupla sobre a região <math id="Thmex2.p2.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é dada por</p>
+<table id="A2.S0.EGx257" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E47"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E47.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\int_{1}^{2}\int_{0}^{x^{2}}(x^{2}+y^{2})\,dy%
+\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><msup><mi>x</mi><mn>2</mn></msup></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.47)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E48"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E48.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{1}^{2}\left[x^{2}y+\frac{y^{3}}{3}\right]_{y=0%
+}^{x^{2}}dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><msubsup><mrow><mo>[</mo><msup><mi>x</mi><mn>2</mn></msup><mi>y</mi><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>3</mn></msup><mn>3</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow><msup><mi>x</mi><mn>2</mn></msup></msubsup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.48)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E49"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E49.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{1}^{2}\left(x^{4}+\frac{x^{6}}{3}\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><mrow><mo>(</mo><msup><mi>x</mi><mn>4</mn></msup><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>6</mn></msup><mn>3</mn></mfrac></mstyle><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.49)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E50"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E50.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[\frac{x^{5}}{5}+\frac{x^{7}}{21}\right]_{1}^{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>5</mn></msup><mn>5</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>7</mn></msup><mn>21</mn></mfrac></mstyle><mo>]</mo></mrow><mn>1</mn><mn>2</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.50)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E51"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E51.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left(\frac{32}{5}+\frac{128}{21}\right)-\left(\frac%
+{1}{5}+\frac{1}{21}\right)=\frac{1286}{105}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>32</mn><mn>5</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>128</mn><mn>21</mn></mfrac></mstyle><mo>)</mo></mrow><mo>−</mo><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>5</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>21</mn></mfrac></mstyle><mo>)</mo></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1286</mn><mn>105</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.51)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="SS2.SSSx2" class="ltx_subsubsection">
+<h3 class="ltx_title ltx_title_subsubsection">Regiões do tipo II</h3>
+
+<div id="SS2.SSSx2.p1" class="ltx_para">
+<p class="ltx_p">Uma região <math id="SS2.SSSx2.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> do plano é dita do tipo II se ela for limitada abaixo e acima por retas horizontais <math id="SS2.SSSx2.p1.m2" class="ltx_Math" alttext="y=c" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>c</mi></mrow></math> e <math id="SS2.SSSx2.p1.m3" class="ltx_Math" alttext="y=d" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>d</mi></mrow></math>, e limitada à esquerda e à direita por curvas <math id="SS2.SSSx2.p1.m4" class="ltx_Math" alttext="x=h_{1}(y)" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e <math id="SS2.SSSx2.p1.m5" class="ltx_Math" alttext="x=h_{2}(y)" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><msub><mi>h</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, respectivamente. Neste caso, a integral dupla de uma função <math id="SS2.SSSx2.p1.m6" class="ltx_Math" alttext="f(x,y)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> sobre a região <math id="SS2.SSSx2.p1.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> pode ser expressa como</p>
+<table id="A2.S0.EGx258" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E52"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E52.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\int_{c}^{d}\int_{h_{1}(y)}^{h_{2}(y)}f(x,y)%
+\,dx\,dy." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>c</mi><mi>d</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>h</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.52)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Vamos calcular a integral dupla da função <math id="Thmex3.p1.m1" class="ltx_Math" alttext="f(x,y)=xy^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math> sobre a região <math id="Thmex3.p1.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> limitada pelas curvas <math id="Thmex3.p1.m3" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math>, <math id="Thmex3.p1.m4" class="ltx_Math" alttext="y=2" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>2</mn></mrow></math>, <math id="Thmex3.p1.m5" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex3.p1.m6" class="ltx_Math" alttext="x=\sqrt{y}" display="inline"><mrow><mi>x</mi><mo>=</mo><msqrt><mi>y</mi></msqrt></mrow></math>. Consultemos a Figura <a href="#fig:ex_regiao_tipo_II" title="Figura 3.4 ‣ Exemplo 3.2.3. ‣ Regiões do tipo II ‣ 3.2.2 Integrais em regiões não retangulares ‣ 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.4</span></a> para a ilustração da região <math id="Thmex3.p1.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>.</p>
+</div>
+<figure id="fig:ex_regiao_tipo_II" class="ltx_figure"><img src="cap_integrais_multiplas/dados/fig_ex_regiao_tipo_II/fig.png" id="Ch3.F4.g1" class="ltx_graphics ltx_centering ltx_img_square" width="279" height="225" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.4</span>: </span><span class="ltx_text" style="font-size:90%;">Região <math id="Ch3.F4.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> do tipo II limitada pelas curvas <math id="Ch3.F4.m7" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math>, <math id="Ch3.F4.m8" class="ltx_Math" alttext="y=2" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>2</mn></mrow></math>, <math id="Ch3.F4.m9" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Ch3.F4.m10" class="ltx_Math" alttext="x=\sqrt{y}" display="inline"><mrow><mi>x</mi><mo>=</mo><msqrt><mi>y</mi></msqrt></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex3.p2" class="ltx_para">
+<p class="ltx_p">A integral dupla sobre a região <math id="Thmex3.p2.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é dada por</p>
+<table id="A2.S0.EGx259" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E53"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E53.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\int_{1}^{2}\int_{0}^{\sqrt{y}}xy^{2}\,dx\,dy" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><msqrt><mi>y</mi></msqrt></msubsup></mstyle><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.53)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E54"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E54.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{1}^{2}\left[\frac{x^{2}y^{2}}{2}\right]_{x=0}^%
+{\sqrt{y}}dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow><msqrt><mi>y</mi></msqrt></msubsup><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.54)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E55"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E55.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{1}^{2}\frac{y^{3}}{2}dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>1</mn><mn>2</mn></msubsup></mstyle><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>3</mn></msup><mn>2</mn></mfrac></mstyle><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.55)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E56"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E56.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[\frac{y^{4}}{8}\right]_{1}^{2}=\frac{16}{8}-%
+\frac{1}{8}=\frac{15}{8}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>y</mi><mn>4</mn></msup><mn>8</mn></mfrac></mstyle><mo>]</mo></mrow><mn>1</mn><mn>2</mn></msubsup><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>16</mn><mn>8</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>8</mn></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>15</mn><mn>8</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.56)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2.3 </span>Determinando os limites de integração</h2>
+
+<div id="SS3.p1" class="ltx_para">
+<p class="ltx_p">Em muitos casos, o tipo de região (I ou II) não é imediatamente identificável. Nesses casos, é útil desenhar a região de integração e determinar os limites de integração com base nas curvas que a delimitam.</p>
+</div>
+<div id="cap_integrais_multiplas_ex_id_regiao_tipo_I" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.2.4.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Identificando uma região do tipo I)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">Vamos calcular a integral dupla da função <math id="Thmex4.p1.m1" class="ltx_Math" alttext="f(x,y)=xy" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></math> sobre a região <math id="Thmex4.p1.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> limitada pelas curvas <math id="Thmex4.p1.m3" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> e <math id="Thmex4.p1.m4" class="ltx_Math" alttext="y=\sqrt{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mi>x</mi></msqrt></mrow></math>. Consultemos a Figura <a href="#fig:ex_id_regiao_tipo_I" title="Figura 3.5 ‣ Exemplo 3.2.4.(Identificando uma região do tipo I) ‣ 3.2.3 Determinando os limites de integração ‣ 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.5</span></a> para a ilustração da região <math id="Thmex4.p1.m5" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>.</p>
+</div>
+<figure id="fig:ex_id_regiao_tipo_I" class="ltx_figure"><img src="cap_integrais_multiplas/dados/fig_ex_id_regiao_tipo_I/fig.png" id="Ch3.F5.g1" class="ltx_graphics ltx_centering ltx_img_square" width="281" height="266" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.5</span>: </span><span class="ltx_text" style="font-size:90%;">Região <math id="Ch3.F5.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> limitada pelas curvas <math id="Ch3.F5.m5" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math> e <math id="Ch3.F5.m6" class="ltx_Math" alttext="y=\sqrt{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mi>x</mi></msqrt></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex4.p2" class="ltx_para">
+<p class="ltx_p">Observemos que a região <math id="Thmex4.p2.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é do tipo I, pois é limitada à esquerda e à direita pelas retas verticais <math id="Thmex4.p2.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex4.p2.m3" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>, e limitada acima e abaixo pelas curvas <math id="Thmex4.p2.m4" class="ltx_Math" alttext="y=\sqrt{x}" display="inline"><mrow><mi>y</mi><mo>=</mo><msqrt><mi>x</mi></msqrt></mrow></math> e <math id="Thmex4.p2.m5" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>, respectivamente. Logo, a integral dupla sobre a região <math id="Thmex4.p2.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é dada por</p>
+<table id="A2.S0.EGx260" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E57"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E57.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\int_{0}^{1}\int_{x^{2}}^{\sqrt{x}}xy\,dy\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><msup><mi>x</mi><mn>2</mn></msup><msqrt><mi>x</mi></msqrt></msubsup></mstyle><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.57)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E58"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E58.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left[\frac{xy^{2}}{2}\right]_{y=x^{2}}^%
+{\sqrt{x}}dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><msqrt><mi>x</mi></msqrt></msubsup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.58)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E59"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E59.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left(\frac{x^{2}}{2}-\frac{x^{5}}{2}%
+\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>5</mn></msup><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.59)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E60"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E60.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[\frac{x^{3}}{6}-\frac{x^{6}}{12}\right]_{0}^{1%
+}=\frac{1}{6}-\frac{1}{12}=\frac{1}{12}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>3</mn></msup><mn>6</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>6</mn></msup><mn>12</mn></mfrac></mstyle><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>12</mn></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>12</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.60)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="ex:cap_integrais_multiplas_ex_id_regiao_tipo_II" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.2.5.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Identificando uma região do tipo II)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex5.p1" class="ltx_para">
+<p class="ltx_p">Vamos calcular a integral dupla da função <math id="Thmex5.p1.m1" class="ltx_Math" alttext="f(x,y)=x+2y" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math> sobre a região <math id="Thmex5.p1.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> limitada pelas curvas <math id="Thmex5.p1.m3" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math>, <math id="Thmex5.p1.m4" class="ltx_Math" alttext="y=x+1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmex5.p1.m5" class="ltx_Math" alttext="y=1-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mrow></math>. Consultemos a Figura <a href="#fig:ex_id_regiao_tipo_II" title="Figura 3.6 ‣ Exemplo 3.2.5.(Identificando uma região do tipo II) ‣ 3.2.3 Determinando os limites de integração ‣ 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.6</span></a> para a ilustração da região <math id="Thmex5.p1.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>.</p>
+</div>
+<figure id="fig:ex_id_regiao_tipo_II" class="ltx_figure"><img src="cap_integrais_multiplas/dados/fig_ex_id_regiao_tipo_II/fig.png" id="Ch3.F6.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="281" height="177" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.6</span>: </span><span class="ltx_text" style="font-size:90%;">Região <math id="Ch3.F6.m5" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> limitada pelas curvas <math id="Ch3.F6.m6" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math>, <math id="Ch3.F6.m7" class="ltx_Math" alttext="y=x+1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mrow></math> e <math id="Ch3.F6.m8" class="ltx_Math" alttext="y=1-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mrow></math>.</span></figcaption>
+</figure>
+<div id="Thmex5.p2" class="ltx_para">
+<p class="ltx_p">Esta região <math id="Thmex5.p2.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> pode ser identificada como do tipo II, pois é limitada abaixo e acima pelas retas horizontais <math id="Thmex5.p2.m2" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex5.p2.m3" class="ltx_Math" alttext="y=1" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>1</mn></mrow></math>, e limitada à esquerda e à direita pelas curvas <math id="Thmex5.p2.m4" class="ltx_Math" alttext="x=h_{1}(y)=y-1" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><msub><mi>h</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>y</mi><mo>−</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmex5.p2.m5" class="ltx_Math" alttext="x=h_{2}(y)=1-y" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><msub><mi>h</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mi>y</mi></mrow></mrow></math>, respectivamente. Logo, a integral dupla sobre a região <math id="Thmex5.p2.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é dada por</p>
+<table id="A2.S0.EGx261" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E61"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E61.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\int_{0}^{1}\int_{y-1}^{1-y}(x+2y)\,dx\,dy" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mi>y</mi><mo>−</mo><mn>1</mn></mrow><mrow><mn>1</mn><mo>−</mo><mi>y</mi></mrow></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.61)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E62"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E62.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left[\frac{x^{2}}{2}+2xy\right]_{x=y-1}%
+^{1-y}dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mn>2</mn><mi>x</mi><mi>y</mi><mo>]</mo></mrow><mrow><mi>x</mi><mo>=</mo><mrow><mi>y</mi><mo>−</mo><mn>1</mn></mrow></mrow><mrow><mn>1</mn><mo>−</mo><mi>y</mi></mrow></msubsup><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.62)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E63"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E63.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left(\frac{(1-y)^{2}}{2}+2(1-y)y-\frac{%
+(y-1)^{2}}{2}-2(y-1)y\right)dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mn>2</mn><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mi>y</mi><mo>−</mo><mstyle displaystyle="true"><mfrac><msup><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>−</mo><mn>2</mn><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>−</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mi>y</mi><mo>)</mo></mrow><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.63)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E64"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E64.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left(\frac{1-2y+y^{2}}{2}+2y-2y^{2}-%
+\frac{y^{2}-2y+1}{2}-2y^{2}+2y\right)dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><mn>1</mn><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></mstyle><mo>+</mo><mn>2</mn><mi>y</mi><mo>−</mo><mn>2</mn><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mrow><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>+</mo><mn>1</mn></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mn>2</mn><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>y</mi><mo>)</mo></mrow><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.64)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E65"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E65.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left(4y-4y^{2}\right)dy" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mn>4</mn><mi>y</mi><mo>−</mo><mn>4</mn><msup><mi>y</mi><mn>2</mn></msup><mo>)</mo></mrow><mi>d</mi><mi>y</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.65)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E66"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E66.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[2y^{2}-\frac{4y^{3}}{3}\right]_{0}^{1}=2-\frac%
+{4}{3}=\frac{2}{3}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mn>2</mn><msup><mi>y</mi><mn>2</mn></msup><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mn>4</mn><mo>⁢</mo><msup><mi>y</mi><mn>3</mn></msup></mrow><mn>3</mn></mfrac></mstyle><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup><mo>=</mo><mn>2</mn><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>4</mn><mn>3</mn></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mn>3</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.66)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="SS3.p2" class="ltx_para">
+<p class="ltx_p">Observemos que a região do Exemplo <a href="#ex:cap_integrais_multiplas_ex_id_regiao_tipo_II" title="Exemplo 3.2.5.(Identificando uma região do tipo II) ‣ 3.2.3 Determinando os limites de integração ‣ 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.2.5</span></a> também poderia ser identificada como a união disjunta de duas regiões do tipo I, <math id="SS3.p2.m1" class="ltx_Math" alttext="R_{1}" display="inline"><msub><mi>R</mi><mn>1</mn></msub></math> e <math id="SS3.p2.m2" class="ltx_Math" alttext="R_{2}" display="inline"><msub><mi>R</mi><mn>2</mn></msub></math>. Consultemos o seguinte exemplo.</p>
+</div>
+<div id="Thmex6" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.2.6.
+<br class="ltx_break">
+</h6>
+<div id="Thmex6.p1" class="ltx_para">
+<p class="ltx_p">Vamos voltar ao cálculo da integral dupla da função <math id="Thmex6.p1.m1" class="ltx_Math" alttext="f(x,y)=x+2y" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow></math> sobre a região <math id="Thmex6.p1.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> limitada pelas curvas <math id="Thmex6.p1.m3" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math>, <math id="Thmex6.p1.m4" class="ltx_Math" alttext="y=x+1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmex6.p1.m5" class="ltx_Math" alttext="y=1-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mrow></math>. Esta integral foi calculada considerando a região como do tipo II. Agora, vamos calcular a mesma integral considerando a região <math id="Thmex6.p1.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> como a união disjunta de duas regiões do tipo I, <math id="Thmex6.p1.m7" class="ltx_Math" alttext="R_{1}" display="inline"><msub><mi>R</mi><mn>1</mn></msub></math> e <math id="Thmex6.p1.m8" class="ltx_Math" alttext="R_{2}" display="inline"><msub><mi>R</mi><mn>2</mn></msub></math>. Ou seja, temos que a integral dupla sobre a região <math id="Thmex6.p1.m9" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> pode ser expressa como</p>
+<table id="A2.S0.EGx262" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E67"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E67.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\iint_{R_{1}}f(x,y)\,dA+\iint_{R_{2}}f(x,y)\,dA." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><msub><mi>R</mi><mn>1</mn></msub></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><msub><mi>R</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.67)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Consultemos a Figura <a href="#fig:ex_id_regiao_tipo_I_particionada" title="Figura 3.7 ‣ Exemplo 3.2.6. ‣ 3.2.3 Determinando os limites de integração ‣ 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.7</span></a> para a ilustração da região <math id="Thmex6.p1.m10" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> particionada em <math id="Thmex6.p1.m11" class="ltx_Math" alttext="R_{1}" display="inline"><msub><mi>R</mi><mn>1</mn></msub></math> e <math id="Thmex6.p1.m12" class="ltx_Math" alttext="R_{2}" display="inline"><msub><mi>R</mi><mn>2</mn></msub></math>.</p>
+</div>
+<figure id="fig:ex_id_regiao_tipo_I_particionada" class="ltx_figure"><img src="cap_integrais_multiplas/dados/fig_ex_id_regiao_tipo_I_particionada/fig.png" id="Ch3.F7.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="272" height="171" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 3.7</span>: </span><span class="ltx_text" style="font-size:90%;">Região <math id="Ch3.F7.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> particionada em duas regiões do tipo I, <math id="Ch3.F7.m5" class="ltx_Math" alttext="R_{1}" display="inline"><msub><mi>R</mi><mn>1</mn></msub></math> e <math id="Ch3.F7.m6" class="ltx_Math" alttext="R_{2}" display="inline"><msub><mi>R</mi><mn>2</mn></msub></math>.</span></figcaption>
+</figure>
+<div id="Thmex6.p2" class="ltx_para">
+<p class="ltx_p">A região <math id="Thmex6.p2.m1" class="ltx_Math" alttext="R_{1}" display="inline"><msub><mi>R</mi><mn>1</mn></msub></math> é limitada à esquerda e à direita pelas retas verticais <math id="Thmex6.p2.m2" class="ltx_Math" alttext="x=-1" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math> e <math id="Thmex6.p2.m3" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math>, e limitada acima e abaixo pelas curvas <math id="Thmex6.p2.m4" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex6.p2.m5" class="ltx_Math" alttext="y=x+1" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></mrow></math>, respectivamente. Logo, a integral dupla sobre a região <math id="Thmex6.p2.m6" class="ltx_Math" alttext="R_{1}" display="inline"><msub><mi>R</mi><mn>1</mn></msub></math> é dada por</p>
+<table id="A2.S0.EGx263" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E68"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E68.m1" class="ltx_Math" alttext="\displaystyle\iint_{R_{1}}f(x,y)\,dA=\int_{-1}^{0}\int_{0}^{x+1}(x+2y)\,dy\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><msub><mi>R</mi><mn>1</mn></msub></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.68)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E69"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E69.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{-1}^{0}\left[xy+y^{2}\right]_{y=0}^{x+1}dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mstyle><msubsup><mrow><mo>[</mo><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>]</mo></mrow><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow><mrow><mi>x</mi><mo>+</mo><mn>1</mn></mrow></msubsup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.69)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E70"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E70.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{-1}^{0}\left(x(x+1)+(x+1)^{2}\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mstyle><mrow><mo>(</mo><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.70)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E71"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E71.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{-1}^{0}\left(x^{2}+x+x^{2}+2x+1\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mstyle><mrow><mo>(</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>2</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.71)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E72"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E72.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{-1}^{0}\left(2x^{2}+3x+1\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mstyle><mrow><mo>(</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>3</mn><mi>x</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.72)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E73"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E73.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[\frac{2x^{3}}{3}+\frac{3x^{2}}{2}+x\right]_{-1%
+}^{0}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mn>3</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>x</mi><mo>]</mo></mrow><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.73)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E74"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E74.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=0-\left(-\frac{2}{3}+\frac{3}{2}-1\right)=\frac{1}{6}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>0</mn><mo>−</mo><mrow><mo>(</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mn>3</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>3</mn><mn>2</mn></mfrac></mstyle><mo>−</mo><mn>1</mn><mo>)</mo></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.74)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex6.p3" class="ltx_para">
+<p class="ltx_p">A região <math id="Thmex6.p3.m1" class="ltx_Math" alttext="R_{2}" display="inline"><msub><mi>R</mi><mn>2</mn></msub></math> é limitada à esquerda e à direita pelas retas verticais <math id="Thmex6.p3.m2" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex6.p3.m3" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>, e limitada acima e abaixo pelas curvas <math id="Thmex6.p3.m4" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmex6.p3.m5" class="ltx_Math" alttext="y=1-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mrow></math>, respectivamente. Logo, a integral dupla sobre a região <math id="Thmex6.p3.m6" class="ltx_Math" alttext="R_{2}" display="inline"><msub><mi>R</mi><mn>2</mn></msub></math> é dada por</p>
+<table id="A2.S0.EGx264" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E75"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E75.m1" class="ltx_Math" alttext="\displaystyle\iint_{R_{2}}f(x,y)\,dA=\int_{0}^{1}\int_{0}^{1-x}(x+2y)\,dy\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><msub><mi>R</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.75)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E76"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E76.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left[xy+y^{2}\right]_{y=0}^{1-x}dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><msubsup><mrow><mo>[</mo><mi>x</mi><mi>y</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>]</mo></mrow><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></msubsup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.76)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E77"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E77.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left(x(1-x)+(1-x)^{2}\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mi>x</mi><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.77)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E78"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E78.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left(x-x^{2}+1-2x+x^{2}\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mi>x</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mn>1</mn><mo>−</mo><mn>2</mn><mi>x</mi><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.78)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E79"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E79.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left(-x+1\right)dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>(</mo><mo lspace="0em">−</mo><mi>x</mi><mo>+</mo><mn>1</mn><mo>)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.79)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E80"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E80.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\left[-\frac{x^{2}}{2}+x\right]_{0}^{1}=-\frac{1}{2}%
++1=\frac{1}{2}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><msubsup><mrow><mo>[</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mi>x</mi><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>+</mo><mn>1</mn><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.80)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex6.p4" class="ltx_para">
+<p class="ltx_p">Por tudo isso, concluímos que</p>
+<table id="A2.S0.EGx265" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E81"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E81.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\iint_{R_{1}}f(x,y)\,dA+\iint_{R_{2}}f(x,y)\,%
+dA=\frac{1}{6}+\frac{1}{2}=\frac{2}{3}" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><msub><mi>R</mi><mn>1</mn></msub></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><msub><mi>R</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>6</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>2</mn><mn>3</mn></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.81)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">como esperado, o mesmo resultado obtido no Exemplo <a href="#ex:cap_integrais_multiplas_ex_id_regiao_tipo_II" title="Exemplo 3.2.5.(Identificando uma região do tipo II) ‣ 3.2.3 Determinando os limites de integração ‣ 3.2 Integrais duplas em regiões gerais ‣ Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.2.5</span></a>.</p>
+</div>
+</div>
+<div id="ex:cap_integrais_multiplas_ex_volume_cilindro" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 3.2.7.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Volume de um cilíndro)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmex7.p1" class="ltx_para">
+<p class="ltx_p">O volume de um cilíndro circular reto de raio <math id="Thmex7.p1.m1" class="ltx_Math" alttext="r" display="inline"><mi>r</mi></math> e altura <math id="Thmex7.p1.m2" class="ltx_Math" alttext="h" display="inline"><mi>h</mi></math> pode ser calculado como a integral dupla da função <math id="Thmex7.p1.m3" class="ltx_Math" alttext="f(x,y)=h" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>h</mi></mrow></math> sobre a <math id="Thmex7.p1.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> do plano <math id="Thmex7.p1.m5" class="ltx_Math" alttext="x-y" display="inline"><mrow><mi>x</mi><mo>−</mo><mi>y</mi></mrow></math> limitada pelo círculo <math id="Thmex7.p1.m6" class="ltx_Math" alttext="x^{2}+y^{2}=r^{2}" display="inline"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>=</mo><msup><mi>r</mi><mn>2</mn></msup></mrow></math>.</p>
+</div>
+<div id="Thmex7.p2" class="ltx_para">
+<p class="ltx_p">Neste caso, considerando <math id="Thmex7.p2.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> como uma região do tipo I, temos que a integral dupla sobre a região <math id="Thmex7.p2.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é dada por</p>
+<table id="A2.S0.EGx266" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E82"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E82.m1" class="ltx_Math" alttext="\displaystyle\iint_{R}f(x,y)\,dA=\int_{-r}^{r}\int_{-\sqrt{r^{2}-x^{2}}}^{%
+\sqrt{r^{2}-x^{2}}}h\,dy\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>r</mi></mrow><mi>r</mi></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></msubsup></mstyle><mrow><mi>h</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.82)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E83"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E83.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{-r}^{r}\left[hy\right]_{y=-\sqrt{r^{2}-x^{2}}}%
+^{\sqrt{r^{2}-x^{2}}}dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>r</mi></mrow><mi>r</mi></msubsup></mstyle><msubsup><mrow><mo>[</mo><mi>h</mi><mi>y</mi><mo>]</mo></mrow><mrow><mi>y</mi><mo>=</mo><mrow><mo>−</mo><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mrow></mrow><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></msubsup><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.83)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E84"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E84.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=2h\int_{-r}^{r}\sqrt{r^{2}-x^{2}}\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><mi>h</mi><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>r</mi></mrow><mi>r</mi></msubsup></mstyle><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.84)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A integral acima pode ser calculada usando a substituição trigonométrica <math id="Thmex7.p2.m3" class="ltx_Math" alttext="x=r\sin(\theta)" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mi>r</mi><mo lspace="0.167em">⁢</mo><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, <math id="Thmex7.p2.m4" class="ltx_Math" alttext="dx=r\cos(\theta)\,d\theta" display="inline"><mrow><mrow><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mrow><mi>r</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>θ</mi></mrow></mrow></math>, com <math id="Thmex7.p2.m5" class="ltx_Math" alttext="\theta\in[-\frac{\pi}{2},\frac{\pi}{2}]" display="inline"><mrow><mi>θ</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><mo>,</mo><mfrac><mi>π</mi><mn>2</mn></mfrac><mo stretchy="false">]</mo></mrow></mrow></math>. Assim, temos</p>
+<table id="A2.S0.EGx267" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E85"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E85.m1" class="ltx_Math" alttext="\displaystyle 2h\int_{-r}^{r}\sqrt{r^{2}-x^{2}}\,dx=2h\int_{-\frac{\pi}{2}}^{%
+\frac{\pi}{2}}\sqrt{r^{2}-r^{2}\sin^{2}(\theta)}r\cos(\theta)\,d\theta" display="inline"><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi>r</mi></mrow><mi>r</mi></msubsup></mstyle><mrow><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>h</mi><mo>⁢</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><mfrac><mi>π</mi><mn>2</mn></mfrac></msubsup></mstyle><mrow><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo>−</mo><mrow><msup><mi>r</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><msup><mi>sin</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></msqrt><mo>⁢</mo><mi>r</mi><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>θ</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.85)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E86"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E86.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=2hr\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\sqrt{r^{2}%
+\cos^{2}(\theta)}\cos(\theta)\,d\theta" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><mi>h</mi><mi>r</mi><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><mfrac><mi>π</mi><mn>2</mn></mfrac></msubsup></mstyle><msqrt><mrow><msup><mi>r</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><msup><mi>cos</mi><mn>2</mn></msup><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></msqrt><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>θ</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.86)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E87"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E87.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=2hr^{2}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\cos^{2}%
+(\theta)\,d\theta" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><mi>h</mi><msup><mi>r</mi><mn>2</mn></msup><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><mfrac><mi>π</mi><mn>2</mn></mfrac></msubsup></mstyle><msup><mi>cos</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>θ</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>θ</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.87)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E88"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E88.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=2hr^{2}\int_{-\frac{\pi}{2}}^{\frac{\pi}{2}}\frac{1+%
+\cos(2\theta)}{2}\,d\theta" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>2</mn><mi>h</mi><msup><mi>r</mi><mn>2</mn></msup><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><mfrac><mi>π</mi><mn>2</mn></mfrac></msubsup></mstyle><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>+</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>θ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mn>2</mn></mfrac></mstyle><mi>d</mi><mi>θ</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.88)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E89"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E89.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=hr^{2}\left[\theta+\frac{\sin(2\theta)}{2}\right]_{-%
+\frac{\pi}{2}}^{\frac{\pi}{2}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>h</mi><msup><mi>r</mi><mn>2</mn></msup><msubsup><mrow><mo>[</mo><mi>θ</mi><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>θ</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mn>2</mn></mfrac></mstyle><mo>]</mo></mrow><mrow><mo>−</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow><mfrac><mi>π</mi><mn>2</mn></mfrac></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.89)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E90"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E90.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=hr^{2}\left(\frac{\pi}{2}+\frac{\sin(\pi)}{2}-\left(%
+-\frac{\pi}{2}+\frac{\sin(-\pi)}{2}\right)\right)" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>h</mi><msup><mi>r</mi><mn>2</mn></msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow><mn>2</mn></mfrac></mstyle><mo>−</mo><mrow><mo>(</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mi>sin</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mi>π</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mn>2</mn></mfrac></mstyle><mo>)</mo></mrow><mo>)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.90)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E91"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E91.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=hr^{2}\left(\frac{\pi}{2}+0+\frac{\pi}{2}-0\right)=h%
+\pi^{2}r." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mi>h</mi><msup><mi>r</mi><mn>2</mn></msup><mrow><mo>(</mo><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>+</mo><mn>0</mn><mo>+</mo><mstyle displaystyle="true"><mfrac><mi>π</mi><mn>2</mn></mfrac></mstyle><mo>−</mo><mn>0</mn><mo>)</mo></mrow><mo>=</mo><mi>h</mi><msup><mi>π</mi><mn>2</mn></msup><mi>r</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.91)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como esperado, o volume do cilindro é dado por <math id="Thmex7.p2.m6" class="ltx_Math" alttext="V=\pi r^{2}h" display="inline"><mrow><mi>V</mi><mo>=</mo><mrow><mi>π</mi><mo>⁢</mo><msup><mi>r</mi><mn>2</mn></msup><mo>⁢</mo><mi>h</mi></mrow></mrow></math>. Ainda, poderíamos ter calculado considerando a região <math id="Thmex7.p2.m7" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> como uma região do tipo II. Verifique!</p>
+</div>
+</div>
+</section>
+<section id="SS4" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">3.2.4 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.2.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Calcule:</p>
+<table id="A2.S0.EGx268" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch3.E92"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E92.m1" class="ltx_math_unparsed" alttext="\displaystyle a)" display="inline"><mrow><mi>a</mi><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E92.m2" class="ltx_Math" alttext="\displaystyle\int_{0}^{1}\int_{x}^{1+x^{2}}(x+2y)\,dy\,dx," display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>x</mi><mrow><mn>1</mn><mo>+</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.92)</span></td>
+</tr></tbody>
+<tbody id="Ch3.E93"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E93.m1" class="ltx_math_unparsed" alttext="\displaystyle b)" display="inline"><mrow><mi>b</mi><mo stretchy="false">)</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E93.m2" class="ltx_Math" alttext="\displaystyle\int_{0}^{1}\int_{y^{2}}^{y}(x^{2}+y)\,dx\,dy." display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><msup><mi>y</mi><mn>2</mn></msup><mi>y</mi></msubsup></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.93)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx57">Resposta</button></div><div class="collapse" id="Thmrespx57" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx57.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx57.p1.m1" class="ltx_Math" alttext="\frac{39}{20}" display="inline"><mfrac><mn>39</mn><mn>20</mn></mfrac></math>; b) <math id="Thmrespx57.p1.m2" class="ltx_Math" alttext="\frac{5}{42}" display="inline"><mfrac><mn>5</mn><mn>42</mn></mfrac></math>.</p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.2.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Calcule a integral dupla da função <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="f(x,y)=x+y^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math> sobre a região limitada pelas curvas <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="y=x^{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></math>, <math id="Thmexer2.p1.m3" class="ltx_Math" alttext="y=2x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></math> e <math id="Thmexer2.p1.m4" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx58">Resposta</button></div><div class="collapse" id="Thmrespx58" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx58.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx58.p1.m1" class="ltx_Math" alttext="\frac{29}{28}" display="inline"><mfrac><mn>29</mn><mn>28</mn></mfrac></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.2.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Calcule a integral dupla da função <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="f(x,y)=x^{2}+y" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>y</mi></mrow></mrow></math> sobre a região limitada pelas curvas <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="y=0" display="inline"><mrow><mi>y</mi><mo>=</mo><mn>0</mn></mrow></math>, <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="y=\frac{\pi}{2}" display="inline"><mrow><mi>y</mi><mo>=</mo><mfrac><mi>π</mi><mn>2</mn></mfrac></mrow></math>, <math id="Thmexer3.p1.m4" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmexer3.p1.m5" class="ltx_Math" alttext="x=\cos(y)" display="inline"><mrow><mi>x</mi><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx59">Resposta</button></div><div class="collapse" id="Thmrespx59" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx59.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx59.p1.m1" class="ltx_Math" alttext="\frac{\pi}{2}-\frac{7}{9}" display="inline"><mrow><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>−</mo><mfrac><mn>7</mn><mn>9</mn></mfrac></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.2.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Considere a integral dupla da função <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="f(x,y)=x-2y^{2}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math> sobre a região limitada pelas curvas <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="y=x" display="inline"><mrow><mi>y</mi><mo>=</mo><mi>x</mi></mrow></math>, <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="y=-x" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mo>−</mo><mi>x</mi></mrow></mrow></math> e <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>. Calcule:</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p">A integral dupla considerando a região como do tipo I.</p>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p">A integral dupla considerando a região como a união disjunta de duas regiões do tipo II.</p>
+</div>
+</li>
+</ol>
+<p class="ltx_p">Os resultados são iguais? Por quê?</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx60">Resposta</button></div><div class="collapse" id="Thmrespx60" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx60.p1" class="ltx_para">
+<p class="ltx_p">a) <math id="Thmrespx60.p1.m1" class="ltx_Math" alttext="\frac{2}{3}" display="inline"><mfrac><mn>2</mn><mn>3</mn></mfrac></math>; b) <math id="Thmrespx60.p1.m2" class="ltx_Math" alttext="\frac{2}{3}" display="inline"><mfrac><mn>2</mn><mn>3</mn></mfrac></math>. Os resultados são iguais pela propriedade de partição da região de integração.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 3.2.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Calcule o volume do sólido limitado pelo cilindro <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="x^{2}+y^{2}=1" display="inline"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>1</mn></mrow></math> e pelos planos <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="z=0" display="inline"><mrow><mi>z</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmexer5.p1.m3" class="ltx_Math" alttext="z=3-y" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mn>3</mn><mo>−</mo><mi>y</mi></mrow></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx61">Resposta</button></div><div class="collapse" id="Thmrespx61" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx61.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx61.p1.m1" class="ltx_Math" alttext="3\pi" display="inline"><mrow><mn>3</mn><mo>⁢</mo><mi>π</mi></mrow></math>.</p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart text-danger"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_integrais_multiplas_sec_integrais_duplas.html" title="In Capítulo 3 Integrais múltiplas ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Integrais duplas</span></a><a href="bib.html" title="In Cálculo II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_tabela_deriv.html" title="In Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Tabela de derivadas</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Sep 11 12:54:43 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
