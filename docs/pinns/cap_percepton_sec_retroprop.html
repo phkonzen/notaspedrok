@@ -1,9 +1,9 @@
 <!DOCTYPE html><html lang="pt">
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
-<title>NPK - 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs</title>
-<!--Generated on Wed Aug 26 21:52:55 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 26 de agosto de 2026.-->
+<title>NPK - 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs</title>
+<!--Generated on Mon Sep 14 08:09:08 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 14 de setembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -13,20 +13,22 @@
 <link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
 <link rel="stylesheet" href="./notas.css" type="text/css">
 <script src="load-mathjax.js"></script>
-<link rel="up" href="cap_perceptron.html" title="Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="up" href="cap_rede_feedforward.html" title="Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
 <link rel="up up" href="./" title="Introdução a PINNs">
 <link rel="start" href="./" title="Introdução a PINNs">
-<link rel="prev" href="cap_perceptron_sec_unidade_de_processamento.html" title="2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
-<link rel="next" href="cap_perceptron_sec_ativacao.html" title="2.3 Funções de ativação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
-<link rel="section" href="cap_perceptron_sec_unidade_de_processamento.html" title="2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
-<link rel="section" href="cap_perceptron_sec_ativacao.html" title="2.3 Funções de ativação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs">
+<link rel="prev" href="cap_rede_feedforward_sec_unidade_de_processamento.html" title="2.1 Unidade de processamento ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="next" href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="2.3 Rede perceptron multicamadas ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_unidade_de_processamento.html" title="2.1 Unidade de processamento ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="2.3 Rede perceptron multicamadas ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_ativacao.html" title="2.4 Funções de ativação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_apfun.html" title="2.5 Aproximação de funções ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="section" href="cap_rede_feedforward_sec_autograd.html" title="2.6 Diferenciação automática ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
 <link rel="chapter" href="licenca.html" title="Licença ‣ Introdução a PINNs">
 <link rel="chapter" href="prefacio.html" title="Prefácio ‣ Introdução a PINNs">
 <link rel="chapter" href="./" title="Introdução a PINNs ‣ Introdução a PINNs">
 <link rel="chapter" href="cap_intro.html" title="Capítulo 1 Introdução ‣ Introdução a PINNs">
-<link rel="chapter" href="cap_perceptron.html" title="Capítulo 2 Perceptron ‣ Introdução a PINNs">
-<link rel="chapter" href="cap_mlp.html" title="Capítulo 3 Perceptron Multicamadas ‣ Introdução a PINNs">
-<link rel="chapter" href="cap_pinns.html" title="Capítulo 4 Redes informadas pela física ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_rede_feedforward.html" title="Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs">
+<link rel="chapter" href="cap_pinns.html" title="Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs">
 <link rel="bibliography" href="bib.html" title="Referências ‣ Introdução a PINNs">
 <meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
@@ -93,10 +95,9 @@
       <ul class="navbar-nav">
         <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
         </li>
-        <li class="nav-item"><a id="inicio" class="nav-link" href="./index.html"><i class="fas fa-home"></i> Conteúdo</a>
+        <li class="nav-item"><a id="conteudo" class="nav-link" href="./index.html"><i class="fa-solid fa-bars-staggered text-primary"></i> Conteúdo</a>
         </li>
-        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart"
-              style="color:red;"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart text-danger"></i> Colaborar</a></li>
         <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
         <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
         <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
@@ -124,12 +125,12 @@
 <div class="ltx_page_main">
 <h1 class="ltx_title ltx_title_document fs-2">Introdução a PINNs</h1><header class="ltx_page_header">
 <div class="ltx_align_center">
-<a href="cap_perceptron.html" title="In Introdução a PINNs" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Perceptron</span></a><a href="cap_perceptron_sec_unidade_de_processamento.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="cap_perceptron_sec_ativacao.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Funções de ativação</span></a>
-</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart" style="color: red;"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<a href="cap_rede_feedforward.html" title="In Introdução a PINNs" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Redes neurais <span class="ltx_text ltx_font_italic">feedforward</span></span></a><a href="cap_rede_feedforward_sec_unidade_de_processamento.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Rede perceptron multicamadas</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart text-danger"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
 <div class="ltx_page_content">
 <section class="ltx_section ltx_authors_1line" lang="pt">
 <h1 class="ltx_title ltx_title_section">
-<span class="ltx_tag ltx_tag_section">2.2 </span>Treinamento por retro-propagação</h1>
+<span class="ltx_tag ltx_tag_section">2.2 </span>Treinamento por retropropagação</h1>
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
@@ -139,7 +140,7 @@
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Ao longo da seção, vamos considerar o <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">modelo</span> de perceptron</p>
-<table id="Ch4.S3.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E28"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -154,7 +155,7 @@
 </div>
 <div id="p4" class="ltx_para">
 <p class="ltx_p">Fornecido um <span class="ltx_text ltx_font_bold">conjunto de treinamento</span> <math id="p4.m1" class="ltx_Math" alttext="\left\{\left(\bm{x}^{(s)},y^{(s)}\right)\right\}_{s=0}^{n_{s}}" display="inline"><msubsup><mrow><mo>{</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><msub><mi>n</mi><mi>s</mi></msub></msubsup></math>, com <math id="p4.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> amostras, <span class="ltx_text" style="background-color:#FFFF00;">o objetivo é calcular os parâmetros <math id="p4.m3" class="ltx_Math" alttext="\bm{\theta}=(\bm{w},b)" display="inline"><mrow><mi mathbackground="#FFFF00">𝜽</mi><mo mathbackground="#FFFF00">=</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">𝒘</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">b</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> que minimizam a <span class="ltx_text ltx_font_bold">função de perda</span></span> erro quadrático médio (EQM)</p>
-<table id="Ch4.S3.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:percep_mse"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -173,7 +174,7 @@ y^{(s)}\right)^{2}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">ε</mi>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="p4.m4" class="ltx_Math" alttext="\tilde{y}^{(s)}=\eta\left(\bm{x}^{(s)};\bm{\theta}\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mi>η</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mi>𝜽</mi><mo>)</mo></mrow></mrow></mrow></math> é o <span class="ltx_text ltx_font_bold">valor estimado</span> pelo modelo e <math id="p4.m5" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math> é o <span class="ltx_text ltx_font_bold">valor esperado</span> da <math id="p4.m6" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra. Nesta escolha, a função de perda para a <math id="p4.m7" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra é</p>
-<table id="Ch4.S3.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -186,7 +187,7 @@ y^{(s)}\right)^{2}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">ε</mi>
 </div>
 <div id="p5" class="ltx_para">
 <p class="ltx_p">Ou seja, <span class="ltx_text" style="background-color:#FFFF00;">o treinamento consiste em resolver o seguinte <span class="ltx_text ltx_font_bold">problema de otimização</span></span></p>
-<table id="Ch4.S3.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:percep_prob_otim"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -196,7 +197,7 @@ y^{(s)}\right)^{2}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">ε</mi>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.32)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Neste contexto, o método que escolhemos para resolver (<a href="#eq:percep_prob_otim" title="In 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.32</span></a>) é chamado de <span class="ltx_text ltx_font_bold">otimizador</span>. Na sequência, vamos estudar que <span class="ltx_text" style="background-color:#FFFF00;">otimizadores baseados em gradientes da função de perda podem ser aplicados de forma eficiente para o treinamento de perceptrons</span>.</p>
+<p class="ltx_p">Neste contexto, o método que escolhemos para resolver (<a href="#eq:percep_prob_otim" title="In 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.32</span></a>) é chamado de <span class="ltx_text ltx_font_bold">otimizador</span>. Na sequência, vamos estudar que <span class="ltx_text" style="background-color:#FFFF00;">otimizadores baseados em gradientes da função de perda podem ser aplicados de forma eficiente para o treinamento de perceptrons</span>.</p>
 </div>
 <section id="SS1" class="ltx_subsection">
 <h2 class="ltx_title ltx_title_subsection">
@@ -231,7 +232,7 @@ y^{(s)}\right)^{2}" display="inline"><mrow><mrow><mi mathcolor="#0000FF">ε</mi>
 </li>
 </ol>
 <p class="ltx_p">onde, escolhemos o <span class="ltx_text ltx_font_bold">número de épocas</span> <math id="SS1.p2.m1" class="ltx_Math" alttext="n_{e}" display="inline"><msub><mi>n</mi><mi>e</mi></msub></math>, a <span class="ltx_text ltx_font_bold">taxa de aprendizagem<span id="Ch2.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">4</span></span><span class="ltx_text ltx_font_medium">A taxa de aprendizagem é usualmente escolhida como um valor pequeno </span><math id="Ch2.footnote4.m1" class="ltx_Math" alttext="0&lt;l_{r}&lt;1" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>l</mi><mi>r</mi></msub><mo>&lt;</mo><mn>1</mn></mrow></math><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> <math id="SS1.p2.m2" class="ltx_Math" alttext="l_{r}\in\mathbb{R}" display="inline"><mrow><msub><mi>l</mi><mi>r</mi></msub><mo>∈</mo><mi>ℝ</mi></mrow></math> (do inglês, <span class="ltx_text ltx_font_italic">learning rate</span>). Sendo o <span class="ltx_text ltx_font_bold">gradiente</span> definido por</p>
-<table id="Ch4.S3.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx18" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E33"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -246,7 +247,7 @@ in}}},\frac{\partial\varepsilon}{\partial b}\right)." display="inline"><mrow><mr
 </div>
 <div id="SS1.p3" class="ltx_para">
 <p class="ltx_p">O cálculo do gradiente para os pesos <math id="SS1.p3.m1" class="ltx_Math" alttext="\bm{w}" display="inline"><mi>𝒘</mi></math> pode ser feito como segue<span id="Ch2.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span>Aqui, há um abuso de linguagem ao não se observar as dimensões dos operandos matriciais.</span></span></span></p>
-<table id="Ch4.S3.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx19" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E34"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -273,7 +274,7 @@ in}}},\frac{\partial\varepsilon}{\partial b}\right)." display="inline"><mrow><mr
 </tr></tbody>
 </table>
 <p class="ltx_p">Observando que</p>
-<table id="Ch4.S3.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx20" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -297,7 +298,7 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 </tr></tbody>
 </table>
 <p class="ltx_p">obtemos</p>
-<table id="Ch4.S3.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:percep_grad_w"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -311,7 +312,7 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 </div>
 <div id="SS1.p4" class="ltx_para">
 <p class="ltx_p">Analogamente, segue o cálculo do gradiente para o <span class="ltx_text ltx_font_italic">bias</span> <math id="SS1.p4.m1" class="ltx_Math" alttext="b" display="inline"><mi>b</mi></math>:</p>
-<table id="Ch4.S3.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -332,11 +333,11 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 </tr></tbody>
 </table>
 </div>
-<figure id="fig:percep_rp_fluxograma" class="ltx_figure"><img src="cap_perceptron/dados/fig_percep_rp_fluxograma/fig.png" id="Ch2.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="282" height="153" alt="Refer to caption">
+<figure id="fig:percep_rp_fluxograma" class="ltx_figure"><img src="cap_rede_feedforward/dados/fig_percep_rp_fluxograma/fig.png" id="Ch2.F3.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="282" height="153" alt="Refer to caption">
 <figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.3</span>: </span><span class="ltx_text" style="font-size:90%;">Fluxograma de uma época de treinamento.</span></figcaption>
 </figure>
 <div id="SS1.p5" class="ltx_para">
-<p class="ltx_p">Observemos cada época consiste de duas etapas (consultemos a Figura <a href="#fig:percep_rp_fluxograma" title="Figura 2.3 ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a>):</p>
+<p class="ltx_p">Observemos cada época consiste de duas etapas (consultemos a Figura <a href="#fig:percep_rp_fluxograma" title="Figura 2.3 ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.3</span></a>):</p>
 <ol id="I2" class="ltx_enumerate">
 <li id="I2.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">a)</span> 
@@ -350,10 +351,10 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <li id="I2.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">b)</span> 
 <div id="I2.i2.p1" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text ltx_font_bold">Retro-propagação</span></p>
+<p class="ltx_p"><span class="ltx_text ltx_font_bold">retropropagação</span></p>
 </div>
 <div id="I2.i2.p2" class="ltx_para">
-<p class="ltx_p">A etapa de retro-propagação consiste no cálculo do gradiente da função de perda e na atualização dos parâmetros do modelo. O <span class="ltx_text ltx_font_bold">cálculo do gradiente</span> é feito por um processo de acumulação do gradiente da função de perda para cada amostra utilizada na etapa de propagação. A <span class="ltx_text ltx_font_bold">atualização dos parâmetros</span> é feita com base nos gradientes calculados.</p>
+<p class="ltx_p">A etapa de retropropagação consiste no cálculo do gradiente da função de perda e na atualização dos parâmetros do modelo. O <span class="ltx_text ltx_font_bold">cálculo do gradiente</span> é feito por um processo de acumulação do gradiente da função de perda para cada amostra utilizada na etapa de propagação. A <span class="ltx_text ltx_font_bold">atualização dos parâmetros</span> é feita com base nos gradientes calculados.</p>
 </div>
 </li>
 </ol>
@@ -362,8 +363,8 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <h3 class="ltx_title ltx_title_subsubsection">Aplicação</h3>
 
 <div id="SS1.SSSx1.p1" class="ltx_para">
-<p class="ltx_p">Na Subseção <a href="cap_perceptron_sec_unidade_de_processamento.html#cap_perceptron_ssec_classic" title="2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.1</span></a>, <span class="ltx_text" style="background-color:#FFFF00;">treinamos um perceptron para o problema de classificação do e-lógico</span>. A função de ativação <math id="SS1.SSSx1.p1.m1" class="ltx_Math" alttext="f(x)=\operatorname{sign}(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> não é adequada para a aplicação do método GD, pois <math id="SS1.SSSx1.p1.m2" class="ltx_Math" alttext="f^{\prime}(x)\equiv 0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mn>0</mn></mrow></math> para <math id="SS1.SSSx1.p1.m3" class="ltx_Math" alttext="x\neq 0" display="inline"><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow></math>. Alternativamente, podemos utilizar a função tangente hiperbólica como função de ativação</p>
-<table id="Ch4.S3.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Na Subseção <a href="cap_rede_feedforward_sec_unidade_de_processamento.html#cap_rede_feedforward_ssec_classic" title="2.1.1 Um problema de classificação ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.1</span></a>, <span class="ltx_text" style="background-color:#FFFF00;">treinamos um perceptron para o problema de classificação do e-lógico</span>. A função de ativação <math id="SS1.SSSx1.p1.m1" class="ltx_Math" alttext="f(x)=\operatorname{sign}(x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sign</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> não é adequada para a aplicação do método GD, pois <math id="SS1.SSSx1.p1.m2" class="ltx_Math" alttext="f^{\prime}(x)\equiv 0" display="inline"><mrow><mrow><msup><mi>f</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>≡</mo><mn>0</mn></mrow></math> para <math id="SS1.SSSx1.p1.m3" class="ltx_Math" alttext="x\neq 0" display="inline"><mrow><mi>x</mi><mo>≠</mo><mn>0</mn></mrow></math>. Alternativamente, podemos utilizar a função tangente hiperbólica como função de ativação</p>
+<table id="Ch3.S3.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -373,7 +374,7 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 </tr></tbody>
 </table>
 <p class="ltx_p">que é diferenciável com derivada</p>
-<table id="Ch4.S3.EGx24" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S3.EGx24" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -383,13 +384,13 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 </tr></tbody>
 </table>
 </div>
-<figure id="fig:percep_tanh" class="ltx_figure"><img src="cap_perceptron/dados/fig_percep_tanh/fig.png" id="Ch2.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="268" height="173" alt="Refer to caption">
+<figure id="fig:percep_tanh" class="ltx_figure"><img src="cap_rede_feedforward/dados/fig_percep_tanh/fig.png" id="Ch2.F4.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="268" height="184" alt="Refer to caption">
 <figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.4</span>: </span><span class="ltx_text" style="font-size:90%;">Função tangente hiperbólica e sua derivada.</span></figcaption>
 </figure>
 <div id="SS1.SSSx1.p2" class="ltx_para">
-<p class="ltx_p">O Código <a href="#cap_perceptron_sec_train:cod:perceptron_gd" title="Código 3 ‣ Aplicação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> contém uma implementação do treinamento de um perceptron para o problema de classificação do e-lógico utilizando o método GD. Verifique!</p>
+<p class="ltx_p">O Código <a href="#cap_rede_feedforward_sec_train:cod:perceptron_gd" title="Código 3 ‣ Aplicação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> contém uma implementação do treinamento de um perceptron para o problema de classificação do e-lógico utilizando o método GD. Verifique!</p>
 </div>
-<figure id="cap_perceptron_sec_train:cod:perceptron_gd" class="ltx_float ltx_lstlisting">
+<figure id="cap_rede_feedforward_sec_train:cod:perceptron_gd" class="ltx_float ltx_lstlisting">
 <figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 3: </span>perceptron_gd.py</figcaption>
 <div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
 <div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IHRvcmNoCgojIG1vZGVsbwoKY2xhc3MgUGVyY2VwdHJvbih0b3JjaC5ubi5Nb2R1bGUpOgogICAgZGVmIF9faW5pdF9fKHNlbGYpOgogICAgICAgIHN1cGVyKCkuX19pbml0X18oKQogICAgICAgIHNlbGYubGluZWFyID0gdG9yY2gubm4uTGluZWFyKDIsMSkKCiAgICBkZWYgZm9yd2FyZChzZWxmLCB4KToKICAgICAgICB6ID0gIHNlbGYubGluZWFyKHgpCiAgICAgICAgeSA9IHRvcmNoLnRhbmgoeikKICAgICAgICByZXR1cm4geQoKbW9kZWwgPSBQZXJjZXB0cm9uKCkKCiMgdHJlaW5hbWVudG8KCiMjIG9wdGltaXphZG9yCm9wdGltID0gdG9yY2gub3B0aW0uU0dEKG1vZGVsLnBhcmFtZXRlcnMoKSwgbHI9MC41KQoKIyMgZnVuw6fDo28gZXJybwpsb3NzX2Z1biA9IHRvcmNoLm5uLk1TRUxvc3MoKQoKIyMgZGFkb3MgZGUgdHJlaW5hbWVudG8KWF90cmFpbiA9IHRvcmNoLnRlbnNvcihbWzEuLCAxLl0sCiAgICAgICAgICAgICAgICAgIFsxLiwgLTEuXSwKICAgICAgICAgICAgICAgICAgWy0xLiwgMS5dLAogICAgICAgICAgICAgICAgICBbLTEuLCAtMS5dXSkKeV90cmFpbiA9IHRvcmNoLnRlbnNvcihbMS4sIC0xLiwgLTEuLCAtMS5dKS5yZXNoYXBlKC0xLDEpCgpwcmludCgiXG5EYWRvcyBkZSB0cmVpbmFtZW50byIpCnByaW50KCJYX3RyYWluID0iKQpwcmludChYX3RyYWluKQpwcmludCgieV90cmFpbiA9ICIpCnByaW50KHlfdHJhaW4pCgojIyBudW0gbWF4IMOpcG9jYXMKbmVwb2NocyA9IDEwMAp0b2wgPSA1ZS0yCgpmb3IgZXBvY2ggaW4gcmFuZ2UobmVwb2Nocyk6CgogICAgIyBmb3J3YXJkCiAgICB5X2VzdCA9IG1vZGVsKFhfdHJhaW4pCgogICAgIyBlcnJvCiAgICBsb3NzID0gbG9zc19mdW4oeV9lc3QsIHlfdHJhaW4pCgogICAgcHJpbnQoZid7ZXBvY2h9OiB7bG9zcy5pdGVtKCk6LjRlfScpCgogICAgIyBjcml0w6lyaW8gZGUgcGFyYWRhCiAgICBpZiAobG9zcy5pdGVtKCkgPCB0b2wpOgogICAgICAgIGJyZWFrCgogICAgIyBiYWNrd2FyZAogICAgb3B0aW0uemVyb19ncmFkKCkKICAgIGxvc3MuYmFja3dhcmQoKQogICAgb3B0aW0uc3RlcCgpCgoKIyB2ZXJpZmljYcOnw6NvCnkgPSBtb2RlbChYX3RyYWluKQpwcmludChmJ3lfZXN0ID0ge3l9Jyk=" download="">⬇</a></div>
@@ -589,11 +590,11 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 </figure>
 </section>
 <section id="SS1.SSSx2" class="ltx_subsubsection">
-<h3 class="ltx_title ltx_title_subsubsection">Retro-propagação</h3>
+<h3 class="ltx_title ltx_title_subsubsection">Retropropagação</h3>
 
 <div id="SS1.SSSx2.p1" class="ltx_para">
-<p class="ltx_p">O termo <span class="ltx_text ltx_font_bold">retro-propagação</span> é usado para enfatizar que o cálculo do gradiente da função de perda é feito de forma retroativa, ou seja, a partir da saída do modelo e voltando-se para os parâmetros do modelo. A Figura <a href="#fig:percep_propag" title="Figura 2.5 ‣ Retro-propagação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a> ilustra o processo de retro-propagação aplicado ao treinamento de um perceptron. Observemos que a inferência do modelo pode ser esquematizada como uma árvore. No cálculo da pré-ativação <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="z=\bm{w}\cdot\bm{x}+b" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi></mrow><mo>+</mo><mi>b</mi></mrow></mrow></math>, o gradiente <math id="SS1.SSSx2.p1.m2" class="ltx_Math" alttext="\partial z/\partial\bm{\theta}=\partial z/\partial(\bm{w},b)" display="inline"><mrow><mrow><mo rspace="0em">∂</mo><mrow><mi>z</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mi>𝜽</mi></mrow></mrow></mrow><mo rspace="0.1389em">=</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mrow><mi>z</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math> pode ser calculado diretamente e armazenado como uma folha da árvore. Em seguida, a saída da rede é calculada como <math id="SS1.SSSx2.p1.m3" class="ltx_Math" alttext="\tilde{y}=\varphi(z)" display="inline"><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>=</mo><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, e o gradiente <math id="SS1.SSSx2.p1.m4" class="ltx_Math" alttext="\partial\tilde{y}/\partial z" display="inline"><mrow><mo rspace="0em">∂</mo><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mi>z</mi></mrow></mrow></mrow></math> também pode ser calculado e armazenado como uma folha da árvore. Por fim, a função de perda é calculada e o gradiente <math id="SS1.SSSx2.p1.m5" class="ltx_Math" alttext="\partial\varepsilon/\partial\tilde{y}" display="inline"><mrow><mo rspace="0em">∂</mo><mrow><mi>ε</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mover accent="true"><mi>y</mi><mo>~</mo></mover></mrow></mrow></mrow></math> calculado e armazenado como uma folha da árvore. Terminada a etapa de propagação (inferência do modelo), as folhas da árvore contém todos os fatores necessários para o cálculo do gradiente da função de perda em relação aos parâmetros do modelo, lembrando que, por meio da regra da cadeia, temos</p>
-<table id="Ch4.S3.EGx25" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">O termo <span class="ltx_text ltx_font_bold">retropropagação</span> é usado para enfatizar que o cálculo do gradiente da função de perda é feito de forma retroativa, ou seja, a partir da saída do modelo e voltando-se para os parâmetros do modelo. A Figura <a href="#fig:percep_propag" title="Figura 2.5 ‣ Retropropagação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.5</span></a> ilustra o processo de retropropagação aplicado ao treinamento de um perceptron. Observemos que a inferência do modelo pode ser esquematizada como uma árvore. No cálculo da pré-ativação <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="z=\bm{w}\cdot\bm{x}+b" display="inline"><mrow><mi>z</mi><mo>=</mo><mrow><mrow><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi></mrow><mo>+</mo><mi>b</mi></mrow></mrow></math>, o gradiente <math id="SS1.SSSx2.p1.m2" class="ltx_Math" alttext="\partial z/\partial\bm{\theta}=\partial z/\partial(\bm{w},b)" display="inline"><mrow><mrow><mo rspace="0em">∂</mo><mrow><mi>z</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mi>𝜽</mi></mrow></mrow></mrow><mo rspace="0.1389em">=</mo><mrow><mo lspace="0.1389em" rspace="0em">∂</mo><mrow><mi>z</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mrow><mo stretchy="false">(</mo><mi>𝒘</mi><mo>,</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math> pode ser calculado diretamente e armazenado como uma folha da árvore. Em seguida, a saída da rede é calculada como <math id="SS1.SSSx2.p1.m3" class="ltx_Math" alttext="\tilde{y}=\varphi(z)" display="inline"><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>=</mo><mrow><mi>φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, e o gradiente <math id="SS1.SSSx2.p1.m4" class="ltx_Math" alttext="\partial\tilde{y}/\partial z" display="inline"><mrow><mo rspace="0em">∂</mo><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mi>z</mi></mrow></mrow></mrow></math> também pode ser calculado e armazenado como uma folha da árvore. Por fim, a função de perda é calculada e o gradiente <math id="SS1.SSSx2.p1.m5" class="ltx_Math" alttext="\partial\varepsilon/\partial\tilde{y}" display="inline"><mrow><mo rspace="0em">∂</mo><mrow><mi>ε</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mover accent="true"><mi>y</mi><mo>~</mo></mover></mrow></mrow></mrow></math> calculado e armazenado como uma folha da árvore. Terminada a etapa de propagação (inferência do modelo), as folhas da árvore contém todos os fatores necessários para o cálculo do gradiente da função de perda em relação aos parâmetros do modelo, lembrando que, por meio da regra da cadeia, temos</p>
+<table id="Ch3.S3.EGx25" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -604,10 +605,10 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.45)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Com isso, o cálculo do gradiente da função de perda em relação aos parâmetros pode ser feito por um processo de acumulação, um somatório de produtos de gradientes. No próximo capítulo, vamos explorar mais detalhadamente o processo de retro-propagação como uma aplicação de diferenciação automática.</p>
+<p class="ltx_p">Com isso, o cálculo do gradiente da função de perda em relação aos parâmetros pode ser feito por um processo de acumulação, um somatório de produtos de gradientes. No próximo capítulo, vamos explorar mais detalhadamente o processo de retropropagação como uma aplicação de diferenciação automática.</p>
 </div>
-<figure id="fig:percep_propag" class="ltx_figure"><img src="cap_perceptron/dados/fig_percep_rp/fig.png" id="Ch2.F5.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="244" height="128" alt="Refer to caption">
-<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.5</span>: </span><span class="ltx_text" style="font-size:90%;">Fluxograma do método de retro-propagação aplicado ao treinamento de um perceptron.</span></figcaption>
+<figure id="fig:percep_propag" class="ltx_figure"><img src="cap_rede_feedforward/dados/fig_percep_rp/fig.png" id="Ch2.F5.g1" class="ltx_graphics ltx_centering ltx_img_landscape" width="244" height="128" alt="Refer to caption">
+<figcaption class="ltx_caption ltx_centering"><span class="ltx_tag ltx_tag_figure"><span class="ltx_text" style="font-size:90%;">Figura 2.5</span>: </span><span class="ltx_text" style="font-size:90%;">Fluxograma do método de retropropagação aplicado ao treinamento de um perceptron.</span></figcaption>
 </figure>
 </section>
 </section>
@@ -654,12 +655,12 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <h3 class="ltx_title ltx_title_subsubsection">Aplicação</h3>
 
 <div id="SS2.SSSx1.p1" class="ltx_para">
-<p class="ltx_p">O Código <a href="#cap_perceptron_sec_train:cod:perceptron_gde" title="Código 4 ‣ Aplicação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a> é uma implementação do treinamento de um perceptron para o problema de classificação do e-lógico utilizando o método GDE. Verifique!</p>
+<p class="ltx_p">O Código <a href="#cap_rede_feedforward_sec_train:cod:perceptron_gde" title="Código 4 ‣ Aplicação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a> é uma implementação do treinamento de um perceptron para o problema de classificação do e-lógico utilizando o método GDE. Verifique!</p>
 </div>
-<figure id="cap_perceptron_sec_train:cod:perceptron_gde" class="ltx_float ltx_lstlisting">
+<figure id="cap_rede_feedforward_sec_train:cod:perceptron_gde" class="ltx_float ltx_lstlisting">
 <figcaption class="ltx_caption"><span class="ltx_tag ltx_tag_float">Código 4: </span>perceptron_gde.py</figcaption>
 <div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
-<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IHRvcmNoCgojIG1vZGVsbwoKY2xhc3MgUGVyY2VwdHJvbih0b3JjaC5ubi5Nb2R1bGUpOgogICAgZGVmIF9faW5pdF9fKHNlbGYpOgogICAgICAgIHN1cGVyKCkuX19pbml0X18oKQogICAgICAgIHNlbGYubGluZWFyID0gdG9yY2gubm4uTGluZWFyKDIsMSkKCiAgICBkZWYgZm9yd2FyZChzZWxmLCB4KToKICAgICAgICB6ID0gIHNlbGYubGluZWFyKHgpCiAgICAgICAgeSA9IHRvcmNoLnRhbmgoeikKICAgICAgICByZXR1cm4geQoKbW9kZWwgPSBQZXJjZXB0cm9uKCkKCiMgdHJlaW5hbWVudG8KCiMgb3B0aW1pemFkb3IKb3B0aW0gPSB0b3JjaC5vcHRpbS5TR0QobW9kZWwucGFyYW1ldGVycygpLCBscj0wLjUpCgojIGZ1bsOnw6NvIGVycm8KbG9zc19mdW4gPSB0b3JjaC5ubi5NU0VMb3NzKCkKCiMgZGFkb3MgZGUgdHJlaW5hbWVudG8KWF90cmFpbiA9IHRvcmNoLnRlbnNvcihbWzEuLCAxLl0sCiAgICAgICAgICAgICAgICAgIFsxLiwgLTEuXSwKICAgICAgICAgICAgICAgICAgWy0xLiwgMS5dLAogICAgICAgICAgICAgICAgICBbLTEuLCAtMS5dXSkKeV90cmFpbiA9IHRvcmNoLnRlbnNvcihbMS4sIC0xLiwgLTEuLCAtMS5dKS5yZXNoYXBlKC0xLDEpCgojIG51bSBkZSBhbW9zdHJhcwpucyA9IHlfdHJhaW4uc2l6ZSgwKQoKcHJpbnQoIlxuRGFkb3MgZGUgdHJlaW5hbWVudG8iKQpwcmludCgiWF90cmFpbiA9IikKcHJpbnQoWF90cmFpbikKcHJpbnQoInlfdHJhaW4gPSAiKQpwcmludCh5X3RyYWluKQoKIyBudW0gbWF4IMOpcG9jYXMKbmVwb2NocyA9IDEwMAp0b2wgPSA1ZS0yCgpmb3IgZXBvY2ggaW4gcmFuZ2UobmVwb2Nocyk6CgogICAgbW9kZWwudHJhaW4oKQogICAgZm9yIHMgaW4gdG9yY2gucmFuZHBlcm0obnMpOgogICAgICAgICMgcHJvcGFnYcOnw6NvCiAgICAgICAgeV9lc3RfcyA9IG1vZGVsKFhfdHJhaW5bczpzKzEsOl0pCgogICAgICAgICMgZnVuw6fDo28gZGUgcGVyZGEgZGEgYW1vc3RyYQogICAgICAgIGxvc3NfcyA9ICh5X2VzdF9zIC0geV90cmFpbltzXSkqKjIKCiAgICAgICAgIyByZXRyby1wcm9wYWdhw6fDo28KICAgICAgICBvcHRpbS56ZXJvX2dyYWQoKQogICAgICAgIGxvc3Nfcy5iYWNrd2FyZCgpCiAgICAgICAgb3B0aW0uc3RlcCgpCgogICAgIyBjcml0w6lyaW8gZGUgcGFyYWRhCiAgICBtb2RlbC5ldmFsKCkKICAgIHlfdmFsID0gbW9kZWwoWF90cmFpbikKCiAgICBsb3NzX3ZhbCA9IGxvc3NfZnVuKHlfdmFsLCB5X3RyYWluKQogICAgcHJpbnQoZid7ZXBvY2h9OiB7bG9zc192YWwuaXRlbSgpOi40ZX0nKQoKICAgIGlmIChsb3NzX3ZhbC5pdGVtKCkgPCB0b2wpOgogICAgICAgIGJyZWFrCgojIHZlcmlmaWNhw6fDo28KcHJpbnQoZid5ID0ge3lfdmFsfScp" download="">⬇</a></div>
+<div class="ltx_listing_data"><a href="data:text/plain;base64,aW1wb3J0IHRvcmNoCgojIG1vZGVsbwoKY2xhc3MgUGVyY2VwdHJvbih0b3JjaC5ubi5Nb2R1bGUpOgogICAgZGVmIF9faW5pdF9fKHNlbGYpOgogICAgICAgIHN1cGVyKCkuX19pbml0X18oKQogICAgICAgIHNlbGYubGluZWFyID0gdG9yY2gubm4uTGluZWFyKDIsMSkKCiAgICBkZWYgZm9yd2FyZChzZWxmLCB4KToKICAgICAgICB6ID0gIHNlbGYubGluZWFyKHgpCiAgICAgICAgeSA9IHRvcmNoLnRhbmgoeikKICAgICAgICByZXR1cm4geQoKbW9kZWwgPSBQZXJjZXB0cm9uKCkKCiMgdHJlaW5hbWVudG8KCiMgb3B0aW1pemFkb3IKb3B0aW0gPSB0b3JjaC5vcHRpbS5TR0QobW9kZWwucGFyYW1ldGVycygpLCBscj0wLjUpCgojIGZ1bsOnw6NvIGVycm8KbG9zc19mdW4gPSB0b3JjaC5ubi5NU0VMb3NzKCkKCiMgZGFkb3MgZGUgdHJlaW5hbWVudG8KWF90cmFpbiA9IHRvcmNoLnRlbnNvcihbWzEuLCAxLl0sCiAgICAgICAgICAgICAgICAgIFsxLiwgLTEuXSwKICAgICAgICAgICAgICAgICAgWy0xLiwgMS5dLAogICAgICAgICAgICAgICAgICBbLTEuLCAtMS5dXSkKeV90cmFpbiA9IHRvcmNoLnRlbnNvcihbMS4sIC0xLiwgLTEuLCAtMS5dKS5yZXNoYXBlKC0xLDEpCgojIG51bSBkZSBhbW9zdHJhcwpucyA9IHlfdHJhaW4uc2l6ZSgwKQoKcHJpbnQoIlxuRGFkb3MgZGUgdHJlaW5hbWVudG8iKQpwcmludCgiWF90cmFpbiA9IikKcHJpbnQoWF90cmFpbikKcHJpbnQoInlfdHJhaW4gPSAiKQpwcmludCh5X3RyYWluKQoKIyBudW0gbWF4IMOpcG9jYXMKbmVwb2NocyA9IDEwMAp0b2wgPSA1ZS0yCgpmb3IgZXBvY2ggaW4gcmFuZ2UobmVwb2Nocyk6CgogICAgbW9kZWwudHJhaW4oKQogICAgZm9yIHMgaW4gdG9yY2gucmFuZHBlcm0obnMpOgogICAgICAgICMgcHJvcGFnYcOnw6NvCiAgICAgICAgeV9lc3RfcyA9IG1vZGVsKFhfdHJhaW5bczpzKzEsOl0pCgogICAgICAgICMgZnVuw6fDo28gZGUgcGVyZGEgZGEgYW1vc3RyYQogICAgICAgIGxvc3NfcyA9ICh5X2VzdF9zIC0geV90cmFpbltzXSkqKjIKCiAgICAgICAgIyByZXRyb3Byb3BhZ2HDp8OjbwogICAgICAgIG9wdGltLnplcm9fZ3JhZCgpCiAgICAgICAgbG9zc19zLmJhY2t3YXJkKCkKICAgICAgICBvcHRpbS5zdGVwKCkKCiAgICAjIGNyaXTDqXJpbyBkZSBwYXJhZGEKICAgIG1vZGVsLmV2YWwoKQogICAgeV92YWwgPSBtb2RlbChYX3RyYWluKQoKICAgIGxvc3NfdmFsID0gbG9zc19mdW4oeV92YWwsIHlfdHJhaW4pCiAgICBwcmludChmJ3tlcG9jaH06IHtsb3NzX3ZhbC5pdGVtKCk6LjRlfScpCgogICAgaWYgKGxvc3NfdmFsLml0ZW0oKSA8IHRvbCk6CiAgICAgICAgYnJlYWsKCiMgdmVyaWZpY2HDp8OjbwpwcmludChmJ3kgPSB7eV92YWx9Jyk=" download="">⬇</a></div>
 <div id="lstnumberx164" class="ltx_listingline">
 <span class="ltx_tag ltx_tag_listingline">1</span><span class="ltx_text ltx_lst_keyword ltx_font_typewriter" style="font-size:90%;color:#0000FF;">import</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;"> </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">torch</span>
 </div>
@@ -823,7 +824,7 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <span class="ltx_tag ltx_tag_listingline">54</span>
 </div>
 <div id="lstnumberx218" class="ltx_listingline">
-<span class="ltx_tag ltx_tag_listingline">55</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>retro-propaga<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
+<span class="ltx_tag ltx_tag_listingline">55</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_comment ltx_font_typewriter" style="font-size:90%;"><span class="ltx_text ltx_font_italic" style="color:#808080;">#<span class="ltx_text ltx_lst_space"> </span>retropropaga<span class="ltx_text ltx_lst_literate">ç</span><span class="ltx_text ltx_lst_literate">ã</span>o</span></span>
 </div>
 <div id="lstnumberx219" class="ltx_listingline">
 <span class="ltx_tag ltx_tag_listingline">56</span><span class="ltx_text ltx_lst_space ltx_font_typewriter" style="font-size:90%;">        </span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">optim</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">.</span><span class="ltx_text ltx_lst_identifier ltx_font_typewriter" style="font-size:90%;">zero_grad</span><span class="ltx_text ltx_font_typewriter" style="font-size:90%;">()</span>
@@ -886,7 +887,7 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <br class="ltx_break">
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
-<p class="ltx_p">Faça um estudo de convergência para comparar o algoritmo de treinamento perceptron, com o algoritmo de treinamento por retro-propagação utilizando o método GD e o método GDE. Para isso, utilize o problema de classificação do e-lógico.</p>
+<p class="ltx_p">Faça um estudo de convergência para comparar o algoritmo de treinamento perceptron, com o algoritmo de treinamento por retropropagação utilizando o método GD e o método GDE. Para isso, utilize o problema de classificação do e-lógico.</p>
 </div>
 </div>
 <div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
@@ -894,10 +895,10 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <br class="ltx_break">
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
-<p class="ltx_p">No E.<a href="cap_perceptron_sec_unidade_de_processamento.html#exer:perceptron_xor" title="E. 2.1.5. ‣ 2.1.3 Exercícios ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.5</span></a> foi verificado que não é possível criar um perceptron para emular a operação lógica <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> e o algoritmo de treinamento perceptron acaba convergindo para uma saída nula. O que ocorre se tentarmos treinar um perceptron para emular a operação lógica <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> utilizando o método GD e o método GDE? As saídas estimadas convergem para algum valor? Justifique sua resposta.</p>
+<p class="ltx_p">No E.<a href="cap_rede_feedforward_sec_unidade_de_processamento.html#exer:perceptron_xor" title="E. 2.1.5. ‣ 2.1.3 Exercícios ‣ 2.1 Unidade de processamento ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.5</span></a> foi verificado que não é possível criar um perceptron para emular a operação lógica <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> e o algoritmo de treinamento perceptron acaba convergindo para uma saída nula. O que ocorre se tentarmos treinar um perceptron para emular a operação lógica <span class="ltx_text ltx_markedasmath ltx_font_typewriter">xor</span> utilizando o método GD e o método GDE? As saídas estimadas convergem para algum valor? Justifique sua resposta.</p>
 </div>
 </div>
-<div id="cap_perceptron_sec_train:exer:ajuste" class="ltx_theorem ltx_theorem_exer">
+<div id="cap_rede_feedforward_sec_train:exer:ajuste" class="ltx_theorem ltx_theorem_exer">
 <h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.2.3.
 <br class="ltx_break">
 </h6>
@@ -943,7 +944,7 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 <br class="ltx_break">
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
-<p class="ltx_p">Nos Código <a href="#cap_perceptron_sec_train:cod:perceptron_gd" title="Código 3 ‣ Aplicação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> e Código <a href="#cap_perceptron_sec_train:cod:perceptron_gde" title="Código 4 ‣ Aplicação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Treinamento por retro-propagação ‣ Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>, substitua o trecho de código</p>
+<p class="ltx_p">Nos Código <a href="#cap_rede_feedforward_sec_train:cod:perceptron_gd" title="Código 3 ‣ Aplicação ‣ 2.2.1 Método do gradiente descendente ‣ 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3</span></a> e Código <a href="#cap_rede_feedforward_sec_train:cod:perceptron_gde" title="Código 4 ‣ Aplicação ‣ 2.2.2 Método do gradiente estocástico ‣ 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4</span></a>, substitua o trecho de código</p>
 </div>
 <div id="Thmexer4.p2" class="ltx_para">
 <div class="ltx_listing ltx_lst_language_Python ltx_lst_numbers_left ltx_lstlisting ltx_listing" style="background-color:#F7F7F7;">
@@ -974,7 +975,7 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
 </section>
 </section>
 </div>
-<hr><h3 class="mt-2"><i class="fa-solid fa-heart" style="color:red;"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart text-danger"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
   action="https://formspree.io/f/mzbolaeo">
 
   <div class="form-group mb-3">
@@ -1009,9 +1010,9 @@ z^{(s)}\right)," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac
   </div>
 </form><footer class="ltx_page_footer">
 <div class="ltx_align_center">
-<a href="cap_perceptron_sec_unidade_de_processamento.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_perceptron_sec_ativacao.html" title="In Capítulo 2 Perceptron ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Funções de ativação</span></a>
+<a href="cap_rede_feedforward_sec_unidade_de_processamento.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Rede perceptron multicamadas</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Wed Aug 26 21:52:55 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Mon Sep 14 08:09:08 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
