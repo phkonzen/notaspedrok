@@ -2,7 +2,7 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 2.2 Treinamento por retropropagação ‣ Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs</title>
-<!--Generated on Thu Sep 17 07:14:00 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Generated on Thu Sep 17 13:56:00 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
 <!--Document created on 17 de setembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
@@ -134,12 +134,9 @@
 <span class="ltx_tag ltx_tag_section">2.2 </span>Treinamento por retropropagação</h1>
 
 <div id="p1" class="ltx_para">
-<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
-</div>
-<div id="p2" class="ltx_para">
 <p class="ltx_p">Embora o algoritmo de treinamento perceptron seja eficiente para problemas de classificação linearmente separáveis, ele não é aplicável a problemas mais gerais. Para isso, <span class="ltx_text" style="background-color:#FFFF00;">vamos introduzir o problema de treinamento de um perceptron como um problema de otimização</span>. A ideia é definir uma <span class="ltx_text ltx_font_bold">função de perda</span> que quantifique o erro entre as saídas estimadas pelo modelo e as saídas esperadas. E, então, minimizar essa função de perda em relação aos parâmetros do modelo.</p>
 </div>
-<div id="p3" class="ltx_para">
+<div id="p2" class="ltx_para">
 <p class="ltx_p">Ao longo da seção, vamos considerar o <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">modelo</span> de perceptron</p>
 <table id="Ch3.S3.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
@@ -152,10 +149,10 @@
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.28)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">com função de ativação <math id="p3.m1" class="ltx_Math" alttext="\varphi:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi>φ</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>ℝ</mi><mo stretchy="false">→</mo><mi>ℝ</mi></mrow></mrow></math>, sendo os vetores de entrada <math id="p3.m2" class="ltx_Math" alttext="\bm{x}" display="inline"><mi>𝒙</mi></math> e dos pesos <math id="p3.m3" class="ltx_Math" alttext="\bm{w}" display="inline"><mi>𝒘</mi></math> de tamanho <math id="p3.m4" class="ltx_Math" alttext="n_{\textbf{in}}" display="inline"><msub><mi>n</mi><mtext class="ltx_mathvariant_bold">in</mtext></msub></math>. A pré-ativação do neurônio é denotada por <math id="p3.m5" class="ltx_Math" alttext="z:=\bm{w}\cdot\bm{x}+b" display="inline"><mrow><mi>z</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mrow><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi></mrow><mo>+</mo><mi>b</mi></mrow></mrow></math>.</p>
+<p class="ltx_p">com função de ativação <math id="p2.m1" class="ltx_Math" alttext="\varphi:\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi>φ</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mi>ℝ</mi><mo stretchy="false">→</mo><mi>ℝ</mi></mrow></mrow></math>, sendo os vetores de entrada <math id="p2.m2" class="ltx_Math" alttext="\bm{x}" display="inline"><mi>𝒙</mi></math> e dos pesos <math id="p2.m3" class="ltx_Math" alttext="\bm{w}" display="inline"><mi>𝒘</mi></math> de tamanho <math id="p2.m4" class="ltx_Math" alttext="n_{\textbf{in}}" display="inline"><msub><mi>n</mi><mtext class="ltx_mathvariant_bold">in</mtext></msub></math>. A pré-ativação do neurônio é denotada por <math id="p2.m5" class="ltx_Math" alttext="z:=\bm{w}\cdot\bm{x}+b" display="inline"><mrow><mi>z</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mrow><mi>𝒘</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>𝒙</mi></mrow><mo>+</mo><mi>b</mi></mrow></mrow></math>.</p>
 </div>
-<div id="p4" class="ltx_para">
-<p class="ltx_p">Fornecido um <span class="ltx_text ltx_font_bold">conjunto de treinamento</span> <math id="p4.m1" class="ltx_Math" alttext="\left\{\left(\bm{x}^{(s)},y^{(s)}\right)\right\}_{s=0}^{n_{s}-1}" display="inline"><msubsup><mrow><mo>{</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></math>, com <math id="p4.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> amostras, <span class="ltx_text" style="background-color:#FFFF00;">o objetivo é calcular os parâmetros <math id="p4.m3" class="ltx_Math" alttext="\bm{\theta}=(\bm{w},b)" display="inline"><mrow><mi mathbackground="#FFFF00">𝜽</mi><mo mathbackground="#FFFF00">=</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">𝒘</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">b</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> que minimizam a <span class="ltx_text ltx_font_bold">função de perda</span></span> erro quadrático médio (EQM)</p>
+<div id="p3" class="ltx_para">
+<p class="ltx_p">Fornecido um <span class="ltx_text ltx_font_bold">conjunto de treinamento</span> <math id="p3.m1" class="ltx_Math" alttext="\left\{\left(\bm{x}^{(s)},y^{(s)}\right)\right\}_{s=0}^{n_{s}-1}" display="inline"><msubsup><mrow><mo>{</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mo>}</mo></mrow><mrow><mi>s</mi><mo>=</mo><mn>0</mn></mrow><mrow><msub><mi>n</mi><mi>s</mi></msub><mo>−</mo><mn>1</mn></mrow></msubsup></math>, com <math id="p3.m2" class="ltx_Math" alttext="n_{s}" display="inline"><msub><mi>n</mi><mi>s</mi></msub></math> amostras, <span class="ltx_text" style="background-color:#FFFF00;">o objetivo é calcular os parâmetros <math id="p3.m3" class="ltx_Math" alttext="\bm{\theta}=(\bm{w},b)" display="inline"><mrow><mi mathbackground="#FFFF00">𝜽</mi><mo mathbackground="#FFFF00">=</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">𝒘</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">b</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> que minimizam a <span class="ltx_text ltx_font_bold">função de perda</span></span> erro quadrático médio (EQM)</p>
 <table id="Ch3.S3.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:percep_mse"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -174,7 +171,7 @@
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.30)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">onde <math id="p4.m4" class="ltx_Math" alttext="\tilde{y}^{(s)}=\eta\left(\bm{x}^{(s)};\bm{\theta}\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mi>η</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mi>𝜽</mi><mo>)</mo></mrow></mrow></mrow></math> é o <span class="ltx_text ltx_font_bold">valor estimado</span> pelo modelo e <math id="p4.m5" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math> é o <span class="ltx_text ltx_font_bold">valor esperado</span> da <math id="p4.m6" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra. Nesta escolha, a função de perda para a <math id="p4.m7" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra é</p>
+<p class="ltx_p">onde <math id="p3.m4" class="ltx_Math" alttext="\tilde{y}^{(s)}=\eta\left(\bm{x}^{(s)};\bm{\theta}\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mi>η</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mi>𝜽</mi><mo>)</mo></mrow></mrow></mrow></math> é o <span class="ltx_text ltx_font_bold">valor estimado</span> pelo modelo e <math id="p3.m5" class="ltx_Math" alttext="y^{(s)}" display="inline"><msup><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>s</mi><mo stretchy="false">)</mo></mrow></msup></math> é o <span class="ltx_text ltx_font_bold">valor esperado</span> da <math id="p3.m6" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra. Nesta escolha, a função de perda para a <math id="p3.m7" class="ltx_Math" alttext="s" display="inline"><mi>s</mi></math>-ésima amostra é</p>
 <table id="Ch3.S3.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -186,7 +183,7 @@
 </tr></tbody>
 </table>
 </div>
-<div id="p5" class="ltx_para">
+<div id="p4" class="ltx_para">
 <p class="ltx_p">Ou seja, <span class="ltx_text" style="background-color:#FFFF00;">o treinamento consiste em resolver o seguinte <span class="ltx_text ltx_font_bold">problema de otimização</span></span></p>
 <table id="Ch3.S3.EGx17" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
@@ -908,7 +905,7 @@ y}^{(s)}}{\partial z^{(s)}}\frac{\partial z^{(s)}}{\partial b}" display="inline"
 <p class="ltx_p">Crie um perceptron que se ajuste ao seguinte conjunto de dados de entrada e saída.</p>
 </div>
 <figure id="Thmexer3.tab1" class="ltx_table">
-<table class="ltx_tabular ltx_centering ltx_guessed_headers ltx_align_middle">
+<table class="ltx_tabular ltx_guessed_headers ltx_align_middle">
 <thead class="ltx_thead">
 <tr class="ltx_tr">
 <th class="ltx_td ltx_align_left ltx_th ltx_th_column ltx_th_row ltx_border_r ltx_border_tt">s</th>
@@ -1014,7 +1011,7 @@ y}^{(s)}}{\partial z^{(s)}}\frac{\partial z^{(s)}}{\partial b}" display="inline"
 <div class="ltx_align_center">
 <a href="cap_rede_feedforward_sec_unidade_de_processamento.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.1 </span>Unidade de processamento</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_rede_feedforward_sec_perceptron_multicamadas.html" title="In Capítulo 2 Redes neurais feedforward ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2.3 </span>Rede perceptron multicamadas</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Thu Sep 17 07:14:00 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Sep 17 13:56:00 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
