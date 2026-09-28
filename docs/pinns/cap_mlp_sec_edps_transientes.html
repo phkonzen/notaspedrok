@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 3.2 Problemas transientes ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs</title>
-<!--Generated on Fri Sep 18 07:41:59 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 18 de setembro de 2026.-->
+<!--Generated on Mon Sep 28 18:17:28 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 28 de setembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -20,6 +20,7 @@
 <link rel="next" href="cap_pinns_sec_problemas_inversos.html" title="3.3 Problemas inversos ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs">
 <link rel="section" href="cap_mlp_sec_edps_estacionarias.html" title="3.1 Problemas estacionários ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs">
 <link rel="section" href="cap_pinns_sec_problemas_inversos.html" title="3.3 Problemas inversos ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs">
+<link rel="section" href="cap_pinns_sec_saiba_mais.html" title="3.4 Saiba mais ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs">
 <link rel="chapter" href="licenca.html" title="Licença ‣ Introdução a PINNs">
 <link rel="chapter" href="prefacio.html" title="Prefácio ‣ Introdução a PINNs">
 <link rel="chapter" href="./" title="Introdução a PINNs ‣ Introdução a PINNs">
@@ -131,7 +132,7 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Como um problema fundamental em equações diferenciais parciais transientes, vamos estudar como podemos criar uma PINN para resolver o problema de calor</p>
-<table id="Ch3.S3.EGx75" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx75" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:mlp_prob_calor_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -153,7 +154,7 @@
 </tr></tbody>
 </table>
 <p class="ltx_p">Como exemplo, vamos assumir a fonte <math id="p1.m1" class="ltx_Math" alttext="f(t,x)=(\pi^{2}-1)e^{-t}\operatorname{sen}(\pi x)" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>π</mi><mn>2</mn></msup><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>t</mi></mrow></msup><mo lspace="0.167em">⁢</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math> e a condição inicial <math id="p1.m2" class="ltx_Math" alttext="g(x)=\operatorname{sen}(\pi x)" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Este problema foi construído de modo a ter a solução analítica</p>
-<table id="Ch3.S3.EGx76" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx76" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -169,7 +170,7 @@
 
 <div id="SS1.p1" class="ltx_para">
 <p class="ltx_p">A primeira abordagem que iremos adotar para resolver o problema de calor é criar uma PINN</p>
-<table id="Ch3.S3.EGx77" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx77" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E32"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -186,7 +187,7 @@
 </figure>
 <div id="SS1.p2" class="ltx_para">
 <p class="ltx_p">O Código <a href="#cod:pinn_calor" title="Código 18 ‣ 3.2.1 PINN sem discretização temporal ‣ 3.2 Problemas transientes ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">18</span></a> é uma implementação de uma PINN para resolver o problema de calor (verifique!). A função de perda da rede é baseada no resíduo da equação diferencial, na condição inicial e nas condições de contorno. O treinamento da rede é feito minimizando a função de perda, que é composta por</p>
-<table id="Ch3.S3.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -612,7 +613,7 @@ _{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}-0\right|^{2}}_{\text{c.c.}}." d
 </div>
 <div id="SS2.p2" class="ltx_para">
 <p class="ltx_p">Como um exemplo, vamos considerar a discretização temporal pelo método de Euler implícito para o problema de calor (<a href="#eq:mlp_prob_calor_eq" title="In 3.2 Problemas transientes ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.28</span></a>)-(<a href="#eq:mlp_prob_calor_cc" title="In 3.2 Problemas transientes ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.30</span></a>). A equação diferencial é discretizada no tempo como</p>
-<table id="Ch3.S3.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E34"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -625,7 +626,7 @@ _{s,cc}}\sum_{s=1}^{n_{s,cc}}\left|\tilde{u}^{s}-0\right|^{2}}_{\text{c.c.}}." d
 </div>
 <div id="SS2.p3" class="ltx_para">
 <p class="ltx_p">O Código <a href="#cod:pinn_calor_discretizado" title="Código 19 ‣ 3.2.2 PINN com discretização temporal ‣ 3.2 Problemas transientes ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">19</span></a> é uma implementação da PINN com esta discretização temporal. A função de perda da rede é</p>
-<table id="Ch3.S3.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1023,7 +1024,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Considere o problema de calor com condições de contorno de Robin<span id="Ch3.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span>Victor Gustave Robin, 1855 - 1897, matemático francês. Fonte: <a href="https://en.wikipedia.org/wiki/Victor_Gustave_Robin" title="" class="ltx_ref ltx_href">Wikipedia: Victor Gustave Robin</a>.</span></span></span> não homogêneas</p>
-<table id="Ch3.S3.EGx81" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx81" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E36"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1046,7 +1047,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="\partial u/\partial n" display="inline"><mrow><mo rspace="0em">∂</mo><mrow><mi>u</mi><mo>/</mo><mrow><mo lspace="0em" rspace="0em">∂</mo><mi>n</mi></mrow></mrow></mrow></math> é a derivada normal exterior ao domínio <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math> em <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="x=0" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>0</mn></mrow></math> e <math id="Thmexer1.p1.m4" class="ltx_Math" alttext="x=1" display="inline"><mrow><mi>x</mi><mo>=</mo><mn>1</mn></mrow></math>, com fonte</p>
-<table id="Ch3.S3.EGx82" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx82" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1056,7 +1057,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 </tr></tbody>
 </table>
 <p class="ltx_p">e condições de contorno com</p>
-<table id="Ch3.S3.EGx83" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx83" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1075,7 +1076,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Refaça o E.<a href="#exer:mlp_calor_robin" title="E. 3.2.1. ‣ 3.2.3 Exercícios ‣ 3.2 Problemas transientes ‣ Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.2.1</span></a> para criar PINNs da forma</p>
-<table id="Ch3.S3.EGx84" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx84" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1120,7 +1121,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Considere o problema de onda</p>
-<table id="Ch3.S3.EGx85" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx85" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1171,7 +1172,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Crie uma PINN para resolver o seguinte problema de Burgers</p>
-<table id="Ch3.S3.EGx86" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx86" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E45"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1194,8 +1195,8 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.47)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">com viscosidade <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\nu=0.01/\pi" display="inline"><mrow><mi>ν</mi><mo>=</mo><mrow><mn>0.01</mn><mo>/</mo><mi>π</mi></mrow></mrow></math>. Este problema tem a seguinte solução analítica <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib28" title="An exact solution for burger’s equation" class="ltx_ref">25</a>]</cite></p>
-<table id="Ch3.S3.EGx87" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">com viscosidade <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\nu=0.01/\pi" display="inline"><mrow><mi>ν</mi><mo>=</mo><mrow><mn>0.01</mn><mo>/</mo><mi>π</mi></mrow></mrow></math>. Este problema tem a seguinte solução analítica <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib42" title="An exact solution for burger’s equation" class="ltx_ref">41</a>]</cite></p>
+<table id="Ch3.S4.EGx87" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E48"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1213,7 +1214,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
 <p class="ltx_p">Crie uma PINN para resolver o seguinte problema de Burgers</p>
-<table id="Ch3.S3.EGx88" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S4.EGx88" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E49"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1236,8 +1237,8 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.51)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">com a conhecida solução analítica <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib2" title="A table of solutions of the one-dimensional burgers equation" class="ltx_ref">2</a>]</cite></p>
-<table id="Ch3.S3.EGx89" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">com a conhecida solução analítica <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib3" title="A table of solutions of the one-dimensional burgers equation" class="ltx_ref">3</a>]</cite></p>
+<table id="Ch3.S4.EGx89" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E52"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1295,7 +1296,7 @@ n),(s)}-0\right|^{2}}_{\text{c.c.}}." display="inline"><mrow><mrow><mrow></mrow>
 <div class="ltx_align_center">
 <a href="cap_mlp_sec_edps_estacionarias.html" title="In Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.1 </span>Problemas estacionários</span></a><a href="bib.html" title="In Introdução a PINNs" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_pinns_sec_problemas_inversos.html" title="In Capítulo 3 Redes informadas pela física ‣ Introdução a PINNs" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.3 </span>Problemas inversos</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Sep 18 07:41:59 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Mon Sep 28 18:17:28 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
