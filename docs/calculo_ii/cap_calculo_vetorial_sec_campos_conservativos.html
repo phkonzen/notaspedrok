@@ -1,0 +1,981 @@
+<!DOCTYPE html><html lang="pt">
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<title>NPK - 4.5 Campos conservativos ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II</title>
+<!--Generated on Fri Oct  9 09:53:31 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 9 de outubro de 2026.-->
+
+<link rel="stylesheet" href="LaTeXML.css" type="text/css">
+<link rel="stylesheet" href="ltx-book.css" type="text/css">
+<link rel="stylesheet" href="ltx-listings.css" type="text/css">
+<link rel="stylesheet" href="ltx-ulem.css" type="text/css">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link rel="stylesheet" href="./fonts/cmun-serif.css" type="text/css">
+<link rel="stylesheet" href="./notas.css" type="text/css">
+<script src="load-mathjax.js"></script>
+<link rel="up" href="cap_calculo_vetorial.html" title="Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="up up" href="./" title="Cálculo II">
+<link rel="start" href="./" title="Cálculo II">
+<link rel="prev" href="cap_calculo_vetorial_sec_integrais_linha.html" title="4.4 Integrais de linha ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="next" href="cap_calculo_vetorial_sec_teo_green.html" title="4.6 Teorema de Green ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="section" href="cap_calculo_vetorial_sec_funcoes.html" title="4.1 Funções vetoriais ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="section" href="cap_calculo_vetorial_sec_calculo.html" title="4.2 Cálculo de funções vetoriais ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="section" href="cap_calculo_vetorial_sec_campos_vetoriais.html" title="4.3 Campos vetoriais ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="section" href="cap_calculo_vetorial_sec_integrais_linha.html" title="4.4 Integrais de linha ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="section" href="cap_calculo_vetorial_sec_teo_green.html" title="4.6 Teorema de Green ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="chapter" href="licenca.html" title="Licença ‣ Cálculo II">
+<link rel="chapter" href="prefacio.html" title="Prefácio ‣ Cálculo II">
+<link rel="chapter" href="./" title="Cálculo II ‣ Cálculo II">
+<link rel="chapter" href="cap_introducao.html" title="Capítulo 1 Introdução ‣ Cálculo II">
+<link rel="chapter" href="cap_derivadas.html" title="Capítulo 2 Derivadas ‣ Cálculo II">
+<link rel="chapter" href="cap_integrais_multiplas.html" title="Capítulo 3 Integrais múltiplas ‣ Cálculo II">
+<link rel="chapter" href="cap_calculo_vetorial.html" title="Capítulo 4 Cálculo vetorial ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_deriv.html" title="Apêndice A Tabela de derivadas ‣ Cálculo II">
+<link rel="appendix" href="cap_tabela_int.html" title="Apêndice B Tabela de integrais ‣ Cálculo II">
+<link rel="bibliography" href="bib.html" title="Referências ‣ Cálculo II">
+<meta name="author" content="Pedro H A Konzen"/><link rel="icon" type="image/x-icon" href="../images/favicon.ico"><!-- bootstrap 5.3.0 -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+
+<!-- jquery 3.6.0 -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<link href="../fontawesome/css/all.min.css" rel="stylesheet"><link rel="stylesheet" href="../fonts/cmun-serif.css"><link rel="stylesheet" href="../common.css" type="text/css"><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"><!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-WZM0C3FQ62"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-WZM0C3FQ62');
+</script>
+<link rel="stylesheet" href="goodies.css" type="text/css"><script src="overflow-mark.js"></script><link rel="canonical" href="https://notaspedrok.com.br/calculo_ii/cap_calculo_vetorial_sec_campos_conservativos.html" />
+</head>
+<body><div class="container-lg"><div id="generalAlertDesktop" class="fixed-bottom">
+  <div class="d-flex justify-content-center m-1">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<div id="generalAlertMobile" class="fixed-bottom">
+  <div class="d-flex justify-content-start m-1" style="max-width:98vw">
+    <div class="alert alert-warning alert-dismissible text-center" role="alert">
+      <h5 class="alert-heading">Política de uso de dados</h5>
+      Ao navegar por este site, você concorda com a <a href="../politica.html">política de uso de dados</a>.
+      <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close">
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+  $(document).ready(function () {
+    $("#generalAlertDesktop").hide();
+    $("#generalAlertMobile").hide();
+    if (document.referrer.lastIndexOf("notaspedrok.com.br") == -1) {
+      if (window.innerWidth >= 576) {
+        $("#generalAlertDesktop").fadeIn(1000);
+      } else {
+        $("#generalAlertMobile").fadeIn(1000);
+      }
+    }
+  }); 
+</script><!-- begin: navbar -->
+<nav class="navbar bg-light">
+  <div class="container-fluid">
+    <button class="navbar-toggler  border-primary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      style="height: 3em; width: 3.5em;">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <a class="navbar-brand" href="../index.html"><img  class="rounded-circle" src="../images/logo.png" alt="NPK" style="height: 4em;">
+    </a>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav">
+        <li class="nav-item"><a id="inicio" class="nav-link" href="../index.html"><i class="fas fa-home"></i> Início</a>
+        </li>
+        <li class="nav-item"><a id="conteudo" class="nav-link" href="./index.html"><i class="fa-solid fa-bars-staggered text-primary"></i> Conteúdo</a>
+        </li>
+        <li class="nav-item"><a id="colaborar" class="nav-link" href="../colaborar.html"><i class="fa-solid fa-heart text-danger"></i> Colaborar</a></li>
+        <li class="nav-item"><a id="notas" class="nav-link" href="../index.html#notasDeAula"> Notas de Aula</a></li>
+        <li class="nav-item"><a id="mini" class="nav-link" href="../index.html#minicursos"> Minicursos</a></li>
+        <li class="nav-item"><a id="videos" class="nav-link" href="../index.html#videosAudios"> Vídeos & áudios</a></li>
+        <li class="nav-item"><a id="contatar" class="nav-link" href="../contatar.html"><i class="fas fa-envelope"></i> Contatar</a></li>
+        <li class="nav-item"><a id="policita" class="nav-link" href="../politica.html"><i
+              class="fa-regular fa-file-lines"></i> Política de dados</a></li>
+        <li class="nav-item"><a id="sobre" class="nav-link" href="../sobre.html"> Sobre</a></li>
+      </ul>
+    </div><!-- /.navbar-collapse -->
+  </div><!-- /.container-fluid -->
+</nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
+    <!-- left -->
+    <div id="rs" class="text-left mb-0">
+        <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
+        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
+        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
+        <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
+        <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+    <!-- right -->
+    <div id="langOpts" class="d-none text-right mb-0">
+    </div>
+</div>
+
+<div class="ltx_page_main">
+<h1 class="ltx_title ltx_title_document fs-2">Cálculo II</h1><header class="ltx_page_header">
+<div class="ltx_align_center">
+<a href="cap_calculo_vetorial.html" title="In Cálculo II" class="ltx_ref" rel="up"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Cálculo vetorial</span></a><a href="cap_calculo_vetorial_sec_integrais_linha.html" title="In Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Integrais de linha</span></a><a href="cap_calculo_vetorial_sec_teo_green.html" title="In Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.6 </span>Teorema de Green</span></a>
+</div></header><div class="text-center"><p class="m-1 text-black" style="text-align: center; font-size: 0.9em;"><i class="fa-solid fa-heart text-danger"></i> Ajude a manter o site livre, gratuito e sem propagandas. <a href="../colaborar.html">Colabore!</a></p></div>
+<div class="ltx_page_content">
+<section class="ltx_section ltx_authors_1line" lang="pt">
+<h1 class="ltx_title ltx_title_section">
+<span class="ltx_tag ltx_tag_section">4.5 </span>Campos conservativos</h1>
+
+<div id="p1" class="ltx_para">
+<p class="ltx_p">Na Subseção <a href="cap_calculo_vetorial_sec_campos_vetoriais.html#cap_calculo_vetorial_ssec_campos_conservativos" title="4.3.2 Campos conservativos ‣ 4.3 Campos vetoriais ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.3.2</span></a> definimos que um <span class="ltx_text ltx_font_bold">campo vetorial</span> <math id="p1.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é <span class="ltx_text ltx_font_bold">conservativo</span> se for o <span class="ltx_text ltx_font_bold">campo gradiente</span> de uma função real <math id="p1.m2" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math>, <span class="ltx_text ltx_font_italic">i.e.</span> se existir uma função <math id="p1.m3" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math> tal que</p>
+<table id="A2.S0.EGx424" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E141"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E141.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{F}=\nabla\phi" display="inline"><mrow><mi mathcolor="#0F77B7">𝑭</mi><mo mathcolor="#0F77B7">=</mo><mrow><mo mathcolor="#0F77B7" rspace="0.167em">∇</mo><mi mathcolor="#0F77B7">ϕ</mi></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.141)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Se <math id="p1.m4" class="ltx_Math" alttext="\bm{F}(x,y)=f_{1}(x,y)\bm{i}+f_{2}(x,y)\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math>, então</p>
+<table id="A2.S0.EGx425" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E142"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E142.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{F}=\frac{\partial\phi}{%
+\partial x}\bm{i}+\frac{\partial\phi}{\partial y}\bm{j}," display="inline"><mrow><mrow><mi mathcolor="#0F77B7">𝑭</mi><mo mathcolor="#0F77B7">=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">ϕ</mi></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi mathcolor="#0F77B7">𝒊</mi></mrow><mo mathcolor="#0F77B7">+</mo><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">ϕ</mi></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">y</mi></mrow></mfrac></mstyle><mo>⁢</mo><mi mathcolor="#0F77B7">𝒋</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.142)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Seja, agora, <math id="p1.m5" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> uma curva lisa parametrizada<span id="Ch4.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span><math id="Ch4.footnote5.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> deve estar totalmente contida no domínio do campo conservativo.</span></span></span> por</p>
+<table id="A2.S0.EGx426" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E143"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E143.m1" class="ltx_Math" alttext="\displaystyle\bm{r}(t)=x(t)\bm{i}+y(t)\bm{j},\quad a\leq t\leq b," display="inline"><mrow><mrow><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>a</mi><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>b</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.143)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">de <math id="p1.m6" class="ltx_Math" alttext="\bm{r}(a)=(x(a),y(a))=(x_{a},y_{a})" display="inline"><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>a</mi></msub><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math> a <math id="p1.m7" class="ltx_Math" alttext="\bm{r}(b)=(x(b),y(b))=(x_{b},y_{b})" display="inline"><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>b</mi></msub><mo>,</mo><msub><mi>y</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow></mrow></math>. A integral de linha de <math id="p1.m8" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> ao longo de <math id="p1.m9" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é</p>
+<table id="A2.S0.EGx427" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E144"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E144.m1" class="ltx_Math" alttext="\displaystyle\int_{C}\bm{F}\cdot d\bm{r}=\int_{a}^{b}\bm{F}(\bm{r}(t))\cdot\bm%
+{r}^{\prime}(t)dt" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝒓</mi><mo>′</mo></msup></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.144)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E145"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E145.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{a}^{b}\left[\frac{\partial\phi}{\partial x}(x(%
+t),y(t))x^{\prime}(t)+\frac{\partial\phi}{\partial y}(x(t),y(t))y^{\prime}(t)%
+\right]dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mrow><mo stretchy="false">(</mo><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>,</mo><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><msup><mi>x</mi><mo>′</mo></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mrow><mo stretchy="false">(</mo><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>,</mo><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><msup><mi>y</mi><mo>′</mo></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>]</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.145)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E146"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E146.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{a}^{b}\frac{d}{dt}\phi(x(t),y(t))dt=\phi(x(b),%
+y(b))-\phi(x(a),y(a))." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mstyle displaystyle="true"><mfrac><mi>d</mi><mrow><mi>d</mi><mo>⁢</mo><mi>t</mi></mrow></mfrac></mstyle><mi>ϕ</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>,</mo><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>=</mo><mi>ϕ</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo>,</mo><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo>−</mo><mi>ϕ</mi><mrow><mo stretchy="false">(</mo><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo>,</mo><mi>y</mi><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.146)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, <span class="ltx_text" style="background-color:#FFFF00;">a integral de linha de um campo conservativo <math id="p1.m10" class="ltx_Math" alttext="\bm{F}=\nabla\phi" display="inline"><mrow><mi mathbackground="#FFFF00">𝑭</mi><mo mathbackground="#FFFF00">=</mo><mrow><mo mathbackground="#FFFF00" rspace="0.167em">∇</mo><mi mathbackground="#FFFF00">ϕ</mi></mrow></mrow></math> ao longo de uma curva <math id="p1.m11" class="ltx_Math" alttext="C" display="inline"><mi mathbackground="#FFFF00">C</mi></math> depende apenas dos pontos inicial <math id="p1.m12" class="ltx_Math" alttext="(x_{a},y_{a})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">a</mi></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mi mathbackground="#FFFF00">a</mi></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> e final <math id="p1.m13" class="ltx_Math" alttext="(x_{b},y_{b})" display="inline"><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">b</mi></msub><mo mathbackground="#FFFF00">,</mo><msub><mi mathbackground="#FFFF00">y</mi><mi mathbackground="#FFFF00">b</mi></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></math> da curva <math id="p1.m14" class="ltx_Math" alttext="C" display="inline"><mi mathbackground="#FFFF00">C</mi></math> e não do caminho percorrido</span>, sendo que</p>
+<table id="A2.S0.EGx428" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:tfc_campos_conservativos"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E147.m2" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\int_{C}\bm{F}\cdot d\bm{r}%
+=\phi(x_{b},y_{b})-\phi(x_{a},y_{a})" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∫</mo><mi mathcolor="#0F77B7">C</mi></msub></mstyle><mrow><mi mathcolor="#0F77B7">𝑭</mi><mo lspace="0.222em" mathcolor="#0F77B7">⋅</mo><mrow><mo lspace="0.055em" mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">𝒓</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mrow><mi mathcolor="#0F77B7">ϕ</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><msub><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">b</mi></msub><mo mathcolor="#0F77B7">,</mo><msub><mi mathcolor="#0F77B7">y</mi><mi mathcolor="#0F77B7">b</mi></msub><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">−</mo><mrow><mi mathcolor="#0F77B7">ϕ</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><msub><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">a</mi></msub><mo mathcolor="#0F77B7">,</mo><msub><mi mathcolor="#0F77B7">y</mi><mi mathcolor="#0F77B7">a</mi></msub><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.147)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou, equivalentemente,</p>
+<table id="A2.S0.EGx429" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E148"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E148.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\int_{C}\nabla\phi\cdot d%
+\bm{r}=\phi(x_{b},y_{b})-\phi(x_{a},y_{a})." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∫</mo><mi mathcolor="#0F77B7">C</mi></msub></mstyle><mrow><mo lspace="0.167em" mathcolor="#0F77B7" rspace="0.167em">∇</mo><mrow><mrow><mi mathcolor="#0F77B7">ϕ</mi><mo lspace="0.222em" mathcolor="#0F77B7" rspace="0.222em">⋅</mo><mi mathcolor="#0F77B7">d</mi></mrow><mo>⁢</mo><mi mathcolor="#0F77B7">𝒓</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mrow><mi mathcolor="#0F77B7">ϕ</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><msub><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">b</mi></msub><mo mathcolor="#0F77B7">,</mo><msub><mi mathcolor="#0F77B7">y</mi><mi mathcolor="#0F77B7">b</mi></msub><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">−</mo><mrow><mi mathcolor="#0F77B7">ϕ</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><msub><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">a</mi></msub><mo mathcolor="#0F77B7">,</mo><msub><mi mathcolor="#0F77B7">y</mi><mi mathcolor="#0F77B7">a</mi></msub><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0F77B7">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.148)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmex1.p1.m1" class="ltx_Math" alttext="\bm{F}(x,y)=2xy\bm{i}+x^{2}\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math>. Primeiramente, vamos verificar se <math id="Thmex1.p1.m2" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo. Buscamos uma função <math id="Thmex1.p1.m3" class="ltx_Math" alttext="\phi(x,y)" display="inline"><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> tal que</p>
+<table id="A2.S0.EGx430" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E149"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E149.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial x}=2xy," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.149)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E150"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E150.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial y}=x^{2}." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.150)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Integrando a primeira equação em relação a <math id="Thmex1.p1.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, obtemos</p>
+<table id="A2.S0.EGx431" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E151"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E151.m1" class="ltx_Math" alttext="\displaystyle\phi(x,y)=x^{2}y+g(y)," display="inline"><mrow><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.151)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmex1.p1.m5" class="ltx_Math" alttext="g(y)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> é uma função de <math id="Thmex1.p1.m6" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> apenas. Derivando em relação a <math id="Thmex1.p1.m7" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>, temos</p>
+<table id="A2.S0.EGx432" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E152"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E152.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial y}=x^{2}+g^{\prime}(y)=x^{2}." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.152)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, <math id="Thmex1.p1.m8" class="ltx_Math" alttext="g^{\prime}(y)=0" display="inline"><mrow><mrow><msup><mi>g</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math>, o que implica que <math id="Thmex1.p1.m9" class="ltx_Math" alttext="g(y)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> é uma constante. Assim, podemos escolher <math id="Thmex1.p1.m10" class="ltx_Math" alttext="g(y)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e temos que</p>
+<table id="A2.S0.EGx433" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E153"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E153.m1" class="ltx_Math" alttext="\displaystyle\phi(x,y)=x^{2}y." display="inline"><mrow><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>y</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.153)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<p class="ltx_p">Vamos agora calcular a integral de linha de <math id="Thmex1.p2.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> ao longo de curvas diferentes que partem de <math id="Thmex1.p2.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> e chegam em <math id="Thmex1.p2.m3" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+<ol id="I1" class="ltx_enumerate">
+<li id="I1.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I1.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math>: o segmento de reta que parte de <math id="I1.i1.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> e chega em <math id="I1.i1.p1.m3" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<div id="I1.i1.p2" class="ltx_para">
+<p class="ltx_p">A curva <math id="I1.i1.p2.m1" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> pode ser parametrizada por</p>
+<table id="A2.S0.EGx434" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E154"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E154.m1" class="ltx_Math" alttext="\displaystyle\bm{r}(t)=t\bm{i}+t\bm{j},\quad 0\leq t\leq 1." display="inline"><mrow><mrow><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>t</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mi>t</mi><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.154)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, a integral de linha é</p>
+<table id="A2.S0.EGx435" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E155"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E155.m1" class="ltx_Math" alttext="\displaystyle\int_{C_{1}}\bm{F}\cdot d\bm{r}=\int_{0}^{1}\bm{F}(t,t)\cdot\bm{r%
+}^{\prime}(t)dt" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>1</mn></msub></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>t</mi><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝒓</mi><mo>′</mo></msup></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.155)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E156"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E156.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}\left[(2t^{2})\bm{i}+(t^{2})\bm{j}\right%
+]\cdot(\bm{i}+\bm{j})dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo>[</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><mi>𝒊</mi><mo>+</mo><mrow><mo stretchy="false">(</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><mi>𝒋</mi><mo rspace="0.055em">]</mo></mrow><mo rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mi>𝒊</mi><mo>+</mo><mi>𝒋</mi><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.156)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E157"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E157.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}(2t^{2}+t^{2})dt=\int_{0}^{1}3t^{2}dt=1." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo stretchy="false">(</mo><mn>2</mn><msup><mi>t</mi><mn>2</mn></msup><mo>+</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mn>3</mn><msup><mi>t</mi><mn>2</mn></msup><mi>d</mi><mi>t</mi><mo>=</mo><mn>1</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.157)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+<li id="I1.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I1.i2.p1" class="ltx_para">
+<p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math>: o segmento de reta que parte de <math id="I1.i2.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> e chega em <math id="I1.i2.p1.m3" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math> e depois o segmento de reta que parte de <math id="I1.i2.p1.m4" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math> e chega em <math id="I1.i2.p1.m5" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<div id="I1.i2.p2" class="ltx_para">
+<p class="ltx_p">A curva <math id="I1.i2.p2.m1" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> pode ser particionada em duas sub-curvas <math id="I1.i2.p2.m2" class="ltx_Math" alttext="C^{\prime}_{1}" display="inline"><msubsup><mi>C</mi><mn>1</mn><mo>′</mo></msubsup></math> e <math id="I1.i2.p2.m3" class="ltx_Math" alttext="C^{\prime}_{2}" display="inline"><msubsup><mi>C</mi><mn>2</mn><mo>′</mo></msubsup></math>, onde <math id="I1.i2.p2.m4" class="ltx_Math" alttext="C^{\prime}_{1}" display="inline"><msubsup><mi>C</mi><mn>1</mn><mo>′</mo></msubsup></math> é o segmento de reta que parte de <math id="I1.i2.p2.m5" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> e chega em <math id="I1.i2.p2.m6" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math> e <math id="I1.i2.p2.m7" class="ltx_Math" alttext="C^{\prime}_{2}" display="inline"><msubsup><mi>C</mi><mn>2</mn><mo>′</mo></msubsup></math> é o segmento de reta que parte de <math id="I1.i2.p2.m8" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math> e chega em <math id="I1.i2.p2.m9" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math>. Assim, temos que</p>
+<table id="A2.S0.EGx436" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E158"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E158.m1" class="ltx_Math" alttext="\displaystyle\int_{C_{2}}\bm{F}\cdot d\bm{r}=\int_{C^{\prime}_{1}}\bm{F}\cdot d%
+\bm{r}+\int_{C^{\prime}_{2}}\bm{F}\cdot d\bm{r}." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msubsup><mi>C</mi><mn>1</mn><mo>′</mo></msubsup></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msubsup><mi>C</mi><mn>2</mn><mo>′</mo></msubsup></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.158)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A curva <math id="I1.i2.p2.m10" class="ltx_Math" alttext="C^{\prime}_{1}" display="inline"><msubsup><mi>C</mi><mn>1</mn><mo>′</mo></msubsup></math> pode ser parametrizada por</p>
+<table id="A2.S0.EGx437" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E159"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E159.m1" class="ltx_Math" alttext="\displaystyle\bm{r}^{\prime}_{1}(t)=t\bm{i},\quad 0\leq t\leq 1." display="inline"><mrow><mrow><mrow><mrow><msubsup><mi>𝒓</mi><mn>1</mn><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>t</mi><mo>⁢</mo><mi>𝒊</mi></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.159)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, a integral de linha ao longo de <math id="I1.i2.p2.m11" class="ltx_Math" alttext="C^{\prime}_{1}" display="inline"><msubsup><mi>C</mi><mn>1</mn><mo>′</mo></msubsup></math> é</p>
+<table id="A2.S0.EGx438" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E160"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E160.m1" class="ltx_Math" alttext="\displaystyle\int_{C^{\prime}_{1}}\bm{F}\cdot d\bm{r}=\int_{0}^{1}\left[(2t(0)%
+)\bm{i}+(t^{2})\bm{j}\right]\cdot\bm{i}\,dt=\int_{0}^{1}0dt=0." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msubsup><mi>C</mi><mn>1</mn><mo>′</mo></msubsup></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mrow><mrow><mo>[</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>t</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><msup><mi>t</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow><mo rspace="0.055em">]</mo></mrow><mo rspace="0.222em">⋅</mo><mi>𝒊</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mn>0</mn><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.160)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A curva <math id="I1.i2.p2.m12" class="ltx_Math" alttext="C^{\prime}_{2}" display="inline"><msubsup><mi>C</mi><mn>2</mn><mo>′</mo></msubsup></math> pode ser parametrizada por</p>
+<table id="A2.S0.EGx439" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E161"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E161.m1" class="ltx_Math" alttext="\displaystyle\bm{r}^{\prime}_{2}(t)=\bm{i}+t\bm{j},\quad 0\leq t\leq 1." display="inline"><mrow><mrow><mrow><mrow><msubsup><mi>𝒓</mi><mn>2</mn><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝒊</mi><mo>+</mo><mrow><mi>t</mi><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.161)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, a integral de linha ao longo de <math id="I1.i2.p2.m13" class="ltx_Math" alttext="C^{\prime}_{2}" display="inline"><msubsup><mi>C</mi><mn>2</mn><mo>′</mo></msubsup></math> é</p>
+<table id="A2.S0.EGx440" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E162"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E162.m1" class="ltx_Math" alttext="\displaystyle\int_{C^{\prime}_{2}}\bm{F}\cdot d\bm{r}=\int_{0}^{1}\left[(2(1)(%
+t))\bm{i}+(1^{2})\bm{j}\right]\cdot\bm{j}\,dt" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msubsup><mi>C</mi><mn>2</mn><mo>′</mo></msubsup></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mrow><mrow><mo>[</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><msup><mn>1</mn><mn>2</mn></msup><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow><mo rspace="0.055em">]</mo></mrow><mo rspace="0.222em">⋅</mo><mi>𝒋</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.162)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E163"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E163.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{1}1\,dt=1." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mn>1</mn><mi>d</mi><mi>t</mi><mo>=</mo><mn>1</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.163)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, temos que</p>
+<table id="A2.S0.EGx441" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E164"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E164.m1" class="ltx_Math" alttext="\displaystyle\int_{C_{2}}\bm{F}\cdot d\bm{r}=0+1=1." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>0</mn><mo>+</mo><mn>1</mn></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.164)</span></td>
+</tr></tbody>
+</table>
+</div>
+</li>
+</ol>
+</div>
+<div id="Thmex1.p3" class="ltx_para">
+<p class="ltx_p">Os resultados obtidos para as integrais de linha ao longo das curvas <math id="Thmex1.p3.m1" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> e <math id="Thmex1.p3.m2" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> são iguais, o que era esperado, pois <math id="Thmex1.p3.m3" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo. De (<a href="#eq:tfc_campos_conservativos" title="In 4.5 Campos conservativos ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.147</span></a>), temos que</p>
+<table id="A2.S0.EGx442" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E165"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E165.m1" class="ltx_Math" alttext="\displaystyle\int_{C}\bm{F}\cdot d\bm{r}=\phi(1,1)-\phi(0,0)=1-0=1." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>−</mo><mn>0</mn></mrow><mo>=</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.165)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para qualquer curva lisa <math id="Thmex1.p3.m4" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> que parta de <math id="Thmex1.p3.m5" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math> e chegue em <math id="Thmex1.p3.m6" class="ltx_Math" alttext="(1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Acima, mostramos que, se <math id="p2.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo, então a integral de linha de <math id="p2.m2" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> ao longo de uma curva <math id="p2.m3" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> depende apenas dos pontos inicial e final da curva. A recíproca também é verdadeira: <span class="ltx_text" style="background-color:#FFFF00;">se a integral de linha de <math id="p2.m4" class="ltx_Math" alttext="\bm{F}" display="inline"><mi mathbackground="#FFFF00">𝑭</mi></math> ao longo de qualquer curva <math id="p2.m5" class="ltx_Math" alttext="C" display="inline"><mi mathbackground="#FFFF00">C</mi></math> depende apenas dos pontos inicial e final da curva, então <math id="p2.m6" class="ltx_Math" alttext="\bm{F}" display="inline"><mi mathbackground="#FFFF00">𝑭</mi></math> é conservativo</span>. De fato, fixemos um ponto <math id="p2.m7" class="ltx_Math" alttext="(x_{a},y_{a})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>a</mi></msub><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow></math> e definimos a função <math id="p2.m8" class="ltx_Math" alttext="\phi(x,y)" display="inline"><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></math> como</p>
+<table id="A2.S0.EGx443" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E166"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E166.m1" class="ltx_Math" alttext="\displaystyle\phi(x,y)=\int_{C}\bm{F}\cdot d\bm{r}," display="inline"><mrow><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.166)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="p2.m9" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é qualquer curva lisa que parta de <math id="p2.m10" class="ltx_Math" alttext="(x_{a},y_{a})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>a</mi></msub><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow></math> e chegue em <math id="p2.m11" class="ltx_Math" alttext="(x,y)" display="inline"><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></math>, sempre com <math id="p2.m12" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> no domínio de <math id="p2.m13" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math>. A função <math id="p2.m14" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math> é bem definida, pois a integral de linha depende apenas dos pontos inicial e final da curva. Agora, esta integral de linha também é igual a</p>
+<table id="A2.S0.EGx444" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E167"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E167.m1" class="ltx_Math" alttext="\displaystyle\phi(x,y)=\int_{C_{1}}\bm{F}\cdot d\bm{r}+\int_{C_{2}}\bm{F}\cdot
+d%
+\bm{r}," display="inline"><mrow><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>1</mn></msub></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.167)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">em que <math id="p2.m15" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> é uma curva <math id="p2.m16" class="ltx_Math" alttext="t\bm{i}+y_{a}\bm{j}" display="inline"><mrow><mrow><mi>t</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msub><mi>y</mi><mi>a</mi></msub><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></math>, <math id="p2.m17" class="ltx_Math" alttext="x_{a}\leq t\leq x" display="inline"><mrow><msub><mi>x</mi><mi>a</mi></msub><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>x</mi></mrow></math>, e <math id="p2.m18" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> é uma curva <math id="p2.m19" class="ltx_Math" alttext="x\bm{i}+t\bm{j}" display="inline"><mrow><mrow><mi>x</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mi>t</mi><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></math>, <math id="p2.m20" class="ltx_Math" alttext="y_{a}\leq t\leq y" display="inline"><mrow><msub><mi>y</mi><mi>a</mi></msub><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>y</mi></mrow></math>. Assim, temos que</p>
+<table id="A2.S0.EGx445" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E168"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E168.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial x}=\frac{\partial}{\partial x}\int_{%
+C}\bm{F}\cdot d\bm{r}" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.168)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E169"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E169.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{\partial}{\partial x}\int_{C_{1}}\bm{F}\cdot d%
+\bm{r}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>1</mn></msub></msub></mstyle><mi>𝑭</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>d</mi><mi>𝒓</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.169)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E170"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E170.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{\partial}{\partial x}\int_{x_{a}}^{x}f_{1}(t,y%
+_{a})dt=f_{1}(x,y_{a})." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mstyle displaystyle="true"><msubsup><mo>∫</mo><msub><mi>x</mi><mi>a</mi></msub><mi>x</mi></msubsup></mstyle><msub><mi>f</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>=</mo><msub><mi>f</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.170)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Como <math id="p2.m21" class="ltx_Math" alttext="y_{a}" display="inline"><msub><mi>y</mi><mi>a</mi></msub></math> é um ponto arbitrário, temos que</p>
+<table id="A2.S0.EGx446" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E171"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E171.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial x}=f_{1}(x,y)." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.171)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">De forma, análoga, temos que</p>
+<table id="A2.S0.EGx447" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E172"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E172.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial y}=f_{2}(x,y)." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.172)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, <math id="p2.m22" class="ltx_Math" alttext="\bm{F}=\nabla\phi" display="inline"><mrow><mi>𝑭</mi><mo>=</mo><mrow><mo rspace="0.167em">∇</mo><mi>ϕ</mi></mrow></mrow></math>, o que mostra que <math id="p2.m23" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo.</p>
+</div>
+<div id="p3" class="ltx_para">
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">Outro resultado importante é que, se <math id="p3.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi mathbackground="#FFFF00">𝑭</mi></math> é conservativo, então a integral de linha de <math id="p3.m2" class="ltx_Math" alttext="\bm{F}" display="inline"><mi mathbackground="#FFFF00">𝑭</mi></math> ao longo de qualquer curva fechada <math id="p3.m3" class="ltx_Math" alttext="C" display="inline"><mi mathbackground="#FFFF00">C</mi></math> é nula</span>. De fato, seja <math id="p3.m4" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> uma curva fechada parametrizada por</p>
+<table id="A2.S0.EGx448" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E173"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E173.m1" class="ltx_Math" alttext="\displaystyle\bm{r}(t)=x(t)\bm{i}+y(t)\bm{j},\quad a\leq t\leq b," display="inline"><mrow><mrow><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>a</mi><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>b</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.173)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com <math id="p3.m5" class="ltx_Math" alttext="\bm{r}(a)=\bm{r}(b)" display="inline"><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Assim, temos que</p>
+<table id="A2.S0.EGx449" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E174"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E174.m1" class="ltx_Math" alttext="\displaystyle\int_{C}\bm{F}\cdot d\bm{r}=\phi(x(b),y(b))-\phi(x(a),y(a))=0." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.174)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">A integral de linha do campo vetorial <math id="Thmex2.p1.m1" class="ltx_Math" alttext="\bm{F}(x,y)=2xy\bm{i}+x^{2}\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math> ao longo da circunferência <math id="Thmex2.p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> do círculo <math id="Thmex2.p1.m3" class="ltx_Math" alttext="x^{2}+y^{2}=1" display="inline"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>1</mn></mrow></math> é nula, pois <math id="Thmex2.p1.m4" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo. De fato, a curva <math id="Thmex2.p1.m5" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> pode ser parametrizada por</p>
+<table id="A2.S0.EGx450" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E175"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E175.m1" class="ltx_Math" alttext="\displaystyle\bm{r}(t)=\cos(t)\bm{i}+\operatorname{sen}(t)\bm{j},\quad 0\leq t%
+\leq 2\pi." display="inline"><mrow><mrow><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.175)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Assim, a integral de linha é</p>
+<table id="A2.S0.EGx451" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E176"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E176.m1" class="ltx_Math" alttext="\displaystyle\int_{C}\bm{F}\cdot d\bm{r}=\int_{0}^{2\pi}\bm{F}(\cos(t),%
+\operatorname{sen}(t))\cdot\bm{r}^{\prime}(t)dt" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>,</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.055em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.222em">⋅</mo><msup><mi>𝒓</mi><mo>′</mo></msup></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>t</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.176)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E177"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E177.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{2\pi}\left[(2\cos(t)\operatorname{sen}(t))%
+\bm{i}+(\cos^{2}(t))\bm{j}\right]\cdot(-\operatorname{sen}(t)\bm{i}+\cos(t)\bm%
+{j})dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mo>[</mo><mrow><mo stretchy="false">(</mo><mn>2</mn><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.167em" stretchy="false">)</mo></mrow><mi>sen</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mi>𝒊</mi><mo>+</mo><mrow><mo stretchy="false">(</mo><msup><mi>cos</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mi>𝒋</mi><mo rspace="0.055em">]</mo></mrow><mo rspace="0.222em">⋅</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em">−</mo><mi>sen</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mi>𝒊</mi><mo>+</mo><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mi>𝒋</mi><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.177)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E178"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E178.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{2\pi}(-2\cos(t)\operatorname{sen}^{2}(t)+%
+\cos^{3}(t))dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mo stretchy="false">(</mo><mo lspace="0em">−</mo><mn>2</mn><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.167em" stretchy="false">)</mo></mrow><msup><mi>sen</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><msup><mi>cos</mi><mn>3</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.178)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E179"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E179.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{2\pi}\cos(t)(\cos^{2}(t)-2\operatorname{%
+sen}^{2}(t))dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><msup><mi>cos</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mn>2</mn><msup><mi>sen</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.179)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E180"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E180.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{2\pi}\cos(t)(3\cos^{2}(t)-2)dt=0." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>3</mn><msup><mi>cos</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>−</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>=</mo><mn>0</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.180)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div id="p4" class="ltx_para">
+<p class="ltx_p">Em resumo, temos que <span class="ltx_text" style="background-color:#FFFF00;">são equivalentes as seguintes afirmações</span>:</p>
+<ol id="I2" class="ltx_enumerate">
+<li id="I2.i1" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">a)</span> 
+<div id="I2.i1.p1" class="ltx_para">
+<p class="ltx_p"><math id="I2.i1.p1.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo.</p>
+</div>
+</li>
+<li id="I2.i2" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">b)</span> 
+<div id="I2.i2.p1" class="ltx_para">
+<p class="ltx_p">A integral de linha de <math id="I2.i2.p1.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> ao longo de qualquer curva <math id="I2.i2.p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> depende apenas dos pontos inicial e final da curva.</p>
+</div>
+</li>
+<li id="I2.i3" class="ltx_item" style="list-style-type:none;">
+<span class="ltx_tag ltx_tag_item">c)</span> 
+<div id="I2.i3.p1" class="ltx_para">
+<p class="ltx_p">A integral de linha de <math id="I2.i3.p1.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> ao longo de qualquer curva fechada <math id="I2.i3.p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é nula.</p>
+</div>
+</li>
+</ol>
+</div>
+<section id="SS1" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.5.1 </span>Teste de campo conservativo</h2>
+
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">Seja um campo vetorial <math id="SS1.p1.m1" class="ltx_Math" alttext="\bm{F}(x,y)=f_{1}(x,y)\bm{i}+f_{2}(x,y)\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math> definido em um domínio aberto <math id="SS1.p1.m2" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math> simplesmente conexo<span id="Ch4.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note">6</span>De forma coloquial, uma região é dita ser simplesmente conexa quando é conexa e não contém buracos.</span></span></span>. Assumimos, ainda, que <math id="SS1.p1.m3" class="ltx_Math" alttext="f_{1}" display="inline"><msub><mi>f</mi><mn>1</mn></msub></math> e <math id="SS1.p1.m4" class="ltx_Math" alttext="f_{2}" display="inline"><msub><mi>f</mi><mn>2</mn></msub></math> têm derivadas parciais contínuas em <math id="SS1.p1.m5" class="ltx_Math" alttext="D" display="inline"><mi>D</mi></math>. Então, <math id="SS1.p1.m6" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo se, e somente se,</p>
+<table id="A2.S0.EGx452" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E181"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E181.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\frac{\partial f_{1}}{%
+\partial y}=\frac{\partial f_{2}}{\partial x}" display="inline"><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">1</mn></msub></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">y</mi></mrow></mfrac></mstyle><mo mathcolor="#0F77B7">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">2</mn></msub></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">x</mi></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.181)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">para todo <math id="SS1.p1.m7" class="ltx_Math" alttext="(x,y)\in D" display="inline"><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><mi>D</mi></mrow></math>. De fato, a implicação é direta. Se <math id="SS1.p1.m8" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo, então <math id="SS1.p1.m9" class="ltx_Math" alttext="\bm{F}=\nabla\phi" display="inline"><mrow><mi>𝑭</mi><mo>=</mo><mrow><mo rspace="0.167em">∇</mo><mi>ϕ</mi></mrow></mrow></math> para alguma função <math id="SS1.p1.m10" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math>. Assim, temos que</p>
+<table id="A2.S0.EGx453" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E182"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E182.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial f_{1}}{\partial y}=\frac{\partial^{2}\phi}{%
+\partial y\partial x}=\frac{\partial^{2}\phi}{\partial x\partial y}=\frac{%
+\partial f_{2}}{\partial x}." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mrow><mi>y</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mrow></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mo>∂</mo><mn>2</mn></msup><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mrow><mi>x</mi><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mrow></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.182)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A recíproca também é verdadeira, mas a demonstração foge aos objetivos aqui.</p>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Vamos verificar se o campo vetorial <math id="Thmex3.p1.m1" class="ltx_Math" alttext="\bm{F}(x,y)=2xy\bm{i}+x^{2}\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math> é conservativo. Temos que</p>
+<table id="A2.S0.EGx454" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E183"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E183.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial f_{1}}{\partial y}=\frac{\partial}{\partial y}(2xy%
+)=2x," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.183)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E184"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E184.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial f_{2}}{\partial x}=\frac{\partial}{\partial x}(x^{%
+2})=2x." display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>x</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.184)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Portanto, <math id="Thmex3.p1.m2" class="ltx_Math" alttext="\frac{\partial f_{1}}{\partial y}=\frac{\partial f_{2}}{\partial x}" display="inline"><mrow><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac><mo>=</mo><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mrow></math>, o que mostra que <math id="Thmex3.p1.m3" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo.</p>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.5.2 </span>Campos vetoriais no espaço</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Os resultados apresentados acima podem ser estendidos para campos vetoriais no espaço. Seja um campo vetorial</p>
+<table id="A2.S0.EGx455" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E185"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E185.m1" class="ltx_Math" alttext="\displaystyle\bm{F}(x,y,z)=f_{1}(x,y,z)\bm{i}+f_{2}(x,y,z)\bm{j}+f_{3}(x,y,z)%
+\bm{k}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow><mo>+</mo><mrow><msub><mi>f</mi><mn>3</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒌</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.185)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">conservativo com <math id="SS2.p1.m1" class="ltx_Math" alttext="\bm{F}=\nabla\phi" display="inline"><mrow><mi>𝑭</mi><mo>=</mo><mrow><mo rspace="0.167em">∇</mo><mi>ϕ</mi></mrow></mrow></math>. Então, temos que</p>
+<table id="A2.S0.EGx456" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E186"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E186.m1" class="ltx_Math" alttext="\displaystyle\int_{C}\bm{F}\cdot d\bm{r}=\phi(x_{b},y_{b},z_{b})-\phi(x_{a},y_%
+{a},z_{a})," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>b</mi></msub><mo>,</mo><msub><mi>y</mi><mi>b</mi></msub><mo>,</mo><msub><mi>z</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>a</mi></msub><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo>,</mo><msub><mi>z</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.186)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS2.p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é uma curva lisa qualquer que parte de <math id="SS2.p1.m3" class="ltx_Math" alttext="(x_{a},y_{a},z_{a})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>a</mi></msub><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo>,</mo><msub><mi>z</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow></math> e chega em <math id="SS2.p1.m4" class="ltx_Math" alttext="(x_{b},y_{b},z_{b})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>b</mi></msub><mo>,</mo><msub><mi>y</mi><mi>b</mi></msub><mo>,</mo><msub><mi>z</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<div id="SS2.p2" class="ltx_para">
+<p class="ltx_p">Também, assumindo as suavidades necessárias, temos que <math id="SS2.p2.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo se, e somente se,</p>
+<table id="A2.S0.EGx457" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E187"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E187.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial f_{1}}{\partial y}=\frac{\partial f_{2}}{\partial x}," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.187)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E188"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E188.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial f_{1}}{\partial z}=\frac{\partial f_{3}}{\partial x}," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>3</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.188)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E189"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E189.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial f_{2}}{\partial z}=\frac{\partial f_{3}}{\partial y}" display="inline"><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac></mstyle><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>3</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.189)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">ou, equivalentemente, quando o rotacional de <math id="SS2.p2.m2" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é nulo, <span class="ltx_text ltx_font_italic">i.e.</span></p>
+<table id="A2.S0.EGx458" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E190"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E190.m1" class="ltx_Math" alttext="\displaystyle\nabla\times\bm{F}=\bm{0}." display="inline"><mrow><mrow><mrow><mo>∇</mo><mo lspace="0em" rspace="0.222em">×</mo><mi>𝑭</mi></mrow><mo>=</mo><mn>𝟎</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.190)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex4" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.5.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmex4.p1" class="ltx_para">
+<p class="ltx_p">O campo vetorial <math id="Thmex4.p1.m1" class="ltx_Math" alttext="\bm{F}=yz\bm{i}+xz\bm{j}+xy\bm{k}" display="inline"><mrow><mi>𝑭</mi><mo>=</mo><mrow><mrow><mi>y</mi><mo>⁢</mo><mi>z</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>z</mi><mo>⁢</mo><mi>𝒋</mi></mrow><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>𝒌</mi></mrow></mrow></mrow></math> é conservativo. De fato, temos que</p>
+<table id="A2.S0.EGx459" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E191"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E191.m1" class="ltx_Math" alttext="\displaystyle\nabla\times\bm{F}=\begin{bmatrix}\bm{i}&amp;\bm{j}&amp;\bm{k}\\
+\frac{\partial}{\partial x}&amp;\frac{\partial}{\partial y}&amp;\frac{\partial}{%
+\partial z}\\
+f_{1}&amp;f_{2}&amp;f_{3}\end{bmatrix}" display="inline"><mrow><mrow><mo>∇</mo><mo lspace="0em" rspace="0.222em">×</mo><mi>𝑭</mi></mrow><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mi>𝒊</mi></mtd><mtd><mi>𝒋</mi></mtd><mtd><mi>𝒌</mi></mtd></mtr><mtr><mtd><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mtd><mtd><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mtd><mtd><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac></mtd></mtr><mtr><mtd><msub><mi>f</mi><mn>1</mn></msub></mtd><mtd><msub><mi>f</mi><mn>2</mn></msub></mtd><mtd><msub><mi>f</mi><mn>3</mn></msub></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.191)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E192"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E192.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\begin{bmatrix}\bm{i}&amp;\bm{j}&amp;\bm{k}\\
+\frac{\partial}{\partial x}&amp;\frac{\partial}{\partial y}&amp;\frac{\partial}{%
+\partial z}\\
+yz&amp;xz&amp;xy\end{bmatrix}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mi>𝒊</mi></mtd><mtd><mi>𝒋</mi></mtd><mtd><mi>𝒌</mi></mtd></mtr><mtr><mtd><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mtd><mtd><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mtd><mtd><mfrac><mo>∂</mo><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac></mtd></mtr><mtr><mtd><mrow><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow></mtd><mtd><mrow><mi>x</mi><mo>⁢</mo><mi>z</mi></mrow></mtd><mtd><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.192)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E193"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E193.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=0." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>0</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.193)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex4.p2" class="ltx_para">
+<p class="ltx_p">A função potencial <math id="Thmex4.p2.m1" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math>, <math id="Thmex4.p2.m2" class="ltx_Math" alttext="\bm{F}=\nabla\phi" display="inline"><mrow><mi>𝑭</mi><mo>=</mo><mrow><mo rspace="0.167em">∇</mo><mi>ϕ</mi></mrow></mrow></math>, pode ser obtida integrando <math id="Thmex4.p2.m3" class="ltx_Math" alttext="f_{1}" display="inline"><msub><mi>f</mi><mn>1</mn></msub></math> em relação a <math id="Thmex4.p2.m4" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>, o que nos dá</p>
+<table id="A2.S0.EGx460" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E194"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E194.m1" class="ltx_Math" alttext="\displaystyle\phi(x,y,z)=xyz+g(y,z)," display="inline"><mrow><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow><mo>+</mo><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.194)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmex4.p2.m5" class="ltx_Math" alttext="g(y,z)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> é uma função de <math id="Thmex4.p2.m6" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> e <math id="Thmex4.p2.m7" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>. Derivando em relação a <math id="Thmex4.p2.m8" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math>, temos</p>
+<table id="A2.S0.EGx461" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E195"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E195.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial y}=xz+\frac{\partial g}{\partial y}=xz," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mrow><mi>x</mi><mo>⁢</mo><mi>z</mi></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>g</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mi>z</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.195)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">o que implica que <math id="Thmex4.p2.m9" class="ltx_Math" alttext="\frac{\partial g}{\partial y}=0" display="inline"><mrow><mfrac><mrow><mo rspace="0em">∂</mo><mi>g</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math>, ou seja, <math id="Thmex4.p2.m10" class="ltx_Math" alttext="g(y,z)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> é uma função de <math id="Thmex4.p2.m11" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math> apenas. Derivando em relação a <math id="Thmex4.p2.m12" class="ltx_Math" alttext="z" display="inline"><mi>z</mi></math>, temos</p>
+<table id="A2.S0.EGx462" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E196"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E196.m1" class="ltx_Math" alttext="\displaystyle\frac{\partial\phi}{\partial z}=xy+\frac{\partial g}{\partial z}=xy," display="inline"><mrow><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>ϕ</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac></mstyle><mo>=</mo><mrow><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mi>g</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac></mstyle></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.196)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">o que implica que <math id="Thmex4.p2.m13" class="ltx_Math" alttext="\frac{\partial g}{\partial z}=0" display="inline"><mrow><mfrac><mrow><mo rspace="0em">∂</mo><mi>g</mi></mrow><mrow><mo rspace="0em">∂</mo><mi>z</mi></mrow></mfrac><mo>=</mo><mn>0</mn></mrow></math>, ou seja, <math id="Thmex4.p2.m14" class="ltx_Math" alttext="g(z)" display="inline"><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow></math> é uma constante. Assim, podemos escolher <math id="Thmex4.p2.m15" class="ltx_Math" alttext="g(z)=0" display="inline"><mrow><mrow><mi>g</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></math> e temos que</p>
+<table id="A2.S0.EGx463" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E197"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E197.m1" class="ltx_Math" alttext="\displaystyle\phi(x,y,z)=xyz." display="inline"><mrow><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo>⁢</mo><mi>z</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.197)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex4.p3" class="ltx_para">
+<p class="ltx_p">Com isso, podemos calcular a integral de linha de <math id="Thmex4.p3.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> ao longo de qualquer curva <math id="Thmex4.p3.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> que parta de um ponto <math id="Thmex4.p3.m3" class="ltx_Math" alttext="(x_{a},y_{a},z_{a})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>a</mi></msub><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo>,</mo><msub><mi>z</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow></math> e chegue em um ponto <math id="Thmex4.p3.m4" class="ltx_Math" alttext="(x_{b},y_{b},z_{b})" display="inline"><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>b</mi></msub><mo>,</mo><msub><mi>y</mi><mi>b</mi></msub><mo>,</mo><msub><mi>z</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow></math> como</p>
+<table id="A2.S0.EGx464" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E198"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E198.m1" class="ltx_Math" alttext="\displaystyle\int_{C}\bm{F}\cdot d\bm{r}=\phi(x_{b},y_{b},z_{b})-\phi(x_{a},y_%
+{a},z_{a})=x_{b}y_{b}z_{b}-x_{a}y_{a}z_{a}." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>b</mi></msub><mo>,</mo><msub><mi>y</mi><mi>b</mi></msub><mo>,</mo><msub><mi>z</mi><mi>b</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>a</mi></msub><mo>,</mo><msub><mi>y</mi><mi>a</mi></msub><mo>,</mo><msub><mi>z</mi><mi>a</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>x</mi><mi>b</mi></msub><mo>⁢</mo><msub><mi>y</mi><mi>b</mi></msub><mo>⁢</mo><msub><mi>z</mi><mi>b</mi></msub></mrow><mo>−</mo><mrow><msub><mi>x</mi><mi>a</mi></msub><mo>⁢</mo><msub><mi>y</mi><mi>a</mi></msub><mo>⁢</mo><msub><mi>z</mi><mi>a</mi></msub></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.198)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Por exemplo, se <math id="Thmex4.p3.m5" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é a curva que parte de <math id="Thmex4.p3.m6" class="ltx_Math" alttext="(1,1,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,1,1</mn><mo stretchy="false">)</mo></mrow></math> e chega em <math id="Thmex4.p3.m7" class="ltx_Math" alttext="(2,2,2)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2,2,2</mn><mo stretchy="false">)</mo></mrow></math>, então</p>
+<table id="A2.S0.EGx465" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E199"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E199.m1" class="ltx_Math" alttext="\displaystyle\int_{C}\bm{F}\cdot d\bm{r}=\phi(2,2,2)-\phi(1,1,1)=8-1=7." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>2,2,2</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1,1,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mn>8</mn><mo>−</mo><mn>1</mn></mrow><mo>=</mo><mn>7</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.199)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Verifique!</p>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.5.3 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Determine uma função potencial <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="\phi" display="inline"><mi>ϕ</mi></math> para o campo vetorial</p>
+<table id="A2.S0.EGx466" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E200"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E200.m1" class="ltx_Math" alttext="\displaystyle\bm{F}(x,y)=(3x^{2}+2y)\bm{i}+(2x+4y)\bm{j}." display="inline"><mrow><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>3</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.200)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx97">Resposta</button></div><div class="collapse" id="Thmrespx97" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx97.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx97.p1.m1" class="ltx_Math" alttext="\phi(x,y)=x^{3}+2xy+2y^{2}" display="inline"><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Considere os campos vetoriais</p>
+<table id="A2.S0.EGx467" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E201"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E201.m1" class="ltx_Math" alttext="\displaystyle\text{a)}\leavevmode\nobreak\ \bm{F}(x,y)=(2x+y)\bm{i}+(x+2y)\bm{%
+j}," display="inline"><mrow><mrow><mrow><mtext>a)</mtext><mo lspace="0.500em">⁢</mo><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow><mo>+</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.201)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E202"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E202.m1" class="ltx_Math" alttext="\displaystyle\text{b)}\leavevmode\nobreak\ \bm{G}(x,y)=y\bm{i}+2x\bm{j}." display="inline"><mrow><mrow><mrow><mtext>b)</mtext><mo lspace="0.500em">⁢</mo><mi>𝑮</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>y</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.202)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Determine qual deles é conservativo. Para o campo conservativo, determine uma função potencial.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx98">Resposta</button></div><div class="collapse" id="Thmrespx98" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx98.p1" class="ltx_para">
+<p class="ltx_p">a) conservativo, <math id="Thmrespx98.p1.m1" class="ltx_Math" alttext="\phi(x,y)=x^{2}+xy+y^{2}" display="inline"><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math>; b) não é conservativo.</p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\bm{F}(x,y)=(2xy+\cos x)\bm{i}+(x^{2}+2y)\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math>. Calcule <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="\int_{C}\bm{F}\cdot d\bm{r}" display="inline"><mrow><msub><mo>∫</mo><mi>C</mi></msub><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow></math> para qualquer curva lisa <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> que parte de <math id="Thmexer3.p1.m4" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math> e chega a <math id="Thmexer3.p1.m5" class="ltx_Math" alttext="\left(\frac{\pi}{2},2\right)" display="inline"><mrow><mo>(</mo><mrow><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>⁢</mo><mn>,2</mn></mrow><mo>)</mo></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx99">Resposta</button></div><div class="collapse" id="Thmrespx99" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx99.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx99.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{(0,1)}^{(\frac{\pi}{2},2)}\bm{F}\cdot d\bm{r}=\frac{\pi^{2}%
+}{2}+4" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mrow><mfrac><mi>π</mi><mn>2</mn></mfrac><mo>⁢</mo><mn>,2</mn></mrow><mo stretchy="false">)</mo></mrow></msubsup></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><msup><mi>π</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>+</mo><mn>4</mn></mrow></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Considere o campo vetorial <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\bm{F}(x,y)=-y\bm{i}+x\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mrow><mi>y</mi><mo>⁢</mo><mi>𝒊</mi></mrow></mrow><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math> e a circunferência unitária <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>, percorrida no sentido anti-horário. Calcule <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="\int_{C}\bm{F}\cdot d\bm{r}" display="inline"><mrow><msub><mo>∫</mo><mi>C</mi></msub><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow></math> e conclua se <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> é conservativo.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx100">Resposta</button></div><div class="collapse" id="Thmrespx100" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx100.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx100.p1.m1" class="ltx_Math" alttext="\int_{C}\bm{F}\cdot d\bm{r}=2\pi" display="inline"><mrow><mrow><msub><mo>∫</mo><mi>C</mi></msub><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow></math>, <math id="Thmrespx100.p1.m2" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> não é conservativo.</p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.5.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Verifique se o campo vetorial</p>
+<table id="A2.S0.EGx468" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E203"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E203.m1" class="ltx_Math" alttext="\displaystyle\bm{F}(x,y,z)=(2xz+y)\bm{i}+(x+2y)\bm{j}+(x^{2}+3z^{2})\bm{k}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>z</mi></mrow><mo>+</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>y</mi></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>3</mn><mo>⁢</mo><msup><mi>z</mi><mn>2</mn></msup></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒌</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.203)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">é conservativo. Em caso afirmativo, determine uma função potencial e calcule a integral de linha ao longo de qualquer curva lisa que parte de <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="(0,0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0,0</mn><mo stretchy="false">)</mo></mrow></math> e chega a <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="(1,2,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,2,1</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx101">Resposta</button></div><div class="collapse" id="Thmrespx101" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx101.p1" class="ltx_para">
+<p class="ltx_p">Conservativo, com função potencial <math id="Thmrespx101.p1.m1" class="ltx_Math" alttext="\phi(x,y,z)=x^{2}z+xy+y^{2}+z^{3}" display="inline"><mrow><mrow><mi>ϕ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo>,</mo><mi>z</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>⁢</mo><mi>z</mi></mrow><mo>+</mo><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi></mrow><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup><mo>+</mo><msup><mi>z</mi><mn>3</mn></msup></mrow></mrow></math>. <math id="Thmrespx101.p1.m2" class="ltx_Math" alttext="\int_{(0,0,0)}^{(1,2,1)}\bm{F}\cdot d\bm{r}=8." display="inline"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo stretchy="false">(</mo><mn>0,0,0</mn><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><mn>1,2,1</mn><mo stretchy="false">)</mo></mrow></msubsup><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mn>8</mn></mrow><mo lspace="0em">.</mo></mrow></math></p>
+</div>
+</div>
+</section>
+</section>
+</div>
+<hr><h3 class="mt-2"><i class="fa-solid fa-heart text-danger"></i> Envie seu comentário</h3><p class="form-text">Aproveito para agradecer a todas/os que de forma assídua ou esporádica contribuem enviando correções, sugestões e críticas! <i class="fa-regular fa-face-smile-wink"></i></p><form class="mb-3" name="frmContact" id="frmContact" method="post"
+  action="https://formspree.io/f/mzbolaeo">
+
+  <div class="form-group mb-3">
+    <label for="name" class="form-label">Nome</label>
+    <input type="text" class="form-control form-control-lg" id="name" name="name" placeholder="Seu Nome"
+      aria-label=".form-control-lg example">
+    <div id="nameHelp" class="form-text">Opcional. Preencha seu nome para que eu possa lhe contatar.</div>
+  </div>
+
+  <div class="form-group mb-3">
+    <label for="email" class="form-label">E-mail</label>
+    <input type="email" class="form-control form-control-lg" id="email" name="_replyto"
+      placeholder="seu-email@email.com.br" aria-label=".form-control-lg example">
+    <div id="emailHelp" class="form-text">Opcional. Preencha seu e-mail para que eu possa lhe contatar.</div>
+  </div>
+
+  <script language="javascript">
+    document.write('<div class="form-group mb-3"><label for="ref" class="form-label">Referência</label><input type="text" class="form-control form-control-lg" id="ref" name="ref" value="' + document.URL + '" aria-label=".form-control-lg example"><div id="refHelp" class="form-text">Preenchido automaticamente.</div></div>')
+  </script>
+
+  <div class="form-group mb-3">
+    <label for="message" class="form-label">Mensagem</label>
+    <textarea class="form-control form-control-lg" rows="4" name="message" id="message"
+      placeholder="Digite sua mensagem aqui. (obrigatório)" aria-label=".form-control-lg example" required></textarea>
+  </div>
+
+  <div class="form-group mb-3">
+    <div id="submitHelp" class="form-text">As informações preenchidas são enviadas por e-mail para o
+      desenvolvedor do site e tratadas de forma privada. Consulte a <a href="../politica.html">política de uso de
+        dados</a> para mais informações.</div>
+    <button id="submit" name="submit" type="submit" class="btn btn-primary">Enviar</button>
+  </div>
+</form><footer class="ltx_page_footer">
+<div class="ltx_align_center">
+<a href="cap_calculo_vetorial_sec_integrais_linha.html" title="In Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.4 </span>Integrais de linha</span></a><a href="bib.html" title="In Cálculo II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_calculo_vetorial_sec_teo_green.html" title="In Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.6 </span>Teorema de Green</span></a>
+</div>
+<div class="ltx_page_logo">Generated  on Fri Oct  9 09:53:31 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+</div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
+</div>
+<div class="card mb-1 bg-light" id="rodape">
+  <div class="card-body d-flex flex-wrap justify-content-end">
+    <div>Pedro H A Konzen</div>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    </div>
+  </div> <!-- div class="card" -->
+</div> <!-- div class="card-footer text-right" -->
+</div> <!-- div class=container-lg--></body>
+</html>
