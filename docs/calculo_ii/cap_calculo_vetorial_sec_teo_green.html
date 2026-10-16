@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 4.6 Teorema de Green ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II</title>
-<!--Generated on Tue Oct 13 15:20:46 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 13 de outubro de 2026.-->
+<!--Generated on Fri Oct 16 13:09:20 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 16 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -136,14 +136,457 @@
 <span class="ltx_tag ltx_tag_section">4.6 </span>Teorema de Green</h1>
 
 <div id="p1" class="ltx_para">
-<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+<p class="ltx_p">O <span class="ltx_text ltx_font_bold">teorema de Green<span id="Ch4.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">7</span></span><span class="ltx_text ltx_font_medium">George Green, 1793 - 1841, matemático britânico. Fonte: </span><a href="https://pt.wikipedia.org/wiki/George_Green" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: George Green</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> relaciona a integral de linha de um campo vetorial <math id="p1.m1" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> ao longo de uma curva fechada <math id="p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> com a integral dupla envolvendo as derivadas parciais de <math id="p1.m3" class="ltx_Math" alttext="\bm{F}" display="inline"><mi>𝑭</mi></math> sobre a região <math id="p1.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> delimitada por <math id="p1.m5" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>. Mais especificamente, temos</p>
+<table id="A2.S0.EGx469" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E204"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E204.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}f_{1}(x,y)\,dx+f_{2}(x,y)\,dy=\iint_{R}\left%
+(\frac{\partial f_{2}}{\partial x}-\frac{\partial f_{1}}{\partial y}\right)dA." display="inline"><mrow><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.204)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Aqui, a notação <math id="p1.m6" class="ltx_Math" alttext="\ointctrclockwise_{C}" display="inline"><msub><mo>∳</mo><mi>C</mi></msub></math> indica que a integral de linha é calculada ao longo da curva <math id="p1.m7" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>, fechada e orientada positivamente (no sentido anti-horário). Na sequência, enunciamos o teorema e apresentamos uma ideia de demonstração.</p>
+</div>
+<div id="Thmteo1" class="ltx_theorem ltx_theorem_teo">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 4.6.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Teorema de Green)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmteo1.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmteo1.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> uma região do plano simplesmente conexa com fronteira <math id="Thmteo1.p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> lisa por partes, fechada, simples e orientada positivamente. Se <math id="Thmteo1.p1.m3" class="ltx_Math" alttext="\bm{F}(x,y)=f_{1}(x,y)\bm{i}+f_{2}(x,y)\bm{j}" display="inline"><mrow><mrow><mi>𝑭</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow></math> é um campo vetorial com derivadas parciais contínuas em uma região aberta que contém <math id="Thmteo1.p1.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>, então</p>
+<table id="A2.S0.EGx470" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E205"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E205.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\ointctrclockwise_{C}\bm{F}%
+\cdot d\bm{r}=\iint_{R}\left(\frac{\partial f_{2}}{\partial x}-\frac{\partial f%
+_{1}}{\partial y}\right)dA." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∳</mo><mi mathcolor="#0F77B7">C</mi></msub></mstyle><mrow><mi mathcolor="#0F77B7">𝑭</mi><mo lspace="0.222em" mathcolor="#0F77B7">⋅</mo><mrow><mo lspace="0.055em" mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">𝒓</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∬</mo><mi mathcolor="#0F77B7">R</mi></msub></mstyle><mrow><mrow><mo mathcolor="#0F77B7">(</mo><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">2</mn></msub></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">x</mi></mrow></mfrac></mstyle><mo mathcolor="#0F77B7">−</mo><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">1</mn></msub></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">y</mi></mrow></mfrac></mstyle></mrow><mo mathcolor="#0F77B7">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">A</mi></mrow></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0F77B7">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.205)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+<div class="ltx_proof">
+<h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
+<div id="p2" class="ltx_para">
+<p class="ltx_p">Vamos apresentar uma ideia de demonstração do teorema de Green. Assumimos, adicionalmente, que a região <math id="p2.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é do tipo I, sendo <math id="p2.m2" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> e <math id="p2.m3" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> as curvas que formam a fronteira de <math id="p2.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>, com <math id="p2.m5" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> sendo a curva inferior e <math id="p2.m6" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> a curva superior. Também, vamos assumir que <math id="p2.m7" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> e <math id="p2.m8" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> podem ser parametrizadas como</p>
+<table id="A2.S0.EGx471" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E206"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E206.m1" class="ltx_Math" alttext="\displaystyle C_{1}:\bm{r}_{1}(t)=t\bm{i}+g_{1}(t)\bm{j},\quad a\leq t\leq b," display="inline"><mrow><mrow><msub><mi>C</mi><mn>1</mn></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><msub><mi>𝒓</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>t</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>a</mi><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>b</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.206)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E207"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E207.m1" class="ltx_Math" alttext="\displaystyle-C_{2}:\bm{r}_{2}(t)=t\bm{i}+g_{2}(t)\bm{j},\quad a\leq t\leq b." display="inline"><mrow><mrow><mrow><mo>−</mo><msub><mi>C</mi><mn>2</mn></msub></mrow><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><msub><mi>𝒓</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>t</mi><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><msub><mi>g</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>a</mi><mo>≤</mo><mi>t</mi><mo>≤</mo><mi>b</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.207)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Lembrando que</p>
+<table id="A2.S0.EGx472" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E208"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E208.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}\bm{F}\cdot d\bm{r}=\ointctrclockwise_{C}f_{%
+1}(x,y)\,dx+f_{2}(x,y)\,dy," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><mi>𝑭</mi><mo lspace="0.222em">⋅</mo><mrow><mo lspace="0.055em" rspace="0em">𝑑</mo><mi>𝒓</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.208)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">vamos começar calculando a integral de linha em relação a <math id="p2.m9" class="ltx_Math" alttext="x" display="inline"><mi>x</mi></math>:</p>
+<table id="A2.S0.EGx473" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E209"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E209.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}f_{1}(x,y)\,dx=\int_{C_{1}}f_{1}(x,y)\,dx+%
+\int_{C_{2}}f_{1}(x,y)\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>1</mn></msub></msub></mstyle><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><msub><mi>C</mi><mn>2</mn></msub></msub></mstyle><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.209)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E210"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E210.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{a}^{b}f_{1}(t,g_{1}(t))\,dt-\int_{a}^{b}f_{1}(%
+t,g_{2}(t))\,dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><msub><mi>f</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><msub><mi>g</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>−</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><msub><mi>f</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><msub><mi>g</mi><mn>2</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.210)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E211"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E211.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{a}^{b}\left[f_{1}(t,g_{1}(t))-f_{1}(t,g_{2}(t)%
+)\right]dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mo>[</mo><msub><mi>f</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><msub><mi>g</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo>−</mo><msub><mi>f</mi><mn>1</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><msub><mi>g</mi><mn>2</mn></msub><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo>]</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.211)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E212"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E212.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\int_{a}^{b}\int_{g_{1}(t)}^{g_{2}(t)}\frac{%
+\partial f_{1}}{\partial y}(t,y)\,dy\,dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><msub><mi>g</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mrow><msub><mi>g</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></msubsup></mstyle><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>y</mi><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.212)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E213"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E213.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\iint_{R}\frac{\partial f_{1}}{\partial y}(x,y)\,dA." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>A</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.213)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A demonstração da integral de linha em relação a <math id="p2.m10" class="ltx_Math" alttext="y" display="inline"><mi>y</mi></math> é análoga. Verifique!
+∎</p>
+</div>
+</div>
+<div id="Thmex1" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmex1.p1" class="ltx_para">
+<p class="ltx_p">Vamos usar o teorema de Green para calcular</p>
+<table id="A2.S0.EGx474" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E214"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.E214.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}xy^{2}\,dx+y\,dy," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mi>y</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.214)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmex1.p1.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é a fronteira do triângulo com vértices <math id="Thmex1.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmex1.p1.m3" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math> e <math id="Thmex1.p1.m4" class="ltx_Math" alttext="(1,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>1,0</mn><mo stretchy="false">)</mo></mrow></math>.</p>
+</div>
+<div id="Thmex1.p2" class="ltx_para">
+<p class="ltx_p">Denotando <math id="Thmex1.p2.m1" class="ltx_Math" alttext="f_{1}(x,y)=xy^{2}" display="inline"><mrow><mrow><msub><mi>f</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow></math> e <math id="Thmex1.p2.m2" class="ltx_Math" alttext="f_{2}(x,y)=y" display="inline"><mrow><mrow><msub><mi>f</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>y</mi></mrow></math>, temos do teorema de Green que</p>
+<table id="A2.S0.EGx475" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E215"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E215.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}xy^{2}\,dx+y\,dy=\iint_{R}\left(\frac{%
+\partial f_{2}}{\partial x}-\frac{\partial f_{1}}{\partial y}\right)dA" display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mi>y</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mrow><mrow><mo>(</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>2</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>x</mi></mrow></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><msub><mi>f</mi><mn>1</mn></msub></mrow><mrow><mo rspace="0em">∂</mo><mi>y</mi></mrow></mfrac></mstyle></mrow><mo>)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>A</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.215)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E216"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E216.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\iint_{R}2xy\,dA." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><msub><mo>∬</mo><mi>R</mi></msub></mstyle><mn>2</mn><mi>x</mi><mi>y</mi><mi>d</mi><mi>A</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.216)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">A região <math id="Thmex1.p2.m3" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> pode ser descrita como uma região do tipo I, com <math id="Thmex1.p2.m4" class="ltx_Math" alttext="0\leq x\leq 1" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>x</mi><mo>≤</mo><mn>1</mn></mrow></math> e <math id="Thmex1.p2.m5" class="ltx_Math" alttext="0\leq y\leq 1-x" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>y</mi><mo>≤</mo><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></mrow></math>. Assim, temos que</p>
+<table id="A2.S0.EGx476" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E217"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E217.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}xy^{2}\,dx+y\,dy=-\int_{0}^{1}\int_{0}^{1-x}%
+2xy\,dy\,dx" display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><mi>x</mi><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mi>y</mi><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>1</mn><mo>−</mo><mi>x</mi></mrow></msubsup></mstyle><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi><mo>⁢</mo><mi>y</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.217)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E218"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E218.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\int_{0}^{1}x(1-x)^{2}\,dx=-\int_{0}^{1}(x-2x^{2}+x%
+^{3})\,dx" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mi>x</mi><msup><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>−</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mn>2</mn></msup><mi>d</mi><mi>x</mi><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mn>1</mn></msubsup></mstyle><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>−</mo><mn>2</mn><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>x</mi><mn>3</mn></msup><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>x</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.218)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E219"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E219.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\left[\frac{x^{2}}{2}-\frac{2x^{3}}{3}+\frac{x^{4}}%
+{4}\right]_{0}^{1}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><msubsup><mrow><mo>[</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>2</mn></msup><mn>2</mn></mfrac></mstyle><mo>−</mo><mstyle displaystyle="true"><mfrac><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>3</mn></msup></mrow><mn>3</mn></mfrac></mstyle><mo>+</mo><mstyle displaystyle="true"><mfrac><msup><mi>x</mi><mn>4</mn></msup><mn>4</mn></mfrac></mstyle><mo>]</mo></mrow><mn>0</mn><mn>1</mn></msubsup></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.219)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E220"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E220.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=-\frac{1}{12}." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo rspace="0em">=</mo><mo lspace="0em">−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>12</mn></mfrac></mstyle><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.220)</span></td>
+</tr></tbody>
+</table>
+</div>
 </div>
 <section id="SS1" class="ltx_subsection">
 <h2 class="ltx_title ltx_title_subsection">
-<span class="ltx_tag ltx_tag_subsection">4.6.1 </span>Exercícios</h2>
+<span class="ltx_tag ltx_tag_subsection">4.6.1 </span>Área de uma região plana</h2>
 
 <div id="SS1.p1" class="ltx_para">
-<p class="ltx_p"><span class="badge text-bg-warning">Em construção</span></p>
+<p class="ltx_p">Do teorema de Green, temos as seguintes fórmulas para a área de uma região plana <math id="SS1.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> com fronteira <math id="SS1.p1.m2" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math>:</p>
+<table id="A2.S0.EGx477" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E221"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E221.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}A=\iint_{R}dA=%
+\ointctrclockwise_{C}x\,dy=-\ointctrclockwise_{C}y\,dx" display="inline"><mrow><mi mathcolor="#0F77B7">A</mi><mo mathcolor="#0F77B7">=</mo><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∬</mo><mi mathcolor="#0F77B7">R</mi></msub></mstyle><mrow><mo lspace="0em" mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">A</mi></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∳</mo><mi mathcolor="#0F77B7">C</mi></msub></mstyle><mrow><mi mathcolor="#0F77B7">x</mi><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">y</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mo mathcolor="#0F77B7">−</mo><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∳</mo><mi mathcolor="#0F77B7">C</mi></msub></mstyle><mrow><mi mathcolor="#0F77B7">y</mi><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">x</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.221)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E222"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E222.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad\color[rgb]{0.05859375,0.46484375,0.71875}%
+\definecolor[named]{pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}=\frac{%
+1}{2}\ointctrclockwise_{C}-y\,dx+x\,dy." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo mathcolor="#0F77B7">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mn mathcolor="#0F77B7">1</mn><mn mathcolor="#0F77B7">2</mn></mfrac></mstyle><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∳</mo><mi mathcolor="#0F77B7">C</mi></msub></mstyle><mo mathcolor="#0F77B7">−</mo><mi mathcolor="#0F77B7">y</mi><mi mathcolor="#0F77B7">d</mi><mi mathcolor="#0F77B7">x</mi><mo mathcolor="#0F77B7">+</mo><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">d</mi><mi mathcolor="#0F77B7">y</mi><mo lspace="0em" mathcolor="#0F77B7">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.222)</span></td>
+</tr></tbody>
+</table>
+</div>
+<div id="Thmex2" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.6.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmex2.p1" class="ltx_para">
+<p class="ltx_p">Vamos calcular a área da região <math id="Thmex2.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> delimitada pela elipse <math id="Thmex2.p1.m2" class="ltx_Math" alttext="C:x^{2}+4y^{2}=4" display="inline"><mrow><mi>C</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow><mo>=</mo><mn>4</mn></mrow></mrow></math>.</p>
+</div>
+<div id="Thmex2.p2" class="ltx_para">
+<p class="ltx_p">Esta elipse pode ser parametrizada, no sentido anti-horário, por</p>
+<table id="A2.S0.EGx478" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E223"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E223.m1" class="ltx_Math" alttext="\displaystyle\bm{r}(t)=2\cos(t)\bm{i}+\operatorname{sen}(t)\bm{j}," display="inline"><mrow><mrow><mrow><mi>𝒓</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.223)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com <math id="Thmex2.p2.m1" class="ltx_Math" alttext="0\leq t\leq 2\pi" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow></math>. Assim, temos que</p>
+<table id="A2.S0.EGx479" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E224"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E224.m1" class="ltx_Math" alttext="\displaystyle A=\ointctrclockwise_{C}x\,dy=\int_{0}^{2\pi}2\cos(t)\,d(%
+\operatorname{sen}(t))" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.224)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E225"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E225.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{2\pi}2\cos^{2}(t)\,dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mn>2</mn><msup><mi>cos</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.225)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E226"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E226.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{2\pi}(1+\cos(2t))\,dt=2\pi." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>cos</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mi>t</mi><mo stretchy="false">)</mo></mrow><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>=</mo><mn>2</mn><mi>π</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.226)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="SS2" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.6.2 </span>Regiões multiplamente conexas</h2>
+
+<div id="SS2.p1" class="ltx_para">
+<p class="ltx_p">Uma região <math id="SS2.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> é dita ser <span class="ltx_text ltx_font_bold">multiplamente conexa</span> se não for simplesmente conexa, <span class="ltx_text ltx_font_italic">i.e.</span> se <math id="SS2.p1.m2" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> contiver buracos. O teorema de Green também é válido para regiões multiplamente conexas, mas a integral de linha deve ser calculada ao longo da fronteira de <math id="SS2.p1.m3" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>, que consiste em várias curvas fechadas. Mais especificamente, temos o seguinte resultado:</p>
+<table id="A2.S0.EGx480" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="eq:teo_Green_area1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E227.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\iint_{R}\left(\frac{%
+\partial f_{2}}{\partial x}-\frac{\partial f_{1}}{\partial y}\right)dA=%
+\ointctrclockwise_{C_{1}}f_{1}(x,y)\,dx+f_{2}(x,y)\,dy" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∬</mo><mi mathcolor="#0F77B7">R</mi></msub></mstyle><mrow><mrow><mo mathcolor="#0F77B7">(</mo><mrow><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">2</mn></msub></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">x</mi></mrow></mfrac></mstyle><mo mathcolor="#0F77B7">−</mo><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">1</mn></msub></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mi mathcolor="#0F77B7">y</mi></mrow></mfrac></mstyle></mrow><mo mathcolor="#0F77B7">)</mo></mrow><mo lspace="0em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">A</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∳</mo><msub><mi mathcolor="#0F77B7">C</mi><mn mathcolor="#0F77B7">1</mn></msub></msub></mstyle><mrow><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">1</mn></msub><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">x</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">y</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">x</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">+</mo><mrow><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">2</mn></msub><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">x</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">y</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi mathcolor="#0F77B7">d</mi><mo>⁢</mo><mi mathcolor="#0F77B7">y</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.227)</span></td>
+</tr></tbody>
+<tbody id="eq:teo_Green_area2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E228.m1" class="ltx_Math" alttext="\displaystyle\text{}\qquad\color[rgb]{0.05859375,0.46484375,0.71875}%
+\definecolor[named]{pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}+%
+\ointclockwise_{C_{2}}f_{1}(x,y)\,dx+f_{2}(x,y)\,dy," display="inline"><mrow><mrow><mrow></mrow><mspace width="2em"></mspace><mrow><mrow><mo mathcolor="#0F77B7">+</mo><mrow><mstyle displaystyle="true"><msub><mo mathcolor="#0F77B7">∲</mo><msub><mi mathcolor="#0F77B7">C</mi><mn mathcolor="#0F77B7">2</mn></msub></msub></mstyle><mrow><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">1</mn></msub><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">x</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">y</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">x</mi></mrow></mrow></mrow></mrow><mo mathcolor="#0F77B7">+</mo><mrow><msub><mi mathcolor="#0F77B7">f</mi><mn mathcolor="#0F77B7">2</mn></msub><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">x</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">y</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi mathcolor="#0F77B7">d</mi><mo>⁢</mo><mi mathcolor="#0F77B7">y</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.228)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde, aqui, <math id="SS2.p1.m4" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> tem apenas um buraco, <math id="SS2.p1.m5" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> é a fronteira externa de <math id="SS2.p1.m6" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> e <math id="SS2.p1.m7" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> é a fronteira do buraco. Note que a integral de linha ao longo de <math id="SS2.p1.m8" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> é calculada no sentido horário.</p>
+</div>
+<div id="Thmex3" class="ltx_theorem ltx_theorem_ex">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Exemplo 4.6.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmex3.p1" class="ltx_para">
+<p class="ltx_p">Vamos usar o teorema de Green para calcular a área da região <math id="Thmex3.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> delimitada pela elipse <math id="Thmex3.p1.m2" class="ltx_Math" alttext="C_{1}:9x^{2}+4y^{2}=36" display="inline"><mrow><msub><mi>C</mi><mn>1</mn></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><mn>9</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><mrow><mn>4</mn><mo>⁢</mo><msup><mi>y</mi><mn>2</mn></msup></mrow></mrow><mo>=</mo><mn>36</mn></mrow></mrow></math> e pelo círculo <math id="Thmex3.p1.m3" class="ltx_Math" alttext="C_{2}:x^{2}+y^{2}=1" display="inline"><mrow><msub><mi>C</mi><mn>2</mn></msub><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>1</mn></mrow></mrow></math>.</p>
+</div>
+<div id="Thmex3.p2" class="ltx_para">
+<p class="ltx_p">A elipse <math id="Thmex3.p2.m1" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> pode ser parametrizada, no sentido anti-horário, por</p>
+<table id="A2.S0.EGx481" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E229"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E229.m1" class="ltx_Math" alttext="\displaystyle\bm{r}_{1}(t)=2\cos(t)\bm{i}+3\operatorname{sen}(t)\bm{j}," display="inline"><mrow><mrow><mrow><msub><mi>𝒓</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>+</mo><mrow><mn>3</mn><mo lspace="0.167em">⁢</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.229)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com <math id="Thmex3.p2.m2" class="ltx_Math" alttext="0\leq t\leq 2\pi" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow></math>. O círculo <math id="Thmex3.p2.m3" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> pode ser parametrizado, no sentido horário, por</p>
+<table id="A2.S0.EGx482" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E230"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E230.m1" class="ltx_Math" alttext="\displaystyle\bm{r}_{2}(t)=\cos(t)\bm{i}-\operatorname{sen}(t)\bm{j}," display="inline"><mrow><mrow><mrow><msub><mi>𝒓</mi><mn>2</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒊</mi></mrow><mo>−</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mi>𝒋</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.230)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com <math id="Thmex3.p2.m4" class="ltx_Math" alttext="0\leq t\leq 2\pi" display="inline"><mrow><mn>0</mn><mo>≤</mo><mi>t</mi><mo>≤</mo><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></mrow></math>. Assim, temos que</p>
+<table id="A2.S0.EGx483" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.E231"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E231.m1" class="ltx_Math" alttext="\displaystyle A=\ointctrclockwise_{C_{1}}x\,dy+\ointclockwise_{C_{2}}x\,dy" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><msub><mi>C</mi><mn>1</mn></msub></msub></mstyle><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msub><mo>∲</mo><msub><mi>C</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.231)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E232"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E232.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{0}^{2\pi}2\cos(t)\,d(3\operatorname{sen}(t))+%
+\int_{0}^{2\pi}\cos(t)\,d(-\operatorname{sen}(t))" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mn>2</mn><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mrow><mo stretchy="false">(</mo><mn>3</mn><mi>sen</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow><mo>+</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mi>cos</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mrow><mo stretchy="false">(</mo><mo lspace="0em">−</mo><mi>sen</mi><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow><mo stretchy="false">)</mo></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.232)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E233"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E233.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=6\int_{0}^{2\pi}\cos^{2}(t)\,dt-\int_{0}^{2\pi}\cos^%
+{2}(t)\,dt" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mn>6</mn><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><msup><mi>cos</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>−</mo><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><msup><mi>cos</mi><mn>2</mn></msup><mrow><mo stretchy="false">(</mo><mi>t</mi><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.233)</span></td>
+</tr></tbody>
+<tbody id="Ch4.E234"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E234.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{5}{2}\int_{0}^{2\pi}(1+\cos(2t))\,dt=5\pi." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mn>5</mn><mn>2</mn></mfrac></mstyle><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></msubsup></mstyle><mrow><mo stretchy="false">(</mo><mn>1</mn><mo>+</mo><mi>cos</mi><mrow><mo stretchy="false">(</mo><mn>2</mn><mi>t</mi><mo stretchy="false">)</mo></mrow><mo rspace="0.170em" stretchy="false">)</mo></mrow><mi>d</mi><mi>t</mi><mo>=</mo><mn>5</mn><mi>π</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.234)</span></td>
+</tr></tbody>
+</table>
+</div>
+</div>
+</section>
+<section id="SS3" class="ltx_subsection">
+<h2 class="ltx_title ltx_title_subsection">
+<span class="ltx_tag ltx_tag_subsection">4.6.3 </span>Exercícios</h2>
+
+<div id="Thmexer1" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.6.1.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer1.p1" class="ltx_para">
+<p class="ltx_p">Use o teorema de Green para calcular</p>
+<table id="A2.S0.EGx484" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.Ex9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex9.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}(x^{2}-y)\,dx+(x+y^{2})\,dy," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>−</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é a fronteira do triângulo com vértices <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="(0,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,0</mn><mo stretchy="false">)</mo></mrow></math>, <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="(2,0)" display="inline"><mrow><mo stretchy="false">(</mo><mn>2,0</mn><mo stretchy="false">)</mo></mrow></math> e <math id="Thmexer1.p1.m4" class="ltx_Math" alttext="(0,1)" display="inline"><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></math>, percorrida nessa ordem.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx102">Resposta</button></div><div class="collapse" id="Thmrespx102" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx102.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx102.p1.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></p>
+</div>
+</div>
+<div id="Thmexer2" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.6.2.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer2.p1" class="ltx_para">
+<p class="ltx_p">Use o teorema de Green para calcular</p>
+<table id="A2.S0.EGx485" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.Ex10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex10.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}xy\,dx+(x^{2}+y)\,dy," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mrow><mi>x</mi><mo>⁢</mo><mi>y</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mi>y</mi></mrow><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é a fronteira do retângulo <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="R=[0,2]\times[0,1]" display="inline"><mrow><mi>R</mi><mo>=</mo><mrow><mrow><mo stretchy="false">[</mo><mn>0,2</mn><mo rspace="0.055em" stretchy="false">]</mo></mrow><mo rspace="0.222em">×</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow></math>, orientada no sentido anti-horário.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx103">Resposta</button></div><div class="collapse" id="Thmrespx103" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx103.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx103.p1.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math></p>
+</div>
+</div>
+<div id="Thmexer3" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.6.3.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer3.p1" class="ltx_para">
+<p class="ltx_p">Use uma das fórmulas (<a href="#eq:teo_Green_area1" title="In 4.6.2 Regiões multiplamente conexas ‣ 4.6 Teorema de Green ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.227</span></a>)-(<a href="#eq:teo_Green_area2" title="In 4.6.2 Regiões multiplamente conexas ‣ 4.6 Teorema de Green ‣ Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.228</span></a>) de área decorrente do teorema de Green para calcular a área da região delimitada pela elipse <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="4x^{2}+y^{2}=4" display="inline"><mrow><mrow><mrow><mn>4</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>4</mn></mrow></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx104">Resposta</button></div><div class="collapse" id="Thmrespx104" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx104.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx104.p1.m1" class="ltx_Math" alttext="2\pi" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>π</mi></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.6.4.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Seja <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math> a região anular <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="1\leq x^{2}+y^{2}\leq 4" display="inline"><mrow><mn>1</mn><mo>≤</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>≤</mo><mn>4</mn></mrow></math>. Use o teorema de Green para calcular</p>
+<table id="A2.S0.EGx486" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.Ex11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex11.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C_{1}}x\,dy+\ointclockwise_{C_{2}}x\,dy," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><msub><mi>C</mi><mn>1</mn></msub></msub></mstyle><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><msub><mo>∲</mo><msub><mi>C</mi><mn>2</mn></msub></msub></mstyle><mrow><mi>x</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>y</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="C_{1}" display="inline"><msub><mi>C</mi><mn>1</mn></msub></math> e <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="C_{2}" display="inline"><msub><mi>C</mi><mn>2</mn></msub></math> são, respectivamente, as circunferências externa e interna de <math id="Thmexer4.p1.m5" class="ltx_Math" alttext="R" display="inline"><mi>R</mi></math>.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx105">Resposta</button></div><div class="collapse" id="Thmrespx105" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx105.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx105.p1.m1" class="ltx_Math" alttext="3\pi" display="inline"><mrow><mn>3</mn><mo>⁢</mo><mi>π</mi></mrow></math></p>
+</div>
+</div>
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 4.6.5.
+<br class="ltx_break">
+</h6>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Use o teorema de Green para calcular</p>
+<table id="A2.S0.EGx487" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch4.Ex12"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch4.Ex12.m1" class="ltx_Math" alttext="\displaystyle\ointctrclockwise_{C}-y^{3}\,dx+x^{3}\,dy," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∳</mo><mi>C</mi></msub></mstyle><mo>−</mo><mrow><msup><mi>y</mi><mn>3</mn></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow><mo>+</mo><mrow><msup><mi>x</mi><mn>3</mn></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>y</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="C" display="inline"><mi>C</mi></math> é a circunferência <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="x^{2}+y^{2}=4" display="inline"><mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo>=</mo><mn>4</mn></mrow></math>, orientada no sentido anti-horário.</p>
+</div>
+</div>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx106">Resposta</button></div><div class="collapse" id="Thmrespx106" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">
+<br class="ltx_break">
+</h6>
+<div id="Thmrespx106.p1" class="ltx_para">
+<p class="ltx_p"><math id="Thmrespx106.p1.m1" class="ltx_Math" alttext="24\pi" display="inline"><mrow><mn>24</mn><mo>⁢</mo><mi>π</mi></mrow></math></p>
+</div>
 </div>
 </section>
 </section>
@@ -185,7 +628,7 @@
 <div class="ltx_align_center">
 <a href="cap_calculo_vetorial_sec_campos_conservativos.html" title="In Capítulo 4 Cálculo vetorial ‣ Cálculo II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.5 </span>Campos conservativos</span></a><a href="bib.html" title="In Cálculo II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_tabela_deriv.html" title="In Cálculo II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">A </span>Tabela de derivadas</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Tue Oct 13 15:20:46 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Fri Oct 16 13:09:20 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

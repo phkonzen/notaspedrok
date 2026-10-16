@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II</title>
-<!--Generated on Tue Oct 13 15:22:43 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 13 de outubro de 2026.-->
+<!--Generated on Fri Oct 16 13:10:27 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 16 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -148,10 +148,10 @@ rgb}{0.05859375,0.46484375,0.71875}I:=\int_{a}^{b}f(x)\,dx." display="block"><mr
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.2)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A ideia das <span class="ltx_text ltx_font_bold">Regras de Newton-Cotes</span> é aproximar <math id="p1.m3" class="ltx_Math" alttext="I" display="inline"><mi mathbackground="#FFFF00">I</mi></math> pela integral de um polinômio interpolador de <math id="p1.m4" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> por pontos previamente selecionados</span>.</p>
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A ideia das <span class="ltx_text ltx_font_bold">regras de Newton-Cotes</span> é aproximar <math id="p1.m3" class="ltx_Math" alttext="I" display="inline"><mi mathbackground="#FFFF00">I</mi></math> pela integral de um polinômio interpolador de <math id="p1.m4" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi mathbackground="#FFFF00">f</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></math> por pontos previamente selecionados</span>.</p>
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">Seja, <math id="p2.m1" class="ltx_Math" alttext="p(x)" display="inline"><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> o <span class="ltx_text ltx_font_bold">polinômio interpolador</span> de grau <math id="p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> de <math id="p2.m3" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> pelos dados pontos <math id="p2.m4" class="ltx_Math" alttext="\{(x_{i},f(x_{i}))\}_{i=1}^{n+1}" display="inline"><msubsup><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">}</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msubsup></math>, com <math id="p2.m5" class="ltx_Math" alttext="x_{1}&lt;x_{2}&lt;\cdots&lt;x_{n+1}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&lt;</mo><mi mathvariant="normal">⋯</mi><mo>&lt;</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math> e <math id="p2.m6" class="ltx_Math" alttext="x_{i}\in[a,b]" display="inline"><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> para todo <math id="p2.m7" class="ltx_Math" alttext="i=1,2,\dotsc,n+1" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mrow></math>. Então, pelo Teorema de Lagrange, temos</p>
+<p class="ltx_p">Seja, <math id="p2.m1" class="ltx_Math" alttext="p(x)" display="inline"><mrow><mi>p</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> o <span class="ltx_text ltx_font_bold">polinômio interpolador</span> de grau <math id="p2.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> de <math id="p2.m3" class="ltx_Math" alttext="f(x)" display="inline"><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> pelos dados pontos <math id="p2.m4" class="ltx_Math" alttext="\{(x_{i},f(x_{i}))\}_{i=1}^{n+1}" display="inline"><msubsup><mrow><mo stretchy="false">{</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo>,</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">)</mo></mrow><mo stretchy="false">}</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msubsup></math>, com <math id="p2.m5" class="ltx_Math" alttext="x_{1}&lt;x_{2}&lt;\cdots&lt;x_{n+1}" display="inline"><mrow><msub><mi>x</mi><mn>1</mn></msub><mo>&lt;</mo><msub><mi>x</mi><mn>2</mn></msub><mo>&lt;</mo><mi mathvariant="normal">⋯</mi><mo>&lt;</mo><msub><mi>x</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></math> e <math id="p2.m6" class="ltx_Math" alttext="x_{i}\in[a,b]" display="inline"><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> para todo <math id="p2.m7" class="ltx_Math" alttext="i=1,2,\dotsc,n+1" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mrow></math>. Então, pelo teorema de Lagrange, temos</p>
 <table id="Ch3.E3" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -221,7 +221,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}I}:=\int_{a}^{b}f(x)\,dx" dis
 <p class="ltx_p">Ou seja, nas quadraturas (regras) de Newton-Cotes, <span class="ltx_text" style="background-color:#FFFF00;">os nodos são as abscissas dos pontos interpolados e os pesos são as integrais dos polinômios de Lagrange associados</span>.</p>
 </div>
 <div id="p3" class="ltx_para">
-<p class="ltx_p">Na sequência, desenvolvemos as Regras de Newton-Cotes mais usuais e estimamos o erro de truncamento em cada caso<span id="Ch3.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>Consulte <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib3" title="Analysis of numerical methods" class="ltx_ref">3</a>, Cap. 7,Sec. 1.1]</cite>, para uma abordagem mais geral.</span></span></span>.</p>
+<p class="ltx_p">Na sequência, desenvolvemos as regras de Newton-Cotes mais usuais e estimamos o erro de truncamento em cada caso<span id="Ch3.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note">1</span>Consulte <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib3" title="Analysis of numerical methods" class="ltx_ref">3</a>, Cap. 7,Sec. 1.1]</cite>, para uma abordagem mais geral.</span></span></span>.</p>
 </div>
 <section id="SS1" class="ltx_subsection">
 <h2 class="ltx_title ltx_title_subsection">
@@ -315,7 +315,7 @@ rgb}{0.05859375,0.46484375,0.71875}=O(h^{3})." display="inline"><mrow><mrow><mi 
 </table>
 </div>
 <div id="SS1.SSSx1.p2" class="ltx_para">
-<p class="ltx_p">Portanto, a <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">Regra do Trapézio</span> é</p>
+<p class="ltx_p">Portanto, a <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">regra do Trapézio</span> é</p>
 <table id="Ch3.E17" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -350,12 +350,12 @@ f(b)\right]+O(h^{3})." display="block"><mrow><mrow><mrow><msubsup><mo mathcolor=
 </tr></tbody>
 <tbody id="Ch3.E20"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E20.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1-e^{-1/4}}{2}=3,02935\mathrm{e}\!-\!2." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mn>1</mn><mo>/</mo><mn>4</mn></mrow></mrow></msup></mrow><mn>2</mn></mfrac></mstyle><mo>=</mo><mn>3,02935</mn><mi mathvariant="normal">e</mi><mo lspace="0.052em" rspace="0.052em">−</mo><mn>2</mn><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E20.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\frac{1-e^{-1/16}}{2}=3,02935\mathrm{e}\!-\!2." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><mrow><mn>1</mn><mo>/</mo><mn>16</mn></mrow></mrow></msup></mrow><mn>2</mn></mfrac></mstyle><mo>=</mo><mn>3,02935</mn><mi mathvariant="normal">e</mi><mo lspace="0.052em" rspace="0.052em">−</mo><mn>2</mn><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.20)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Agora, usando a Regra do Trapézio, obtemos a seguinte aproximação</p>
+<p class="ltx_p">Agora, usando a regra do Trapézio, obtemos a seguinte aproximação</p>
 <table id="Ch6.S3.EGx33" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E21"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -422,7 +422,7 @@ f(b)\right]+O(h^{3})." display="block"><mrow><mrow><mrow><msubsup><mo mathcolor=
 <h3 class="ltx_title ltx_title_subsubsection">Regra de Simpson</h3>
 
 <div id="SS1.SSSx2.p1" class="ltx_para">
-<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">Regra de Simpson<span id="Ch3.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">3</span></span><span class="ltx_text ltx_font_medium">Thomas Simpson, 1710 - 1761, matemático britânico. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Thomas_Simpson" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Thomas Simpson</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> é obtida escolhendo-se os nodos <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
+<p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">regra de Simpson<span id="Ch3.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">3</span></span><span class="ltx_text ltx_font_medium">Thomas Simpson, 1710 - 1761, matemático britânico. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Thomas_Simpson" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Thomas Simpson</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> é obtida escolhendo-se os nodos <math id="SS1.SSSx2.p1.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
 rgb}{0.05859375,0.46484375,0.71875}x_{1}=a" display="inline"><mrow><msub><mi mathbackground="#FFFF00" mathcolor="#0F77B7">x</mi><mn mathbackground="#FFFF00" mathcolor="#0F77B7">1</mn></msub><mo mathbackground="#FFFF00" mathcolor="#0F77B7">=</mo><mi mathbackground="#FFFF00" mathcolor="#0F77B7">a</mi></mrow></math>, <math id="SS1.SSSx2.p1.m2" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
 rgb}{0.05859375,0.46484375,0.71875}x_{2}=(a+b)/2" display="inline"><mrow><msub><mi mathbackground="#FFFF00" mathcolor="#0F77B7">x</mi><mn mathbackground="#FFFF00" mathcolor="#0F77B7">2</mn></msub><mo mathbackground="#FFFF00" mathcolor="#0F77B7">=</mo><mrow><mrow><mo mathbackground="#FFFF00" mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathbackground="#FFFF00" mathcolor="#0F77B7">a</mi><mo mathbackground="#FFFF00" mathcolor="#0F77B7">+</mo><mi mathbackground="#FFFF00" mathcolor="#0F77B7">b</mi></mrow><mo mathbackground="#FFFF00" mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo mathbackground="#FFFF00" mathcolor="#0F77B7">/</mo><mn mathbackground="#FFFF00" mathcolor="#0F77B7">2</mn></mrow></mrow></math> e <math id="SS1.SSSx2.p1.m3" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
 rgb}{0.05859375,0.46484375,0.71875}x_{3}=b" display="inline"><mrow><msub><mi mathbackground="#FFFF00" mathcolor="#0F77B7">x</mi><mn mathbackground="#FFFF00" mathcolor="#0F77B7">3</mn></msub><mo mathbackground="#FFFF00" mathcolor="#0F77B7">=</mo><mi mathbackground="#FFFF00" mathcolor="#0F77B7">b</mi></mrow></math></span>. Denotando <math id="SS1.SSSx2.p1.m4" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
@@ -566,7 +566,7 @@ dx\right|\leq C\left|\int_{a}^{b}(x-x_{2})^{4}\,dx\right|" display="inline"><mro
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.35)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Então, de (<a href="#cap_integr_sec_nc:eq:aux_int_sim1" title="In Regra de Simpson ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.32</span></a>), (<a href="#cap_integr_sec_nc:eq:aux_int_sim2" title="In Regra de Simpson ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.33</span></a>) e (<a href="#cap_integr_sec_nc:eq:aux_int_sim3" title="In Regra de Simpson ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.35</span></a>), temos a <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">Regra de Simpson</span></p>
+<p class="ltx_p">Então, de (<a href="#cap_integr_sec_nc:eq:aux_int_sim1" title="In Regra de Simpson ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.32</span></a>), (<a href="#cap_integr_sec_nc:eq:aux_int_sim2" title="In Regra de Simpson ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.33</span></a>) e (<a href="#cap_integr_sec_nc:eq:aux_int_sim3" title="In Regra de Simpson ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.35</span></a>), temos a <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">regra de Simpson</span></p>
 <table id="Ch3.E36" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -584,7 +584,7 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=\frac{h}{3}\left[f(a)+%
 <br class="ltx_break">
 </h6>
 <div id="Thmex2.p1" class="ltx_para">
-<p class="ltx_p">A aproximação da integral do Exemplo <a href="#cap_integr_sec_nc:ex:int_trap" title="Exemplo 3.1.1. ‣ Regra do trapézio ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.1</span></a> pela a Regra de Simpson é</p>
+<p class="ltx_p">A aproximação da integral do Exemplo <a href="#cap_integr_sec_nc:ex:int_trap" title="Exemplo 3.1.1. ‣ Regra do trapézio ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.1</span></a> pela a regra de Simpson é</p>
 <table id="Ch6.S3.EGx40" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -697,7 +697,7 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=hf\left(\frac{a+b}{2}%
 <br class="ltx_break">
 </h6>
 <div id="Thmex3.p1" class="ltx_para">
-<p class="ltx_p">Aproximando a integral dada no Exemplo <a href="#cap_integr_sec_nc:ex:int_trap" title="Exemplo 3.1.1. ‣ Regra do trapézio ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.1</span></a> pela a Regra do Ponto Médio, obtemos</p>
+<p class="ltx_p">Aproximando a integral dada no Exemplo <a href="#cap_integr_sec_nc:ex:int_trap" title="Exemplo 3.1.1. ‣ Regra do trapézio ‣ 3.1.1 Regras de Newton-Cotes Fechadas ‣ 3.1 Regras de Newton-Cotes ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.1.1</span></a> pela a regra do ponto médio, obtemos</p>
 <table id="Ch6.S3.EGx42" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -780,24 +780,24 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=hf\left(\frac{a+b}{2}%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.46)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">pelas seguintes Regras de Newton-Cotes e compute o erro absoluto em relação ao valor exato:</p>
+<p class="ltx_p">pelas seguintes regras de Newton-Cotes e compute o erro absoluto em relação ao valor exato:</p>
 <ol id="I1" class="ltx_enumerate">
 <li id="I1.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">a)</span> 
 <div id="I1.i1.p1" class="ltx_para">
-<p class="ltx_p">Regra do Trapézio.</p>
+<p class="ltx_p">regra do Trapézio.</p>
 </div>
 </li>
 <li id="I1.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">b)</span> 
 <div id="I1.i2.p1" class="ltx_para">
-<p class="ltx_p">Regra de Simpson.</p>
+<p class="ltx_p">regra de Simpson.</p>
 </div>
 </li>
 <li id="I1.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">c)</span> 
 <div id="I1.i3.p1" class="ltx_para">
-<p class="ltx_p">Regra do Ponto Médio.</p>
+<p class="ltx_p">regra do ponto médio.</p>
 </div>
 </li>
 </ol>
@@ -831,19 +831,19 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=hf\left(\frac{a+b}{2}%
 <li id="I2.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">a)</span> 
 <div id="I2.i1.p1" class="ltx_para">
-<p class="ltx_p">Regra do Ponto Médio.</p>
+<p class="ltx_p">regra do ponto médio.</p>
 </div>
 </li>
 <li id="I2.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">b)</span> 
 <div id="I2.i2.p1" class="ltx_para">
-<p class="ltx_p">Regra do Trapézio.</p>
+<p class="ltx_p">regra do trapézio.</p>
 </div>
 </li>
 <li id="I2.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">c)</span> 
 <div id="I2.i3.p1" class="ltx_para">
-<p class="ltx_p">Regra de Simpson.</p>
+<p class="ltx_p">regra de Simpson.</p>
 </div>
 </li>
 </ol>
@@ -909,19 +909,19 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=hf\left(\frac{a+b}{2}%
 <li id="I3.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">a)</span> 
 <div id="I3.i1.p1" class="ltx_para">
-<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{2,1}^{2,3}f(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>2,1</mn><mn>2,3</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math> usando a Regra do Ponto Médio.</p>
+<p class="ltx_p"><math id="I3.i1.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{2,1}^{2,3}f(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>2,1</mn><mn>2,3</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math> usando a regra do ponto médio.</p>
 </div>
 </li>
 <li id="I3.i2" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">b)</span> 
 <div id="I3.i2.p1" class="ltx_para">
-<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{2,0}^{2,5}f(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>2,0</mn><mn>2,5</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math> usando a Regra do Trapézio.</p>
+<p class="ltx_p"><math id="I3.i2.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{2,0}^{2,5}f(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>2,0</mn><mn>2,5</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math> usando a regra do trapézio.</p>
 </div>
 </li>
 <li id="I3.i3" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">c)</span> 
 <div id="I3.i3.p1" class="ltx_para">
-<p class="ltx_p"><math id="I3.i3.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{2,0}^{2,4}f(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>2,0</mn><mn>2,4</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math> usando a Regra de Simpson.</p>
+<p class="ltx_p"><math id="I3.i3.p1.m1" class="ltx_Math" alttext="\displaystyle\int_{2,0}^{2,4}f(x)\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>2,0</mn><mn>2,4</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math> usando a regra de Simpson.</p>
 </div>
 </li>
 </ol>
@@ -957,7 +957,7 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=hf\left(\frac{a+b}{2}%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.49)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">compute, com a Regra de Simpson, as seguintes aproximações:</p>
+<p class="ltx_p">compute, com a regra de Simpson, as seguintes aproximações:</p>
 <ol id="I4" class="ltx_enumerate">
 <li id="I4.i1" class="ltx_item" style="list-style-type:none;">
 <span class="ltx_tag ltx_tag_item">a)</span> 
@@ -1016,7 +1016,7 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=hf\left(\frac{a+b}{2}%
 <br class="ltx_break">
 </h6>
 <div id="Thmexer6.p1" class="ltx_para">
-<p class="ltx_p">Desenvolva a Regra de Newton-Cotes Aberta de <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math> pontos e estime seu erro de truncamento.</p>
+<p class="ltx_p">Desenvolva a regra de Newton-Cotes Aberta de <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math> pontos e estime seu erro de truncamento.</p>
 </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx19">Resposta</button></div><div class="collapse" id="Thmrespx19" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
@@ -1084,7 +1084,7 @@ rgb}{0.05859375,0.46484375,0.71875}\int_{a}^{b}f(x)\,dx=hf\left(\frac{a+b}{2}%
 <div class="ltx_align_center">
 <a href="cap_integr.html" title="In Matemática numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Integração</span></a><a href="bib.html" title="In Matemática numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_integr_sec_int_comp.html" title="In Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Regras compostas de Newton-Cotes</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Tue Oct 13 15:22:43 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Fri Oct 16 13:10:27 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
