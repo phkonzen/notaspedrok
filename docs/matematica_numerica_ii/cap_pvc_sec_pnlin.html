@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II</title>
-<!--Generated on Fri Oct 16 13:10:27 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 16 de outubro de 2026.-->
+<!--Generated on Wed Oct 21 11:11:30 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 21 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -110,15 +110,13 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
-    <!-- left -->
+    <!-- social media -->
     <div id="rs" class="text-left mb-0">
         <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
-        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
-        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
         <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
         <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
-    <!-- right -->
+    <!-- language options -->
     <div id="langOpts" class="d-none text-right mb-0">
     </div>
 </div>
@@ -135,7 +133,7 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Vamos estudar a resolução de <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">problemas não-lineares de valores de contorno</span> da forma</p>
-<table id="Ch6.S3.EGx220" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx221" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_pvc_sec_pnlin:eq:pvc_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -164,7 +162,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u(b)=u_{b}," display="inline"
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p">Empregando o <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">método de diferenças finitas</span> (MDF), começamos assumindo uma <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">malha</span> uniforme de <math id="p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>-subintervalos com <span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">nodos</span> <math id="p2.m2" class="ltx_Math" alttext="x_{i}=a+(i-1)h" display="inline"><mrow><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00">=</mo><mrow><mi mathbackground="#FFFF00">a</mi><mo mathbackground="#FFFF00">+</mo><mrow><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mrow><mi mathbackground="#FFFF00">i</mi><mo mathbackground="#FFFF00">−</mo><mn mathbackground="#FFFF00">1</mn></mrow><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathbackground="#FFFF00">h</mi></mrow></mrow></mrow></math></span>, <span class="ltx_text" style="background-color:#FFFF00;"><span class="ltx_text ltx_font_bold">tamanho de malha</span> <math id="p2.m3" class="ltx_Math" alttext="h=(b-a)/n" display="inline"><mrow><mi mathbackground="#FFFF00">h</mi><mo mathbackground="#FFFF00">=</mo><mrow><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><mrow><mi mathbackground="#FFFF00">b</mi><mo mathbackground="#FFFF00">−</mo><mi mathbackground="#FFFF00">a</mi></mrow><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow><mo mathbackground="#FFFF00">/</mo><mi mathbackground="#FFFF00">n</mi></mrow></mrow></math></span>, <math id="p2.m4" class="ltx_Math" alttext="i=1,2,\dotsc,n+1" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mrow></math>. Denotando <span class="ltx_text" style="background-color:#FFFF00;"><math id="p2.m5" class="ltx_Math" alttext="u_{i}\approx u(x_{i})" display="inline"><mrow><msub><mi mathbackground="#FFFF00">u</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00">≈</mo><mrow><mi mathbackground="#FFFF00">u</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></mrow></math></span> e aplicando fórmulas de diferenças finitas centrais para <math id="p2.m6" class="ltx_Math" alttext="u_{xx}" display="inline"><msub><mi>u</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub></math> e <math id="p2.m7" class="ltx_Math" alttext="u_{x}" display="inline"><msub><mi>u</mi><mi>x</mi></msub></math>, a Eq. (<a href="#cap_pvc_sec_pnlin:eq:pvc_eq" title="In 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.139</span></a>) fornece</p>
-<table id="Ch6.S3.EGx221" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx222" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.Ex11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -180,7 +178,7 @@ u_{i-1}\right)," display="inline"><mrow><mrow><mrow></mrow><mspace width="2em"><
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="p2.m8" class="ltx_Math" alttext="i=2,3,\dotsc,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>2,3</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. As condições de contorno Eqs. (<a href="#cap_pvc_sec_pnlin:eq:pvc_bca" title="In 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.140</span></a>)-(<a href="#cap_pvc_sec_pnlin:eq:pvc_bcb" title="In 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.141</span></a>), fornecem as equações de fechamento</p>
-<table id="Ch6.S3.EGx222" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx223" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E143"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -198,7 +196,7 @@ u_{i-1}\right)," display="inline"><mrow><mrow><mrow></mrow><mspace width="2em"><
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Com isso, temos que o <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">problema discreto</span> associado consiste em: <span class="ltx_text" style="background-color:#FFFF00;">encontrar <math id="p3.m1" class="ltx_Math" alttext="\bm{u}=(u_{i})_{i=1}^{n+1}" display="inline"><mrow><mi mathbackground="#FFFF00">𝒖</mi><mo mathbackground="#FFFF00">=</mo><msubsup><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">u</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow><mrow><mi mathbackground="#FFFF00">i</mi><mo mathbackground="#FFFF00">=</mo><mn mathbackground="#FFFF00">1</mn></mrow><mrow><mi mathbackground="#FFFF00">n</mi><mo mathbackground="#FFFF00">+</mo><mn mathbackground="#FFFF00">1</mn></mrow></msubsup></mrow></math> solução do seguinte sistema de equações não-lineares</span></p>
-<table id="Ch6.S3.EGx223" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx224" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E145"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -244,7 +242,7 @@ rgb}{0.05859375,0.46484375,0.71875}F(\bm{u})=\bm{0}," display="block"><mrow><mro
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="p4.m1" class="ltx_Math" alttext="F(\bm{u})=\left(f_{i}(\bm{u})\right)_{i=1}^{(n+1)}" display="inline"><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒖</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msubsup><mrow><mo>(</mo><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒖</mi><mo stretchy="false">)</mo></mrow></mrow><mo>)</mo></mrow><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msubsup></mrow></math> é a função vetorial de componentes</p>
-<table id="Ch6.S3.EGx224" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx225" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E149"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -273,7 +271,7 @@ u_{i-1}\right)," display="inline"><mrow><mrow><mrow></mrow><mspace width="2em"><
 </tr></tbody>
 </table>
 <p class="ltx_p">com <math id="p4.m2" class="ltx_Math" alttext="i=2,3,\dotsc,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>2,3</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. A <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">iteração do método de Newton</span> consiste em</p>
-<table id="Ch6.S3.EGx225" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx226" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E152"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -314,7 +312,7 @@ rgb}{0.05859375,0.46484375,0.71875}J_{F}\left(\bm{u}^{(k)}\right)\bm{\delta}^{%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.155)</span></td>
 </tr></tbody>
 </table>
-<table id="Ch6.S3.EGx226" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx227" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E156"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -355,7 +353,7 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Vamos considerar o seguinte PVC</p>
-<table id="Ch6.S3.EGx227" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx228" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E160"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -382,7 +380,7 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 </tr></tbody>
 </table>
 <p class="ltx_p">Com isso, calculamos</p>
-<table id="Ch6.S3.EGx228" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx229" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E163"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -629,7 +627,7 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Considere o PVC</p>
-<table id="Ch6.S3.EGx229" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx230" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E165"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -693,7 +691,7 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Considere o PVC</p>
-<table id="Ch6.S3.EGx230" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx231" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E168"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -745,11 +743,8 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 <br class="ltx_break">
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
-<p class="ltx_p">Desenvolva uma versão do método MEF-Newton (método de elementos finitos</p>
+<p class="ltx_p">Desenvolva uma versão do método MEF-Newton (método de elementos finitos com o método de Newton) para computar a solução aproximada do PVC dado no Exemplo <a href="#cap_pvc_sec_pnlin:ex:mdf-newton" title="Exemplo 5.4.1. ‣ 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4.1</span></a>. Implemente-o e verifique a convergência do método para <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>, <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="10^{-2}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></math> e <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="10^{-3}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>.</p>
 </div>
-</div>
-<div id="SS1.p1" class="ltx_para">
-<p class="ltx_p">com o método de Newton) para computar a solução aproximada do PVC dado no Exemplo <a href="#cap_pvc_sec_pnlin:ex:mdf-newton" title="Exemplo 5.4.1. ‣ 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4.1</span></a>. Implemente-o e verifique a convergência do método para <math id="SS1.p1.m1" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>, <math id="SS1.p1.m2" class="ltx_Math" alttext="10^{-2}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></math> e <math id="SS1.p1.m3" class="ltx_Math" alttext="10^{-3}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>.</p>
 </div>
 <div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
 <h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 5.4.4.
@@ -764,7 +759,7 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 <br class="ltx_break">
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
-<p class="ltx_p">Desenvolva uma versão do método MEF-Newton (método de elementos finitos com o método de Newton) para computar a solução aproximada do PVC dado no E.<a href="#cap_pvc_sec_pnlin:exer:mdf-newton" title="E. 5.4.2. ‣ 5.4.1 Exercícios ‣ 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4.2</span></a>. Implemente-o e verifique a convergência do método para <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>, <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="10^{-2}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></math> e <math id="Thmexer5.p1.m3" class="ltx_Math" alttext="10^{-3}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>.</p>
+<p class="ltx_p">Desenvolva uma versão do método MEF-Newton (método de elementos finitos com o método de Newton) para computar a solução aproximada do PVC dado no E.<a href="#cap_pvc_sec_pnlin:ex:mdf-newton" title="Exemplo 5.4.1. ‣ 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4.1</span></a>. Implemente-o e verifique a convergência do método para <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>, <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="10^{-2}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></math> e <math id="Thmexer5.p1.m3" class="ltx_Math" alttext="10^{-3}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>.</p>
 </div>
 </div>
 <div id="Thmexer6" class="ltx_theorem ltx_theorem_exer">
@@ -772,7 +767,7 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 <br class="ltx_break">
 </h6>
 <div id="Thmexer6.p1" class="ltx_para">
-<p class="ltx_p">Desenvolva uma versão do método MVF-Newton (método de volumes finitos com o método de Newton) para computar a solução aproximada do PVC dado no E.<a href="#cap_pvc_sec_pnlin:exer:mdf-newton" title="E. 5.4.2. ‣ 5.4.1 Exercícios ‣ 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4.2</span></a>. Implemente-o e verifique a convergência do método para <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>, <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="10^{-2}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></math> e <math id="Thmexer6.p1.m3" class="ltx_Math" alttext="10^{-3}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>.</p>
+<p class="ltx_p">Desenvolva uma versão do método MVF-Newton (método de volumes finitos com o método de Newton) para computar a solução aproximada do PVC dado no E.<a href="#cap_pvc_sec_pnlin:ex:mdf-newton" title="Exemplo 5.4.1. ‣ 5.4 Problemas não-lineares ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4.1</span></a>. Implemente-o e verifique a convergência do método para <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>, <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="10^{-2}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>2</mn></mrow></msup></math> e <math id="Thmexer6.p1.m3" class="ltx_Math" alttext="10^{-3}" display="inline"><msup><mn>10</mn><mrow><mo>−</mo><mn>3</mn></mrow></msup></math>.</p>
 </div>
 </div>
 </section>
@@ -815,13 +810,13 @@ u_{i},\frac{1}{2h}u_{i+1}-\frac{1}{2h}u_{i-1}\right)," display="inline"><mrow><m
 <div class="ltx_align_center">
 <a href="cap_pvc_sec_mvf.html" title="In Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.3 </span>Método de Volumes Finitos</span></a><a href="bib.html" title="In Matemática numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_edp.html" title="In Matemática numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">6 </span>Equações Diferenciais Parciais</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Oct 16 13:10:27 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Wed Oct 21 11:11:30 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
   <div class="card-body d-flex flex-wrap justify-content-end">
     <div>Pedro H A Konzen</div>
-    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
   </div> <!-- div class="card" -->
 </div> <!-- div class="card-footer text-right" -->

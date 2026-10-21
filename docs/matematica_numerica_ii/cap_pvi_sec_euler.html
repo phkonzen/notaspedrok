@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II</title>
-<!--Generated on Fri Oct 16 13:10:27 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 16 de outubro de 2026.-->
+<!--Generated on Wed Oct 21 11:11:30 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 21 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -112,15 +112,13 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
-    <!-- left -->
+    <!-- social media -->
     <div id="rs" class="text-left mb-0">
         <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
-        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
-        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
         <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
         <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
-    <!-- right -->
+    <!-- language options -->
     <div id="langOpts" class="d-none text-right mb-0">
     </div>
 </div>
@@ -642,18 +640,20 @@ rgb}{0.05859375,0.46484375,0.71875}e(t;h_{n})=O(h_{n}^{p})" display="block"><mro
 </table>
 <p class="ltx_p">para todo <math id="SS1.SSSx2.p1.m4" class="ltx_Math" alttext="t\in[t_{0},t_{f}]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><msub><mi>t</mi><mn>0</mn></msub><mo>,</mo><msub><mi>t</mi><mi>f</mi></msub><mo stretchy="false">]</mo></mrow></mrow></math>, <math id="SS1.SSSx2.p1.m5" class="ltx_Math" alttext="t_{f}&gt;t_{0}" display="inline"><mrow><msub><mi>t</mi><mi>f</mi></msub><mo>&gt;</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></math>.</p>
 </div>
+<div id="SS1.SSSx2.p2" class="ltx_para">
+<p class="ltx_p">O seguinte lema é útil para estabelecermos a convergência do método de Euler e sua versão original pode ser encontrada em <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib8" title="Introduction to numerical analysis" class="ltx_ref">8</a>, Cap. 7, Seção 7.2]</cite>.</p>
+</div>
 <div id="cap_pvi_sec_euler:lema:aux" class="ltx_theorem ltx_theorem_lem">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Lema 4.1.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(<cite class="ltx_cite ltx_citemacro_cite">[<span class="ltx_ref ltx_missing_citation ltx_ref_self">C</span>]</cite>ap. 7, Seção 7.2)</span>
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Lema 4.1.1.
 <br class="ltx_break">
 </h6>
 <div id="Thmlem1.p1" class="ltx_para">
-<p class="ltx_p">Stoer1993a]
-Se a sequência <math id="Thmlem1.p1.m1" class="ltx_Math" alttext="\left(\xi^{(k)}\right)_{k\in\mathbb{R}}" display="inline"><msub><mrow><mo>(</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mrow><mi>k</mi><mo>∈</mo><mi>ℝ</mi></mrow></msub></math> satisfaz a estimativa</p>
-<table id="Ch4.E39" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">Se a sequência <math id="Thmlem1.p1.m1" class="ltx_Math" alttext="\left(\xi^{(k)}\right)_{k\in\mathbb{R}}" display="inline"><msub><mrow><mo>(</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mrow><mi>k</mi><mo>∈</mo><mi>ℝ</mi></mrow></msub></math> satisfaz a estimativa</p>
+<table id="Ch6.S3.EGx92" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch4.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E39.m1" class="ltx_Math" alttext="\left|\xi^{(k+1)}\right|\leq(1+\delta)\left|\xi^{(k)}\right|+B," display="block"><mrow><mrow><mrow><mo>|</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>|</mo></mrow><mo>≤</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>δ</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>|</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>|</mo></mrow></mrow><mo>+</mo><mi>B</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E39.m1" class="ltx_Math" alttext="\displaystyle\left|\xi^{(k+1)}\right|\leq(1+\delta)\left|\xi^{(k)}\right|+B," display="inline"><mrow><mrow><mrow><mo>|</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>|</mo></mrow><mo>≤</mo><mrow><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>+</mo><mi>δ</mi></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo>|</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>|</mo></mrow></mrow><mo>+</mo><mi>B</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.39)</span></td>
 </tr></tbody>
@@ -673,9 +673,9 @@ Se a sequência <math id="Thmlem1.p1.m1" class="ltx_Math" alttext="\left(\xi^{(k
 </div>
 <div class="ltx_proof">
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
-<div id="SS1.SSSx2.p2" class="ltx_para">
+<div id="SS1.SSSx2.p3" class="ltx_para">
 <p class="ltx_p">De forma iterativa, temos</p>
-<table id="Ch6.S3.EGx92" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx93" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -716,7 +716,7 @@ Se a sequência <math id="Thmlem1.p1.m1" class="ltx_Math" alttext="\left(\xi^{(k
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.46)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Observando que <math id="SS1.SSSx2.p2.m1" class="ltx_Math" alttext="0&lt;1+\delta\leq e^{\delta}" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mrow><mn>1</mn><mo>+</mo><mi>δ</mi></mrow><mo>≤</mo><msup><mi>e</mi><mi>δ</mi></msup></mrow></math> para <math id="SS1.SSSx2.p2.m2" class="ltx_Math" alttext="\delta&gt;-1" display="inline"><mrow><mi>δ</mi><mo>&gt;</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, concluímos que</p>
+<p class="ltx_p">Observando que <math id="SS1.SSSx2.p3.m1" class="ltx_Math" alttext="0&lt;1+\delta\leq e^{\delta}" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mrow><mn>1</mn><mo>+</mo><mi>δ</mi></mrow><mo>≤</mo><msup><mi>e</mi><mi>δ</mi></msup></mrow></math> para <math id="SS1.SSSx2.p3.m2" class="ltx_Math" alttext="\delta&gt;-1" display="inline"><mrow><mi>δ</mi><mo>&gt;</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></math>, concluímos que</p>
 <table id="Ch4.E47" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -771,8 +771,8 @@ rgb}{0.05859375,0.46484375,0.71875}\left|y^{(k)}-y\left(t^{(k)}\right)\right|%
 </div>
 <div class="ltx_proof">
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
-<div id="SS1.SSSx2.p3" class="ltx_para">
-<p class="ltx_p">Para <math id="SS1.SSSx2.p3.m1" class="ltx_Math" alttext="k=0" display="inline"><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow></math> o resultado é imediato. Agora, usamos o polinômio de Taylor</p>
+<div id="SS1.SSSx2.p4" class="ltx_para">
+<p class="ltx_p">Para <math id="SS1.SSSx2.p4.m1" class="ltx_Math" alttext="k=0" display="inline"><mrow><mi>k</mi><mo>=</mo><mn>0</mn></mrow></math> o resultado é imediato. Agora, usamos o polinômio de Taylor</p>
 <table id="Ch4.E51" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -783,7 +783,7 @@ rgb}{0.05859375,0.46484375,0.71875}\left|y^{(k)}-y\left(t^{(k)}\right)\right|%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.51)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">onde <math id="SS1.SSSx2.p3.m2" class="ltx_Math" alttext="t^{(k)}\leq\xi^{(k)}\leq t^{(k+1)}" display="inline"><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>≤</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>≤</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow></math>, <math id="SS1.SSSx2.p3.m3" class="ltx_Math" alttext="k=0,1,2,\ldots,n" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. Já, as iteradas de Euler são</p>
+<p class="ltx_p">onde <math id="SS1.SSSx2.p4.m2" class="ltx_Math" alttext="t^{(k)}\leq\xi^{(k)}\leq t^{(k+1)}" display="inline"><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>≤</mo><msup><mi>ξ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>≤</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow></math>, <math id="SS1.SSSx2.p4.m3" class="ltx_Math" alttext="k=0,1,2,\ldots,n" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. Já, as iteradas de Euler são</p>
 <table id="Ch4.E52" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -794,7 +794,7 @@ rgb}{0.05859375,0.46484375,0.71875}\left|y^{(k)}-y\left(t^{(k)}\right)\right|%
 </tr></tbody>
 </table>
 <p class="ltx_p">Subtraindo esses equações, obtemos</p>
-<table id="Ch6.S3.EGx93" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx94" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -810,8 +810,8 @@ rgb}{0.05859375,0.46484375,0.71875}\left|y^{(k)}-y\left(t^{(k)}\right)\right|%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.53)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Da hipótese de <math id="SS1.SSSx2.p3.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> Lipschitz, temos</p>
-<table id="Ch6.S3.EGx94" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Da hipótese de <math id="SS1.SSSx2.p4.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> Lipschitz, temos</p>
+<table id="Ch6.S3.EGx95" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -838,7 +838,7 @@ h^{2}}{2}\left|y^{\prime\prime}\left(\xi^{(k)}\right)\right|" display="inline"><
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.55)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Do Lema <a href="#cap_pvi_sec_euler:lema:aux" title="Lema 4.1.1.([C]ap. 7, Seção 7.2) ‣ Convergência ‣ 4.1.1 Análise numérica ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1.1</span></a>, temos</p>
+<p class="ltx_p">Do Lema <a href="#cap_pvi_sec_euler:lema:aux" title="Lema 4.1.1. ‣ Convergência ‣ 4.1.1 Análise numérica ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1.1</span></a>, temos</p>
 <table id="Ch4.E56" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -867,7 +867,7 @@ h^{2}}{2}\left|y^{\prime\prime}\left(\xi^{(k)}\right)\right|" display="inline"><
 </h6>
 <div id="Thmex2.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte problema de valor inicial</p>
-<table id="Ch6.S3.EGx95" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx96" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E57"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -935,7 +935,7 @@ h^{2}}{2}\left|y^{\prime\prime}\left(\xi^{(k)}\right)\right|" display="inline"><
 
 <div id="SS1.SSSx3.p1" class="ltx_para">
 <p class="ltx_p">O Teorema <a href="#cap_pvi_sec_euler:teo:conv" title="Teorema 4.1.1.(Estimativa do error global) ‣ Convergência ‣ 4.1.1 Análise numérica ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1.1</span></a> não leva em consideração os erros de arredondamento. Levando em conta esses erros, a iteração do método de Euler tem a forma</p>
-<table id="Ch6.S3.EGx96" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx97" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_pvi_sec_euler:eq:euler_errarr-ini"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -952,7 +952,7 @@ h^{2}}{2}\left|y^{\prime\prime}\left(\xi^{(k)}\right)\right|" display="inline"><
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="SS1.SSSx3.p1.m1" class="ltx_Math" alttext="\delta^{(k)}" display="inline"><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> é o erro devido a arredondamentos na <math id="SS1.SSSx3.p1.m2" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iterada, <math id="SS1.SSSx3.p1.m3" class="ltx_Math" alttext="t^{(k)}=t_{0}+hk" display="inline"><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><mrow><mi>h</mi><mo>⁢</mo><mi>k</mi></mrow></mrow></mrow></math>, <math id="SS1.SSSx3.p1.m4" class="ltx_Math" alttext="k=0,1,2,\dotsc,n" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. Assumindo as hipóteses do Teorema <a href="#cap_pvi_sec_euler:teo:conv" title="Teorema 4.1.1.(Estimativa do error global) ‣ Convergência ‣ 4.1.1 Análise numérica ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1.1</span></a>, podemos mostrar a seguinte estimativa de erro global</p>
-<table id="Ch6.S3.EGx97" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx98" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -981,7 +981,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\left|\tilde{y}^{(k+1)}-y%
 
 <div id="SS2.p1" class="ltx_para">
 <p class="ltx_p">Seja um <span class="ltx_text" style="background-color:#FFFF00;">sistema de EDOs<span id="Ch4.footnote3" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">3</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">3</sup><span class="ltx_tag ltx_tag_note">3</span>Equações Diferenciais Ordinárias</span></span></span> com valor iniciais</span></p>
-<table id="Ch6.S3.EGx98" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx99" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E62"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1000,7 +1000,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\left|\tilde{y}^{(k+1)}-y%
 </div>
 <div id="SS2.p2" class="ltx_para">
 <p class="ltx_p">Do ponto de vista algorítmico, a <span class="ltx_text" style="background-color:#FFFF00;">iteração do método de Euler</span> é diretamente estendida <span class="ltx_text" style="background-color:#FFFF00;">para sistemas</span>:</p>
-<table id="Ch6.S3.EGx99" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx100" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E64"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1024,7 +1024,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\left|\tilde{y}^{(k+1)}-y%
 </h6>
 <div id="Thmex3.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o sistema de EDOs</p>
-<table id="Ch6.S3.EGx100" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx101" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E66"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1040,7 +1040,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\left|\tilde{y}^{(k+1)}-y%
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="Thmex3.p1.m1" class="ltx_Math" alttext="0&lt;t\leq 1" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><mn>1</mn></mrow></math> com condições iniciais</p>
-<table id="Ch6.S3.EGx101" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx102" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E68"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1056,7 +1056,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\left|\tilde{y}^{(k+1)}-y%
 </tr></tbody>
 </table>
 <p class="ltx_p">Este sistema tem solução analítica</p>
-<table id="Ch6.S3.EGx102" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx103" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E70"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1074,7 +1074,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\left|\tilde{y}^{(k+1)}-y%
 </div>
 <div id="Thmex3.p2" class="ltx_para">
 <p class="ltx_p">Podemos reescrevê-lo na forma vetorial</p>
-<table id="Ch6.S3.EGx103" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx104" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E72"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1207,7 +1207,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 
 <div id="SS3.p1" class="ltx_para">
 <p class="ltx_p">Seja dado o PVI de ordem <math id="SS3.p1.m1" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math></p>
-<table id="Ch6.S3.EGx104" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx105" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_pvi_euler:eq:pvi_ordem_sup-ini"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1228,7 +1228,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </div>
 <div id="SS3.p2" class="ltx_para">
 <p class="ltx_p">Para resolvê-lo com o método de Euler, a ideia é reescrevê-lo como um sistema de EDOs de primeira ordem com condições iniciais. Isso pode ser feito com a mudança de variáveis</p>
-<table id="Ch6.S3.EGx105" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx106" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E76"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1264,7 +1264,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </div>
 <div id="SS3.p3" class="ltx_para">
 <p class="ltx_p">Com isso e do PVI (<a href="#cap_pvi_euler:eq:pvi_ordem_sup-ini" title="In 4.1.3 Equações de Ordem Superior ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.74</span></a>)-(<a href="#cap_pvi_euler:eq:pvi_ordem_sup-fim" title="In 4.1.3 Equações de Ordem Superior ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.75</span></a>), obtemos o sistema de EDOs de primeira ordem</p>
-<table id="Ch6.S3.EGx106" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx107" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E81"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1298,7 +1298,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="SS3.p3.m1" class="ltx_Math" alttext="t_{0}&lt;t\leq t_{f}" display="inline"><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>&lt;</mo><mi>t</mi><mo>≤</mo><msub><mi>t</mi><mi>f</mi></msub></mrow></math> e com condições inicias</p>
-<table id="Ch6.S3.EGx107" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx108" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E86"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1338,7 +1338,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </h6>
 <div id="Thmex4.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte PVI de ordem superior</p>
-<table id="Ch6.S3.EGx108" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx109" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E91"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1366,7 +1366,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </div>
 <div id="Thmex4.p2" class="ltx_para">
 <p class="ltx_p">Para reescrevê-lo como uma sistema de EDOs de primeira ordem, tomamos as mudanças de variáveis <math id="Thmex4.p2.m1" class="ltx_Math" alttext="u_{1}=y" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>=</mo><mi>y</mi></mrow></math> e <math id="Thmex4.p2.m2" class="ltx_Math" alttext="u_{2}=y^{\prime}" display="inline"><mrow><msub><mi>u</mi><mn>2</mn></msub><mo>=</mo><msup><mi>y</mi><mo>′</mo></msup></mrow></math>. Com isso, obtemos</p>
-<table id="Ch6.S3.EGx109" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx110" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E94"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1382,7 +1382,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="Thmex4.p2.m3" class="ltx_Math" alttext="0&lt;t\leq t_{f}" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mi>t</mi><mo>≤</mo><msub><mi>t</mi><mi>f</mi></msub></mrow></math> e com condições iniciais</p>
-<table id="Ch6.S3.EGx110" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx111" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E96"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1416,7 +1416,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">O problema de valor inicial</p>
-<table id="Ch6.S3.EGx111" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx112" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E98"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1449,7 +1449,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Use o método de Euler para computar a solução de</p>
-<table id="Ch6.S3.EGx112" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx113" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E100"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1481,7 +1481,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Considere o seguinte problema de valor inicial</p>
-<table id="Ch6.S3.EGx113" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx114" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E102"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1513,7 +1513,7 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Use o método de Euler para computar a solução de</p>
-<table id="Ch6.S3.EGx114" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx115" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E104"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1703,13 +1703,13 @@ y_{2}(0)\end{bmatrix}}_{\bm{y}(0)}=\underbrace{\begin{bmatrix}0\\
 <div class="ltx_align_center">
 <a href="cap_pvi.html" title="In Matemática numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Problema de valor inicial</span></a><a href="bib.html" title="In Matemática numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_pvi_sec_taylor.html" title="In Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.2 </span>Métodos de Taylor de alta ordem</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Oct 16 13:10:27 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Wed Oct 21 11:11:30 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
   <div class="card-body d-flex flex-wrap justify-content-end">
     <div>Pedro H A Konzen</div>
-    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
   </div> <!-- div class="card" -->
 </div> <!-- div class="card-footer text-right" -->

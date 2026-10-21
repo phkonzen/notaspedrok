@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II</title>
-<!--Generated on Fri Oct 16 13:10:27 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 16 de outubro de 2026.-->
+<!--Generated on Wed Oct 21 11:11:30 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 21 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -112,15 +112,13 @@
     </div><!-- /.navbar-collapse -->
   </div><!-- /.container-fluid -->
 </nav><div class="d-flex justify-content-between align-items-center mt-0 mb-2">
-    <!-- left -->
+    <!-- social media -->
     <div id="rs" class="text-left mb-0">
         <a href="../contatar.html"><i class="fas fa-envelope"></i></a> |
-        <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> |
-        <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> |
         <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> |
         <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
-    <!-- right -->
+    <!-- language options -->
     <div id="langOpts" class="d-none text-right mb-0">
     </div>
 </div>
@@ -137,7 +135,7 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Métodos de Taylor<span id="Ch4.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note">4</span>Brook Taylor, 1685 - 1731, matemático britânico. Fonte: <a href="https://pt.wikipedia.org/wiki/Brook_Taylor" title="" class="ltx_ref ltx_href">Wikipédia: Brook Taylor</a>.</span></span></span> são usados para computar a solução numérica de PVI da forma</p>
-<table id="Ch6.S3.EGx115" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx116" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_pvi_sec_taylor:eq:pvi-eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -155,8 +153,8 @@
 <p class="ltx_p">onde <math id="p1.m1" class="ltx_Math" alttext="y:[t_{0},t_{f}]\mapsto\mathbb{R}" display="inline"><mrow><mi>y</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mo stretchy="false">[</mo><msub><mi>t</mi><mn>0</mn></msub><mo>,</mo><msub><mi>t</mi><mi>f</mi></msub><mo stretchy="false">]</mo></mrow><mo stretchy="false">↦</mo><mi>ℝ</mi></mrow></mrow></math> é a função incógnita, dada <math id="p1.m2" class="ltx_Math" alttext="f:[t_{0},t_{f}]\times\mathbb{R}\to\mathbb{R}" display="inline"><mrow><mi>f</mi><mo lspace="0.278em" rspace="0.278em">:</mo><mrow><mrow><mrow><mo stretchy="false">[</mo><msub><mi>t</mi><mn>0</mn></msub><mo>,</mo><msub><mi>t</mi><mi>f</mi></msub><mo rspace="0.055em" stretchy="false">]</mo></mrow><mo rspace="0.222em">×</mo><mi>ℝ</mi></mrow><mo stretchy="false">→</mo><mi>ℝ</mi></mrow></mrow></math> e dado valor inicial <math id="p1.m3" class="ltx_Math" alttext="y_{0}\in\mathbb{R}" display="inline"><mrow><msub><mi>y</mi><mn>0</mn></msub><mo>∈</mo><mi>ℝ</mi></mrow></math>.</p>
 </div>
 <div id="p2" class="ltx_para">
-<p class="ltx_p">Na Seção <a href="cap_pvi_sec_euler.html" title="4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1</span></a>, vimos que <span class="ltx_text" style="background-color:#FFFF00;">a ordem do erro de discretização local</span> do método de Euler<span id="Ch4.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span>Leonhard Paul Euler, 1707-1783, matemático e físico suíço. Fonte: <a href="https://pt.wikipedia.org/wiki/Leonhard_Euler" title="" class="ltx_ref ltx_href">Wikipédia: Leonhard Euler</a>.</span></span></span> <span class="ltx_text" style="background-color:#FFFF00;">é também a do erro de discretização global</span>. Este resultado é generalizado pelo Teorema <a href="#cap_pvi_sec_taylor:teo:conv" title="Teorema 4.2.1.(Convergência, [C]ap. 7, Seção 7.2) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.2.1</span></a>, <span class="ltx_text" style="background-color:#FFFF00;">para todo o método de passo simples</span></p>
-<table id="Ch6.S3.EGx116" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Na Seção <a href="cap_pvi_sec_euler.html" title="4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1</span></a>, vimos que <span class="ltx_text" style="background-color:#FFFF00;">a ordem do erro de discretização local</span> do método de Euler<span id="Ch4.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note">5</span>Leonhard Paul Euler, 1707-1783, matemático e físico suíço. Fonte: <a href="https://pt.wikipedia.org/wiki/Leonhard_Euler" title="" class="ltx_ref ltx_href">Wikipédia: Leonhard Euler</a>.</span></span></span> <span class="ltx_text" style="background-color:#FFFF00;">é também a do erro de discretização global</span>. Este resultado é generalizado pelo Teorema <a href="#cap_pvi_sec_taylor:teo:conv" title="Teorema 4.2.1.(Convergência) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.2.1</span></a>, <span class="ltx_text" style="background-color:#FFFF00;">para todo o método de passo simples</span></p>
+<table id="Ch6.S3.EGx117" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E108"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -215,7 +213,7 @@ rgb}{0.05859375,0.46484375,0.71875}e(t;h_{n}):=\tilde{y}(t;h_{n})-y(t)," display
 </div>
 <div id="p5" class="ltx_para">
 <p class="ltx_p">Com o objetivo de desenvolvermos métodos de alta ordem, podemos usar o polinômio de Taylor de ordem <math id="p5.m1" class="ltx_Math" alttext="m" display="inline"><mi>m</mi></math> de <math id="p5.m2" class="ltx_Math" alttext="y=y(t)" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math></p>
-<table id="Ch6.S3.EGx117" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx118" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -231,7 +229,7 @@ rgb}{0.05859375,0.46484375,0.71875}e(t;h_{n}):=\tilde{y}(t;h_{n})-y(t)," display
 </tr></tbody>
 </table>
 <p class="ltx_p">donde</p>
-<table id="Ch6.S3.EGx118" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx119" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex5"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -252,7 +250,7 @@ rgb}{0.05859375,0.46484375,0.71875}e(t;h_{n}):=\tilde{y}(t;h_{n})-y(t)," display
 </tr></tbody>
 </table>
 <p class="ltx_p">e, portanto</p>
-<table id="Ch6.S3.EGx119" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx120" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -275,7 +273,7 @@ rgb}{0.05859375,0.46484375,0.71875}e(t;h_{n}):=\tilde{y}(t;h_{n})-y(t)," display
 </div>
 <div id="p6" class="ltx_para">
 <p class="ltx_p">Isto nos motiva a <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">iteração do método de Taylor de ordem <math id="p6.m1" class="ltx_Math" alttext="m" display="inline"><mi mathbackground="#FFFF00">m</mi></math></span>:</p>
-<table id="Ch6.S3.EGx120" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx121" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E116"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -294,7 +292,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}y^{(k+1)}=y^{(k)}+hT^{(m)}%
 </tr></tbody>
 </table>
 <p class="ltx_p">onde</p>
-<table id="Ch6.S3.EGx121" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx122" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex9"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -319,7 +317,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}T^{(m)}\left(t^{(k)},y^{(k)%
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Considere o PVI</p>
-<table id="Ch6.S3.EGx122" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx123" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E119"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -466,8 +464,11 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}T^{(m)}\left(t^{(k)},y^{(k)%
 <h2 class="ltx_title ltx_title_subsection">
 <span class="ltx_tag ltx_tag_subsection">4.2.1 </span>Análise numérica</h2>
 
+<div id="SS1.p1" class="ltx_para">
+<p class="ltx_p">O seguinte estabelece a convergência de métodos de passo simples e sua versão original pode ser encontrada em <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib8" title="Introduction to numerical analysis" class="ltx_ref">8</a>, Cap. 7, Seção 7.2]</cite>.</p>
+</div>
 <div id="cap_pvi_sec_taylor:teo:conv" class="ltx_theorem ltx_theorem_teo">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 4.2.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Convergência, <cite class="ltx_cite ltx_citemacro_cite">[<span class="ltx_ref ltx_missing_citation ltx_ref_self">C</span>]</cite>ap. 7, Seção 7.2)</span>
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">Teorema 4.2.1.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Convergência)</span>
 <br class="ltx_break">
 </h6>
 <div id="Thmteo1.p1" class="ltx_para">
@@ -520,7 +521,7 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 </div>
 <div class="ltx_proof">
 <h6 class="ltx_title ltx_runin ltx_font_italic ltx_title_proof">Demonstração.</h6>
-<div id="SS1.p1" class="ltx_para">
+<div id="SS1.p2" class="ltx_para">
 <p class="ltx_p">Seja</p>
 <table id="Ch4.E126" class="ltx_equation ltx_eqn_table">
 
@@ -533,7 +534,7 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.126)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">A função <math id="SS1.p1.m1" class="ltx_Math" alttext="\tilde{\Phi}" display="inline"><mover accent="true"><mi mathvariant="normal">Φ</mi><mo>~</mo></mover></math> é contínua em</p>
+<p class="ltx_p">A função <math id="SS1.p2.m1" class="ltx_Math" alttext="\tilde{\Phi}" display="inline"><mover accent="true"><mi mathvariant="normal">Φ</mi><mo>~</mo></mover></math> é contínua em</p>
 <table id="Ch4.E127" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -553,7 +554,7 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.128)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">para todas <math id="SS1.p1.m2" class="ltx_Math" alttext="(t,y;h),(t,z;h)\in\tilde{G}" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><mo>,</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>z</mi><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mover accent="true"><mi>G</mi><mo>~</mo></mover></mrow></math>. Ainda, como <math id="SS1.p1.m3" class="ltx_Math" alttext="\tilde{\Phi}(t,y(t);h)=\Phi(t,y(t);h)" display="inline"><mrow><mrow><mover accent="true"><mi mathvariant="normal">Φ</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi mathvariant="normal">Φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, também temos que</p>
+<p class="ltx_p">para todas <math id="SS1.p2.m2" class="ltx_Math" alttext="(t,y;h),(t,z;h)\in\tilde{G}" display="inline"><mrow><mrow><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>y</mi><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow><mo>,</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mi>z</mi><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>∈</mo><mover accent="true"><mi>G</mi><mo>~</mo></mover></mrow></math>. Ainda, como <math id="SS1.p2.m3" class="ltx_Math" alttext="\tilde{\Phi}(t,y(t);h)=\Phi(t,y(t);h)" display="inline"><mrow><mrow><mover accent="true"><mi mathvariant="normal">Φ</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi mathvariant="normal">Φ</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo>,</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>;</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, também temos que</p>
 <table id="cap_pvi_sec_taylor:eq:aux1" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -563,11 +564,11 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.129)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">para <math id="SS1.p1.m4" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> e <math id="SS1.p1.m5" class="ltx_Math" alttext="|h|\leq h_{0}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>h</mi><mo stretchy="false">|</mo></mrow><mo>≤</mo><msub><mi>h</mi><mn>0</mn></msub></mrow></math>.</p>
+<p class="ltx_p">para <math id="SS1.p2.m4" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> e <math id="SS1.p2.m5" class="ltx_Math" alttext="|h|\leq h_{0}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>h</mi><mo stretchy="false">|</mo></mrow><mo>≤</mo><msub><mi>h</mi><mn>0</mn></msub></mrow></math>.</p>
 </div>
-<div id="SS1.p2" class="ltx_para">
-<p class="ltx_p">Sejam, <math id="SS1.p2.m1" class="ltx_Math" alttext="\tilde{y}^{(k)}:=\tilde{y}\left(t^{(k)};h\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo>(</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mi>h</mi><mo>)</mo></mrow></mrow></mrow></math>, <math id="SS1.p2.m2" class="ltx_Math" alttext="t^{(k)}=t_{0}+kh" display="inline"><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><mrow><mi>k</mi><mo>⁢</mo><mi>h</mi></mrow></mrow></mrow></math>, <math id="SS1.p2.m3" class="ltx_Math" alttext="\tilde{y}^{(0)}=y_{0}" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></math>:</p>
-<table id="Ch6.S3.EGx123" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<div id="SS1.p3" class="ltx_para">
+<p class="ltx_p">Sejam, <math id="SS1.p3.m1" class="ltx_Math" alttext="\tilde{y}^{(k)}:=\tilde{y}\left(t^{(k)};h\right)" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo>(</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>;</mo><mi>h</mi><mo>)</mo></mrow></mrow></mrow></math>, <math id="SS1.p3.m2" class="ltx_Math" alttext="t^{(k)}=t_{0}+kh" display="inline"><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><mrow><mi>k</mi><mo>⁢</mo><mi>h</mi></mrow></mrow></mrow></math>, <math id="SS1.p3.m3" class="ltx_Math" alttext="\tilde{y}^{(0)}=y_{0}" display="inline"><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><msub><mi>y</mi><mn>0</mn></msub></mrow></math>:</p>
+<table id="Ch6.S3.EGx124" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E130"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -584,8 +585,8 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.131)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Definindo <math id="SS1.p2.m4" class="ltx_Math" alttext="\tilde{e}^{(k)}:=\tilde{y}^{(k)}-y\left(t^{(k)}\right)" display="inline"><mrow><msup><mover accent="true"><mi>e</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>−</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow></mrow></mrow></mrow></math>, obtemos a fórmula de recorrência</p>
-<table id="Ch6.S3.EGx124" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Definindo <math id="SS1.p3.m4" class="ltx_Math" alttext="\tilde{e}^{(k)}:=\tilde{y}^{(k)}-y\left(t^{(k)}\right)" display="inline"><mrow><msup><mover accent="true"><mi>e</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><msup><mover accent="true"><mi>y</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>−</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow></mrow></mrow></mrow></math>, obtemos a fórmula de recorrência</p>
+<table id="Ch6.S3.EGx125" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E132"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -611,7 +612,7 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 </tr></tbody>
 </table>
 <p class="ltx_p">Agora, de (<a href="#cap_pvi_sec_taylor:eq:aux0" title="In 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.128</span></a>) e (<a href="#cap_pvi_sec_taylor:eq:aux1" title="In 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.129</span></a>), temos</p>
-<table id="Ch6.S3.EGx125" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx126" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E135"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -640,7 +641,7 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.137)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Então, do Lema <a href="cap_pvi_sec_euler.html#cap_pvi_sec_euler:lema:aux" title="Lema 4.1.1.([C]ap. 7, Seção 7.2) ‣ Convergência ‣ 4.1.1 Análise numérica ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1.1</span></a>, temos</p>
+<p class="ltx_p">Então, do Lema <a href="cap_pvi_sec_euler.html#cap_pvi_sec_euler:lema:aux" title="Lema 4.1.1. ‣ Convergência ‣ 4.1.1 Análise numérica ‣ 4.1 Método de Euler ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.1.1</span></a>, temos</p>
 <table id="cap_pvi_sec_taylor:eq:aux3" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -650,7 +651,7 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.138)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Sejam, agora, <math id="SS1.p2.m5" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math>, <math id="SS1.p2.m6" class="ltx_Math" alttext="t\neq t_{0}" display="inline"><mrow><mi>t</mi><mo>≠</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></math> fixo e <math id="SS1.p2.m7" class="ltx_Math" alttext="h:=h_{n}=(t-t_{0})/n" display="inline"><mrow><mi>h</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><msub><mi>h</mi><mi>n</mi></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mi>n</mi></mrow></mrow></math>, <math id="SS1.p2.m8" class="ltx_Math" alttext="n&gt;0" display="inline"><mrow><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow></math>. Então, <math id="SS1.p2.m9" class="ltx_Math" alttext="t^{(n)}=t_{0}+nh=t" display="inline"><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><mrow><mi>n</mi><mo>⁢</mo><mi>h</mi></mrow></mrow><mo>=</mo><mi>t</mi></mrow></math> e de (<a href="#cap_pvi_sec_taylor:eq:aux3" title="In 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.138</span></a>) temos</p>
+<p class="ltx_p">Sejam, agora, <math id="SS1.p3.m5" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math>, <math id="SS1.p3.m6" class="ltx_Math" alttext="t\neq t_{0}" display="inline"><mrow><mi>t</mi><mo>≠</mo><msub><mi>t</mi><mn>0</mn></msub></mrow></math> fixo e <math id="SS1.p3.m7" class="ltx_Math" alttext="h:=h_{n}=(t-t_{0})/n" display="inline"><mrow><mi>h</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><msub><mi>h</mi><mi>n</mi></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mi>n</mi></mrow></mrow></math>, <math id="SS1.p3.m8" class="ltx_Math" alttext="n&gt;0" display="inline"><mrow><mi>n</mi><mo>&gt;</mo><mn>0</mn></mrow></math>. Então, <math id="SS1.p3.m9" class="ltx_Math" alttext="t^{(n)}=t_{0}+nh=t" display="inline"><mrow><msup><mi>t</mi><mrow><mo stretchy="false">(</mo><mi>n</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msub><mi>t</mi><mn>0</mn></msub><mo>+</mo><mrow><mi>n</mi><mo>⁢</mo><mi>h</mi></mrow></mrow><mo>=</mo><mi>t</mi></mrow></math> e de (<a href="#cap_pvi_sec_taylor:eq:aux3" title="In 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.138</span></a>) temos</p>
 <table id="Ch4.E139" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -661,8 +662,8 @@ rgb}{0.05859375,0.46484375,0.71875}|e(t;h_{n})|\leq|h_{n}|^{p}N\frac{e^{M|t-t_%
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.139)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">para todo <math id="SS1.p2.m10" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math>, <math id="SS1.p2.m11" class="ltx_Math" alttext="|h_{n}|\leq h_{0}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>h</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mo>≤</mo><msub><mi>h</mi><mn>0</mn></msub></mrow></math>. Uma vez que <math id="SS1.p2.m12" class="ltx_Math" alttext="|t-t_{0}|\leq|b-a|" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>t</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow><mo stretchy="false">|</mo></mrow><mo>≤</mo><mrow><mo stretchy="false">|</mo><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">|</mo></mrow></mrow></math> e <math id="SS1.p2.m13" class="ltx_Math" alttext="\gamma&gt;0" display="inline"><mrow><mi>γ</mi><mo>&gt;</mo><mn>0</mn></mrow></math>, existe <math id="SS1.p2.m14" class="ltx_Math" alttext="\overline{h}" display="inline"><mover accent="true"><mi>h</mi><mo>¯</mo></mover></math>, <math id="SS1.p2.m15" class="ltx_Math" alttext="0&lt;\overline{h}\leq h_{0}" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover><mo>≤</mo><msub><mi>h</mi><mn>0</mn></msub></mrow></math>, tal que <math id="SS1.p2.m16" class="ltx_Math" alttext="\left|\tilde{e}\left(t,h_{n}\right)\right|\leq\gamma" display="inline"><mrow><mrow><mo>|</mo><mrow><mover accent="true"><mi>e</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo>(</mo><mi>t</mi><mo>,</mo><msub><mi>h</mi><mi>n</mi></msub><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>≤</mo><mi>γ</mi></mrow></math> para todo <math id="SS1.p2.m17" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> e <math id="SS1.p2.m18" class="ltx_Math" alttext="|h_{n}|\leq\overline{h}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>h</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mo>≤</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover></mrow></math>. Logo, para o método de passo simples (<a href="#cap_pvi_sec_taylor:eq:iterps" title="In 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.109</span></a>) gerado por <math id="SS1.p2.m19" class="ltx_Math" alttext="\Phi" display="inline"><mi mathvariant="normal">Φ</mi></math>, temos para <math id="SS1.p2.m20" class="ltx_Math" alttext="|h|\leq\overline{h}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>h</mi><mo stretchy="false">|</mo></mrow><mo>≤</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover></mrow></math> que</p>
-<table id="Ch6.S3.EGx126" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">para todo <math id="SS1.p3.m10" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math>, <math id="SS1.p3.m11" class="ltx_Math" alttext="|h_{n}|\leq h_{0}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>h</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mo>≤</mo><msub><mi>h</mi><mn>0</mn></msub></mrow></math>. Uma vez que <math id="SS1.p3.m12" class="ltx_Math" alttext="|t-t_{0}|\leq|b-a|" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mrow><mi>t</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow><mo stretchy="false">|</mo></mrow><mo>≤</mo><mrow><mo stretchy="false">|</mo><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">|</mo></mrow></mrow></math> e <math id="SS1.p3.m13" class="ltx_Math" alttext="\gamma&gt;0" display="inline"><mrow><mi>γ</mi><mo>&gt;</mo><mn>0</mn></mrow></math>, existe <math id="SS1.p3.m14" class="ltx_Math" alttext="\overline{h}" display="inline"><mover accent="true"><mi>h</mi><mo>¯</mo></mover></math>, <math id="SS1.p3.m15" class="ltx_Math" alttext="0&lt;\overline{h}\leq h_{0}" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover><mo>≤</mo><msub><mi>h</mi><mn>0</mn></msub></mrow></math>, tal que <math id="SS1.p3.m16" class="ltx_Math" alttext="\left|\tilde{e}\left(t,h_{n}\right)\right|\leq\gamma" display="inline"><mrow><mrow><mo>|</mo><mrow><mover accent="true"><mi>e</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo>(</mo><mi>t</mi><mo>,</mo><msub><mi>h</mi><mi>n</mi></msub><mo>)</mo></mrow></mrow><mo>|</mo></mrow><mo>≤</mo><mi>γ</mi></mrow></math> para todo <math id="SS1.p3.m17" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> e <math id="SS1.p3.m18" class="ltx_Math" alttext="|h_{n}|\leq\overline{h}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>h</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mo>≤</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover></mrow></math>. Logo, para o método de passo simples (<a href="#cap_pvi_sec_taylor:eq:iterps" title="In 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.109</span></a>) gerado por <math id="SS1.p3.m19" class="ltx_Math" alttext="\Phi" display="inline"><mi mathvariant="normal">Φ</mi></math>, temos para <math id="SS1.p3.m20" class="ltx_Math" alttext="|h|\leq\overline{h}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><mi>h</mi><mo stretchy="false">|</mo></mrow><mo>≤</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover></mrow></math> que</p>
+<table id="Ch6.S3.EGx127" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E140"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -694,7 +695,7 @@ k)},\tilde{y}^{(k)};h\right)." display="inline"><mrow><mrow><mrow><mover accent=
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.143)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">para todo <math id="SS1.p2.m21" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> e <math id="SS1.p2.m22" class="ltx_Math" alttext="h_{n}=(t-t_{0})/n" display="inline"><mrow><msub><mi>h</mi><mi>n</mi></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mi>n</mi></mrow></mrow></math>, <math id="SS1.p2.m23" class="ltx_Math" alttext="n=1,2,\ldots" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>, com <math id="SS1.p2.m24" class="ltx_Math" alttext="|h_{n}|\leq\overline{h}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>h</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mo>≤</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover></mrow></math>.
+<p class="ltx_p">para todo <math id="SS1.p3.m21" class="ltx_Math" alttext="t\in[a,b]" display="inline"><mrow><mi>t</mi><mo>∈</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> e <math id="SS1.p3.m22" class="ltx_Math" alttext="h_{n}=(t-t_{0})/n" display="inline"><mrow><msub><mi>h</mi><mi>n</mi></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>t</mi><mo>−</mo><msub><mi>t</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mi>n</mi></mrow></mrow></math>, <math id="SS1.p3.m23" class="ltx_Math" alttext="n=1,2,\ldots" display="inline"><mrow><mi>n</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>, com <math id="SS1.p3.m24" class="ltx_Math" alttext="|h_{n}|\leq\overline{h}" display="inline"><mrow><mrow><mo stretchy="false">|</mo><msub><mi>h</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow><mo>≤</mo><mover accent="true"><mi>h</mi><mo>¯</mo></mover></mrow></math>.
 ∎</p>
 </div>
 </div>
@@ -709,7 +710,7 @@ k)},\tilde{y}^{(k)};h\right)." display="inline"><mrow><mrow><mrow><mover accent=
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Use o método de Taylor de <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="O(h^{2})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> para computar a solução de</p>
-<table id="Ch6.S3.EGx127" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx128" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_pvi_sec_taylor:eq:pvi_exer_0-eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -770,7 +771,7 @@ k)},\tilde{y}^{(k)};h\right)." display="inline"><mrow><mrow><mrow><mover accent=
 <br class="ltx_break">
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
-<p class="ltx_p">Use o método de Taylor <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="O(h^{2})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> para computar a solução do PVI (<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-eq" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.144</span></a>)-(<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-ci" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.145</span></a>) com <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>. Faça um esboço do gráfico do erro <math id="Thmexer2.p1.m3" class="ltx_Math" alttext="e\left(t;h=10^{-1}\right)=\left|\tilde{y}(t)-y(t)\right|" display="inline"><mrow><mrow><mi>e</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mi>t</mi><mo>;</mo><mi>h</mi></mrow><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>|</mo></mrow></mrow></math> e verifique se ele tem a forma esperada conforme a estimativa do erro global (<a href="#cap_pvi_sec_taylor:eq:est_erro_global" title="In Teorema 4.2.1.(Convergência, [C]ap. 7, Seção 7.2) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.125</span></a>).</p>
+<p class="ltx_p">Use o método de Taylor <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="O(h^{2})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> para computar a solução do PVI (<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-eq" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.144</span></a>)-(<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-ci" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.145</span></a>) com <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="h=10^{-1}" display="inline"><mrow><mi>h</mi><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow></math>. Faça um esboço do gráfico do erro <math id="Thmexer2.p1.m3" class="ltx_Math" alttext="e\left(t;h=10^{-1}\right)=\left|\tilde{y}(t)-y(t)\right|" display="inline"><mrow><mrow><mi>e</mi><mo>⁢</mo><mrow><mo>(</mo><mrow><mrow><mi>t</mi><mo>;</mo><mi>h</mi></mrow><mo>=</mo><msup><mn>10</mn><mrow><mo>−</mo><mn>1</mn></mrow></msup></mrow><mo>)</mo></mrow></mrow><mo>=</mo><mrow><mo>|</mo><mrow><mrow><mover accent="true"><mi>y</mi><mo>~</mo></mover><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>y</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>t</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>|</mo></mrow></mrow></math> e verifique se ele tem a forma esperada conforme a estimativa do erro global (<a href="#cap_pvi_sec_taylor:eq:est_erro_global" title="In Teorema 4.2.1.(Convergência) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.125</span></a>).</p>
 </div>
 </div>
 <div class="d-grid gap-2 d-md-flex justify-content-md-end"><button class="btn btn-warning" type="button" data-bs-toggle="collapse" data-bs-target="#Thmrespx47">Resposta</button></div><div class="collapse" id="Thmrespx47" style="margin-bottom: 1em; border-style: dashed; border-width: 0px 0px 1px 0px; border-color: blueviolet;">
@@ -803,7 +804,7 @@ k)},\tilde{y}^{(k)};h\right)." display="inline"><mrow><mrow><mrow><mover accent=
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Considere o seguinte PVI</p>
-<table id="Ch6.S3.EGx128" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx129" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E146"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -855,7 +856,7 @@ k)},\tilde{y}^{(k)};h\right)." display="inline"><mrow><mrow><mrow><mover accent=
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
 <p class="ltx_p">Considere o seguinte PVI</p>
-<table id="Ch6.S3.EGx129" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx130" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E148"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -909,7 +910,7 @@ k)},\tilde{y}^{(k)};h\right)." display="inline"><mrow><mrow><mrow><mover accent=
 <br class="ltx_break">
 </h6>
 <div id="Thmexer6.p1" class="ltx_para">
-<p class="ltx_p">Considere o PVI (<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-eq" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.144</span></a>)-(<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-ci" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.145</span></a>). Verifique que o método de Taylor de <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="O(h^{2})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> satisfaz as estimativas do erro local (<a href="#cap_pvi_sec_taylor:eq:est_erro_local" title="In Teorema 4.2.1.(Convergência, [C]ap. 7, Seção 7.2) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.124</span></a>) e do erro global (<a href="#cap_pvi_sec_taylor:eq:est_erro_global" title="In Teorema 4.2.1.(Convergência, [C]ap. 7, Seção 7.2) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.125</span></a>). Forneça valor estimados para os parâmetros <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> e <math id="Thmexer6.p1.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>.</p>
+<p class="ltx_p">Considere o PVI (<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-eq" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.144</span></a>)-(<a href="#cap_pvi_sec_taylor:eq:pvi_exer_0-ci" title="In E. 4.2.1. ‣ 4.2.2 Exercícios ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.145</span></a>). Verifique que o método de Taylor de <math id="Thmexer6.p1.m1" class="ltx_Math" alttext="O(h^{2})" display="inline"><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></math> satisfaz as estimativas do erro local (<a href="#cap_pvi_sec_taylor:eq:est_erro_local" title="In Teorema 4.2.1.(Convergência) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.124</span></a>) e do erro global (<a href="#cap_pvi_sec_taylor:eq:est_erro_global" title="In Teorema 4.2.1.(Convergência) ‣ 4.2.1 Análise numérica ‣ 4.2 Métodos de Taylor de alta ordem ‣ Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">4.125</span></a>). Forneça valor estimados para os parâmetros <math id="Thmexer6.p1.m2" class="ltx_Math" alttext="N" display="inline"><mi>N</mi></math> e <math id="Thmexer6.p1.m3" class="ltx_Math" alttext="M" display="inline"><mi>M</mi></math>.</p>
 </div>
 </div>
 </section>
@@ -953,13 +954,13 @@ k)},\tilde{y}^{(k)};h\right)." display="inline"><mrow><mrow><mrow><mover accent=
 <div class="ltx_align_center">
 <a href="cap_pvi_sec_euler.html" title="In Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Método de Euler</span></a><a href="bib.html" title="In Matemática numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_pvi_sec_rk.html" title="In Capítulo 4 Problema de valor inicial ‣ Matemática numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.3 </span>Métodos de Runge-Kutta</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Fri Oct 16 13:10:27 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Wed Oct 21 11:11:30 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
   <div class="card-body d-flex flex-wrap justify-content-end">
     <div>Pedro H A Konzen</div>
-    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.instagram.com/notas.pedrok/"><i class="fab fa-instagram"></i></a> | <a href="https://archive.org/details/notas-de-aula"><i class="fas fa-building-columns"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
+    <div class="ms-3"><a href="../contatar.html"><i class="fas fa-envelope"></i></a> | <a href="https://www.youtube.com/channel/UCwutHKlKLgVj6IkFSUFBqoA"><i class="fab fa-youtube"></i></a> | <a href="https://github.com/phkonzen/"><i class="fab fa-github" aria-hidden="true"></i></a>
     </div>
   </div> <!-- div class="card" -->
 </div> <!-- div class="card-footer text-right" -->
