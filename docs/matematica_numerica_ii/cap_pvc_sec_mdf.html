@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II</title>
-<!--Generated on Wed Oct 21 11:11:30 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 21 de outubro de 2026.-->
+<!--Generated on Thu Oct 29 12:45:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 29 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -133,7 +133,7 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte problema linear de valor de contorno (PVC)</p>
-<table id="Ch6.S3.EGx187" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx380" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_pvc_sec_mdf:eq:pvc_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -168,23 +168,23 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u(b)=h." display="inline"><mr
 </div>
 <div id="p4" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">discretização do domínio</span> é seu particionamento em <span class="ltx_text ltx_font_bold">subintervalos</span> (<span class="ltx_text ltx_font_bold">células</span> computacionais) e <span class="ltx_text ltx_font_bold">pontos</span> (<span class="ltx_text ltx_font_bold">nodos</span> computacionais)</span>. Por simplicidade, vamos considerar apenas o caso de um particionamento uniforme. Particionamos o domínio <math id="p4.m1" class="ltx_Math" alttext="D=[a,b]" display="inline"><mrow><mi>D</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mi>a</mi><mo>,</mo><mi>b</mi><mo stretchy="false">]</mo></mrow></mrow></math> em <math id="p4.m2" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> de subintervalos de <span class="ltx_text ltx_font_bold">tamanho de malha</span></p>
-<table id="Ch5.E7" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx381" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch5.E7"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E7.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}h=\frac{b-a}{n}," display="block"><mrow><mrow><mi mathcolor="#0F77B7">h</mi><mo mathcolor="#0F77B7">=</mo><mfrac mathcolor="#0F77B7"><mrow><mi mathcolor="#0F77B7">b</mi><mo mathcolor="#0F77B7">−</mo><mi mathcolor="#0F77B7">a</mi></mrow><mi mathcolor="#0F77B7">n</mi></mfrac></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E7.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}h=\frac{b-a}{n}," display="inline"><mrow><mrow><mi mathcolor="#0F77B7">h</mi><mo mathcolor="#0F77B7">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><mi mathcolor="#0F77B7">b</mi><mo mathcolor="#0F77B7">−</mo><mi mathcolor="#0F77B7">a</mi></mrow><mi mathcolor="#0F77B7">n</mi></mfrac></mstyle></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.7)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">e os nodos da partição podem ser indexados da seguinte forma</p>
-<table id="Ch5.E8" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx382" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch5.E8"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E8.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}x_{i}=a+(i-1)h," display="block"><mrow><mrow><msub><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">i</mi></msub><mo mathcolor="#0F77B7">=</mo><mrow><mi mathcolor="#0F77B7">a</mi><mo mathcolor="#0F77B7">+</mo><mrow><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">i</mi><mo mathcolor="#0F77B7">−</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0F77B7">h</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E8.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
+pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}x_{i}=a+(i-1)h," display="inline"><mrow><mrow><msub><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">i</mi></msub><mo mathcolor="#0F77B7">=</mo><mrow><mi mathcolor="#0F77B7">a</mi><mo mathcolor="#0F77B7">+</mo><mrow><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">i</mi><mo mathcolor="#0F77B7">−</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0F77B7">h</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.8)</span></td>
 </tr></tbody>
@@ -196,34 +196,34 @@ rgb}{0.05859375,0.46484375,0.71875}x_{i}=a+(i-1)h," display="block"><mrow><mrow>
 </div>
 <div id="p6" class="ltx_para">
 <p class="ltx_p">Começando por (<a href="#cap_pvc_sec_mdf:eq:pvc_eq" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.4</span></a>), em um nodo <span class="ltx_text" style="background-color:#FFFF00;"><math id="p6.m1" class="ltx_Math" alttext="x=x_{i}" display="inline"><mrow><mi mathbackground="#FFFF00">x</mi><mo mathbackground="#FFFF00">=</mo><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">i</mi></msub></mrow></math>, <math id="p6.m2" class="ltx_Math" alttext="i=2,3,\dotsc,n" display="inline"><mrow><mi mathbackground="#FFFF00">i</mi><mo mathbackground="#FFFF00">=</mo><mrow><mn mathbackground="#FFFF00">2,3</mn><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00" mathvariant="normal">…</mi><mo mathbackground="#FFFF00">,</mo><mi mathbackground="#FFFF00">n</mi></mrow></mrow></math></span>, temos</p>
-<table id="cap_pvc_sec_mdf:eq:pvc_eq_no_ponto" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx383" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="cap_pvc_sec_mdf:eq:pvc_eq_no_ponto"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E9.m1" class="ltx_Math" alttext="u^{\prime\prime}(x_{i})+\alpha(x_{i})u^{\prime}(x_{i})+\beta(x_{i})u(x_{i})=f(%
-x_{i})." display="block"><mrow><mrow><mrow><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>α</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E9.m1" class="ltx_Math" alttext="\displaystyle u^{\prime\prime}(x_{i})+\alpha(x_{i})u^{\prime}(x_{i})+\beta(x_{%
+i})u(x_{i})=f(x_{i})." display="inline"><mrow><mrow><mrow><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>α</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>β</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.9)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Podemos substituir a segunda derivada de <math id="p6.m3" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> pela <span class="ltx_text ltx_font_bold">fórmula de diferenças finitas</span> central de ordem <math id="p6.m4" class="ltx_Math" alttext="h^{2}" display="inline"><msup><mi>h</mi><mn>2</mn></msup></math></p>
-<table id="Ch5.E10" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx384" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch5.E10"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E10.m1" class="ltx_Math" alttext="u^{\prime\prime}(x_{i})=\underbrace{\frac{u(x_{i}-h)-2u(x_{i})+u(x_{i}+h)}{h^{%
-2}}}_{D^{2}_{0,h^{2}}u(x_{i})}+O(h^{2})." display="block"><mrow><mrow><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><munder accentunder="true"><mfrac><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><msup><mi>h</mi><mn>2</mn></msup></mfrac><mo>⏟</mo></munder><mrow><msubsup><mi>D</mi><mrow><mn>0</mn><mo>,</mo><msup><mi>h</mi><mn>2</mn></msup></mrow><mn>2</mn></msubsup><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></munder><mo>+</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E10.m1" class="ltx_Math" alttext="\displaystyle u^{\prime\prime}(x_{i})=\underbrace{\frac{u(x_{i}-h)-2u(x_{i})+u%
+(x_{i}+h)}{h^{2}}}_{D^{2}_{0,h^{2}}u(x_{i})}+O(h^{2})." display="inline"><mrow><mrow><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><munder accentunder="true"><mstyle displaystyle="true"><mfrac><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle><mo>⏟</mo></munder><mrow><msubsup><mi>D</mi><mrow><mn>0</mn><mo>,</mo><msup><mi>h</mi><mn>2</mn></msup></mrow><mn>2</mn></msubsup><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></munder><mo>+</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.10)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">A primeira derivada de <math id="p6.m5" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> também pode ser substituída pela fórmula de diferenças finitas central de ordem <math id="p6.m6" class="ltx_Math" alttext="h^{2}" display="inline"><msup><mi>h</mi><mn>2</mn></msup></math></p>
-<table id="Ch5.E11" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx385" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch5.E11"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E11.m1" class="ltx_Math" alttext="u^{\prime}(x_{i})=\underbrace{\frac{u(x_{i}+h)-u(x_{i}-h)}{2h}}_{D_{0,h^{2}}u(%
-x_{i})}+O(h^{2})." display="block"><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><munder accentunder="true"><mfrac><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>h</mi></mrow></mfrac><mo>⏟</mo></munder><mrow><msub><mi>D</mi><mrow><mn>0</mn><mo>,</mo><msup><mi>h</mi><mn>2</mn></msup></mrow></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></munder><mo>+</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E11.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(x_{i})=\underbrace{\frac{u(x_{i}+h)-u(x_{i}-h)}{2h}}_%
+{D_{0,h^{2}}u(x_{i})}+O(h^{2})." display="inline"><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><munder><munder accentunder="true"><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>h</mi></mrow></mfrac></mstyle><mo>⏟</mo></munder><mrow><msub><mi>D</mi><mrow><mn>0</mn><mo>,</mo><msup><mi>h</mi><mn>2</mn></msup></mrow></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></munder><mo>+</mo><mrow><mi>O</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>h</mi><mn>2</mn></msup><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.11)</span></td>
 </tr></tbody>
@@ -231,7 +231,7 @@ x_{i})}+O(h^{2})." display="block"><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo
 </div>
 <div id="p7" class="ltx_para">
 <p class="ltx_p">Agora, denotando <span class="ltx_text" style="background-color:#FFFF00;"><math id="p7.m1" class="ltx_Math" alttext="u_{i}\approx u(x_{i})" display="inline"><mrow><msub><mi mathbackground="#FFFF00">u</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00">≈</mo><mrow><mi mathbackground="#FFFF00">u</mi><mo>⁢</mo><mrow><mo mathbackground="#FFFF00" stretchy="false">(</mo><msub><mi mathbackground="#FFFF00">x</mi><mi mathbackground="#FFFF00">i</mi></msub><mo mathbackground="#FFFF00" stretchy="false">)</mo></mrow></mrow></mrow></math></span>, temos <math id="p7.m2" class="ltx_Math" alttext="u_{i-1}\approx u(x_{i}-h)" display="inline"><mrow><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub><mo>≈</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>−</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e <math id="p7.m3" class="ltx_Math" alttext="u_{i+1}\approx u(x_{i}+h)" display="inline"><mrow><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>≈</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>+</mo><mi>h</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Substituindo as derivadas pelas fórmulas de diferenças finitas, temos de (<a href="#cap_pvc_sec_mdf:eq:pvc_eq_no_ponto" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.9</span></a>) que</p>
-<table id="Ch6.S3.EGx188" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx386" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -247,7 +247,7 @@ x_{i})}+O(h^{2})." display="block"><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo
 </tr></tbody>
 </table>
 <p class="ltx_p">Rearranjando os termos e desconsiderando o termo do erro de truncamento, obtemos o seguinte sistema de equações lineares</p>
-<table id="Ch6.S3.EGx189" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx387" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -267,21 +267,21 @@ _{i+1}=f_{i}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="2e
 </div>
 <div id="p8" class="ltx_para">
 <p class="ltx_p">Observamos que este sistema consiste em <math id="p8.m1" class="ltx_Math" alttext="n-1" display="inline"><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow></math> equações envolvendo as <math id="p8.m2" class="ltx_Math" alttext="n+1" display="inline"><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></math> incógnitas <math id="p8.m3" class="ltx_Math" alttext="u_{i}" display="inline"><msub><mi>u</mi><mi>i</mi></msub></math>, <math id="p8.m4" class="ltx_Math" alttext="i=1,2,\dotsc,n+1" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></mrow></math>. Para fechá-lo, usamos as condições de contorno. De (<a href="#cap_pvc_sec_mdf:eq:pvc_bc1" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.5</span></a>), temos</p>
-<table id="cap_pvc_sec_mdf:eq:pvc_mdf_sis0" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx388" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="cap_pvc_sec_mdf:eq:pvc_mdf_sis0"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E14.m1" class="ltx_Math" alttext="u_{1}=g" display="block"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>=</mo><mi>g</mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E14.m1" class="ltx_Math" alttext="\displaystyle u_{1}=g" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>=</mo><mi>g</mi></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.14)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">e de (<a href="#cap_pvc_sec_mdf:eq:pvc_bc2" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.6</span></a>) temos</p>
-<table id="cap_pvc_sec_mdf:eq:pvc_mdf_sis2" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx389" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="cap_pvc_sec_mdf:eq:pvc_mdf_sis2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E15.m1" class="ltx_Math" alttext="u_{n+1}=h," display="block"><mrow><mrow><msub><mi>u</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>h</mi></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E15.m1" class="ltx_Math" alttext="\displaystyle u_{n+1}=h," display="inline"><mrow><mrow><msub><mi>u</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo>=</mo><mi>h</mi></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.15)</span></td>
 </tr></tbody>
@@ -290,7 +290,7 @@ _{i+1}=f_{i}," display="inline"><mrow><mrow><mrow><mrow></mrow><mspace width="2e
 </div>
 <div id="p9" class="ltx_para">
 <p class="ltx_p">Por fim, as equações (<a href="#cap_pvc_sec_mdf:eq:pvc_mdf_sis1" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.13</span></a>)-(<a href="#cap_pvc_sec_mdf:eq:pvc_mdf_sis2" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.15</span></a>) formam o seguinte <span class="ltx_text ltx_font_bold">problema discretizado</span></p>
-<table id="Ch6.S3.EGx190" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx390" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="cap_pvc_sec_mdf:eq:pd-ini"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -339,17 +339,17 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </div>
 <div id="p11" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O problema discreto (<a href="#cap_pvc_sec_mdf:eq:pd-ini" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.16</span></a>)-(<a href="#cap_pvc_sec_mdf:eq:pd-fim" title="In 5.1 Método de diferenças finitas ‣ Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">5.18</span></a>) consiste em um sistema linear de <math id="p11.m1" class="ltx_Math" alttext="n+1" display="inline"><mrow><mi mathbackground="#FFFF00">n</mi><mo mathbackground="#FFFF00">+</mo><mn mathbackground="#FFFF00">1</mn></mrow></math> equações com <math id="p11.m2" class="ltx_Math" alttext="n+1" display="inline"><mrow><mi mathbackground="#FFFF00">n</mi><mo mathbackground="#FFFF00">+</mo><mn mathbackground="#FFFF00">1</mn></mrow></math> incógnitas</span>. Na forma matricial temos</p>
-<table id="Ch5.E19" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx391" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch5.E19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E19.m1" class="ltx_Math" alttext="\eqref{cap_pvc_sec_mdf:eq:sis_mdf}A\bm{u}=\bm{b}" display="block"><mrow><mrow><mi>(</mi><mo>⁢</mo><mtext class="ltx_missing_label ltx_mathvariant_italic"><span class="ltx_ref ltx_missing_label ltx_font_italic ltx_ref_self">LABEL:cap_pvc_sec_mdf:eq:sis_mdf</span></mtext><mo>⁢</mo><mi>)</mi><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>𝒖</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E19.m1" class="ltx_Math" alttext="\displaystyle A\bm{u}=\bm{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒖</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.19)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="p11.m3" class="ltx_Math" alttext="\bm{u}=(u_{1},u_{2},\dotsc,u_{n+1})" display="inline"><mrow><mi>𝒖</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mn>1</mn></msub><mo>,</mo><msub><mi>u</mi><mn>2</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>u</mi><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msub><mo stretchy="false">)</mo></mrow></mrow></math> é o vetor das incógnitas, <math id="p11.m4" class="ltx_Math" alttext="\bm{b}=(g,f_{2},f_{3},\dotsc,f_{n},h)" display="inline"><mrow><mi>𝒃</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mi>g</mi><mo>,</mo><msub><mi>f</mi><mn>2</mn></msub><mo>,</mo><msub><mi>f</mi><mn>3</mn></msub><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>f</mi><mi>n</mi></msub><mo>,</mo><mi>h</mi><mo stretchy="false">)</mo></mrow></mrow></math>. A matriz dos coeficientes é <math id="p11.m5" class="ltx_Math" alttext="A=[a_{i,j}]_{i,j=1}^{n+1,n+1}" display="inline"><mrow><mi>A</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">[</mo><msub><mi>a</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false">]</mo></mrow><mrow><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow><mo>=</mo><mn>1</mn></mrow><mrow><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></mrow></msubsup></mrow></math> e seus elementos não nulos são</p>
-<table id="Ch6.S3.EGx191" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx392" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.Ex6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -398,7 +398,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte PVC</p>
-<table id="Ch6.S3.EGx192" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx393" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E24"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -426,7 +426,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </figure>
 <div id="Thmex1.p2" class="ltx_para">
 <p class="ltx_p">A solução analítica deste problema é <math id="Thmex1.p2.m1" class="ltx_Math" alttext="u(x)=\operatorname{sen}(\pi x)" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Usando o MDF como acima, encontramos o problema discreto</p>
-<table id="Ch6.S3.EGx193" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx394" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -595,7 +595,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Considere o PVC</p>
-<table id="Ch6.S3.EGx194" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx395" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -658,7 +658,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Considere o PVC</p>
-<table id="Ch6.S3.EGx195" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx396" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E33"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -696,7 +696,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Considere o seguinte PVC</p>
-<table id="Ch6.S3.EGx196" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx397" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch5.E36"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -718,14 +718,14 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </tr></tbody>
 </table>
 <p class="ltx_p">onde</p>
-<table id="Ch5.E39" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx398" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch5.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch5.E39.m1" class="ltx_math_unparsed" alttext="f(x)=\left\{\begin{array}[]{ll}1&amp;,x\leq 0\\
-0&amp;,x&gt;0\end{array}\right." display="block"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mn>1</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>x</mi><mo>≤</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mn>0</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E41.m1" class="ltx_math_unparsed" alttext="\displaystyle f(x)=\left\{\begin{array}[]{ll}1&amp;,x\leq 0\\
+0&amp;,x&gt;0\end{array}\right." display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>{</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd class="ltx_align_left" columnalign="left"><mn>1</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>x</mi><mo>≤</mo><mn>0</mn></mrow></mtd></mtr><mtr><mtd class="ltx_align_left" columnalign="left"><mn>0</mn></mtd><mtd class="ltx_align_left" columnalign="left"><mrow><mo>,</mo><mi>x</mi><mo>&gt;</mo><mn>0</mn></mrow></mtd></mtr></mtable><mi></mi></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.39)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.41)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Use uma aproximação adequada pelo método de diferenças finitas para obter o valor aproximado de <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="u(0)" display="inline"><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></math> com precisão de <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="2" display="inline"><mn>2</mn></math> dígitos significativos.</p>
@@ -745,25 +745,25 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Considere o PVC</p>
-<table id="Ch6.S3.EGx197" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx399" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch5.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E40.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=\pi^{2}\cos(\pi x),\leavevmode\nobreak\ 0&lt;x&lt;1," display="inline"><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mrow><msup><mi>π</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mn>, 0</mn></mrow><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.40)</span></td>
-</tr></tbody>
-<tbody id="Ch5.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E41.m1" class="ltx_Math" alttext="\displaystyle u(0)=1," display="inline"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.41)</span></td>
-</tr></tbody>
 <tbody id="Ch5.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E42.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(1)=0." display="inline"><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E42.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=\pi^{2}\cos(\pi x),\leavevmode\nobreak\ 0&lt;x&lt;1," display="inline"><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mrow><msup><mi>π</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><mn>, 0</mn></mrow><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.42)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E43.m1" class="ltx_Math" alttext="\displaystyle u(0)=1," display="inline"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.43)</span></td>
+</tr></tbody>
+<tbody id="Ch5.E44"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch5.E44.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(1)=0." display="inline"><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(5.44)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">A solução analítica deste problema é <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="u(x)=\cos(\pi x)" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Aplique o MDF para computar aproximações numéricas usando a:</p>
@@ -832,7 +832,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}u_{n+1}=h," display="inline">
 <div class="ltx_align_center">
 <a href="cap_pvc.html" title="In Matemática numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Problema de valor de contorno</span></a><a href="bib.html" title="In Matemática numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_pvc_sec_fem.html" title="In Capítulo 5 Problema de valor de contorno ‣ Matemática numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5.2 </span>Método de Elementos Finitos</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Wed Oct 21 11:11:30 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Oct 29 12:45:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

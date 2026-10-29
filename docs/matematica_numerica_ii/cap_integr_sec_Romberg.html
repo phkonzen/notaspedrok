@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 3.3 Quadratura de Romberg ‣ Capítulo 3 Integração ‣ Matemática numérica II</title>
-<!--Generated on Wed Oct 21 11:11:30 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 21 de outubro de 2026.-->
+<!--Generated on Thu Oct 29 12:45:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 29 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -139,31 +139,31 @@
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p">A quadratura de Romberg é construída por sucessivas extrapolações de Richardson da regra do trapézio composta. Sejam <math id="p2.m1" class="ltx_Math" alttext="h_{k}=(b-a)/(2k)" display="inline"><mrow><msub><mi>h</mi><mi>k</mi></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, <math id="p2.m2" class="ltx_Math" alttext="x_{i}=a+(i-1)h_{k}" display="inline"><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mrow><mi>a</mi><mo>+</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>h</mi><mi>k</mi></msub></mrow></mrow></mrow></math> e</p>
-<table id="Ch3.E69" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx120" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E69"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E69.m1" class="ltx_Math" alttext="R_{k,1}:=\frac{h_{k}}{2}\left[f(a)+2\sum_{i=2}^{2k}f(x_{i})+f(b)\right]" display="block"><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>⁢</mo><mn>,1</mn></mrow></msub><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mfrac><msub><mi>h</mi><mi>k</mi></msub><mn>2</mn></mfrac><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>2</mn></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></munderover><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E69.m1" class="ltx_Math" alttext="\displaystyle R_{k,1}:=\frac{h_{k}}{2}\left[f(a)+2\sum_{i=2}^{2k}f(x_{i})+f(b)\right]" display="inline"><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>⁢</mo><mn>,1</mn></mrow></msub><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mstyle displaystyle="true"><mfrac><msub><mi>h</mi><mi>k</mi></msub><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo>[</mo><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>a</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>2</mn></mrow><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></munderover></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>+</mo><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>b</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>]</mo></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.69)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">a regra do trapézio composta com <math id="p2.m3" class="ltx_Math" alttext="2k" display="inline"><mrow><mn>2</mn><mo>⁢</mo><mi>k</mi></mrow></math> subintervalos de</p>
-<table id="Ch3.E70" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx121" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E70"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E70.m1" class="ltx_Math" alttext="I:=\int_{a}^{b}f(x)\,dx." display="block"><mrow><mrow><mi>I</mi><mo lspace="0.278em" rspace="0.111em">:=</mo><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E70.m1" class="ltx_Math" alttext="\displaystyle I:=\int_{a}^{b}f(x)\,dx." display="inline"><mrow><mrow><mi>I</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.70)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Por sorte, o erro de truncamento de aproximar <math id="p2.m4" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> por <math id="p2.m5" class="ltx_Math" alttext="R_{k,1}" display="inline"><msub><mi>R</mi><mrow><mi>k</mi><mo>⁢</mo><mn>,1</mn></mrow></msub></math> tem a seguinte forma</p>
-<table id="Ch3.E71" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx122" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E71"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E71.m1" class="ltx_Math" alttext="I-R_{k,1}=\sum_{i=1}^{\infty}k_{i}h_{k}^{2i}," display="block"><mrow><mrow><mrow><mi>I</mi><mo>−</mo><msub><mi>R</mi><mrow><mi>k</mi><mo>⁢</mo><mn>,1</mn></mrow></msub></mrow><mo rspace="0.111em">=</mo><mrow><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover><mrow><msub><mi>k</mi><mi>i</mi></msub><mo>⁢</mo><msubsup><mi>h</mi><mi>k</mi><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi></mrow></msubsup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E71.m1" class="ltx_Math" alttext="\displaystyle I-R_{k,1}=\sum_{i=1}^{\infty}k_{i}h_{k}^{2i}," display="inline"><mrow><mrow><mrow><mi>I</mi><mo>−</mo><msub><mi>R</mi><mrow><mi>k</mi><mo>⁢</mo><mn>,1</mn></mrow></msub></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><munderover><mo movablelimits="false">∑</mo><mrow><mi>i</mi><mo>=</mo><mn>1</mn></mrow><mi mathvariant="normal">∞</mi></munderover></mstyle><mrow><msub><mi>k</mi><mi>i</mi></msub><mo>⁢</mo><msubsup><mi>h</mi><mi>k</mi><mrow><mn>2</mn><mo>⁢</mo><mi>i</mi></mrow></msubsup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.71)</span></td>
 </tr></tbody>
@@ -172,11 +172,11 @@
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Mais precisamente, para obtermos uma aproximação de <math id="p3.m1" class="ltx_Math" alttext="I" display="inline"><mi>I</mi></math> com erro de truncamento da ordem <math id="p3.m2" class="ltx_Math" alttext="h^{2n}" display="inline"><msup><mi>h</mi><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow></msup></math>, <math id="p3.m3" class="ltx_Math" alttext="h=(b-a)" display="inline"><mrow><mi>h</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mrow><mi>b</mi><mo>−</mo><mi>a</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></math>, computamos <math id="p3.m4" class="ltx_Math" alttext="R_{k,1}" display="inline"><msub><mi>R</mi><mrow><mi>k</mi><mo>⁢</mo><mn>,1</mn></mrow></msub></math> para <math id="p3.m5" class="ltx_Math" alttext="k=1,2,\dotsc,n" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>. Então, usamos das sucessivas extrapolações de Richardson</p>
-<table id="Ch3.E72" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx123" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E72"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E72.m1" class="ltx_Math" alttext="R_{k,j}:=R_{k,j-1}+\frac{R_{k,j-1}-R_{k-1,j-1}}{4^{j-1}-1}," display="block"><mrow><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>,</mo><mi>j</mi></mrow></msub><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>,</mo><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></mrow></msub><mo>+</mo><mfrac><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>,</mo><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></mrow></msub><mo>−</mo><msub><mi>R</mi><mrow><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></mrow></msub></mrow><mrow><msup><mn>4</mn><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E72.m1" class="ltx_Math" alttext="\displaystyle R_{k,j}:=R_{k,j-1}+\frac{R_{k,j-1}-R_{k-1,j-1}}{4^{j-1}-1}," display="inline"><mrow><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>,</mo><mi>j</mi></mrow></msub><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>,</mo><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></mrow></msub><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mi>R</mi><mrow><mi>k</mi><mo>,</mo><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></mrow></msub><mo>−</mo><msub><mi>R</mi><mrow><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo>,</mo><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></mrow></msub></mrow><mrow><msup><mn>4</mn><mrow><mi>j</mi><mo>−</mo><mn>1</mn></mrow></msup><mo>−</mo><mn>1</mn></mrow></mfrac></mstyle></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.72)</span></td>
 </tr></tbody>
@@ -189,7 +189,7 @@
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Consideremos o problema de aproximar a integral de <math id="Thmex1.p1.m1" class="ltx_Math" alttext="f(x)=xe^{-x^{2}}" display="inline"><mrow><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>x</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></mrow></math> no intervalo <math id="Thmex1.p1.m2" class="ltx_Math" alttext="[0,1]" display="inline"><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></math>. Para obtermos uma quadratura de Romberg de ordem <math id="Thmex1.p1.m3" class="ltx_Math" alttext="4" display="inline"><mn>4</mn></math>, calculamos</p>
-<table id="Ch6.S3.EGx49" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx124" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E73"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -207,11 +207,11 @@
 </tr></tbody>
 </table>
 <p class="ltx_p">Então, calculando</p>
-<table id="Ch3.E75" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx125" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E75"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E75.m1" class="ltx_Math" alttext="R_{2,2}=R_{2,1}+\frac{R_{2,1}-R_{1,1}}{3}=3,20914\mathrm{e}\!-\!1," display="block"><mrow><mrow><msub><mi>R</mi><mn>2,2</mn></msub><mo>=</mo><mrow><msub><mi>R</mi><mn>2,1</mn></msub><mo>+</mo><mfrac><mrow><msub><mi>R</mi><mn>2,1</mn></msub><mo>−</mo><msub><mi>R</mi><mn>1,1</mn></msub></mrow><mn>3</mn></mfrac></mrow><mo>=</mo><mrow><mrow><mn>3,20914</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em" rspace="0.052em">−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E75.m1" class="ltx_Math" alttext="\displaystyle R_{2,2}=R_{2,1}+\frac{R_{2,1}-R_{1,1}}{3}=3,20914\mathrm{e}\!-\!1," display="inline"><mrow><mrow><msub><mi>R</mi><mn>2,2</mn></msub><mo>=</mo><mrow><msub><mi>R</mi><mn>2,1</mn></msub><mo>+</mo><mstyle displaystyle="true"><mfrac><mrow><msub><mi>R</mi><mn>2,1</mn></msub><mo>−</mo><msub><mi>R</mi><mn>1,1</mn></msub></mrow><mn>3</mn></mfrac></mstyle></mrow><mo>=</mo><mrow><mrow><mn>3,20914</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em" rspace="0.052em">−</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.75)</span></td>
 </tr></tbody>
@@ -279,11 +279,12 @@
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Aproxime</p>
-<table id="Ch3.E76" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx126" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E76"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E76.m1" class="ltx_Math" alttext="\int_{-1}^{0}\frac{\operatorname{sen}(x+2)-e^{-x^{2}}}{x^{2}+\ln(x+2)}\,dx" display="block"><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup><mrow><mfrac><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E76.m1" class="ltx_Math" alttext="\displaystyle\int_{-1}^{0}\frac{\operatorname{sen}(x+2)-e^{-x^{2}}}{x^{2}+\ln(%
+x+2)}\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>0</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>+</mo><mrow><mi>ln</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.76)</span></td>
 </tr></tbody>
@@ -339,7 +340,7 @@
 <div class="ltx_align_center">
 <a href="cap_integr_sec_int_comp.html" title="In Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.2 </span>Regras compostas de Newton-Cotes</span></a><a href="bib.html" title="In Matemática numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_integr_sec_grau_exat.html" title="In Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Grau de exatidão</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Wed Oct 21 11:11:30 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Oct 29 12:45:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

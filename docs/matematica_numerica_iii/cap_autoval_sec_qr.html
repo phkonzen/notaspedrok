@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 4.2 Iteração QR ‣ Capítulo 4 Autovalores e autovetores ‣ Matemática numérica III</title>
-<!--Generated on Wed Oct 21 11:11:06 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 21 de outubro de 2026.-->
+<!--Generated on Thu Oct 29 12:44:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 29 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -133,14 +133,14 @@
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">iteração QR</span> é um método para a computação aproximada de todos os autovalores de uma dada matriz <math id="p2.m1" class="ltx_Math" alttext="A" display="inline"><mi mathbackground="#FFFF00">A</mi></math></span>. A ideia é explorar um método iterativo para a computação da <span class="ltx_text ltx_font_bold">decomposição de Schur<span id="Ch4.footnote4" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">4</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">4</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">4</span></span><span class="ltx_text ltx_font_medium">Issai Schur, 1875 - 1941, matemático russo-alemão. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Issai_Schur" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Issai Schur</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> de A, i.e. encontrar uma <span class="ltx_text ltx_font_bold">matriz unitária<span id="Ch4.footnote5" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">5</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">5</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">5</span></span><span class="ltx_text ltx_font_medium">Uma matriz </span><math id="Ch4.footnote5.m1" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math><span class="ltx_text ltx_font_medium"> é dita unitária quando </span><math id="Ch4.footnote5.m2" class="ltx_Math" alttext="U^{-1}=U^{H}" display="inline"><mrow><msup><mi>U</mi><mrow><mo>−</mo><mn>1</mn></mrow></msup><mo>=</mo><msup><mi>U</mi><mi>H</mi></msup></mrow></math><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> <math id="p2.m2" class="ltx_Math" alttext="U" display="inline"><mi>U</mi></math> tal que</p>
-<table id="Ch4.E27" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx72" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch4.E27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E27.m1" class="ltx_Math" alttext="U^{H}AU=\begin{bmatrix}\lambda_{1}&amp;t_{12}&amp;\cdots&amp;t_{1n}\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E27.m1" class="ltx_Math" alttext="\displaystyle U^{H}AU=\begin{bmatrix}\lambda_{1}&amp;t_{12}&amp;\cdots&amp;t_{1n}\\
 0&amp;\lambda_{2}&amp;&amp;t_{2n}\\
 \vdots&amp;&amp;\ddots&amp;\vdots\\
-0&amp;\vdots&amp;0&amp;\lambda_{n}\end{bmatrix}" display="block"><mrow><mrow><msup><mi>U</mi><mi>H</mi></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>U</mi></mrow><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>λ</mi><mn>1</mn></msub></mtd><mtd><msub><mi>t</mi><mn>12</mn></msub></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><msub><mi>t</mi><mrow><mn>1</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mn>2</mn></msub></mtd><mtd></mtd><mtd><msub><mi>t</mi><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mi>n</mi></msub></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+0&amp;\vdots&amp;0&amp;\lambda_{n}\end{bmatrix}" display="inline"><mrow><mrow><msup><mi>U</mi><mi>H</mi></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><mi>U</mi></mrow><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><msub><mi>λ</mi><mn>1</mn></msub></mtd><mtd><msub><mi>t</mi><mn>12</mn></msub></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><msub><mi>t</mi><mrow><mn>1</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mn>2</mn></msub></mtd><mtd></mtd><mtd><msub><mi>t</mi><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mi>n</mi></msub></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.27)</span></td>
 </tr></tbody>
@@ -148,7 +148,7 @@
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Assumindo <math id="p3.m1" class="ltx_Math" alttext="A\in\mathbb{R}^{n\times n}" display="inline"><mrow><mi>A</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math>, sejam <math id="p3.m2" class="ltx_Math" alttext="Q^{(0)}\in\mathbb{R}^{n\times n}" display="inline"><mrow><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math> uma <span class="ltx_text ltx_font_bold">matriz ortogonal<span id="Ch4.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">6</span></span><span class="ltx_text ltx_font_medium">Uma matriz </span><math id="Ch4.footnote6.m1" class="ltx_Math" alttext="Q" display="inline"><mi>Q</mi></math><span class="ltx_text ltx_font_medium"> é dita ortogonal quando </span><math id="Ch4.footnote6.m2" class="ltx_Math" alttext="Q^{T}Q=I" display="inline"><mrow><mrow><msup><mi>Q</mi><mi>T</mi></msup><mo>⁢</mo><mi>Q</mi></mrow><mo>=</mo><mi>I</mi></mrow></math><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> e <math id="p3.m3" class="ltx_Math" alttext="T^{(0)}=(Q^{(0)})^{T}AQ^{(0)}" display="inline"><mrow><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mi>T</mi></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></math>. A iteração <math id="p3.m4" class="ltx_Math" alttext="QR" display="inline"><mrow><mi>Q</mi><mo>⁢</mo><mi>R</mi></mrow></math> consiste em</p>
-<table id="Ch5.S2.EGx60" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx73" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -173,7 +173,7 @@
 </div>
 <div id="p4" class="ltx_para">
 <p class="ltx_p">Ou seja, a cada iteração <math id="p4.m1" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>, computa-se a fatoração da matriz <math id="p4.m2" class="ltx_Math" alttext="T^{(k-1)}" display="inline"><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></math> como o produto de uma matriz ortogonal <math id="p4.m3" class="ltx_Math" alttext="Q^{(k)}" display="inline"><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> com uma matriz triangular superior <math id="p4.m4" class="ltx_Math" alttext="R^{(k)}" display="inline"><msup><mi>R</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>. Então, computa-se uma nova aproximação <math id="p4.m5" class="ltx_Math" alttext="T^{(k)}" display="inline"><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> pela multiplicação de <math id="p4.m6" class="ltx_Math" alttext="R^{(k)}" display="inline"><msup><mi>R</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> por <math id="p4.m7" class="ltx_Math" alttext="Q^{(k)}" display="inline"><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>. Com isso, temos</p>
-<table id="Ch5.S2.EGx61" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx74" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E30"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -227,24 +227,25 @@
 </h6>
 <div id="Thmobs1.p1" class="ltx_para">
 <p class="ltx_p">Se <math id="Thmobs1.p1.m1" class="ltx_Math" alttext="A\in\mathbb{R}^{n\times n}" display="inline"><mrow><mi>A</mi><mo>∈</mo><msup><mi>ℝ</mi><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></msup></mrow></math> for uma matriz com autovalores tais que</p>
-<table id="Ch4.E37" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx75" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch4.E37"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E37.m1" class="ltx_Math" alttext="|\lambda_{1}|&gt;|\lambda_{2}|&gt;\cdots&gt;|\lambda_{n}|," display="block"><mrow><mrow><mrow><mo stretchy="false">|</mo><msub><mi>λ</mi><mn>1</mn></msub><mo stretchy="false">|</mo></mrow><mo>&gt;</mo><mrow><mo stretchy="false">|</mo><msub><mi>λ</mi><mn>2</mn></msub><mo stretchy="false">|</mo></mrow><mo>&gt;</mo><mi mathvariant="normal">⋯</mi><mo>&gt;</mo><mrow><mo stretchy="false">|</mo><msub><mi>λ</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E37.m1" class="ltx_Math" alttext="\displaystyle|\lambda_{1}|&gt;|\lambda_{2}|&gt;\cdots&gt;|\lambda_{n}|," display="inline"><mrow><mrow><mrow><mo stretchy="false">|</mo><msub><mi>λ</mi><mn>1</mn></msub><mo stretchy="false">|</mo></mrow><mo>&gt;</mo><mrow><mo stretchy="false">|</mo><msub><mi>λ</mi><mn>2</mn></msub><mo stretchy="false">|</mo></mrow><mo>&gt;</mo><mi mathvariant="normal">⋯</mi><mo>&gt;</mo><mrow><mo stretchy="false">|</mo><msub><mi>λ</mi><mi>n</mi></msub><mo stretchy="false">|</mo></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.37)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">então</p>
-<table id="Ch4.E38" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx76" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch4.E38"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E38.m1" class="ltx_Math" alttext="\lim_{k\to\infty}T^{(k)}=\begin{bmatrix}\lambda_{1}&amp;t_{12}&amp;\cdots&amp;t_{1n}\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E38.m1" class="ltx_Math" alttext="\displaystyle\lim_{k\to\infty}T^{(k)}=\begin{bmatrix}\lambda_{1}&amp;t_{12}&amp;\cdots%
+&amp;t_{1n}\\
 0&amp;\lambda_{2}&amp;&amp;t_{2n}\\
 \vdots&amp;&amp;\ddots&amp;\vdots\\
-0&amp;\vdots&amp;0&amp;\lambda_{n}\end{bmatrix}." display="block"><mrow><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>k</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></munder><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><msub><mi>λ</mi><mn>1</mn></msub></mtd><mtd><msub><mi>t</mi><mn>12</mn></msub></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><msub><mi>t</mi><mrow><mn>1</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mn>2</mn></msub></mtd><mtd></mtd><mtd><msub><mi>t</mi><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mi>n</mi></msub></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+0&amp;\vdots&amp;0&amp;\lambda_{n}\end{bmatrix}." display="inline"><mrow><mrow><mrow><munder><mo movablelimits="false">lim</mo><mrow><mi>k</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></munder><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><msub><mi>λ</mi><mn>1</mn></msub></mtd><mtd><msub><mi>t</mi><mn>12</mn></msub></mtd><mtd><mi mathvariant="normal">⋯</mi></mtd><mtd><msub><mi>t</mi><mrow><mn>1</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mn>2</mn></msub></mtd><mtd></mtd><mtd><msub><mi>t</mi><mrow><mn>2</mn><mo>⁢</mo><mi>n</mi></mrow></msub></mtd></mtr><mtr><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd></mtd><mtd><mi mathvariant="normal">⋱</mi></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mi mathvariant="normal">⋮</mi></mtd><mtd><mn>0</mn></mtd><mtd><msub><mi>λ</mi><mi>n</mi></msub></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.38)</span></td>
 </tr></tbody>
@@ -252,12 +253,12 @@
 </div>
 <div id="Thmobs1.p2" class="ltx_para">
 <p class="ltx_p">Para a taxa de convergência, temos</p>
-<table id="Ch4.E39" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx77" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch4.E39"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E39.m1" class="ltx_Math" alttext="|t^{(k)}_{i,i-1}|=\mathcal{O}\left(\left|\frac{\lambda_{i}}{\lambda_{i-1}}%
-\right|^{k}\right),\quad i=2,\dotsc,n," display="block"><mrow><mrow><mrow><mrow><mo stretchy="false">|</mo><msubsup><mi>t</mi><mrow><mi>i</mi><mo>,</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></mrow><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msubsup><mo stretchy="false">|</mo></mrow><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mrow><mo>|</mo><mfrac><msub><mi>λ</mi><mi>i</mi></msub><msub><mi>λ</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mfrac><mo>|</mo></mrow><mi>k</mi></msup><mo>)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>i</mi><mo>=</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E39.m1" class="ltx_Math" alttext="\displaystyle|t^{(k)}_{i,i-1}|=\mathcal{O}\left(\left|\frac{\lambda_{i}}{%
+\lambda_{i-1}}\right|^{k}\right),\quad i=2,\dotsc,n," display="inline"><mrow><mrow><mrow><mrow><mo stretchy="false">|</mo><msubsup><mi>t</mi><mrow><mi>i</mi><mo>,</mo><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></mrow><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msubsup><mo stretchy="false">|</mo></mrow><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒪</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mrow><mo>|</mo><mstyle displaystyle="true"><mfrac><msub><mi>λ</mi><mi>i</mi></msub><msub><mi>λ</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mfrac></mstyle><mo>|</mo></mrow><mi>k</mi></msup><mo>)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mi>i</mi><mo>=</mo><mrow><mn>2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.39)</span></td>
 </tr></tbody>
@@ -336,7 +337,7 @@
 </h6>
 <div id="Thmobs3.p1" class="ltx_para">
 <p class="ltx_p">Vamos denotar <math id="Thmobs3.p1.m1" class="ltx_Math" alttext="\tilde{Q}^{(k)}=Q^{(0)}\cdots Q^{(k)}" display="inline"><mrow><msup><mover accent="true"><mi>Q</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi mathvariant="normal">⋯</mi><mo>⁢</mo><msup><mi>Q</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></math>. Se <math id="Thmobs3.p1.m2" class="ltx_Math" alttext="\bm{v}" display="inline"><mi>𝒗</mi></math> é autovetor associado ao autovalor simples <math id="Thmobs3.p1.m3" class="ltx_Math" alttext="\lambda" display="inline"><mi>λ</mi></math> de <math id="Thmobs3.p1.m4" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, então</p>
-<table id="Ch5.S2.EGx62" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch4.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -353,11 +354,11 @@
 </tr></tbody>
 </table>
 <p class="ltx_p">Denotando, <math id="Thmobs3.p1.m5" class="ltx_Math" alttext="y=(\tilde{Q}^{(k)})^{T}\bm{v}" display="inline"><mrow><mi>y</mi><mo>=</mo><mrow><msup><mrow><mo stretchy="false">(</mo><msup><mover accent="true"><mi>Q</mi><mo>~</mo></mover><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mi>T</mi></msup><mo>⁢</mo><mi>𝒗</mi></mrow></mrow></math>, temos</p>
-<table id="Ch4.E42" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch4.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch4.E42.m1" class="ltx_Math" alttext="T^{(k)}\bm{y}=\lambda\bm{y}." display="block"><mrow><mrow><mrow><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi>𝒚</mi></mrow><mo>=</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>𝒚</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch4.E42.m1" class="ltx_Math" alttext="\displaystyle T^{(k)}\bm{y}=\lambda\bm{y}." display="inline"><mrow><mrow><mrow><msup><mi>T</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi>𝒚</mi></mrow><mo>=</mo><mrow><mi>λ</mi><mo>⁢</mo><mi>𝒚</mi></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(4.42)</span></td>
 </tr></tbody>
@@ -473,7 +474,7 @@
 <div class="ltx_align_center">
 <a href="cap_autoval_sec_pot.html" title="In Capítulo 4 Autovalores e autovetores ‣ Matemática numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4.1 </span>Método da potência</span></a><a href="bib.html" title="In Matemática numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_integracao.html" title="In Matemática numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">5 </span>Integração</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Wed Oct 21 11:11:06 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Oct 29 12:44:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

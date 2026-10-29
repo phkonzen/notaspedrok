@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 3.6 Quadraturas gaussianas com pesos ‣ Capítulo 3 Integração ‣ Matemática numérica II</title>
-<!--Generated on Wed Oct 21 11:11:30 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 21 de outubro de 2026.-->
+<!--Generated on Thu Oct 29 12:45:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 29 de outubro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -139,21 +139,21 @@
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p">A quadratura gaussiana estudada na seção anterior (Seção <a href="cap_integr_sec_Gauss-Legendre.html" title="3.5 Quadratura Gauss-Legendre ‣ Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.5</span></a>) é um caso particular de quadraturas de máximo grau de exatidão para integrais da forma</p>
-<table id="Ch3.E173" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx181" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E173"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E173.m1" class="ltx_Math" alttext="\int_{a}^{b}f(x)w(x)\,dx," display="block"><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>w</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E173.m1" class="ltx_Math" alttext="\displaystyle\int_{a}^{b}f(x)w(x)\,dx," display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>w</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.173)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="p2.m1" class="ltx_Math" alttext="w(x)" display="inline"><mrow><mi>w</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> é positiva e contínua, chamada de função peso. Como anteriormente, os nodos <math id="p2.m2" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math>, <math id="p2.m3" class="ltx_Math" alttext="i=1,2,\dotsc,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>, da quadratura gaussiana de <math id="p2.m4" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> pontos são as raízes do polinômio <math id="p2.m5" class="ltx_Math" alttext="p_{n}(x)" display="inline"><mrow><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> que é ortogonal a todos os polinômios de grau menor que <math id="p2.m6" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>. Aqui, isto significa</p>
-<table id="Ch3.E174" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx182" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E174"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E174.m1" class="ltx_Math" alttext="\int_{a}^{b}q(x)p_{n}(x)w(x)\,dx=0," display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>w</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E174.m1" class="ltx_Math" alttext="\displaystyle\int_{a}^{b}q(x)p_{n}(x)w(x)\,dx=0," display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mi>a</mi><mi>b</mi></msubsup></mstyle><mrow><mi>q</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msub><mi>p</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>w</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.174)</span></td>
 </tr></tbody>
@@ -165,21 +165,21 @@
 <span class="ltx_tag ltx_tag_subsection">3.6.1 </span>Quadratura de Gauss-Chebyshev</h2>
 
 <div id="SS1.p1" class="ltx_para">
-<p class="ltx_p ltx_align_left"><span class="badge text-bg-warning">Em revisão</span></p>
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
 </div>
 <div id="SS1.p2" class="ltx_para">
 <p class="ltx_p">Quadraturas de Gauss-Chebyshev são quadraturas gaussianas para integrais da forma</p>
-<table id="Ch3.E175" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx183" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E175"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E175.m1" class="ltx_Math" alttext="\int_{-1}^{1}f(x)(1-x^{2})^{-1/2}\,dx." display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mrow><mo>−</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E175.m1" class="ltx_Math" alttext="\displaystyle\int_{-1}^{1}f(x)(1-x^{2})^{-1/2}\,dx." display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mrow><mo>−</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.175)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Neste caso, na quadratura gaussiana de <math id="SS1.p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> pontos os nodos <math id="SS1.p2.m2" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math> são as raízes do <math id="SS1.p2.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>-ésimo polinômio de Chebyshev <math id="SS1.p2.m4" class="ltx_Math" alttext="T_{n}(x)" display="inline"><mrow><msub><mi>T</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math>. Pode-se mostrar (veja, por exemplo, <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib3" title="Analysis of numerical methods" class="ltx_ref">3</a>, Cap. 7, Sec. 4.1]</cite>) que o conjunto de pontos desta quadratura são dados por</p>
-<table id="Ch6.S3.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx184" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E176"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -201,11 +201,11 @@
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Considere o problema de aproximar a integral</p>
-<table id="Ch3.E178" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx185" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E178"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E178.m1" class="ltx_Math" alttext="\int_{-1}^{1}\frac{e^{-x^{2}}}{\sqrt{1-x^{2}}}\,dx." display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mfrac><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E178.m1" class="ltx_Math" alttext="\displaystyle\int_{-1}^{1}\frac{e^{-x^{2}}}{\sqrt{1-x^{2}}}\,dx." display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.178)</span></td>
 </tr></tbody>
@@ -218,12 +218,12 @@
 <p class="ltx_p"><math id="I1.i1.p1.m1" class="ltx_Math" alttext="n=1" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>1</mn></mrow></math>:</p>
 </div>
 <div id="I1.i1.p2" class="ltx_para">
-<table id="Ch3.E179" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx186" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E179"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E179.m1" class="ltx_math_unparsed" alttext="\int_{-1}^{1}\frac{e^{-x^{2}}}{\sqrt{1-x^{2}}}\,dx\approx\pi e^{-\cos(\pi/2)^{%
-2}}=\pi." display="block"><mrow><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mfrac><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>≈</mo><mrow><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>cos</mi><msup><mrow><mo stretchy="false">(</mo><mi>π</mi><mo>/</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msup></mrow><mo>=</mo><mi>π</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E179.m1" class="ltx_math_unparsed" alttext="\displaystyle\int_{-1}^{1}\frac{e^{-x^{2}}}{\sqrt{1-x^{2}}}\,dx\approx\pi e^{-%
+\cos(\pi/2)^{2}}=\pi." display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>≈</mo><mrow><mi>π</mi><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>cos</mi><msup><mrow><mo stretchy="false">(</mo><mi>π</mi><mo>/</mo><mn>2</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></msup></mrow><mo>=</mo><mi>π</mi></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.179)</span></td>
 </tr></tbody>
@@ -236,7 +236,7 @@
 <p class="ltx_p"><math id="I1.i2.p1.m1" class="ltx_Math" alttext="n=2" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>2</mn></mrow></math>:</p>
 </div>
 <div id="I1.i2.p2" class="ltx_para">
-<table id="Ch6.S3.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx187" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E180"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -260,7 +260,7 @@
 <p class="ltx_p"><math id="I1.i3.p1.m1" class="ltx_Math" alttext="n=3" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>3</mn></mrow></math>:</p>
 </div>
 <div id="I1.i3.p2" class="ltx_para">
-<table id="Ch6.S3.EGx81" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch6.S3.EGx188" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch3.E182"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -336,22 +336,22 @@
 </div>
 <div id="SS2.p2" class="ltx_para">
 <p class="ltx_p">Quadraturas de Gauss-Laguerre são quadraturas gaussianas para integrais da forma</p>
-<table id="Ch3.E184" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx189" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E184"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E184.m1" class="ltx_Math" alttext="\int_{0}^{\infty}f(x)e^{-x}\,dx." display="block"><mrow><mrow><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E184.m1" class="ltx_Math" alttext="\displaystyle\int_{0}^{\infty}f(x)e^{-x}\,dx." display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.184)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Neste caso, na quadratura gaussiana de <math id="SS2.p2.m1" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math> pontos os nodos <math id="SS2.p2.m2" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math> são as raízes do <math id="SS2.p2.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>-ésimo polinômio de Laguerre <math id="SS2.p2.m4" class="ltx_Math" alttext="L_{n}(x)" display="inline"><mrow><msub><mi>L</mi><mi>n</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></math> e os pesos por</p>
-<table id="Ch3.E185" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx190" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E185"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E185.m1" class="ltx_Math" alttext="w_{i}=-\frac{1}{n[L_{n}^{\prime}(x_{i})]^{2}},\leavevmode\nobreak\ i=1,2,%
-\dotsc,n." display="block"><mrow><mrow><mrow><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><mrow><mo>−</mo><mfrac><mn>1</mn><mrow><mi>n</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">[</mo><mrow><msubsup><mi>L</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mn>2</mn></msup></mrow></mfrac></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E185.m1" class="ltx_Math" alttext="\displaystyle w_{i}=-\frac{1}{n[L_{n}^{\prime}(x_{i})]^{2}},\leavevmode%
+\nobreak\ i=1,2,\dotsc,n." display="inline"><mrow><mrow><mrow><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><mrow><mo>−</mo><mstyle displaystyle="true"><mfrac><mn>1</mn><mrow><mi>n</mi><mo>⁢</mo><msup><mrow><mo stretchy="false">[</mo><mrow><msubsup><mi>L</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mn>2</mn></msup></mrow></mfrac></mstyle></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.185)</span></td>
 </tr></tbody>
@@ -482,25 +482,25 @@
 <span class="ltx_tag ltx_tag_subsection">3.6.3 </span>Quadratura de Gauss-Hermite</h2>
 
 <div id="SS3.p1" class="ltx_para">
-<p class="ltx_p ltx_align_left"><span class="badge text-bg-warning">Em revisão</span></p>
+<p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
 </div>
 <div id="SS3.p2" class="ltx_para">
 <p class="ltx_p">Quadraturas de Gauss-Hermite são quadraturas gaussianas para integrais da forma</p>
-<table id="Ch3.E186" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx191" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E186"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E186.m1" class="ltx_Math" alttext="\int_{-\infty}^{\infty}f(x)e^{-x^{2}}\,dx." display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E186.m1" class="ltx_Math" alttext="\displaystyle\int_{-\infty}^{\infty}f(x)e^{-x^{2}}\,dx." display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mi>f</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.186)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Seus nodos <math id="SS3.p2.m1" class="ltx_Math" alttext="x_{i}" display="inline"><msub><mi>x</mi><mi>i</mi></msub></math>, <math id="SS3.p2.m2" class="ltx_Math" alttext="i=1,2,\dotsc,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math> são as raízes do <math id="SS3.p2.m3" class="ltx_Math" alttext="n" display="inline"><mi>n</mi></math>-ésimo polinômio de Hermite e os pesos são dados por</p>
-<table id="Ch3.E187" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx192" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E187"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E187.m1" class="ltx_Math" alttext="w_{i}=\frac{2^{n+1}n!\sqrt{\pi}}{[H_{n}^{\prime}(x_{i})]^{2}}." display="block"><mrow><mrow><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><mfrac><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mi>n</mi><mo>!</mo></mrow><mo>⁢</mo><msqrt><mi>π</mi></msqrt></mrow><msup><mrow><mo stretchy="false">[</mo><mrow><msubsup><mi>H</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mn>2</mn></msup></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E187.m1" class="ltx_Math" alttext="\displaystyle w_{i}=\frac{2^{n+1}n!\sqrt{\pi}}{[H_{n}^{\prime}(x_{i})]^{2}}." display="inline"><mrow><mrow><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mn>2</mn><mrow><mi>n</mi><mo>+</mo><mn>1</mn></mrow></msup><mo>⁢</mo><mrow><mi>n</mi><mo>!</mo></mrow><mo>⁢</mo><msqrt><mi>π</mi></msqrt></mrow><msup><mrow><mo stretchy="false">[</mo><mrow><msubsup><mi>H</mi><mi>n</mi><mo>′</mo></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mn>2</mn></msup></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.187)</span></td>
 </tr></tbody>
@@ -641,11 +641,12 @@
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Aproxime</p>
-<table id="Ch3.E188" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx193" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E188"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E188.m1" class="ltx_Math" alttext="\int_{-1}^{1}\frac{\operatorname{sen}(x+2)-e^{-x^{2}}}{\sqrt{1-x^{2}}}\,dx" display="block"><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup><mrow><mfrac><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E188.m1" class="ltx_Math" alttext="\displaystyle\int_{-1}^{1}\frac{\operatorname{sen}(x+2)-e^{-x^{2}}}{\sqrt{1-x^%
+{2}}}\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mn>1</mn></mrow><mn>1</mn></msubsup></mstyle><mrow><mstyle displaystyle="true"><mfrac><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><msqrt><mrow><mn>1</mn><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msqrt></mfrac></mstyle><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.188)</span></td>
 </tr></tbody>
@@ -699,11 +700,12 @@
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Aproxime</p>
-<table id="Ch3.E189" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx194" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E189"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E189.m1" class="ltx_Math" alttext="\int_{0}^{\infty}\left(\operatorname{sen}(x+2)-e^{-x^{2}}\right)e^{-x}\,dx" display="block"><mrow><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup><mrow><mrow><mo lspace="0em">(</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><mo>)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E189.m1" class="ltx_Math" alttext="\displaystyle\int_{0}^{\infty}\left(\operatorname{sen}(x+2)-e^{-x^{2}}\right)e%
+^{-x}\,dx" display="inline"><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mn>0</mn><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mrow><mo>(</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow><mo>)</mo></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><mi>x</mi></mrow></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.189)</span></td>
 </tr></tbody>
@@ -745,11 +747,12 @@
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Aproxime</p>
-<table id="Ch3.E190" class="ltx_equation ltx_eqn_table">
+<table id="Ch6.S3.EGx195" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E190"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch3.E190.m1" class="ltx_Math" alttext="\int_{-\infty}^{\infty}\operatorname{sen}(x+2)e^{-x^{2}}-e^{-2x^{2}}\,dx" display="block"><mrow><mrow><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></mrow><mo>−</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E190.m1" class="ltx_Math" alttext="\displaystyle\int_{-\infty}^{\infty}\operatorname{sen}(x+2)e^{-x^{2}}-e^{-2x^{%
+2}}\,dx" display="inline"><mrow><mrow><mstyle displaystyle="true"><msubsup><mo>∫</mo><mrow><mo>−</mo><mi mathvariant="normal">∞</mi></mrow><mi mathvariant="normal">∞</mi></msubsup></mstyle><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>+</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>⁢</mo><msup><mi>e</mi><mrow><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></msup></mrow></mrow><mo>−</mo><mrow><msup><mi>e</mi><mrow><mo>−</mo><mrow><mn>2</mn><mo>⁢</mo><msup><mi>x</mi><mn>2</mn></msup></mrow></mrow></msup><mo>⁢</mo><mi>d</mi><mo>⁢</mo><mi>x</mi></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.190)</span></td>
 </tr></tbody>
@@ -825,7 +828,7 @@
 <div class="ltx_align_center">
 <a href="cap_integr_sec_Gauss-Legendre.html" title="In Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.5 </span>Quadratura Gauss-Legendre</span></a><a href="bib.html" title="In Matemática numérica II" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_integr_sec_Monte_Carlo.html" title="In Capítulo 3 Integração ‣ Matemática numérica II" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.7 </span>Método de Monte Carlo</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Wed Oct 21 11:11:30 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Thu Oct 29 12:45:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
