@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 1.4 Método do gradiente conjugado ‣ Capítulo 1 Sistemas Lineares ‣ Matemática numérica III</title>
-<!--Generated on Thu Oct 29 12:44:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 29 de outubro de 2026.-->
+<!--Generated on Tue Nov  3 14:05:21 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 3 de novembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -135,12 +135,11 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O <span class="ltx_text ltx_font_bold">método do gradiente conjugado</span> é um dos métodos mais eficientes para a resolução de sistemas lineares</span></p>
-<table id="Ch1.E124" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx71" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E124"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E124.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}A\bm{x}=\bm{b}," display="block"><mrow><mrow><mrow><mi mathcolor="#0F77B7">A</mi><mo>⁢</mo><mi mathcolor="#0F77B7">𝒙</mi></mrow><mo mathcolor="#0F77B7">=</mo><mi mathcolor="#0F77B7">𝒃</mi></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E124.m1" class="ltx_Math" alttext="\displaystyle\boxed{A\bm{x}=\bm{b}}," display="inline"><mrow><menclose notation="box"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></menclose><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.124)</span></td>
 </tr></tbody>
@@ -149,13 +148,11 @@ rgb}{0.05859375,0.46484375,0.71875}A\bm{x}=\bm{b}," display="block"><mrow><mrow>
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p">A ideia é encontrar a solução do sistema linear como o ponto de mínimo da função quadrática</p>
-<table id="Ch1.E125" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx72" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E125"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E125.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}J(\bm{x})=\frac{1}{2}(\bm{x},A\bm{x})-(\bm{%
-x},\bm{b})," display="block"><mrow><mrow><mrow><mi mathcolor="#0F77B7">J</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">𝒙</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mrow><mfrac mathcolor="#0F77B7"><mn mathcolor="#0F77B7">1</mn><mn mathcolor="#0F77B7">2</mn></mfrac><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">𝒙</mi><mo mathcolor="#0F77B7">,</mo><mrow><mi mathcolor="#0F77B7">A</mi><mo>⁢</mo><mi mathcolor="#0F77B7">𝒙</mi></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">−</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">𝒙</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">𝒃</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E125.m1" class="ltx_Math" alttext="\displaystyle J(\bm{x})=\frac{1}{2}(\bm{x},A\bm{x})-(\bm{x},\bm{b})," display="inline"><mrow><mrow><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><mn>2</mn></mfrac></mstyle><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo>,</mo><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo>,</mo><mi>𝒃</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.125)</span></td>
 </tr></tbody>
@@ -164,7 +161,7 @@ x},\bm{b})," display="block"><mrow><mrow><mrow><mi mathcolor="#0F77B7">J</mi><mo
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">Note que <math id="p3.m1" class="ltx_Math" alttext="J(\bm{x})" display="inline"><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow></math> é estritamente convexa, pois <math id="p3.m2" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math> é simétrica positiva definida. Assim, <math id="p3.m3" class="ltx_Math" alttext="J(\bm{x})" display="inline"><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow></math> possui um único ponto de mínimo global, que é a solução do sistema linear <math id="p3.m4" class="ltx_Math" alttext="A\bm{x}=b" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>b</mi></mrow></math>. De fato, seja <math id="p3.m5" class="ltx_Math" alttext="\bm{x}" display="inline"><mi>𝒙</mi></math> e <math id="p3.m6" class="ltx_Math" alttext="\bm{v}\neq 0" display="inline"><mrow><mi>𝒗</mi><mo>≠</mo><mn>0</mn></mrow></math> dois vetores quaisquer e <math id="p3.m7" class="ltx_Math" alttext="t\in\mathbb{R}" display="inline"><mrow><mi>t</mi><mo>∈</mo><mi>ℝ</mi></mrow></math>, temos</p>
-<table id="Ch5.S2.EGx21" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx73" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E126"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -190,7 +187,7 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 </tr></tbody>
 </table>
 <p class="ltx_p">donde, obtemos que</p>
-<table id="Ch5.S2.EGx22" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx74" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:sislin_J_aux"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -201,7 +198,7 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 </tr></tbody>
 </table>
 <p class="ltx_p">Para <math id="p3.m8" class="ltx_Math" alttext="\bm{x}" display="inline"><mi>𝒙</mi></math> e <math id="p3.m9" class="ltx_Math" alttext="\bm{v}" display="inline"><mi>𝒗</mi></math> fixos, <math id="p3.m10" class="ltx_Math" alttext="J(\bm{x}+t\bm{v})" display="inline"><mrow><mi>J</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>𝒙</mi><mo>+</mo><mrow><mi>t</mi><mo>⁢</mo><mi>𝒗</mi></mrow></mrow><mo stretchy="false">)</mo></mrow></mrow></math> é uma função quadrática de <math id="p3.m11" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math>, que atinge seu mínimo no ponto crítico</p>
-<table id="Ch5.S2.EGx23" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx75" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E130"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -218,7 +215,7 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 </tr></tbody>
 </table>
 <p class="ltx_p">Substituindo este valor de <math id="p3.m12" class="ltx_Math" alttext="t" display="inline"><mi>t</mi></math> em (<a href="#eq:sislin_J_aux" title="In 1.4 Método do gradiente conjugado ‣ Capítulo 1 Sistemas Lineares ‣ Matemática numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.129</span></a>), obtemos</p>
-<table id="Ch5.S2.EGx24" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx76" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E132"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -229,7 +226,7 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 </tr></tbody>
 </table>
 <p class="ltx_p">Assim, se <math id="p3.m13" class="ltx_Math" alttext="\bm{x}^{*}" display="inline"><msup><mi>𝒙</mi><mo>∗</mo></msup></math> é a solução do sistema linear, temos que <math id="p3.m14" class="ltx_Math" alttext="\bm{b}-A\bm{x}^{*}=\bm{0}" display="inline"><mrow><mrow><mi>𝒃</mi><mo>−</mo><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mo>∗</mo></msup></mrow></mrow><mo>=</mo><mn>𝟎</mn></mrow></math> e, portanto,</p>
-<table id="Ch5.S2.EGx25" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx77" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E133"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -297,18 +294,18 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 </div>
 <div id="p6" class="ltx_para">
 <p class="ltx_p">Com tudo isso, temos a <span class="ltx_text ltx_font_bold">iteração do método do gradiente</span></p>
-<table id="Ch5.S2.EGx26" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx78" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E139"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E139.m1" class="ltx_Math" alttext="\displaystyle\bm{x}^{(k+1)}=\bm{x}^{(k)}+\alpha_{k}\bm{r}^{(k)}," display="inline"><mrow><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msub><mi>α</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E139.m1" class="ltx_Math" alttext="\displaystyle\boxed{\bm{x}^{(k+1)}=\bm{x}^{(k)}+\alpha_{k}\bm{r}^{(k)}}," display="inline"><mrow><menclose notation="box"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msub><mi>α</mi><mi>k</mi></msub><mo>⁢</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow></menclose><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.139)</span></td>
 </tr></tbody>
 <tbody id="Ch1.E140"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E140.m1" class="ltx_Math" alttext="\displaystyle\mbox{onde}\quad\alpha_{k}=\frac{(\bm{r}^{(k)},\bm{r}^{(k)})}{(%
-\bm{r}^{(k)},A\bm{r}^{(k)})}." display="inline"><mrow><mrow><mrow><mtext>onde</mtext><mspace width="1em"></mspace><msub><mi>α</mi><mi>k</mi></msub></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false">(</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo stretchy="false">)</mo></mrow></mfrac></mstyle></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E140.m1" class="ltx_Math" alttext="\displaystyle\mbox{onde}\quad\boxed{\alpha_{k}=\frac{(\bm{r}^{(k)},\bm{r}^{(k)%
+})}{(\bm{r}^{(k)},A\bm{r}^{(k)})}}." display="inline"><mrow><mrow><mtext>onde</mtext><mspace width="1em"></mspace><menclose notation="box"><mrow><msub><mi>α</mi><mi>k</mi></msub><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo stretchy="false">(</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">)</mo></mrow><mrow><mo stretchy="false">(</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>,</mo><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo stretchy="false">)</mo></mrow></mfrac></mstyle></mrow></menclose></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.140)</span></td>
 </tr></tbody>
@@ -465,7 +462,7 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 </div>
 <div id="SS1.p2" class="ltx_para">
 <p class="ltx_p">Em resumo, a iteração do método do gradiente conjugado é dada por</p>
-<table id="Ch5.S2.EGx27" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx79" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E147"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -591,7 +588,7 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Considere o problema de Poisson<span id="Ch1.footnote22" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">22</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">22</sup><span class="ltx_tag ltx_tag_note">22</span>Siméon Denis Poisson, 1781 - 1840, matemático francês. Fonte: <a href="https://pt.wikipedia.org/wiki/Sim%C3%A9on_Denis_Poisson" title="" class="ltx_ref ltx_href">Wikipédia: Siméon Denis Poisson</a>.</span></span></span> 2D</p>
-<table id="Ch5.S2.EGx28" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx80" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E152"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -829,7 +826,7 @@ v})+\frac{t}{2}(\bm{v},A\bm{x})+\frac{t^{2}}{2}(\bm{v},A\bm{v})-(\bm{x},\bm{b}%
 <div class="ltx_align_center">
 <a href="cap_sislin_sec_metiterbas.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Métodos iterativos básicos</span></a><a href="bib.html" title="In Matemática numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_sislin_sec_metproj.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.5 </span>Métodos de projeção</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Thu Oct 29 12:44:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Tue Nov  3 14:05:21 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

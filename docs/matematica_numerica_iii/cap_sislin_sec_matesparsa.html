@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática numérica III</title>
-<!--Generated on Thu Oct 29 12:44:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 29 de outubro de 2026.-->
+<!--Generated on Tue Nov  3 14:05:21 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 3 de novembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -149,22 +149,21 @@
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">A <span class="ltx_text ltx_font_bold">esparsidade</span> de uma matriz é a porcentagem de elementos nulos que ela tem</span>, i.e. para uma matriz quadrada <math id="p3.m1" class="ltx_Math" alttext="n\times n" display="inline"><mrow><mi>n</mi><mo lspace="0.222em" rspace="0.222em">×</mo><mi>n</mi></mrow></math> tem-se que a esparsidade é</p>
-<table id="Ch1.E67" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx32" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E67"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E67.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}e:=\frac{n_{\text{nulos}}}{n^{2}}\times 100\%." display="block"><mrow><mrow><mi mathcolor="#0F77B7">e</mi><mo lspace="0.278em" mathcolor="#0F77B7" rspace="0.278em">:=</mo><mrow><mfrac mathcolor="#0F77B7"><msub><mi mathcolor="#0F77B7">n</mi><mtext mathcolor="#0F77B7">nulos</mtext></msub><msup><mi mathcolor="#0F77B7">n</mi><mn mathcolor="#0F77B7">2</mn></msup></mfrac><mo lspace="0.222em" mathcolor="#0F77B7" rspace="0.222em">×</mo><mrow><mn mathcolor="#0F77B7">100</mn><mo mathcolor="#0F77B7">%</mo></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0F77B7">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E67.m1" class="ltx_Math" alttext="\displaystyle\boxed{e:=\frac{n_{\text{nulos}}}{n^{2}}\times 100\%}." display="inline"><mrow><menclose notation="box"><mrow><mi>e</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mstyle displaystyle="true"><mfrac><msub><mi>n</mi><mtext>nulos</mtext></msub><msup><mi>n</mi><mn>2</mn></msup></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">×</mo><mrow><mn>100</mn><mo>%</mo></mrow></mrow></mrow></menclose><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.67)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Por exemplo, a matriz identidade de tamanho <math id="p3.m2" class="ltx_Math" alttext="n=100" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>100</mn></mrow></math> tem esparsidade</p>
-<table id="Ch1.E68" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx33" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E68"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E68.m1" class="ltx_Math" alttext="e=\frac{100^{2}-100}{100^{2}}\times 100\%=99\%." display="block"><mrow><mrow><mi>e</mi><mo>=</mo><mrow><mfrac><mrow><msup><mn>100</mn><mn>2</mn></msup><mo>−</mo><mn>100</mn></mrow><msup><mn>100</mn><mn>2</mn></msup></mfrac><mo lspace="0.222em" rspace="0.222em">×</mo><mrow><mn>100</mn><mo>%</mo></mrow></mrow><mo>=</mo><mrow><mn>99</mn><mo>%</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E68.m1" class="ltx_Math" alttext="\displaystyle e=\frac{100^{2}-100}{100^{2}}\times 100\%=99\%." display="inline"><mrow><mrow><mi>e</mi><mo>=</mo><mrow><mstyle displaystyle="true"><mfrac><mrow><msup><mn>100</mn><mn>2</mn></msup><mo>−</mo><mn>100</mn></mrow><msup><mn>100</mn><mn>2</mn></msup></mfrac></mstyle><mo lspace="0.222em" rspace="0.222em">×</mo><mrow><mn>100</mn><mo>%</mo></mrow></mrow><mo>=</mo><mrow><mn>99</mn><mo>%</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.68)</span></td>
 </tr></tbody>
@@ -210,14 +209,14 @@ rgb}{0.05859375,0.46484375,0.71875}e:=\frac{n_{\text{nulos}}}{n^{2}}\times 100\%
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">O seguinte código armazena a matriz</p>
-<table id="Ch1.E69" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx34" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E69"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E69.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E69.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
 0.&amp;3.&amp;2.&amp;-1.\\
 0&amp;-1&amp;-2.&amp;0.\\
-0&amp;0&amp;0&amp;1.\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+0&amp;0&amp;0&amp;1.\end{bmatrix}" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.69)</span></td>
 </tr></tbody>
@@ -254,8 +253,10 @@ rgb}{0.05859375,0.46484375,0.71875}e:=\frac{n_{\text{nulos}}}{n^{2}}\times 100\%
 </div>
 </div>
 </div>
+<div class="ltx_logical-block">
 <div id="SS1.SSSx1.p2" class="ltx_para">
 <p class="ltx_p ltx_align_left"><span class="ltx_text" style="background-color:#FFFF00;">Vantagens do formato COO</span></p>
+</div>
 </div>
 <div id="SS1.SSSx1.p3" class="ltx_para">
 <ul id="I2" class="ltx_itemize">
@@ -620,14 +621,14 @@ rgb}{0.05859375,0.46484375,0.71875}e:=\frac{n_{\text{nulos}}}{n^{2}}\times 100\%
 </h6>
 <div id="Thmex3.p1" class="ltx_para">
 <p class="ltx_p">No Exemplo <a href="#ex:coo" title="Exemplo 1.2.1. ‣ Formato COO ‣ 1.2.1 Esquemas de armazenamento ‣ 1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.1</span></a>, alocamos a matriz</p>
-<table id="Ch1.E70" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx35" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E70"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E70.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E70.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
 0.&amp;3.&amp;2.&amp;-1.\\
 0&amp;-1&amp;-2.&amp;0.\\
-0&amp;0&amp;0&amp;1.\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+0&amp;0&amp;0&amp;1.\end{bmatrix}" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.70)</span></td>
 </tr></tbody>
@@ -743,14 +744,14 @@ p = [0 2 5 7 8]
 </h6>
 <div id="Thmex4.p1" class="ltx_para">
 <p class="ltx_p">No Exemplo <a href="#ex:coo" title="Exemplo 1.2.1. ‣ Formato COO ‣ 1.2.1 Esquemas de armazenamento ‣ 1.2 Matrizes esparsas ‣ Capítulo 1 Sistemas Lineares ‣ Matemática numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.2.1</span></a>, alocamos a matriz</p>
-<table id="Ch1.E71" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx36" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E71"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E71.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E71.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2.&amp;0.&amp;1.&amp;0.\\
 0.&amp;3.&amp;2.&amp;-1.\\
 0&amp;-1&amp;-2.&amp;0.\\
-0&amp;0&amp;0&amp;1.\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+0&amp;0&amp;0&amp;1.\end{bmatrix}" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>3</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>2</mn><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>1</mn></mrow><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mrow><mo>−</mo><mn>2</mn></mrow><mo lspace="0em">.</mo></mrow></mtd><mtd><mrow><mn>0</mn><mo lspace="0em">.</mo></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mn>1</mn><mo lspace="0em">.</mo></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.71)</span></td>
 </tr></tbody>
@@ -864,7 +865,7 @@ p = [0 1 3 6 8]
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Considere o seguinte problema de valor de contorno</p>
-<table id="Ch5.S2.EGx14" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx37" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E72"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -916,14 +917,14 @@ p = [0 1 3 6 8]
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Armazene a matriz</p>
-<table id="Ch1.E75" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx38" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E75"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E75.m1" class="ltx_Math" alttext="A=\begin{bmatrix}2&amp;0&amp;-1&amp;0\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E75.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;0&amp;-1&amp;0\\
 0&amp;3&amp;0&amp;-2\\
 0&amp;-1&amp;-2&amp;0\\
-1&amp;0&amp;0&amp;1\end{bmatrix}" display="block"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" displaystyle="true" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
+1&amp;0&amp;0&amp;1\end{bmatrix}" display="inline"><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>3</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mrow><mo>−</mo><mn>2</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mn>1</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.75)</span></td>
 </tr></tbody>
@@ -1011,7 +1012,7 @@ p = [0 1 3 6 8]
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Considere o seguinte sistema linear</p>
-<table id="Ch5.S2.EGx15" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx39" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E76"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1047,7 +1048,7 @@ p = [0 1 3 6 8]
 </h6>
 <div id="Thmrespx9.p1" class="ltx_para">
 <p class="ltx_p">Dica: verifique seu resultados com o método <a href="https://docs.scipy.org/doc/scipy/reference/generated/scipy.sparse.linalg.splu.html" title="" class="ltx_ref ltx_href ltx_font_typewriter">scipy.sparse.linalg.splu</a>.</p>
-<table id="Ch5.S2.EGx16" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx40" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E80"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -1088,12 +1089,12 @@ p = [0 1 3 6 8]
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Considere a seguinte equação diferencial parcial de difusão-advecção com condições de contorno de Dirichlet homogêneas</p>
-<table id="Ch1.E84" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx41" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E84"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E84.m1" class="ltx_Math" alttext="-\Delta u+\bm{a}\cdot\nabla u=8(x-x^{2})(y-y^{2}),\leavevmode\nobreak\ (x,y)%
-\in(0,1)^{2}." display="block"><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>+</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>8</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E84.m1" class="ltx_Math" alttext="\displaystyle-\Delta u+\bm{a}\cdot\nabla u=8(x-x^{2})(y-y^{2}),\leavevmode%
+\nobreak\ (x,y)\in(0,1)^{2}." display="inline"><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mi mathvariant="normal">Δ</mi><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>+</mo><mrow><mi>𝒂</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mrow><mo rspace="0.167em">∇</mo><mi>u</mi></mrow></mrow></mrow><mo>=</mo><mrow><mn>8</mn><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>x</mi><mo>−</mo><msup><mi>x</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>y</mi><mo>−</mo><msup><mi>y</mi><mn>2</mn></msup></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mo stretchy="false">(</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow><mo>∈</mo><msup><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow><mn>2</mn></msup></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.84)</span></td>
 </tr></tbody>
@@ -1170,7 +1171,7 @@ p = [0 1 3 6 8]
 <div class="ltx_align_center">
 <a href="cap_sislin_sec_matriz_banda.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.1 </span>Matrizes banda</span></a><a href="bib.html" title="In Matemática numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_sislin_sec_metiterbas.html" title="In Capítulo 1 Sistemas Lineares ‣ Matemática numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.3 </span>Métodos iterativos básicos</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Thu Oct 29 12:44:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Tue Nov  3 14:05:21 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

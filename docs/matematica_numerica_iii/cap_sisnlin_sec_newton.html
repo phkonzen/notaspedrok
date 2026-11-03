@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 2.1 Método de Newton ‣ Capítulo 2 Sistemas não-lineares ‣ Matemática numérica III</title>
-<!--Generated on Thu Oct 29 12:44:22 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 29 de outubro de 2026.-->
+<!--Generated on Tue Nov  3 14:05:21 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 3 de novembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -129,12 +129,11 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte problema: <span class="ltx_text" style="background-color:#FFFF00;">dada a função <math id="p1.m1" class="ltx_Math" alttext="F:D\subset\mathbb{R}^{n}\to\mathbb{R}^{n}" display="inline"><mrow><mi mathbackground="#FFFF00">F</mi><mo lspace="0.278em" mathbackground="#FFFF00" rspace="0.278em">:</mo><mrow><mi mathbackground="#FFFF00">D</mi><mo mathbackground="#FFFF00">⊂</mo><msup><mi mathbackground="#FFFF00">ℝ</mi><mi mathbackground="#FFFF00">n</mi></msup><mo mathbackground="#FFFF00" stretchy="false">→</mo><msup><mi mathbackground="#FFFF00">ℝ</mi><mi mathbackground="#FFFF00">n</mi></msup></mrow></mrow></math> encontrar <math id="p1.m2" class="ltx_Math" alttext="\bm{x}^{*}\in\mathbb{R}^{n}" display="inline"><mrow><msup><mi mathbackground="#FFFF00">𝒙</mi><mo mathbackground="#FFFF00">∗</mo></msup><mo mathbackground="#FFFF00">∈</mo><msup><mi mathbackground="#FFFF00">ℝ</mi><mi mathbackground="#FFFF00">n</mi></msup></mrow></math> tal que</span></p>
-<table id="Ch2.E1" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx96" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch2.E1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E1.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}F(\bm{x}^{*})=0." display="block"><mrow><mrow><mrow><mi mathcolor="#0F77B7">F</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><msup><mi mathcolor="#0F77B7">𝒙</mi><mo mathcolor="#0F77B7">∗</mo></msup><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mn mathcolor="#0F77B7">0</mn></mrow><mo lspace="0em" mathcolor="#0F77B7">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E1.m1" class="ltx_Math" alttext="\displaystyle\boxed{F(\bm{x}^{*})=0}." display="inline"><mrow><menclose notation="box"><mrow><mrow><mi>F</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msup><mi>𝒙</mi><mo>∗</mo></msup><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></menclose><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.1)</span></td>
 </tr></tbody>
@@ -143,13 +142,12 @@ rgb}{0.05859375,0.46484375,0.71875}F(\bm{x}^{*})=0." display="block"><mrow><mrow
 </div>
 <div id="p2" class="ltx_para">
 <p class="ltx_p">Vamos, denotar por <math id="p2.m1" class="ltx_Math" alttext="J_{F}(\bm{x})=[\jmath_{i,j}(\bm{x})]_{i,j=1}^{n,n}" display="inline"><mrow><mrow><msub><mi>J</mi><mi>F</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msubsup><mrow><mo stretchy="false">[</mo><mrow><msub><mi>ȷ</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow><mo stretchy="false">]</mo></mrow><mrow><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow><mo>=</mo><mn>1</mn></mrow><mrow><mi>n</mi><mo>,</mo><mi>n</mi></mrow></msubsup></mrow></math> a <span class="ltx_text ltx_font_bold">matriz jacobiana<span id="Ch2.footnote1" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">1</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">1</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">1</span></span><span class="ltx_text ltx_font_medium">Carl Gustav Jakob Jacobi, 1804 - 1851, matemático alemão. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Carl_Gustav_Jakob_Jacobi" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Carl Gustav Jakob Jacobi</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> da F com</p>
-<table id="Ch2.E2" class="ltx_equation ltx_eqn_table">
+<table id="Ch5.S2.EGx97" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch2.E2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E2.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}\jmath_{i,j}(\bm{x})=\frac{\partial f_{i}(%
-\bm{x})}{\partial x_{j}}," display="block"><mrow><mrow><mrow><msub><mi mathcolor="#0F77B7">ȷ</mi><mrow><mi mathcolor="#0F77B7">i</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">j</mi></mrow></msub><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">𝒙</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mfrac mathcolor="#0F77B7"><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><mrow><msub><mi mathcolor="#0F77B7">f</mi><mi mathcolor="#0F77B7">i</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">𝒙</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow><mrow><mo mathcolor="#0F77B7" rspace="0em">∂</mo><msub><mi mathcolor="#0F77B7">x</mi><mi mathcolor="#0F77B7">j</mi></msub></mrow></mfrac></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E2.m1" class="ltx_Math" alttext="\displaystyle\boxed{\jmath_{i,j}(\bm{x})=\frac{\partial f_{i}(\bm{x})}{%
+\partial x_{j}}}," display="inline"><mrow><menclose notation="box"><mrow><mrow><msub><mi>ȷ</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><mo rspace="0em">∂</mo><mrow><msub><mi>f</mi><mi>i</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>𝒙</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mrow><mo rspace="0em">∂</mo><msub><mi>x</mi><mi>j</mi></msub></mrow></mfrac></mstyle></mrow></menclose><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.2)</span></td>
 </tr></tbody>
@@ -158,7 +156,7 @@ rgb}{0.05859375,0.46484375,0.71875}\jmath_{i,j}(\bm{x})=\frac{\partial f_{i}(%
 </div>
 <div id="p3" class="ltx_para">
 <p class="ltx_p">A <span class="ltx_text" style="background-color:#FFFF00;">iteração básica do <span class="ltx_text ltx_font_bold">método de Newton<span id="Ch2.footnote2" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">2</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">2</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">2</span></span><span class="ltx_text ltx_font_medium">Isaac Newton, 1642 - 1727, matemático, físico, astrônomo, teólogo e autor inglês. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Isaac_Newton" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Isaac Newton</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> para sistemas de equações consiste em</span>: dada uma aproximação inicial <math id="p3.m1" class="ltx_Math" alttext="\bm{x}^{(0)}\in\mathbb{R}^{n}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>∈</mo><msup><mi>ℝ</mi><mi>n</mi></msup></mrow></math>,</p>
-<table id="Ch5.S2.EGx37" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx98" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E3"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -168,9 +166,8 @@ rgb}{0.05859375,0.46484375,0.71875}\jmath_{i,j}(\bm{x})=\frac{\partial f_{i}(%
 </tr></tbody>
 <tbody id="Ch2.E4"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E4.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0.05859375,0.46484375,0.71875}%
-\definecolor[named]{pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}J_{F}%
-\left(\bm{x}^{(k)}\right)\bm{\delta}^{(k)}=-F\left(\bm{x}^{(k)}\right)" display="inline"><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><mrow><msub><mi mathcolor="#0F77B7">J</mi><mi mathcolor="#0F77B7">F</mi></msub><mo>⁢</mo><mrow><mo mathcolor="#0F77B7">(</mo><msup><mi mathcolor="#0F77B7">𝒙</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">)</mo></mrow><mo>⁢</mo><msup><mi mathcolor="#0F77B7">𝜹</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mo mathcolor="#0F77B7">−</mo><mrow><mi mathcolor="#0F77B7">F</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7">(</mo><msup><mi mathcolor="#0F77B7">𝒙</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E4.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\boxed{J_{F}\left(\bm{x}^{(k)}\right)\bm{\delta}^{(k)%
+}=-F\left(\bm{x}^{(k)}\right)}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><menclose notation="box"><mrow><mrow><msub><mi>J</mi><mi>F</mi></msub><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow><mo>⁢</mo><msup><mi>𝜹</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mo>=</mo><mrow><mo>−</mo><mrow><mi>F</mi><mo>⁢</mo><mrow><mo>(</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>)</mo></mrow></mrow></mrow></mrow></menclose></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.4)</span></td>
 </tr></tbody>
@@ -182,9 +179,7 @@ rgb}{0.05859375,0.46484375,0.71875}\jmath_{i,j}(\bm{x})=\frac{\partial f_{i}(%
 </tr></tbody>
 <tbody id="Ch2.E6"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E6.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\color[rgb]{0.05859375,0.46484375,0.71875}%
-\definecolor[named]{pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{x}^%
-{(k+1)}=\bm{x}^{(k)}+\bm{\delta}^{(k)}" display="inline"><mrow><mrow><mrow></mrow><mspace width="1em"></mspace><msup><mi mathcolor="#0F77B7">𝒙</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7">+</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0F77B7">=</mo><mrow><msup><mi mathcolor="#0F77B7">𝒙</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">+</mo><msup><mi mathcolor="#0F77B7">𝜹</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E6.m1" class="ltx_Math" alttext="\displaystyle\text{}\quad\boxed{\bm{x}^{(k+1)}=\bm{x}^{(k)}+\bm{\delta}^{(k)}}" display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><menclose notation="box"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><msup><mi>𝜹</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></menclose></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.6)</span></td>
 </tr></tbody>
@@ -304,7 +299,7 @@ rgb}{0.05859375,0.46484375,0.71875}\jmath_{i,j}(\bm{x})=\frac{\partial f_{i}(%
 </div>
 <div id="Thmex1.p2" class="ltx_para">
 <p class="ltx_p">Aplicando o <span class="ltx_text ltx_font_bold">método de Rothe<span id="Ch2.footnote6" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">6</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">6</sup><span class="ltx_tag ltx_tag_note"><span class="ltx_text ltx_font_medium">6</span></span><span class="ltx_text ltx_font_medium">Erich Hans Rothe, 1895 - 1988, matemático alemão. Fonte: </span><a href="https://pt.wikipedia.org/wiki/Erich_Rothe" title="" class="ltx_ref ltx_href ltx_font_medium">Wikipédia: Erich Rothe</a><span class="ltx_text ltx_font_medium">.</span></span></span></span></span> com aproximação de Euler<span id="Ch2.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note">7</span>Leonhard Paul Euler, 1707-1783, matemático e físico suíço. Fonte: <a href="https://pt.wikipedia.org/wiki/Leonhard_Euler" title="" class="ltx_ref ltx_href">Wikipédia: Leonhard Euler</a>.</span></span></span> implícita, obtemos</p>
-<table id="Ch5.S2.EGx38" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx99" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.Ex1"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -320,7 +315,7 @@ rgb}{0.05859375,0.46484375,0.71875}\jmath_{i,j}(\bm{x})=\frac{\partial f_{i}(%
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmex1.p2.m1" class="ltx_Math" alttext="h_{t}&gt;0" display="inline"><mrow><msub><mi>h</mi><mi>t</mi></msub><mo>&gt;</mo><mn>0</mn></mrow></math> é o passo no tempo. Agora, aplicamos diferenças finitas para obter</p>
-<table id="Ch5.S2.EGx39" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx100" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.Ex2"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -345,7 +340,7 @@ u(t+h_{t},x_{i+1})}{h_{x}^{2}}," display="inline"><mrow><mrow></mrow><mspace wid
 </div>
 <div id="Thmex1.p3" class="ltx_para">
 <p class="ltx_p">Rearranjando os termos e denotando <math id="Thmex1.p3.m1" class="ltx_Math" alttext="u^{(k)}_{i}\approx u(t_{k},x_{i})" display="inline"><mrow><msubsup><mi>u</mi><mi>i</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msubsup><mo>≈</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>t</mi><mi>k</mi></msub><mo>,</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, <math id="Thmex1.p3.m2" class="ltx_Math" alttext="t_{k}=(k-1)h" display="inline"><mrow><msub><mi>t</mi><mi>k</mi></msub><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>h</mi></mrow></mrow></math>, obtemos o seguinte sistema de equações não-lineares, que consiste no <span class="ltx_text ltx_font_bold">problema discreto</span> associado: para cada <math id="Thmex1.p3.m3" class="ltx_Math" alttext="k=0,1,2,\ldots" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1,2</mn><mo>,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>, encontrar <math id="Thmex1.p3.m4" class="ltx_Math" alttext="u^{(k+1)}_{i}" display="inline"><msubsup><mi>u</mi><mi>i</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msubsup></math>, <math id="Thmex1.p3.m5" class="ltx_Math" alttext="i=1,\dotsc,n_{x}" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><msub><mi>n</mi><mi>x</mi></msub></mrow></mrow></math>, tais que</p>
-<table id="Ch5.S2.EGx40" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx101" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E12"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -393,7 +388,7 @@ u(t+h_{t},x_{i+1})}{h_{x}^{2}}," display="inline"><mrow><mrow></mrow><mspace wid
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmex1.p4.m3" class="ltx_Math" alttext="w_{i}=u^{(k+1)}_{i}" display="inline"><mrow><msub><mi>w</mi><mi>i</mi></msub><mo>=</mo><msubsup><mi>u</mi><mi>i</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msubsup></mrow></math>, <math id="Thmex1.p4.m4" class="ltx_Math" alttext="w_{i}^{(0)}=u^{(k)}_{i}" display="inline"><mrow><msubsup><mi>w</mi><mi>i</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msubsup><mo>=</mo><msubsup><mi>u</mi><mi>i</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msubsup></mrow></math> e</p>
-<table id="Ch5.S2.EGx41" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx102" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E16"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -422,7 +417,7 @@ u(t+h_{t},x_{i+1})}{h_{x}^{2}}," display="inline"><mrow><mrow></mrow><mspace wid
 </tr></tbody>
 </table>
 <p class="ltx_p">A matriz jacobiana associada <math id="Thmex1.p4.m5" class="ltx_Math" alttext="J=[\jmath_{i,j}]_{i,j}^{n_{x},n_{x}}" display="inline"><mrow><mi>J</mi><mo>=</mo><msubsup><mrow><mo stretchy="false">[</mo><msub><mi>ȷ</mi><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow></msub><mo stretchy="false">]</mo></mrow><mrow><mi>i</mi><mo>,</mo><mi>j</mi></mrow><mrow><msub><mi>n</mi><mi>x</mi></msub><mo>,</mo><msub><mi>n</mi><mi>x</mi></msub></mrow></msubsup></mrow></math> contém</p>
-<table id="Ch5.S2.EGx42" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx103" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E19"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -644,7 +639,7 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Faça uma implementação pelo método de diferenças finitas com método de Euler implícito para resolver o seguinte problema de Burgers:</p>
-<table id="Ch5.S2.EGx43" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx104" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E27"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -695,7 +690,7 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Faça uma implementação pelo método de diferenças finitas com método de Euler implícito para resolver o seguinte problema de Burgers:</p>
-<table id="Ch5.S2.EGx44" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx105" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E31"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -738,7 +733,7 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Faça uma implementação pelo método de diferenças finitas com método de Euler implícito para resolver o seguinte problema de Burgers:</p>
-<table id="Ch5.S2.EGx45" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch5.S2.EGx106" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch2.E35"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
@@ -760,7 +755,7 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.37)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Teste seu código para <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\nu=1.,0.1,0.01,0.001,0.0001" display="inline"><mrow><mi>ν</mi><mo>=</mo><mn>1.,0.1,0.01,0.001,0.0001</mn></mrow></math> e <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="t_{f}=1.0" display="inline"><mrow><msub><mi>t</mi><mi>f</mi></msub><mo>=</mo><mn>1.0</mn></mrow></math>. Dica: é conhecida a seguinte solução analítica para <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="\nu=1" display="inline"><mrow><mi>ν</mi><mo>=</mo><mn>1</mn></mrow></math> <cite class="ltx_cite ltx_citemacro_cite">[<span class="ltx_ref ltx_missing_citation ltx_ref_self">Benton1972</span>]</cite>:</p>
+<p class="ltx_p">Teste seu código para <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="\nu=1.,0.1,0.01,0.001,0.0001" display="inline"><mrow><mi>ν</mi><mo>=</mo><mn>1.,0.1,0.01,0.001,0.0001</mn></mrow></math> e <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="t_{f}=1.0" display="inline"><mrow><msub><mi>t</mi><mi>f</mi></msub><mo>=</mo><mn>1.0</mn></mrow></math>. Dica: é conhecida a seguinte solução analítica para <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="\nu=1" display="inline"><mrow><mi>ν</mi><mo>=</mo><mn>1</mn></mrow></math> <cite class="ltx_cite ltx_citemacro_cite">[<a href="bib.html#bib3" title="A table of solutions of the one-dimensional burgers equation" class="ltx_ref">3</a>]</cite>:</p>
 <table id="Ch2.E38" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
@@ -782,6 +777,46 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 </table>
 </div>
 </div>
+<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.4.<span class="ltx_text ltx_font_medium" style="background-color:#FFFF00;">(Formação de padrões biológicos)</span>
+<br class="ltx_break">
+</h6>
+<div id="Thmexer4.p1" class="ltx_para">
+<p class="ltx_p">Faça uma implementação pelo método de diferenças finitas com método de Euler implícito para resolver o seguinte sistema de equações de difusão-reação:</p>
+<table id="Ch5.S2.EGx107" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E40"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E40.m1" class="ltx_Math" alttext="\displaystyle u_{t}=D_{u}(u_{xx}+u_{yy})+R_{u}(u,v)," display="inline"><mrow><mrow><msub><mi>u</mi><mi>t</mi></msub><mo>=</mo><mrow><mrow><msub><mi>D</mi><mi>u</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>u</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>+</mo><msub><mi>u</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>R</mi><mi>u</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.40)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E41"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E41.m1" class="ltx_Math" alttext="\displaystyle v_{t}=D_{v}(v_{xx}+v_{yy})+R_{v}(u,v)," display="inline"><mrow><mrow><msub><mi>v</mi><mi>t</mi></msub><mo>=</mo><mrow><mrow><msub><mi>D</mi><mi>v</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><msub><mi>v</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>+</mo><msub><mi>v</mi><mrow><mi>y</mi><mo>⁢</mo><mi>y</mi></mrow></msub></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>R</mi><mi>v</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.41)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com condições de contorno de Neumann<span id="Ch2.footnote8" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">8</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">8</sup><span class="ltx_tag ltx_tag_note">8</span>Carl Gottfried Neumann, 1832 - 1925, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Carl_Neumann" title="" class="ltx_ref ltx_href">Wikipédia: Carl Neumann</a>.</span></span></span> homogêneas em um domínio retangular <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="[-1,1]^{2}" display="inline"><msup><mrow><mo stretchy="false">[</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">]</mo></mrow><mn>2</mn></msup></math> e condições iniciais <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="u(0,x,y)=\mathcal{N}(0,1)" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="v(0,x,y)=\mathcal{N}(0,1)" display="inline"><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>x</mi><mo>,</mo><mi>y</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, onde <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="\mathcal{N}(0,1)" display="inline"><mrow><mi class="ltx_font_mathcaligraphic">𝒩</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></math> é uma amostra de uma distribuição normal com média <math id="Thmexer4.p1.m5" class="ltx_Math" alttext="0" display="inline"><mn>0</mn></math> e desvio padrão <math id="Thmexer4.p1.m6" class="ltx_Math" alttext="1" display="inline"><mn>1</mn></math>. Teste seu código para <math id="Thmexer4.p1.m7" class="ltx_Math" alttext="D_{u}=0.005" display="inline"><mrow><msub><mi>D</mi><mi>u</mi></msub><mo>=</mo><mn>0.005</mn></mrow></math>, <math id="Thmexer4.p1.m8" class="ltx_Math" alttext="D_{v}=0.001" display="inline"><mrow><msub><mi>D</mi><mi>v</mi></msub><mo>=</mo><mn>0.001</mn></mrow></math> e assumindo as funções de reação de Fitzhugh-Nagumo</p>
+<table id="Ch5.S2.EGx108" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch2.E42"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E42.m1" class="ltx_Math" alttext="\displaystyle R_{u}(u,v)=u-u^{3}-k-v," display="inline"><mrow><mrow><mrow><msub><mi>R</mi><mi>u</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>−</mo><msup><mi>u</mi><mn>3</mn></msup><mo>−</mo><mi>k</mi><mo>−</mo><mi>v</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.42)</span></td>
+</tr></tbody>
+<tbody id="Ch2.E43"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch2.E43.m1" class="ltx_Math" alttext="\displaystyle R_{v}(u,v)=u-v," display="inline"><mrow><mrow><mrow><msub><mi>R</mi><mi>v</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>−</mo><mi>v</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.43)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">com <math id="Thmexer4.p1.m9" class="ltx_Math" alttext="k=0.005" display="inline"><mrow><mi>k</mi><mo>=</mo><mn>0.005</mn></mrow></math>.</p>
+</div>
+</div>
 </section>
 <section id="cap_otimizacao_sec_sisnlin_ssec_tipoNewton" class="ltx_subsection">
 <h2 class="ltx_title ltx_title_subsection">
@@ -791,7 +826,7 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 <p class="ltx_p"><span class="badge text-bg-warning">Em revisão</span></p>
 </div>
 <div id="SS1.p2" class="ltx_para">
-<p class="ltx_p">Existem várias modificações do método de Newton<span id="Ch2.footnote8" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">8</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">8</sup><span class="ltx_tag ltx_tag_note">8</span>Isaac Newton, 1642 - 1727, matemático, físico, astrônomo, teólogo e autor inglês. Fonte: <a href="https://pt.wikipedia.org/wiki/Isaac_Newton" title="" class="ltx_ref ltx_href">Wikipédia: Isaac Newton</a>.</span></span></span> que buscam reduzir o custo computacional. Há estratégias para simplificar as computações da matriz jacobiana<span id="Ch2.footnote9" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">9</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">9</sup><span class="ltx_tag ltx_tag_note">9</span>Carl Gustav Jakob Jacobi, 1804 - 1851, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Carl_Gustav_Jakob_Jacobi" title="" class="ltx_ref ltx_href">Wikipédia: Carl Gustav Jakob Jacobi</a>.</span></span></span> e para reduzir o custo nas computações das atualizações de Newton.</p>
+<p class="ltx_p">Existem várias modificações do método de Newton<span id="Ch2.footnote9" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">9</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">9</sup><span class="ltx_tag ltx_tag_note">9</span>Isaac Newton, 1642 - 1727, matemático, físico, astrônomo, teólogo e autor inglês. Fonte: <a href="https://pt.wikipedia.org/wiki/Isaac_Newton" title="" class="ltx_ref ltx_href">Wikipédia: Isaac Newton</a>.</span></span></span> que buscam reduzir o custo computacional. Há estratégias para simplificar as computações da matriz jacobiana<span id="Ch2.footnote10" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">10</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">10</sup><span class="ltx_tag ltx_tag_note">10</span>Carl Gustav Jakob Jacobi, 1804 - 1851, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Carl_Gustav_Jakob_Jacobi" title="" class="ltx_ref ltx_href">Wikipédia: Carl Gustav Jakob Jacobi</a>.</span></span></span> e para reduzir o custo nas computações das atualizações de Newton.</p>
 </div>
 <section id="SS1.SSSx1" class="ltx_subsubsection">
 <h3 class="ltx_title ltx_title_subsubsection">Atualização cíclica da jacobiana</h3>
@@ -801,44 +836,44 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 </div>
 <div id="SS1.SSSx1.p2" class="ltx_para">
 <p class="ltx_p">Geralmente, ao simplificarmos a matriz jacobina <math id="SS1.SSSx1.p2.m1" class="ltx_Math" alttext="J_{F}" display="inline"><msub><mi>J</mi><mi>F</mi></msub></math> ou aproximarmos a atualização de Newton <math id="SS1.SSSx1.p2.m2" class="ltx_Math" alttext="\delta^{(k)}" display="inline"><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math>, perdemos a convergência quadrática do método (consulte a Observação <a href="#cap_otimizacao_sec_newton:obs:convNewton" title="Observação 2.1.1.(Convergência) ‣ 2.1 Método de Newton ‣ Capítulo 2 Sistemas não-lineares ‣ Matemática numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.1</span></a>). A ideia é, então, buscar uma convergência pelo menos super-linear, i.e.</p>
-<table id="Ch2.E40" class="ltx_equation ltx_eqn_table">
+<table id="Ch2.E44" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E40.m1" class="ltx_Math" alttext="\|e^{(k+1)}\|\approx\rho_{k}\|e^{(k)}\|," display="block"><mrow><mrow><mrow><mo stretchy="false">‖</mo><msup><mi>e</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mo>≈</mo><mrow><msub><mi>ρ</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><msup><mi>e</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E44.m1" class="ltx_Math" alttext="\|e^{(k+1)}\|\approx\rho_{k}\|e^{(k)}\|," display="block"><mrow><mrow><mrow><mo stretchy="false">‖</mo><msup><mi>e</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mo>≈</mo><mrow><msub><mi>ρ</mi><mi>k</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><msup><mi>e</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.40)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.44)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">com <math id="SS1.SSSx1.p2.m3" class="ltx_Math" alttext="\rho_{k}\to 0" display="inline"><mrow><msub><mi>ρ</mi><mi>k</mi></msub><mo stretchy="false">→</mo><mn>0</mn></mrow></math> quando <math id="SS1.SSSx1.p2.m4" class="ltx_Math" alttext="k\to\infty" display="inline"><mrow><mi>k</mi><mo stretchy="false">→</mo><mi mathvariant="normal">∞</mi></mrow></math>. Aqui, <math id="SS1.SSSx1.p2.m5" class="ltx_Math" alttext="e^{(k)}:=x^{*}-x^{(k)}" display="inline"><mrow><msup><mi>e</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><msup><mi>x</mi><mo>∗</mo></msup><mo>−</mo><msup><mi>x</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></math>. Se a convergência é superlinear, então podemos usar a seguinte aproximação</p>
-<table id="Ch2.E41" class="ltx_equation ltx_eqn_table">
+<table id="Ch2.E45" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E41.m1" class="ltx_Math" alttext="\rho_{k}\approx\frac{\|\delta^{(k)}\|}{\|\delta^{(k-1)}\|}" display="block"><mrow><msub><mi>ρ</mi><mi>k</mi></msub><mo>≈</mo><mfrac><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mfrac></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E45.m1" class="ltx_Math" alttext="\rho_{k}\approx\frac{\|\delta^{(k)}\|}{\|\delta^{(k-1)}\|}" display="block"><mrow><msub><mi>ρ</mi><mi>k</mi></msub><mo>≈</mo><mfrac><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mfrac></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.41)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.45)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">ou, equivalentemente,</p>
-<table id="Ch2.E42" class="ltx_equation ltx_eqn_table">
+<table id="Ch2.E46" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E42.m1" class="ltx_Math" alttext="\rho_{k}\approx\left(\frac{\|\delta^{(k)}\|}{\|\delta^{(0)}\|}\right)^{\frac{1%
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E46.m1" class="ltx_Math" alttext="\rho_{k}\approx\left(\frac{\|\delta^{(k)}\|}{\|\delta^{(0)}\|}\right)^{\frac{1%
 }{k}}" display="block"><mrow><msub><mi>ρ</mi><mi>k</mi></msub><mo>≈</mo><msup><mrow><mo>(</mo><mfrac><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mfrac><mo>)</mo></mrow><mfrac><mn>1</mn><mi>k</mi></mfrac></msup></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.42)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.46)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Isso mostra que podemos acompanhar a convergência das iterações pelo fator</p>
-<table id="Ch2.E43" class="ltx_equation ltx_eqn_table">
+<table id="Ch2.E47" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E43.m1" class="ltx_Math" alttext="\beta_{k}=\frac{\|\delta^{(k)}\|}{\|\delta^{(0)}\|}." display="block"><mrow><mrow><msub><mi>β</mi><mi>k</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch2.E47.m1" class="ltx_Math" alttext="\beta_{k}=\frac{\|\delta^{(k)}\|}{\|\delta^{(0)}\|}." display="block"><mrow><mrow><msub><mi>β</mi><mi>k</mi></msub><mo>=</mo><mfrac><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow><mrow><mo stretchy="false">‖</mo><msup><mi>δ</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo stretchy="false">‖</mo></mrow></mfrac></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.43)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(2.47)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Ao garantirmos <math id="SS1.SSSx1.p2.m6" class="ltx_Math" alttext="0&lt;\beta_{k}&lt;1" display="inline"><mrow><mn>0</mn><mo>&lt;</mo><msub><mi>β</mi><mi>k</mi></msub><mo>&lt;</mo><mn>1</mn></mrow></math>, deveremos ter uma convergência superlinear.</p>
@@ -906,12 +941,12 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 </li>
 </ol>
 </div>
-<div id="Thmexer4" class="ltx_theorem ltx_theorem_exer">
-<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.4.
+<div id="Thmexer5" class="ltx_theorem ltx_theorem_exer">
+<h6 class="ltx_title ltx_runin ltx_font_bold ltx_title_theorem">E. 2.1.5.
 <br class="ltx_break">
 </h6>
-<div id="Thmexer4.p1" class="ltx_para">
-<p class="ltx_p">Implemente uma versão do método tipo Newton apresentado acima e aplique-o para simular o problema discutido no Exemplo <a href="#ex:burgers" title="Exemplo 2.1.1. ‣ 2.1 Método de Newton ‣ Capítulo 2 Sistemas não-lineares ‣ Matemática numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.1</span></a> para <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="\nu=1.,0.1,0.01,0.001,0.0001" display="inline"><mrow><mi>ν</mi><mo>=</mo><mn>1.,0.1,0.01,0.001,0.0001</mn></mrow></math>. Faça uma implementação com suporte para matrizes esparsas.</p>
+<div id="Thmexer5.p1" class="ltx_para">
+<p class="ltx_p">Implemente uma versão do método tipo Newton apresentado acima e aplique-o para simular o problema discutido no Exemplo <a href="#ex:burgers" title="Exemplo 2.1.1. ‣ 2.1 Método de Newton ‣ Capítulo 2 Sistemas não-lineares ‣ Matemática numérica III" class="ltx_ref"><span class="ltx_text ltx_ref_tag">2.1.1</span></a> para <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="\nu=1.,0.1,0.01,0.001,0.0001" display="inline"><mrow><mi>ν</mi><mo>=</mo><mn>1.,0.1,0.01,0.001,0.0001</mn></mrow></math>. Faça uma implementação com suporte para matrizes esparsas.</p>
 </div>
 </div>
 </section>
@@ -955,7 +990,7 @@ x}}w_{i-1}+\frac{2\nu}{h_{x}^{2}}," display="inline"><mrow><mrow><msub><mi>ȷ</m
 <div class="ltx_align_center">
 <a href="cap_sisnlin.html" title="In Matemática numérica III" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">2 </span>Sistemas não-lineares</span></a><a href="bib.html" title="In Matemática numérica III" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_otimizacao.html" title="In Matemática numérica III" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3 </span>Otimização</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Thu Oct 29 12:44:22 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Tue Nov  3 14:05:21 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
