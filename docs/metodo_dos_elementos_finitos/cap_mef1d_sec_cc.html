@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos</title>
-<!--Generated on Thu Oct 29 12:44:57 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 29 de outubro de 2026.-->
+<!--Generated on Fri Nov  6 08:34:07 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 6 de novembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -130,14 +130,13 @@
 
 <div id="p1" class="ltx_para">
 <p class="ltx_p">Vamos estudar sobre <span class="ltx_text" style="background-color:#FFFF00;">soluções de elementos finitos para o problema modelo</span></p>
-<table id="Ch1.E124" class="ltx_equation ltx_eqn_table">
+<table id="Ch3.S2.EGx44" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E128"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E124.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}-u^{\prime\prime}=f,\quad x\in I=[0,L]," display="block"><mrow><mrow><mrow><mrow><mo mathcolor="#0F77B7">−</mo><msup><mi mathcolor="#0F77B7">u</mi><mo mathcolor="#0F77B7">′′</mo></msup></mrow><mo mathcolor="#0F77B7">=</mo><mi mathcolor="#0F77B7">f</mi></mrow><mo mathcolor="#0F77B7" rspace="1.167em">,</mo><mrow><mi mathcolor="#0F77B7">x</mi><mo mathcolor="#0F77B7">∈</mo><mi mathcolor="#0F77B7">I</mi><mo mathcolor="#0F77B7">=</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">[</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">L</mi><mo mathcolor="#0F77B7" stretchy="false">]</mo></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E128.m1" class="ltx_Math" alttext="\displaystyle\boxed{-u^{\prime\prime}=f,\quad x\in I=[0,L]}," display="inline"><mrow><menclose notation="box"><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">]</mo></mrow></mrow></mrow></menclose><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.124)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.128)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">com diferentes condições de contorno</span>.</p>
@@ -148,79 +147,74 @@ rgb}{0.05859375,0.46484375,0.71875}-u^{\prime\prime}=f,\quad x\in I=[0,L]," disp
 
 <div id="SS1.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte <span class="ltx_text" style="background-color:#FFFF00;">problema com condições de contorno de Dirichlet</span><span id="Ch1.footnote7" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">7</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">7</sup><span class="ltx_tag ltx_tag_note">7</span>Johann Peter Gustav Lejeune Dirichlet, 1805 - 1859, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Johann_Peter_Gustav_Lejeune_Dirichlet" title="" class="ltx_ref ltx_href">Wikipédia: Johann Peter Gustav Lejeune Dirichlet</a>.</span></span></span>: encontrar <math id="SS1.p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> tal que</p>
-<table id="Ch3.S2.EGx25" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx45" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:cc_d_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E125.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=(0,L)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E129.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=(0,L)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.125)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.129)</span></td>
 </tr></tbody>
 <tbody id="eq:cc_d_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E126.m1" class="ltx_Math" alttext="\displaystyle u(0)=u_{0},\quad u(L)=u_{L}," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mi>L</mi></msub></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E130.m1" class="ltx_Math" alttext="\displaystyle u(0)=u_{0},\quad u(L)=u_{L}," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mi>L</mi></msub></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.126)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.130)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">com <math id="SS1.p1.m2" class="ltx_Math" alttext="u_{0},u_{L}\in\mathbb{R}" display="inline"><mrow><mrow><msub><mi>u</mi><mn>0</mn></msub><mo>,</mo><msub><mi>u</mi><mi>L</mi></msub></mrow><mo>∈</mo><mi>ℝ</mi></mrow></math> e <math id="SS1.p1.m3" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> dados.</p>
 </div>
 <div id="SS1.p2" class="ltx_para">
-<p class="ltx_p">Tomando uma função teste <math id="SS1.p2.m1" class="ltx_Math" alttext="v\in\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}V_{0}:=H^{1}_{0}(I):=\{v\in
-H%
-^{1}(I);\leavevmode\nobreak\ v(0)=v(L)=0\}" display="inline"><mrow><mi>v</mi><mo>∈</mo><msub><mi mathcolor="#0F77B7">V</mi><mn mathcolor="#0F77B7">0</mn></msub><mo lspace="0.278em" mathcolor="#0F77B7" rspace="0.278em">:=</mo><mrow><msubsup><mi mathcolor="#0F77B7">H</mi><mn mathcolor="#0F77B7">0</mn><mn mathcolor="#0F77B7">1</mn></msubsup><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">I</mi><mo mathcolor="#0F77B7" rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.278em">:=</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">{</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7">∈</mo><mrow><msup><mi mathcolor="#0F77B7">H</mi><mn mathcolor="#0F77B7">1</mn></msup><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">I</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.667em">;</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">L</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mn mathcolor="#0F77B7">0</mn></mrow></mrow><mo mathcolor="#0F77B7" stretchy="false">}</mo></mrow></mrow></math> e multiplicando-a em (<a href="#eq:cc_d_eq" title="In 1.3.1 Condições de Dirichlet ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.125</span></a>), obtemos</p>
-<table id="Ch1.E127" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E127.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.127)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Aplicando a integração por partes, temos</p>
-<table id="Ch1.E128" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E128.m1" class="ltx_Math" alttext="\int_{I}u^{\prime}v^{\prime}\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.128)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Desta forma, definimos o seguinte <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">problema fraco</span> associado: encontrar <math id="SS1.p2.m2" class="ltx_Math" alttext="u\in\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}V:=\{v\in H^{1}(I);%
-\leavevmode\nobreak\ v(0)=u_{0},\leavevmode\nobreak\ v(L)=v_{L}\}" display="inline"><mrow><mi>u</mi><mo>∈</mo><mi mathcolor="#0F77B7">V</mi><mo lspace="0.278em" mathcolor="#0F77B7" rspace="0.278em">:=</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">{</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7">∈</mo><mrow><msup><mi mathcolor="#0F77B7">H</mi><mn mathcolor="#0F77B7">1</mn></msup><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">I</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.667em">;</mo><mrow><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><msub><mi mathcolor="#0F77B7">u</mi><mn mathcolor="#0F77B7">0</mn></msub></mrow><mo mathcolor="#0F77B7" rspace="0.667em">,</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">L</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><msub><mi mathcolor="#0F77B7">v</mi><mi mathcolor="#0F77B7">L</mi></msub></mrow></mrow></mrow><mo mathcolor="#0F77B7" stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch3.S2.EGx26" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch1.E129"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.E129.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}a(u,v)=L(v),\quad\forall v%
-\in V_{0}," display="inline"><mrow><mrow><mrow><mrow><mi mathcolor="#0F77B7">a</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">u</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mrow><mi mathcolor="#0F77B7">L</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0F77B7" rspace="1.167em">,</mo><mrow><mrow><mo mathcolor="#0F77B7" rspace="0.167em">∀</mo><mi mathcolor="#0F77B7">v</mi></mrow><mo mathcolor="#0F77B7">∈</mo><msub><mi mathcolor="#0F77B7">V</mi><mn mathcolor="#0F77B7">0</mn></msub></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.129)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">onde <math id="SS1.p2.m3" class="ltx_Math" alttext="a(u,v)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma bilinear</p>
-<table id="Ch1.E130" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E130.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.130)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">e <math id="SS1.p2.m4" class="ltx_Math" alttext="L(v)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma linear</p>
+<p class="ltx_p">Tomando uma função teste <math id="SS1.p2.m1" class="ltx_Math" alttext="v\in\boxed{V_{0}:=H^{1}_{0}(I):=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=v(L)%
+=0\}}" display="inline"><mrow><mi>v</mi><mo>∈</mo><menclose notation="box"><mrow><msub><mi>V</mi><mn>0</mn></msub><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><msubsup><mi>H</mi><mn>0</mn><mn>1</mn></msubsup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo rspace="0.278em" stretchy="false">)</mo></mrow></mrow><mo rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></menclose></mrow></math> e multiplicando-a em (<a href="#eq:cc_d_eq" title="In 1.3.1 Condições de Dirichlet ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.129</span></a>), obtemos</p>
 <table id="Ch1.E131" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E131.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E131.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.131)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Aplicando a integração por partes, temos</p>
+<table id="Ch1.E132" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E132.m1" class="ltx_Math" alttext="\int_{I}u^{\prime}v^{\prime}\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.132)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Desta forma, definimos o seguinte <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">problema fraco</span> associado: encontrar <math id="SS1.p2.m2" class="ltx_Math" alttext="u\in\boxed{V:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=u_{0},\leavevmode%
+\nobreak\ v(L)=v_{L}\}}" display="inline"><mrow><mi>u</mi><mo>∈</mo><menclose notation="box"><mrow><mi>V</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>v</mi><mi>L</mi></msub></mrow></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></menclose></mrow></math> tal que</p>
+<table id="Ch3.S2.EGx46" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E133"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E133.m1" class="ltx_Math" alttext="\displaystyle\boxed{a(u,v)=L(v),\quad\forall v\in V_{0}}," display="inline"><mrow><menclose notation="box"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><msub><mi>V</mi><mn>0</mn></msub></mrow></mrow></menclose><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.133)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS1.p2.m3" class="ltx_Math" alttext="a(u,v)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma bilinear</p>
+<table id="Ch1.E134" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E134.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.134)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e <math id="SS1.p2.m4" class="ltx_Math" alttext="L(v)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma linear</p>
+<table id="Ch1.E135" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E135.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.135)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -230,19 +224,19 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}a(u,v)=L(v),\quad\forall v%
 </h6>
 <div id="Thmex1.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o problema</p>
-<table id="Ch3.S2.EGx27" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx47" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:ex_cc_d_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E132.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E136.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.132)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.136)</span></td>
 </tr></tbody>
 <tbody id="eq:ex_cc_d_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E133.m1" class="ltx_Math" alttext="\displaystyle u(0)=1/2,\quad u(1)=1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E137.m1" class="ltx_Math" alttext="\displaystyle u(0)=1/2,\quad u(1)=1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.133)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.137)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Sua solução analítica é <math id="Thmex1.p1.m1" class="ltx_Math" alttext="u(x)=-x^{2}/2+x+1/2" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></mrow><mo>+</mo><mi>x</mi><mo>+</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow></mrow></math>.</p>
@@ -250,42 +244,42 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}a(u,v)=L(v),\quad\forall v%
 <div id="Thmex1.p2" class="ltx_para">
 <p class="ltx_p">Para obtermos uma aproximação de elementos finitos, consideramos o seguinte problema fraco: encontrar <math id="Thmex1.p2.m1" class="ltx_Math" alttext="u\in V:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=1/2,\leavevmode\nobreak\ v(1%
 )=1\}" display="inline"><mrow><mi>u</mi><mo>∈</mo><mi>V</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch1.E134" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E138" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E134.m1" class="ltx_Math" alttext="a(u,v)=L(v)," display="block"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E138.m1" class="ltx_Math" alttext="a(u,v)=L(v)," display="block"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.134)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.138)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para todo <math id="Thmex1.p2.m2" class="ltx_Math" alttext="v\in V_{0}=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=v(1)=0\}" display="inline"><mrow><mi>v</mi><mo>∈</mo><msub><mi>V</mi><mn>0</mn></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math>, onde</p>
-<table id="Ch3.S2.EGx28" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx48" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E135"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E139"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E135.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx," display="inline"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E139.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx," display="inline"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.135)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.139)</span></td>
 </tr></tbody>
-<tbody id="Ch1.E136"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E140"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E136.m1" class="ltx_Math" alttext="\displaystyle L(v)=\int_{I}fv\,dx." display="inline"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E140.m1" class="ltx_Math" alttext="\displaystyle L(v)=\int_{I}fv\,dx." display="inline"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.136)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.140)</span></td>
 </tr></tbody>
 </table>
 </div>
 <div id="Thmex1.p3" class="ltx_para">
 <p class="ltx_p">Então, o problema de elementos finitos no espaço das funções afins por partes lê-se: encontrar <math id="Thmex1.p3.m1" class="ltx_Math" alttext="u_{h}\in V_{h}=\{v\in P_{1}(I);\leavevmode\nobreak\ v(0)=1/2,\leavevmode%
 \nobreak\ v(1)=1\}" display="inline"><mrow><msub><mi>u</mi><mi>h</mi></msub><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mn>2</mn></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch1.E137" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E141" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E137.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h})," display="block"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E141.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h})," display="block"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.137)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.141)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para todo <math id="Thmex1.p3.m2" class="ltx_Math" alttext="v_{h}\in V_{h,0}=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=v(1)=0\}" display="inline"><mrow><msub><mi>v</mi><mi>h</mi></msub><mo>∈</mo><msub><mi>V</mi><mrow><mi>h</mi><mo>⁢</mo><mn>,0</mn></mrow></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math>.</p>
@@ -334,65 +328,59 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}a(u,v)=L(v),\quad\forall v%
 
 <div id="SS2.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte problema com condições de contorno de Neumann<span id="Ch1.footnote8" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">8</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">8</sup><span class="ltx_tag ltx_tag_note">8</span>Carl Gottfried Neumann, 1832 - 1925, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Carl_Neumann" title="" class="ltx_ref ltx_href">Wikipédia: Carl Neumann</a>.</span></span></span> homogênea em <math id="SS2.p1.m1" class="ltx_Math" alttext="x=L" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>L</mi></mrow></math>: encontrar <math id="SS2.p1.m2" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> tal que</p>
-<table id="Ch3.S2.EGx29" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx49" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:cc_n_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E138.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=[0,L]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E142.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=[0,L]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.138)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.142)</span></td>
 </tr></tbody>
 <tbody id="eq:cc_n_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E139.m1" class="ltx_Math" alttext="\displaystyle u(0)=u_{0},\quad u^{\prime}(L)=0," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E143.m1" class="ltx_Math" alttext="\displaystyle u(0)=u_{0},\quad u^{\prime}(L)=0," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.139)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.143)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">com <math id="SS2.p1.m3" class="ltx_Math" alttext="u_{0}" display="inline"><msub><mi>u</mi><mn>0</mn></msub></math> e <math id="SS2.p1.m4" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> dados. Trata-se de um <span class="ltx_text" style="background-color:#FFFF00;">problema com condição de contorno de Dirichlet</span><span id="Ch1.footnote9" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">9</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">9</sup><span class="ltx_tag ltx_tag_note">9</span>Johann Peter Gustav Lejeune Dirichlet, 1805 - 1859, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Johann_Peter_Gustav_Lejeune_Dirichlet" title="" class="ltx_ref ltx_href">Wikipédia: Johann Peter Gustav Lejeune Dirichlet</a>.</span></span></span> à esquerda <span class="ltx_text" style="background-color:#FFFF00;">e condição de contorno de Neumann</span><span id="Ch1.footnote10" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">10</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">10</sup><span class="ltx_tag ltx_tag_note">10</span>Carl Gottfried Neumann, 1832 - 1925, matemático alemão. Fonte: <a href="https://pt.wikipedia.org/wiki/Carl_Neumann" title="" class="ltx_ref ltx_href">Wikipédia: Carl Neumann</a>.</span></span></span> homogênea à direita.</p>
 </div>
 <div id="SS2.p2" class="ltx_para">
-<p class="ltx_p">Tomando uma função teste <math id="SS2.p2.m1" class="ltx_Math" alttext="v\in\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}V:=\{v\in H^{1}(I);%
-\leavevmode\nobreak\ v(0)=0\}" display="inline"><mrow><mi>v</mi><mo>∈</mo><mi mathcolor="#0F77B7">V</mi><mo lspace="0.278em" mathcolor="#0F77B7" rspace="0.278em">:=</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">{</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7">∈</mo><mrow><msup><mi mathcolor="#0F77B7">H</mi><mn mathcolor="#0F77B7">1</mn></msup><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">I</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.667em">;</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><mn mathcolor="#0F77B7">0</mn></mrow></mrow><mo mathcolor="#0F77B7" stretchy="false">}</mo></mrow></mrow></math> e multiplicando-a em (<a href="#eq:cc_n_eq" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.138</span></a>), obtemos</p>
-<table id="Ch1.E140" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">Tomando uma função teste <math id="SS2.p2.m1" class="ltx_Math" alttext="v\in\boxed{V:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=0\}}" display="inline"><mrow><mi>v</mi><mo>∈</mo><menclose notation="box"><mrow><mi>V</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></menclose></mrow></math> e multiplicando-a em (<a href="#eq:cc_n_eq" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.142</span></a>), obtemos</p>
+<table id="Ch1.E144" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E140.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E144.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.140)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.144)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Aplicando a integração por partes, temos</p>
-<table id="Ch3.S2.EGx30" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx50" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E141"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E145"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E141.m1" class="ltx_Math" alttext="\displaystyle\int_{I}u^{\prime}v^{\prime}\,dx-\underbrace{u^{\prime}(L)v(L)}_{%
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E145.m1" class="ltx_Math" alttext="\displaystyle\int_{I}u^{\prime}v^{\prime}\,dx-\underbrace{u^{\prime}(L)v(L)}_{%
 u^{\prime}(L)=0}+\underbrace{u^{\prime}(0)v(0)}_{v(0)=0}" display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><munder><munder accentunder="true"><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⏟</mo></munder><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></munder></mrow><mo>+</mo><munder><munder accentunder="true"><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⏟</mo></munder><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></munder></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.141)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.145)</span></td>
 </tr></tbody>
-<tbody id="Ch1.E142"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E146"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E142.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{I}fv\,dx." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mi>f</mi><mi>v</mi><mi>d</mi><mi>x</mi><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E146.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{I}fv\,dx." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mi>f</mi><mi>v</mi><mi>d</mi><mi>x</mi><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.142)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.146)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Desta forma, definimos o seguinte problema fraco associado: encontrar <math id="SS2.p2.m2" class="ltx_Math" alttext="u\in\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\tilde{V}:=\{v\in H^{1}(I);%
-\leavevmode\nobreak\ v(0)=u_{0}\}" display="inline"><mrow><mi>u</mi><mo>∈</mo><mover accent="true"><mi mathcolor="#0F77B7">V</mi><mo mathcolor="#0F77B7">~</mo></mover><mo lspace="0.278em" mathcolor="#0F77B7" rspace="0.278em">:=</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">{</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7">∈</mo><mrow><msup><mi mathcolor="#0F77B7">H</mi><mn mathcolor="#0F77B7">1</mn></msup><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">I</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.667em">;</mo><mrow><mrow><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">=</mo><msub><mi mathcolor="#0F77B7">u</mi><mn mathcolor="#0F77B7">0</mn></msub></mrow></mrow><mo mathcolor="#0F77B7" stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch3.S2.EGx31" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Desta forma, definimos o seguinte problema fraco associado: encontrar <math id="SS2.p2.m2" class="ltx_Math" alttext="u\in\boxed{\tilde{V}:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=u_{0}\}}" display="inline"><mrow><mi>u</mi><mo>∈</mo><menclose notation="box"><mrow><mover accent="true"><mi>V</mi><mo>~</mo></mover><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></menclose></mrow></math> tal que</p>
+<table id="Ch3.S2.EGx51" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E143"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E147"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.E143.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=L(v),\quad\forall\color[rgb]{%
-0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{rgb}{%
-0.05859375,0.46484375,0.71875}v\in V," display="inline"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo mathcolor="#000000" rspace="0.167em">∀</mo><mi mathcolor="#0F77B7">v</mi></mrow><mo mathcolor="#0F77B7">∈</mo><mi mathcolor="#0F77B7">V</mi></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.E147.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=L(v),\quad\forall\boxed{v\in V}," display="inline"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mo rspace="0.167em">∀</mo><menclose notation="box"><mrow><mi>v</mi><mo>∈</mo><mi>V</mi></mrow></menclose></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.143)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.147)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="SS2.p2.m3" class="ltx_Math" alttext="a(u,v)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma bilinear</p>
@@ -400,9 +388,9 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\tilde{V}:=\{v\in H^{1}(I);%
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E144.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E148.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.144)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.148)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">e <math id="SS2.p2.m4" class="ltx_Math" alttext="L(v)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma linear</p>
@@ -410,9 +398,9 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\tilde{V}:=\{v\in H^{1}(I);%
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E145.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E149.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.145)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.149)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -422,45 +410,45 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\tilde{V}:=\{v\in H^{1}(I);%
 </h6>
 <div id="Thmex2.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o problema</p>
-<table id="Ch3.S2.EGx32" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx52" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:ex_cc_n_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E146.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E150.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.146)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.150)</span></td>
 </tr></tbody>
 <tbody id="eq:ex_cc_n_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E147.m1" class="ltx_Math" alttext="\displaystyle u(0)=0,\quad u^{\prime}(1)=0." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E151.m1" class="ltx_Math" alttext="\displaystyle u(0)=0,\quad u^{\prime}(1)=0." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.147)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.151)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Sua solução analítica é <math id="Thmex2.p1.m1" class="ltx_Math" alttext="u(x)=-x^{2}/2+x" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></mrow><mo>+</mo><mi>x</mi></mrow></mrow></math>.</p>
 </div>
 <div id="Thmex2.p2" class="ltx_para">
 <p class="ltx_p">Podemos construir uma aproximação por elementos finitos do seguinte problema fraco associado: encontrar <math id="Thmex2.p2.m1" class="ltx_Math" alttext="u\in V=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=0\}" display="inline"><mrow><mi>u</mi><mo>∈</mo><mi>V</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch1.E148" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E152" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E148.m1" class="ltx_Math" alttext="a(u,v)=L(v)," display="block"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E152.m1" class="ltx_Math" alttext="a(u,v)=L(v)," display="block"><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.148)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.152)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">para todo <math id="Thmex2.p2.m2" class="ltx_Math" alttext="v\in V" display="inline"><mrow><mi>v</mi><mo>∈</mo><mi>V</mi></mrow></math>, com as formas bilinear <math id="Thmex2.p2.m3" class="ltx_Math" alttext="a(\cdot,\cdot)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">⋅</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">⋅</mo><mo stretchy="false">)</mo></mrow></mrow></math> e linear <math id="Thmex2.p2.m4" class="ltx_Math" alttext="L(\cdot)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">⋅</mo><mo stretchy="false">)</mo></mrow></mrow></math> dadas em (<a href="#eq:cc_n_bilinear" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.144</span></a>) e (<a href="#eq:cc_n_linear" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.145</span></a>).</p>
+<p class="ltx_p">para todo <math id="Thmex2.p2.m2" class="ltx_Math" alttext="v\in V" display="inline"><mrow><mi>v</mi><mo>∈</mo><mi>V</mi></mrow></math>, com as formas bilinear <math id="Thmex2.p2.m3" class="ltx_Math" alttext="a(\cdot,\cdot)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">⋅</mo><mo rspace="0em">,</mo><mo lspace="0em" rspace="0em">⋅</mo><mo stretchy="false">)</mo></mrow></mrow></math> e linear <math id="Thmex2.p2.m4" class="ltx_Math" alttext="L(\cdot)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mo lspace="0em" rspace="0em">⋅</mo><mo stretchy="false">)</mo></mrow></mrow></math> dadas em (<a href="#eq:cc_n_bilinear" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.148</span></a>) e (<a href="#eq:cc_n_linear" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.149</span></a>).</p>
 </div>
 <div id="Thmex2.p3" class="ltx_para">
 <p class="ltx_p">Então, considerando elementos afins por partes, temos o seguinte problema de elementos finitos: encontrar <math id="Thmex2.p3.m1" class="ltx_Math" alttext="u_{h}\in V_{h}=\{v_{h}\in P_{1}(I);\leavevmode\nobreak\ v_{h}(0)=0\}" display="inline"><mrow><msub><mi>u</mi><mi>h</mi></msub><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><msub><mi>v</mi><mi>h</mi></msub><mo>∈</mo><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><msub><mi>v</mi><mi>h</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch1.E149" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E153" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E149.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h}),\quad\forall v_{h}\in V_{h}." display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E153.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h}),\quad\forall v_{h}\in V_{h}." display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.149)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.153)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -494,73 +482,72 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\tilde{V}:=\{v\in H^{1}(I);%
 </div>
 <div id="SS2.p3" class="ltx_para">
 <p class="ltx_p">Agora, consideramos o seguinte problema com condições de Neumann não-homogênea em <math id="SS2.p3.m1" class="ltx_Math" alttext="x=L" display="inline"><mrow><mi>x</mi><mo>=</mo><mi>L</mi></mrow></math>: encontrar <math id="SS2.p3.m2" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> tal que</p>
-<table id="Ch3.S2.EGx33" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx53" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:cc_n2_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E150.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=(0,L)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E154.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=(0,L)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.150)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.154)</span></td>
 </tr></tbody>
 <tbody id="eq:cc_n2_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E151.m1" class="ltx_Math" alttext="\displaystyle u(0)=u_{0},\quad u^{\prime}(L)=\alpha," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>α</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E155.m1" class="ltx_Math" alttext="\displaystyle u(0)=u_{0},\quad u^{\prime}(L)=\alpha," display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mi>α</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.151)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.155)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">com <math id="SS2.p3.m3" class="ltx_Math" alttext="u_{0}" display="inline"><msub><mi>u</mi><mn>0</mn></msub></math>, <math id="SS2.p3.m4" class="ltx_Math" alttext="\alpha" display="inline"><mi>α</mi></math> e <math id="SS2.p3.m5" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> dados.</p>
 </div>
 <div id="SS2.p4" class="ltx_para">
-<p class="ltx_p">Tomando uma função teste <math id="SS2.p4.m1" class="ltx_Math" alttext="v\in V:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=0\}" display="inline"><mrow><mi>v</mi><mo>∈</mo><mi>V</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> e multiplicando-a em (<a href="#eq:cc_n2_eq" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.150</span></a>), obtemos</p>
-<table id="Ch1.E152" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E152.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.152)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Aplicando a integração por partes, temos</p>
-<table id="Ch1.E153" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E153.m1" class="ltx_Math" alttext="\int_{I}u^{\prime}v^{\prime}\,dx-\alpha v(L)=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><mrow><mi>α</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.153)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Desta forma, definimos o seguinte problema fraco associado: encontrar <math id="SS2.p4.m2" class="ltx_Math" alttext="u\in\tilde{V}:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=u_{0}\}" display="inline"><mrow><mi>u</mi><mo>∈</mo><mover accent="true"><mi>V</mi><mo>~</mo></mover><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch3.S2.EGx34" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch1.E154"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.E154.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=L(v),\quad\forall v\in V," display="inline"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.154)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">onde <math id="SS2.p4.m3" class="ltx_Math" alttext="a(u,v)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma bilinear</p>
-<table id="Ch1.E155" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E155.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.155)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">e <math id="SS2.p4.m4" class="ltx_Math" alttext="L(v)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma linear</p>
+<p class="ltx_p">Tomando uma função teste <math id="SS2.p4.m1" class="ltx_Math" alttext="v\in V:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=0\}" display="inline"><mrow><mi>v</mi><mo>∈</mo><mi>V</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> e multiplicando-a em (<a href="#eq:cc_n2_eq" title="In 1.3.2 Condições de Neumann ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.154</span></a>), obtemos</p>
 <table id="Ch1.E156" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E156.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+\alpha v(L)." display="block"><mrow><mrow><mrow><mi mathcolor="#0F77B7">L</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.111em">=</mo><mrow><mrow><msub><mo mathcolor="#0F77B7">∫</mo><mi mathcolor="#0F77B7">I</mi></msub><mrow><mi mathcolor="#0F77B7">f</mi><mo>⁢</mo><mi mathcolor="#0F77B7">v</mi><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">x</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">+</mo><mrow><mi mathcolor="#0F77B7">α</mi><mo>⁢</mo><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">L</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0F77B7">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E156.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.156)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Aplicando a integração por partes, temos</p>
+<table id="Ch1.E157" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E157.m1" class="ltx_Math" alttext="\int_{I}u^{\prime}v^{\prime}\,dx-\alpha v(L)=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><mrow><mi>α</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.157)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Desta forma, definimos o seguinte problema fraco associado: encontrar <math id="SS2.p4.m2" class="ltx_Math" alttext="u\in\tilde{V}:=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=u_{0}\}" display="inline"><mrow><mi>u</mi><mo>∈</mo><mover accent="true"><mi>V</mi><mo>~</mo></mover><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><msub><mi>u</mi><mn>0</mn></msub></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
+<table id="Ch3.S2.EGx54" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E158"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.E158.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=L(v),\quad\forall v\in V," display="inline"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.158)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS2.p4.m3" class="ltx_Math" alttext="a(u,v)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma bilinear</p>
+<table id="Ch1.E159" class="ltx_equation ltx_eqn_table">
+
+<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E159.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.159)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e <math id="SS2.p4.m4" class="ltx_Math" alttext="L(v)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma linear</p>
+<table id="Ch3.S2.EGx55" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E160"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E160.m1" class="ltx_Math" alttext="\displaystyle\boxed{L(v)=\int_{I}fv\,dx+\alpha v(L)}." display="inline"><mrow><menclose notation="box"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mi>α</mi><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></menclose><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.160)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -570,64 +557,64 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+\alpha v(L)." display="bl
 </h6>
 <div id="Thmex3.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o problema</p>
-<table id="Ch3.S2.EGx35" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx56" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:ex_cc_n2_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E157.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E161.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.157)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.161)</span></td>
 </tr></tbody>
 <tbody id="eq:ex_cc_n2_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E158.m1" class="ltx_Math" alttext="\displaystyle u(0)=0,\quad u^{\prime}(1)=1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E162.m1" class="ltx_Math" alttext="\displaystyle u(0)=0,\quad u^{\prime}(1)=1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo rspace="1.167em">,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.158)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.162)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Sua solução analítica é <math id="Thmex3.p1.m1" class="ltx_Math" alttext="u(x)=-x^{2}/2+2x" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>x</mi></mrow></mrow></mrow></math>.</p>
 </div>
 <div id="Thmex3.p2" class="ltx_para">
 <p class="ltx_p">Agora, consideramos o seguinte problema fraco associado: encontrar <math id="Thmex3.p2.m1" class="ltx_Math" alttext="u\in V=\{v\in H^{1}(I);\leavevmode\nobreak\ v(0)=0\}" display="inline"><mrow><mi>u</mi><mo>∈</mo><mi>V</mi><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><mi>v</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch1.E159" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E163" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E159.m1" class="ltx_Math" alttext="a(u,v)=L(v),\quad\forall v\in V," display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E163.m1" class="ltx_Math" alttext="a(u,v)=L(v),\quad\forall v\in V," display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.159)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.163)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">com</p>
-<table id="Ch1.E160" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E164" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E160.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E164.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.160)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.164)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">e</p>
-<table id="Ch1.E161" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E165" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E161.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx+1\cdot v(1)." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>v</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E165.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx+1\cdot v(1)." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>v</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.161)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.165)</span></td>
 </tr></tbody>
 </table>
 </div>
 <div id="Thmex3.p3" class="ltx_para">
 <p class="ltx_p">O problema de elementos finitos no espaço das funções lineares por partes lê-se: encontrar <math id="Thmex3.p3.m1" class="ltx_Math" alttext="u_{h}\in V_{h}=\{v_{h}\in P_{1}(I);\leavevmode\nobreak\ v_{h}(0)=0\}" display="inline"><mrow><msub><mi>u</mi><mi>h</mi></msub><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub><mo>=</mo><mrow><mo stretchy="false">{</mo><mrow><mrow><msub><mi>v</mi><mi>h</mi></msub><mo>∈</mo><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">;</mo><mrow><mrow><msub><mi>v</mi><mi>h</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></math> tal que</p>
-<table id="Ch1.E162" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E166" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E162.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h}),\quad\forall v_{h}\in V_{h}." display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E166.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h}),\quad\forall v_{h}\in V_{h}." display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.162)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.166)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -711,101 +698,98 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+\alpha v(L)." display="bl
 
 <div id="SS3.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o seguinte problema com condições de contorno de Robin<span id="Ch1.footnote11" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">11</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">11</sup><span class="ltx_tag ltx_tag_note">11</span>Victor Gustave Robin, 1855 - 1897, matemático francês. Fonte: <a href="https://en.wikipedia.org/wiki/Victor_Gustave_Robin" title="" class="ltx_ref ltx_href">Wikipedia: Victor Gustave Robin</a>.</span></span></span>: encontrar <math id="SS3.p1.m1" class="ltx_Math" alttext="u" display="inline"><mi>u</mi></math> tal que</p>
-<table id="Ch3.S2.EGx36" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx57" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:cc_r_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E163.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=[0,L]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E167.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=f,\quad\forall x\in I=[0,L]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mi>f</mi></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>x</mi></mrow><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0</mn><mo>,</mo><mi>L</mi><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.163)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.167)</span></td>
 </tr></tbody>
 <tbody id="eq:cc_r_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E164.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(0)=r_{0}(u(0)-s_{0}),\leavevmode\nobreak\ -u^{\prime}%
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E168.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(0)=r_{0}(u(0)-s_{0}),\leavevmode\nobreak\ -u^{\prime}%
 (L)=r_{L}(u(L)-s_{L})," display="inline"><mrow><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msub><mi>s</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="0.667em">,</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><msub><mi>r</mi><mi>L</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msub><mi>s</mi><mi>L</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.164)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.168)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">com <math id="SS3.p1.m2" class="ltx_Math" alttext="r_{0}" display="inline"><msub><mi>r</mi><mn>0</mn></msub></math>, <math id="SS3.p1.m3" class="ltx_Math" alttext="r_{L}" display="inline"><msub><mi>r</mi><mi>L</mi></msub></math>, <math id="SS3.p1.m4" class="ltx_Math" alttext="s_{0}" display="inline"><msub><mi>s</mi><mn>0</mn></msub></math>, <math id="SS3.p1.m5" class="ltx_Math" alttext="s_{L}" display="inline"><msub><mi>s</mi><mi>L</mi></msub></math> e <math id="SS3.p1.m6" class="ltx_Math" alttext="f" display="inline"><mi>f</mi></math> dados.</p>
 </div>
 <div id="SS3.p2" class="ltx_para">
-<p class="ltx_p">Tomando uma função teste <math id="SS3.p2.m1" class="ltx_Math" alttext="v\in V=H^{1}(I)" display="inline"><mrow><mi>v</mi><mo>∈</mo><mi>V</mi><mo>=</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e multiplicando-a em (<a href="#eq:cc_r_eq" title="In 1.3.3 Condições de Robin ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.163</span></a>), obtemos</p>
-<table id="Ch1.E165" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">Tomando uma função teste <math id="SS3.p2.m1" class="ltx_Math" alttext="v\in V=H^{1}(I)" display="inline"><mrow><mi>v</mi><mo>∈</mo><mi>V</mi><mo>=</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e multiplicando-a em (<a href="#eq:cc_r_eq" title="In 1.3.3 Condições de Robin ‣ 1.3 Condições de contorno ‣ Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref"><span class="ltx_text ltx_ref_tag">1.167</span></a>), obtemos</p>
+<table id="Ch1.E169" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E165.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.165)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">Aplicando a integração por partes, temos</p>
-<table id="Ch3.S2.EGx37" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch1.E166"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E166.m1" class="ltx_Math" alttext="\displaystyle\int_{I}u^{\prime}v^{\prime}\,dx-\underbrace{u^{\prime}(L)v(L)}_{%
--u^{\prime}(L)=r_{L}(u(L)-s_{L})}+\underbrace{u^{\prime}(0)v(0)}_{u^{\prime}(0%
-)=r_{0}(u(0)-s_{0})}" display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><munder><munder accentunder="true"><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⏟</mo></munder><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><msub><mi>r</mi><mi>L</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msub><mi>s</mi><mi>L</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mrow><mo>+</mo><munder><munder accentunder="true"><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⏟</mo></munder><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msub><mi>s</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.166)</span></td>
-</tr></tbody>
-<tbody id="Ch1.E167"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E167.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{I}fc\,dx." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mi>f</mi><mi>c</mi><mi>d</mi><mi>x</mi><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.167)</span></td>
-</tr></tbody>
-</table>
-<p class="ltx_p">ou, mais adequadamente,</p>
-<table id="Ch3.S2.EGx38" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
-
-<tbody id="Ch1.E168"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E168.m1" class="ltx_Math" alttext="\displaystyle\int_{I}u^{\prime}v^{\prime}\,dx+r_{L}u(L)v(L)+r_{0}u(0)v(0)" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mi>L</mi></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.168)</span></td>
-</tr></tbody>
-<tbody id="Ch1.E169"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E169.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{0}v(0)." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mi>f</mi><mi>v</mi><mi>d</mi><mi>x</mi><mo>+</mo><msub><mi>r</mi><mi>L</mi></msub><msub><mi>s</mi><mi>L</mi></msub><mi>v</mi><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><msub><mi>r</mi><mn>0</mn></msub><msub><mi>s</mi><mn>0</mn></msub><mi>v</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E169.m1" class="ltx_Math" alttext="-\int_{I}u^{\prime\prime}v\,dx=\int_{I}fv\,dx." display="block"><mrow><mrow><mrow><mo>−</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′′</mo></msup><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo rspace="0.111em">=</mo><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.169)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">Desta forma, definimos o seguinte problema fraco associado: encontrar <math id="SS3.p2.m2" class="ltx_Math" alttext="u\in H^{1}(I)" display="inline"><mrow><mi>u</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> tal que</p>
-<table id="Ch3.S2.EGx39" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<p class="ltx_p">Aplicando a integração por partes, temos</p>
+<table id="Ch3.S2.EGx58" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="Ch1.E170"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.E170.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=L(v),\quad\forall v\in V," display="inline"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E170.m1" class="ltx_Math" alttext="\displaystyle\int_{I}u^{\prime}v^{\prime}\,dx-\underbrace{u^{\prime}(L)v(L)}_{%
+-u^{\prime}(L)=r_{L}(u(L)-s_{L})}+\underbrace{u^{\prime}(0)v(0)}_{u^{\prime}(0%
+)=r_{0}(u(0)-s_{0})}" display="inline"><mrow><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>−</mo><munder><munder accentunder="true"><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>⏟</mo></munder><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><msub><mi>r</mi><mi>L</mi></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msub><mi>s</mi><mi>L</mi></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mrow><mo>+</mo><munder><munder accentunder="true"><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>⏟</mo></munder><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><msub><mi>s</mi><mn>0</mn></msub></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></munder></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.170)</span></td>
 </tr></tbody>
-</table>
-<p class="ltx_p">onde <math id="SS3.p2.m3" class="ltx_Math" alttext="a(u,v)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma bilinear</p>
-<table id="Ch1.E171" class="ltx_equation ltx_eqn_table">
-
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E171"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E171.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx+r_{%
-L}u(L)v(L)+r_{0}u(0)v(0)" display="block"><mrow><mrow><mi mathcolor="#0F77B7">a</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">u</mi><mo mathcolor="#0F77B7">,</mo><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.111em">=</mo><mrow><mrow><msub><mo mathcolor="#0F77B7">∫</mo><mi mathcolor="#0F77B7">I</mi></msub><mrow><msup><mi mathcolor="#0F77B7">u</mi><mo mathcolor="#0F77B7">′</mo></msup><mo>⁢</mo><msup><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7">′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">x</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">+</mo><mrow><msub><mi mathcolor="#0F77B7">r</mi><mi mathcolor="#0F77B7">L</mi></msub><mo>⁢</mo><mi mathcolor="#0F77B7">u</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">L</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">L</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">+</mo><mrow><msub><mi mathcolor="#0F77B7">r</mi><mn mathcolor="#0F77B7">0</mn></msub><mo>⁢</mo><mi mathcolor="#0F77B7">u</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow><mo>⁢</mo><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E171.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{I}fc\,dx." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mi>f</mi><mi>c</mi><mi>d</mi><mi>x</mi><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.171)</span></td>
 </tr></tbody>
 </table>
-<p class="ltx_p">e <math id="SS3.p2.m4" class="ltx_Math" alttext="L(v)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma linear</p>
-<table id="Ch1.E172" class="ltx_equation ltx_eqn_table">
+<p class="ltx_p">ou, mais adequadamente,</p>
+<table id="Ch3.S2.EGx59" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E172"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E172.m1" class="ltx_Math" alttext="\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{pgfstrokecolor}{%
-rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
-0}v(0)." display="block"><mrow><mrow><mrow><mi mathcolor="#0F77B7">L</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">v</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7" rspace="0.111em">=</mo><mrow><mrow><msub><mo mathcolor="#0F77B7">∫</mo><mi mathcolor="#0F77B7">I</mi></msub><mrow><mi mathcolor="#0F77B7">f</mi><mo>⁢</mo><mi mathcolor="#0F77B7">v</mi><mo lspace="0.170em">⁢</mo><mrow><mo mathcolor="#0F77B7" rspace="0em">𝑑</mo><mi mathcolor="#0F77B7">x</mi></mrow></mrow></mrow><mo mathcolor="#0F77B7">+</mo><mrow><msub><mi mathcolor="#0F77B7">r</mi><mi mathcolor="#0F77B7">L</mi></msub><mo>⁢</mo><msub><mi mathcolor="#0F77B7">s</mi><mi mathcolor="#0F77B7">L</mi></msub><mo>⁢</mo><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">L</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow><mo mathcolor="#0F77B7">+</mo><mrow><msub><mi mathcolor="#0F77B7">r</mi><mn mathcolor="#0F77B7">0</mn></msub><mo>⁢</mo><msub><mi mathcolor="#0F77B7">s</mi><mn mathcolor="#0F77B7">0</mn></msub><mo>⁢</mo><mi mathcolor="#0F77B7">v</mi><mo>⁢</mo><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em" mathcolor="#0F77B7">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E172.m1" class="ltx_Math" alttext="\displaystyle\int_{I}u^{\prime}v^{\prime}\,dx+r_{L}u(L)v(L)+r_{0}u(0)v(0)" display="inline"><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mi>L</mi></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.172)</span></td>
+</tr></tbody>
+<tbody id="Ch1.E173"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E173.m1" class="ltx_math_unparsed" alttext="\displaystyle\text{}\quad=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{0}v(0)." display="inline"><mrow><mrow></mrow><mspace width="1em"></mspace><mo>=</mo><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mi>f</mi><mi>v</mi><mi>d</mi><mi>x</mi><mo>+</mo><msub><mi>r</mi><mi>L</mi></msub><msub><mi>s</mi><mi>L</mi></msub><mi>v</mi><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>+</mo><msub><mi>r</mi><mn>0</mn></msub><msub><mi>s</mi><mn>0</mn></msub><mi>v</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.173)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">Desta forma, definimos o seguinte problema fraco associado: encontrar <math id="SS3.p2.m2" class="ltx_Math" alttext="u\in H^{1}(I)" display="inline"><mrow><mi>u</mi><mo>∈</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> tal que</p>
+<table id="Ch3.S2.EGx60" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E174"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch1.E174.m1" class="ltx_Math" alttext="\displaystyle a(u,v)=L(v),\quad\forall v\in V," display="inline"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.174)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">onde <math id="SS3.p2.m3" class="ltx_Math" alttext="a(u,v)" display="inline"><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma bilinear</p>
+<table id="Ch3.S2.EGx61" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E175"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E175.m1" class="ltx_Math" alttext="\displaystyle\boxed{a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx+r_{L}u(L)v(L)+r_{0%
+}u(0)v(0)}" display="inline"><menclose notation="box"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mi>L</mi></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></menclose></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.175)</span></td>
+</tr></tbody>
+</table>
+<p class="ltx_p">e <math id="SS3.p2.m4" class="ltx_Math" alttext="L(v)" display="inline"><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></math> é a forma linear</p>
+<table id="Ch3.S2.EGx62" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+
+<tbody id="Ch1.E176"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E176.m1" class="ltx_Math" alttext="\displaystyle\boxed{L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{0}v(0)}." display="inline"><mrow><menclose notation="box"><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mstyle displaystyle="true"><msub><mo>∫</mo><mi>I</mi></msub></mstyle><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mi>L</mi></msub><mo>⁢</mo><msub><mi>s</mi><mi>L</mi></msub><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>L</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><msub><mi>r</mi><mn>0</mn></msub><mo>⁢</mo><msub><mi>s</mi><mn>0</mn></msub><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></menclose><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.176)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -815,64 +799,64 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
 </h6>
 <div id="Thmex4.p1" class="ltx_para">
 <p class="ltx_p">Consideramos o problema</p>
-<table id="Ch3.S2.EGx40" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx63" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
 <tbody id="eq:ex_cc_r_eq"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E173.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E177.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=1,\quad x\in I=[0,1]," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mn>1</mn></mrow><mo rspace="1.167em">,</mo><mrow><mi>x</mi><mo>∈</mo><mi>I</mi><mo>=</mo><mrow><mo stretchy="false">[</mo><mn>0,1</mn><mo stretchy="false">]</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.173)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.177)</span></td>
 </tr></tbody>
 <tbody id="eq:ex_cc_r_bc"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E174.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(0)=u(0),\quad-u^{\prime}(1)=u(1)-1." display="inline"><mrow><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E178.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(0)=u(0),\quad-u^{\prime}(1)=u(1)-1." display="inline"><mrow><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.174)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.178)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Sua solução analítica é <math id="Thmex4.p1.m1" class="ltx_Math" alttext="u(x)=-x^{2}/2+5x/6+5/6" display="inline"><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mrow><mo>−</mo><mrow><msup><mi>x</mi><mn>2</mn></msup><mo>/</mo><mn>2</mn></mrow></mrow><mo>+</mo><mrow><mrow><mn>5</mn><mo>⁢</mo><mi>x</mi></mrow><mo>/</mo><mn>6</mn></mrow><mo>+</mo><mrow><mn>5</mn><mo>/</mo><mn>6</mn></mrow></mrow></mrow></math>.</p>
 </div>
 <div id="Thmex4.p2" class="ltx_para">
 <p class="ltx_p">Aqui, tomamos o seguinte problema fraco: encontrar <math id="Thmex4.p2.m1" class="ltx_Math" alttext="u\in V=H^{1}(I)" display="inline"><mrow><mi>u</mi><mo>∈</mo><mi>V</mi><mo>=</mo><mrow><msup><mi>H</mi><mn>1</mn></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> tal que</p>
-<table id="Ch1.E175" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E179" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E175.m1" class="ltx_Math" alttext="a(u,v)=L(v),\quad\forall v\in V," display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E179.m1" class="ltx_Math" alttext="a(u,v)=L(v),\quad\forall v\in V," display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><mi>v</mi></mrow><mo>∈</mo><mi>V</mi></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.175)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.179)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde</p>
-<table id="Ch1.E176" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E180" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E176.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx+u(1)v(1)+u(0)v(0)" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E180.m1" class="ltx_Math" alttext="a(u,v)=\int_{I}u^{\prime}v^{\prime}\,dx+u(1)v(1)+u(0)v(0)" display="block"><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>u</mi><mo>,</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><msup><mi>v</mi><mo>′</mo></msup><mo lspace="0em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow><mo>⁢</mo><mi>v</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.176)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.180)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">e</p>
-<table id="Ch1.E177" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E181" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E177.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx+1\cdot v(1)." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>v</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E181.m1" class="ltx_Math" alttext="L(v)=\int_{I}fv\,dx+1\cdot v(1)." display="block"><mrow><mrow><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>v</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="0.111em">=</mo><mrow><mrow><msub><mo>∫</mo><mi>I</mi></msub><mrow><mi>f</mi><mo>⁢</mo><mi>v</mi><mo lspace="0.170em">⁢</mo><mrow><mo rspace="0em">𝑑</mo><mi>x</mi></mrow></mrow></mrow><mo>+</mo><mrow><mrow><mn>1</mn><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>v</mi></mrow><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.177)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.181)</span></td>
 </tr></tbody>
 </table>
 </div>
 <div id="Thmex4.p3" class="ltx_para">
 <p class="ltx_p">Então, uma aproximação por elementos finitos lineares por partes pode ser obtida resolvendo o seguinte problema: encontrar <math id="Thmex4.p3.m1" class="ltx_Math" alttext="u_{h}\in V_{h}=P_{1}(I)" display="inline"><mrow><msub><mi>u</mi><mi>h</mi></msub><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub><mo>=</mo><mrow><msub><mi>P</mi><mn>1</mn></msub><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>I</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></math> tal que</p>
-<table id="Ch1.E178" class="ltx_equation ltx_eqn_table">
+<table id="Ch1.E182" class="ltx_equation ltx_eqn_table">
 
 <tbody><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E178.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h}),\quad\forall v_{h}\in V_{h}." display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_align_center"><math id="Ch1.E182.m1" class="ltx_Math" alttext="a(u_{h},v_{h})=L(v_{h}),\quad\forall v_{h}\in V_{h}." display="block"><mrow><mrow><mrow><mrow><mi>a</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>u</mi><mi>h</mi></msub><mo>,</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>L</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>v</mi><mi>h</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mrow><mo rspace="0.167em">∀</mo><msub><mi>v</mi><mi>h</mi></msub></mrow><mo>∈</mo><msub><mi>V</mi><mi>h</mi></msub></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.178)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.182)</span></td>
 </tr></tbody>
 </table>
 </div>
@@ -996,19 +980,19 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
 </h6>
 <div id="Thmexer1.p1" class="ltx_para">
 <p class="ltx_p">Obtenha uma aproximação por elementos finitos <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math> da solução de</p>
-<table id="Ch3.S2.EGx41" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx64" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E179"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E183"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E179.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u=2\cos x,\quad\text{em }(0,\pi)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><mi>u</mi></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E183.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u=2\cos x,\quad\text{em }(0,\pi)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><mi>u</mi></mrow><mo>=</mo><mrow><mrow><mn>2</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.179)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.183)</span></td>
 </tr></tbody>
-<tbody id="Ch1.E180"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E184"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E180.m1" class="ltx_Math" alttext="\displaystyle u(0)=1,u(\pi)=-1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E184.m1" class="ltx_Math" alttext="\displaystyle u(0)=1,u(\pi)=-1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mi>π</mi><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mo>−</mo><mn>1</mn></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.180)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.184)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Faça o esboço dos gráficos da solução analítica <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="u=\cos x" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>cos</mi><mo lspace="0.167em">⁡</mo><mi>x</mi></mrow></mrow></math> e da sua aproximação de elementos finitos <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="u_{h}" display="inline"><msub><mi>u</mi><mi>h</mi></msub></math>. Então, faça uma análise da convergência de malha e verifique as taxas de convergência dos erros <math id="Thmexer1.p1.m4" class="ltx_Math" alttext="\|u-u_{h}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math> e <math id="Thmexer1.p1.m5" class="ltx_Math" alttext="\|(u-u_{h})^{\prime}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math>.</p>
@@ -1020,19 +1004,19 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
 </h6>
 <div id="Thmexer2.p1" class="ltx_para">
 <p class="ltx_p">Obtenha uma aproximação por elementos finitos <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math> da solução de</p>
-<table id="Ch3.S2.EGx42" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx65" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E181"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E185"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E181.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=\pi^{2}\cos(\pi x),\quad\text{em }(0,1)," display="inline"><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E185.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}=\pi^{2}\cos(\pi x),\quad\text{em }(0,1)," display="inline"><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>=</mo><mrow><mrow><msup><mi>π</mi><mn>2</mn></msup><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.181)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.185)</span></td>
 </tr></tbody>
-<tbody id="Ch1.E182"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E186"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E182.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(0)=0,u^{\prime}(1)=0." display="inline"><mrow><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E186.m1" class="ltx_Math" alttext="\displaystyle u^{\prime}(0)=0,u^{\prime}(1)=0." display="inline"><mrow><mrow><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo>,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.182)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.186)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Faça o esboço dos gráficos da solução analítica <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="u=\cos(\pi x)" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>⁢</mo><mi>x</mi></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math> e da sua aproximação de elementos finitos <math id="Thmexer2.p1.m3" class="ltx_Math" alttext="u_{h}" display="inline"><msub><mi>u</mi><mi>h</mi></msub></math>. Então, faça uma análise da convergência de malha e verifique as taxas de convergência dos erros <math id="Thmexer2.p1.m4" class="ltx_Math" alttext="\|u-u_{h}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math> e <math id="Thmexer2.p1.m5" class="ltx_Math" alttext="\|(u-u_{h})^{\prime}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math>.</p>
@@ -1044,19 +1028,19 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
 </h6>
 <div id="Thmexer3.p1" class="ltx_para">
 <p class="ltx_p">Obtenha uma aproximação por elementos finitos <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math> da solução de</p>
-<table id="Ch3.S2.EGx43" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx66" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E183"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E187"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E183.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u=0,\quad\text{em }(0,1)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><mi>u</mi></mrow><mo>=</mo><mrow><mn>0</mn><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E187.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u=0,\quad\text{em }(0,1)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><mi>u</mi></mrow><mo>=</mo><mrow><mn>0</mn><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0,1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.183)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.187)</span></td>
 </tr></tbody>
-<tbody id="Ch1.E184"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E188"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E184.m1" class="ltx_Math" alttext="\displaystyle u(0)=1,u^{\prime}(1)=1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E188.m1" class="ltx_Math" alttext="\displaystyle u(0)=1,u^{\prime}(1)=1." display="inline"><mrow><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>1</mn></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.184)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.188)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Faça o esboço dos gráficos da solução analítica <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="u=\cosh(x)+a\operatorname{senh}(x)" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mrow><mi>cosh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mi>a</mi><mo lspace="0.167em">⁢</mo><mrow><mi>senh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></mrow></math>, <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="a=(1-\operatorname{senh}(1))/\cosh(1)" display="inline"><mrow><mi>a</mi><mo>=</mo><mrow><mrow><mo stretchy="false">(</mo><mrow><mn>1</mn><mo>−</mo><mrow><mi>senh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo stretchy="false">)</mo></mrow><mo>/</mo><mrow><mi>cosh</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow></math>, e da sua aproximação de elementos finitos <math id="Thmexer3.p1.m4" class="ltx_Math" alttext="u_{h}" display="inline"><msub><mi>u</mi><mi>h</mi></msub></math>. Então, faça uma análise da convergência de malha e verifique as taxas de convergência dos erros <math id="Thmexer3.p1.m5" class="ltx_Math" alttext="\|u-u_{h}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math> e <math id="Thmexer3.p1.m6" class="ltx_Math" alttext="\|(u-u_{h})^{\prime}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math>.</p>
@@ -1068,19 +1052,19 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
 </h6>
 <div id="Thmexer4.p1" class="ltx_para">
 <p class="ltx_p">Obtenha uma aproximação por elementos finitos <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math> da solução de</p>
-<table id="Ch3.S2.EGx44" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx67" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E185"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E189"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E185.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u^{\prime}=0,\quad\text{em }(-1,1)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><msup><mi>u</mi><mo>′</mo></msup></mrow><mo>=</mo><mrow><mn>0</mn><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E189.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u^{\prime}=0,\quad\text{em }(-1,1)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><msup><mi>u</mi><mo>′</mo></msup></mrow><mo>=</mo><mrow><mn>0</mn><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1,1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.185)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.189)</span></td>
 </tr></tbody>
-<tbody id="Ch1.E186"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E190"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E186.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime}(-1)+u(-1)=1,u(1)=0," display="inline"><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E190.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime}(-1)+u(-1)=1,u(1)=0," display="inline"><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>1</mn></mrow><mo>,</mo><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.186)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.190)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Faça o esboço dos gráficos da solução analítica <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="u=1-e^{x-1}" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mn>1</mn><mo>−</mo><msup><mi>e</mi><mrow><mi>x</mi><mo>−</mo><mn>1</mn></mrow></msup></mrow></mrow></math>, e da sua aproximação de elementos finitos <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="u_{h}" display="inline"><msub><mi>u</mi><mi>h</mi></msub></math>. Então, faça uma análise da convergência de malha e verifique as taxas de convergência dos erros <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="\|u-u_{h}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math> e <math id="Thmexer4.p1.m5" class="ltx_Math" alttext="\|(u-u_{h})^{\prime}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math>.</p>
@@ -1092,19 +1076,19 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
 </h6>
 <div id="Thmexer5.p1" class="ltx_para">
 <p class="ltx_p">Obtenha uma aproximação por elementos finitos <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="P_{1}" display="inline"><msub><mi>P</mi><mn>1</mn></msub></math> da solução de</p>
-<table id="Ch3.S2.EGx45" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
+<table id="Ch3.S2.EGx68" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch1.E187"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E191"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E187.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u^{\prime}+2u=\cos(x),\quad\text{em }(0,\pi/2)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><msup><mi>u</mi><mo>′</mo></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E191.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime\prime}+u^{\prime}+2u=\cos(x),\quad\text{em }(0,\pi/2)," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><msup><mi>u</mi><mo>′′</mo></msup></mrow><mo>+</mo><msup><mi>u</mi><mo>′</mo></msup><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>u</mi></mrow></mrow><mo>=</mo><mrow><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo rspace="1.167em">,</mo><mrow><mtext>em </mtext><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo>,</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.187)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.191)</span></td>
 </tr></tbody>
-<tbody id="Ch1.E188"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch1.E192"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E188.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime}(0)+2u(0)=0.5,2u^{\prime}(\pi/2)-u(\pi/2)=0.7," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mn>0.5,2</mn><mo>⁢</mo><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0.7</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch1.E192.m1" class="ltx_Math" alttext="\displaystyle-u^{\prime}(0)+2u(0)=0.5,2u^{\prime}(\pi/2)-u(\pi/2)=0.7," display="inline"><mrow><mrow><mrow><mrow><mo>−</mo><mrow><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>+</mo><mrow><mn>2</mn><mo>⁢</mo><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mrow><mrow><mn>0.5,2</mn><mo>⁢</mo><msup><mi>u</mi><mo>′</mo></msup><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow><mo>−</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mrow><mi>π</mi><mo>/</mo><mn>2</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow><mo>=</mo><mn>0.7</mn></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.188)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(1.192)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Faça o esboço dos gráficos da solução analítica <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="u=0.1[\operatorname{sen}(x)+3\cos(x)]" display="inline"><mrow><mi>u</mi><mo>=</mo><mrow><mn>0.1</mn><mo>⁢</mo><mrow><mo stretchy="false">[</mo><mrow><mrow><mi>sen</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow><mo>+</mo><mrow><mn>3</mn><mo lspace="0.167em">⁢</mo><mrow><mi>cos</mi><mo>⁡</mo><mrow><mo stretchy="false">(</mo><mi>x</mi><mo stretchy="false">)</mo></mrow></mrow></mrow></mrow><mo stretchy="false">]</mo></mrow></mrow></mrow></math> e da sua aproximação de elementos finitos <math id="Thmexer5.p1.m3" class="ltx_Math" alttext="u_{h}" display="inline"><msub><mi>u</mi><mi>h</mi></msub></math>. Então, faça uma análise da convergência de malha e verifique as taxas de convergência dos erros <math id="Thmexer5.p1.m4" class="ltx_Math" alttext="\|u-u_{h}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math> e <math id="Thmexer5.p1.m5" class="ltx_Math" alttext="\|(u-u_{h})^{\prime}\|_{L^{2}}" display="inline"><msub><mrow><mo stretchy="false">‖</mo><msup><mrow><mo stretchy="false">(</mo><mrow><mi>u</mi><mo>−</mo><msub><mi>u</mi><mi>h</mi></msub></mrow><mo stretchy="false">)</mo></mrow><mo>′</mo></msup><mo stretchy="false">‖</mo></mrow><msup><mi>L</mi><mn>2</mn></msup></msub></math>.</p>
@@ -1150,7 +1134,7 @@ rgb}{0.05859375,0.46484375,0.71875}L(v)=\int_{I}fv\,dx+r_{L}s_{L}v(L)+r_{0}s_{%
 <div class="ltx_align_center">
 <a href="cap_mef1d_sec_modelo.html" title="In Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.2 </span>Problema modelo</span></a><a href="bib.html" title="In Método dos elementos finitos" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_mef1d_sec_sel_aplic.html" title="In Capítulo 1 Problemas unidimensionais ‣ Método dos elementos finitos" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">1.4 </span>Seleção de aplicações</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Thu Oct 29 12:44:57 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Fri Nov  6 08:34:07 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">

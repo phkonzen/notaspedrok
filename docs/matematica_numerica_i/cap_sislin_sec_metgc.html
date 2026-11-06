@@ -2,8 +2,8 @@
 <head>
 <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 <title>NPK - 3.5 Método do gradiente conjugado ‣ Capítulo 3 Métodos para sistemas lineares ‣ Matemática numérica I</title>
-<!--Generated on Thu Oct 29 12:44:29 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
-<!--Document created on 29 de outubro de 2026.-->
+<!--Generated on Fri Nov  6 08:33:34 2026 by LaTeXML (version 0.8.8) http://dlmf.nist.gov/LaTeXML/.-->
+<!--Document created on 6 de novembro de 2026.-->
 
 <link rel="stylesheet" href="LaTeXML.css" type="text/css">
 <link rel="stylesheet" href="ltx-book.css" type="text/css">
@@ -136,76 +136,65 @@
 <p class="ltx_p"><span class="ltx_text" style="background-color:#FFFF00;">O método do gradiente conjugado é uma variação do método do gradiente</span> (consulte Seção <a href="cap_sislin_sec_metg.html" title="3.4 Método do gradiente ‣ Capítulo 3 Métodos para sistemas lineares ‣ Matemática numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.4</span></a>). Ambos são aplicáveis a sistemas lineares <span class="ltx_text" style="background-color:#FFFF00;"><math id="p1.m1" class="ltx_Math" alttext="A\bm{x}=\bm{b}" display="inline"><mrow><mrow><mi mathbackground="#FFFF00">A</mi><mo>⁢</mo><mi mathbackground="#FFFF00">𝒙</mi></mrow><mo mathbackground="#FFFF00">=</mo><mi mathbackground="#FFFF00">𝒃</mi></mrow></math>, <math id="p1.m2" class="ltx_Math" alttext="A" display="inline"><mi mathbackground="#FFFF00">A</mi></math> matriz positiva definida</span>, e as iterações têm a forma</p>
 <table id="Ch6.S2.EGx420" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
+<tbody id="Ch3.E349"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E349.m1" class="ltx_Math" alttext="\displaystyle\bm{x}^{(0)}=\text{aprox. inicial}," display="inline"><mrow><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mtext>aprox. inicial</mtext></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.349)</span></td>
+</tr></tbody>
 <tbody id="Ch3.E350"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E350.m1" class="ltx_Math" alttext="\displaystyle\bm{x}^{(0)}=\text{aprox. inicial}," display="inline"><mrow><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mtext>aprox. inicial</mtext></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E350.m1" class="ltx_Math" alttext="\displaystyle\bm{x}^{(k+1)}=\bm{x}^{(k)}+\alpha^{(k)}\bm{d}^{(k)}." display="inline"><mrow><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>α</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.350)</span></td>
-</tr></tbody>
-<tbody id="Ch3.E351"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E351.m1" class="ltx_Math" alttext="\displaystyle\bm{x}^{(k+1)}=\bm{x}^{(k)}+\alpha^{(k)}\bm{d}^{(k)}." display="inline"><mrow><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>α</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.351)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="p1.m3" class="ltx_Math" alttext="\bm{d}^{(k)}" display="inline"><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></math> é o vetor direção na <math id="p1.m4" class="ltx_Math" alttext="k" display="inline"><mi>k</mi></math>-ésima iterada. No método do gradiente, o vetor direção é <math id="p1.m5" class="ltx_Math" alttext="\bm{d}^{(k)}=\bm{r}^{(k)}:=\bm{b}-A\bm{x}^{(k)}" display="inline"><mrow><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mi>𝒃</mi><mo>−</mo><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow></math>. Aqui, as direções escolhidas são tomadas conjugadas duas-a-duas<span id="Ch3.footnote12" class="ltx_note ltx_role_footnote"><sup class="ltx_note_mark">12</sup><span class="ltx_note_outer"><span class="ltx_note_content"><sup class="ltx_note_mark">12</sup><span class="ltx_tag ltx_tag_note">12</span>São ortogonais em relação ao produto interno induzido por <math id="Ch3.footnote12.m1" class="ltx_Math" alttext="A" display="inline"><mi>A</mi></math>, <math id="Ch3.footnote12.m2" class="ltx_math_unparsed" alttext="&lt;\bm{u},\bm{v}&gt;_{A}:=\bm{u}\cdot A\bm{v}" display="inline"><mrow><mo>&lt;</mo><mi>𝒖</mi><mo>,</mo><mi>𝒗</mi><msub><mo rspace="0em">&gt;</mo><mi>A</mi></msub><mo rspace="0.278em">:=</mo><mi>𝒖</mi><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>A</mi><mi>𝒗</mi></mrow></math>.</span></span></span>. Isto nos leva a <span class="ltx_text ltx_font_bold" style="background-color:#FFFF00;">iteração do método do gradiente conjugado</span>:</p>
 <table id="Ch6.S2.EGx421" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
+<tbody id="Ch3.E351"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E351.m1" class="ltx_Math" alttext="\displaystyle\bm{x}^{(0)}=\text{aprox. inicial}," display="inline"><mrow><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mtext>aprox. inicial</mtext></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.351)</span></td>
+</tr></tbody>
 <tbody id="Ch3.E352"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E352.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{x}^{(0)}=\text{aprox. %
-inicial}," display="inline"><mrow><mrow><msup><mi mathcolor="#0F77B7">𝒙</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">=</mo><mtext mathcolor="#0F77B7">aprox. inicial</mtext></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E352.m1" class="ltx_Math" alttext="\displaystyle\bm{d}^{(0)}=\bm{r}^{(0)}," display="inline"><mrow><mrow><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.352)</span></td>
 </tr></tbody>
 <tbody id="Ch3.E353"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E353.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(0)}=\bm{r}^{(0)}," display="inline"><mrow><mrow><msup><mi mathcolor="#0F77B7">𝒅</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">=</mo><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mn mathcolor="#0F77B7">0</mn><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E353.m1" class="ltx_Math" alttext="\displaystyle\alpha^{(k)}=\frac{\bm{r}^{(k)}\cdot\bm{r}^{(k)}}{\bm{d}^{(k)}%
+\cdot A\bm{d}^{(k)}}," display="inline"><mrow><mrow><msup><mi>α</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><mrow><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><mi>A</mi></mrow><mo>⁢</mo><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.353)</span></td>
 </tr></tbody>
 <tbody id="Ch3.E354"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E354.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\alpha^{(k)}=\frac{\bm{r}^{%
-(k)}\cdot\bm{r}^{(k)}}{\bm{d}^{(k)}\cdot A\bm{d}^{(k)}}," display="inline"><mrow><mrow><msup><mi mathcolor="#0F77B7">α</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" mathcolor="#0F77B7" rspace="0.222em">⋅</mo><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow><mrow><mrow><msup><mi mathcolor="#0F77B7">𝒅</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" mathcolor="#0F77B7" rspace="0.222em">⋅</mo><mi mathcolor="#0F77B7">A</mi></mrow><mo>⁢</mo><msup><mi mathcolor="#0F77B7">𝒅</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E354.m1" class="ltx_Math" alttext="\displaystyle\bm{x}^{(k+1)}=\bm{x}^{(k)}+\alpha^{(k)}\bm{d}^{(k)}," display="inline"><mrow><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>α</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.354)</span></td>
 </tr></tbody>
 <tbody id="Ch3.E355"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E355.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{x}^{(k+1)}=\bm{x}^{(k)}%
-+\alpha^{(k)}\bm{d}^{(k)}," display="inline"><mrow><mrow><msup><mi mathcolor="#0F77B7">𝒙</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7">+</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">=</mo><mrow><msup><mi mathcolor="#0F77B7">𝒙</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">+</mo><mrow><msup><mi mathcolor="#0F77B7">α</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi mathcolor="#0F77B7">𝒅</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E355.m1" class="ltx_Math" alttext="\displaystyle\bm{r}^{(k+1)}=\bm{r}^{(k)}-\alpha^{(k)}A\bm{d}^{(k)}," display="inline"><mrow><mrow><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>−</mo><mrow><msup><mi>α</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi>A</mi><mo>⁢</mo><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.355)</span></td>
 </tr></tbody>
 <tbody id="Ch3.E356"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E356.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{r}^{(k+1)}=\bm{r}^{(k)}%
--\alpha^{(k)}A\bm{d}^{(k)}," display="inline"><mrow><mrow><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7">+</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">=</mo><mrow><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">−</mo><mrow><msup><mi mathcolor="#0F77B7">α</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo>⁢</mo><mi mathcolor="#0F77B7">A</mi><mo>⁢</mo><msup><mi mathcolor="#0F77B7">𝒅</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E356.m1" class="ltx_Math" alttext="\displaystyle\beta^{(k)}=\frac{\bm{r}^{(k+1)}\cdot\bm{r}^{(k+1)}}{\bm{r}^{(k)}%
+\bm{r}^{(k)}}," display="inline"><mrow><mrow><msup><mi>β</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mstyle displaystyle="true"><mfrac><mrow><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" rspace="0.222em">⋅</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup></mrow><mrow><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.356)</span></td>
 </tr></tbody>
 <tbody id="Ch3.E357"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E357.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\beta^{(k)}=\frac{\bm{r}^{(%
-k+1)}\cdot\bm{r}^{(k+1)}}{\bm{r}^{(k)}\bm{r}^{(k)}}," display="inline"><mrow><mrow><msup><mi mathcolor="#0F77B7">β</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">=</mo><mstyle displaystyle="true"><mfrac mathcolor="#0F77B7"><mrow><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7">+</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo lspace="0.222em" mathcolor="#0F77B7" rspace="0.222em">⋅</mo><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7">+</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow><mrow><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow></mfrac></mstyle></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E357.m1" class="ltx_Math" alttext="\displaystyle\bm{d}^{(k+1)}=\bm{r}^{(k+1)}+\beta^{(k)}\bm{d}^{(k)}," display="inline"><mrow><mrow><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mrow><mi>k</mi><mo>+</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></msup><mo>+</mo><mrow><msup><mi>β</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi>𝒅</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.357)</span></td>
-</tr></tbody>
-<tbody id="Ch3.E358"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E358.m1" class="ltx_Math" alttext="\displaystyle\color[rgb]{0.05859375,0.46484375,0.71875}\definecolor[named]{%
-pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
-)}+\beta^{(k)}\bm{d}^{(k)}," display="inline"><mrow><mrow><msup><mi mathcolor="#0F77B7">𝒅</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7">+</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">=</mo><mrow><msup><mi mathcolor="#0F77B7">𝒓</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mrow><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7">+</mo><mn mathcolor="#0F77B7">1</mn></mrow><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo mathcolor="#0F77B7">+</mo><mrow><msup><mi mathcolor="#0F77B7">β</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup><mo>⁢</mo><msup><mi mathcolor="#0F77B7">𝒅</mi><mrow><mo mathcolor="#0F77B7" stretchy="false">(</mo><mi mathcolor="#0F77B7">k</mi><mo mathcolor="#0F77B7" stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow><mo mathcolor="#0F77B7">,</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.358)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">para <math id="p1.m6" class="ltx_Math" alttext="k=0,1,\ldots" display="inline"><mrow><mi>k</mi><mo>=</mo><mrow><mn>0,1</mn><mo>,</mo><mi mathvariant="normal">…</mi></mrow></mrow></math>, e <math id="p1.m7" class="ltx_Math" alttext="\bm{r}^{(k)}:=\bm{b}-A\bm{x}^{(k)}" display="inline"><mrow><msup><mi>𝒓</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mi>𝒃</mi><mo>−</mo><mrow><mi>A</mi><mo>⁢</mo><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mi>k</mi><mo stretchy="false">)</mo></mrow></msup></mrow></mrow></mrow></math>.</p>
@@ -229,23 +218,23 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
 <p class="ltx_p">Consideremos o sistema <math id="Thmex1.p1.m1" class="ltx_Math" alttext="Ax=b" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>x</mi></mrow><mo>=</mo><mi>b</mi></mrow></math> com</p>
 <table id="Ch6.S2.EGx422" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E360"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E359"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E360.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;0&amp;0\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E359.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;0&amp;0\\
 -1&amp;2&amp;-1&amp;0\\
 0&amp;-1&amp;2&amp;-1\\
 0&amp;0&amp;-1&amp;2\end{bmatrix}," display="inline"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.360)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.359)</span></td>
 </tr></tbody>
-<tbody id="Ch3.E361"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E360"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E361.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}-3\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E360.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}-3\\
 2\\
 2\\
 -3\end{bmatrix}." display="inline"><mrow><mrow><mi>b</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="0pt"><mtr><mtd><mrow><mo>−</mo><mn>3</mn></mrow></mtd></mtr><mtr><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>3</mn></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.361)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.360)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Na Tabela <a href="#cap_sislin_sec_metgc:tab:metgc_exec" title="Tabela 3.5 ‣ Exemplo 3.5.1. ‣ 3.5 Método do gradiente conjugado ‣ Capítulo 3 Métodos para sistemas lineares ‣ Matemática numérica I" class="ltx_ref"><span class="ltx_text ltx_ref_tag">3.5</span></a> temos os resultados do emprego do método do gradiente conjugado com <math id="Thmex1.p1.m2" class="ltx_Math" alttext="\bm{x}^{(0)}=(0,0,0,0)" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mrow><mo stretchy="false">(</mo><mn>0,0,0,0</mn><mo stretchy="false">)</mo></mrow></mrow></math>.</p>
@@ -430,30 +419,30 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
 <p class="ltx_p">Considere o sistema linear <math id="Thmexer1.p1.m1" class="ltx_Math" alttext="A\bm{x}=\bm{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math> com</p>
 <table id="Ch6.S2.EGx423" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E362"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E361"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E362.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E361.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1\\
 -1&amp;2\\
 \end{bmatrix}," display="inline"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.362)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.361)</span></td>
 </tr></tbody>
-<tbody id="Ch3.E363"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E362"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E363.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}-7\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E362.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}-7\\
 8\end{bmatrix}." display="inline"><mrow><mrow><mi>b</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="0pt"><mtr><mtd><mrow><mo>−</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd><mn>8</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.363)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.362)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Use o método do gradiente conjugado com <math id="Thmexer1.p1.m2" class="ltx_Math" alttext="\bm{x}^{(0)}=\bm{0}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math> para computar a solução com tolerância</p>
 <table id="Ch6.S2.EGx424" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E364"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E363"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E364.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E363.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.364)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.363)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmexer1.p1.m3" class="ltx_Math" alttext="\bm{r}" display="inline"><mi>𝒓</mi></math> é o resíduo do sistema e <math id="Thmexer1.p1.m4" class="ltx_Math" alttext="\texttt{tol}=1.49\mathrm{e}\!-\!8" display="inline"><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>=</mo><mrow><mrow><mn>1.49</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em" rspace="0.052em">−</mo><mn>8</mn></mrow></mrow></math>. Quantas iterações são requeridas até a convergência?</p>
@@ -475,31 +464,31 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
 <p class="ltx_p">Considere o sistema linear <math id="Thmexer2.p1.m1" class="ltx_Math" alttext="A\bm{x}=\bm{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math> com</p>
 <table id="Ch6.S2.EGx425" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E365"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E364"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E365.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;1\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E364.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;1\\
 -1&amp;3&amp;1\\
 1&amp;1&amp;4\end{bmatrix}," display="inline"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>3</mn></mtd><mtd><mn>1</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mn>1</mn></mtd><mtd><mn>4</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.365)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.364)</span></td>
 </tr></tbody>
-<tbody id="Ch3.E366"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E365"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E366.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}2\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E365.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}2\\
 0\\
 -1\end{bmatrix}." display="inline"><mrow><mrow><mi>b</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.366)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.365)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Use o método do gradiente conjugado com <math id="Thmexer2.p1.m2" class="ltx_Math" alttext="\bm{x}^{(0)}=\bm{0}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math> para computar a solução com tolerância</p>
 <table id="Ch6.S2.EGx426" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E367"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E366"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E367.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E366.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.367)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.366)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmexer2.p1.m3" class="ltx_Math" alttext="\bm{r}" display="inline"><mi>𝒓</mi></math> é o resíduo do sistema e <math id="Thmexer2.p1.m4" class="ltx_Math" alttext="\texttt{tol}=1.49\mathrm{e}\!-\!8" display="inline"><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>=</mo><mrow><mrow><mn>1.49</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em" rspace="0.052em">−</mo><mn>8</mn></mrow></mrow></math>. Quantas iterações são requeridas até a convergência?</p>
@@ -521,33 +510,33 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
 <p class="ltx_p">Considere o sistema linear <math id="Thmexer3.p1.m1" class="ltx_Math" alttext="A\bm{x}=\bm{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math> com</p>
 <table id="Ch6.S2.EGx427" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E368"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E367"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E368.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;0&amp;0\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E367.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;0&amp;0\\
 -1&amp;2&amp;-1&amp;0\\
 0&amp;-1&amp;2&amp;-1\\
 0&amp;0&amp;-1&amp;2\end{bmatrix}," display="inline"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.368)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.367)</span></td>
 </tr></tbody>
-<tbody id="Ch3.E369"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E368"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E369.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}5\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E368.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}5\\
 -7\\
 6\\
 -1\end{bmatrix}." display="inline"><mrow><mrow><mi>b</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="0pt"><mtr><mtd><mn>5</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>7</mn></mrow></mtd></mtr><mtr><mtd><mn>6</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.369)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.368)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Use o método do gradiente conjugado com <math id="Thmexer3.p1.m2" class="ltx_Math" alttext="\bm{x}^{(0)}=\bm{0}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math> para computar a solução com tolerância</p>
 <table id="Ch6.S2.EGx428" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E370"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E369"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E370.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E369.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.370)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.369)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmexer3.p1.m3" class="ltx_Math" alttext="\bm{r}" display="inline"><mi>𝒓</mi></math> é o resíduo do sistema e <math id="Thmexer3.p1.m4" class="ltx_Math" alttext="\texttt{tol}=1.49\mathrm{e}\!-\!8" display="inline"><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>=</mo><mrow><mrow><mn>1.49</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em" rspace="0.052em">−</mo><mn>8</mn></mrow></mrow></math>.</p>
@@ -569,33 +558,33 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
 <p class="ltx_p">Considere o sistema linear <math id="Thmexer4.p1.m1" class="ltx_Math" alttext="A\bm{x}=\bm{b}" display="inline"><mrow><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow><mo>=</mo><mi>𝒃</mi></mrow></math> com</p>
 <table id="Ch6.S2.EGx429" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E371"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E370"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E371.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;1&amp;0\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E370.m1" class="ltx_Math" alttext="\displaystyle A=\begin{bmatrix}2&amp;-1&amp;1&amp;0\\
 -1&amp;2&amp;-1&amp;0\\
 1&amp;-1&amp;3&amp;-1\\
 0&amp;0&amp;-1&amp;2\end{bmatrix}," display="inline"><mrow><mrow><mi>A</mi><mo>=</mo><mrow><mo>[</mo><mtable columnspacing="5pt" rowspacing="0pt"><mtr><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>1</mn></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>0</mn></mtd></mtr><mtr><mtd><mn>1</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>3</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd></mtr><mtr><mtd><mn>0</mn></mtd><mtd><mn>0</mn></mtd><mtd><mrow><mo>−</mo><mn>1</mn></mrow></mtd><mtd><mn>2</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.371)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.370)</span></td>
 </tr></tbody>
-<tbody id="Ch3.E372"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E371"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E372.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}-8\\
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E371.m1" class="ltx_Math" alttext="\displaystyle b=\begin{bmatrix}-8\\
 9\\
 -10\\
 5\end{bmatrix}." display="inline"><mrow><mrow><mi>b</mi><mo>=</mo><mrow><mo>[</mo><mtable rowspacing="0pt"><mtr><mtd><mrow><mo>−</mo><mn>8</mn></mrow></mtd></mtr><mtr><mtd><mn>9</mn></mtd></mtr><mtr><mtd><mrow><mo>−</mo><mn>10</mn></mrow></mtd></mtr><mtr><mtd><mn>5</mn></mtd></mtr></mtable><mo>]</mo></mrow></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.372)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.371)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">Use o método do gradiente conjugado com <math id="Thmexer4.p1.m2" class="ltx_Math" alttext="\bm{x}^{(0)}=\bm{0}" display="inline"><mrow><msup><mi>𝒙</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math> para computar a solução com tolerância</p>
 <table id="Ch6.S2.EGx430" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E373"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E372"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E373.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E372.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\max\{\texttt{tol},\texttt{tol}\|\bm{b}\|\}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mrow><mi>max</mi><mo>⁡</mo><mrow><mo stretchy="false">{</mo><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>,</mo><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>⁢</mo><mrow><mo stretchy="false">‖</mo><mi>𝒃</mi><mo stretchy="false">‖</mo></mrow></mrow><mo stretchy="false">}</mo></mrow></mrow></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.373)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.372)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmexer4.p1.m3" class="ltx_Math" alttext="\bm{r}" display="inline"><mi>𝒓</mi></math> é o resíduo do sistema e <math id="Thmexer4.p1.m4" class="ltx_Math" alttext="\texttt{tol}=1.49\mathrm{e}\!-\!8" display="inline"><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>=</mo><mrow><mrow><mn>1.49</mn><mo>⁢</mo><mi mathvariant="normal">e</mi></mrow><mo lspace="0.052em" rspace="0.052em">−</mo><mn>8</mn></mrow></mrow></math>.</p>
@@ -617,52 +606,52 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
 <p class="ltx_p">Considere o problema de Laplace</p>
 <table id="Ch6.S2.EGx431" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
+<tbody id="Ch3.E373"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E373.m1" class="ltx_Math" alttext="\displaystyle-" display="inline"><mo>−</mo></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E373.m2" class="ltx_Math" alttext="\displaystyle u_{xx}=2,\quad 0&lt;x&lt;1," display="inline"><mrow><mrow><mrow><msub><mi>u</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>=</mo><mn>2</mn></mrow><mo rspace="1.167em">,</mo><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.373)</span></td>
+</tr></tbody>
 <tbody id="Ch3.E374"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_right ltx_eqn_cell"><math id="Ch3.E374.m1" class="ltx_Math" alttext="\displaystyle-" display="inline"><mo>−</mo></math></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E374.m2" class="ltx_Math" alttext="\displaystyle u_{xx}=2,\quad 0&lt;x&lt;1," display="inline"><mrow><mrow><mrow><msub><mi>u</mi><mrow><mi>x</mi><mo>⁢</mo><mi>x</mi></mrow></msub><mo>=</mo><mn>2</mn></mrow><mo rspace="1.167em">,</mo><mrow><mn>0</mn><mo>&lt;</mo><mi>x</mi><mo>&lt;</mo><mn>1</mn></mrow></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_eqn_cell"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E374.m1" class="ltx_Math" alttext="\displaystyle u(0)=u(1)=0." display="inline"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.374)</span></td>
-</tr></tbody>
-<tbody id="Ch3.E375"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_eqn_cell"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E375.m1" class="ltx_Math" alttext="\displaystyle u(0)=u(1)=0." display="inline"><mrow><mrow><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><mn>1</mn><mo stretchy="false">)</mo></mrow></mrow><mo>=</mo><mn>0</mn></mrow><mo lspace="0em">.</mo></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.375)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">A discretização pelo método das diferenças finitas em uma malha uniforme <math id="Thmexer5.p1.m1" class="ltx_Math" alttext="x_{i}=ih" display="inline"><mrow><msub><mi>x</mi><mi>i</mi></msub><mo>=</mo><mrow><mi>i</mi><mo>⁢</mo><mi>h</mi></mrow></mrow></math>, <math id="Thmexer5.p1.m2" class="ltx_Math" alttext="i=0.1,\dotsc,n" display="inline"><mrow><mi>i</mi><mo>=</mo><mrow><mn>0.1</mn><mo>,</mo><mi mathvariant="normal">…</mi><mo>,</mo><mi>n</mi></mrow></mrow></math>, <math id="Thmexer5.p1.m3" class="ltx_Math" alttext="h=1/(n-1)" display="inline"><mrow><mi>h</mi><mo>=</mo><mrow><mn>1</mn><mo>/</mo><mrow><mo stretchy="false">(</mo><mrow><mi>n</mi><mo>−</mo><mn>1</mn></mrow><mo stretchy="false">)</mo></mrow></mrow></mrow></math>, leva ao seguinte sistema linear</p>
 <table id="Ch6.S2.EGx432" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
+<tbody id="Ch3.E375"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E375.m1" class="ltx_Math" alttext="\displaystyle u_{1}=0" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.375)</span></td>
+</tr></tbody>
 <tbody id="Ch3.E376"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E376.m1" class="ltx_Math" alttext="\displaystyle u_{1}=0" display="inline"><mrow><msub><mi>u</mi><mn>1</mn></msub><mo>=</mo><mn>0</mn></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E376.m1" class="ltx_Math" alttext="\displaystyle-\frac{1}{h^{2}}u_{i-1}+\frac{2}{h^{2}}u_{i}-\frac{1}{h^{2}}u_{i+%
+1}=2," display="inline"><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle><mo>⁢</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>2</mn><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle><mo>⁢</mo><msub><mi>u</mi><mi>i</mi></msub></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle><mo>⁢</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></mrow><mo>=</mo><mn>2</mn></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.376)</span></td>
 </tr></tbody>
 <tbody id="Ch3.E377"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E377.m1" class="ltx_Math" alttext="\displaystyle-\frac{1}{h^{2}}u_{i-1}+\frac{2}{h^{2}}u_{i}-\frac{1}{h^{2}}u_{i+%
-1}=2," display="inline"><mrow><mrow><mrow><mrow><mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle><mo>⁢</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>−</mo><mn>1</mn></mrow></msub></mrow></mrow><mo>+</mo><mrow><mstyle displaystyle="true"><mfrac><mn>2</mn><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle><mo>⁢</mo><msub><mi>u</mi><mi>i</mi></msub></mrow></mrow><mo>−</mo><mrow><mstyle displaystyle="true"><mfrac><mn>1</mn><msup><mi>h</mi><mn>2</mn></msup></mfrac></mstyle><mo>⁢</mo><msub><mi>u</mi><mrow><mi>i</mi><mo>+</mo><mn>1</mn></mrow></msub></mrow></mrow><mo>=</mo><mn>2</mn></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E377.m1" class="ltx_Math" alttext="\displaystyle u_{n}=0" display="inline"><mrow><msub><mi>u</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
 <td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.377)</span></td>
-</tr></tbody>
-<tbody id="Ch3.E378"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
-<td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E378.m1" class="ltx_Math" alttext="\displaystyle u_{n}=0" display="inline"><mrow><msub><mi>u</mi><mi>n</mi></msub><mo>=</mo><mn>0</mn></mrow></math></td>
-<td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.378)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde <math id="Thmexer5.p1.m4" class="ltx_Math" alttext="u_{i}\approx u(x_{i})" display="inline"><mrow><msub><mi>u</mi><mi>i</mi></msub><mo>≈</mo><mrow><mi>u</mi><mo>⁢</mo><mrow><mo stretchy="false">(</mo><msub><mi>x</mi><mi>i</mi></msub><mo stretchy="false">)</mo></mrow></mrow></mrow></math>. Com <math id="Thmexer5.p1.m5" class="ltx_Math" alttext="u^{(0)}=\bm{0}" display="inline"><mrow><msup><mi>u</mi><mrow><mo stretchy="false">(</mo><mn>0</mn><mo stretchy="false">)</mo></mrow></msup><mo>=</mo><mn>𝟎</mn></mrow></math>, aplique o método do gradiente conjugado para computar a solução deste sistema quando <math id="Thmexer5.p1.m6" class="ltx_Math" alttext="n=10,20,40,80" display="inline"><mrow><mi>n</mi><mo>=</mo><mn>10,20,40,80</mn></mrow></math>. Quantas iterações são necessárias para obter-se a convergência do método com critério de convergência</p>
 <table id="Ch6.S2.EGx433" class="ltx_equationgroup ltx_eqn_align ltx_eqn_table">
 
-<tbody id="Ch3.E379"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
+<tbody id="Ch3.E378"><tr class="ltx_equation ltx_eqn_row ltx_align_baseline">
 <td class="ltx_eqn_cell ltx_eqn_center_padleft"></td>
-<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E379.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\texttt{tol}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mtext class="ltx_mathvariant_monospace">tol</mtext></mrow><mo>,</mo></mrow></math></td>
+<td class="ltx_td ltx_align_left ltx_eqn_cell"><math id="Ch3.E378.m1" class="ltx_Math" alttext="\displaystyle\|\bm{r}\|\leq\texttt{tol}," display="inline"><mrow><mrow><mrow><mo stretchy="false">‖</mo><mi>𝒓</mi><mo stretchy="false">‖</mo></mrow><mo>≤</mo><mtext class="ltx_mathvariant_monospace">tol</mtext></mrow><mo>,</mo></mrow></math></td>
 <td class="ltx_eqn_cell ltx_eqn_center_padright"></td>
-<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.379)</span></td>
+<td rowspan="1" class="ltx_eqn_cell ltx_eqn_eqno ltx_align_middle ltx_align_right"><span class="ltx_tag ltx_tag_equation ltx_align_right">(3.378)</span></td>
 </tr></tbody>
 </table>
 <p class="ltx_p">onde, <math id="Thmexer5.p1.m7" class="ltx_Math" alttext="\bm{r}:=\bm{b}-A\bm{x}" display="inline"><mrow><mi>𝒓</mi><mo lspace="0.278em" rspace="0.278em">:=</mo><mrow><mi>𝒃</mi><mo>−</mo><mrow><mi>A</mi><mo>⁢</mo><mi>𝒙</mi></mrow></mrow></mrow></math> é o resíduo e <math id="Thmexer5.p1.m8" class="ltx_Math" alttext="\texttt{tol}=1e-4" display="inline"><mrow><mtext class="ltx_mathvariant_monospace">tol</mtext><mo>=</mo><mrow><mrow><mn>1</mn><mo>⁢</mo><mi>e</mi></mrow><mo>−</mo><mn>4</mn></mrow></mrow></math>.</p>
@@ -745,7 +734,7 @@ pgfstrokecolor}{rgb}{0.05859375,0.46484375,0.71875}\bm{d}^{(k+1)}=\bm{r}^{(k+1%
 <div class="ltx_align_center">
 <a href="cap_sislin_sec_metg.html" title="In Capítulo 3 Métodos para sistemas lineares ‣ Matemática numérica I" class="ltx_ref" rel="prev"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">3.4 </span>Método do gradiente</span></a><a href="bib.html" title="In Matemática numérica I" class="ltx_ref" rel="bibliography"><span class="ltx_text ltx_ref_title">Referências</span></a><a href="cap_snl.html" title="In Matemática numérica I" class="ltx_ref" rel="next"><span class="ltx_text ltx_ref_title"><span class="ltx_tag ltx_tag_ref">4 </span>Métodos para Sistemas Não Lineares</span></a>
 </div>
-<div class="ltx_page_logo">Generated  on Thu Oct 29 12:44:29 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
+<div class="ltx_page_logo">Generated  on Fri Nov  6 08:33:34 2026 by <a href="http://dlmf.nist.gov/LaTeXML/" class="ltx_LaTeXML_logo"><span style="letter-spacing:-0.2em; margin-right:0.1em;">L<span class="ltx_font_smallcaps" style="position:relative; bottom:2.2pt;">a</span>T<span class="ltx_font_smallcaps" style="font-size:120%;position:relative; bottom:-0.2ex;">e</span></span><span style="font-size:90%; position:relative; bottom:-0.2ex;">XML</span><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAsAAAAOCAYAAAD5YeaVAAAAAXNSR0IArs4c6QAAAAZiS0dEAP8A/wD/oL2nkwAAAAlwSFlzAAALEwAACxMBAJqcGAAAAAd0SU1FB9wKExQZLWTEaOUAAAAddEVYdENvbW1lbnQAQ3JlYXRlZCB3aXRoIFRoZSBHSU1Q72QlbgAAAdpJREFUKM9tkL+L2nAARz9fPZNCKFapUn8kyI0e4iRHSR1Kb8ng0lJw6FYHFwv2LwhOpcWxTjeUunYqOmqd6hEoRDhtDWdA8ApRYsSUCDHNt5ul13vz4w0vWCgUnnEc975arX6ORqN3VqtVZbfbTQC4uEHANM3jSqXymFI6yWazP2KxWAXAL9zCUa1Wy2tXVxheKA9YNoR8Pt+aTqe4FVVVvz05O6MBhqUIBGk8Hn8HAOVy+T+XLJfLS4ZhTiRJgqIoVBRFIoric47jPnmeB1mW/9rr9ZpSSn3Lsmir1fJZlqWlUonKsvwWwD8ymc/nXwVBeLjf7xEKhdBut9Hr9WgmkyGEkJwsy5eHG5vN5g0AKIoCAEgkEkin0wQAfN9/cXPdheu6P33fBwB4ngcAcByHJpPJl+fn54mD3Gg0NrquXxeLRQAAwzAYj8cwTZPwPH9/sVg8PXweDAauqqr2cDjEer1GJBLBZDJBs9mE4zjwfZ85lAGg2+06hmGgXq+j3+/DsixYlgVN03a9Xu8jgCNCyIegIAgx13Vfd7vdu+FweG8YRkjXdWy329+dTgeSJD3ieZ7RNO0VAXAPwDEAO5VKndi2fWrb9jWl9Esul6PZbDY9Go1OZ7PZ9z/lyuD3OozU2wAAAABJRU5ErkJggg==" alt="Mascot Sammy"></a>
 </div></footer><p><a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/"><img alt="Licença Creative Commons" style="border-width:0" src="https://i.creativecommons.org/l/by-sa/4.0/80x15.png" /></a><br />Este texto é disponibilizado nos termos da Licença <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/deed.pt_BR">Creative Commons Atribuição-CompartilhaIgual 4.0 Internacional</a>. Ícones e elementos gráficos podem estar sujeitos a condições adicionais.</p>
 </div>
 <div class="card mb-1 bg-light" id="rodape">
