@@ -14,6 +14,8 @@ bundle exec jekyll serve --livereload --baseurl ""
 ```
 
 Abra <http://127.0.0.1:4000/>. O `baseurl` vazio é usado apenas na prévia local.
+Após alterar `_config.yml`, reinicie o servidor. O feed RSS está desativado;
+uma nova compilação remove o `feed.xml` gerado anteriormente.
 
 ## Publicação
 
