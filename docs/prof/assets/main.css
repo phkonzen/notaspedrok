@@ -199,4 +199,32 @@ table td { border: 1px solid #e8e8e8; }
 
 .profile-columns img { max-width: 100%; height: auto; }
 
+.research-profiles { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(100%, 14rem), 1fr)); gap: 0.75rem; }
+
+.orcid-card, .scholar-card, .lattes-card { display: flex; align-items: center; min-width: 0; gap: 0.75rem; padding: 0.75rem 0.85rem; border-radius: 0.75rem; box-shadow: 0 0.2rem 0.8rem rgba(45, 70, 25, 0.08); }
+
+.orcid-card { border: 1px solid #dce8cf; border-left: 4px solid #a6ce39; background: linear-gradient(135deg, #f8fbf3, #fff); }
+
+.scholar-card { border: 1px solid #d8e6fa; border-left: 4px solid #4285f4; background: linear-gradient(135deg, #f5f9ff, #fff); }
+
+.lattes-card { border: 1px solid #f0e2c2; border-left: 4px solid #c9972e; background: linear-gradient(135deg, #fffaf0, #fff); }
+
+.orcid-mark { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #a6ce39; color: #fff; font-size: 1.25rem; font-weight: 700; letter-spacing: -0.08em; }
+
+.scholar-mark { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #4285f4; color: #fff; font-size: 0.95rem; font-weight: 700; }
+
+.lattes-mark { display: grid; width: 2.75rem; height: 2.75rem; flex: 0 0 auto; place-items: center; border-radius: 50%; background: #c9972e; color: #fff; font-size: 0.95rem; font-weight: 700; }
+
+.orcid-details, .scholar-details, .lattes-details { display: grid; min-width: 0; gap: 0.15rem; }
+
+.orcid-details a, .scholar-details a, .lattes-details a { font-family: monospace; font-size: 0.9rem; overflow-wrap: anywhere; text-decoration: none; }
+
+.orcid-details a { color: #315d12; }
+
+.scholar-details a { color: #1a5dab; }
+
+.lattes-details a { color: #805c16; }
+
+.orcid-details a:hover, .orcid-details a:focus-visible, .scholar-details a:hover, .scholar-details a:focus-visible, .lattes-details a:hover, .lattes-details a:focus-visible { text-decoration: underline; }
+
 @media screen and (max-width: 600px) { .profile-columns { grid-template-columns: minmax(0, 1fr); } }
